@@ -10,4 +10,8 @@ section: 3
 
 # Definitions and Abbreviations {#sec3}
 
+<!--
 See [[SP800-63]](../_sp800-63/definitions.md#def-and-acr){:latex-href="#ref-SP800-63"}, Appendix A for a complete set of definitions and abbreviations.
+-->
+
+定義と略語の完全な組み合わせについては Appendix A [[SP800-63]](../_sp800-63/definitions.md#def-and-acr){:latex-href="#ref-SP800-63"} を参照.
