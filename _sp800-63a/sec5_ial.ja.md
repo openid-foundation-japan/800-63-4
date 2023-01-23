@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: default.ja
 title: Identity Assurance Level Requirements
 navOrder: 5
 navTitle: IAL
@@ -8,18 +8,50 @@ anchor: ial-section
 section: 5
 ---
 
+# Identity Assurance Level 要件 {#ial-section}
+
+{% comment %}
 # Identity Assurance Level Requirements {#ial-section}
+{% endcomment %}
 
 _This section is normative._
 
+本セクションはIdentity ProofingとEnrollmentのサービスを運営するCSPに対する要件を提供する。この要件には各IALのIdentity Proofingの要件が含まれる。本セクションでは、自分達でIdentityサービスを提供するか外部のCSPを用いるかどうかにかかわらず、連邦機関向けの追加の要件も含んでいる。
+
+{% comment %}
 This section provides requirements for CSPs that operate identity proofing and enrollment services, including requirements for identity proofing at each of the IALs. This section also includes additional requirements for Federal Agencies regardless of whether they operate their own identity service or use an external CSP. 
+{% endcomment %}
 
+## 一般的な要件 {#genProofReqs}
+{% comment %}
 ## General Requirements {#genProofReqs}
+{% endcomment %}
 
+本セクションの要件は、任意のIALでIdentity Proofingを実施するすべてのCSPに適用される。
+{% comment %}
 The requirements in this section apply to all CSPs performing identity proofing at any IAL.
+{% endcomment %}
 
 ### Identity Service Documentation and Records {#DocRecReqs}
 
+{% comment %}
+### Identity Service Documentation and Records {#DocRecReqs}
+{% endcomment %}
+
+
+CSPは、定義されたIALを達成するために実装されているすべてのIdentiy Proofingプロセスを詳細化するPractice Statementに従って、オペレーションを実施するものとする(**SHALL**)。Practice Statementは少なくとも次の内容を含むものとする(**SHALL**): 
+
+1. それぞれの提供されたIALにおいて CSP がApplicantのIdentity Proofingを行うために従う特定のステップを含む、完全なサービスの説明。 
+2. CSPが受け入れる、Evidence強度要件を満たすためのIdentity Evidenceの種類。 
+3. 該当する場合、必要なIdentity Evidenceを所有していないApplicant個人が、Identity Proofingプロセスを完了するための代替手法 [^alternatives]。 
+4. CSP が中核のAttributeであると見なすAttribute。中核のAttributeには、CSP が Identity Resolutionを行うために必要な最小限のAttributeのセットのほか、Identity Proofing、詐欺の軽減、法律または法的プロセスの遵守、あるいはAttribute Assertionを介したRelying Party(RP)への伝達を目的とし、CSPが収集、validateする追加のAttributeを含んでいる。
+5. Identity Proofingのエラーに対処するための CSP のポリシーとプロセス。
+6. 疑わしい、あるいは確認済みの不正なアカウントを識別し、RPや影響をうける個人に対して伝達するための、CSP のポリシーとプロセス。
+7. サービス変更（例：データソース、統合ベンダー、またはバイオメトリックアルゴリズムの変更）を管理し、RP に伝達するための、 CSP のポリシー。
+8. 定期的なレビュータイミングと、プライバシーリスクアセスメント([セクション 5.1.2](sec5_ial.ja.md#PrivacyReqs) を参照）の更新の契機となる特定条件を含む、プライバシーリスクアセスメントの実施に関する CSP のポリシー。
+9. 潜在的なEquityへの影響を判断するためのアセスメントを実施する CSP のポリシー。これには、定期的なレビューのタイミングと、サイクル外レビューの契機となる特定条件を含む（[セクション 5.1.3](sec5_ial.ja.md#EquityReqs) 参照）；更に、
+
+{% comment %}
 The CSP **SHALL** conduct its operations according to a practice statement that details all identity proofing processes as they are implemented to achieve the defined IAL. The practice statement **SHALL** include, at a minimum:  
 
 1. A complete service description including the particular steps the CSP follows to identity proof applicants at each offered assurance level;  
@@ -31,30 +63,74 @@ The CSP **SHALL** conduct its operations according to a practice statement that 
 7. The CSP's policy for managing and communicating service changes (e.g., change in data sources, integrated vendors, or biometric algorithms) to RPs; 
 8. The CSP's policy for conducting privacy risk assessments, including the timing of its periodic reviews and specific conditions that will trigger an updated privacy risk assessment (see [Section 5.1.2](sec5_ial.md#PrivacyReqs)); 
 9. The CSP's policy for conducting assessments to determine potential equity impacts, including the timing of its periodic reviews and any specific conditions that will trigger an out-of-cycle review (see [Section 5.1.3](sec5_ial.md#EquityReqs)); and
- 
+{% endcomment %}
 
+
+#### 営業停止
+{% comment %}
 #### Ceasing Operations
+{% endcomment %}
 
+1. CSP は、その業務を停止するときのポリシーと計画を文書化するものとする(**SHALL**)。
+2. この計画には、CSP のIdentityサービスが保持要件の対象であるかどうか、さらに保持期間中に機微データ （Identity Attribute、Subscriberアカウント内に含まれる情報や、監査ログに含まれる情報）をどのように保護するかどうか含まれるものとする(**SHALL**)。
+3. 要求される保持期間の終了時に、CSP はすべての機微データを完全に廃棄または破壊する責任を負うものとする(**SHALL**)。
 
+{% comment %}
 1. The CSP **SHALL** document its policy and plan for when it ceases its operations. 
 2. This plan **SHALL** include whether the CSP's identity service is subject to retention requirements and how it will protect any sensitive data (including identity attributes, and information contained in subscriber accounts and audit logs) during the period of retention. 
 3. At the end of any required retention period, the CSP **SHALL** be responsible for fully disposing of or destroying all sensitive data.
+{% endcomment %}
 
+#### 不正行為の緩和策
+
+{% comment %}
 #### Fraud Mitigation Measures
+{% endcomment %}
 
+1. CSP は、不正行為の緩和策（例：Applicantのデバイス特性の調査、行動特性の評価、デスマスターファイル （[[DMF]](sec11_references.ja.md#ref-dmf) などの重要統計情報リポジトリの確認）を使用してIdentity Proofingの信頼性を高めるものとする(**SHALL**)。
+2. CSP が不正行為の緩和策を使用する場合、CSP はこれらの緩和策についてプライバシーリスクアセスメントを実施するものとする(**SHALL**)。
+3. そのようなアセスメントでは、何らかのプライバシーリスクの緩和策（例：リスクの受容、転嫁、保持の制限、使用制限、通知）またはその他の技術的な緩和策（例：暗号化）が含まれ、これらのガイドラインに従って文書化されなければならない。
+
+[^alternatives]。Applicantの代表者がいるかどうかに関わらず、Trusted Refereeの使用は1つのオプションである。補足的なIdentity Evidenceのタイプについては、[セクション 5.1.9](../ial/#TRs-ARs) を参照すること。
+
+{% comment %}
 1. The CSP **SHOULD** obtain additional confidence in identity proofing using fraud mitigation measures (e.g., examining the device characteristics of the applicant, evaluating behavioral characteristics, and checking vital statistic repositories such as the Death Master File ([[DMF]](sec11_references.md#ref-dmf)). 
 2. In the event the CSP uses fraud mitigation measures, the CSP **SHALL** conduct a privacy risk assessment for these mitigation measures. 
 3. Such assessments **SHALL** include any privacy risk mitigations (e.g., risk acceptance or transfer, limited retention, use limitations, notice) or other technological mitigations (e.g., cryptography), and be documented per these guidelines.
 
 
 [^alternatives]: Options include using a Trusted Referee, with or without an Applicant Representative; see [Sec. 5.1.9](../ial/#TRs-ARs) for supplemental identity evidence types. 
+{% endcomment %}
 
+### 一般的なプライバシー要件 {#PrivacyReqs}
+
+{% comment %}
 ### General Privacy Requirements {#PrivacyReqs}
- 
+{% endcomment %}
+
+次のプライバシー要件は、任意のIALでIdentityサービスを提供するすべてのCSPに該当する。
+{% comment %}
 The following privacy requirements apply to all CSPs providing identity services at any IAL. 
+{% endcomment %}
 
+#### プライバシーリスクアセスメント
+{% comment %}
 #### Privacy Risk Assessment
+{% endcomment %}
 
+1. CSP は、Identity Proofingとエンロールメントに用いるプロセスについて、プライバシーリスクアセスメントを実施し、 文書化しなければならない [^privacyframework]。
+	1. Identity Proofingとエンロールメントを目的とした、PII の任意の処理（Identity Attribute、バイオメトリクス、画像、ビデオ、スキャン、またはIdentity Evidenceのコピーなど）。
+	2. ここで指定されている必須要件を超えて、ApplicantのIdentityをVerifyするために CSP が取る追加のステップ。
+	3. 法律または法的手続きに遵守する場合を除き、Identity Proofingとエンロールメントのスコープ外で行われる、PII に対する任意の処理。
+	4. Identityレコードおよび PII の保持スケジュール。さらに、
+	5. CSP に代わってサードパーティサービスが処理する任意のPII。
+	{:.letter-list}
+2. プライバシーリスクアセスメントの結果に基づいて、CSP は、自らが処理する PII の分離可能性、予測可能性、管理性、機密性、完全性、および可用性を維持するために講じる手段を文書化するものとする(**SHALL**)。このような措置を決定する際、CSP は *NIST Privacy Framework* [[NIST-Privacy]](sec11_references.ja.md#ref-NIST-Privacy) および NIST Special Publication [[SP800-53]](sec11_references.ja.md#ref-SP800-53) を参考にするものとする(**SHALL**)。
+3. CSP は、PII の処理に影響を与えるIdentityサービスの変更を行う場合は、いつでもプライバシーリスクを再評価し、プライバシーリスクアセスメントを更新しなければならない。
+4. CSP は、Practice Statementに記載されているとおり、定期的にプライバシーリスクアセスメントをレビューし、 PII の処理に関連する最新のリスクを正確に反映するようにしなければならない。(**SHALL**) 
+5. CSP は、そのサービスを使用するすべての組織に対して、プライバシーリスクアセスメントのサマリーを提供できる状態にするものとする(**SHALL**)。そのサマリーは、当該組織がデューディリジェンスを行えるように、十分な詳細であるものとする(**SHALL**)。
+
+{% comment %}
 1. The CSP **SHALL** conduct and document a privacy risk assessment for the processes used for identity proofing and enrollment.[^privacyframework]  At a minimum, the privacy risk assessment **SHALL** assess the risks associated with:
 
 	1. Any processing of PII for the purpose of identity proofing and enrollment, including identity attributes, biometrics, images, video, scans, or copies of identity evidence;
@@ -67,6 +143,7 @@ The following privacy requirements apply to all CSPs providing identity services
 3. The CSP **SHALL** re-assess privacy risks and update its privacy risk assessment any time it makes changes to its identity service that affect the processing of PII.
 4. The CSP **SHALL** review its privacy risk assessment periodically, as documented in its practice statement, to ensure it accurately reflects the current risks associated with the processing of PII.  
 5. The CSP **SHALL** make a summary of its privacy risk assessment available to any organizations that use its services. The summary **SHALL** be in sufficient detail to enable such organizations to do due dilligence.
+{% endcomment %}
 
 #### Additional Privacy Protective Measures
 
