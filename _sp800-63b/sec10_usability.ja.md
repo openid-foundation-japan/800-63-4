@@ -16,25 +16,76 @@ _This section is informative._
 > Note: In this section, the term *users* means *claimants* or *subscribers.*
 -->
 
-本章では, *ユーザー* という用語は *Claimant* ないし *Subscriber* を意味する.
+本セクションでは, *ユーザー* という用語は *Claimant* ないし *Subscriber* を意味する.
 
+<!--
 [[ISO/IEC9241-11]](references.md#ref-ISOIEC9241) defines usability as the "extent to which a system, product, or service can be used by specified users to achieve specified goals with effectiveness, efficiency and satisfaction in a specified context of use." This definition focuses on users, their goals, and the context of use as key elements necessary for achieving effectiveness, efficiency, and satisfaction. A holistic approach that accounts for these key elements is necessary to achieve usability.
+-->
 
+[[ISO/IEC9241-11]](references.md#ref-ISO9241) は Usability を "特定の利用コンテキストにおいて, 特定のユーザーが, あるシステム, プロダクトないしはサービスを利用して, 特定の目的を, どの程度有効的, 効率的かつ満足のいくレベルで達成できるかの度合い" と定義している.
+この定義はユーザー, 目的および利用コンテキストを, 有効性, 効率性および満足度の達成に必要な重要要素として捉えている.
+Usability を実現するには, これらの重要要素を考慮した総合的なアプローチが必要となる.
+
+<!--
 A user's goal for accessing an information system is to perform an intended task. Authentication is the function that enables this goal. However, from the user's perspective, authentication stands between them and their intended task. Effective design and implementation of authentication makes it easy to do the right thing, hard to do the wrong thing, and easy to recover when the wrong thing happens.
+-->
 
+ユーザーが情報システムに Access する目的とは, 彼らが意図した何らかのタスクの実行にある.
+Authentication とは, その目的を可能とする機能である.
+しかしながらユーザー視点で見ると, Authentication は彼らと彼らの意図したタスクの間に存在するものである.
+Authentication の効果的な設計および実装は, 正しいことの実行を容易にし, 誤ったことの実行を困難にし, 間違いが起こった場合のリカバリーを容易にする.
+
+<!--
 Organizations need to be cognizant of the overall implications of their stakeholders' entire digital authentication ecosystem. Users often employ multiple authenticators, each for a different RP. They then struggle to remember passwords, to recall which authenticator goes with which RP, and to carry multiple physical authentication devices. Evaluating the usability of authentication is critical, as poor usability often results in coping mechanisms and unintended workarounds that can ultimately degrade the effectiveness of security controls.
+-->
 
+組織は, ステークホルダーの Digital Authentication エコシステムへの全体的な影響を認識する必要がある.
+ユーザーはしばしば複数の Authenticator をそれぞれ異なる RP に対して利用しており, パスワードを覚えるために苦闘し, どの Authenticator がどの RP 向けであったか思い出すために苦闘し, 複数の物理的な Authentication デバイスを持ち運ぶために苦闘している.
+Authentication の Usability を評価することは不可欠であり, Usability が低いと最終的にセキュリティコントロールの有効性を損ねかねない対処策や意図しない回避策が生じることもしばしばである.
+
+<!--
 Integrating usability into the development process can lead to authentication solutions that are secure and usable while still addressing users' authentication needs and organizations' business goals.
+-->
 
+Usability を開発プロセスに組み込むことで, ユーザーの Authentication へのニーズと組織のビジネス目標に対応しながら, 安全で使いやすい Authentication ソリューションを実現できる.
+
+<!--
 The impact of usability across digital systems needs to be considered as part of the risk assessment when deciding on the appropriate AAL. Authenticators with a higher AAL sometimes offer better usability and should be allowed for use with lower AAL applications.
+-->
 
+適切な AAL の決定の際は, リスク評価の一環として Digital システム全体の Usability を考慮する必要がある.
+より高い AAL の Authenticator のほうが Usability が良い場合もあり, より低い AAL の Authentication においてもそういった Authenticator の利用を許可すべき場合がある.
+
+<!--
 Leveraging federation for authentication can alleviate many of the usability issues, though such an approach has its own tradeoffs, as discussed in [[SP800-63C]](../_sp800-63c/sec1_purpose.md#purpose){:latex-href="#ref-SP800-63C"}.
+-->
 
+[[SP800-63C]](../_sp800-63c/sec1_purpose.md#purpose){:latex-href="#ref-SP800-63C"}　で述べるように, そのアプローチ自体にもトレードオプが存在するものの, Authentication のために Federation を活用すると多くの Usability の問題を軽減できる可能性もある.
+
+<!--
 This section provides general usability considerations and possible implementations, but does not recommend specific solutions. The implementations mentioned are examples to encourage innovative technological approaches to address specific usability needs. Further, usability considerations and their implementations are sensitive to many factors that prevent a one-size-fits-all solution. For example, a font size that works in the desktop computing environment may force text to scroll off of a small OTP device screen. Performing a usability evaluation on the selected authenticator is a critical component of implementation. It is important to conduct evaluations with representative users, realistic goals and tasks, and appropriate contexts of use.
+-->
 
+本セクションでは一般的な Usability 上の考慮事項と取りうる実装について述べるが, 特定のソリューションを推奨するものではない.
+ここで言及する実装は, 特定の Usability ニーズに対応するための革新的技術アプローチを促すための例に過ぎない.
+さらに, Usability 上の考慮事項とこれらの実装は, 1つで全てを解決する万能なソリューションを妨げるような, 多くの要因を含みがちである.
+例えば, デスクトップコンピューター環境における適切なフォントサイズでも, 小さな OTP デバイスのスクリーンで見た際は文字がはみ出してしまうかもしれない.
+選択された Authenticator に対する Usability 評価の実施は, 実装上の不可欠な要素である.
+評価を行う際は, 代表的なユーザー, 現実的な目標とタスク, 適切な利用コンテキストのもとで行うことが重要である.
+
+<!--
 Guidelines and considerations are described from the users' perspective.
+-->
 
+ガイドラインと考慮事項はユーザー目線で記述されている.
+
+<!--
 Accessibility differs from usability and is out of scope for this document. Section 508 [[Section508]](references.md#ref-Section508) was enacted to eliminate barriers in information technology and require federal government agencies to make their online public content accessible to people with disabilities. Refer to Section 508 law and standards for accessibility guidance.
+-->
+
+ Usability とは異なり, アクセスビリティに関しては本ドキュメントのスコープ外とする.
+ [[Section508]](references.md#ref-Section508) は情報技術の障壁を取り除くために制定され, 連邦政府機関に対して電子および情報技術の公開コンテンツを障害を持つ人にもアクセスできるように要求している.
+ アクセスビリティガイドラインに関しては Section 508 の法律および標準を参照のこと.
 
 ## Usability Considerations Common to Authenticators {#usabilitycommon}
 When selecting and implementing an authentication system, consider usability across the entire lifecycle of the selected authenticators (e.g., typical use and intermittent events), while being mindful of the combination of users, their goals, and context of use.
