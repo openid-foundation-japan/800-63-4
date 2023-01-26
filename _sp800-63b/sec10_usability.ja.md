@@ -88,21 +88,65 @@ Accessibility differs from usability and is out of scope for this document. Sect
  アクセスビリティガイドラインに関しては Section 508 の法律および標準を参照のこと.
 
 ## Usability Considerations Common to Authenticators {#usabilitycommon}
+
+<!--
 When selecting and implementing an authentication system, consider usability across the entire lifecycle of the selected authenticators (e.g., typical use and intermittent events), while being mindful of the combination of users, their goals, and context of use.
+-->
 
+Authentication システムの選択および実装の際は, 選択した Authenticator のライフサイクル全体 (e.g., 通常の使用や断続的イベント) における Usability を考慮すること.
+またその際は, ユーザー, ユーザーの目標および利用コンテキストの組み合わせに注意すること.
+
+<!--
 A single authenticator type usually does not suffice for the entire user population. Therefore, whenever possible — based on AAL requirements — CSPs should support alternative authenticator types and allow users to choose based on their needs. Task immediacy, perceived cost benefit tradeoffs, and unfamiliarity with certain authenticators often impact choice. Users tend to choose options that incur the least burden or cost at that moment. For example, if a task requires immediate access to an information system, a user may prefer to create a new subscriber account and password rather than select an authenticator requiring more steps. Alternatively, users may choose a federated identity option — approved at the appropriate AAL — if they already have a subscriber account with an identity provider. Users may understand some authenticators better than others, and have different levels of trust based on their understanding and experience.
+-->
 
+通常, 単一の Authenticator Type ではユーザー母集団全体の要求を満たすには不十分である.
+従って可能であれば - AAL 要件に基づき - CSP は代替の Authenticator Type をサポートすべきであり, それらをユーザーのニーズに合わせて選択させるべきである.
+タスクの緊急度, 認識される費用対効果のトレードオフ, 特定の Authenticator への習熟度などが, しばしば選択に影響を及ぼすことになる.
+ユーザーは, その時点で最も負担やコストの低い選択肢を選ぶ傾向がある.
+例えば, タスクが情報システムへの即時 Access を必要とする場合, ユーザーはより多くのステップを必要とする Authenticator を選択するよりも, 新しい Subscriber Account と Password を作成することを選好する可能性もある.
+代わりに, Identity Provider に Subscriber Account を持っている場合, ユーザーは - 適切な AAL で承認された - Federated Identity という選択肢を選ぶ可能性もある.
+ユーザーはある Authenticator を他の Authenticator よりもよく理解しており, 理解と経験に基づいて異なるレベルの信頼感を持っている可能性もある.
+
+<!--
 Positive user authentication experiences are integral to the success of an organization achieving desired business outcomes. Therefore, they should strive to consider authenticators from the users' perspective. The overarching authentication usability goal is to minimize user burden and authentication friction (e.g., the number of times a user has to authenticate, the steps involved, and the amount of information they have to track). Single sign-on exemplifies one such minimization strategy.
+-->
 
+ユーザーによるポジティブな Authentication エクスペリエンスは, 望ましいビジネス上の成果を達成する組織の成功に不可欠である.
+従って, 組織はユーザーの視点に立って Autheenticator を検討するよう努力すべきである.
+Authentication Usability における非常に重要な目標として, ユーザーの負担と Authentication により生じる摩擦 (e.g., ユーザーが Authenticate しなければならない回数, それにかかるステップ数, 確認しなければならない情報量) の最小化が挙げられる.
+Single Sign-on はそのような最小化戦略の一例である.
+
+<!--
 Usability considerations applicable to most authenticators are described below. Subsequent sections describe usability considerations specific to a particular authenticator.
+-->
 
+以下に, 大抵の Authenticator に適用可能な Usability 上の考慮事項を示す.
+また, 後続のセクションは, 特定の Authenticator に特化した Usability 上の考慮時を鵜を説明するものである.
+
+<!--
 Usability considerations for typical usage of all authenticators include:
+-->
 
+すべての Authenticator の通常利用における Usability 上の考慮事項として, 以下のようなものが挙げられる.
+
+<!--
 * Provide information on the use and maintenance of the authenticator, e.g., what to do if the authenticator is lost or stolen, and instructions for use — especially if there are different requirements for first-time use or initialization.
+-->
 
+* Authenticator の利用および保守に関する情報を提供する. e.g., Authenticator を紛失したり盗難にあった場合の対処方法, および使用手順 - 特に初回利用時または初期化時に異なる要件がある場合
+
+<!--
 * Authenticator availability should also be considered as users will need to remember to have their authenticator readily available. Consider the need for alternate authentication options to protect against loss, damage, or other negative impacts to the original authenticator.
+-->
 
+* ユーザーは自身の Authenticator をすぐ利用できるようにしておく必要があるため, Authenticator の Availability (可用性) も考慮すべきである. 紛失, 損傷, その他のオリジナルの Authenticator への悪影響から保護するため, 代替となる Authentication の選択肢の必要性も検討すること.
+
+<!--
 * Whenever possible, based on AAL requirements, users should be provided with alternate authentication options. This allows users to choose an authenticator based on their context, goals, and tasks (e.g., the frequency and immediacy of the task). Alternate authentication options also help address availability issues that may occur with a particular authenticator.
+-->
+
+* 可能な限り, AAL 要件に基づき, ユーザーに代替の Authentication の選択肢を提供するべきである. これによりユーザーは自身のコンテキスト, 目標, タスク (e.g., タスクの頻度や緊急度) に基づき Authenticator を選択することができるようになる. 代替の Authentication の選択肢は, 特定の Authenticator で発生する可能性のある Availablility (可用性) の問題に対処する際にも役に立つ.
 
 * Characteristics of user-facing text:
   * Write user-facing text (e.g., instructions, prompts, notifications, error messages) in plain language for the intended audience. Avoid technical jargon and write for the audience's expected literacy level.
