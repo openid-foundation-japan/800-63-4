@@ -12,51 +12,122 @@ section: 5
 
 _This section is normative._
 
+<!--
 This section provides the detailed requirements specific to each type of authenticator. With the exception of reauthentication requirements specified in [Sec. 4](sec4_aal.md#AAL_SEC4) and the requirement for phishing resistance at AAL3 described in [Sec. 5.2.5](sec5_authenticators.md#verifimpers), the technical requirements for each of the authenticator types are the same regardless of the AAL at which the authenticator is used.
+-->
+
+このセクションでは, 各タイプの Authenticator の固有の詳細な要件を提供する. [Sec. 4](sec4_aal.md#AAL_SEC4)で指定された Reauthentication の要件および [Sec. 5.2.5](sec5_authenticators.md#verifimpers) で説明された AAL3 でのフィッシング耐性のための要件を除いて, Authenticator が使用される AAL に関係なく, 各 Authenticator タイプの技術要件は同じである.
 
 ## Requirements by Authenticator Type {#reqauthtype}
 
 ### Memorized Secrets {#memsecret}
 
+<!--
 A Memorized Secret authenticator — commonly referred to as a _password_ or, if numeric, a _PIN_ — is a secret value intended to be chosen and memorized by the user. Memorized secrets need to be of sufficient complexity and secrecy that it would be impractical for an attacker to guess or otherwise discover the correct secret value. A memorized secret is _something you know_.
 {:.authenticator-image}
+-->
 
+Memorized Secret Authenticator — 一般に _Password_ または数値の場合は _PIN_ と言われる — は, ユーザによって選択され記憶されることを意図した秘密の値である. Memorized Secret は, 攻撃者が正しい Secret Value を推測または発見することが現実的でないように, 十分に複雑で秘匿されている必要がある. Memorized Secret は _something you know_ である.
+{:.authenticator-image}
+
+<!--
 The requirements in this section apply to centrally verified memorized secrets that are used as an independent authentication factor, sent over an authenticated protected channel to the verifier of a CSP. Memorized secrets that are used locally by a multi-factor authenticator are referred to as _activation secrets_ and discussed in [Sec. 5.2.11](sec5_authenticators.md#s-5-2-11).
+-->
+
+このセクションの要件は, 認証された保護されたチャネルを介して CSP の Verifier に送信される, 独立した Authentication Factor として使用されるセントラルに検証された Memorized Secret に適用される. Multi-Factor Authenticator によってローカルで使用される Memorized Secret は, _Activation Secret_ と呼ばれ, [Sec. 5.2.11](sec5_authenticators.md#s-5-2-11) で議論される.
 
 #### Memorized Secret Authenticators
 
+<!--
 Memorized secrets **SHALL** be at least 8 characters in length. Memorized secrets **SHALL** be either chosen by the subscriber or assigned randomly by the CSP.
 
 If the CSP disallows a chosen memorized secret because it is on a blocklist of commonly used, expected, or compromised values (see [Sec. 5.1.1.2](sec5_authenticators.md#memsecretver)), the subscriber **SHALL** be required to choose a different memorized secret. No other complexity requirements for memorized secrets **SHALL** be imposed. A rationale for this is presented in [Appendix A](appA_memorized.md#appA) _Strength of Memorized Secrets_.
+-->
+
+Memorized Secret は, 長さが少なくとも8文字となる(**SHALL**). Memorized Secret は, Subscriber によって選択されるか, CSP によってランダムに割り当てられることとなる(**SHALL**). 
+
+CSP が, 頻繁に使用される, 予期される, または侵害されている値のブロックリストにあるために, 選択された Memorized Secret を許可しない場合 ([Sec. 5.1.1.2](sec5_authenticators.md#memsecretver) を参照), Subscriber は別の Memorized Secret を選択することになる(**SHALL**). Memorized Secret に他の複雑さの要件が課されることはない(**SHALL**). この根拠は, [Appendix A](appA_memorized.md#appA) _Strength of Memorized Secrets_ に示される. 
 
 #### Memorized Secret Verifiers {#memsecretver}
 
+<!--
 Verifiers **SHALL** require memorized secrets to be at least 8 characters in length. Verifiers **SHOULD** permit memorized secrets to be at least 64 characters in length. All printing ASCII [[RFC20]](references.md#ref-RFC20) characters as well as the space character **SHOULD** be acceptable in memorized secrets. Unicode [[ISO/ISC 10646]](references.md#ref-ISOIEC10646) characters **SHOULD** be accepted as well. Verifiers **MAY** make allowances for likely mistyping, such as removing leading and trailing whitespace characters prior to verification or allowing verification of memorized secrets with differing case for the leading character, provided memorized secrets remain at least 8 characters in length after such processing.
+-->
 
+Verifier は, 長さが少なくとも8文字の Memorized Secret を要求することとする(**SHALL**). Verifier は, Memorized Secret の長さが少なくとも64文字であることを許可する必要がある(**SHOULD**). すべての Printing ASCII 文字 [[RFC20]](references.md#ref-RFC20) と空白文字は Memorized Secret に受け入れられる必要がある(**SHOULD**). Unicode 文字 [[ISO/ISC 10646]](references.md#ref-ISOIEC10646) も同様に受け入れられる必要がある(**SHOULD**). Verifier は, Verification の前に先頭と末尾の空白文字を削除したり, 先頭の文字の大文字と小文字が異なる Memorized Secret の Verification を許可したり, 残りの文字数が8文字以上ある場合に先頭の文字の大文字・小文字が異なっていることを許したりなど, タイプミスの可能性を許容してもよい(**MAY**).
+
+<!--
 Verifiers **SHALL** verify the entire submitted memorized secret (i.e., not truncate the secret). For purposes of the above length requirements, each Unicode code point **SHALL** be counted as a single character.
+-->
 
+Verifier は, 提出された Memorized Secret 全体を検証することになる(**SHALL**)(つまり, Secret を切り捨てない). 前述の長さの要件のために, 各 Unicode コードポイントは1文字としてカウントされることになる(**SHALL**).
+
+<!--
 If Unicode characters are accepted in memorized secrets, the verifier **SHOULD** apply the normalization process for stabilized strings using either the NFKC or NFKD normalization defined in Sec. 12.1 of *Unicode Normalization Forms* [[UAX15]](references.md#ref-UAX15). This process is applied before hashing the byte string representing the memorized secret. Subscribers choosing memorized secrets containing Unicode characters **SHOULD** be advised that some characters may be represented differently by some endpoints, which can affect their ability to authenticate successfully.
+-->
 
+ Memorized Secret でUnicode文字が受け入れられる場合, Verifier は Sec. 12.1 of *Unicode Normalization Forms* [[UAX15]](references.md#ref-UAX15) で定義された NFKC または NFKD 正規化を使用して, スタビライズされた文字列の正規化プロセスを適用する必要がある(**SHOULD**). このプロセスは, Memorized Secret を表すバイト文字列をハッシュする前に適用される. Unicode 文字を含む Memorized Secret を選択する Subscriber は, 一部の文字が一部のエンドポイントによって異なる方法で表現される可能性があることを通知される必要がある(**SHOULD**). これは, 正常に Authenticate する能力に影響を与える可能性がある.
+
+<!--
 Memorized secret verifiers **SHALL NOT** permit the subscriber to store a hint that is accessible to an unauthenticated claimant. Verifiers **SHALL NOT** prompt subscribers to use specific types of information (e.g., "What was the name of your first pet?", a technique known as knowledge-based authentication (KBA) or security questions) when choosing memorized secrets.
+-->
 
+ Memorized Secret の Verifier は, Subscriber に認証されていない Claimant がアクセスできるヒントを保存することを許可することはない(**SHALL NOT**). Verifier は, Memorized Secret を選択する際に, Subscriber に特定の種類の情報 (例えば, 「あなたの最初のペットの名前は何ですか?」, 知識ベース認証 (KBA) または秘密の質問として知られる手法) を使用するように促すことはない(**SHALL NOT**).
+
+<!--
 When processing requests to establish and change memorized secrets, verifiers **SHALL** compare the prospective secrets against a blocklist that contains values known to be commonly used, expected, or compromised. For example, the list **MAY** include, but is not limited to:
+-->
 
+ Memorized Secret を確立および変更するリクエストを処理するとき, Verifier は, 頻繁に使用される, 予期される, または侵害されていることが知られている値を含むブロックリストに対抗するために, 予想される Secret を比較することになる(**SHALL**). 例えば, リストには以下が含んでもよい(**MAY**), これらに限定されない:
+
+<!--
 * Passwords obtained from previous breach corpuses.
 * Dictionary words.
 * Repetitive or sequential characters (e.g. 'aaaaaa', '1234abcd').
 * Context-specific words, such as the name of the service, the username, and derivatives thereof.
+-->
 
+* 以前の侵害コーパスから取得したパスワード.
+* 辞書の単語.
+* 反復または連続した文字 (例: 'aaaaaa', '1234abcd').
+* サービスの名前, ユーザ名, およびその派生語など, コンテキスト特有の単語。
+
+<!--
 If the chosen secret is found in the blocklist, the CSP or verifier **SHALL** advise the subscriber that they need to select a different secret, **SHALL** provide the reason for rejection, and **SHALL** require the subscriber to choose a different value. Since the blocklist is used to defend against brute-force attacks and unsuccessful attempts are rate limited as described below, the blocklist **SHOULD** be of a size sufficient to prevent subscribers from choosing memorized secrets that attackers are likely to guess before reaching the attempt limit. Excessively large blocklists **SHOULD NOT** be used because they frustrate subscribers' attempts to establish an acceptable memorized secret and do not provide significantly improved security.
+-->
 
+選択された Secret がブロックリストの中にある場合, CSP または Verifier は Subscriber に別の Secret を選択する必要があることを通知することとなり(**SHALL**), 拒否の理由を提供することになり(**SHALL**), Subscriber に別の値を選択することを要求することになる(**SHALL**). ブロックリストはブルートフォース攻撃を防御するために使用され, 試行の失敗は以下で説明するようにレート制限されるため, ブロックリストは Subscriber が攻撃者が試行リミットに到達する前に推測する可能性のある Memorized Secret を選択することを防ぐのに十分なサイズにする必要がある(**SHOULD**). 過度に大きなブロックリストは使用しないほうがよい(**SHOULD NOT**). これは, Subscriber が許容される Memorized Secret を確立しようとする試みを妨げ, 大幅に改善されたセキュリティを提供しないためである.
+
+<!--
 Verifiers **SHALL** offer guidance to the subscriber to assist the user in choosing a strong memorized secret. This is particularly important following the rejection of a memorized secret on the above list as it discourages trivial modification of listed (and likely very weak) memorized secrets [[Blocklists]](references.md#ref-blocklists).
+-->
 
+Verifierは, 強力な Memorized Secret を選択する際にユーザーを支援するために, Subscriber にガイダンスを提供することとなる(**SHALL**). これは, リストされた (そしておそらく非常に弱い) Memorized Secret の些細な変更を思いとどまらせるため, 上記のリストの記憶されたシークレットの拒否に続いて特に重要である. [[Blocklists]](references.md#ref-blocklists)
+
+<!--
 Verifiers **SHALL** implement a rate-limiting mechanism that effectively limits the number of failed authentication attempts that can be made on the subscriber account as described in [Sec. 5.2.2](sec5_authenticators.md#throttle).
+-->
 
+Verifier は, [Sec. 5.2.2](sec5_authenticators.md#throttle) で説明されている通り, Subscriber Account で試行できる Authentication の失敗回数を効果的に制限するレート制限メカニズムを実装することとなる(**SHALL**). 
+
+<!--
 Verifiers **SHALL NOT** impose other composition rules (e.g., requiring mixtures of different character types or prohibiting consecutively repeated characters) for memorized secrets. Verifiers **SHALL NOT** require users to periodically change memorized secrets. However, verifiers **SHALL** force a change if there is evidence of compromise of the authenticator.
+-->
 
+Verifier は,  Memorized Secret に他の構成ルールを課すことはない(**SHALL NOT**) (例: 異なる文字タイプの混合の要求, 連続して繰り返される文字の禁止). Verifier は, Memorized Secret を定期的に変更することをユーザーに要求することはない(**SHALL NOT**). ただし, Authenticator の侵害の証拠がある場合, Verifier は変更を強制することとなる(**SHALL**).
+
+<!--
 Verifiers **SHALL** allow the use of password managers. To facilitate their use, verifiers **SHOULD** permit claimants to use "paste" functionality when entering a memorized secret. Password manangers may increase the likelihood that users will choose stronger memorized secrets.
+-->
 
+Verifier は, パスワードマネージャーの使用を許可することになる(**SHALL**). それらを使用しやすくするために, Verifier は, Memorized Secret を入力するときに, Claimant が「貼り付け」機能の使用を許可ことになる(**SHALL**). パスワードマネージャーは, ユーザーがより強力な Memorized Secret を選択する可能性を高める場合がある.
+
+<!--
 In order to assist the claimant in successfully entering a memorized secret, the verifier **SHOULD** offer an option to display the secret — rather than a series of dots or asterisks — while it is entered and until it is submitted to the verifier. This allows the claimant to confirm their entry if they are in a location where their screen is unlikely to be observed. The verifier **MAY** also permit the claimant's device to display individual entered characters for a short time after each character is typed to verify correct entry. This is common on mobile devices.
+-->
+
+Claimant が Memorized Secret を正常に入力することを支援するために, Verifier は, 入力されている間および 
+Verifier に送信されるまで, 一連のドットやアスタリスクではなく, Secret を表示するオプションを提供する必要がある(**SHOULD**). これにより Claimant は, 自分の画面が観察される可能性が低い場所にいる場合, 自分の入力を確認できる. Verifier は, 正しい入力を検証するために各文字が入力された後, 入力された個々の文字を短時間表示することを要求者のデバイスに許可することもできます(MAY)。 これは, モバイル デバイスでは一般的です。
 
 The verifier **SHALL** use approved encryption and an authenticated protected channel when requesting memorized secrets in order to provide resistance to eavesdropping and adversary-in-the-middle attacks.
 
