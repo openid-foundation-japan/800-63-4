@@ -12,7 +12,11 @@ section: 10
 
 _This section is informative._
 
+<!--
 > Note: In this section, the term *users* means *claimants* or *subscribers.*
+-->
+
+本章では, *ユーザー* という用語は *Claimant* ないし *Subscriber* を意味する.
 
 [[ISO/IEC9241-11]](references.md#ref-ISOIEC9241) defines usability as the "extent to which a system, product, or service can be used by specified users to achieve specified goals with effectiveness, efficiency and satisfaction in a specified context of use." This definition focuses on users, their goals, and the context of use as key elements necessary for achieving effectiveness, efficiency, and satisfaction. A holistic approach that accounts for these key elements is necessary to achieve usability.
 
