@@ -22,15 +22,15 @@ _This section is informative._
 [[ISO/IEC9241-11]](references.md#ref-ISOIEC9241) defines usability as the "extent to which a system, product, or service can be used by specified users to achieve specified goals with effectiveness, efficiency and satisfaction in a specified context of use." This definition focuses on users, their goals, and the context of use as key elements necessary for achieving effectiveness, efficiency, and satisfaction. A holistic approach that accounts for these key elements is necessary to achieve usability.
 -->
 
-[[ISO/IEC9241-11]](references.md#ref-ISO9241) は Usability を "特定の利用コンテキストにおいて, 特定のユーザーが, あるシステム, プロダクトないしはサービスを利用して, 特定の目的を, どの程度有効的, 効率的かつ満足のいくレベルで達成できるかの度合い" と定義している.
-この定義はユーザー, 目的および利用コンテキストを, 有効性, 効率性および満足度の達成に必要な重要要素として捉えている.
+[[ISO/IEC9241-11]](references.md#ref-ISO9241) は Usability を "特定の利用コンテキストにおいて, 特定のユーザーが, あるシステム, プロダクトないしはサービスを利用して, 特定の目標を, どの程度有効的, 効率的かつ満足のいくレベルで達成できるかの度合い" と定義している.
+この定義はユーザー, 目標および利用コンテキストを, 有効性, 効率性および満足度の達成に必要な重要要素として捉えている.
 Usability を実現するには, これらの重要要素を考慮した総合的なアプローチが必要となる.
 
 <!--
 A user's goal for accessing an information system is to perform an intended task. Authentication is the function that enables this goal. However, from the user's perspective, authentication stands between them and their intended task. Effective design and implementation of authentication makes it easy to do the right thing, hard to do the wrong thing, and easy to recover when the wrong thing happens.
 -->
 
-ユーザーが情報システムに Access する目的とは, 彼らが意図した何らかのタスクの実行にある.
+ユーザーが情報システムに Access する際の目標とは, 彼らが意図した何らかのタスクの実行にある.
 Authentication とは, その目的を可能とする機能である.
 しかしながらユーザー視点で見ると, Authentication は彼らと彼らの意図したタスクの間に存在するものである.
 Authentication の効果的な設計および実装は, 正しいことの実行を容易にし, 誤ったことの実行を困難にし, 間違いが起こった場合のリカバリーを容易にする.
