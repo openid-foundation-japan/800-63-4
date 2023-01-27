@@ -154,7 +154,7 @@ The following privacy requirements apply to all CSPs providing identity services
 1. PII のProcessingは、ClaimされたIdentityの実在性をvalidateし、ClaimされたIdentityをApplicantに関連付け、RPに対しては認可の判断に利用するAttributeを提供するために、必要最低限のものに限られるものとする(**SHALL**)。
 2. CSP は、[Sec. 5.1.2](sec5_ial.ja.md#PrivacyReqs) のプライバシー要件に従って、Identity Resolutionに必要な場合に社会保障番号 (SSN) をAttributeとして収集してもよい(**MAY**)。加えて、CSP は、SSN データの拡散と保持を制限するために、プライバシー保護技術（例：完全なAttribute値そのものではなく、派生したAttribute値を送受信）を実装するものとする(**SHALL**)。SSN を把握していることは、Identity Proofingと見なされないものとする(**SHALL NOT**)。
 3. 収集時に、CSP は、Identity Proofingに必要なAttributeを収集する目的をApplicantに対して明示的に通知するものとする(**SHALL**)。目的としては、そのようなAttributeがIdentity Proofingプロセスを完了するために任意であるか必須であるかどうか、CSP がApplicantから変化するSubscriberアカウントに保存するつもりの特定のAttributeおよび他の機微データ、Attributeを提供しない場合の結果、そして何らかのレコード保持要件がある場合はその詳細などが含まれる。
-4. CSP は、Applicantの苦情およびIdentity Proofingに起因する問題を解決するためのメカニズムを提供するものとする(**SHALL**)。これらのメカニズムは、Applicantが見つけやすく、利用しやすいものであるものとする(**SHALL**)。CSP は、苦情または問題の解決を達成するために、そのメカニズムが効果的であるかをアセスメントするものとする(**SHALL**)。
+4. CSP は、Applicantの苦情およびIdentity Proofingに起因する問題を救済するためのメカニズムを提供するものとする(**SHALL**)。これらのメカニズムは、Applicantが見つけやすく、利用しやすいものであるものとする(**SHALL**)。CSP は、苦情または問題の解決を達成するために、そのメカニズムが効果的であるかをアセスメントするものとする(**SHALL**)。
 
 [^privacyframework]: プライバシーリスク評価の詳細については、NIST プライバシーフレームワークを参照: エンタープライズリスクマネジメントを通じてプライバシーを改善するためのツール <https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.01162020.pdf>
 
