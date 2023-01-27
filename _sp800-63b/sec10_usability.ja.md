@@ -148,6 +148,7 @@ Usability considerations for typical usage of all authenticators include:
 
 * 可能な限り, AAL 要件に基づき, ユーザーに代替の Authentication の選択肢を提供するべきである. これによりユーザーは自身のコンテキスト, 目標, タスク (e.g., タスクの頻度や緊急度) に基づき Authenticator を選択することができるようになる. 代替の Authentication の選択肢は, 特定の Authenticator で発生する可能性のある Availablility (可用性) の問題に対処する際にも役に立つ.
 
+<!--
 * Characteristics of user-facing text:
   * Write user-facing text (e.g., instructions, prompts, notifications, error messages) in plain language for the intended audience. Avoid technical jargon and write for the audience's expected literacy level.
   * Consider the legibility of user-facing and user-entered text, including font style, size, color, and contrast with surrounding background. Illegible text contributes to user entry errors. To enhance legibility, consider the use of:
@@ -155,27 +156,71 @@ Usability considerations for typical usage of all authenticators include:
     * Sans serif fonts for electronic displays. Serif fonts for printed materials.
     * Fonts that clearly distinguish between easily confusable characters (e.g., the capital letter "O" and the number "0").
     * A minimum font size of 12 points as long as the text fits for display on the device.
+-->
 
+* ユーザーに表示するテキストの特徴
+  * ユーザーに表示するテキスト (e.g., 手順書, プロンプト, 通知, エラーメッセージ) は, 対象読者向けに平易な言葉で記述すること. 専門用語を避け, 読者に想定されるリテラシーレベルに合わせた記述にすること.
+  * ユーザーに表示するテキストとユーザーが入力するテキストの読みやすさを考慮すること. これにはフォントスタイル, サイズ, 色, 周囲の背景とのコントラストなどを含む. 読みにくいテキストは, ユーザーの入力エラーの元となる. 読みやすさを向上させるため, 以下の採用を検討すること.
+    * ハイコントラスト. 最大のハイコントラストは白地に黒である.
+    * 電子的表示用には Sans Serif フォント. 印刷物用には Serif フォント.
+    * 混同しやすい文字 (e.g., 大文字の "O" と数字の "0") を明確に区別できるフォント.
+    * テキストがデバイスのディスプレイでの表示に治る限り, 最小フォントサイズは12ポイント.
+
+<!--
 * User experience during authenticator entry:
   * Offer the option to display text during entry, as masked text entry is error-prone. Once a given character is displayed long enough for the user to see, it can be hidden. Consider the device when determining masking delay time, as it takes longer to enter memorized secrets on mobile devices (e.g., tablets and smartphones) than on traditional desktop computers. Ensure masking delay durations are consistent with user needs.
   * Ensure the time allowed for text entry is adequate (i.e., the entry screen does not time out prematurely). Ensure allowed text entry times are consistent with user needs.
   * Provide clear, meaningful and actionable feedback on entry errors to reduce user confusion and frustration. Significant usability implications arise when users do not know they have entered text incorrectly.
   * Allow at least 10 entry attempts for authenticators requiring the entry of the authenticator output by the user. The longer and more complex the entry text, the greater the likelihood of user entry errors.
   * Provide clear, meaningful feedback on the number of remaining allowed attempts. For rate limiting (i.e., throttling), inform users how long they have to wait until the next attempt to reduce confusion and frustration.
+-->
 
+* Authenticator 入力中のユーザーエクスペリエンス
+  * マスクされたテキスト入力はエラーを引き起こしやすいため, 入力中にテキストを表示するオプションを提供すること. 入力文字をユーザーが視認するのに十分長い間表示した後は, 非表示にしてもよい. 従来のデスクトップコンピューターよりモバイルデバイス (e.g., タブレットやスマートフォン) のほうが Memorized Secret の入力に時間がかかるので, マスキング遅延時間を決定する際はデバイスを考慮すること. マスキング遅延時間がユーザーのニーズに合致していることを保証すること.
+  * テキスト入力に十分な時間が与えられている (i.e., 入力画面が途中でタイムアウトにならない) ことを保証すること. 許可されたテキスツ入力時間がユーザーのニーズに合致していることを保証すること.
+  * ユーザーの混乱とフラストレーションを軽減するため, 入力エラーについての明確で意味のある対応可能なフィードバックを提供すること. ユーザーがテキスト誤入力に気づかないと, ユーザビリティに重大な影響を及ぼす.
+  * ユーザーに Authenticator 出力を入力させるような Authenticator に関しては, 少なくとも10回の入力試行を許可すること. 入力テキストが長くふつ雑になればなるほど, ユーザーの入力エラー率も高くなる.
+  * 許可された残りの試行回数について, 明確で意味のあるフィードバックを提供すること. レート制限 (i.g., スロットリング) については, 混乱とフラストレーションを軽減するため, 次に試行までどれくらい待つ必要があるのかをユーザーに知らせること.
+
+<!--
 * Minimize the impact of form-factor constraints, such as limited touch and display areas on mobile devices:
   * Larger touch areas improve usability for text entry since typing on small devices is significantly more error prone and time consuming than typing on a full-size keyboard. The smaller the onscreen keyboard, the more difficult it is to type, due to the size of the input mechanism (e.g., a finger) relative to the size of the on-screen target.
   * Follow good user interface and information design for small displays.
+-->
 
+* モバイルデバイスのタッチおよびディスプレイ領域の制限など, フォームファクターの制約による影響を最小化すること.
+  * 小さなデバイス上でのタイピングはフルサイズキーボードでのタイピングと比べてはるかにエラー率が高く時間もかかるため, より大きなタッチ領域はテキスト入力の Usability を向上させる. スクリーン上のキーボードが小さいほど, 入力メカニズム (e.g., 指) のサイズとスクリーン上の対象物のサイズとの兼ね合いで, より入力が困難になる.
+  * 小さなディスプレイ向けの優れたユーザーインタフェースおよび情報デザインに従うこと.
+
+<!--
 Intermittent events include events such as reauthentication, subscriber account lock-out, expiration, revocation, damage, loss, theft, and non-functional software.
+-->
 
+断続的イベントには, Reauthentication, Subscriber Account のロックアウト, 期限切れ, 失効, 損傷, 紛失, 盗難, 機能しないソフトウェアといったイベントが含まれる.
+
+<!--
 Usability considerations for intermittent events across authenticator types include:
+-->
 
+すべての Authenticator Type における断続的イベントに関する Usability 上の考慮事項には以下のようなものが挙げられる.
+
+<!--
 * To prevent users from needing to reauthenticate due to user inactivity, prompt users in order to trigger activity just before (e.g., 2 minutes) an inactivity timeout would otherwise occur.
+-->
 
+* ユーザーが非アクティブであることが原因でユーザーが Reauthentication する必要がないように, 非アクティブタイムアウトが発生する直前 (e.g., 2分前) にアクティビティをトリガーするようユーザーに促すこと.
+
+<!--
 * Prompt users with adequate time (e.g., 1 hour) to save their work before the fixed periodic reauthentication event required regardless of user activity.
+-->
 
+* ユーザーのアクティビティに関係なく固定の定期的な Reauthentication イベントが必要な場合, その前に十分な時間 (e.g., 1時間) を設けてユーザーに作業を保存するよう促すこと.
+
+<!--
 * Clearly communicate how and where to acquire technical assistance. For example, provide users with information such as a link to an online self-service feature, chat sessions or a phone number for help desk support. Ideally, sufficient information can be provided to enable users to recover from intermittent events on their own without outside intervention.
+-->
+
+* 技術支援を受ける方法と場所を明確に伝えること. 例えば, オンラインのセルフサービス機能へのリンク, チャット Session, ヘルプデスクサポート用の電話番号などの情報をユーザーに提供すること. 理想的には, ユーザーが外部の介入なしに自身で断続的イベントからリカバリーできるよう十分な情報を提供されることが望ましい.
 
 ## Usability Considerations by Authenticator Type
 In addition to the previously described general usability considerations applicable to most authenticators ([Sec. 10.1](sec10_usability.md#usabilitycommon)), the following sections describe other usability considerations specific to particular authenticator types.
