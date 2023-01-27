@@ -598,9 +598,19 @@ Biometrics は Multi-factor Authentication ソリューションの Activation F
 {:latex-literal="true"}
 
 ## Biometrics Usability Considerations {#biomusability}
-This section provides a high-level overview of general usability considerations for biometrics. A more detailed discussion of biometric usability can be found in *Usability & Biometrics, Ensuring Successful Biometric Systems* [[UsabilityBiometrics]](references.md#ref-use-and-bio).
 
+<!--
+This section provides a high-level overview of general usability considerations for biometrics. A more detailed discussion of biometric usability can be found in *Usability & Biometrics, Ensuring Successful Biometric Systems* [[UsabilityBiometrics]](references.md#ref-use-and-bio).
+-->
+
+本セクションでは, Biometrics の一般的な Usability 上の考慮点について概説する.
+Biometrics の Usability に関するより詳細な議論は *Usability & Biometrics, Ensuring Successful Biometric Systems* [[UsabilityBiometrics]](references.md#ref-use-and-bio) を参照のこと.
+
+<!--
 Although there are other biometric modalities, the following three biometric modalities are more commonly used for authentication: fingerprint, face and iris.
+-->
+
+Biometrics の様式は多様であるが, 以下で述べる3つの Biometrics 様式, 指紋, 顔, 虹彩は, その中でもより一般的に Authentication に用いられる.
 
 <!--
 **_Typical Usage_**
@@ -608,30 +618,69 @@ Although there are other biometric modalities, the following three biometric mod
 
 **_Typical Usage (通常利用)_**
 
+<!--
 * For all modalities, user familiarity and practice with the device improves performance.
+-->
 
+* 全ての様式について, ユーザーがデバイスに慣れて実践することで, そのパフォーマンスは向上する.
+
+<!--
 * Device affordances (i.e., properties of a device that allow a user to perform an action), feedback, and clear instructions are critical to a user's success with the biometric device. For example, provide clear instructions on the required actions for liveness detection.
+-->
 
+* デバイスのアフォーダンス (i.e., ユーザーがアクションを実行できるようにするデバイスのプロパティ), フィードバックおよび明確な手順書は, ユーザーが Biometrics デバイスを使用して成功体験を得るのに不可欠である. 例えば, Liveness Detection に必要なアクションに関する明確な手順書を提供すること.
+
+<!--
 * Ideally, users can select the modality they are most comfortable with for their second authentication factor. The user population may be more comfortable and familiar with — and accepting of — some biometric modalities than others.
+-->
 
+* 理想的には, ユーザーが2つめの Authentication Factor として最も使いやすい様式を選択できることが望ましい. ユーザー母集団はある Biometrics 様式に他より慣れ親しんで - かつ受け入れて - いる可能性がある.
+
+<!--
 * User experience with biometrics as an activation factor.
   * Provide clear, meaningful feedback on the number of remaining allowed attempts. For example, for rate limiting (i.e., throttling), inform users of the time period they have to wait until next attempt to reduce user confusion and frustration.
+-->
 
+* Activation Factor としての Biometrics のユーザーエクスペリエンス
+  * 許可された残りの試行回数について, 明確で意味のあるフィードバックを提供すること. レート制限 (i.g., スロットリング) については, 混乱とフラストレーションを軽減するため, 次に試行までどれくらい待つ必要があるのかをユーザーに知らせること.
+
+<!--
 * Fingerprint Usability Considerations:
   * Users have to remember which finger(s) they used for initial enrollment.
   * The amount of moisture on the finger(s) affects the sensor's ability for successful capture.
   * Additional factors influencing fingerprint capture quality include age, gender, and occupation (e.g., users handling chemicals or working extensively with their hands may have degraded friction ridges).
+-->
 
+* 指紋認証に関する Usability 上の考慮事項
+  * ユーザーはどの指を登録したか覚えておく必要がある.
+  * 指の湿気がセンサーの読取精度に影響する.
+  * 指紋読取精度に影響を与えるその他の要因として, 年齢, 性別, 職業 (e.g., 化学薬品を扱ったり手を酷使する仕事についているユーザーは, 指紋が劣化している可能性がある) などが挙げられる.
+
+<!--
 * Face Usability Considerations:
   * Users have to remember whether they wore any artifacts (e.g., glasses) during enrollment because it affects facial recognition accuracy.
   * Differences in environmental lighting conditions can affect facial recognition accuracy.
   * Facial expressions affect facial recognition accuracy (e.g., smiling versus neutral expression).
   * Facial poses affect facial recognition accuracy (e.g., looking down or away from the camera).
+-->
 
+* 顔認証に関する Usability 上の考慮事項
+  * 顔認識精度に影響するため, ユーザーは Enrollment 時に人工物 (e.g., メガネ) を着用していたかどうか覚えておく必要がある.
+  * 環境光条件の違いが顔認識精度に影響を及ぼす可能性がある.
+  * 表情 (e.g., 笑顔と無表情) は顔認識精度に影響を与える.
+  * 顔のポーズ (e.g., 下を向いている, カメラから離れている) は顔認識精度に影響を与える.
+
+<!--
 * Iris Usability Considerations:
   * Wearing colored contacts may affect the iris recognition accuracy.
   * Users who have had eye surgery may need to re-enroll post-surgery.
   * Differences in environmental lighting conditions can affect iris recognition accuracy, especially for certain iris colors.
+-->
+
+* 虹彩認証に関する Usability 上の考慮事項
+  * カラーコンタクトを着用すると, 虹彩認識精度に影響を与える可能性がある.
+  * 目の手術を受けたユーザーは, 手術後に再度 Enrollment を行う必要があるかもしれない.
+  * 環境光条件の違いが, 特に特定の虹彩の色について, 虹彩認識精度に影響を与える可能性がある.
 
 <!--
 **_Intermittent Events_**
