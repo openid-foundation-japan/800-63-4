@@ -568,9 +568,24 @@ Usability considerations for typical usage include:
 * USB ポートなどの直接的コンピューターインタフェースの可用性 (Availability) に関する制約が Usability 上の問題を引き起こす可能性もある. 例えば, ラップトップコンピューターの USB ポート数はしばしば非常に限られている. これによりユーザーは Multi-Factor Cryptographic Device を使用するために他の USB 周辺機器を取り外す必要があるかもしれない.
 
 ## Summary of Usability Considerations
-[Figure 3](sec10_usability.md#fig-3) summarizes the usability considerations for typical usage and intermittent events for each authenticator type. Many of the usability considerations for typical usage apply to most of the authenticator types, as demonstrated in the rows. The table highlights common and divergent usability characteristics across the authenticator types. Each column allows readers to easily identify the usability attributes to address for each authenticator. Depending on users' goals and context of use, certain attributes may be valued over others. Whenever possible, provide alternative authenticator types and allow users to choose between them.
 
+<!--
+[Figure 3](sec10_usability.md#fig-3) summarizes the usability considerations for typical usage and intermittent events for each authenticator type. Many of the usability considerations for typical usage apply to most of the authenticator types, as demonstrated in the rows. The table highlights common and divergent usability characteristics across the authenticator types. Each column allows readers to easily identify the usability attributes to address for each authenticator. Depending on users' goals and context of use, certain attributes may be valued over others. Whenever possible, provide alternative authenticator types and allow users to choose between them.
+-->
+
+[Figure 3](sec10_usability.md#fig-3) は各 Authenticator Type 毎に通常利用 (Typical Usage) および断続的イベント (Intermittent Events) における Usability 上の考慮事項をまとめたものである.
+表を見ても分かる通り, 通常利用における Usability 上の考慮事項の多くが, ほとんどの Authenticator Type に当てはまる.
+この表は Authenticator Type 全体にわたって共通するさまざまな Usability の特徴を示している.
+各カラムにより, 読者は各 Authenticator に対応するための Usability Attribute を簡単に識別することができる.
+ユーザーの目標と利用コンテキストに応じて, 特定の Attribute が他の Attribute より高く評価される場合もある.
+可能な限り代替の Authenticator Type を提供し, ユーザーがそれらの中から選択できるようにすることが望ましい.
+
+<!--
 Multi-factor authenticators (e.g., multi-factor OTP devices, multi-factor cryptographic software, and multi-factor cryptographic devices) also inherit their secondary factor's usability considerations. As biometrics are only allowed as an activation factor in multi-factor authentication solutions, usability considerations for biometrics are not included in [Figure 3](sec10_usability.md#fig-3) and are discussed in [Sec. 10.4](sec10_usability.md#biomusability).
+-->
+
+Multi-factor Authenticator (e.g., Multi-factor OTP Device, Multi-factor Cryptographic Software, Multi-factor Cryptographic Device) は, さらに2つめの Authentication Factor に関する Usability 上の考慮事項も受け継いでいる.
+Biometrics は Multi-factor Authentication ソリューションの Activation Factor としてのみ許容されているため, Biometirics に関する Usability 上の考慮事項は [Figure 3](sec10_usability.md#fig-3) には含まれず, [Sec. 10.4](sec10_usability.md#biomusability) で述べられている.
 
 [Figure 3 Usability Considerations Summary by Authenticator Type](sec10_usability.md#t3){:name="fig-3"}
 {:latex-ignore="true"}
