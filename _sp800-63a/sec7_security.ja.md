@@ -32,7 +32,7 @@ Effective protection of identity proofing processes requires the layering of sec
  * **Infrastructure**: where attackers may seek to compromise confidentiality, availability, and integrity of the infrastructure, data, software, or people supporting the CSPs identity proofing process (e.g., distributed denial of service, insider threats)
 {% endcomment %}
 
-このセクションでは、なりすましと虚偽・詐称表現の脅威を中心に説明します。インフラストラクチャの脅威は、従来のコンピュータセキュリティコントロール（例：侵入防御、記録保持、独立監査）によって考慮されており、このドキュメントの範囲外であるためです。セキュリティ対策の詳細については、[[[SP800-53]](sec11_references.ja.md#ref-SP800-53) _Recommended Security and Privacy Controls for Federal Information Systems and Organizations_ を参照すること。
+このセクションでは、なりすましと虚偽・詐称表現の脅威を中心に説明する。インフラストラクチャの脅威は、従来のコンピュータセキュリティコントロール（例：侵入防御、記録保持、独立監査）によって考慮されており、このドキュメントの範囲外であるためです。セキュリティ対策の詳細については、[[[SP800-53]](sec11_references.ja.md#ref-SP800-53) _Recommended Security and Privacy Controls for Federal Information Systems and Organizations_ を参照すること。
 
 {% comment %}
 This section focuses on impersonation and false or fraudulent representation threats, as infrastructure threats are addressed by traditional computer security controls (e.g., intrusion protection, record keeping, independent audits) and are outside the scope of this document. For more information on security controls, see [[SP800-53]](sec11_references.md#ref-SP800-53), _Recommended Security and Privacy Controls for Federal Information Systems and Organizations_.

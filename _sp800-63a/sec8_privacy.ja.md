@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: default.ja
 title: Privacy
 navOrder: 8
 navTitle: Privacy
@@ -8,21 +8,42 @@ anchor: privacy-section-header
 section: 8
 ---
 
+# プライバシーの考慮事項 {#privacy-section-header}
+{% comment %}
 # Privacy Considerations {#privacy-section-header}
-
+{% endcomment %}
 _This section is informative._
 
+これらのプライバシーの考慮事項は [Sec. 5.1.2](sec5_ial.ja.md#PrivacyReqs)で規定された要件を実装する際に、追加情報を提供する。
+
+{% comment %}
 These privacy considerations provide additional information in implementing the requirements set forth in [Sec. 5.1.2](sec5_ial.md#PrivacyReqs).
+{% endcomment %}
 
+
+## 収集とデータ最小化
+{% comment %}
 ## Collection and Data Minimization
+{% endcomment %}
 
+ガイドラインは、適切な Identity Resolution、Validation および Verification のための利用可能な最善の方法に基づいて、Claim された Identity の存在を Validate し、Claim された Identity を Applicant と関連付けるために必要な PII のみを収集することを認めている。不必要な PII を収集すると、Identity Proofing サービスに使用されない情報がなぜ収集されるのかについて混乱が生じる恐れがある。これは侵襲性または行き過ぎた懸念につながり、Applicant からの信頼を失う可能性がある。さらに、PII の保持は許可されていないアクセスまたは使用に対して脆弱になる可能性がある。データの最小化により、許可されていないアクセスまたは使用の恐れがある PII の量を減らし、Identity Proofing プロセスに対する信頼を高めることができる。
+
+{% comment %}
 The guidelines permit the collection of only the PII necessary to validate the existence of the claimed identity and associate the claimed identity to the applicant, based on best available practices for appropriate identity resolution, validation, and verification. Collecting unnecessary PII can create confusion regarding why information not being used for the identity proofing service is being collected. This leads to invasiveness or overreach concerns, which can lead to loss of applicant trust. Further, PII retention can become vulnerable to unauthorized access or use. Data minimization reduces the amount of PII vulnerable to unauthorized access or use, and encourages trust in the identity proofing process.
+{% endcomment %}
 
 ### Social Security Numbers
+これらのガイドラインは、Identity Resolution で使用するための Attribute として CSP が SSN を収集することを認めている。しかし、SSN への過度の依存は誤用を助長し、Applicant を Identity 盗難 などによる危害のリスクにさらす可能性がある。それでも、SSN は CSP、特に Applicant を機関記録に関連付けるために SSN を使用する連邦機関にとって、Identity Resolution を円滑にする場合がある。本書は、Attribute としての SSN の役割を認識しており、その使用について適切な許容を行う。SSN の知識は Identity Evidence として機能するのに十分ではない。
 
+{% comment %}
 These guidelines permit the CSP collection of the SSN as an attribute for use in identity resolution. However, over-reliance on the SSN can contribute to misuse and place the applicant at risk of harm, such as through identity theft. Nonetheless, the SSN may facilitate identity resolution for CSPs, in particular federal agencies that use the SSN to correlate an applicant to agency records. This document recognizes the role of the SSN as an attribute and makes appropriate allowance for its use. Knowledge of the SSN is not sufficient to serve as identity evidence. 
+{% endcomment %}
 
+可能な場合、CSP および機関は、Identity Proofingプロセス中の SSN の拡散および露呈を制限するメカニズムを検討する必要がある。これは、Attribute の Validation プロセス中に、SSN が第三者のプロバイダに伝達される場合に特に適切である。可能な限り、プライバシー保護技術およびテクノロジーを適用して、個人の SSN が第三者システムで露呈、保存、または維持されるリスクを軽減する必要がある。この例としては、第三者によって不必要に送信および格納されることを要しない SSN の Validity を確認するための Attribute 要求（たとえば、Validator からの、はい/いいえの回答）の使用が考えられる。Identity Proofing プロセスのすべての Attribute と同様に、処理される各 Attribute の価値とリスクは、プライバシーリスク評価および連邦機関の場合は PIA および SORN の対象となる。SSN は、アプリケーションの保証およびリスクレベルに関連する解決をサポートする目的で必要な場合にだけ収集されるべきである。
+
+{% comment %}
 Where possible, CSPs and agencies should consider mechanisms to limit the proliferation and exposure of SSNs during the identity proofing process. This is particularly pertinent where the SSN is communicated to third party providers during attribute validation processes. To the extent possible, privacy protective techniques and technologies should be applied to reduce the risk of an individual’s SSN being exposed, stored, or maintained by third party systems. Examples of this could be the use of attribute claims (e.g., yes/no responses from a validator) to confirm the validity of a SSN without requiring it to be unnecessarily transmitted and stored by the third party. As with all attributes in the identity proofing process, the value and risk of each attribute being processed is subject to a privacy risk assessment and for federal agencies the PIA and SORN. The SSN should only be collected where it is necessary to support resolution associated with the applications assurance and risk levels. 
+{% endcomment %}
 
 ## Notice and Consent {#consent}
 
