@@ -505,7 +505,13 @@ Usability considerations for typical usage include:
 
 **_Typical Usage (通常利用)_**
 
+<!--
 In order to authenticate, users prove possession and control of the cryptographic key stored on disk or some other "soft" media that requires activation. The activation is through the input of a second authentication factor, either a memorized secret or a biometric characteristic. Usability considerations for the additional factor apply as well — see [Sec. 10.2.1](sec10_usability.md#memorizedsecrets) for memorized secrets and [Sec. 10.4](sec10_usability.md#biomusability) for biometrics used in multi-factor authenticators.
+-->
+
+Authenticate するため, ユーザーは Activation が必要なディスクまたはその他の "ソフト" メディアに保存されている Cryptographic Key の保持および管理を証明する.
+Activation は2つめの Authenticator Factor, Memorized Secret または Biometrics の特徴のいずれか, の入力により行われる.
+ここでは追加の Authentication Factor に対する Usability 上の考慮事項も適用される - Multi-factor Authenticator 内で用いられる Memorized Secret に対しては [Sec. 10.2.1](sec10_usability.md#memorizedsecrets), Biometrics に対しては [Sec. 10.4](sec10_usability.md#biomusability) を参照.
 
 <!--
 Usability considerations for typical usage include:
@@ -513,7 +519,11 @@ Usability considerations for typical usage include:
 
 通常利用における Usability 上の考慮事項としては以下のようなものが挙げられる.
 
+<!--
 * Give cryptographic keys appropriately descriptive names that are meaningful to users since users have to recognize and recall which cryptographic key to use for which authentication task. This prevents users from having to deal with multiple similarly and ambiguously named cryptographic keys. Selecting from multiple cryptographic keys on smaller mobile devices may be particularly problematic if the names of the cryptographic keys areas shortened due to reduced screen size.
+-->
+
+* ユーザーはどの Authentication タスクにどの Cryptographic Key を使用するかを認識し思い出す必要があるため, Cryptographic Key には適切でわかりやすい名前をつけること. これによりユーザーは似たような曖昧な名前の複数の Cryptographic Key を扱う必要がなくなる. 小型のモバイルデバイスで複数の Cryptographic Key から選択する場合, 画面サイズが小さくなったために Cryptographic Key の名前が短縮されていると, 特に問題になる可能性がある.
 
 ### Multi-Factor Cryptographic Device
 
@@ -523,7 +533,13 @@ Usability considerations for typical usage include:
 
 **_Typical Usage (通常利用)_**
 
+<!--
 Users authenticate by proving possession of the multi-factor cryptographic device and control of the protected cryptographic key. The device is activated by a second authentication factor, either a memorized secret or a biometric. Usability considerations for the additional factor apply as well — see [Sec. 10.2.1](sec10_usability.md#memorizedsecrets) for memorized secrets and [Sec. 10.4](sec10_usability.md#biomusability) for biometrics used in multi-factor authenticators.
+-->
+
+ユーザーは Multi-Factor Cryptographic Device を保持していること, および保護さされている Cryptographic Key を管理していることを証明することにより Authenticate を行う.
+Activation は2つめの Authenticator Factor, Memorized Secret または Biometrics の特徴のいずれか, の入力により行われる.
+ここでは追加の Authentication Factor に対する Usability 上の考慮事項も適用される - Multi-factor Authenticator 内で用いられる Memorized Secret に対しては [Sec. 10.2.1](sec10_usability.md#memorizedsecrets), Biometrics に対しては [Sec. 10.4](sec10_usability.md#biomusability) を参照.
 
 <!--
 Usability considerations for typical usage include:
@@ -531,12 +547,25 @@ Usability considerations for typical usage include:
 
 通常利用における Usability 上の考慮事項としては以下のようなものが挙げられる.
 
+<!--
 * Do not require users to keep multi-factor cryptographic devices connected following authentication. Users may forget to disconnect the multi-factor cryptographic device when they are done with it (e.g., forgetting a smartcard in the smartcard reader and walking away from the computer).
   * Users need to be informed regarding whether the multi-factor cryptographic device is required to stay connected or not.
+-->
 
+* Authentication 後に Multi-factor Cryptographic Key を接続したままにしておくことを要求しないこと. ユーザーは Multi-factor Cryptographic Key を使い終わった後も取り外すのを忘れる (e.g., スマートカードリーダーにスマートカードを入れ忘れたままコンピューターから離れてしまう) 可能性がある.
+  * 接続を維持するために Multi-factor Cryptographic Device が必要かどうか, ユーザーに通知する必要がある.
+
+<!--
 * Give cryptographic keys appropriately descriptive names that are meaningful to users since users have to recognize and recall which cryptographic key to use for which authentication task. This prevents users being faced with multiple similarly and ambiguously named cryptographic keys. Selecting from multiple cryptographic keys on smaller mobile devices (such as smartphones) may be particularly problematic if the names of the cryptographic keys are shortened due to reduced screen size.
+-->
 
+* ユーザーはどの Authentication タスクにどの Cryptographic Key を使用するかを認識し思い出す必要があるため, Cryptographic Key には適切でわかりやすい名前をつけること. これによりユーザーは似たような曖昧な名前の複数の Cryptographic Key を扱う必要がなくなる. 小型のモバイルデバイス (スマートフォンなど) で複数の Cryptographic Key から選択する場合, 画面サイズが小さくなったために Cryptographic Key の名前が短縮されていると, 特に問題になる可能性がある.
+
+<!--
 * Limited availability of a direct computer interface like a USB port could pose usability difficulties. For example, laptop computers often have a limited number of USB ports, which may force users to unplug other USB peripherals to use the multi-factor cryptographic device.
+-->
+
+* USB ポートなどの直接的コンピューターインタフェースの可用性 (Availability) に関する制約が Usability 上の問題を引き起こす可能性もある. 例えば, ラップトップコンピューターの USB ポート数はしばしば非常に限られている. これによりユーザーは Multi-Factor Cryptographic Device を使用するために他の USB 周辺機器を取り外す必要があるかもしれない.
 
 ## Summary of Usability Considerations
 [Figure 3](sec10_usability.md#fig-3) summarizes the usability considerations for typical usage and intermittent events for each authenticator type. Many of the usability considerations for typical usage apply to most of the authenticator types, as demonstrated in the rows. The table highlights common and divergent usability characteristics across the authenticator types. Each column allows readers to easily identify the usability attributes to address for each authenticator. Depending on users' goals and context of use, certain attributes may be valued over others. Whenever possible, provide alternative authenticator types and allow users to choose between them.
