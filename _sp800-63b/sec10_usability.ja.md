@@ -264,7 +264,7 @@ Usability considerations for typical usage include:
   * Support copy and paste functionality in fields for entering memorized secrets, including passphrases.
 -->
 
-* Memorized Secret 入力中のユーザーエクスペリエンス.
+* Memorized Secret 入力中のユーザーエクスペリエンス
   * Passphrase を含む Memorized Secret 入力フィールドにおいてコピーアンドペースト機能をサポートすること.
 
 <!--
@@ -309,7 +309,11 @@ Usability considerations for intermittent events include:
 
 **_Typical Usage (通常利用)_**
 
+<!--
 Users use the authenticator — printed or electronic — to look up the appropriate secret(s) needed to respond to a verifier's prompt. For example, a user may be asked to provide a specific subset of the numeric or character strings printed on a card in table format.
+-->
+
+ユーザーは - 印刷物または電子的な - Authenticator を使用して, Verifier のプロンプトに応答するために必要とされる適切なシークレットを見つけ出す. 例えば, ユーザーはカードに表形式で印刷された数値または文字列の特定のサブセットを提供するよう求められる場合がある.
 
 <!--
 Usability considerations for typical usage include:
@@ -317,8 +321,13 @@ Usability considerations for typical usage include:
 
 通常利用における Usability 上の考慮事項としては以下のようなものが挙げられる.
 
+<!--
 * User experience during entry of look-up secrets.
   * Consider the prompts' complexity and size. The larger the subset of secrets a user is prompted to look up, the greater the usability implications. Both the cognitive workload and physical difficulty for entry should be taken into account when selecting the quantity and complexity of look-up secrets for authentication.
+-->
+
+* Look-up Secret 入力中のユーザーエクスペリエンス
+  * プロンプトの複雑さとサイズを考慮すること. ユーザーが検索するよう求められるシークレットのサブセットが大きいほど, Usability への影響も大きくなる. Authentication のための Look-up Secret の量と複雑さを決定する際には, 認知作業負荷と入力の物理的な困難さの両方を考慮するべきである.
 
 ### Out-of-Band {#usability-oob}
 
@@ -328,7 +337,11 @@ Usability considerations for typical usage include:
 
 **_Typical Usage (通常利用)_**
 
+<!--
 Out-of-band authentication requires users have access to a primary and secondary communication channel.
+-->
+
+Out-of-band Authentication では, ユーザーはプライマリおよびセカンダリなコミュニケーションチャネルへの Access を必要とする.
 
 <!--
 Usability considerations for typical usage:
@@ -336,11 +349,23 @@ Usability considerations for typical usage:
 
 通常利用における Usability 上の考慮事項としては以下のようなものが挙げられる.
 
+<!--
 * Notify users of the receipt of a secret on a locked device. However, if the out-of-band device is locked, authentication to the device should be required to access the secret.
+-->
 
+* ロックされているデバイスにシークレットを送信したことをユーザーに伝えること. ただし, Out-of-band Device がロックされている場合, シークレットに Access するためにデバイスへの Authenttication が要求されるべきである.
+
+<!--
 * Depending on the implementation, consider form-factor constraints as they are particularly problematic when users must enter text on mobile devices. Providing larger touch areas will improve usability for entering secrets on mobile devices.
+-->
 
+* 実装によっては, ユーザーがモバイルデバイス上でテキスト入力を行う必要がある場合に特に問題となるため, フォームファクターの制約を考慮すること. より大きなタッチ領域を提供することで, モバイルデバイス上でのシークレット入力の Usability を向上することができる.
+
+<!--
 * A better usability option is to offer features that do not require text entry on mobile devices (e.g., a single tap on the screen, or a copy feature so users can copy and paste out-of-band secrets). Providing users such features is particularly helpful when the primary and secondary channels are on the same device. For example, it is difficult for users to transfer the authentication secret on a smartphone because they must switch back and forth &mdash; potentially multiple times &mdash; between the out-of-band application and the primary channel.
+-->
+
+* さらに良い Usability のオプションは, モバイルデバイス上でテキスト入力を必要としない機能 (e.g., スクリーンを一回タップするだけだったり, Out-of-band シークレットをコピーアンドペーストできるようにコピーできるようにするなど) を提供することである. このような機能を提供すると, プライマリチャネルとセカンダリチャネルが同一デバイス上にある場合, 特に役に立つ. 例えば, スマートフォン上で - 場合によっては複数回 - Out-of-band アプリケーションとプライマリチャネルの間を行ったり来たりして Authentication Secret を移動させるのは困難である.
 
 ### Single-Factor OTP Device
 
