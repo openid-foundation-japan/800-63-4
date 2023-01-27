@@ -22,7 +22,7 @@ One of the challenges of providing online services is being able to associate a 
 このガイダンスは、Identity Proofing を、オンライン・サービスにアクセスするsubjectと実存する人物との関係性を、ある程度の確実性または保証をもって確立するプロセスのことであると定義する本書は、連邦機関、サードパーティのCredential Service Providers(CSP)、そしてIdentity Proofingサービスを提供する他の組織に対するガイダンスを提供する。
 
 {% comment %}
-This guidance defines identity proofing as the process of establishing, to some degree of certainty or assurance, a relationship between a subject accessing online services and a real-life person. This document provides guidance for Federal Agencies, third-party Credential Service Providers (CSP), and other organizations that provide identity proofing services.  
+This guidance defines identity proofing as the process of establishing, to some degree of certainty or assurance, a relationship between a subject accessing online services and a real-life person. This document provides guidance for Federal Agencies, third-party Credential Service Providers (CSP), and other organizations that provide identity proofing services.
 {% endcomment %}
 
 次のリストは、本書のどのセクションに normative な言語が含まれ、どのセクションにnon-normative、informativeな言語が含まれるかを示している。特定の要件を明確にするために必要な場合、normativeなセクションには多くの場合informativeな説明が含まれている。どの記述がnormativeで、どれがそうでないかを明確にするには、本書の「Requirements Notation and Conventions」のセクションを参照すること。
@@ -77,7 +77,7 @@ Identity Proofingに期待される成果は:
 The expected outcomes of identity proofing include:
 
 * **Identity resolution**: determine that the claimed identity corresponds to a single, unique individual within the context of the population of users the CSP serves;
-* **Evidence validation**: confirm that all supplied evidence is genuine, authentic, and unexpired; 
+* **Evidence validation**: confirm that all supplied evidence is genuine, authentic, and unexpired;
 * **Attribute validation**: confirm the accuracy of core attributes;
 * **Identity verification**: verify that the claimed identity is associated with the real-life person supplying the identity evidence; and
 * **Fraud Prevention**: mitigate attempts to gain fraudulent access to benefits, services, data, or assets.

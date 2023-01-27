@@ -95,7 +95,7 @@ The following provides an example of how a CSP and an applicant might interact d
 
 1. **Resolution**
     1. The CSP collects attributes from the applicant, such as name, address, date of birth, email, and phone number.
-    2. The CSP also collects one or more pieces of identity evidence, such as a driver's license or a passport. 
+    2. The CSP also collects one or more pieces of identity evidence, such as a driver's license or a passport.
     {:.letter-list}
 2. **Validation**
     1. The CSP validates the attributes obtained in steps 1a by checking them against authoritative or credible sources.
@@ -277,7 +277,7 @@ Identity EvidenceがSUPERIORであるには、以下の _すべて_ の要件を
 In order to be considered SUPERIOR, identity evidence **SHALL** meet _all_ the following requirements:
 
 1.  The issuing source of the evidence confirmed the claimed identity by following written procedures designed to enable it to have high confidence that the source knows the real-life identity of the subject. Such procedures are subject to recurring oversight by regulatory or publicly accountable institutions.
-2.  The issuing source visually identified the applicant and performed further checks to confirm the existence of that person. 
+2.  The issuing source visually identified the applicant and performed further checks to confirm the existence of that person.
 3.  The issuing process for the evidence ensured that it was delivered into the possession of the person to whom it relates.
 4.  The evidence contains at least one reference number that uniquely identifies the person to whom it relates.
 5.  The evidence contains a facial portrait or other biometric characteristic of the person to whom it relates.
@@ -317,7 +317,7 @@ The CSP **SHALL** validate the authenticity, accuracy, and currency of presented
 - Confirming the evidence is not counterfeit and that it as not been tampered with.
 - Confirming any security features.
 
-The CSP **SHALL** validate that the evidence is current through confirmation that its expiration date has not passed or that evidence without an expiration date was issued within the previous six (6) months. 
+The CSP **SHALL** validate that the evidence is current through confirmation that its expiration date has not passed or that evidence without an expiration date was issued within the previous six (6) months.
 
 The authenticity and accuracy of identity evidence or attribute information that is cryptographically protected can be validated through verification of the digital signature on the evidence or the attribute data objects. The CSP **SHALL** use the public key of the issuing authority of the evidence to verify digitally signed evidence or attribute data objects.
 {% endcomment %}
@@ -367,8 +367,8 @@ Core attributes that are contained on identity evidence that has been validated 
 
 An authoritative source is an entity that can provide or validate the accuracy of identity attribute information through one or more of the following characteristics. An authoritative source:
 
-- Is the original source of the identity attribute(s); or 
-- Is the issuer of identity evidence containing identity attribute information and the issuer confirmed the claimed identity through documented identity proofing processes that are subject to recurring oversight by regulatory or publicly accountable institutions, such as the Customer Identification Program guidelines established under the [[PatriotAct]](sec11_references.md#ref-PatriotAct); or 
+- Is the original source of the identity attribute(s); or
+- Is the issuer of identity evidence containing identity attribute information and the issuer confirmed the claimed identity through documented identity proofing processes that are subject to recurring oversight by regulatory or publicly accountable institutions, such as the Customer Identification Program guidelines established under the [[PatriotAct]](sec11_references.md#ref-PatriotAct); or
 - Collected and validated attribute information through an identity proofing process that can confirm the claimed identity through direct interaction with individuals (either in-person or remotely); or
 - Has access to evidence and attribute information that can be traced to the issuing source of a piece of identity evidence.
 {% endcomment %}
@@ -383,7 +383,7 @@ An authoritative source is an entity that can provide or validate the accuracy o
 A credible source is an entity that can provide or validate the accuracy of identity evidence and attribute information through one or more of the following characteristics. A credible source:
 
 - Has access to attribute information that was validated through an identity proofing process; or
-- Has access to attribute information that can be traced to an authoritative source; or 
+- Has access to attribute information that can be traced to an authoritative source; or
 - Maintains identity attribute information obtained from multiple sources that is checked for data correlation for accuracy, consistency, and currency.
 {% endcomment %}
 
@@ -411,8 +411,8 @@ CSP は、[セクション 5](sec5_ial.ja.md#ial-section) で提示される IAL
 The CSP **SHALL** verify the linkage of the claimed identity  to the applicant engaged in the identity proofing process through one or more of the following methods, depending on the IAL identity verification requirements presented in [Sec. 5](sec5_ial.md#ial-section).
 
 - **Enrollment code verification** as specified in [Sec. 5.1.6](sec5_ial.md#EnrollCodes).
-- **In-person physical comparison**. The CSP operator and applicant interact in person for the identity proofing event. The CSP operator performs a physical comparison of the facial portrait presented on identity evidence to the face of the applicant engaged in the identity proofing event. 
-- **Remote (attended and unattended) physical facial image comparison**. The CSP operator performs a physical comparison of the facial portrait presented on identity evidence to the facial image of the applicant engaged in the identity proofing event. The CSP operator may interact directly with the applicant during some or all of the identity proofing event (attended) or may conduct the comparison at a later time (unattended) using a captured video or photograph and the uploaded copy of the evidence. If the comparison is performed at a later time, steps are taken to ensure the captured video or photograph was taken from the live applicant present during the identity proofing event.  
+- **In-person physical comparison**. The CSP operator and applicant interact in person for the identity proofing event. The CSP operator performs a physical comparison of the facial portrait presented on identity evidence to the face of the applicant engaged in the identity proofing event.
+- **Remote (attended and unattended) physical facial image comparison**. The CSP operator performs a physical comparison of the facial portrait presented on identity evidence to the facial image of the applicant engaged in the identity proofing event. The CSP operator may interact directly with the applicant during some or all of the identity proofing event (attended) or may conduct the comparison at a later time (unattended) using a captured video or photograph and the uploaded copy of the evidence. If the comparison is performed at a later time, steps are taken to ensure the captured video or photograph was taken from the live applicant present during the identity proofing event.
 - **Automated biometric comparison**. Biometric system comparison may be performed for in-person or remote identity proofing events. The facial portrait, or other biometric characteristic, contained on identity evidence is compared by an automated biometric comparison system to the facial image photograph of the live applicant or other biometric live sample submitted by the applicant during the identity proofing event. The automated biometric comparison system uses a mathematical algorithm for the comparison.
 - **Control of a digital account**. An individual is able to demonstrate control of a digital account (e.g., online bank account) or signed digital assertion (e.g., verifiable credentials) through the use of authentication or federation protocols. This may be done in person through presentation of the credential to a device or reader, but is more likely to be done during remote identity proofing sessions. 
 {% endcomment %}

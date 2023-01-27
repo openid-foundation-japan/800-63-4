@@ -26,9 +26,9 @@ Effective protection of identity proofing processes requires the layering of sec
 
 {% comment %}
  * **Impersonation**: where an attacker attempts to pose as another, legitimate, individual (e.g., identity theft)
-  
+
  * **False or Fraudulent Representation**: where an attacker may create a false identity or false claims about an identity (e.g., synthetic identity fraud)
-  
+
  * **Infrastructure**: where attackers may seek to compromise confidentiality, availability, and integrity of the infrastructure, data, software, or people supporting the CSPs identity proofing process (e.g., distributed denial of service, insider threats)
 {% endcomment %}
 
@@ -59,7 +59,7 @@ This section focuses on impersonation and false or fraudulent representation thr
 | Attack/Threat |Description | Example |
 |---------------|------------------------|------------------|
 |Automated Enrollment Attempts|Attackers leverage scripts and automated processes to rapidly generate large volumes of enrollments| Bots leverage stolen data to submit benefits claims.|
-|Evidence Falsification | Attacker creates or modifies evidence in order claim an identity| A fake driver’s license is used as evidence.| 
+|Evidence Falsification | Attacker creates or modifies evidence in order claim an identity| A fake driver’s license is used as evidence.|
 |Synthetic Identity fraud | Attacker fabricates evidence of identity that is not associated with a real person| Opening a credit cards in a fake name to create a credit file.|
 |Fraudulent Use of Identity (Identity Theft)| Attacker fraudulently uses another individuals identity or identity evidence | An individual uses a stolen passport.|
 |Social Engineering| Attacker convinces a legitimate applicant to provide identity evidence or complete the identity proofing process under false pretenses| An individual submits their identity evidence to an attacker posing as a potential employer.|

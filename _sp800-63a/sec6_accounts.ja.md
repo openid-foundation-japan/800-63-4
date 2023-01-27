@@ -36,7 +36,7 @@ The CSP **SHALL** assign a unique identifier to each subscriber account.
 
 At a minimum the CSP **SHALL** include the following information in each subscriber account:
 
-* Unique identifier established for the subscriber 
+* Unique identifier established for the subscriber
 * A record of the identity proofing steps completed for the subscriber in accordance with [Sec. 5.1.1](sec5_ial.md#DocRecReqs)
 * Maximum IAL successfully achieved for the identity proofing of the subscriber
 * Subscriber consent provided for the processing, retention, or disclosure of any personal or sensitive information maintained in the subscriber account
@@ -55,8 +55,8 @@ CSP は、[Sec. 5.1.2](sec5_ial.ja.md#PrivacyReqs) に従って、Subscriber Acc
 {% comment %}
 The CSP **SHALL** record information in the subscriber account that was collected during the identity proofing process or subsequently updated for each subscriber, including:
 
-* Validated identity evidence 
-* Validated attribute information 
+* Validated identity evidence
+* Validated attribute information
 * Attribute information that was collected for enrollment in the CSP identity service that was not validated for identity proofing purposes
 
 The CSP **SHALL** perform a privacy risk assessment for the processing, retention, or disclosure of any personal information maintained in the subscriber account in accordance with [Sec. 5.1.2](sec5_ial.md#PrivacyReqs).
@@ -101,7 +101,7 @@ The CSP **SHALL** terminate the subscriber account and discontinue its use when 
 
 * The subscriber elects to terminate their subscriber account with the CSP.
 * The CSP determines, following any due notice period and requirements established by the CSP, that the subscriber account has been compromised.
-* The CSP determines, following any due notice period and requirements established by the CSP, that the subscriber has violated the policies or rules for participation in the CSP identity service. 
+* The CSP determines, following any due notice period and requirements established by the CSP, that the subscriber has violated the policies or rules for participation in the CSP identity service.
 * The CSP determines, following any due notice period and requirements established by the CSP, that the subscriber account is inactive in accordance with the policies or rules established by the CSP.
 * The CSP ceases identity system and services operations.
 
