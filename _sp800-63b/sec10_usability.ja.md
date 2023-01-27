@@ -128,7 +128,7 @@ Usability considerations applicable to most authenticators are described below. 
 Usability considerations for typical usage of all authenticators include:
 -->
 
-すべての Authenticator の通常利用における Usability 上の考慮事項として, 以下のようなものが挙げられる.
+すべての Authenticator の通常利用 (Typical Usage) における Usability 上の考慮事項として, 以下のようなものが挙げられる.
 
 <!--
 * Provide information on the use and maintenance of the authenticator, e.g., what to do if the authenticator is lost or stolen, and instructions for use — especially if there are different requirements for first-time use or initialization.
@@ -196,7 +196,7 @@ Usability considerations for typical usage of all authenticators include:
 Intermittent events include events such as reauthentication, subscriber account lock-out, expiration, revocation, damage, loss, theft, and non-functional software.
 -->
 
-断続的イベントには, Reauthentication, Subscriber Account のロックアウト, 期限切れ, 失効, 損傷, 紛失, 盗難, 機能しないソフトウェアといったイベントが含まれる.
+断続的イベント (Intermittent Events) には, Reauthentication, Subscriber Account のロックアウト, 期限切れ, 失効, 損傷, 紛失, 盗難, 機能しないソフトウェアといったイベントが含まれる.
 
 <!--
 Usability considerations for intermittent events across authenticator types include:
@@ -223,51 +223,118 @@ Usability considerations for intermittent events across authenticator types incl
 * 技術支援を受ける方法と場所を明確に伝えること. 例えば, オンラインのセルフサービス機能へのリンク, チャット Session, ヘルプデスクサポート用の電話番号などの情報をユーザーに提供すること. 理想的には, ユーザーが外部の介入なしに自身で断続的イベントからリカバリーできるよう十分な情報を提供されることが望ましい.
 
 ## Usability Considerations by Authenticator Type
+
+<!--
 In addition to the previously described general usability considerations applicable to most authenticators ([Sec. 10.1](sec10_usability.md#usabilitycommon)), the following sections describe other usability considerations specific to particular authenticator types.
+-->
+
+前述の大抵の Authenticator に適用可能な一般的な Usability 上の考慮事項 (([Sec. 10.1](sec10_usability.md#usabilitycommon))) に加え, 以下のセクションでは特定の Authenticator Type 固有の Usability 上の考慮事項について述べる.
 
 ### Memorized Secrets {#memorizedsecrets}
+
+<!--
 **_Typical Usage_**
+-->
 
+**_Typical Usage (通常利用)_**
+
+<!--
 Users manually input the memorized secret (commonly referred to as a password or PIN).
+-->
 
+ユーザーは手動で Memorized Secret (一般的には Password や PIN と呼ばれる) を入力する.
+
+<!--
 Usability considerations for typical usage include:
+-->
 
+通常利用における Usability 上の考慮事項としては以下のようなものが挙げられる.
+
+<!--
 * Memorability of the memorized secret
   * The likelihood of recall failure increases as there are more items for users to remember. With fewer memorized secrets, users can more easily recall the specific memorized secret needed for a particular RP.
   * The memory burden is greater for a less frequently used password.
+-->
 
+* Memorized Secret の記憶可能性
+  * ユーザーが覚える項目が多いほど, 思い出せずに失敗する可能性が高くなる. Memorized Secret が少ければ少ないほど, ユーザーは特定の RP のために必要な特定の Memorized Secret をより簡単に思い出すことができる.
+
+<!--
 * User experience during entry of the memorized secret
   * Support copy and paste functionality in fields for entering memorized secrets, including passphrases.
+-->
 
+* Memorized Secret 入力中のユーザーエクスペリエンス.
+  * Passphrase を含む Memorized Secret 入力フィールドにおいてコピーアンドペースト機能をサポートすること.
+
+<!--
 **_Intermittent Events_**
+-->
 
+**_Intermittent Events (断続的イベント)_**
+
+<!--
 Usability considerations for intermittent events include:
+-->
 
+断続的イベントにおける Usability 上の考慮事項としては以下のようなものが挙げられる.
+
+<!--
 * When users create and change memorized secrets:
   * Clearly communicate information on how to create and change memorized secrets.
   * Clearly communicate memorized secret requirements, as specified in [Sec. 5.1.1](sec5_authenticators.md#memsecret).
   * Allow at least 64 characters in length to support the use of passphrases. Encourage users to make memorized secrets as lengthy as they want, using any characters they like (including spaces), thus aiding memorization.
   * Do not impose other composition rules (e.g. mixtures of different character types) on memorized secrets.
   * Do not require that memorized secrets be changed arbitrarily (e.g., periodically) unless there is a user request or evidence of authenticator compromise. (See [Sec. 5.1.1](sec5_authenticators.md#memsecret) for additional information).
+-->
 
+* ユーザーが Memorized Secret を生成・変更する際
+  * Memorized Secret の生成・変更方法に関する情報を明確に伝えること.
+  * Memorized Secret の要件 ([Sec. 5.1.1](sec5_authenticators.md#memsecret) 参照) を明確に伝えること.
+  * Passphrase には最低でも64文字を許容すること. 記憶しやすいようユーザーが選好する文字 (スペースを含む) を使用して, 好きなだけ長い Memorized Secret を作成することを推奨すること.
+  * Memorized Secret に他の構成ルール (e.g., 異なる文字種の混合) を課さないこと.
+  * ユーザーの要求や Authenticator 侵害の証拠がない限り, Memorized Secret の変更を恣意的 (e.g., 定期的) に要求しないこと. (追加情報に関しては [Sec. 5.1.1](sec5_authenticators.md#memsecret) 参照)
+
+<!--
 * Provide clear, meaningful and actionable feedback when chosen passwords are rejected (e.g., when it appears on a "blocklist" of unacceptable passwords or has been used previously).
+-->
+
+* 選択した Password を拒否する場合 (e.g., 受け入れられない Password の "Blocklist" に含まれる場合や, 以前に使用されているものと同じである場合) は, 明確で意味のある対応可能なフィードバックを提供すること.
 
 ### Look-Up Secrets
+
+<!--
 **_Typical Usage_**
+-->
+
+**_Typical Usage (通常利用)_**
 
 Users use the authenticator — printed or electronic — to look up the appropriate secret(s) needed to respond to a verifier's prompt. For example, a user may be asked to provide a specific subset of the numeric or character strings printed on a card in table format.
 
+<!--
 Usability considerations for typical usage include:
+-->
+
+通常利用における Usability 上の考慮事項としては以下のようなものが挙げられる.
 
 * User experience during entry of look-up secrets.
   * Consider the prompts' complexity and size. The larger the subset of secrets a user is prompted to look up, the greater the usability implications. Both the cognitive workload and physical difficulty for entry should be taken into account when selecting the quantity and complexity of look-up secrets for authentication.
 
 ### Out-of-Band {#usability-oob}
+
+<!--
 **_Typical Usage_**
+-->
+
+**_Typical Usage (通常利用)_**
 
 Out-of-band authentication requires users have access to a primary and secondary communication channel.
 
+<!--
 Usability considerations for typical usage:
+-->
+
+通常利用における Usability 上の考慮事項としては以下のようなものが挙げられる.
 
 * Notify users of the receipt of a secret on a locked device. However, if the out-of-band device is locked, authentication to the device should be required to access the secret.
 
@@ -276,11 +343,20 @@ Usability considerations for typical usage:
 * A better usability option is to offer features that do not require text entry on mobile devices (e.g., a single tap on the screen, or a copy feature so users can copy and paste out-of-band secrets). Providing users such features is particularly helpful when the primary and secondary channels are on the same device. For example, it is difficult for users to transfer the authentication secret on a smartphone because they must switch back and forth &mdash; potentially multiple times &mdash; between the out-of-band application and the primary channel.
 
 ### Single-Factor OTP Device
+
+<!--
 **_Typical Usage_**
+-->
+
+**_Typical Usage (通常利用)_**
 
 Users access the OTP generated by the single-factor OTP device. The authenticator output is typically displayed on the device and the user enters it for the verifier.
 
+<!--
 Usability considerations for typical usage include:
+-->
+
+通常利用における Usability 上の考慮事項としては以下のようなものが挙げられる.
 
 * Authenticator output allows at least one minute between changes, but ideally allows users the full two minutes as specified in [Sec. 5.1.4.1](sec5_authenticators.md#sfotpa). Users need adequate time to enter the authenticator output (including looking back and forth between the single-factor OTP device and the entry screen).
 
@@ -289,11 +365,20 @@ Usability considerations for typical usage include:
   * Limited availability of a direct computer interface such as a USB port could pose usability difficulties. For example, the number of USB ports on laptop computers is often very limited. This may force users to unplug other USB peripherals in order to use the single-factor OTP device.
 
 ### Multi-Factor OTP Device
+
+<!--
 **_Typical Usage_**
+-->
+
+**_Typical Usage (通常利用)_**
 
 Users access the OTP generated by the multi-factor OTP device through a second authentication factor. The OTP is typically displayed on the device and the user manually enters it for the verifier. The second authentication factor may be achieved through some kind of integral entry pad to enter a memorized secret, an integral biometric (e.g., fingerprint) reader, or a direct computer interface (e.g., USB port). Usability considerations for the additional factor apply as well — see [Sec. 10.2.1](sec10_usability.md#memorizedsecrets) for memorized secrets and [Sec. 10.4](sec10_usability.md#biomusability) for biometrics used in multi-factor authenticators.
 
+<!--
 Usability considerations for typical usage include:
+-->
+
+通常利用における Usability 上の考慮事項としては以下のようなものが挙げられる.
 
 * User experience during manual entry of the authenticator output.
   * For time-based OTP, provide a grace period in addition to the time during which the OTP is displayed. Users need adequate time to enter the authenticator output, including looking back and forth between the multi-factor OTP device and the entry screen.
@@ -301,40 +386,75 @@ Usability considerations for typical usage include:
   * Limited availability of a direct computer interface like a USB port could pose usability difficulties. For example, laptop computers often have a limited number of USB ports, which may force users to unplug other USB peripherals to use the multi-factor OTP device.
 
 ### Single-Factor Cryptographic Software
+
+<!--
 **_Typical Usage_**
+-->
+
+**_Typical Usage (通常利用)_**
 
 Users authenticate by proving possession and control of the cryptographic software key.
 
+<!--
 Usability considerations for typical usage include:
+-->
+
+通常利用における Usability 上の考慮事項としては以下のようなものが挙げられる.
 
 * Give cryptographic keys appropriately descriptive names that are meaningful to users since users have to recognize and recall which cryptographic key to use for which authentication task. This prevents users from having to deal with multiple similarly and ambiguously named cryptographic keys. Selecting from multiple cryptographic keys on smaller mobile devices may be particularly problematic if the names of the cryptographic keys are shortened due to reduced screen size.
 
 ### Single-Factor Cryptographic Device
+
+<!--
 **_Typical Usage_**
+-->
+
+**_Typical Usage (通常利用)_**
 
 Users authenticate by proving possession of the single-factor cryptographic device.
-
+<!--
 Usability considerations for typical usage include:
+-->
+
+通常利用における Usability 上の考慮事項としては以下のようなものが挙げられる.
 
 * Requiring a physical input (e.g., pressing a button) to operate the single-factor cryptographic device could pose usability difficulties. For example, some USB ports are located on the back of computers, making it difficult for users to reach.
 
 * Limited availability of a direct computer interface like a USB port could pose usability difficulties. For example, laptop computers often have a limited number of USB ports, which may force users to unplug other USB peripherals to use the single-factor cryptographic device.
 
 ### Multi-Factor Cryptographic Software
+
+<!--
 **_Typical Usage_**
+-->
+
+**_Typical Usage (通常利用)_**
 
 In order to authenticate, users prove possession and control of the cryptographic key stored on disk or some other "soft" media that requires activation. The activation is through the input of a second authentication factor, either a memorized secret or a biometric characteristic. Usability considerations for the additional factor apply as well — see [Sec. 10.2.1](sec10_usability.md#memorizedsecrets) for memorized secrets and [Sec. 10.4](sec10_usability.md#biomusability) for biometrics used in multi-factor authenticators.
 
+<!--
 Usability considerations for typical usage include:
+-->
+
+通常利用における Usability 上の考慮事項としては以下のようなものが挙げられる.
 
 * Give cryptographic keys appropriately descriptive names that are meaningful to users since users have to recognize and recall which cryptographic key to use for which authentication task. This prevents users from having to deal with multiple similarly and ambiguously named cryptographic keys. Selecting from multiple cryptographic keys on smaller mobile devices may be particularly problematic if the names of the cryptographic keys areas shortened due to reduced screen size.
 
 ### Multi-Factor Cryptographic Device
+
+<!--
 **_Typical Usage_**
+-->
+
+**_Typical Usage (通常利用)_**
 
 Users authenticate by proving possession of the multi-factor cryptographic device and control of the protected cryptographic key. The device is activated by a second authentication factor, either a memorized secret or a biometric. Usability considerations for the additional factor apply as well — see [Sec. 10.2.1](sec10_usability.md#memorizedsecrets) for memorized secrets and [Sec. 10.4](sec10_usability.md#biomusability) for biometrics used in multi-factor authenticators.
 
+<!--
 Usability considerations for typical usage include:
+-->
+
+通常利用における Usability 上の考慮事項としては以下のようなものが挙げられる.
 
 * Do not require users to keep multi-factor cryptographic devices connected following authentication. Users may forget to disconnect the multi-factor cryptographic device when they are done with it (e.g., forgetting a smartcard in the smartcard reader and walking away from the computer).
   * Users need to be informed regarding whether the multi-factor cryptographic device is required to stay connected or not.
@@ -363,7 +483,11 @@ This section provides a high-level overview of general usability considerations 
 
 Although there are other biometric modalities, the following three biometric modalities are more commonly used for authentication: fingerprint, face and iris.
 
+<!--
 **_Typical Usage_**
+-->
+
+**_Typical Usage (通常利用)_**
 
 * For all modalities, user familiarity and practice with the device improves performance.
 
@@ -390,7 +514,11 @@ Although there are other biometric modalities, the following three biometric mod
   * Users who have had eye surgery may need to re-enroll post-surgery.
   * Differences in environmental lighting conditions can affect iris recognition accuracy, especially for certain iris colors.
 
+<!--
 **_Intermittent Events_**
+-->
+
+**_Intermittent Events (断続的イベント)_**
 
 As biometrics are only permitted as a second factor for multi-factor authentication, usability considerations for intermittent events with the primary factor still apply. Intermittent events with biometrics use include, but are not limited to, the following, which may affect recognition accuracy:
 
