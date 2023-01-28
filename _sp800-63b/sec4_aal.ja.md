@@ -78,7 +78,7 @@ Communication between the claimant and verifier **SHALL** be via an authenticate
 Verifiers operated by or on behalf of federal government agencies at AAL1 **SHALL** be validated to meet the requirements of [[FIPS140]](references.md#ref-FIPS140-2) Level 1.
 -->
 
-Claimant と Verifier の間の通信は, Authenticator の出力の機密性と Adversary-in-the-Middle (AitM) 攻撃への耐性の提供のため, 認証された保護されたチャネルを介して行われることになる(**SHALL**).
+Claimant と Verifier の間の通信は, Authenticator の出力の機密性と Adversary-in-the-Middle (AitM) Attack への耐性の提供のため, 認証された保護されたチャネルを介して行われることになる(**SHALL**).
 
 連邦政府機関によって, または連邦政府機関に代わって AAL1 で運用されている Verifier は, [[FIPS140]](references.md#ref-FIPS140-2) Level 1 の要件に適合しているか検証されることになる(**SHALL**).
 
@@ -165,7 +165,7 @@ Communication between the claimant and verifier **SHALL** be via an authenticate
 Verifiers operated by or on behalf of federal government agencies at AAL2 **SHALL** be validated to meet the requirements of [[FIPS140]](references.md#ref-FIPS140-2) Level 1.
 -->
 
-Claimant と Verifier の間の通信は, Authenticator の出力の機密性と AitM 攻撃への耐性の提供のため, 認証された保護されたチャネルを介して行われることになる(**SHALL**).
+Claimant と Verifier の間の通信は, Authenticator の出力の機密性と AitM Attack への耐性の提供のため, 認証された保護されたチャネルを介して行われることになる(**SHALL**).
 
 連邦政府機関によって, または連邦政府機関に代わって AAL2 で運用されている Verifier は, [[FIPS140]](references.md#ref-FIPS140-2) Level 1 の要件に適合しているか検証されることになる(**SHALL**).
 
@@ -179,7 +179,7 @@ AAL2 での Authentication に Bometric Factorが使用される場合, [Sec. 5.
 OMB Memorandum [[M-22-09]](references.md#ref-M-22-09) requires federal government agencies to offer at least one phishing-resistant authenticator option to public users at AAL2. While phishing resistance as described in [Sec. 5.2.5](sec5_authenticators.md#verifimpers) is not generally required for authentication at AAL2, verifiers **SHOULD** encourage the use of phishing-resistant authenticators at AAL2 whenever practical since phishing is a significant threat vector.
 -->
 
-OMB Memorandum [[M-22-09]](references.md#ref-M-22-09) は, 連邦政府機関に対して AAL2 のパブリック ユーザーに少なくとも 1 つのフィッシング耐性のある Authenticator のオプションを提供することを要求している. [Sec. 5.2.5](sec5_authenticators.md#verifimpers) で説明されているフィッシング耐性は通常 AAL2 での Authentication には必要とされないが, フィッシングは重大な脅威ベクトルであるため, Verifier は可能な限り AAL2 でのフィッシング耐性のある Authenticator の使用を奨励する必要がある(**SHOULD**).
+OMB Memorandum [[M-22-09]](references.md#ref-M-22-09) は, 連邦政府機関に対して AAL2 のパブリック ユーザーに少なくとも 1 つの Phishing 耐性のある Authenticator のオプションを提供することを要求している. [Sec. 5.2.5](sec5_authenticators.md#verifimpers) で説明されている Phishing 耐性は通常 AAL2 での Authentication には必要とされないが,  Phishing は重大な脅威ベ クトルであるため, Verifier は可能な限り AAL2 でのPhishing 耐性のある Authenticator の使用を奨励する必要がある(**SHOULD**).
 
 ### Reauthentication {#aal2reauth}
 
@@ -215,7 +215,7 @@ CSP は, 適用される可能性のある NARA の記録保持スケジュー�
 AAL3 provides very high confidence that the claimant controls authenticators bound to the subscriber account. Authentication at AAL3 is based on proof of possession of a key through a cryptographic protocol. AAL3 authentication **SHALL** use a hardware-based authenticator and an authenticator that provides phishing resistance — the same device **MAY** fulfill both these requirements. In order to authenticate at AAL3, claimants **SHALL** prove possession and control of two distinct authentication factors through secure authentication protocols. Approved cryptographic techniques are required.
 -->
 
-AAL3 は, Claimant が Subscriber Account に Bind された Authenticator を制御するという非常に高い確信を提供する. AAL3 での Authentication は, 暗号プロトコルを介した Key の所有の証明に基づく. ハードウェアベースの Authenticator とフィッシング耐性のある Authenticator を使用することになり(**SHALL**), 同じデバイスがこれらの両方の要件を満たしてもよい(**MAY**).　AAL3 で Authentication を行うには, Claimant は, セキュアな Authentication プロトコルを介して, 2つのはっきりと異なる認証要素の所有と制御を証明することになる(**SHALL**). 承認された暗号技術が必要である.
+AAL3 は, Claimant が Subscriber Account に Bind された Authenticator を制御するという非常に高い確信を提供する. AAL3 での Authentication は, 暗号プロトコルを介した Key の所有の証明に基づく. ハードウェアベースの Authenticator  とPhishing 耐性のある Authenticator を使用することになり(**SHALL**), 同じデバイスがこれらの両方の要件を満たしてもよい(**MAY**).　AAL3 で Authentication を行うには, Claimant は, セキュアな Authentication プロトコルを介して, 2つのはっきりと異なる認証要素の所有と制御を証明することになる(**SHALL**). 承認された暗号技術が必要である.
 
 ### Permitted Authenticator Types {#aal3types}
 
@@ -237,7 +237,7 @@ AAL3 Authentication は, [Sec. 4.3](#aal3) の要件を満たす Authenticator �
 Communication between the claimant and verifier **SHALL** be via an authenticated protected channel to provide confidentiality of the authenticator output and resistance to AitM attacks. At least one cryptographic authenticator used at AAL3 **SHALL** be phishing resistant as described in [Sec. 5.2.5](sec5_authenticators.md#verifimpers) and **SHALL** be replay resistant as described in [Sec. 5.2.8](sec5_authenticators.md#replay). All authentication and reauthentication processes at AAL3 **SHALL** demonstrate authentication intent from at least one authenticator as described in [Sec. 5.2.9](sec5_authenticators.md#intent).
 -->
 
-Claimant と Verifier の間の通信は, Authenticator の出力の機密性と AitM 攻撃への耐性の提供のため, 認証された保護されたチャネルを介して行われることになる(**SHALL**). AAL3で使用される少なくとも1つの Authenticator は, [Sec. 5.2.5](sec5_authenticators.md#verifimpers) で説明されているようにフィッシング耐性があり(**SHALL**), [Sec. 5.2.8](sec5_authenticators.md#replay) で説明されているようにリプレイ耐性があることになる(**SHALL**). AAL3 でのすべての Authentication と Reauthentication は, [Sec. 5.2.9](sec5_authenticators.md#intent) で説明されているように, 少なくとも1つの Authenticator から Authentication の意思を実演で示す必要がある(**SHOULD**).
+Claimant と Verifier の間の通信は, Authenticator の出力の機密性と AitM Attack への耐性の提供のため, 認証された保護されたチャネルを介して行われることになる(**SHALL**). AAL3で使用される少なくとも1つの Authenticator は, [Sec. 5.2.5](sec5_authenticators.md#verifimpers) で説明されているよ うにPhishing 耐性があり(**SHALL**), [Sec. 5.2.8](sec5_authenticators.md#replay) で説明されているようにリプレイ耐性があることになる(**SHALL**). AAL3 でのすべての Authentication と Reauthentication は, [Sec. 5.2.9](sec5_authenticators.md#intent) で説明されているように, 少なくとも1つの Authenticator から Authentication の意思を実演で示す必要がある(**SHOULD**).
 
 <!--
 Multi-factor authenticators used at AAL3 **SHALL** be hardware cryptographic modules validated at [[FIPS140]](references.md#ref-FIPS140-2) Level 2 or higher overall with at least [[FIPS140]](references.md#ref-FIPS140-2) Level 3 physical security. Single-factor cryptographic devices used at AAL3 **SHALL** be validated at [[FIPS140]](references.md#ref-FIPS140-2) Level 1 or higher overall with at least [[FIPS140]](references.md#ref-FIPS140-2) Level 3 physical security.
