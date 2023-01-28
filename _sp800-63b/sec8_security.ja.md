@@ -225,12 +225,35 @@ Several other strategies may be applied to mitigate the threats described in [Ta
 
 ## Authenticator Recovery
 
+<!--
 The weak point in many authentication mechanisms is the process followed when a subscriber loses control of one or more authenticators and needs to replace them. In many cases, the options remaining available to authenticate the subscriber are limited, and economic concerns (e.g., cost of maintaining call centers) motivate the use of inexpensive, and often less secure, backup authentication methods. To the extent that authenticator recovery is human-assisted, there is also the risk of social engineering attacks.
+-->
 
+多くの Authentication メカニズムの弱点は, Subscriber が1つ以上の Authenticator のコントロールを失いそれらをリプレイスする必要がある際のプロセスにある.
+多くの場合, Subscriber を Authenticate するために残された利用可能な手段は限られており, 経済的な懸念 (e.g., コールセンターの維持費) が安価でしばしば安全性の低いバックアップ Authentication 手法を利用するモチベーションにつながっている.
+また, Authenticator リカバリーが人間の支援によるものである限り, Social Engineering Attack のリスクもつきものである.
+
+<!--
 To maintain the integrity of the authentication factors, it is essential that it not be possible to leverage an authentication involving one factor to obtain an authenticator of a different factor. For example, a memorized secret must not be usable to obtain a new list of look-up secrets.
+-->
+
+Authentication Factor の Integrity (完全性) を維持するには, あるファクターを含む Authentication を利用して別のファクターの Authenticator を取得できないようにすることが不可欠である.
+例えば, Memorized Secret は Look-up Secret の新しいリストを取得するために利用可能であってはならない.
 
 ## Session Attacks
 
+<!--
 The above discussion focuses on threats to the authentication event itself, but hijacking attacks on the session following an authentication event can have similar security impacts. The session management guidelines in [Sec. 7](sec7_session.md#sec7) are essential to maintain session integrity against attacks, such as XSS. In addition, it is important to sanitize all information to be displayed [[OWASP-XSS-prevention]](references.md#ref-OWASP-XSS-prevention) to ensure that it does not contain executable content. These guidelines also recommend that session secrets be made inaccessible to mobile code in order to provide extra protection against exfiltration of session secrets.
+-->
 
+上記は Authentication イベント自体に対する脅威にフォーカスしているが, Authentication イベントに後続する Session に対する Hijacking Attack も同様のセキュリティインパクトを及ぼしうる.
+[Sec. 7](sec7_session.md#sec7) の Session Management ガイドラインは, XSS などの Attack に対する Session Integrity (完全性) 維持に不可欠である.
+さらに表示される情報を全てサニタイズして [[OWASP-XSS-prevention]](references.md#ref-OWASP-XSS-prevention), 実行可能なコンテンツが含まれないようにすることも重要である.
+これらのガイドラインは, Session Secret の流出に対するさらなる保護策として, Mobile Code が Session Secret にアクセスできないようにすることも推奨している.
+
+<!--
 Another post-authentication threat, cross-site request forgery (CSRF), takes advantage of users' tendency to have multiple sessions active at the same time. It is important to embed and verify a session identifier into web requests to prevent the ability for a valid URL or request to be unintentionally or maliciously activated.
+-->
+
+もう一つの Authentication 後の脅威である Cross-site Request Forgery (CSRF) は, 複数の Session を同時にアクティブにするユーザーの傾向を利用する.
+Session 識別子を Web リクエストに埋め込んで検証し, 有効な URL ないしリクエストが意図せずにまたは悪意を持ってアクティベートされるのを防ぐことが重要である.
