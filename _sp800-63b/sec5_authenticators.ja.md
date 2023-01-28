@@ -16,7 +16,7 @@ _This section is normative._
 This section provides the detailed requirements specific to each type of authenticator. With the exception of reauthentication requirements specified in [Sec. 4](sec4_aal.md#AAL_SEC4) and the requirement for phishing resistance at AAL3 described in [Sec. 5.2.5](sec5_authenticators.md#verifimpers), the technical requirements for each of the authenticator types are the same regardless of the AAL at which the authenticator is used.
 -->
 
-このセクションでは, 各タイプの Authenticator の固有の詳細な要件を提供する. [Sec. 4](sec4_aal.md#AAL_SEC4)で指定された Reauthentication の要件および [Sec. 5.2.5](sec5_authenticators.md#verifimpers) で説明された AAL3 でのフィッシング耐性のための要件を除いて, Authenticator が使用される AAL に関係なく, 各 Authenticator タイプの技術要件は同じである.
+このセクションでは, 各タイプの Authenticator の固有の詳細な要件を提供する. [Sec. 4](sec4_aal.md#AAL_SEC4)で指定された Reauthentication の要件および [Sec. 5.2.5](sec5_authenticators.md#verifimpers) で説明された AAL3 での Phishing 耐性のための要件を除いて, Authenticator が使用される AAL に関係なく, 各 Authenticator タイプの技術要件は同じである.
 
 ## Requirements by Authenticator Type {#reqauthtype}
 
@@ -27,7 +27,7 @@ A Memorized Secret authenticator — commonly referred to as a _password_ or, if
 {:.authenticator-image}
 -->
 
-Memorized Secret Authenticator — 一般に _Password_ または数値の場合は _PIN_ と言われる — は, ユーザによって選択され記憶されることを意図した秘密の値である. Memorized Secret は, 攻撃者が正しい Secret Value を推測または発見することが現実的でないように, 十分に複雑で秘匿されている必要がある. Memorized Secret は _something you know_ である.
+Memorized Secret Authenticator — 一般に _Password_ または数値の場合は _PIN_ と言われる — は, ユーザによって選択され記憶されることを意図した秘密の値である. Memorized Secret は, Attacker が正しい Secret Value を推測または発見することが現実的でないように, 十分に複雑で秘匿されている必要がある. Memorized Secret は _something you know_ である.
 {:.authenticator-image}
 
 <!--
@@ -66,7 +66,7 @@ Verifier は, 提出された Memorized Secret 全体を検証することにな
 If Unicode characters are accepted in memorized secrets, the verifier **SHOULD** apply the normalization process for stabilized strings using either the NFKC or NFKD normalization defined in Sec. 12.1 of *Unicode Normalization Forms* [[UAX15]](references.md#ref-UAX15). This process is applied before hashing the byte string representing the memorized secret. Subscribers choosing memorized secrets containing Unicode characters **SHOULD** be advised that some characters may be represented differently by some endpoints, which can affect their ability to authenticate successfully.
 -->
 
- Memorized Secret でUnicode文字が受け入れられる場合, Verifier は Sec. 12.1 of *Unicode Normalization Forms* [[UAX15]](references.md#ref-UAX15) で定義された NFKC または NFKD 正規化を使用して, スタビライズされた文字列の正規化プロセスを適用する必要がある(**SHOULD**). このプロセスは, Memorized Secret を表すバイト文字列をハッシュする前に適用される. Unicode 文字を含む Memorized Secret を選択する Subscriber は, 一部の文字が一部のエンドポイントによって異なる方法で表現される可能性があることを通知される必要がある(**SHOULD**). これは, 正常に Authenticate する能力に影響を与える可能性がある.
+ Memorized Secret でUnicode文字が受け入れられる場合, Verifier は Sec. 12.1 of *Unicode Normalization Forms* [[UAX15]](references.md#ref-UAX15) で定義された NFKC または NFKD 正規化を使用して, スタビライズされた文字列の正規化プロセスを適用する必要がある(**SHOULD**). このプロセスは, Memorized Secret を表すバイト文字列をHash する前に適用される. Unicode 文字を含む Memorized Secret を選択する Subscriber は, 一部の文字が一部のエンドポイントによって異なる方法で表現される可能性があることを通知される必要がある(**SHOULD**). これは, 正常に Authenticate する能力に影響を与える可能性がある.
 
 <!--
 Memorized secret verifiers **SHALL NOT** permit the subscriber to store a hint that is accessible to an unauthenticated claimant. Verifiers **SHALL NOT** prompt subscribers to use specific types of information (e.g., "What was the name of your first pet?", a technique known as knowledge-based authentication (KBA) or security questions) when choosing memorized secrets.
@@ -87,16 +87,16 @@ When processing requests to establish and change memorized secrets, verifiers **
 * Context-specific words, such as the name of the service, the username, and derivatives thereof.
 -->
 
-* 以前の侵害コーパスから取得したパスワード.
+* 以前の侵害コーパスから取得したPassword.
 * 辞書の単語.
 * 反復または連続した文字 (例: 'aaaaaa', '1234abcd').
-* サービスの名前, ユーザ名, およびその派生語など, コンテキスト特有の単語。
+* サービスの名前, ユーザ名, およびその派生語など, コンテキスト特有の単語.
 
 <!--
 If the chosen secret is found in the blocklist, the CSP or verifier **SHALL** advise the subscriber that they need to select a different secret, **SHALL** provide the reason for rejection, and **SHALL** require the subscriber to choose a different value. Since the blocklist is used to defend against brute-force attacks and unsuccessful attempts are rate limited as described below, the blocklist **SHOULD** be of a size sufficient to prevent subscribers from choosing memorized secrets that attackers are likely to guess before reaching the attempt limit. Excessively large blocklists **SHOULD NOT** be used because they frustrate subscribers' attempts to establish an acceptable memorized secret and do not provide significantly improved security.
 -->
 
-選択された Secret がブロックリストの中にある場合, CSP または Verifier は Subscriber に別の Secret を選択する必要があることを通知することとなり(**SHALL**), 拒否の理由を提供することになり(**SHALL**), Subscriber に別の値を選択することを要求することになる(**SHALL**). ブロックリストはブルートフォース攻撃を防御するために使用され, 試行の失敗は以下で説明するようにレート制限されるため, ブロックリストは Subscriber が攻撃者が試行リミットに到達する前に推測する可能性のある Memorized Secret を選択することを防ぐのに十分なサイズにする必要がある(**SHOULD**). 過度に大きなブロックリストは使用しないほうがよい(**SHOULD NOT**). これは, Subscriber が許容される Memorized Secret を確立しようとする試みを妨げ, 大幅に改善されたセキュリティを提供しないためである.
+選択された Secret がブロックリストの中にある場合, CSP または Verifier は Subscriber に別の Secret を選択する必要があることを通知することとなり(**SHALL**), 拒否の理由を提供することになり(**SHALL**), Subscriber に別の値を選択することを要求することになる(**SHALL**). ブロックリストはブルートフォース Attack を防御するために使用され, 試行の失敗は以下で説明するようにレート制限されるため, ブロックリストは Subscriber が Attacker が試行リミットに到達する前に推測する可能性のある Memorized Secret を選択することを防ぐのに十分なサイズにする必要がある(**SHOULD**). 過度に大きなブロックリストは使用しないほうがよい(**SHOULD NOT**). これは, Subscriber が許容される Memorized Secret を確立しようとする試みを妨げ, 大幅に改善されたセキュリティを提供しないためである.
 
 <!--
 Verifiers **SHALL** offer guidance to the subscriber to assist the user in choosing a strong memorized secret. This is particularly important following the rejection of a memorized secret on the above list as it discourages trivial modification of listed (and likely very weak) memorized secrets [[Blocklists]](references.md#ref-blocklists).
@@ -120,18 +120,26 @@ Verifier は,  Memorized Secret に他の構成ルールを課すことはない
 Verifiers **SHALL** allow the use of password managers. To facilitate their use, verifiers **SHOULD** permit claimants to use "paste" functionality when entering a memorized secret. Password manangers may increase the likelihood that users will choose stronger memorized secrets.
 -->
 
-Verifier は, パスワードマネージャーの使用を許可することになる(**SHALL**). それらを使用しやすくするために, Verifier は, Memorized Secret を入力するときに, Claimant が「貼り付け」機能の使用を許可ことになる(**SHALL**). パスワードマネージャーは, ユーザーがより強力な Memorized Secret を選択する可能性を高める場合がある.
+Verifier は, Passwordマネージャーの使用を許可することになる(**SHALL**). それらを使用しやすくするために, Verifier は, Memorized Secret を入力するときに, Claimant が「貼り付け」機能の使用を許可ことになる(**SHALL**). Passwordマネージャーは, ユーザーがより強力な Memorized Secret を選択する可能性を高める場合がある.
 
 <!--
 In order to assist the claimant in successfully entering a memorized secret, the verifier **SHOULD** offer an option to display the secret — rather than a series of dots or asterisks — while it is entered and until it is submitted to the verifier. This allows the claimant to confirm their entry if they are in a location where their screen is unlikely to be observed. The verifier **MAY** also permit the claimant's device to display individual entered characters for a short time after each character is typed to verify correct entry. This is common on mobile devices.
 -->
 
 Claimant が Memorized Secret を正常に入力することを支援するために, Verifier は, 入力されている間および 
-Verifier に送信されるまで, 一連のドットやアスタリスクではなく, Secret を表示するオプションを提供する必要がある(**SHOULD**). これにより Claimant は, 自分の画面が観察される可能性が低い場所にいる場合, 自分の入力を確認できる. Verifier は, 正しい入力を検証するために各文字が入力された後, 入力された個々の文字を短時間表示することを要求者のデバイスに許可することもできます(MAY)。 これは, モバイル デバイスでは一般的です。
+Verifier に送信されるまで, 一連のドットやアスタリスクではなく, Secret を表示するオプションを提供する必要がある(**SHOULD**). これにより Claimant は, 自分の画面が観察される可能性が低い場所にいる場合, 自分の入力を確認できる. Verifier は, 各文字が入力された後, 正しく入力したかを確認するために入力された個々の文字を短時間表示することを Claimant のデバイスに許可してもよい(**MAY**). これは, モバイルデバイスでは一般的である.
 
+<!--
 The verifier **SHALL** use approved encryption and an authenticated protected channel when requesting memorized secrets in order to provide resistance to eavesdropping and adversary-in-the-middle attacks.
+-->
 
+Verifier は, Memorized Secret を要求するときには, 盗聴や Adversary-in-the-Middle Attack に対する耐性を提供するために, 承認された暗号による暗号化と認証された保護されたチャネルを使用することになる(**SHALL**).
+
+<!--
 Verifiers **SHALL** store memorized secrets in a form that is resistant to offline attacks. Memorized secrets **SHALL** be salted and hashed using a suitable password hashing scheme. Password hashing schemes take a password, a salt, and a cost factor as inputs and generate a password hash. Their purpose is to make each password guess more expensive for an attacker who has obtained a hashed password file and thereby make the cost of a guessing attack high or prohibitive. A function that is both memory-hard and compute-hard **SHOULD** be used because it increases the cost of an attack. While NIST has not published guidelines on specific password hashing schemes, examples of such functions include Argon2 [[Argon2]](references.md#ref-argon2) and scrypt [[Scrypt]](references.md#ref-scrypt). Examples of approved one-way functions include Keyed Hash Message Authentication Code (HMAC) [[FIPS198-1]](references.md#ref-FIPS198-1), any approved hash function in [[SP800-107]](references.md#ref-SP800-107), Secure Hash Algorithm 3 (SHA-3) [[FIPS202]](references.md#ref-FIPS202), CMAC [[SP800-38B]](references.md#ref-SP800-38B), Keccak Message Authentication Code (KMAC), Customizable SHAKE (cSHAKE), and ParallelHash [[SP800-185]](references.md#ref-SP800-185). The chosen output length of the password hashing scheme **SHOULD** be the same as the length of the underlying one-way function output.
+-->
+
+Verifier は, Memorized Secret を Offline Attack に耐性のある形式で保存することになる(**SHALL**).  Memorized Secret は, 適切な Password Hash スキームを使用して Salt および Hash されることになる(**SHALL**). Password Hash スキームは, Password, Salt, およびコスト ファクターを入力として受け取り, Password Hash を生成する. それらの目的は, Hash された Password ファイルを取得した Attacker に対して, 各 Password の推測をより高価なものにし, それによって推測攻撃のコストを高くしたり法外なものにしたりすることである. Attack のコストを増加させるため, Memory-Hard と Compute-Hard の両方の性質を持つ関数を使用する必要がある(**SHOULD**). NIST は特定の Password Hash スキームに関するガイドラインを公開していないが, そのような関数の例には Argon2 [[Argon2]](references.md#ref-argon2) や scrypt [[Scrypt]](references.md#ref-scrypt) などがある. 承認された一方向関数の例には, Keyed Hash Message Authentication Code (HMAC) [[FIPS198-1]](references.md#ref-FIPS198-1), [[SP800-107]](references.md#ref-SP800-107) で承認されたいずれかの Hash 関数, Secure Hash Algorithm 3 (SHA-3) [[FIPS202]](references.md#ref-FIPS202), CMAC [[SP800-38B]](references.md#ref-SP800-38B), Keccak Message Authentication Code (KMAC), Customizable SHAKE (cSHAKE), および ParallelHash [[SP800-185]](references.md#ref-SP800-185) が含まれる.  Password Hash スキームが処理した出力の長さは, 基になる一方向関数の出力の長さと同じである必要がある(**SHOULD**).
 
 The salt **SHALL** be at least 32 bits in length and be chosen arbitrarily so as to minimize salt value collisions among stored hashes. Both the salt value and the resulting hash **SHALL** be stored for each memorized secret authenticator.
 
