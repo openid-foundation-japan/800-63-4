@@ -169,31 +169,59 @@ Related mechanisms that assist in mitigating the threats identified above are su
 | | Authenticated Protected Channel を介して Authenticate する. (e.g., ブラウザウィンドウの鍵アイコンを視認する) | [4.1.2](sec4_aal.md#aal1req), [4.2.2](sec4_aal.md#aal2req), [4.3.2](sec4_aal.md#aal3req) |
 | | *pass-the-hash* などの Replay Attack 耐性のある Authentication Protocol を使用する. | [5.2.8](sec5_authenticators.md#replay) |
 | | 信頼できる入力機能と信頼できる表示機能を備えた Authentication エンドポイントを使用する. | [5.1.6.1](sec5_authenticators.md#sfcsa), [5.1.8.1](sec5_authenticators.md#mfcsa) |
-| **Offline Cracking** | Use an authenticator with a high entropy authenticator secret. | [5.1.2.1](sec5_authenticators.md#lusa), [5.1.4.1](sec5_authenticators.md#sfotpa), [5.1.5.1](sec5_authenticators.md#mfotpa), [5.1.7.1](sec5_authenticators.md#sfcda), [5.1.9.1](sec5_authenticators.md#mfcda) |
-| | Store centrally verified memorized secrets in a salted, hashed form, including a keyed hash. | [5.1.1.1.2](sec5_authenticators.md#memsecretver), [5.2.7](sec5_authenticators.md#verifier-secrets) |
-| **Side Channel Attack** | Use authenticator algorithms that are designed to maintain constant power consumption and timing regardless of secret values. | [4.3.2](sec4_aal.md#aal3req)
-| **Phishing or Pharming** | Use authenticators that provide phishing resistance. | [5.2.5](sec5_authenticators.md#verifimpers) |
-| **Social Engineering** | Avoid use of authenticators that present a risk of social engineering of third parties such as customer service agents. | [6.1.2.1](sec6_lifecycle.md#bindexisting), [6.1.2.3](sec6_lifecycle.md#replacement) |
-| **Online Guessing** | Use authenticators that generate high entropy output. | [5.1.2.1](sec5_authenticators.md#lusa), [5.1.7.1](sec5_authenticators.md#sfcda), [5.1.9.1](sec5_authenticators.md#mfcda) |
-| | Use an authenticator that locks up after a number of repeated failed activation attempts. | [5.2.2](sec5_authenticators.md#throttle) |
-| **Endpoint Compromise** | Use hardware authenticators that require physical action by the subscriber. | [5.2.9](sec5_authenticators.md#intent) |
-| | Maintain software-based keys in restricted-access storage. | [5.1.3.1](sec5_authenticators.md#ooba), [5.1.6.1](sec5_authenticators.md#sfcsa), [5.1.8.1](sec5_authenticators.md#mfcsa) |
-| **Unauthorized Binding** | Use AitM-resistant protocols for provisioning of authenticators and associated keys. | [6.1](sec6_lifecycle.md#binding) |
+| **Offline Cracking** | 高 Entropy な Authenticator Secret を持つ Authenticator を使用する. | [5.1.2.1](sec5_authenticators.md#lusa), [5.1.4.1](sec5_authenticators.md#sfotpa), [5.1.5.1](sec5_authenticators.md#mfotpa), [5.1.7.1](sec5_authenticators.md#sfcda), [5.1.9.1](sec5_authenticators.md#mfcda) |
+| | 中央で検証された Memorized Secret を, 鍵付きハッシュを含む Salt 付きハッシュ形式で保存する. | [5.1.1.1.2](sec5_authenticators.md#memsecretver), [5.2.7](sec5_authenticators.md#verifier-secrets) |
+| **Side Channel Attack** | シークレット値に関係なく一定の電力消費およびタイミングを維持するよう設計された Authenticator アルゴリズムを使用する. | [4.3.2](sec4_aal.md#aal3req)
+| **Phishing or Pharming** | Phishing 耐性のある Authenticator を使用する. | [5.2.5](sec5_authenticators.md#verifimpers) |
+| **Social Engineering** | カスタマーサービス代行業者等の 3rd-party の Social Engineering リスクをもたらす Authenticator の使用を避ける. | [6.1.2.1](sec6_lifecycle.md#bindexisting), [6.1.2.3](sec6_lifecycle.md#replacement) |
+| **Online Guessing** | 高 Entropy な Output を生成する Authenticator を使用する. | [5.1.2.1](sec5_authenticators.md#lusa), [5.1.7.1](sec5_authenticators.md#sfcda), [5.1.9.1](sec5_authenticators.md#mfcda) |
+| | Activation が一定回数以上連続して失敗した際にロックされるような Authenticator を使用する.  | [5.2.2](sec5_authenticators.md#throttle) |
+| **Endpoint Compromise** | Subscriber の物理アクションを要求するようなハードウェア Authenticator を使用する. | [5.2.9](sec5_authenticators.md#intent) |
+| | Access が制限されたストレージ内でソフトウェアベースの鍵を管理する. | [5.1.3.1](sec5_authenticators.md#ooba), [5.1.6.1](sec5_authenticators.md#sfcsa), [5.1.8.1](sec5_authenticators.md#mfcsa) |
+| **Unauthorized Binding** | Authenticator および関連する鍵の Provisioning には AitM 耐性のあるプロトコルを使用する. | [6.1](sec6_lifecycle.md#binding) |
 {:latex-table="4" latex-caption="Mitigating Authenticator Threats" latex-longtable="true"  latex-columns="p@0.20\textwidth,p@0.35\textwidth,p@0.35\textwidth"}
 
+<!--
 Several other strategies may be applied to mitigate the threats described in [Table 3](sec8_security.md#table-3):
+-->
 
+[Table 3](sec8_security.md#table-3) に挙げた脅威の軽減には, 他にもいくつかの戦略が適用可能である.
+
+<!--
 * *Multiple factors* make successful attacks more difficult to accomplish. If an attacker needs to both steal a cryptographic authenticator and guess a memorized secret, then the work to discover both factors may be too high.
+-->
 
+* *多要素 (Multiple factors)* により, Attack の成功はさらに困難になる. Attacker が Cryptographic Authenticator を盗んだ上で Memorized Secret を推測しなければならない場合, 両方のファクターを見つけ出すための仕事量は多すぎる可能性がある.
+
+<!--
 * *Physical security mechanisms* may be employed to protect a stolen authenticator from duplication. Physical security mechanisms can provide tamper evidence, detection, and response.
+-->
 
+* *物理セキュリティメカニズム (Physical security mechanism)* を採用し, 盗まれた Autheticator を複製から保護することも可能である. 物理セキュリティメカニズムは改ざんの証拠, 検出, 応対も可能にしうる.
+
+<!--
 * *Requiring the use of long memorized secrets* that don't appear in common dictionaries may force attackers to try every possible value.
+-->
 
+* *長い Memorized Secret の使用を要求 (Requiring the use of long memorized secrets)* する. そのようなシークレットは一般的な辞書には載っておらず, Attacker は全ての取りうる値を総当たりしなければならなくなる可能性がある.
+
+<!--
 * *System and network security controls* may be employed to prevent an attacker from gaining access to a system or installing malicious software.
+-->
 
+* *システムおよび Network セキュリティコントロール (System and network security controls)* を採用し, Attacker がシステムへの Access を得たり不正なソフトウェアをインストールすることを防ぐことも可能である.
+
+<!--
 * *Periodic training* may be performed to ensure subscribers understand when and how to report compromise — or suspicion of compromise — or otherwise recognize patterns of behavior that may signify an attacker attempting to compromise the authentication process.
+-->
 
+* *定期的なトレーニング (Periodic training)* を実施し, Subscriber がいつどのように侵害 - または侵害の疑い - を報告すべきか, いつどのように Attacker が Authentication プロセスを侵害しようとしていることを示しているかもしれない行動パターンを認識しうるかを理解できるようにすることもできる.
+
+<!--
 * *Out of band techniques* may be employed to verify proof of possession of registered devices (e.g., cell phones).
+-->
+
+* *Out-of-band なテクニック (Out of band techniques)* を採用し, 登録デバイス (e.g., 携帯電話) の保持証明を検証することもできる.
 
 ## Authenticator Recovery
 
