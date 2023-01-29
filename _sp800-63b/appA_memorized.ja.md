@@ -126,14 +126,50 @@ Highly complex memorized secrets introduce a new potential vulnerability: they a
 
 ## Central vs. Local Verification
 
+<!--
 While passwords that are used as a separate authentication factor are generally verified centrally by the CSP's verifier, those that are used as an activation factor for a multi-factor authenticator are either verified locally or are used to derive the authenticator output, which will be incorrect if the wrong activation factor is used. Both of these situations are referred to as "local verification".
+-->
 
+単体の Authentication Factor として利用される Password は, 通常 CSP の Verifier によって中央で一元的に検証されるが, Multi-factor Authenticator の Activation Factor として利用される Password は, ローカルで検証されたり Authenticator Output の導出 (Activation Factor が正しくなければ Authenticator Output も正しくならない) のために用いられる.
+こういったシチュエーションは "Local Verification" と呼ばれる.
+
+<!--
 The attack surface and vulnerabilities for central and local verification are very different from each other. Accordingly, the requirements for memorized secrets verified centrally is different from those verified locally. Centrally verified secrets require the verifier, which is an online resource, to store salted and iteratively hashed verification secrets for all subscribers' passwords. Although the salting and hashing process increases the computational effort to determine the passwords from the hashes, the verifier is an attractive target for attackers, particularly those who are interested in compromising an arbitrary subscriber rather than a specific one.
+-->
 
+Central Verification と Local Verification の Attack 対象領域と脆弱性は互いに大きく異なる.
+したがって, 中央で検証される Memorized Secret に対する要件とローカルで検証されるそれは異なる.
+中央で検証されるシークレットには, オンラインリソースである Verifier が, 全ての Subscriber の Password に対して Salt 付きで繰り返しハッシュ化した Verification シークレットを保存する必要がある.
+Salt およびハッシュ化プロセスはハッシュ値から Password を特定するための計算量を増大させるが, Verifier は Attacker にとっての格好の標的となる. 特定の Subscriber ではなく任意の Subscriber を侵害することに関心を持つ Attacker であればなおさらである.
+
+<!--
 Local verifiers do not have the same concerns with attacks at scale on a central online verifier, but depend to a greater extent on the physical security of the authenticator and the integrity of its associated endpoint. To the extent that the authenticator stores the activation factor, that factor must be protected against physical and side-channel (e.g., power and timing analysis) attacks on the authenticator. When the activation factor is entered through the associated endpoint, the endpoint needs to be free of malware, such as key-logging software, if the password is to be protected. Since these threats are less dependant on the length and complexity of the password, those requirements are relaxed for local verification.
+-->
 
+ローカルの Verifier には, 中央のオンラインな Verifier に対する大規模攻撃のような心配はないが, Authenticator の物理セキュリティと関連するエンドポイントの Integrity (完全性) により大きく依存する.
+Authenticator が Activation Factor を保存する範囲で, その Activation Factor は物理攻撃および Side-Channel Attack (e.g., 電力およびタイミング解析) から保護しなければならない.
+関連するエンドポイントから Activation Factor が入力される際は, そのエンドポイントがマルウェアに感染していてはならない.
+例えば Password を保護する場合は, キーロガーソフトウェアなどが防ぐべきマルウェアになる.
+これらの脅威は Password の長さと複雑さにあまり依存しないため, こういった要件は Local Verification では緩和される.
+
+<!--
 Online password-guessing attacks are a similar threat for centrally and locally verified passwords. Throttling, which is the primary defense against online attacks, can be particularly challenging for local verifiers because of the limited ability of some authenticators to securely store information about unsuccessful attempts. Throttling can be performed by either keeping a count of invalid attempts in the authenticator, or by generating an authenticator output that is rejected by the CSP verifier, which does the throttling. In this case it is important that the invalid outputs not be obvious to the attacker, who could otherwise make offline attempts until a valid-looking output appears.
+-->
+
+オンラインのパスワード推測 Attack は, 中央およびローカルで検証される Password ともに共通した脅威である.
+Online Attack に対する主要な防御策である Throttling は, ローカルの Verifier にとっては特に困難となる可能性がある.
+そういった Authenticator の中には, 失敗試行に関する情報をセキュアに保存する能力が限られているものもある.
+Throttling は, Authenticator 内に無効な試行の回数を保持するか, Throttling を行う CSP Verifier に拒否されるような Authenticator Output を生成することで実現できる.
+この場合, Authenticator Output が無効であることが Attacker に明らかにならないことが重要である.
+さもないと Attacker は有効に見える Authenticator Output が出力されるまでオフライン試行を繰り返すことができる.
 
 ## Summary
 
+<!--
 Length and complexity requirements beyond those recommended here significantly increase the difficulty of memorized secrets and increase user frustration. As a result, users often work around these restrictions in a way that is counterproductive. Furthermore, other mitigations such as blocklists, secure hashed storage, and rate limiting are more effective at preventing modern brute-force attacks. Therefore, no additional complexity requirements are imposed.
+-->
+
+ここで推奨されている以上の長さと複雑さの要件は, Memorized Secret の難易度を大幅に高め, ユーザーのフラストレーションを増加させる.
+その結果, ユーザーはしばしばそういった制約の回避策として逆効果な方法を選ぶこともある.
+さらに, Blocklist, セキュアでハッシュ化されたストレージ, レートリミットなどのその他の軽減策は, モダンな Brute-force Attack を防ぐのにより効果的である.
+したがって, 追加の複雑さの要件は課さない.
