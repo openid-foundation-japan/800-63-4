@@ -49,13 +49,37 @@ Password に使用に関連する Attack の多くは, Password の複雑性と�
 
 ## Length
 
+<!--
 Password length has been found to be a primary factor in characterizing password strength [[Strength]](references.md#ref-strength) [[Composition]](references.md#ref-composition). Passwords that are too short yield to brute force attacks as well as to dictionary attacks using words and commonly chosen passwords.
+-->
 
+Password の長さは Password 強度を特徴づける第一のファクターであることがわかっている [[Strength]](references.md#ref-strength) [[Composition]](references.md#ref-composition).
+短すぎる Password は, 単語や一般的に使用される Password を用いた辞書攻撃や Brute Force Attack の対象となる.
+
+<!--
 The minimum password length that should be required depends to a large extent on the threat model being addressed. Online attacks where the attacker attempts to log in by guessing the password can be mitigated by limiting the rate of login attempts permitted. In order to prevent an attacker (or a persistent claimant with poor typing skills) from easily inflicting a denial-of-service attack on the subscriber by making many incorrect guesses, passwords need to be complex enough that rate limiting does not occur after a modest number of erroneous attempts, but does occur before there is a significant chance of a successful guess.
+-->
 
+最低限必要な Password の長さは, 対応する脅威モデルに大きく依存する.
+Attacker が Password を推測してログインを試みる Online Attack は, 許容するログイン試行回数を制限することで軽減可能である.
+Attacker (またはタイピングスキルの低い執拗な Claimant) が大量の誤推測により Subscriber に対して Denial-of-Service Attack を引き起こすのを防ぐため, Password は十分複雑で, 適度な入力回数ではレートリミットに到達しないが, 推測が成功する可能性がかなり高くなる前にはレートリミットに到達するようなものとする必要がある.
+
+<!--
 Offline attacks are sometimes possible when one or more hashed passwords is obtained by the attacker through a database breach. The ability of the attacker to determine one or more users' passwords depends on the way in which the password is stored. Commonly, passwords are salted with a random value and hashed, preferably using a computationally expensive algorithm. Even with such measures, the current ability of attackers to compute many billions of hashes per second with no rate limiting requires passwords intended to resist such attacks to be orders of magnitude more complex than those that are expected to resist only online attacks.
+-->
 
+Attacker がデータベース侵害を通じて1つ以上のハッシュ化された Password を取得すると, Offline Attack が可能になることもある.
+Attacker が1人以上のユーザーの Password を特定できるかは, Password の保存方法に依存する.
+通常 Password は乱数値の Salt を用いてハッシュ化されており, さらに計算コストの高いアルゴリズムが使用されていればなお良い.
+そのような対策を講じても, 現在の Attacker はレートリミットなしで毎秒数十億のハッシュ計算が可能であり, そのような攻撃に対抗できる Password は Online Attack に抵抗できると予想される Password より桁違いに複雑でなければならない.
+
+<!--
 Users should be encouraged to make their passwords as lengthy as they want, within reason. Since the size of a hashed password is independent of its length, there is no reason not to permit the use of lengthy passwords (or pass phrases) if the user wishes. Extremely long passwords (perhaps megabytes in length) could conceivably require excessive processing time to hash, so it is reasonable to have some limit.
+-->
+
+ユーザーには, 合理的な範囲内で Password を好きなだけ長くすることを推奨するべきである.
+ハッシュ化された Password のサイズは元の Password の長さとは無関係であるため, ユーザーが希望しているのに長い Password (ないし Passphrase) の利用を許可しない理由はない.
+非常に長いパスワード (おそらくメガバイト級) はハッシュ化に角の処理時間を要する可能性があるため, そういった制限を設けるのは合理的である.
 
 ## Complexity
 
