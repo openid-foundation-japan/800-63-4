@@ -12,15 +12,40 @@ section: A
 
 *This appendix is informative.*
 
+<!--
 Throughout this appendix, the word "password" is used for ease of discussion. Where used, it should be interpreted to include passphrases and PINs as well as passwords.
+-->
+
+本 Appendix を通じて, 議論を容易にするため "Password" という用語を用いる.
+本用語が用いられる箇所では, Password に加え Passphrase や PIN も含むと解釈すべきである.
 
 ## Introduction
 
+<!--
 Despite widespread frustration with the use of passwords from both a usability and security standpoint, they remain a very widely used form of authentication [[Persistence]](references.md#ref-persistence). Humans, however, have only a limited ability to memorize complex, arbitrary secrets, so they often choose passwords that can be easily guessed. To address the resultant security concerns, online services have introduced rules in an effort to increase the complexity of these memorized secrets. The most notable form of these is composition rules, which require the user to choose passwords constructed using a mix of character types, such as at least one digit, uppercase letter, and symbol. However, analyses of breached password databases reveal that the benefit of such rules is not nearly as significant as initially thought [[Policies]](references.md#ref-policies), although the impact on usability and memorability is severe.
+-->
 
+Usability とセキュリティ双方の観点で Password の使用に関するフラストレーションが広がっているが, Password は依然として広く Authentication に使われている方式である [[Persistence]](references.md#ref-persistence).
+しかしながら, 人間は複雑で勝手に決められたシークレットを記憶する能力が限られており, しばしば簡単に推測可能な Password を選択することになる.
+この結果生じるセキュリティ上の懸念に対応するため, オンラインサービスは Memorized Secret の複雑度を上げるようなルールを導入してきた.
+最も顕著なルール形式はその構成ルールであり, 1つ以上の数字, 大文字および記号など, 複数の文字種を用いることをユーザーに要求するようなものである.
+しかしながら, 侵害されたパスワードデータベースの分析からは, そのようなルールがもたらす Usability への影響や記憶しづらさのわりに, それによる恩恵は当初考えられていたほど大したものではないことが明らかになっている [[Policies]](references.md#ref-policies).
+
+<!--
 Complexity of user-chosen passwords has often been characterized using the information theory concept of entropy [[Shannon]](references.md#ref-shannon). While entropy can be readily calculated for data having deterministic distribution functions, estimating the entropy for user-chosen passwords is difficult and past efforts to do so have not been particularly accurate. For this reason, a different and somewhat simpler approach, based primarily on password length, is presented herein.
+-->
 
+ユーザー選択により生成された Password の複雑度は, しばしば Entropy という情報理論のコンセプトを使って特徴づけられることがある [[Shannon]](references.md#ref-shannon).
+決定論的分布関数を持つデータの Entropy は容易に計算可能だが, ユーザー選択の Password の Entropy を推定するのは困難であり, そのための過去の努力はあまり正確ではなかった.
+そのため, それとは異なりよりシンプルなアプローチとして, 主に Password の長さに基づくものをここに示す.
+
+<!--
 Many attacks associated with the use of passwords are not affected by password complexity and length. Keystroke logging, phishing, and social engineering attacks are equally effective on lengthy, complex passwords as simple ones. These attacks are outside the scope of this Appendix.
+-->
+
+Password に使用に関連する Attack の多くは, Password の複雑性と長さには影響されない.
+キーストロークロギング, Phishing および Social Engineering Attack は, シンプルな Password に対して有効であるのと同様に, 長く複雑な Password に対しても有効である.
+こういった Attack は本 Appendix のスコープ外とする.
 
 ## Length
 
