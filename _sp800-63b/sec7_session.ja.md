@@ -12,11 +12,29 @@ section: 7
 
 _This section is normative._
 
+<!--
 Once an authentication event has taken place, it is often desirable to allow the subscriber to continue using the application across multiple subsequent interactions without requiring them to repeat the authentication event. This requirement is particularly true for federation scenarios — described in [[SP800-63C]](../_sp800-63c/sec1_purpose.md#purpose){:latex-href="#ref-SP800-63C"} — where the authentication event necessarily involves several components and parties coordinating across a network.
+-->
 
+一度 Authentication イベントが発生すると, Subscriber が Authentication イベントを繰り返さなくとも, 後続の複数のインタラクションに渡ってアプリケーションを使い続けられるようにすることが望ましいことが多い.
+この要件は [[SP800-63C]](../_sp800-63c/sec1_purpose.md#purpose){:latex-href="#ref-SP800-63C"} で述べる Federation シナリオで特に当てはまる.
+Federation シナリオでは, Authentication イベントに複数のコンポーネントおよび当事者が関与し, Network 全体で協調する必要がある.
+
+<!--
 To facilitate this behavior, a *session* **MAY** be started in response to an authentication event, and continue the session until such time that it is terminated. The session **MAY** be terminated for any number of reasons, including but not limited to an inactivity timeout, an explicit logout event, or other means. The session **MAY** be continued through a reauthentication event — described in [Sec. 7.2](sec7_session.md#sessionreauthn) — wherein the subscriber repeats some or all of the initial authentication event, thereby re-establishing the session.
+-->
 
+上記の挙動を円滑にするため, Authentication イベントに呼応して *Session* を開始して, 終了されるまでそれを継続させることもできる (*MAY*).
+Session は, 非アクティブタイムアウト, 明示的ログアウトイベント, またはその他の手段を含む, 様々な理由で終了させてよい (*MAY*).
+Session は [Sec. 7.2](sec7_session.md#sessionreauthn) で述べる Reauthentication イベントを通じて継続してもよい (*MAY*).
+Reauthentication イベントでは, Subscriber は最初の Authentication イベントの一部または全てを繰り返し, それにより Session を再確立する.
+
+<!--
 Session management is preferable over continual presentation of credentials as the poor usability of continual presentation often creates incentives for workarounds such as caching of activation factors, negating authentication intent and obscuring the freshness of the authentication event.
+-->
+
+Session Management は頻発する Credential の提示より好ましい.
+Credential の提示が頻発すると Usability が悪化し, Activation Factor のキャッシング, Authentication Intent の無効化, Authentication イベントの鮮度の不明瞭化などを引き起こすような回避策へのインセンティブを引き起こすことが多い.
 
 ## Session Bindings
 
