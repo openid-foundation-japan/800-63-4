@@ -83,13 +83,46 @@ Users should be encouraged to make their passwords as lengthy as they want, with
 
 ## Complexity
 
+<!--
 As noted above, composition rules are commonly used in an attempt to increase the difficulty of guessing user-chosen passwords. Research has shown, however, that users respond in very predictable ways to the requirements imposed by composition rules [[Policies]](references.md#ref-policies). For example, a user that might have chosen "password" as their password would be relatively likely to choose "Password1" if required to include an uppercase letter and a number, or "Password1!" if a symbol is also required.
+-->
 
+上述のように, 構成ルールは, ユーザー選択による Password の推測を困難にするために一般的に利用されている.
+しかし, 調査によると, ユーザーは構成ルールで課される要件に対して非常に推測容易な方法で応答することが示されている [[Policies]](references.md#ref-policies).
+例えば, Password として "password" を選択しようとするユーザーは, 大文字と数字を含める必要がある場合には "Password1" を, 記号も必要な場合は "Password1!" を選択する可能性が比較的高い.
+
+<!--
 Users also express frustration when attempts to create complex passwords are rejected by online services. Many services reject passwords with spaces and various special characters. In some cases, the special characters that are not accepted might be an effort to avoid attacks like SQL injection that depend on those characters. But a properly hashed password would not be sent intact to a database in any case, so such precautions are unnecessary. Users should also be able to include space characters to allow the use of phrases. Spaces themselves, however, add little to the complexity of passwords and may introduce usability issues (e.g., the undetected use of two spaces rather than one), so it may be beneficial to remove repeated spaces in typed passwords prior to verification.
+-->
 
+また, 複雑な Password を生成しようとしてオンラインサービスに拒否されると, ユーザーはフラストレーションを感じる.
+多くのサービスは, スペースやさまざまな特殊文字を含む Password を拒否する.
+場合によっては, 受け入れられない特殊文字は, そういった文字に依存する SQL インジェクションなどの Attack を回避するためな可能性もある.
+しかしながら, 適切にハッシュ化された Password はどのような場合でもデータベースにそのまま送られるわけではないため, そのような予防策は不要である.
+さらに, ユーザーがフレーズを使用できるよう, スペースを含められるようにもすべきである.
+ただし, スペース自体は Password の複雑さをほとんど増やすこともなく, Usability の問題 (e.g., 気づかずに1つではなく2つのスペースを入力してしまう) を引き起こす可能性もあるため, 入力 Passsword 中の連続するスペースを Verification 前に取り除くことが有益な場合もある.
+
+<!--
 Users' password choices are very predictable, so attackers are likely to guess passwords that have been successful in the past. These include dictionary words and passwords from previous breaches, such as the "Password1!" example above. For this reason, it is recommended that passwords chosen by users be compared against a blocklist of unacceptable passwords. This list should include passwords from previous breach corpuses, dictionary words, and specific words (such as the name of the service itself) that users are likely to choose. Since user choice of passwords will also be governed by a minimum length requirement, this dictionary need only include entries meeting that requirement. As noted in [Sec. 5.1.1.2](sec5_authenticators.md#memsecretver), it is not beneficial for the blocklist to be excessively large or comprehensive, since its primary purpose is to prevent the use of very common passwords that might be guessed in an online attack before throttling restrictions take effect. An excessively large blocklist is likely to frustrate users that attempt to choose a memorable password.
+-->
 
+ユーザーの Password 選択は非常に予測しやすいため, Attacker は過去に利用に成功したものをもとに Password を推測する可能性がある.
+これには, 上記例の "Password1!" のような, 過去に侵害された辞書単語や Password を含む.
+そのため, ユーザー選択の Password を受け入れ不可な Password の Blocklist と比較することを推奨する.
+このリストには, 過去に侵害された事例で用いられた Password, 辞書単語やユーザーが選択しがちな特定単語 (サービス自体の名前など) から生成された Password を含めるべきである.
+ユーザー選択の Password も最小長要件に従うため, この辞書にはそのような要件にあったエントリーのみを含める必要がある.
+[Sec. 5.1.1.2](sec5_authenticators.md#memsecretver) で述べたように, Blocklist があまりに大きく包括的であることは有益ではない.
+Blocklist の主な目的は, Online Attack で Throttling 制限に到達するまでに推測されてしまう可能性のある非常に一般的な Password の利用を防ぐことである.
+Blocklist が大きすぎると, 覚えやすい Password を選択しようとするユーザーにフラストレーションを与えかねない.
+
+<!--
 Highly complex memorized secrets introduce a new potential vulnerability: they are less likely to be memorable, and it is more likely that they will be written down or stored electronically in an unsafe manner. While these practices are not necessarily vulnerable, statistically some methods of recording such secrets will be. This is an additional motivation not to require excessively long or complex memorized secrets.
+-->
+
+非常に複雑な Memorized Secret は新たな潜在的脆弱性をもたらす.
+そういった Memorized Secret は記憶に残る可能性が低く, 安全でない方法で書き留められたり電子的に保存される可能性が高い.
+そういった慣行が必ずしも脆弱であるわけではないが, 統計的にはそういったシークレットの記録方法はのいくらかは脆弱になりがちである.
+これは過度に長く複雑な Memorized Secret を要求しないという追加のモチベーションとなる.
 
 ## Central vs. Local Verification
 
