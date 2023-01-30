@@ -126,18 +126,45 @@ OWASP *Session Management Cheat Sheet* [[OWASP-session]](references.md#ref-OWASP
 
 ### Browser Cookies
 
+<!--
 Browser cookies are the predominant mechanism by which a session will be created and tracked for a subscriber accessing a service. Cookies are not authenticators, but they are suitable as short-term secrets (for the duration of a session).
+-->
 
+ブラウザ Cookie は, Session を生成するための有力なメカニズムであり, サービスに Access する Subscriber を追跡するものである.
+Cookie は Authenticator ではないが, 短期間のシークレット (セッション中) に適している.
+
+<!--
 Cookies used for session maintenance **SHALL** meet all of the following requirements:
+-->
 
+Session の維持に用いられる Cookie は以下の全要件を満たすこと (**SHALL**).
+
+<!--
 1. Cookies are tagged to be accessible only on secure (HTTPS) sessions.
 2. Cookies are accessible to the minimum practical set of hostnames and paths.
+-->
 
+1. Cookie はセキュア (HTTPS) Session でのみアクセス可能なようタグ付けすること.
+2. Cookie は必要最小限のホスト名およびパスのセットでのみアクセス可能であること.
+
+<!--
 In addition, session maintenance cookies **SHOULD** be tagged to be inaccessible via JavaScript (HttpOnly). They **SHOULD** contain only an opaque string (such as a session identifier), and **SHOULD NOT** contain cleartext PII. They **SHOULD** be tagged to expire at, or soon after, the session's validity period. This latter requirement is intended to limit the accumulation of cookies, but **SHALL NOT** be depended upon to enforce session timeouts.
+-->
+
+さらに, Session 維持用 Cookie は, JavaScript からアクセスできないようにタグ付け (HttpOnly) されるべきである (**SHOULD**).
+当該 Cookie は, Opaque 文字列 (Session 識別子など) のみで構成されるべきであり (**SHOULD**), 平文の PII を含むべきではない (**SHOULD NOT**).
+また当該 Cookie は, Session 有効期間終了時または終了後すぐに有効期限切れになるようタグ付けされるべきである (**SHOULD**).
+最後の要件は Cookie の蓄積を制限することを目的としたものであり, Session タイムアウトの強制のためにそれに依存してはならない (**SHALL NOT**).
 
 ### Access Tokens
 
+<!--
 An access token — such as found in OAuth — is used to allow an application to access a set of services on a subscriber's behalf following an authentication event. The presence of an OAuth access token **SHALL NOT** be interpreted by the RP as presence of the subscriber, in the absence of other signals. The OAuth access token, and any associated refresh tokens, **MAY** be valid long after the authentication session has ended and the subscriber has left the application.
+-->
+
+Access Token - OAuth などで見られる - は, アプリケーションが Authentication イベント後に Subscriber の代理としてあるサービス群に Access することを許可するために用いられる.
+RP は, 他のシグナルがない限り, OAuth Access Token が存在することをもって Subscriber がそこに存在すると解釈してはならない (**SHALL NOT**).
+OAuth Access Token および関連する Refresh Token は, Authentication Session が終了し Subscriber がアプリケーションを去った後でも長期間有効でありうる (**MAY**).
 
 ### Device Identification
 
