@@ -34,7 +34,7 @@ Memorized Secret Authenticator — 一般に _Password_ または数値の場合
 The requirements in this section apply to centrally verified memorized secrets that are used as an independent authentication factor, sent over an authenticated protected channel to the verifier of a CSP. Memorized secrets that are used locally by a multi-factor authenticator are referred to as _activation secrets_ and discussed in [Sec. 5.2.11](sec5_authenticators.md#s-5-2-11).
 -->
 
-このセクションの要件は, 認証された保護されたチャネルを介して CSP の Verifier に送信される, 独立した Authentication Factor として使用されるセントラルに検証された Memorized Secret に適用される. Multi-Factor Authenticator によってローカルで使用される Memorized Secret は, _Activation Secret_ と呼ばれ, [Sec. 5.2.11](sec5_authenticators.md#s-5-2-11) で議論される.
+このセクションの要件は, 認証された保護されたチャネルを介して CSP の Verifier に送信される, 独立した Authentication Factor として使用される中央で検証された Memorized Secret に適用される. Multi-Factor Authenticator によってローカルで使用される Memorized Secret は, _Activation Secret_ と呼ばれ, [Sec. 5.2.11](sec5_authenticators.md#s-5-2-11) で議論される.
 
 #### Memorized Secret Authenticators
 
@@ -72,7 +72,7 @@ If Unicode characters are accepted in memorized secrets, the verifier **SHOULD**
 Memorized secret verifiers **SHALL NOT** permit the subscriber to store a hint that is accessible to an unauthenticated claimant. Verifiers **SHALL NOT** prompt subscribers to use specific types of information (e.g., "What was the name of your first pet?", a technique known as knowledge-based authentication (KBA) or security questions) when choosing memorized secrets.
 -->
 
- Memorized Secret の Verifier は, Subscriber に認証されていない Claimant がアクセスできるヒントを保存することを許可することはない(**SHALL NOT**). Verifier は, Memorized Secret を選択する際に, Subscriber に特定の種類の情報 (例えば, 「あなたの最初のペットの名前は何ですか?」, 知識ベース認証 (KBA) または秘密の質問として知られる手法) を使用するように促すことはない(**SHALL NOT**).
+ Memorized Secret の Verifier は, Subscriber に認証されていない Claimant がアクセスできるヒントを保存することを許可することはない(**SHALL NOT**). Verifier は, Memorized Secret を選択する際に, Subscriber に特定の種類の情報 (例えば, 「あなたの最初のペットの名前は何ですか?」といった知識ベース認証 (KBA) または秘密の質問として知られる手法) を使用するように促すことはない(**SHALL NOT**).
 
 <!--
 When processing requests to establish and change memorized secrets, verifiers **SHALL** compare the prospective secrets against a blocklist that contains values known to be commonly used, expected, or compromised. For example, the list **MAY** include, but is not limited to:
@@ -139,17 +139,34 @@ Verifier は, Memorized Secret を要求するときには, 盗聴や Adversary-
 Verifiers **SHALL** store memorized secrets in a form that is resistant to offline attacks. Memorized secrets **SHALL** be salted and hashed using a suitable password hashing scheme. Password hashing schemes take a password, a salt, and a cost factor as inputs and generate a password hash. Their purpose is to make each password guess more expensive for an attacker who has obtained a hashed password file and thereby make the cost of a guessing attack high or prohibitive. A function that is both memory-hard and compute-hard **SHOULD** be used because it increases the cost of an attack. While NIST has not published guidelines on specific password hashing schemes, examples of such functions include Argon2 [[Argon2]](references.md#ref-argon2) and scrypt [[Scrypt]](references.md#ref-scrypt). Examples of approved one-way functions include Keyed Hash Message Authentication Code (HMAC) [[FIPS198-1]](references.md#ref-FIPS198-1), any approved hash function in [[SP800-107]](references.md#ref-SP800-107), Secure Hash Algorithm 3 (SHA-3) [[FIPS202]](references.md#ref-FIPS202), CMAC [[SP800-38B]](references.md#ref-SP800-38B), Keccak Message Authentication Code (KMAC), Customizable SHAKE (cSHAKE), and ParallelHash [[SP800-185]](references.md#ref-SP800-185). The chosen output length of the password hashing scheme **SHOULD** be the same as the length of the underlying one-way function output.
 -->
 
-Verifier は, Memorized Secret を Offline Attack に耐性のある形式で保存することになる(**SHALL**).  Memorized Secret は, 適切な Password Hash スキームを使用して Salt および Hash されることになる(**SHALL**). Password Hash スキームは, Password, Salt, およびコスト ファクターを入力として受け取り, Password Hash を生成する. それらの目的は, Hash された Password ファイルを取得した Attacker に対して, 各 Password の推測をより高価なものにし, それによって推測攻撃のコストを高くしたり法外なものにしたりすることである. Attack のコストを増加させるため, Memory-Hard と Compute-Hard の両方の性質を持つ関数を使用する必要がある(**SHOULD**). NIST は特定の Password Hash スキームに関するガイドラインを公開していないが, そのような関数の例には Argon2 [[Argon2]](references.md#ref-argon2) や scrypt [[Scrypt]](references.md#ref-scrypt) などがある. 承認された一方向関数の例には, Keyed Hash Message Authentication Code (HMAC) [[FIPS198-1]](references.md#ref-FIPS198-1), [[SP800-107]](references.md#ref-SP800-107) で承認されたいずれかの Hash 関数, Secure Hash Algorithm 3 (SHA-3) [[FIPS202]](references.md#ref-FIPS202), CMAC [[SP800-38B]](references.md#ref-SP800-38B), Keccak Message Authentication Code (KMAC), Customizable SHAKE (cSHAKE), および ParallelHash [[SP800-185]](references.md#ref-SP800-185) が含まれる.  Password Hash スキームが処理した出力の長さは, 基になる一方向関数の出力の長さと同じである必要がある(**SHOULD**).
+Verifier は, Memorized Secret を Offline Attack に耐性のある形式で保存することになる(**SHALL**).  Memorized Secret は, 適切な Password Hash スキームを使用して Salt および Hash されることになる(**SHALL**). Password Hash スキームは, Password, Salt, およびコストファクターを入力として受け取り, Password Hash を生成する. それらの目的は, Hash された Password ファイルを取得した Attacker に対して, 各 Password の推測をより高価なものにし, それによって推測攻撃のコストを高くしたり法外なものにしたりすることである. Attack のコストを増加させるため, Memory-Hard と Compute-Hard の両方の性質を持つ関数を使用する必要がある(**SHOULD**). NIST は特定の Password Hash スキームに関するガイドラインを公開していないが, そのような関数の例には Argon2 [[Argon2]](references.md#ref-argon2) や scrypt [[Scrypt]](references.md#ref-scrypt) などがある. 承認された一方向関数の例には, Keyed Hash Message Authentication Code (HMAC) [[FIPS198-1]](references.md#ref-FIPS198-1), [[SP800-107]](references.md#ref-SP800-107) で承認されたいずれかの Hash 関数, Secure Hash Algorithm 3 (SHA-3) [[FIPS202]](references.md#ref-FIPS202), CMAC [[SP800-38B]](references.md#ref-SP800-38B), Keccak Message Authentication Code (KMAC), Customizable SHAKE (cSHAKE), および ParallelHash [[SP800-185]](references.md#ref-SP800-185) が含まれる.  Password Hash スキームが処理した出力の長さは, 基になる一方向関数の出力の長さと同じである必要がある(**SHOULD**).
 
+<!--
 The salt **SHALL** be at least 32 bits in length and be chosen arbitrarily so as to minimize salt value collisions among stored hashes. Both the salt value and the resulting hash **SHALL** be stored for each memorized secret authenticator.
+-->
 
+Salt は長さが少なくとも 32bit となり, 保存された Hash 間の Salt 値の衝突を最小限に抑えるためにばらついて選択されることとなる(**SHALL**).  Salt 値と結果の Hash の両方が, Memorized Secret Authenticator ごとに保存されることとなる(**SHALL**).
+
+<!--
 For the Password-based Key Derivation Function 2 (PBKDF2) [[SP800-132]](references.md#ref-SP800-132), the cost factor is an iteration count: the more times the PBKDF2 function is iterated, the longer it takes to compute the password hash. Therefore, the iteration count **SHOULD** be as large as verification server performance will allow, typically at least 10,000 iterations.
+-->
 
+Password-based Key Derivation Function 2 (PBKDF2) [[SP800-132]](references.md#ref-SP800-132) の場合, コストファクターは反復回数である. PBKDF2 関数が反復される回数が多いほど, Password Hash の計算に時間がかかる. したがって, 反復回数は, Verification サーバのパフォーマンスが許す限り大きくする必要がある(通常, 少なくとも10,000回の反復)(**SHOULD**). 
+
+<!--
 In addition, verifiers **SHOULD** perform an additional iteration of a keyed hashing or encryption operation using a secret key known only to the verifier. This key value, if used, **SHALL** be generated by an approved random bit generator [[SP800-90Ar1]](references.md#ref-SP800-90Ar1) and provide at least the minimum security strength specified in the latest revision of NIST SP 800-131A, *Transitioning the Use of Cryptographic Algorithms and Key Lengths* [[SP800-131A]](references.md#ref-SP800-131A) (112 bits as of the date of this publication). The secret key value **SHALL** be stored separately from the hashed memorized secrets (e.g., in a specialized device like a hardware security module). With this additional iteration, brute-force attacks on the hashed memorized secrets are impractical as long as the secret key value remains secret.
+-->
+
+さらに, Verifier は, Verifier のみが知っている Secret Key を使用して, 鍵付き Hash または暗号化オペレーションの追加の反復を実行する必要がある(**SHOULD**). この Key 値を使用する場合, 承認された Random Bit Generator [[SP800-90Ar1]](references.md#ref-SP800-90Ar1) によって生成され, 少なくとも NIST SP 800-131A *Transitioning the Use of Cryptographic Algorithms and Key Lengths* [[SP800-131A]](references.md#ref-SP800-131A) の最新リビジョンで指定されている最小のセキュリティ強度を提供することとなる(この発行日時点で112ビット)(**SHALL**).  Secret Key の値は, Hash された Memorized Secret とは別に保存されることとなる(例えば, Hardware Security Moduleのような特別なデバイスに)(**SHALL**). この追加の反復により, Secret Key の値が秘密のままである限り, Hash された Memorized Secret に対するブルートフォース Attack は非現実的である.
 
 ### Look-Up Secrets {#lookupsecrets}
 
+<!--
 A look-up secret authenticator is a physical or electronic record that stores a set of secrets shared between the claimant and the CSP. The claimant uses the authenticator to look up the appropriate secrets needed to respond to a prompt from the verifier. For example, the verifier could ask a claimant to provide a specific subset of the numeric or character strings printed on a card in table format. A common application of look-up secrets is the use of one-time "recovery keys" stored by the subscriber for use in the event another authenticator is lost or malfunctions. A look-up secret is _something you have_.
+{:.authenticator-image}
+-->
+
+Look-up Secret Authenticator は, Claimant と CSP の間で共有される一連の Secret を格納する物理的または電子的な記録である. Claimant は, Verifier からのプロンプトに応答するために必要な, 適切な Secret を見つけるために Authenticator を使用する. 例えば, Verifier は, 表形式でカードに印刷された数値または文字列の特定のサブセットを提供するように Claimant に尋ねることができる. Look-up Secret の一般的な用途は, 別の Authenticator が紛失されたり故障した場合に使用するために, Subscriber によって保管された1回限りの"回復キー"としての使用である. Look-up Secret は _Something You Have_ である.
 {:.authenticator-image}
 
 #### Look-Up Secret Authenticators {#lusa}
