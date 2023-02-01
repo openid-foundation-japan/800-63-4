@@ -59,7 +59,7 @@ anchor: references
 
 ## NIST Special Publications
 
-NIST 800 Series Special Publications はこちら: < https://csrc.nist.gov/publications/sp800>. 本ガイドラインを実装する方は、特に以下の出版物が参考になるかもしれない。
+NIST 800 Series Special Publications はこちら: < https://csrc.nist.gov/publications/sp800>. 本ガイドラインを実装する方は、特に以下の出版物が参考になる場合がある。
 
 {% comment %}
 NIST 800 Series Special Publications are available at: < https://csrc.nist.gov/publications/sp800>. The following publications may be of particular interest to those implementing these guidelines.
