@@ -81,26 +81,68 @@ Binding プロセスの一環として, CSP は, 要求されている AAL に�
 
 ### Binding at Enrollment
 
+<!--
 The following requirements apply when an authenticator is bound to a subscriber account as part of the enrollment process.
+-->
 
+Enrollment プロセスの一環として Authenticator を Subscriber Account に紐づける際には, 以下の要件が適用される.
+
+<!--
 The CSP **SHALL** bind at least one &mdash; and **SHOULD** bind at least two &mdash; physical (*something you have*) authenticators to the subscriber account, in addition to a memorized secret or one or more biometric characteristics. Binding of multiple authenticators provides a means to recover from the loss or theft of the subscriber's primary authenticator. Preservation of online material or an online reputation makes it undesirable to lose control of a subscriber account due to the loss of an authenticator. The second authenticator makes it possible to securely recover from an authenticator loss.
+-->
 
+CSP は, Memorized Secret や1つ以上の Biometric Characteristics (生体特徴) に加え, 最低限1つ - そしてできれば最低限2つ (**SHOULD**) - の物理 Authenticator (*something you have*) を Subscriber Account に紐づけなければならない (**SHALL**).
+複数の Authenticator の Binding により, Subscriber のプライマリー Authenticator の 紛失や盗難時のリカバリー手段が確保される.
+オンラインマテリアルやオンラインレピュテーションが長期間維持されていくほど, Authenticator を紛失し Subscriber Account のコントロールを失うことはますます望ましくないものとなる.
+2つめの Authenticator は Authenticator 紛失時のセキュアなリカバリーを可能とする.
+
+<!--
 If enrollment and binding cannot be completed in a single physical encounter or electronic transaction (i.e., within a single protected session), the following methods **SHALL** be used to ensure that the same party acts as the applicant throughout the processes:
+-->
 
+Enrollment と Binding が一度の物理的やりとりや電子的 Transaction (i.e., 単一の Protected Session 内) で完了できない場合は, 以下の方法によりプロセス全体を通じて同じ当事者が Applicant として行動していることを保証すること (**SHALL**).
+
+<!--
 For remote transactions:
+-->
 
+Remote Transaction の場合:
+
+<!--
 1. The applicant **SHALL** identify themselves in each new binding transaction by presenting a temporary secret which was either established during a prior transaction, or sent to the applicant's phone number, email address, or postal address of record.
+-->
 
+1. Applicant は, 各新規 Binding Transaction において, 事前の Transaction 内で確立された, ないしは Applicant の電話番号, メールアドレスないしは Address of Record に配送された Temporary Secret を提示して, 自らを同定しなければならない (**SHALL**).
+
+<!--
 2. Long-term authenticator secrets **SHALL** only be issued to the applicant within a protected session.
+-->
 
+2. 長期間有効な Authenticator Secret は, Protected Session 内で Applicant に発行せねばならない (**SHALL**).
+
+<!--
 For in-person transactions:
+-->
 
+対面の Transaction の場合:
+
+<!--
 1. The applicant **SHALL** identify themselves in person by either using a secret as described in remote transaction (1) above, or through use of a biometric that was recorded during a prior encounter.
+-->
 
+1. Applicant は, 上記 Remote Transaction (1) で述べたシークレットか事前の対面処理中に記録された Biometric を利用して, 自らを同定せねばならない (**SHALL**).
+
+<!--
 2. Temporary secrets **SHALL NOT** be reused.
+-->
 
+2. Temporary Secret を再利用してはならない (**SHALL NOT**).
+
+<!--
 3. If the CSP issues long-term authenticator secrets during a physical transaction, then they **SHALL** be loaded locally onto a physical device that is issued in person to the applicant or delivered in a manner that confirms the address of record.
+-->
 
+3. CSP が物理 Transaction 中に長期間有効な Authenticator Secret を発行する場合, その Authenticator Secret は Applicant に対面で発行される物理デバイスにその場でロードするか, Address of Record を確認できる方法で配送されなければならない (**SHALL**).
 
 ### Post-Enrollment Binding {#post-enroll-bind}
 
