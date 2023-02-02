@@ -148,36 +148,102 @@ For in-person transactions:
 
 #### Binding of an Additional Authenticator at Existing AAL {#bindexisting}
 
+<!--
 With the exception of memorized secrets, CSPs and verifiers **SHOULD** encourage subscribers to maintain at least two valid authenticators of each factor that they will be using. For example, a subscriber who usually uses an OTP device as a physical authenticator **MAY** also be issued a number of look-up secret authenticators, or register a device for out-of-band authentication, in case the physical authenticator is lost, stolen, or damaged. See [Sec. 6.1.2.3](sec6_lifecycle.md#replacement) for more information on replacement of memorized secret authenticators.
+-->
 
+Memorized Secret を除き, CSP と Verifier は, Subscriber が使用することになる, ファクターの異なる最低限2つ以上の有効な Authenticator を維持するよう推奨すべきである (**SHOULD**).
+例えば, 普段 OTP Device を物理 Authenticator として使用する Subscriber には, 物理 Authenticator が紛失, 盗難, 損傷した場合にそなえ, いくつかの Look-up Secret Authenticator を発行したり, Out-of-band Authentication のためのデバイスを登録させることができる (**MAY**).
+Memorized Secret Authenticator の置換に関する詳細情報は [Sec. 6.1.2.3](sec6_lifecycle.md#replacement) を参照のこと.
+
+<!--
 Accordingly, CSPs **SHOULD** permit the binding of additional authenticators to a subscriber account. Before adding the new authenticator, the CSP **SHALL** first require the subscriber to authenticate at the AAL (or a higher AAL) at which the new authenticator will be used. A separate authentication using existing authenticators **SHALL** be performed following the request to bind a new authenticator, and **SHALL** be valid for 20 minutes. When an authenticator is added, the CSP **SHOULD** send a notification to the subscriber via a mechanism that is independent of the transaction binding the new authenticator (e.g., email to an address previously associated with the subscriber). The CSP **MAY** limit the number of authenticators that are bound in this manner.
+-->
+
+以上のことから, CSP は追加の Authenticator を Subscriber Account に紐づけることを許容するべきである (**SHOULD**).
+新しい Authenticator を追加する前に, CSP は Subscriber に 当該 Authenticator が利用されることになる AAL (ないしより高い AAL) で Authenticate することを要求しなければならない (**SHALL**).
+新 Authenticator の紐付け要求に続いて, 既存の Authenticator を用いた独立した Authentication を実行し (**SHALL**), 当該 Authentication を20分間有効とすること (**SHALL**).
+Authenticator が追加された際, CSP は Subscriber に新しい Authenticator を紐づけた Transaction とは独立したメカニズムを用いて通知を送るべきである (**SHOUD**) (e.g., 事前に Subscriber に関連づけられていたアドレスへの Email).
+CSP はこの方法で紐づけられる Authenticator の数を制限してもよい (**MAY**).
 
 #### Adding an Additional Factor to a Single-Factor Subscriber Account {#s-6-1-2-2}
 
+<!--
 If the subscriber account has only one authentication factor bound to it and an additional authenticator of a different authentication factor is to be added, the subscriber **MAY** request that the subscriber account be upgraded to AAL2.
+-->
 
+Subscriber Account が1つしか Authentication Factor を持たず, 異なる Authentication Factor の Authenticator が追加されようとしている時, Subscriber は Subscriber Account を AAL2 に昇格するよう要求することができる (**MAY**).
+
+<!--
 Before binding the new authenticator, the CSP **SHALL** require the subscriber to authenticate at AAL1. The CSP **SHOULD** send a notification of the event to the subscriber via a mechanism independent of the transaction binding the new authenticator (e.g., email to an address previously associated with the subscriber).
+-->
+
+新たな Authenticator を紐づける前に, CSP は Subscriber に AAL1 で Authenticate するよう要求しなければならない (**SHALL**).
+CSP は, 新しい Authenticator を紐づけた Transaction とは独立したメカニズムを用いて, Subscriber に当該イベントに関する通知を送るべきである (**SHOULD**) (e.g., 事前に Subscriber に関連づけられていたアドレスへの Email).
 
 #### Account Recovery {#replacement}
 
+<!--
 The situation where a subscriber loses control of authenticators necessary to successfully authenticate is commonly referred to as *account recovery*.
+-->
 
+Subscriber が Authenticator の制御を失った状況から Authenticate を成功させることができるようにするシチュエーションを, 一般的に *Account Recovery* と呼ぶ.
+
+<!--
 If a subscriber that has been identity proofed loses all authenticators necessary to complete authentication, that subscriber **SHALL** repeat the identity proofing process described in [[SP800-63A]](../_sp800-63a/sec1_purpose.md#purpose){:latex-href="#ref-SP800-63A"}. If the CSP has retained information from the evidence used in the original identity proofing process (pursuant to a privacy risk assessment as described in [[SP800-63A]](../_sp800-63a/sec1_purpose.md#purpose){:latex-href="#ref-SP800-63A"} Sec. 5.2.2) that is sufficient to perform verification of the subscriber and if that evidence is still valid, it **MAY** repeat only the verification portion of the identity proofing process as described in [[SP800-63A]](../_sp800-63a/sec1_purpose.md#purpose){:latex-href="#ref-SP800-63A"}.
+-->
 
+Identity Proofing を終えた Subscriber が Authentication を完了するために必要なすべての Authenticator を失った場合, [[SP800-63A]](../_sp800-63a/sec1_purpose.md#purpose){:latex-href="#ref-SP800-63A"} にあるように Subscriber は Identity Proofing プロセスをやり直さねばならない (**SHALL**).
+CSP が ([[SP800-63A]](../_sp800-63a/sec1_purpose.md#purpose){:latex-href="#ref-SP800-63A"} Sec. 5.2.2 にあるプライバシーリスク評価に従って) 元の Identity Proofing プロセスで用いられた Evidence の情報を保持しており, 元の Identity Proofing プロセスが当該 Evidence の有効性を検証した上で Subscriber に対して Verification を実行するだけで事足りるものであれば, 2度目のやり直しプロセスは [[SP800-63A]](../_sp800-63a/sec1_purpose.md#purpose){:latex-href="#ref-SP800-63A"} にあるように Identity Proofing プロセスの Verification のみを再実行するだけでよい (**MAY**).
+
+<!--
 The CSP **SHALL** require the claimant to authenticate using an authenticator of the remaining factor, if any, to confirm binding to the existing subscriber account. Reestablishment of authentication factors at IAL3 **SHALL** be done in person or through a supervised remote process as described in [[SP800-63A]](../_sp800-63a/sec1_purpose.md#purpose){:latex-href="#ref-SP800-63A"} Sec. 5.6.8, and **SHALL** perform a successful biometric comparison against the biometric characteristic collected during the original identity proofing process.
+-->
 
+CSP は, Claimant がもしまだ残されたファクターの Authenticator を保持していれば, 既存 Subscriber Account との Binding を確認するため, それを用いて Authenticate するよう要求しなければならない (**SHALL**).
+IAL3 における Autentication Factor の再確立は, [[SP800-63A]](../_sp800-63a/sec1_purpose.md#purpose){:latex-href="#ref-SP800-63A"} Sec. 5.6.8 にあるように対面ないし Supervised Remote プロセスを介して行わねばならず (**SHALL**), 元の Identity Proofing プロセス中に収集された Biometric 特性に対する Biometrics 比較を行わねばならない (**SHALL**).
+
+<!--
 The CSP **SHOULD** send a notification of the event to the subscriber. This **MAY** be the same notice that is required as part of the identity proofing process.
+-->
 
+CSP は Subscriber にこのイベントの通知を送るべきである (**SHALL**).
+これは Identity Proofing プロセスの一環として要求されたものと同じ通知でもよい (**MAY**).
+
+<!--
 Subscriber accounts that have not been identity proofed (i.e., without IAL) cannot be recovered because there is no reliable means for reassociating the subscriber with that account. Such accounts **SHALL** be treated as abandoned and a new subscriber account **SHALL** be established.
+-->
 
+Identity Proofing を終えていない Subscriber Account (i.e., IAL がない) は, Subscriber を当該アカウントに再び関連づける信頼できる方法が存在しないため, リカバリーもできない.
+そういったアカウントは放棄されたものとして扱い (**SHALL**), 新たな Subscriber Account を確立すること (**SHALL**).
+
+<!--
 Replacement of a lost (i.e., forgotten) memorized secret is problematic because it is very common. Additional "backup" memorized secrets do not mitigate this because they are just as likely to also have been forgotten. If a biometric is bound to the subscriber account, the biometric characteristic and associated physical authenticator **SHOULD** be used to establish a new memorized secret.
+-->
 
+紛失した (i.e., 忘れ去られた) Memorized Secret の置換は, それが非常に一般的であるがゆえに問題が多い.
+追加の "バックアップ用" Memorized Secret は, 大抵の場合それもまた忘れ去られるため, 対策にならない.
+Biometric が Subscriber Account に紐づいていれば, 新たな Memorized Secret の確立にこの Biometrics 特徴と関連する物理 Authenticator を用いるべきである (**SHALL**).
+
+<!--
 As an alternative to the above re-proofing process when there is no biometric bound to the subscriber account, the CSP **MAY** bind a new memorized secret with authentication using two physical authenticators, along with a confirmation code that has been sent to one of the subscriber's addresses of record. The confirmation code **SHALL** consist of at least 6 random alphanumeric characters generated by an approved random bit generator [[SP800-90Ar1]](references.md#ref-SP800-90Ar1). Confirmation codes **SHALL** be valid for at most:
+-->
 
+Subscriber Account に Biometric が紐づけられていない場合における上記の再 Proofing プロセスの代替として, CSP は, Subscriber の Address of Record の1つに送られた確認コードとともに, 2つの物理 Authenticator を用いて, 新たな Memorized Secret を Authentication に紐づけることもできる (**MAY**).
+この確認コードは, Approved な乱数ビット生成器 [[SP800-90Ar1]](references.md#ref-SP800-90Ar1) で生成された最低限6文字のランダムな英数字で構成すること (**SHALL**).
+確認コードは最大限以下の期間のみ有効なものとする (**SHALL**).
+
+<!--
 * 21 days, when sent to a postal address of record within the contiguous United States;
 * 30 days, when sent to a postal address of record outside the contiguous United States;
 * 10 minutes, when sent to a telephone of record (SMS or voice); or
 * 24 hours, when sent to an email address of record.
+-->
+
+* 米国本土の Address of Record に郵送される場合は21日.
+* 米国本土以外の Address of Record に郵送される場合は30日.
+* 記録済電話番号に (SMS ないし音声で) 送信される場合は10分.
+* 記録済 Email アドレスに送信される場合は24時間.
 
 #### External Authenticator Binding
 
