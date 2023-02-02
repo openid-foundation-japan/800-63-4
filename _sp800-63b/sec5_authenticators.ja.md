@@ -102,7 +102,7 @@ If the chosen secret is found in the blocklist, the CSP or verifier **SHALL** ad
 Verifiers **SHALL** offer guidance to the subscriber to assist the user in choosing a strong memorized secret. This is particularly important following the rejection of a memorized secret on the above list as it discourages trivial modification of listed (and likely very weak) memorized secrets [[Blocklists]](references.md#ref-blocklists).
 -->
 
-Verifierは, 強力な Memorized Secret を選択する際にユーザーを支援するために, Subscriber にガイダンスを提供することとなる(**SHALL**). これは, リストされた (そしておそらく非常に弱い) Memorized Secret の些細な変更を思いとどまらせるため, 上記のリストの記憶されたシークレットの拒否に続いて特に重要である. [[Blocklists]](references.md#ref-blocklists)
+Verifierは, 強力な Memorized Secret を選択する際にユーザーを支援するために, Subscriber にガイダンスを提供することとなる(**SHALL**). これは, リストされた (そしておそらく非常に弱い) Memorized Secret の些細な変更を思いとどまらせるため, 上記のリストの記憶された Secret の拒否に続いて特に重要である. [[Blocklists]](references.md#ref-blocklists)
 
 <!--
 Verifiers **SHALL** implement a rate-limiting mechanism that effectively limits the number of failed authentication attempts that can be made on the subscriber account as described in [Sec. 5.2.2](sec5_authenticators.md#throttle).
@@ -145,7 +145,7 @@ Verifier は, Memorized Secret を Offline Attack に耐性のある形式で保
 The salt **SHALL** be at least 32 bits in length and be chosen arbitrarily so as to minimize salt value collisions among stored hashes. Both the salt value and the resulting hash **SHALL** be stored for each memorized secret authenticator.
 -->
 
-Salt は長さが少なくとも 32bit となり, 保存された Hash 間の Salt 値の衝突を最小限に抑えるためにばらついて選択されることとなる(**SHALL**).  Salt 値と結果の Hash の両方が, Memorized Secret Authenticator ごとに保存されることとなる(**SHALL**).
+Salt は長さが少なくとも 32 ビットとなり, 保存された Hash 間の Salt 値の衝突を最小限に抑えるためにばらついて選択されることとなる(**SHALL**).  Salt 値と結果の Hash の両方が, Memorized Secret Authenticator ごとに保存されることとなる(**SHALL**).
 
 <!--
 For the Password-based Key Derivation Function 2 (PBKDF2) [[SP800-132]](references.md#ref-SP800-132), the cost factor is an iteration count: the more times the PBKDF2 function is iterated, the longer it takes to compute the password hash. Therefore, the iteration count **SHOULD** be as large as verification server performance will allow, typically at least 10,000 iterations.
@@ -170,46 +170,100 @@ Look-up Secret Authenticator は, Claimant と CSP の間で共有される一�
 {:.authenticator-image}
 
 #### Look-Up Secret Authenticators {#lusa}
+<!--
 CSPs creating look-up secret authenticators **SHALL** use an approved random bit generator [[SP800-90Ar1]](references.md#ref-SP800-90Ar1) to generate the list of secrets and **SHALL** deliver the authenticator securely to the subscriber. Look-up secrets **SHALL** have at least 20 bits of entropy.
+-->
 
+Look-up Secret Authenticator を作成する CSP は, 承認された Random Bit Generator [[SP800-90Ar1]](references.md#ref-SP800-90Ar1) を使用して Secret のリストを生成することとなり(**SHALL**), Authenticator を Subscriber に安全に配布することとなる(**SHALL**). Look-up Secret は, 少なくとも20ビットの Entropy を持つこととなる(**SHALL**).
+
+<!--
 Look-up secrets **MAY** be distributed by the CSP in person, by postal mail to the subscriber's address of record, or by online distribution. If distributed online, look-up secrets **SHALL** be distributed over a secure channel in accordance with the post-enrollment binding requirements in [Sec. 6.1.2](sec6_lifecycle.md#post-enroll-bind).
+-->
 
+Look-up Secret Authenticator は, CSP が対面で, Subscriber の記録上の住所へ郵便で, またはオンラインで配布してもよい(**MAY**). オンラインで配布される場合, Look-up Secret は [Sec. 6.1.2](sec6_lifecycle.md#post-enroll-bind) にある Post-Enrollment Binding の要件に従って, セキュアなチャネルを介して配布されることとなる(**SHALL**).
+
+<!--
 If the authenticator uses look-up secrets sequentially from a list, the subscriber **MAY** dispose of used secrets, but only after a successful authentication.
+-->
+
+Authenticator がリストからシーケンシャルに Look-up Secret を使用する場合, Authentication が成功した後に限り, Subscriber は使用済みの Secret を破棄してもよい(**MAY**). 
 
 #### Look-Up Secret Verifiers
 
+<!--
 Verifiers of look-up secrets **SHALL** prompt the claimant for the next secret from their authenticator or for a specific (e.g., numbered) secret. A given secret from an authenticator **SHALL** be used successfully only once. If the look-up secret is derived from a grid card, each cell of the grid **SHALL** be used only once.
+-->
 
+ Look-up Secret の Verifier は, Claimant に, 彼らの Authenticator からの次の Secret, または特定の (例えば, 番号が振られた) Secret を要求することとなる(**SHALL**). Authenticator から与えられた Secret は, 一度だけ成功として使用されることとなる(**SHALL**).  Look-up Secret がグリッド カードから得られたものである場合, グリッドの各セルは一度だけ使用されることとなる(**SHALL**).
+
+<!--
 Verifiers **SHALL** store look-up secrets in a form that is resistant to offline attacks. Look-up secrets having at least 112 bits of entropy **SHALL** be hashed with an approved one-way function as described in [Sec. 5.1.1.2](sec5_authenticators.md#memsecretver). Look-up secrets with fewer than 112 bits of entropy **SHALL** be salted and hashed using a suitable password hashing scheme, also described in [Sec. 5.1.1.2](sec5_authenticators.md#memsecretver). The salt value **SHALL** be at least 32 bits in length and arbitrarily chosen so as to minimize salt value collisions among stored hashes. Both the salt value and the resulting hash **SHALL** be stored for each look-up secret.
+-->
 
+Verifier は, Offline Attack に耐性のある形式で Look-up Secret を保存することとなる(**SHALL**). 少なくとも 112 ビットの Entropy を持つ Look-up Secret は, [Sec. 5.1.1.2](sec5_authenticators.md#memsecretver) で述べられた通り, 承認された一方向関数で Hash されることとなる(**SHALL**). Entropy が 112 ビット未満の Look-up Secret は, 同様に[Sec. 5.1.1.2](sec5_authenticators.md#memsecretver)で述べられた通り, Salt 化され適切な Password Hash スキームを使用して Hash されることとなる(**SHALL**). 
+Salt 値は長さが少なくとも 32 ビット となり, 保存された Hash 間の Salt 値の衝突を最小限に抑えるためにばらついて選択されることとなる(**SHALL**).  Salt 値と結果の Hash の両方が,  Look-up Secret ごとに保存されることとなる(**SHALL**).
+
+<!--
 For look-up secrets that have less than 64 bits of entropy, the verifier **SHALL** implement a rate-limiting mechanism that effectively limits the number of failed authentication attempts that can be made on the subscriber account as described in [Sec. 5.2.2](sec5_authenticators.md#throttle).
+-->
 
+Entropy が 64 ビット未満の Look-up Secret の場合, Verifier は, [Sec. 5.2.2](sec5_authenticators.md#throttle) で説明されている通り, Subscriber Account で試行できる Authentication の失敗回数を効果的に制限するレート制限メカニズムを実装することとなる(**SHALL**).
+
+<!--
 The verifier **SHALL** use approved encryption and an authenticated protected channel when requesting look-up secrets in order to provide resistance to eavesdropping and AitM attacks.
+-->
+
+Verifier は, Look-up Secret を要求するときには, 盗聴や AitM Attack に対する耐性を提供するために, 承認された暗号による暗号化と認証された保護されたチャネルを使用することになる(**SHALL**).
 
 ### Out-of-Band Devices {#out-of-band}
 
+<!--
 An out-of-band authenticator is a physical device that is uniquely addressable and can communicate securely with the verifier over a distinct communications channel, referred to as the secondary channel. The device is possessed and controlled by the claimant and supports private communication over this secondary channel, separate from the primary channel for authentication. An out-of-band authenticator is _something you have_.
 {:.authenticator-image}
+-->
 
+帯域外 Authenticator は, 一意のアドレス指定が可能で, セカンダリチャネルと呼ばれる個別の通信チャネルを介して Verifier と安全に通信できる物理デバイスである. デバイスは Claimant によって所有および制御され, Authentication のためのプライマリチャネルとは別に, このセカンダリチャネルを介したプライベート通信をサポートする. 帯域外 Authenticator は _something you have_ である.
+{:.authenticator-image}
+
+<!--
 Out-of-band authentiction uses a short-term secret generated by the verifier. The secret's purpose is to securely bind the authentication operation on the primary and secondary channel and establishes the claimant's control of the out-of-band device.
+-->
 
+帯域外 Athentiction は, Verifier によって生成された短期的な Secret を使用する. Secret の目的は, プライマリとセカンダリチャネルでの Athentiction 操作を安全にバインドし, Claimant による帯域外デバイスの制御を確立することである.
+
+<!--
 The out-of-band authenticator can operate in one of the following ways:
+-->
 
+帯域外 Authenticator は以下のいずれかの方法で動作できる:
+
+<!--
 - The claimant transfers a secret received by the out-of-band device via the secondary channel to the verifier using the primary channel. For example, the claimant may receive the secret (typically a 6-digit code) on their mobile device and type it into their authentication session. This method is shown in [Figure 1](sec5_authenticators.md#fig-1).
+-->
+
+- Claimant は, 帯域外デバイスによってセカンダリチャネルを介して受信した Secret を, プライマリチャネルを使用して Verifier に転送する. 例えば, Claimant はモバイルデバイスで Secret (通常は6桁のコード) を受信し, それを Authentication Session に入力してもよい. この方法は [Figure 1](sec5_authenticators.md#fig-1) に示される.
 
 [Figure 1. Transfer of Secret to Primary Device](sec5_authenticators.md#fig-1){:name="fig-1"}
 {:latex-ignore="true"}
 
 ![Diagram showing authentication secret being transferred from out-of-band device to session being authenticated]({{site.baseurl}}/{{page.collection}}/media/OOB-example1.png 'Transfer of Secret to Primary Device'){:latex-src="OOB-example1.png" latex-fig="1" latex-place="pt"}
 
+<!--
 - The claimant transfers a secret received via the primary channel to the out-of-band device for transmission to the verifier via the secondary channel. For example, the claimant may view the secret on their authentication session and either type it into an app on their mobile device or use a technology such as a barcode or QR code to effect the transfer. This method is shown in [Figure 2](sec5_authenticators.md#fig-2).
+-->
+
+- Claimant は, セカンダリチャネルを介して Verifier に送信するために, プライマリチャネルを介して受信した Secret を帯域外デバイスに転送する. 例えば, Claimant は Authentication Session 上で Secret を表示し, モバイルデバイスのアプリにそれを入力するか, バーコードやQRコードなどのテクノロジーを使用して転送を行ってもよい. この方法は [Figure 2](sec5_authenticators.md#fig-2) に示される.
 
 [Figure 2. Transfer of Secret to Out-of-band Device](sec5_authenticators.md#fig-2){:name="fig-2"}
 {:latex-ignore="true"}
 
 ![Diagram showing authentication secret being transferred from session being authenticated to out-of-band device]({{site.baseurl}}/{{page.collection}}/media/OOB-example2.png 'Transfer of Secret to Out-of-band Device'){:latex-src="OOB-example2.png" latex-fig="2" latex-place="pb"}
 
+<!--
 > Note: A third method of out-of-band authentication involving the comparison of secrets received from the primary and secondary channels and approving on the secondary channel is no longer considered acceptable because it was rarely implemented as described. It raised the likelihood that the claimant would just approve without actually comparing the secrets. For example, an authenticator that receives a push notification from the verifier and simply asks the claimant to approve the transaction (even if providing some additional information about the authentication) does not meet the requirements of this section.
+-->
+
+> 注: 三番目の方法であった, プライマリとセカンダリチャネルから受信した Secret の比較とセカンダリチャネルでの承認による帯域外 Authentication は, 説明された通りに実装されることは稀であったため, もはや受け入れられないと見なされる. これは Claimant が Secret を実際に比較せず単に承認する可能性を高くしていた. 例えば, Verifier からプッシュ通知を受け取り, 単に Claimant に Transaction の承認を求めるだけの Authenticator は (たとえ Authentication に関する追加情報を提供したとしても), このセクションの要件を満たさない.
 
 #### Out-of-Band Authenticators {#ooba}
 
