@@ -247,27 +247,76 @@ Subscriber Account に Biometric が紐づけられていない場合におけ�
 
 #### External Authenticator Binding
 
+<!--
 *External authenticator binding* refers to the process of binding an authenticator to a subscriber account when it is not connected to (or embedded in) the authenticated endpoint. This process is typically used when adding authenticators that are embedded in a new endpoint, or when connectivity limitations prevent the newly bound authenticator from being connected to an authenticated endpoint.
+-->
 
+*External Authenticator Binding* とは, 認証済エンドポイントに接続されていない (または埋め込まれていない) Authenticator を Subscriber Account に Binding するプロセスである.
+通常このプロセスは, 新たなエンドポイントに埋め込まれた Authenticator を追加する, ないしは接続の制限により新しく紐づけられた Authenticator が認証済エンドポイントに接続できない際に用いられる.
+
+<!--
 The binding process **MAY** begin with a request from an endpoint that has authenticated to the CSP obtaining a binding code from the CSP that is input into the endpoint associated with the new authenticator and sent to that CSP. Alternatively, the endpoint associated with the new authenticator **MAY** obtain a binding code from the CSP, which is input to an authenticated endpoint and sent to the CSP.
+-->
 
+Binding プロセスは, CSP に Authenticate されたエンドポイントからの要求により開始できる (**MAY**).
+CSP への Authenticate は, CSP から受け取った Binding Code を, 新たな Authenticator に関連づけられたエンドポイントに入力して CSP に送信することで行う.
+さらに, 新たな Authenticator に関連づけられたエンドポイントが, CSP から Binding Code を取得して, それを認証済エンドポイントに入力して CSP に送信することもできる (**MAY**).
+
+<!--
 In addition to the requirements given in [Sec. 6.1.2.1](sec6_lifecycle.md#bindexisting), [Sec. 6.1.2.2](sec6_lifecycle.md#s-6-1-2-2), and [Sec. 6.1.2.3](sec6_lifecycle.md#replacement) above as applicable, the following requirements **SHALL** apply when binding an external authenticator:
+-->
 
+上記 [Sec. 6.1.2.1](sec6_lifecycle.md#bindexisting), [Sec. 6.1.2.2](sec6_lifecycle.md#s-6-1-2-2), および [Sec. 6.1.2.3](sec6_lifecycle.md#replacement) に挙げた要件に加え, External Authenticator Binding には以下の要件も適用される.
+
+<!--
 * An authenticated protected session **SHALL** be established by the endpoint associated with the new authenticator and the CSP.
+-->
 
+* 新たな Auehtnicator に関連づけられるエンドポイントと CSP が Authenticated Protected Session を確立すること (**SHALL**).
+
+<!--
 * The subscriber **MAY** be prompted to enter an identifier by which they are known by the CSP on the endpoint associated with the new authenticator.
+-->
 
+* 新たな Authenticator に関連づけられるエンドポイントにおいて, CSP が Subscriber を識別できるような識別子を Subscriber に入力するよう促しても良い (**MAY**).
+
+<!--
 * The CSP **SHALL** generate a *binding code* using an approved random number generator and send it to either the new authenticator endpoint or the authenticated endpoint approving the binding. The binding code **SHALL** have at least 40 bits of entropy if used in conjunction with an identifier entered on the previous step; otherwise a binding code with at least 112 bits of entropy **SHALL** be required.
+-->
 
+* CSP は Approved な乱数生成器を用いて *Binding Code* を生成し, それを新たな Authenticator エンドポイントないし Binding を許可しようとしている認証済エンドポイントに送らなければならない (**SHALL**). 前ステップで入力された識別子と組み合わせて使用する場合, Binding Code は最低限40bitのEntropyを持つものとする (**SHALL**). それ以外の場合は少なくとも112bitの Entropy が必要となる (**SHALL**).
+
+<!--
 * The subscriber **SHALL** transfer the binding code to the other endpoint. This transfer **SHALL** be either manual or via a local out-of-band method such as a QR code. The binding code **SHALL NOT** be communicated over any insecure channel such as email or PSTN (SMS or voice).
+-->
 
+* Subscriber は Binding code を他方のエンドポイントに送信しなければならない (**SHALL**). この送信は手動ないし QR コード等のローカルの Out-of-band な手法で行うべきである (**SHOULD**). Binding Code は Email や PSTN (SMS / 音声) のようなセキュアでない経路で送信してはならない (**SHALL NOT**).
+
+<!--
 * The binding code **SHALL** be usable only once and **SHALL** be valid for a maximum of 10 minutes.
+-->
 
+* Binding code はの利用は一度きりとし (**SHALL**), 有効期限は最大10分までとする (**SHALL**).
+
+<!--
 * Following the binding of the new authenticator (or issuance of a certificate, in the case of PKI-based authenticators), the CSP **SHOULD** encourage the subscriber to authenticate with the new authenticator to confirm that the process has completed successfully.
+-->
 
+* 新たな Authenticator の Binding (PKI ベースの Authenticator の場合は証明書の発行) の後, CSP は当該プロセスが成功裏に完了したことを確認するため, Subscriber に新たな Authenticator を用いて Authenticate するよう促すべきである (**SHOULD**).
+
+<!--
 * The CSP **SHALL** provide clear instruction on what the subscriber should do in the event of an authenticator binding mishap, such as a button or contact address to allow a mis-bound authenticator to be quickly invalidated as appropriate. This **MAY** be provided in the authenticated session or in the binding notification described in [Sec. 6.1.2.1](sec6_lifecycle.md#bindexisting), [Sec. 6.1.2.2](sec6_lifecycle.md#s-6-1-2-2), and [Sec. 6.1.2.3](sec6_lifecycle.md#replacement) above.
+-->
 
+* CSP は, Authenticator Binding の事故が発生した場合に何をすべきか,  Subscriber に明確な手順書を提供すること (**SHALL**). これには誤って紐づけられた Authenticator を即座に適切に無効化できるようなボタンや連絡先などが挙げられる. これは認証済 Session や Binding 通知ないで提供することもできる (**MAY**). Binding 通知に関しては [Sec. 6.1.2.1](sec6_lifecycle.md#bindexisting), [Sec. 6.1.2.2](sec6_lifecycle.md#s-6-1-2-2), [Sec. 6.1.2.3](sec6_lifecycle.md#replacement) を参照のこと.
+
+<!--
 Binding an external authenticator is a potentially risky operation because of the potential for the subscriber to be tricked into using a binding code by an attacker or supplying a binding code to an attacker. In some cases, QR codes obtained from a trusted source (such as from an authenticated session, especially when that authentication is phishing resistant) are considered to be more robust against such attacks, because they typically contain the URL of the CSP as well as the binding code. There is less potential for the subscriber to be fooled into entering a binding code at a phishing site as a result.
+-->
+
+Subscriber が騙されて Attacker に Binding Code を使用させられたり, Attacker に Binding Code を提供してしまったりする可能性があるため, External Authenticator の Binding は潜在的にリスクのある操作である.
+場合によっては, 信頼できる情報源 (認証済 Session から取得したものなど, 特に認証済 Session が Phisihng 耐性を持つものであればことさら) から取得した QR コードはそのような攻撃に対してより堅牢であると考えられる. これは通常そのような QR コードが Binding Code とともに CSP の URL を含むからである.
+そのような条件下では, Subscriber が騙されて Phishing サイトで Binding Code を入力する可能性が低くなる.
 
 ### Binding to a Subscriber-provided Authenticator
 
