@@ -222,7 +222,7 @@ An out-of-band authenticator is a physical device that is uniquely addressable a
 {:.authenticator-image}
 -->
 
-帯域外 Authenticator は, 一意のアドレス指定が可能で, セカンダリチャネルと呼ばれる個別の通信チャネルを介して Verifier と安全に通信できる物理デバイスである. デバイスは Claimant によって所有および制御され, Authentication のためのプライマリチャネルとは別に, このセカンダリチャネルを介したプライベート通信をサポートする. 帯域外 Authenticator は _something you have_ である.
+帯域外 Authenticator は, 一意にアドレス指定が可能で, セカンダリチャネルと呼ばれる個別の通信チャネルを介して Verifier と安全に通信できる物理デバイスである. デバイスは Claimant によって所有および制御され, Authentication のためのプライマリチャネルとは別に, このセカンダリチャネルを介したプライベート通信をサポートする. 帯域外 Authenticator は _something you have_ である.
 {:.authenticator-image}
 
 <!--
@@ -266,52 +266,135 @@ The out-of-band authenticator can operate in one of the following ways:
 > 注: 三番目の方法であった, プライマリとセカンダリチャネルから受信した Secret の比較とセカンダリチャネルでの承認による帯域外 Authentication は, 説明された通りに実装されることは稀であったため, もはや受け入れられないと見なされる. これは Claimant が Secret を実際に比較せず単に承認する可能性を高くしていた. 例えば, Verifier からプッシュ通知を受け取り, 単に Claimant に Transaction の承認を求めるだけの Authenticator は (たとえ Authentication に関する追加情報を提供したとしても), このセクションの要件を満たさない.
 
 #### Out-of-Band Authenticators {#ooba}
-
+<!--
 The out-of-band authenticator **SHALL** establish a separate channel with the verifier in order to retrieve the out-of-band secret or authentication request. This channel is considered to be out-of-band with respect to the primary communication channel (even if it terminates on the same device) provided the device does not leak information from one channel to the other without the authorization of the claimant.
+-->
 
+帯域外 Authenticator は, 帯域外 Secret または Authentication 要求を取得するために, Verifier と別のチャネルを確立することとなる(**SHALL**). このチャネルは, デバイスが Claimant の許可なしにひとつのチャネルから別のチャネルに情報を漏らさないという条件であれば, (たとえ同じデバイス上で完了する場合でも) プライマリ通信チャネルに関して帯域外であると見なされる.
+
+<!--
 The out-of-band device **SHOULD** be uniquely addressable by the verifier. Communication over the secondary channel **SHALL** be encrypted unless sent via the public switched telephone network (PSTN). For additional authenticator requirements specific to use of the PSTN for out-of-band authentication, see [Sec. 5.1.3.3](sec5_authenticators.md#pstnOOB). Channels or addresses that do not prove possession of a specific device, such as voice-over-IP (VOIP) telephone numbers, **SHALL NOT** be used for out-of-band authentication.
+-->
 
+帯域外デバイスは, Verifier によって一意にアドレス指定が可能である必要がある(**SHOULD**). セカンダリチャネルを介した通信は, 公衆交換電話網 (Public Switched Telephone Network, PSTN) 経由で送信されない限り, 暗号化されることとなる(**SHALL**). 帯域外 Authentication のために PSTN を使用する場合の追加の Authenticator 要件については, [Sec. 5.1.3.3](sec5_authenticators.md#pstnOOB) を参照のこと. Voice-Over-IP (VOIP) 電話番号など, 特定のデバイスの所有を証明しないチャネルまたはアドレスは, 帯域外 Authentication に使用されることはない(**SHALL NOT**).
+
+<!--
 Email **SHALL NOT** be used for out-of-band authentication because it also does not prove possession of a specific device and is typically accessed using only a memorized secret.
+-->
 
+電子メールは特定のデバイスの所有を証明するものではなく, 通常は Memorized Secret のみを使用してアクセスされるため, 帯域外 Authentication に使用されることはない(**SHALL NOT**).
+
+<!--
 The out-of-band authenticator **SHALL** uniquely authenticate itself in one of the following ways when communicating with the verifier:
+-->
 
+帯域外 Authenticator は, Verifier と通信するときに, 以下のいずれかの方法で自身を一意に Authentication することとなる(**SHALL**). 
+
+<!--
 - Establish an authenticated protected channel to the verifier using approved cryptography. The key used **SHALL** be stored in suitably secure storage available to the authenticator application (e.g., keychain storage, TPM, TEE, secure element).
+-->
 
+- 承認された暗号を使用して, Verifier への認証された保護されたチャネルを確立する. 使用されるキーは, Authenticator アプリケーションが利用可能な, 適切に安全なストレージ (例: キーチェーンストレージ, TPM, TEE, セキュアエレメントなど) に格納することとなる(**SHALL**). 
+
+<!--
 - Authenticate to a public mobile telephone network using a SIM card or equivalent that uniquely identifies the device. This method **SHALL** only be used if a secret is being sent from the verifier to the out-of-band device via the PSTN (SMS or voice).
+-->
 
+- デバイスを一意に識別する SIM カードまたは同等のものを使用して, 公衆携帯電話ネットワークに対して Authentication する. このメソッドは, Secret が Verifier から PSTN (SMS または音声) 経由で帯域外デバイスに送信される場合にのみ使用されることとなる(**SHALL**).
+
+<!--
 If a secret is sent by the verifier to the out-of-band device, the device **SHOULD NOT** display the authentication secret while it is locked by the owner (i.e., **SHOULD** require the presentation and verification of a PIN, passcode, or biometric characteristic to view). However, authenticators **SHOULD** indicate the receipt of an authentication secret on a locked device.
+-->
 
+Verifier によって帯域外デバイスに Secret が送信される場合, デバイスは, 所有者によってロックされている間, Authentication Secret を表示しないほうがよい(**SHOULD NOT**)(つまり, 表示のために PIN, パスコード, または Biometric Characteristic の提示と Verification を要求する必要がある(**SHOULD**). ただし, Authenticator は, ロックされたデバイス上で Authentication Secret の受信を示す必要がある(**SHOULD**).
+
+<!--
 If the out-of-band authenticator requests approval over the secondary communication channel — rather than by the presenting a secret that the claimant transfers to the primary communication channel — it **SHALL** accept transfer of the secret from the primary channel and send it to the verifier over the secondary channel to associate the approval with the authentication transaction. The claimant **MAY** perform the transfer manually or use a technology such as a barcode or QR code to effect the transfer.
+-->
+
+帯域外 Authenticator が, (Claimant がプライマリ通信チャネルに転送する Secret を提示するのではなく) セカンダリ通信チャネルで承認を要求する場合, プライマリチャネルからの Secret の転送を受け入れることとなり(**SHALL**), 承認を Authentication Transaction に関連付けるために, それをセカンダリチャネルを介して Verifier に送信することとなる. Claimant は, 転送を手動で行うか, バーコードやQRコードなどのテクノロジーを使用して転送を行ってもよい(**MAY**).
 
 #### Out-of-Band Verifiers
 
+<!--
 For additional verification requirements specific to the PSTN, see [Sec. 5.1.3.3](sec5_authenticators.md#pstnOOB).
+-->
 
+PSTN に固有の追加の Verification 要件については, [Sec. 5.1.3.3](sec5_authenticators.md#pstnOOB) を参照のこと.
+
+<!--
 When the out-of-band authenticator is a secure application, such as on a smart phone, the verifier **MAY** send a push notification to that device. The verifier waits for the establishment of an authenticated protected channel with the out-of-band authenticator and verifies its identifying key. The verifier **SHALL NOT** store the identifying key itself, but **SHALL** use a verification method (e.g., an approved hash function or proof of possession of the identifying key) to uniquely identify the authenticator. Once authenticated, the verifier transmits the authentication secret to the authenticator.
+-->
 
+帯域外 Authenticator がスマートフォン上などの安全なアプリケーションである場合, Verifier はそのデバイスにプッシュ通知を送信してもよい(**MAY**).  Verifier は, 帯域外 Authenticator との Authenticated Protected Channel の確立を待ち, その識別キーを Verifiy する. Verifier は識別キー自体を保管することはない(**SHALL NOT**)が, Verification 方法 (例えば, 承認されたハッシュ関数または識別キーの所有の証明) を使用して, Authenticator を一意に識別することとなる(**SHALL**). ひとたび Authenticate されると, Verifier は Authentication Secret を Authenticator に送信する.
+
+<!--
 Depending on the type of out-of-band authenticator, one of the following **SHALL** take place:
+-->
 
+帯域外 Authenticator のタイプに応じて, 以下のいずれかが行われることとなる(**SHALL**):
+
+<!--
 * Transfer of secret from the secondary to the primary channel: The verifier **MAY** signal the device containing the subscriber's authenticator to indicate readiness to authenticate. It **SHALL** then transmit a random secret to the out-of-band authenticator. The verifier **SHALL** then wait for the secret to be returned on the primary communication channel.
+-->
 
+* セカンダリからプライマリチャネルへの Secret の転送: Verifier は, Authentication の準備ができていることを示すために, Subscriber の Authenticator を含むデバイスにシグナルを送ってもよい(**MAY**). そして, にRandom Secret を帯域外 Authenticator に送信することとなる(**SHALL**). 続いて, Verifier は, プライマリ通信チャネル上で Secret が返却されるのを待つこととなる(**SHALL**).
+
+<!--
 * Transfer of secret from the primary to the secondary channel: The verifier **SHALL** display a random authentication secret to the claimant via the primary channel. It **SHALL** then wait for the secret to be returned on the secondary channel from the claimant's out-of-band authenticator.
+-->
 
+* プライマリからセカンダリチャネルへの Secret の転送: Verifier は, プライマリチャネルを介して Claimant にRandom Authentication Secret を表示することとなる(**SHALL**). そして,  Claimant の帯域外 Authenticator からセカンダリチャネル上で Secret が返却されるのを待つこととなる(**SHALL**).
+
+<!--
 In all cases, the authentication **SHALL** be considered invalid if not completed within 10 minutes. In order to provide replay resistance as described in [Sec. 5.2.8](sec5_authenticators.md#replay), verifiers **SHALL** accept a given authentication secret only once during the validity period.
+-->
 
+すべてのケースで, 10分以内に完了しない場合, Authentication は無効と見なされることとなる(**SHALL**). [Sec. 5.2.8](sec5_authenticators.md#replay)で述べられた通りに Replay Resistance を提供するため, Verifier は, 与えられた Authentication Secret を, 有効期間中に一度だけ受け入れることとなる(**SHALL**). 
+
+<!--
 The verifier **SHALL** generate random authentication secrets with at least 20 bits of entropy using an approved random bit generator [[SP800-90Ar1]](references.md#ref-SP800-90Ar1). If the authentication secret has less than 64 bits of entropy, the verifier **SHALL** implement a rate-limiting mechanism that effectively limits the number of failed authentication attempts that can be made on the subscriber account as described in [Sec. 5.2.2](sec5_authenticators.md#throttle).
+-->
 
+Verifier は, 承認された Random Bit Generator [[SP800-90Ar1]](references.md#ref-SP800-90Ar1) を使用して, 少なくとも 20 ビットの Entropy を持つ Random Authentication Secret を生成することとなる(**SHALL**). Authentication Secret の Entropy が 64 ビット未満の場合, Verifier は, [Sec. 5.2.2](sec5_authenticators.md#throttle) で説明されている通り, Subscriber Account で試行できる Authentication の失敗回数を効果的に制限するレート制限メカニズムを実装することとなる(**SHALL**).
+
+<!--
 Out-of-band verifiers **SHALL** consider all authentication operations to be single-factor unless the CSP has confirmed that the out-of-band authentication meets the requirements of [Sec. 5.1.3.4](sec5_authenticators.md#mfooba). This requirement **MAY** be satisfied by issuance of the authenticator by the CSP or a trusted third party or by use of an authentication application known by the CSP to meet these requirements.
+-->
 
+CSP が, 帯域外 Authentication が [Sec. 5.1.3.4](sec5_authenticators.md#mfooba) の要件を満たしていることを確認しない限り, 帯域外 Verifier はすべての Authentication 操作を Single-Factor と見なすこととなる(**SHALL**). この要件は CSP または信頼されたサードパーティによる Authenticator の発行, またはこれらの要件を満たすことが CSP によって認識されている Authentication アプリケーションの使用によって満たされてもよい(**MAY**).
+
+<!--
 Out-of-band verifiers that send a push notification to a subscriber device **SHOULD** implement a reasonable limit on the rate or total number of push notifications that will be sent since the last successful authentication.
+-->
+
+Subscriber のデバイスにプッシュ通知を送信する帯域外 Verifier は, 成功した最後の Authentication 以降に送信されるプッシュ通知のレートまたは総数に合理的な制限を実装する必要がある(**SHOULD**).
 
 #### Authentication using the Public Switched Telephone Network {#pstnOOB}
 
+<!--
 Use of the PSTN for out-of-band verification is restricted as described in this section and in [Sec. 5.2.10](sec5_authenticators.md#restricted). If out-of-band verification is to be made using the PSTN, the verifier **SHALL** verify that the pre-registered telephone number being used is associated with a specific physical device. Changing the pre-registered telephone number is considered to be the binding of a new authenticator and **SHALL** only occur as described in [Sec. 6.1.2](sec6_lifecycle.md#post-enroll-bind).
+-->
 
+帯域外 Verification のための PSTN の使用は, このセクションと [Sec. 5.2.10](sec5_authenticators.md#restricted) で説明されているように制限されている. PSTN を使用して帯域外 Verification を行う場合, Verifier は, 使用されている事前登録済みの電話番号が特定の物理デバイスに関連付けられていることを Verification することとなる(**SHALL**). 事前登録された電話番号の変更は, 新しい Authenticator のバインドであると見なされ, [Sec. 6.1.2](sec6_lifecycle.md#post-enroll-bind) で説明されている場合にのみ発生することとなる(**SHALL**).
+
+<!--
 Use of the PSTN to deliver out-of-band authentication secrets is potentially not available to some subscribers in areas with limited telephone coverage (particularly in areas without mobile phone service). Accordingly, verifiers **SHALL** ensure that alternative authenticator types are available to all subscribers and **SHOULD** remind subscribers of this limitation of PSTN out-of-band authenticators prior to binding.
+-->
 
+PSTN を使用して帯域外 Authentication Secret を配信することは, 限定された電話のカバレッジを持つ地域 (特に携帯電話サービスがない地域) では, 一部の Subscriber が利用できない可能性がある. したがって, Verifier は, すべての Subscriber が代替の Authenticator タイプを利用できるようにすることとなり(**SHALL**), バインドする前に, PSTN を使用した帯域外 Authenticator のこの制限を Subscriber に通知する必要がある(**SHOULD**).
+
+<!--
 Verifiers **SHOULD** consider risk indicators such as device swap, SIM change, number porting, or other abnormal behavior before using the PSTN to deliver an out-of-band authentication secret.
+-->
 
+Verifier は, PSTN を使用して帯域外 Authentication Secret を配信する前に, デバイスの交換, SIM の変更, 番号の移植, またはその他の異常な動作などのリスク指標を考慮する必要がある(**SHOULD**).
+
+<!--
 > NOTE: Consistent with the restriction of authenticators in [Sec. 5.2.10](sec5_authenticators.md#restricted), NIST may adjust the restricted status of the PSTN over time based on the evolution of the threat landscape and the technical operation of the PSTN.
+-->
+
+> 注意: [Sec. 5.2.10](sec5_authenticators.md#restricted) の Authenticator の制限と整合性を取り, NIST は, 脅威をとりまく状況の進化と PSTN の技術的なオペレーションに基づいて, 時間の経過とともに, PSTN の制限付きステータスを調整してもよい.
 
 #### Multi-Factor Out-of-Band Authenticators {#mfooba}
 
