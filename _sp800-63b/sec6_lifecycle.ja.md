@@ -378,16 +378,43 @@ CSP は, 一時停止された Authenticator が Reactivate できなくなる�
 
 ## Expiration
 
+<!--
 CSPs **MAY** issue authenticators that expire. If and when an authenticator expires, it **SHALL NOT** be usable for authentication. When an authentication is attempted using an expired authenticator, the CSP **SHOULD** give an indication to the subscriber that the authentication failure is due to expiration rather than some other cause.
+-->
 
+CSP は有効期限付きの Authenticator を発行しても良い (**MAY**).
+Authenticator が有効期限切れになった場合, それを Authentication に使用可能にしてはならない (**SHALL NOT**).
+有効期限切れの Authenticator を用いた Authentication 試行があった場合, CSP は Authentication の失敗が他の要因ではなく期限切れによるものであることを Subscriber に通知すべきである (**SHOULD**).
+
+<!--
 The CSP **SHALL** require subscribers to surrender or prove destruction of any physical authenticator containing attribute certificates signed by the CSP as soon as practical after expiration or receipt of a renewed authenticator.
+-->
+
+CSP は Subscriber に対して, 有効期限切れ後または更新された Authenticator の受領後出来るだけ早く, CSP が署名した Attribute Certificate を含む物理 Authenticator を返却するよう, または破棄したことを証明するよう要求すること (**SHALL**).
 
 ## Invalidation
 
+<!--
 Invalidation of an authenticator (sometimes referred to as revocation or termination) refers to removal of the binding between an authenticator and a subscriber account.
+-->
 
+Authenticator の無効化 (Invalidation) とは, Authenticator と Subscriber Account の間の Binding を削除することをいう (Revocation や Termination と呼ばれることもある).
+
+<!--
 CSPs **SHALL** invalidate authenticators promptly when a subscriber account ceases to exist (e.g., subscriber's death, discovery of a fraudulent subscriber), when requested by the subscriber, or when the CSP determines that the subscriber no longer meets its eligibility requirements.
+-->
 
+CSP は, Subscriber Account が存在しなくなった場合 (e.g., Subscriber の死亡, 不正な Subscriber の発見), Subscriber から要求を受けた場合, ないしは Subscriber がもう適格要件を満たさないと CSP が判断した場合, 即座に Authenticator を無効化しなければならない (**SHALL**).
+
+<!--
 The CSP **SHALL** require subscribers to surrender or certify destruction of any physical authenticator containing subscriber attributes, such as certificates signed by the CSP, as soon as practical after invalidation takes place. This is necessary to protect the privacy of the subscriber and to block the use of any certificates in offline situations between invalidation and expiration of the certificates.
+-->
 
+CSP は, 無効化を実施した後できるだけ早く, CSP が署名した証明書などの Subscriber Attribute を含む物理 Authenticator の返却または破棄証明を Subscriber に要求すること (**SHALL**).
+これは, Subscriber のプライバシーを保護し, 証明書が無効化されてから期限切れになるまでの間にオフラインの状況で利用されることを防止するために必要である.
+
+<!--
 Further requirements on the invalidation of PIV authenticators are found in [[FIPS201]](references.md#ref-FIPS201).
+-->
+
+PIV Authenticator の無効化に関するさらなる要件については [[FIPS201]](references.md#ref-FIPS201) を参照のこと.
