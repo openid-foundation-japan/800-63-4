@@ -320,21 +320,61 @@ Subscriber が騙されて Attacker に Binding Code を使用させられたり
 
 ### Binding to a Subscriber-provided Authenticator
 
+<!--
 A subscriber may already possess authenticators suitable for authentication at a particular AAL. For example, they may have a two-factor authenticator from a social network provider, considered AAL2 and IAL1, and would like to use those credentials at an RP that requires IAL2.
+-->
 
+Subscriber は特定の AAL での Authentication に適した Authenticator をすでに所有している可能性もある.
+例えば, AAL2 および IAL1 とみなされるソーシャルネットワークプロバイダーから提供された2-factor Authenticator を持っており, その Credential を IAL2 を要求する RP に対して使用したいかもしれない.
+
+<!--
 CSPs **SHOULD**, where practical, accommodate the use of subscriber-provided authenticators in order to relieve the burden to the subscriber of managing a large number of authenticators. Binding of these authenticators **SHALL** be done as described in [Sec. 6.1.2](sec6_lifecycle.md#post-enroll-bind). In situations where the authenticator strength is not self-evident (e.g., between single-factor and multi-factor authenticators of a given type), the CSP **SHALL** assume the use of the weaker authenticator unless it is able to establish that the stronger authenticator is in fact being used (e.g., by verification with the issuer or manufacturer of the authenticator).
+-->
+
+CSP は, 差し支えなければ, Subscriber が提供した Authenticator を使用できるようにし, 多数の Authenticator を管理するという Subscriber の負担を軽減すべきである (**SHOULD**).
+そういった Authenticator の Binding に関しては [Sec. 6.1.2](sec6_lifecycle.md#post-enroll-bind) に従うこと (**SHALL**).
+Authenticator の強度が自明でない場合 (e.g., 特定のタイプの Single-factor Authenticator と Multi-factor Authenticator の間), より強力な Authenticator が実際に使われていることを立証 (e.g., Authenticator 発行者ないし製造者に対する Verification) できない限り, CSP はより弱い Authenticator が使われているものと想定すること (**SHALL**).
 
 ### Renewal
 
+<!--
 The subscriber **SHOULD** bind a new or updated authenticator an appropriate amount of time before an existing authenticator's expiration. The process for this **SHOULD** conform closely to the binding process for an additional authenticator described in [Sec. 6.1.2.1](sec6_lifecycle.md#post-enroll-bind). The CSP **MAY** periodically take other actions, such as reconfirming address of record, either as a part of the renewal process or separately. Following successful use of the replacement authenticator, the CSP **MAY** invalidate the authenticator that is expiring.
+-->
+
+Subscriber は, 既存の Authenticator の有効期限が切れる前に, 適切な時間的余裕を持って, 新規または更新すべき Authenticator を紐づけるべきである (**SHOULD**).
+このプロセスは, [Sec. 6.1.2.1](sec6_lifecycle.md#post-enroll-bind) で述べた追加の Authenticator の Binding プロセスにしっかりと従うべきである (**SHOULD**).
+CSP は, 更新プロセスの一環ないしそれとは別に, Address of Record の再確認などの他のアクションを定期的に実行してもよい (**MAY**).
+Authenticator の交換に成功した後, CSP は有効期限が切れそうな Authenticator を無効化してもよい (**MAY**).
 
 ## Loss, Theft, Damage, and Unauthorized Duplication
 
+<!--
 Compromised authenticators include those that have been lost, stolen, or subject to unauthorized duplication. Generally, one must assume that a lost authenticator has been stolen or compromised by someone that is not the legitimate subscriber of the authenticator. Damaged or malfunctioning authenticators are also considered compromised to guard against any possibility of extraction of the authenticator secret. One notable exception is a memorized secret that has been forgotten without other indications of having been compromised, such as having been obtained by an attacker.
+-->
 
+侵害された Authenticator には, 紛失, 盗難, 無許可の複製の対象となったものなどが含まれる.
+一般に, 紛失した Authenticator は, 正規の Subscriber ではない誰かに盗まれたか侵害されたと想定する必要がある.
+損傷ないし誤動作している Authenticator もまた, Authenticator Secret が抽出される可能性を防止するため, 侵害されたとみなされる.
+ただし, Attacker に取得されたなどの侵害の兆候もなく忘れ去られた Memorized Secret は例外とする.
+
+<!--
 Suspension, revocation, or destruction of compromised authenticators **SHOULD** occur as promptly as practical following detection. Organizations **SHOULD** establish time limits for this process.
+-->
 
+侵害された Authenticator の一時停止, 失効, ないし破棄は, それを検出した時点で出来る限り迅速に行うべきである (**SHOULD**).
+組織はこのプロセスにタイムリミットを設定すべきである (**SHOULD**).
+
+<!--
 To facilitate secure reporting of the loss, theft, or damage to an authenticator, the CSP **SHOULD** provide the subscriber with a method of authenticating to the CSP using a backup or alternate authenticator. This backup authenticator **SHALL** be either a memorized secret or a physical authenticator. Either could be used, but only one authentication factor is required to make this report. Alternatively, the subscriber **MAY** establish an authenticated protected channel to the CSP and verify information collected during the proofing process. The CSP **MAY** choose to verify an address of record (i.e., email, telephone, postal) and suspend authenticators reported to have been compromised. The suspension **SHALL** be reversible if the subscriber successfully authenticates to the CSP using a valid (i.e., not suspended) authenticator and requests reactivation of an authenticator suspended in this manner. The CSP **MAY** set a time limit after which a suspended authenticator can no longer be reactivated.
+-->
+
+Authenticator の紛失, 盗難, ないし損傷をセキュアに報告しやすくするため, CSP は Subscriber にバックアップまたは代替の Authenticator を使って CSP に対する Authenticate を行う手段を提供すべきである (**SHOULD**).
+このバックアップ Authenticator は Memorized Secret ないし物理 Authenticator とすること (**SHALL**).
+どちらを使用して良いが, この報告には必要な Authentication Factor はどちらか一方のみである.
+また代わりに, Subscriber が CSP と Authenticated Protected Channel を確立し, Proofing プロセス中に収集された情報を検証することもできる (**MAY**).
+CSP は Address of Record の検証 (i.e., Email, 電話, 郵便) を選択し, 侵害報告のあった Authenticator を一時停止にしてもよい (**MAY**).
+Subscriber が有効な (i.e., 一時停止されていない) Authenticator を使用して CSP への Authentication に成功し, 同じ方法で一時停止にされた Authentication の Reactivation を要求した場合, 一時停止は元に戻すものとする (**SHALL**).
+CSP は, 一時停止された Authenticator が Reactivate できなくなるまでのタイムリミットを設定してもよい (**MAY**).
 
 ## Expiration
 
