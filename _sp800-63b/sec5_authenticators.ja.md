@@ -350,7 +350,7 @@ Depending on the type of out-of-band authenticator, one of the following **SHALL
 In all cases, the authentication **SHALL** be considered invalid if not completed within 10 minutes. In order to provide replay resistance as described in [Sec. 5.2.8](sec5_authenticators.md#replay), verifiers **SHALL** accept a given authentication secret only once during the validity period.
 -->
 
-すべてのケースで, 10分以内に完了しない場合, Authentication は無効と見なされることとなる(**SHALL**). [Sec. 5.2.8](sec5_authenticators.md#replay)で述べられた通りに Replay Resistance を提供するため, Verifier は, 与えられた Authentication Secret を, 有効期間中に一度だけ受け入れることとなる(**SHALL**). 
+すべてのケースで, 10分以内に完了しない場合, Authentication は無効と見なされることとなる(**SHALL**). [Sec. 5.2.8](sec5_authenticators.md#replay)で述べられた通りに Replay Resistance を提供するため, Verifier は, 与えられた Authentication Secret の受け入れを有効期間中に一度のみとすることとなる(**SHALL**). 
 
 <!--
 The verifier **SHALL** generate random authentication secrets with at least 20 bits of entropy using an approved random bit generator [[SP800-90Ar1]](references.md#ref-SP800-90Ar1). If the authentication secret has less than 64 bits of entropy, the verifier **SHALL** implement a rate-limiting mechanism that effectively limits the number of failed authentication attempts that can be made on the subscriber account as described in [Sec. 5.2.2](sec5_authenticators.md#throttle).
@@ -398,63 +398,154 @@ Verifier は, PSTN を使用して帯域外 Authentication Secret を配信す�
 
 #### Multi-Factor Out-of-Band Authenticators {#mfooba}
 
+<!--
 Multi-factor out-of-band authenticators operate in a similar manner to single-factor out-of-band authenticators (see [Sec. 5.1.3.1](sec5_authenticators.md#ooba)) except that they require the presentation and verification of an additional factor, either a memorized secret or a biometric characteristic, prior to allowing the claimant to complete the authentication transaction (i.e., prior to accessing the authentication secret, entering the authentication secret, or confirming the transaction as appropriate for the authentication flow being used). Each use of the authenticator **SHALL** require the presentation of the activation factor.
+-->
 
+Multi-Factor 帯域外 Authenticator は, Claimant が Authentication Transaction を完了できるようにする前(つまり, Authentication Secret にアクセスする前, Authentication Secret を入力する前, または使用されている Authentication フローに適した Transaction を確認する前)に Memorized Secret または Biometric Characteristic のいずれかの追加要素の提示と Verification を必要とすることを除いて, Single-Factor 帯域外 Authenticator ([Sec. 5.1.3.1](sec5_authenticators.md#ooba)を参照) と同様の方法で動作する. Authenticator の使用ごとに, Activation Factor の提示を要求することとなる(**SHALL**).
+
+<!--
 The use of an activation secret by the authenticator **SHALL** meet the requirements of [Sec. 5.2.11](sec5_authenticators.md#s-5-2-11). A biometric activation factor **SHALL** meet the requirements of [Sec. 5.2.3](sec5_authenticators.md#biometric_use), including limits on the number of consecutive authentication failures. Submission of the activation factor **SHALL** be a separate operation from unlocking of the host device (e.g., smartphone), although the same activation factor used to unlock the host device **MAY** be used in the authentication operation. The memorized secret or biometric sample used for activation — and any biometric data derived from the biometric sample such as a probe produced through signal processing — **SHALL** be zeroized immediately after the authentication operation.
+-->
+
+Authenticator による Activation Secret の使用は, [Sec. 5.2.11](sec5_authenticators.md#s-5-2-11) の要件を満たすこととなる(**SHALL**). Biometric Activation Factor は, Authentication の連続失敗回数の制限を含め, [Sec. 5.2.3](sec5_authenticators.md#biometric_use) の要件を満たすこととなる(**SHALL**). Activation Factor の提出は, ホストデバイス (スマートフォンなど) のロック解除とは別の操作となる(**SHALL**)が, ホストデバイスのロック解除に使用されたものと同じ Activation Factor が Authentication 操作で使用されてもよい(**MAY**). Activation に使用される Memorized Secret または Biometric Sample -および信号処理によって生成された Probe などの Biometric Sample から得られたすべての Biometric データ- は, Authentication 操作の直後に Zeroize されることとなる(**SHALL**). 
 
 ### Single-Factor OTP Device {#singlefactorOTP}
 
+<!--
 A single-factor OTP device generates one-time passwords (OTPs). This category includes hardware devices and software-based OTP generators installed on devices such as mobile phones. These devices have an embedded secret that is used as the seed for generation of OTPs and does not require activation through a second factor. The OTP is displayed on the device and manually input for transmission to the verifier, thereby proving possession and control of the device. An OTP device may, for example, display 6 characters at a time. A single-factor OTP device is _something you have_.
 {:.authenticator-image}
+-->
 
+Single-Factor OTP デバイスは, ワンタイムパスワード(OTP)を生成する. このカテゴリには, ハードウェアデバイスと携帯電話などのデバイス上にインストールされた Software-Based OTP Generator が含まれる. これらのデバイスは, OTP 生成のシードとして使用される組み込みの Secret を持ち, 二番目の要素による Activation を必要としない. OTP はデバイス上に表示され Verifier に送信するために手動で入力される, これによりデバイスの所有と制御が証明される. OTP デバイスは, 例えば, 一度に6文字を表示してもよい. Single-Factor OTP デバイスは _Something You Have_ である.
+{:.authenticator-image}
+
+<!--
 Single-factor OTP devices are similar to look-up secret authenticators with the exception that the secrets are cryptographically and independently generated by the authenticator and verifier and compared by the verifier. The secret is computed based on a nonce that may be time-based or from a counter on the authenticator and verifier.
+-->
+
+Single-Factor OTP デバイスは, Secret が Authenticator と Verifier によって暗号的にかつ独立して生成され, Verifier によって比較されることを除いて, Look-up Secret Authenticator と同様である. Secret は, 時間ベースの Nonce に基づいて, または Authenticator と Verifier の数値カウンターから計算されてもよい.
 
 #### Single-Factor OTP Authenticators {#sfotpa}
 
+<!--
 Single-factor OTP authenticators contain two persistent values. The first is a symmetric key that persists for the device's lifetime. The second is a nonce that is either changed each time the authenticator is used or is based on a real-time clock.
+-->
 
+Single-Factor OTP Authenticator は, 2つの永続的な値を含む. 1つ目は, デバイスのライフタイムの間保持される Symmetric Key である. 2つ目は, Authenticator が使用されるたびに変更されるか, リアルタイムクロックに基づく Nonce である.
+
+<!--
 The secret key and its algorithm **SHALL** provide at least the minimum security strength specified in the latest revision of [[SP800-131A]](references.md#ref-SP800-131A) (112 bits as of the date of this publication). The nonce **SHALL** be of sufficient length to ensure that it is unique for each operation of the device over its lifetime. If a subscriber needs to change the device used for a software-based OTP authenticator, they **SHOULD** bind the authenticator application on the new device to their subscriber account as described in [Sec. 6.1.2.1](sec6_lifecycle.md#post-enroll-bind) and invalidate the authenticator application that will no longer be used.
+-->
 
+Secret Key とそのアルゴリズムは, 少なくとも [[SP800-131A]](references.md#ref-SP800-131A) の最新リビジョンで指定されている最小のセキュリティ強度を提供することとなる(**SHALL**)(発行日現在で 112 ビット). Nonce は, デバイスのライフタイム全体にわたってデバイスの各操作ごとに一意であることを確保するのに十分な長さとなる(**SHALL**). Subscriber が Software-Based OTP Authenticator に使用されるデバイスを変更する必要がある場合, 彼らは [Sec. 6.1.2.1](sec6_lifecycle.md#post-enroll-bind) で説明されている通りに新しいデバイス上の Authenticator を Subscriber Account へバインドする必要があり(**SHOULD**), 使用されなくなった Authenticator アプリケーションを無効にする必要がある.
+
+<!--
 The authenticator output is obtained by using an approved block cipher or hash function to combine the key and nonce in a secure manner. The authenticator output **MAY** be truncated to as few as 6 decimal digits (approximately 20 bits of entropy).
+-->
 
+Authenticator の出力は, Key と Nonce を安全な方法で結合するために承認されたブロック暗号または Hash 関数を使用すること取得される. Authenticator の出力は, わずか6桁の10進数 (約20ビットのEntropy) に切り捨てられられてもよい(**MAY**).
+
+<!--
 If the nonce used to generate the authenticator output is based on a real-time clock, the nonce **SHALL** be changed at least once every 2 minutes.
+-->
+
+Authenticator の出力を生成するために使用される Nonce がリアルタイムクロックに基づいている場合, Nonce は少なくとも2分ごとに変更されることとなる(**SHALL**).
 
 #### Single-Factor OTP Verifiers
 
+<!--
 Single-factor OTP verifiers effectively duplicate the process of generating the OTP used by the authenticator. As such, the symmetric keys used by authenticators are also present in the verifier, and **SHALL** be strongly protected against unauthorized disclosure by the use of access controls that limit access to the keys to only those software components on the device requiring access.
+-->
 
+Single-Factor OTP Verifier は, Authenticator に使用される OTP 生成プロセスを効果的に複製する. そのため, Authenticator に使用される Symmetric Key は Verifier にもまた存在し, アクセスを必要とするデバイス上のそれらのソフトウェアコンポーネントのみに Key へのアクセスを制限するアクセスコントロールを使用して, 不正な開示から強力に保護されることとなる(**SHALL**).
+
+<!--
 When a single-factor OTP authenticator is being associated with a subscriber account, the verifier or associated CSP **SHALL** use approved cryptography to either generate and exchange or to obtain the secrets required to duplicate the authenticator output.
+-->
 
+Single-Factor OTP Authenticator が Subscriber Account に関連付けられている場合, Verifier または関連付けられた CSP は, Authenticator の出力を複製するために必要な Secret を生成および交換, または取得するために, Approved Cryptography を使用することとなる(**SHALL**).
+
+<!--
 The verifier **SHALL** use approved encryption and an authenticated protected channel when collecting the OTP in order to provide resistance to eavesdropping and AitM attacks. In order to provide replay resistance as described in [Sec. 5.2.8](sec5_authenticators.md#replay), verifiers **SHALL** accept a given OTP only once while it is valid. In the event a claimant's authentication is denied due to duplicate use of an OTP, verifiers **MAY** warn the claimant in case an attacker has been able to authenticate in advance. Verifiers **MAY** also warn a subscriber in an existing session of the attempted duplicate use of an OTP.
+-->
 
+Verifier は, OTP を収集するときに, 盗聴や AitM Attack への耐性を提供するために, Approved Encryption と Authenticated Protected Channel を使用することとなる(**SHALL**). [Sec. 5.2.8](sec5_authenticators.md#replay) で説明されている通りに Replay Resistance を提供するために, Verifier は, 有効な OTP の受け入れを一度のみとすることとなる(**SHALL**). OTP の重複使用が原因で Claimant の Authentication が拒否された場合, Verifier は, Attacker が事前に認証できた場合に備えて Claimant に警告してもよい(**MAY**). また, Verifier は, OTP の重複使用の試行について, 既存セッションの中にいる Subscriber に警告してもよい(**MAY**).
+
+<!--
 Time-based OTPs [[TOTP]](references.md#ref-totp) **SHALL** have a defined lifetime that is determined by the expected clock drift — in either direction — of the authenticator over its lifetime, plus allowance for network delay and user entry of the OTP.
+-->
 
+時間ベースの OTP [[TOTP]](references.md#ref-totp) は, ネットワーク遅延とOTPのユーザ入力のための許容値と, そのライフタイムの間 Authenticator が持つはずのどちらかの方向へのクロックのずれによって決定される定義されたライフタイムを持つこととなる(**SHALL**).
+
+<!--
 If the authenticator output has less than 64 bits of entropy, the verifier **SHALL** implement a rate-limiting mechanism that effectively limits the number of failed authentication attempts that can be made on the subscriber account as described in [Sec. 5.2.2](sec5_authenticators.md#throttle).
+-->
+
+Authenticator の出力の Entropy が 64 ビット未満の場合, Verifier は, [Sec. 5.2.2](sec5_authenticators.md#throttle) で説明されている通り, Subscriber Account で試行できる Authentication の失敗回数を効果的に制限するレート制限メカニズムを実装することとなる(**SHALL**).
 
 ### Multi-Factor OTP Devices {#multifactorOTP}
 
+<!--
 A multi-factor OTP device generates OTPs for use in authentication after activation through input of an activation factor. This includes hardware devices and software-based OTP generators installed on devices such as mobile phones. The second factor of authentication may be achieved through some kind of integral entry pad, an integral biometric (e.g., fingerprint) reader, or a direct computer interface (e.g., USB port). The OTP is displayed on the device and manually input for transmission to the verifier. For example, an OTP device may display 6 characters at a time, thereby proving possession and control of the device. The multi-factor OTP device is _something you have_, and it **SHALL** be activated by either _something you know_ or _something you are_.
 {:.authenticator-image}
+-->
+
+Multi-Factor OTP デバイスは, Activation Factor の入力による Activation 後に Authentication に使用する OTP を生成する. これには, ハードウェアデバイスと携帯電話などのデバイス上にインストールされた Software-Based OTP Generator が含まれる. 認証の二番目の要素は, 一体型入力パッドのようなもの, 一体型Biometric (例: 指紋) リーダー, または直接的なコンピュータインターフェース (例: USB ポート) によって実現されてもよい. OTP はデバイス上に表示され Verifier に送信するために手動で入力される. 例えば, OTP デバイスは一度に6文字を表示することができ, それによってデバイスの所有と制御を証明する. Multi-Factor OTP デバイスは _something you have_ であり, _something you know_ または _something you are_ のいずれかによって Activation されることとなる(**SHALL**).
+{:.authenticator-image}
+
 
 #### Multi-Factor OTP Authenticators {#mfotpa}
 
+<!--
 Multi-factor OTP authenticators operate in a similar manner to single-factor OTP authenticators (see [Sec. 5.1.4.1](sec5_authenticators.md#sfotpa)), except that they require the presentation and verification of either a memorized secret or a biometric characteristic to obtain the OTP from the authenticator. Each use of the authenticator **SHALL** require the input of the activation factor.
+-->
 
+Multi-Factor OTP Authenticator は, Authenticator から OTP を取得するために Memorized Secret または Biometric Characteristic のいずれかの提示と Verification を必要とすることを除いて, Single-Factor OTP Authenticator ([Sec. 5.1.4.1](sec5_authenticators.md#sfotpa)を参照) と同様の方法で動作する. Authenticator の使用ごとに, Activation Factor の入力を要求することとなる(**SHALL**).
+
+<!--
 In addition to activation information, multi-factor OTP authenticators contain two persistent values. The first is a symmetric key that persists for the device's lifetime. The second is a nonce that is either changed each time the authenticator is used or is based on a real-time clock.
+-->
 
+Activation 情報に加えて, Multi-Factor OTP Authenticator は, 2つの永続的な値を含む. 1つ目は, デバイスのライフタイムの間保持される Symmetric Key である. 2つ目は, Authenticator が使用されるたびに変更されるか, リアルタイムクロックに基づく Nonce である.
+
+<!--
 The secret key and its algorithm **SHALL** provide at least the minimum security strength specified in the latest revision of [[SP800-131A]](references.md#ref-SP800-131A) (112 bits as of the date of this publication). The nonce **SHALL** be of sufficient length to ensure that it is unique for each operation of the device over its lifetime. If a subscriber needs to change the device used for a software-based OTP authenticator, they **SHOULD** bind the authenticator application on the new device to their subscriber account as described in [Sec. 6.1.2.1](sec6_lifecycle.md#post-enroll-bind) and invalidate the authenticator application that will no longer be used.
+-->
 
+Secret Key とそのアルゴリズムは, 少なくとも [[SP800-131A]](references.md#ref-SP800-131A) の最新リビジョンで指定されている最小のセキュリティ強度を提供することとなる(**SHALL**)(発行日現在で 112 ビット). Nonce は, デバイスのライフタイム全体にわたってデバイスの各操作ごとに一意であることを確保するのに十分な長さとなる(**SHALL**). Subscriber が Software-Based OTP Authenticator に使用されるデバイスを変更する必要がある場合, 彼らは [Sec. 6.1.2.1](sec6_lifecycle.md#post-enroll-bind) で説明されている通りに新しいデバイス上の Authenticator を Subscriber Account へバインドする必要があり(**SHOULD**), 使用されなくなった Authenticator アプリケーションを無効にする必要がある.
+
+<!--
 The authenticator output is obtained by using an approved block cipher or hash function to combine the key and nonce in a secure manner. The authenticator output **MAY** be truncated to as few as 6 decimal digits (approximately 20 bits of entropy).
+-->
 
+Authenticator の出力は, Key と Nonce を安全な方法で結合するために承認されたブロック暗号または Hash 関数を使用すること取得される. Authenticator の出力は, わずか6桁の10進数 (約20ビットのEntropy) に切り捨てられられてもよい(**MAY**).
+
+<!--
 If the nonce used to generate the authenticator output is based on a real-time clock, the nonce **SHALL** be changed at least once every 2 minutes.
+-->
 
+Authenticator の出力を生成するために使用される Nonce がリアルタイムクロックに基づいている場合, Nonce は少なくとも2分ごとに変更されることとなる(**SHALL**).
+
+<!--
 The use of an activation secret by the authenticator **SHALL** meet the requirements of [Sec. 5.2.11](sec5_authenticators.md#s-5-2-11). A biometric activation factor **SHALL** meet the requirements of [Sec. 5.2.3](sec5_authenticators.md#biometric_use), including limits on the number of consecutive authentication failures. Submission of the activation factor **SHALL** be a separate operation from unlocking of the host device (e.g., smartphone), although the same activation factor used to unlock the host device **MAY** be used in the authentication operation. The unencrypted key and activation secret or biometric sample — and any biometric data derived from the biometric sample such as a probe produced through signal processing — **SHALL** be zeroized immediately after an OTP has been generated.
+-->
+
+Authenticator による Activation Secret の使用は, [Sec. 5.2.11](sec5_authenticators.md#s-5-2-11) の要件を満たすこととなる(**SHALL**). Biometric Activation Factor は, Authentication の連続失敗回数の制限を含め, [Sec. 5.2.3](sec5_authenticators.md#biometric_use) の要件を満たすこととなる(**SHALL**). Activation Factor の提出は, ホストデバイス (スマートフォンなど) のロック解除とは別の操作となる(**SHALL**)が, ホストデバイスのロック解除に使用されたものと同じ Activation Factor が Authentication 操作で使用されてもよい(**MAY**). Unencrypted Key と Activation Secret, または Biometric Sample -および信号処理によって生成された Probe などの Biometric Sample から得られたすべての Biometric データ- は, Authentication 操作の直後に Zeroize されることとなる(**SHALL**). 
 
 #### Multi-Factor OTP Verifiers
 
+<!--
 Multi-factor OTP verifiers effectively duplicate the process of generating the OTP used by the authenticator, but without the requirement that a second factor be provided. As such, the symmetric keys used by authenticators **SHALL** be strongly protected against unauthorized disclosure by the use of access controls that limit access to the keys to only those software components on the device requiring access.
+-->
 
+Multi-Factor OTP Verifier は, 二番目の要素を提供を受ける要件なしに Authenticator に使用される OTP 生成プロセスを効果的に複製する. そして, Authenticator に使用される Symmetric Key はアクセスを必要とするデバイス上のそれらのソフトウェアコンポーネントのみに Key へのアクセスを制限するアクセスコントロールを使用して, 不正な開示から強力に保護されることとなる(**SHALL**).
+
+<!--
 When a multi-factor OTP authenticator is being associated with a subscriber account, the verifier or associated CSP **SHALL** use approved cryptography to either generate and exchange or to obtain the secrets required to duplicate the authenticator output. The verifier or CSP **SHALL** also establish, by issuance of the authentictor, that the authenticator is a multi-factor device. Otherwise, the verifier **SHALL** treat the authenticator as single-factor, in accordance with [Sec. 5.1.4](sec5_authenticators.md#singlefactorOTP).
+-->
+
+Multi-Factor OTP Authenticator が Subscriber Account に関連付けられている場合, Verifier または関連付けられた CSP は, Authenticator の出力を複製するために必要な Secret を生成および交換, または取得するために, Approved Cryptography を使用することとなる(**SHALL**). Verifier または CSP は, Authenticator の発行によって, Authenticator が Multi-Factor デバイスであることを確立することとなる(**SHALL**). それ以外の場合, Verifier は, [Sec. 5.1.4](sec5_authenticators.md#singlefactorOTP) に従って, Authenticator を Single-Factor として扱うこととなる(**SHALL**).
 
 The verifier **SHALL** use approved encryption and an authenticated protected channel when collecting the OTP in order to provide resistance to eavesdropping and AitM attacks. In order to provide replay resistance as described in [Sec. 5.2.8](sec5_authenticators.md#replay), verifiers **SHALL** accept a given OTP only once while it is valid. In the event a claimant's authentication is denied due to duplicate use of an OTP, verifiers **MAY** warn the claimant in case an attacker has been able to authenticate in advance. Verifiers **MAY** also warn a subscriber in an existing session of the attempted duplicate use of an OTP.
 
