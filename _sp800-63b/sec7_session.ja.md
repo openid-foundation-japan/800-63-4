@@ -103,6 +103,8 @@ In addition, secrets used for session binding **SHOULD** be erased on the subscr
 -->
 
 さらに, Session Binding に用いられるシークレットは, Subscriber がログアウトしたりシークレット自身が有効期限切れになったと見なされた時に, Subscriber エンドポイントから削除されるべきである (**SHOULD**).
+シークレットは HTML5 Local Storage などのセキュアでない場所に置くべきではない (**SHOULD NOT**).
+ローカルストレージは Cross-site Scripting (XSS) Attack に晒される可能性がある.
 
 <!--
 Authenticated sessions **SHALL NOT** fall back to an insecure transport, such as from https to http, following authentication.
