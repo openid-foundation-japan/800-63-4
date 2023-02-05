@@ -584,7 +584,7 @@ Usability considerations for typical usage include:
 Multi-factor authenticators (e.g., multi-factor OTP devices, multi-factor cryptographic software, and multi-factor cryptographic devices) also inherit their secondary factor's usability considerations. As biometrics are only allowed as an activation factor in multi-factor authentication solutions, usability considerations for biometrics are not included in [Figure 3](sec10_usability.md#fig-3) and are discussed in [Sec. 10.4](sec10_usability.md#biomusability).
 -->
 
-Multi-factor Authenticator (e.g., Multi-factor OTP Device, Multi-factor Cryptographic Software, Multi-factor Cryptographic Device) は, さらにのセカンダリーファクターに関する Usability 上の考慮事項も受け継いでいる.
+Multi-factor Authenticator (e.g., Multi-factor OTP Device, Multi-factor Cryptographic Software, Multi-factor Cryptographic Device) は, さらにセカンダリーファクターに関する Usability 上の考慮事項も受け継いでいる.
 Biometrics は Multi-factor Authentication ソリューションの Activation Factor としてのみ許容されているため, Biometirics に関する Usability 上の考慮事項は [Figure 3](sec10_usability.md#fig-3) には含まれず, [Sec. 10.4](sec10_usability.md#biomusability) で述べられている.
 
 [Figure 3 Usability Considerations Summary by Authenticator Type](sec10_usability.md#t3){:name="fig-3"}
