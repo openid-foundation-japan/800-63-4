@@ -156,7 +156,7 @@ Authenticator が Activation Factor を保存する範囲で, その Activation 
 Online password-guessing attacks are a similar threat for centrally and locally verified passwords. Throttling, which is the primary defense against online attacks, can be particularly challenging for local verifiers because of the limited ability of some authenticators to securely store information about unsuccessful attempts. Throttling can be performed by either keeping a count of invalid attempts in the authenticator, or by generating an authenticator output that is rejected by the CSP verifier, which does the throttling. In this case it is important that the invalid outputs not be obvious to the attacker, who could otherwise make offline attempts until a valid-looking output appears.
 -->
 
-オンラインのパスワード推測 Attack は, 中央およびローカルで検証される Password ともに共通した脅威である.
+Online Password-guessing Attack は, 中央およびローカルで検証される Password ともに共通した脅威である.
 Online Attack に対する主要な防御策である Throttling は, ローカルの Verifier にとっては特に困難となる可能性がある.
 そういった Authenticator の中には, 失敗試行に関する情報をセキュアに保存する能力が限られているものもある.
 Throttling は, Authenticator 内に無効な試行の回数を保持するか, Throttling を行う CSP Verifier に拒否されるような Authenticator Output を生成することで実現できる.
