@@ -365,7 +365,7 @@ Usability considerations for typical usage:
 * A better usability option is to offer features that do not require text entry on mobile devices (e.g., a single tap on the screen, or a copy feature so users can copy and paste out-of-band secrets). Providing users such features is particularly helpful when the primary and secondary channels are on the same device. For example, it is difficult for users to transfer the authentication secret on a smartphone because they must switch back and forth &mdash; potentially multiple times &mdash; between the out-of-band application and the primary channel.
 -->
 
-* さらに良い Usability のオプションは, モバイルデバイス上でテキスト入力を必要としない機能 (e.g., スクリーンを一回タップするだけだったり, Out-of-band シークレットをコピーアンドペーストできるようにコピーできるようにするなど) を提供することである. このような機能を提供すると, プライマリチャネルとセカンダリチャネルが同一デバイス上にある場合, 特に役に立つ. 例えば, スマートフォン上で - 場合によっては複数回 - Out-of-band アプリケーションとプライマリチャネルの間を行ったり来たりして Authentication Secret を移動させるのは困難である.
+* さらに良い Usability のオプションは, モバイルデバイス上でテキスト入力を必要としない機能 (e.g., スクリーンを一回タップするだけだったり, Out-of-band シークレットをコピーアンドペーストできるようにコピー可能にするなど) を提供することである. このような機能を提供すると, プライマリチャネルとセカンダリチャネルが同一デバイス上にある場合, 特に役に立つ. 例えば, スマートフォン上で - 場合によっては複数回 - Out-of-band アプリケーションとプライマリチャネルの間を行ったり来たりして Authentication Secret を移動させるのは困難である.
 
 ### Single-Factor OTP Device
 
