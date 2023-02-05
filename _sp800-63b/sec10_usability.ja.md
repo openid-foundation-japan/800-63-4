@@ -435,7 +435,7 @@ Usability considerations for typical usage include:
 -->
 
 * Authenticator Output の手入力中のユーザーエクスペリエンス
-  * Time-based OTP の場合, OTP が表示されている時間にプラスして猶予時間を設けること. ユーザーは Multi-factor OTP Device と入力画面の間を行き来することを含め, ユーザーは Authenticator Output の入力に十分な時間を要する.
+  * Time-based OTP の場合, OTP が表示されている時間にプラスして猶予時間を設けること. Multi-factor OTP Device と入力画面の間を行き来することを含め, ユーザーは Authenticator Output の入力に十分な時間を要する.
   * ユーザーが, 一体型入力パッドを介して Multi-factor OTP Device のロックを解除したり, Authenticator Output をモバイルデバイスに入力する必要がある場合, フォームファクターの制約を考慮すること. 小型デバイスでの入力は, 従来のキーボードでの入力よりも大幅にエラーが発生しやすく, 時間がかかるものである. 一体型入力パッドとオンスクリーンキーボードが小さければ小さいほど入力は難しくなる. より大きなタッチ領域を提供することで, Multi-factor OTP Device のロックを解除したり, モバイルデバイスに Authenticator Output を入力する際の Usability が向上する.
   * USB ポートなどの直接的コンピューターインタフェースの可用性 (Availability) に関する制約が Usability 上の問題を引き起こす可能性もある. 例えば, ラップトップコンピューターの USB ポート数はしばしば非常に限られている. これによりユーザーは Multi-factor OTP Device を使用するために他の USB 周辺機器を取り外す必要があるかもしれない.
 
