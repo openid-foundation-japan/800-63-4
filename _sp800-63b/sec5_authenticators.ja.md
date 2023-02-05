@@ -458,7 +458,7 @@ Authenticator の出力を生成するために使用される Nonce がリア�
 Single-factor OTP verifiers effectively duplicate the process of generating the OTP used by the authenticator. As such, the symmetric keys used by authenticators are also present in the verifier, and **SHALL** be strongly protected against unauthorized disclosure by the use of access controls that limit access to the keys to only those software components on the device requiring access.
 -->
 
-Single-Factor OTP Verifier は, Authenticator に使用される OTP 生成プロセスを効果的に複製する. そのため, Authenticator に使用される Symmetric Key は Verifier にもまた存在し, アクセスを必要とするデバイス上のそれらのソフトウェアコンポーネントのみに Key へのアクセスを制限するアクセスコントロールを使用して, 不正な開示から強力に保護されることとなる(**SHALL**).
+Single-Factor OTP Verifier は, Authenticator に使用される OTP 生成プロセスを効果的に複製する. そのため, Authenticator に使用される Symmetric Key は Verifier にもまた存在し, アクセスを必要とするデバイス上のそれらのソフトウェアコンポーネントのみに Key へのアクセスを制限するアクセスコントロールを使用して, 無許可の開示から強力に保護されることとなる(**SHALL**).
 
 <!--
 When a single-factor OTP authenticator is being associated with a subscriber account, the verifier or associated CSP **SHALL** use approved cryptography to either generate and exchange or to obtain the secrets required to duplicate the authenticator output.
@@ -476,7 +476,7 @@ Verifier は, OTP を収集するときに, 盗聴や AitM Attack への耐性�
 Time-based OTPs [[TOTP]](references.md#ref-totp) **SHALL** have a defined lifetime that is determined by the expected clock drift — in either direction — of the authenticator over its lifetime, plus allowance for network delay and user entry of the OTP.
 -->
 
-時間ベースの OTP [[TOTP]](references.md#ref-totp) は, ネットワーク遅延とOTPのユーザ入力のための許容値と, そのライフタイムの間 Authenticator が持つはずのどちらかの方向へのクロックのずれによって決定される定義されたライフタイムを持つこととなる(**SHALL**).
+時間ベースの OTP [[TOTP]](references.md#ref-totp) は, ネットワーク遅延と OTP のユーザ入力のための許容値, それに加え Authenticator が寿命の間に持つはずの両方向のクロックのずれによって決定される, 定義されたライフタイムを持つこととなる(**SHALL**).
 
 <!--
 If the authenticator output has less than 64 bits of entropy, the verifier **SHALL** implement a rate-limiting mechanism that effectively limits the number of failed authentication attempts that can be made on the subscriber account as described in [Sec. 5.2.2](sec5_authenticators.md#throttle).
@@ -491,7 +491,7 @@ A multi-factor OTP device generates OTPs for use in authentication after activat
 {:.authenticator-image}
 -->
 
-Multi-Factor OTP デバイスは, Activation Factor の入力による Activation 後に Authentication に使用する OTP を生成する. これには, ハードウェアデバイスと携帯電話などのデバイス上にインストールされた Software-Based OTP Generator が含まれる. 認証の二番目の要素は, 一体型入力パッドのようなもの, 一体型Biometric (例: 指紋) リーダー, または直接的なコンピュータインターフェース (例: USB ポート) によって実現されてもよい. OTP はデバイス上に表示され Verifier に送信するために手動で入力される. 例えば, OTP デバイスは一度に6文字を表示することができ, それによってデバイスの所有と制御を証明する. Multi-Factor OTP デバイスは _something you have_ であり, _something you know_ または _something you are_ のいずれかによって Activation されることとなる(**SHALL**).
+Multi-Factor OTP デバイスは, Activation Factor の入力による Activation 後に Authentication に使用する OTP を生成する. これには, ハードウェアデバイスと携帯電話などのデバイス上にインストールされた Software-Based OTP Generator が含まれる. 認証の二番目の要素は, 一体型入力パッドのようなもの, 一体型Biometric (例: 指紋) リーダー, または直接的なコンピュータインターフェース (例: USB ポート) によって実現されてもよい. OTP はデバイス上に表示され Verifier に送信するために手動で入力される. 例えば, OTP デバイスは一度に6文字を表示することができ, それによってデバイスの所有と制御を証明する. Multi-Factor OTP デバイスは _Something You Have_ であり, かつ, _Something You Know_ または _Something You Are_ のいずれかによって Activation されることとなる(**SHALL**).
 {:.authenticator-image}
 
 
@@ -539,7 +539,7 @@ Authenticator による Activation Secret の使用は, [Sec. 5.2.11](sec5_authe
 Multi-factor OTP verifiers effectively duplicate the process of generating the OTP used by the authenticator, but without the requirement that a second factor be provided. As such, the symmetric keys used by authenticators **SHALL** be strongly protected against unauthorized disclosure by the use of access controls that limit access to the keys to only those software components on the device requiring access.
 -->
 
-Multi-Factor OTP Verifier は, 二番目の要素を提供を受ける要件なしに Authenticator に使用される OTP 生成プロセスを効果的に複製する. そして, Authenticator に使用される Symmetric Key はアクセスを必要とするデバイス上のそれらのソフトウェアコンポーネントのみに Key へのアクセスを制限するアクセスコントロールを使用して, 不正な開示から強力に保護されることとなる(**SHALL**).
+Multi-Factor OTP Verifier は, 二番目の要素を提供を受ける要件なしに Authenticator に使用される OTP 生成プロセスを効果的に複製する. そして, Authenticator に使用される Symmetric Key はアクセスを必要とするデバイス上のそれらのソフトウェアコンポーネントのみに Key へのアクセスを制限するアクセスコントロールを使用して, 無許可の開示から強力に保護されることとなる(**SHALL**).
 
 <!--
 When a multi-factor OTP authenticator is being associated with a subscriber account, the verifier or associated CSP **SHALL** use approved cryptography to either generate and exchange or to obtain the secrets required to duplicate the authenticator output. The verifier or CSP **SHALL** also establish, by issuance of the authentictor, that the authenticator is a multi-factor device. Otherwise, the verifier **SHALL** treat the authenticator as single-factor, in accordance with [Sec. 5.1.4](sec5_authenticators.md#singlefactorOTP).
@@ -547,112 +547,258 @@ When a multi-factor OTP authenticator is being associated with a subscriber acco
 
 Multi-Factor OTP Authenticator が Subscriber Account に関連付けられている場合, Verifier または関連付けられた CSP は, Authenticator の出力を複製するために必要な Secret を生成および交換, または取得するために, Approved Cryptography を使用することとなる(**SHALL**). Verifier または CSP は, Authenticator の発行によって, Authenticator が Multi-Factor デバイスであることを確立することとなる(**SHALL**). それ以外の場合, Verifier は, [Sec. 5.1.4](sec5_authenticators.md#singlefactorOTP) に従って, Authenticator を Single-Factor として扱うこととなる(**SHALL**).
 
+<!--
 The verifier **SHALL** use approved encryption and an authenticated protected channel when collecting the OTP in order to provide resistance to eavesdropping and AitM attacks. In order to provide replay resistance as described in [Sec. 5.2.8](sec5_authenticators.md#replay), verifiers **SHALL** accept a given OTP only once while it is valid. In the event a claimant's authentication is denied due to duplicate use of an OTP, verifiers **MAY** warn the claimant in case an attacker has been able to authenticate in advance. Verifiers **MAY** also warn a subscriber in an existing session of the attempted duplicate use of an OTP.
+-->
 
+Verifier は, OTP を収集するときに, 盗聴や AitM Attack への耐性を提供するために, Approved Encryption と Authenticated Protected Channel を使用することとなる(**SHALL**). [Sec. 5.2.8](sec5_authenticators.md#replay) で説明されている通りに Replay Resistance を提供するために, Verifier は, 有効な OTP の受け入れを一度のみとすることとなる(**SHALL**). OTP の重複使用が原因で Claimant の Authentication が拒否された場合, Verifier は, Attacker が事前に認証できた場合に備えて Claimant に警告してもよい(**MAY**). また, Verifier は, OTP の重複使用の試行について, 既存セッションの中にいる Subscriber に警告してもよい(**MAY**).
+
+<!--
 Time-based OTPs [[TOTP]](references.md#ref-totp) **SHALL** have a defined lifetime that is determined by the expected clock drift — in either direction — of the authenticator over its lifetime, plus allowance for network delay and user entry of the OTP.
+-->
 
+時間ベースの OTP [[TOTP]](references.md#ref-totp) は, ネットワーク遅延と OTP のユーザ入力のための許容値, それに加え Authenticator が寿命の間に持つはずの両方向のクロックのずれによって決定される, 定義されたライフタイムを持つこととなる(**SHALL**).
+
+<!--
 If the authenticator output or activation secret has less than 64 bits of entropy, the verifier **SHALL** implement a rate-limiting mechanism that effectively limits the number of failed authentication attempts that can be made on the subscriber account as described in [Sec. 5.2.2](sec5_authenticators.md#throttle).
+-->
+
+Authenticator の出力または Activation Secret の Entropy が 64 ビット未満の場合, Verifier は, [Sec. 5.2.2](sec5_authenticators.md#throttle) で説明されている通り, Subscriber Account で試行できる Authentication の失敗回数を効果的に制限するレート制限メカニズムを実装することとなる(**SHALL**).
 
 ### Single-Factor Cryptographic Software {#sfcs}
 
+<!--
 A single-factor cryptographic software authenticator is a cryptographic key stored on disk or some other "soft" media. Authentication is accomplished by proving possession and control of the key. The authenticator output is highly dependent on the specific cryptographic protocol, but it is generally some type of signed message. The single-factor cryptographic software authenticator is _something you have_.
+{:.authenticator-image}
+-->
+
+Single-Factor Cryptographic Software Authenticator は, ディスク上またはその他の "ソフト" メディアに格納された Cryptographic Key である. Authentication は, Key の所有と制御を証明することによって成し遂げられる. Authenticator の出力は, 特定の暗号プロトコルに大きく依存するが, 通常は何らかのタイプの署名付きメッセージである. Single-Factor Cryptographic Software Authenticator は _Something You Have_ である.
 {:.authenticator-image}
 
 #### Single-Factor Cryptographic Software Authenticators {#sfcsa}
 
+<!--
 Single-factor cryptographic software authenticators encapsulate one or more secret keys unique to the authenticator. The key **SHALL** be stored in suitably secure storage available to the authenticator application (e.g., keychain storage, TPM, or TEE if available). The key **SHALL** be strongly protected against unauthorized disclosure by the use of access controls that limit access to the key to only those software components on the device requiring access.
+-->
 
+Single-Factor Cryptographic Software Authenticator は, 1つかそれ以上の一意の Secret Key を Authenticator にカプセル化する. Key は, Authenticator アプリケーションが利用可能な, 適切に安全なストレージ (例: キーチェーンストレージ, TPM, または可能であれば TEE) に格納することとなる(**SHALL**). Key は, アクセスを必要とするデバイス上のそれらのソフトウェアコンポーネントのみに Key へのアクセスを制限するアクセスコントロールを使用して, 無許可の開示から強力に保護されることとなる(**SHALL**).
+
+<!--
 External cryptographic authenticators that do not meet the requirements of cryptographic hardware authenticators (e.g., that have a mechanism to allow private keys to be exported) are also considered to be cryptographic software authenticators. They **SHALL** meet the requirements for connected authenticators in [Sec. 5.2.12](sec5_authenticators.md#s-5-2-12).
+-->
+
+Cryptographic Hardware Authenticator の要件を満たさない, 外付けの Cryptographic Authenticator (例: Private Key のエクスポートを許可するメカニズムを持つもの) も, Cryptographic Software Authenticator と見なされる. それらは [Sec. 5.2.12](sec5_authenticators.md#s-5-2-12) の Connected Authenticator の要件を満たすこととなる(**SHALL**).
 
 #### Single-Factor Cryptographic Software Verifiers
 
+<!--
 The requirements for a single-factor cryptographic software verifier are identical to those for a single-factor cryptographic device verifier, described in [Sec. 5.1.7.2](sec5_authenticators.md#sfcdv).
+-->
+
+Single-Factor Cryptographic Software Verifier の要件は, [Sec. 5.1.7.2](sec5_authenticators.md#sfcdv) で述べられる Single-Factor Cryptographic Device Verifier と同様である.
 
 ### Single-Factor Cryptographic Devices {#sfcd}
 
+<!--
 A single-factor cryptographic device is a hardware device that performs cryptographic operations using protected cryptographic keys and provides the authenticator output via direct connection to the user endpoint. The device uses embedded symmetric or asymmetric cryptographic keys, and does not require activation through a second factor of authentication. Authentication is accomplished by proving possession of the device via the authentication protocol. The authenticator output is provided by direct connection to the user endpoint and is highly dependent on the specific cryptographic device and protocol, but it is typically some type of signed message. A single-factor cryptographic device is _something you have_.
 {:.authenticator-image}
+-->
+
+Single-Factor Cryptographic デバイスは, 保護された Cryptographic Key を使用して暗号的操作を実行し, ユーザーエンドポイントへの直接接続を介して Authenticator の出力を提供するハードウェアデバイスである. デバイスは, 組み込みの Symmetric または Asymmetric Cryptographic Key を使用し, 二番目の要素による Activation を必要としない. Authentication は, Authentication Protocol を介してデバイスの所有を証明することによって成し遂げられる. Authenticator の出力は, ユーザーエンドポイントへの直接接続によって提供され, また特定の暗号デバイスとプロトコルに大きく依存するが, 通常は何らかのタイプの署名付きメッセージである. Single-Factor Cryptographic デバイスは _Something You Have_ である.
 
 #### Single-Factor Cryptographic Device Authenticators {#sfcda}
 
+<!--
 Single-factor cryptographic device authenticators use tamper-resistant hardware to encapsulate one or more secret keys unique to the authenticator that **SHALL NOT** be exportable (i.e., cannot be removed from the device). The authenticator operates using a secret key to sign a challenge nonce presented through a direct interface between the authenticator and endpoint (e.g., a USB port or secured wireless connection) as specified in [Sec. 5.2.12](sec5_authenticators.md#s-5-2-12). Alternatively, the authenticator could be a suitably secure processor integrated with the user endpoint itself.
+-->
 
+Single-Factor Cryptographic Device Authenticator は, 1つかそれ以上の一意の Secret Key を, エクスポート機能を持つことはない(**SHALL NOT**)(つまり,デバイスから削除できない) Authenticator にカプセル化するために耐タンパー性ハードウェアを使用する. この Authenticator は, [Sec. 5.2.12](sec5_authenticators.md#s-5-2-12) に指定された通り, Authenticator とエンドポイントの間の直接的なインターフェース(例: USB ポートや保護されたワイヤレス接続)を通じて提示された Challenge Nonce に署名するために Secret Key を使用することで動作する. あるいは, Authenticator は, ユーザエンドポイントそれ自体に統合された適切に安全なプロセッサであってもよい.
+
+<!--
 The secret key and its algorithm **SHALL** provide at least the minimum security length specified in the latest revision of [[SP800-131A]](references.md#ref-SP800-131A) (112 bits as of the date of this publication). The challenge nonce **SHALL** be at least 64 bits in length. Approved cryptography **SHALL** be used.
+-->
 
+Secret Key とそのアルゴリズムは, 少なくとも [[SP800-131A]](references.md#ref-SP800-131A) の最新リビジョンで指定されている最小のセキュリティの長さを提供することとなる(**SHALL**)(発行日現在で 112 ビット). Challenge Nonce は, 少なくとも 64 ビットの長さとなる(**SHALL**). Approved Cryptography を使用することとなる(**SHALL**).
+
+<!--
 Cryptographic device authenticators differ from cryptographic software authenticators because of the greater protection afforded to the embedded authentication secrets by cryptographic devices. In order to be considered a cryptographic device, an authenticator **SHALL** either be a separate piece of hardware or an embedded processor or execution environment, e.g., secure element, trusted execution environment (TEE), trusted platform module (TPM). These hardware authenticators or embedded processors are separate from a host processor such as the CPU on a laptop or mobile device. A cryptographic device authenticator **SHALL** be designed so as to prohibit the export of the authentication secret to the host processor and **SHALL NOT** be capable of being reprogrammed by the host processor so as to allow the secret to be extracted. The authenticator is subject to applicable [[FIPS140]](references.md#ref-FIPS140-2) requirements of the AAL at which the authenticator is being used.
+-->
 
+Cryptographic Device Authenticator は, 暗号デバイスによる組み込みの Authentication Secret によって, より大きな保護がもたらされるため, Cryptographic Software Authenticator とは異なる. 暗号デバイスと見なされるために, Authenticator は, ハードウェアの別の部分または組み込みプロセッサ, または実行環境 (例: セキュア エレメント, Trusted Execution Environment (TEE), Trusted Platform Module (TPM))のいずれかとなる(**SHALL**). これらのハードウェア Authenticator または組み込みプロセッサは, ラップトップやモバイルデバイス上の CPU などのホストプロセッサからは分離される. Cryptographic Device Authenticator は, ホストプロセッサへの Authentication Secret のエクスポートを禁止するように設計されることとなり(**SHALL**), Secret の抽出が許されるようにホストプロセッサによって再プログラムを行えるようになることはない(**SHALL NOT**). Authenticator は, Authenticator が使用されている AAL に適合する [[FIPS140]](references.md#ref-FIPS140-2) の要件の対象となる.
+
+<!--
 Single-factor cryptographic device authenticators **SHOULD** require a physical input (e.g., the pressing of a button) in order to operate. This provides defense against unintended operation of the device, which might occur if the endpoint to which it is connected is compromised.
+-->
+
+Single-Factor Cryptographic Device Authenticator は, 動作するために物理的な入力 (例: ボタンを押す) を要求する必要がある(**SHOULD**). これは, デバイスが接続されているエンドポイントが侵害された場合に発生する可能性がある, デバイスの意図しない動作に対する防御を提供する.
 
 #### Single-Factor Cryptographic Device Verifiers {#sfcdv}
 
+<!--
 Single-factor cryptographic device verifiers generate a challenge nonce, send it to the corresponding authenticator, and use the authenticator output to verify possession of the device. The authenticator output is highly dependent on the specific cryptographic device and protocol, but it is generally some type of signed message.
+-->
 
+Single-Factor Cryptographic Device Verifier は, Challenge Nonce を生成し, それを対象の Authenticator に送信し, デバイスの所有を検証するために Authenticator の出力を使用する. Authenticator の出力は, 特定の暗号デバイスとプロトコルに大きく依存するが, 通常は何らかのタイプの署名付きメッセージである. 
+
+<!--
 The verifier has either symmetric or asymmetric cryptographic keys corresponding to each authenticator. While both types of keys **SHALL** be protected against modification, symmetric keys **SHALL** additionally be protected against unauthorized disclosure by the use of access controls that limit access to the key to only those software components on the device requiring access.
+-->
 
+Verifier は, それぞれの Authenticator に対応する Symmetric または Asymmetric Cryptographic Key のいずれかを持つ. 両タイプの鍵は変更から保護されることとなる(**SHALL**)が, Symmetric Key はさらに, アクセスを必要とするデバイス上のそれらのソフトウェアコンポーネントのみに Key へのアクセスを制限するアクセスコントロールを使用して, 無許可の開示から強力に保護されることとなる(**SHALL**).
+
+<!--
 The challenge nonce **SHALL** be at least 64 bits in length, and **SHALL** either be unique over the authenticator's lifetime or statistically unique (i.e., generated using an approved random bit generator [[SP800-90Ar1]](references.md#ref-SP800-90Ar1)). The verification operation **SHALL** use approved cryptography.
+-->
+
+ Challenge Nonce は, 長さが少なくとも 64 ビットとなり(**SHALL**), Authenticator のライフタイムにわたって, または統計的に一意となる(**SHALL**)(つまり, Approved Random Bit Generator [[SP800-90Ar1]](references.md#ref-SP800-90Ar1) を使用して生成される). Verification 操作は, Approved Cryptography を使用することとなる(**SHALL**).
 
 ### Multi-Factor Cryptographic Software {#mfcs}
 
+<!--
 A multi-factor cryptographic software authenticator is a cryptographic key stored on disk or some other "soft" media that requires activation through a second factor of authentication. Authentication is accomplished by proving possession and control of the key. The authenticator output is highly dependent on the specific cryptographic protocol, but it is generally some type of signed message. The multi-factor cryptographic software authenticator is _something you have_, and it **SHALL** be activated by either _something you know_ or _something you are_.
+{:.authenticator-image}
+-->
+
+Multi-Factor Cryptographic Software Authenticator は, Authentication の二番目の要素での Activation を必要とする, ディスク上またはその他の "ソフト" メディアに格納された Cryptographic Key である. Authentication は, Key の所有と制御を証明することによって成し遂げられる. Authenticator の出力は, 特定の暗号プロトコルに大きく依存するが, 通常は何らかのタイプの署名付きメッセージである. Multi-Factor Cryptographic Software Authenticator は _Something You Have_ であり, _Something You Know_ または _Something You Are_ のいずれかによって Activation されることとなる(**SHALL**).
 {:.authenticator-image}
 
 #### Multi-Factor Cryptographic Software Authenticators {#mfcsa}
 
+<!--
 Multi-factor cryptographic software authenticators encapsulate one or more secret keys unique to the authenticator and accessible only through the presentation and verification of an activation factor, either a memorized secret or a biometric characteristic. The key **SHOULD** be stored in suitably secure storage available to the authenticator application (e.g., keychain storage, TPM, TEE). The key **SHALL** be strongly protected against unauthorized disclosure by the use of access controls that limit access to the key to only those software components on the device requiring access.
+-->
 
+Multi-Factor Cryptographic Software Authenticator は, 1つかそれ以上の一意の Secret Key を Authenticator にカプセル化し, Memorized Secret または Biometric Characteristic のいずれかの Activation Factor の提示と Verification によってのみアクセス可能となる. Key は, Authenticator アプリケーションが利用可能な, 適切に安全なストレージ (例: キーチェーンストレージ, TPM, TEE) に格納する必要がある(**SHOULD**). Key は, アクセスを必要とするデバイス上のそれらのソフトウェアコンポーネントのみに Key へのアクセスを制限するアクセスコントロールを使用して, 無許可の開示から強力に保護されることとなる(**SHALL**).
+
+<!--
 External cryptographic authenticators that do not meet the requirements of cryptographic hardware authenticators (e.g., that have a mechanism to allow private keys to be exported) are also considered to be cryptographic software authenticators. They **SHALL** meet the requirementss for connected authenticators in [Sec. 5.2.12](sec5_authenticators.md#s-5-2-12).
+-->
 
+Cryptographic Hardware Authenticator の要件を満たさない, 外付けの Cryptographic Authenticator (例: Private Key のエクスポートを許可するメカニズムを持つもの) も, Cryptographic Software Authenticator と見なされる. それらは [Sec. 5.2.12](sec5_authenticators.md#s-5-2-12) の Connected Authenticator の要件を満たすこととなる(**SHALL**).
+
+<!--
 Each authentication operation using the authenticator **SHALL** require the input of the activation factor.
+-->
 
+Authenticator を使用する各 Authentication 操作は, Activation Factor の入力を必要とすることとなる(**SHALL**).
+
+<!--
 The use of an activation secret by the authenticator **SHALL** meet the requirements of [Sec. 5.2.11](sec5_authenticators.md#s-5-2-11). A biometric activation factor **SHALL** meet the requirements of [Sec. 5.2.3](sec5_authenticators.md#biometric_use), including limits on the number of consecutive authentication failures. Submission of the activation factor **SHALL** be a separate operation from unlocking of the host device (e.g., smartphone), although the same activation factor used to unlock the host device **MAY** be used in the authentication operation. The activation secret or biometric sample — and any biometric data derived from the biometric sample such as a probe produced through signal processing — **SHALL** be zeroized immediately after an authentication transaction has taken place.
+-->
+
+Authenticator による Activation Secret の使用は, [Sec. 5.2.11](sec5_authenticators.md#s-5-2-11) の要件を満たすこととなる(**SHALL**). Biometric Activation Factor は, Authentication の連続失敗回数の制限を含め, [Sec. 5.2.3](sec5_authenticators.md#biometric_use) の要件を満たすこととなる(**SHALL**). Activation Factor の提出は, ホストデバイス (スマートフォンなど) のロック解除とは別の操作となる(**SHALL**)が, ホストデバイスのロック解除に使用されたものと同じ Activation Factor が Authentication 操作で使用されてもよい(**MAY**). Activation Secret または Biometric Sample -および信号処理によって生成された Probe などの Biometric Sample から得られたすべての Biometric データ- は, Authentication 操作の直後に Zeroize されることとなる(**SHALL**). 
 
 #### Multi-Factor Cryptographic Software Verifiers
 
+<!--
 The requirements for a multi-factor cryptographic software verifier are identical to those for a single-factor cryptographic device verifier, described in [Sec. 5.1.7.2](sec5_authenticators.md#sfcdv). Verification of the output from a multi-factor cryptographic software authenticator proves use of the activation factor.
+-->
+
+Multi-Factor Cryptographic Software Verifier の要件は, [Sec. 5.1.7.2](sec5_authenticators.md#sfcdv) で述べられる Single-Factor Cryptographic Device Verifier と同様である. Multi-Factor Cryptographic Software Authenticator からの出力の Verification は,  Activation Factor の使用を証明する.
 
 ### Multi-Factor Cryptographic Devices {#mfcd}
 
+<!--
 A multi-factor cryptographic device is a hardware device that performs cryptographic operations using one or more protected cryptographic keys and requires activation through a second authentication factor. Authentication is accomplished by proving possession of the device and control of the key. The authenticator output is provided by direct connection to the user endpoint and is highly dependent on the specific cryptographic device and protocol, but it is typically some type of signed message. The multi-factor cryptographic device is _something you have_, and it **SHALL** be activated by either _something you know_ or _something you are_.
+{:.authenticator-image}
+-->
+
+Multi-Factor Cryptographic デバイスは, 1つかそれ以上の保護された Cryptographic Key を使用して暗号的操作を実行し, 二番目の Authentication 要素による Activation を必要とするハードウェアデバイスである. Authentication は, デバイスの所有および Key の制御を証明することによって成し遂げられる. Authenticator の出力は, ユーザーエンドポイントへの直接接続によって提供され, また特定の暗号デバイスとプロトコルに大きく依存するが, 通常は何らかのタイプの署名付きメッセージである. Multi-Factor Cryptographic デバイスは, _Something You Have_ であり, かつ, _Something You Know_ または _Something You Are_ のいずれかによって Activation されることとなる(**SHALL**).
 {:.authenticator-image}
 
 #### Multi-Factor Cryptographic Device Authenticators {#mfcda}
 
+<!--
 Multi-factor cryptographic device authenticators use tamper-resistant hardware to encapsulate one or more secret keys unique to the authenticator that **SHALL NOT** be exportable (i.e., cannot be removed from the device). The secret key **SHALL** be accessible only through the presentation and verification of an activation factor, either a biometric characteristic or an activation secret as described in [Sec. 5.2.11](sec5_authenticators.md#s-5-2-11). The authenticator operates by using a secret key that was unlocked by the activation factor to sign a challenge nonce presented through a direct interface between the authenticator and endpoint (e.g., a USB port or secured wireless connection) as specified in [Sec. 5.2.12](sec5_authenticators.md#s-5-2-12). Alternatively, the authenticator could be a suitably secure processor integrated with the user endpoint itself (e.g., a hardware TPM).
+-->
 
+Multi-Factor Cryptographic Device Authenticator は, 1つかそれ以上の一意の Secret Key を, エクスポート機能を持つことはない(**SHALL NOT**)(つまり,デバイスから削除できない) Authenticator にカプセル化するために耐タンパー性ハードウェアを使用する. Secret Key は, [Sec. 5.2.11](sec5_authenticators.md#s-5-2-11) で述べられている通り, Biometric Characteristic または Activation Secret のいずれかの Activation Factor の提示と Verification によってのみアクセス可能となる(**SHALL**). この Authenticator は, [Sec. 5.2.12](sec5_authenticators.md#s-5-2-12) に指定された通り, Authenticator とエンドポイントの間の直接的なインターフェース(例: USB ポートや保護されたワイヤレス接続)を通じて提示された Challenge Nonce に署名するために Activation Factor によってアンロックされた Secret Key を使用することで動作する. あるいは, Authenticator は, ユーザエンドポイントそれ自体に統合された適切に安全なプロセッサであってもよい(例: ハードウェア TPM).
 
+<!--
 The secret key and its algorithm **SHALL** provide at least the minimum security length specified in the latest revision of [[SP800-131A]](references.md#ref-SP800-131A) (112 bits as of the date of this publication). The challenge nonce **SHALL** be at least 64 bits in length. Approved cryptography **SHALL** be used.
+-->
 
+Secret Key とそのアルゴリズムは, 少なくとも [[SP800-131A]](references.md#ref-SP800-131A) の最新リビジョンで指定されている最小のセキュリティの長さを提供することとなる(**SHALL**)(発行日現在で 112 ビット). Challenge Nonce は, 少なくとも 64 ビットの長さとなる(**SHALL**). Approved Cryptography を使用することとなる(**SHALL**).
+
+<!--
 Cryptographic device authenticators differ from cryptographic software authenticators because of the greater protection afforded to the embedded authentication secrets by cryptographic devices. In order to be considered a cryptographic device, an authenticator **SHALL** either be a separate piece of hardware or an embedded processor or execution environment, e.g., secure element, trusted execution environment (TEE), trusted platform module (TPM). A cryptographic device authenticator **SHALL** be designed so as to prohibit the export of the authentication secret to the host processor and **SHALL NOT** be capable of being reprogrammed by the host processor so as to allow the secret to be extracted. The authenticator is subject to applicable [[FIPS140]](references.md#ref-FIPS140-2) requirements of the AAL at which the authenticator is being used.
+-->
 
+Cryptographic Device Authenticator は, 暗号デバイスによる組み込みの Authentication Secret によって, より大きな保護がもたらされるため, Cryptographic Software Authenticator とは異なる. 暗号デバイスと見なされるために, Authenticator は, ハードウェアの別の部分または組み込みプロセッサ, または実行環境 (例: セキュア エレメント, Trusted Execution Environment (TEE), Trusted Platform Module (TPM))のいずれかとなる(**SHALL**). Cryptographic Device Authenticator は, ホストプロセッサへの Authentication Secret のエクスポートを禁止するように設計されることとなり(**SHALL**), Secret の抽出が許されるようにホストプロセッサによって再プログラムを行えるようになることはない(**SHALL NOT**). Authenticator は, Authenticator が使用されている AAL に適合する [[FIPS140]](references.md#ref-FIPS140-2) の要件の対象となる.
+
+<!--
 Each authentication operation using the authenticator **SHOULD** require the input of the activation factor. Input of the activation factor **MAY** be accomplished via either direct input on the device or via a hardware connection (e.g., USB, smartcard).
+-->
 
+Authenticator を使用する各 Authentication 操作は, Activation Factor の入力が必要である(**SHOULD**). Activation Factor の入力は, デバイス上の直接入力か, ハードウェア接続(例: USB, スマートカード)を介してのいずれかで行われてもよい(**MAY**).
+
+<!--
 The use of an activation secret by the authenticator **SHALL** meet the requirements of [Sec. 5.2.11](sec5_authenticators.md#s-5-2-11). A biometric activation factor **SHALL** meet the requirements of [Sec. 5.2.3](sec5_authenticators.md#biometric_use), including limits on the number of consecutive authentication failures. Submission of the activation factor **SHALL** be a separate operation from unlocking of the host device (e.g., smartphone), although the same activation factor used to unlock the host device **MAY** be used in the authentication operation. The activation secret or biometric sample — and any biometric data derived from the biometric sample such as a probe produced through signal processing — **SHALL** be zeroized immediately after an authentication transaction has taken place.
+-->
+
+Authenticator による Activation Secret の使用は, [Sec. 5.2.11](sec5_authenticators.md#s-5-2-11) の要件を満たすこととなる(**SHALL**). Biometric Activation Factor は, Authentication の連続失敗回数の制限を含め, [Sec. 5.2.3](sec5_authenticators.md#biometric_use) の要件を満たすこととなる(**SHALL**). Activation Factor の提出は, ホストデバイス (スマートフォンなど) のロック解除とは別の操作となる(**SHALL**)が, ホストデバイスのロック解除に使用されたものと同じ Activation Factor が Authentication 操作で使用されてもよい(**MAY**). Activation Secret または Biometric Sample -および信号処理によって生成された Probe などの Biometric Sample から得られたすべての Biometric データ- は, Authentication 操作の直後に Zeroize されることとなる(**SHALL**). 
 
 #### Multi-Factor Cryptographic Device Verifiers {#mfcdv}
 
+<!--
 The requirements for a multi-factor cryptographic device verifier are identical to those for a single-factor cryptographic device verifier, described in [Sec. 5.1.7.2](sec5_authenticators.md#sfcdv). Verification of the authenticator output from a multi-factor cryptographic device proves use of the activation factor.
+-->
+
+Multi-Factor Cryptographic Device Verifier の要件は, [Sec. 5.1.7.2](sec5_authenticators.md#sfcdv) で述べられる Single-Factor Cryptographic Device Verifier と同様である. Multi-Factor Cryptographic Device からの Authenticator 出力の Verification は, Activation Factor の使用を証明する.
 
 ## General Authenticator Requirements
 
 ### Physical Authenticators
 
+<!--
 CSPs **SHALL** provide subscriber instructions on how to appropriately protect the authenticator against theft or loss. The CSP **SHALL** provide a mechanism to invalidate the authenticator immediately upon notification from subscriber that loss or theft of the authenticator is suspected.
+-->
+
+CSP は, Authenticator を盗難や紛失から適切に保護する方法について, Subscriber にインストラクションを提供することとなる(**SHALL**). CSP は, Subscriber からの Authenticator の紛失または盗難が疑われる通知に対して, 即時に Authenticator を無効にするメカニズムを提供することとなる(**SHALL**).
 
 ### Rate Limiting (Throttling) {#throttle}
 
+<!--
 When required by the authenticator type descriptions in [Sec. 5.1](sec5_authenticators.md#reqauthtype), the verifier **SHALL** implement controls to protect against online guessing attacks. Unless otherwise specified in the description of a given authenticator, the verifier **SHALL** limit consecutive failed authentication attempts on a single subscriber account to no more than 100.
+-->
 
+[Sec. 5.1](sec5_authenticators.md#reqauthtype) の Authenticator タイプの説明で必要とされる場合, Verifier は, Online Guessing Attack から保護するための制御を実装することとなる(**SHALL**). その Authenticator の説明で特に指定されていない限り, Verifier は, 単一の Subscriber Account での Authentication の連続失敗の試行を 100回 以下に制限することとなる(**SHALL**).
+
+<!--
 Additional techniques **MAY** be used to reduce the likelihood that an attacker will lock the legitimate claimant out as a result of rate limiting. These include:
+-->
 
+レート制限の結果として Attacker が正当な Claimant をロックアウトする可能性を減らすために, 以下を含む追加のテクニックが使用されてもよい(**MAY**)：
+
+<!--
 - Requiring the claimant to complete a bot-detection and mitigation challenge before attempting authentication.
+-->
 
+- Authentication を試みる前に, Claimant にボットの検出と緩和のための課題を完了するように要求する.
+
+<!--
 - Requiring the claimant to wait following a failed attempt for a period of time that increases as the subscriber account approaches its maximum allowance for consecutive failed attempts (e.g., 30 seconds up to an hour).
+-->
 
+- 失敗した試行の後に, Subscriber Account がその連続失敗試行回数の最大許容値に近づくにつれて増加する時間(例: 30秒から1時間まで)の間, Claimant に待つことを要求する.
+
+<!--
 - Accepting only authentication requests that come from an allowlist of IP addresses from which the subscriber has been successfully authenticated before.
+-->
 
+- Subscriber が以前, Authentication に成功した IP アドレスの Allowlist からの Authentication 要求のみを受け入れる.
+
+<!--
 - Leveraging other risk-based or adaptive authentication techniques to identify user behavior that falls within, or out of, typical norms. These might, for example, include use of IP address, geolocation, timing of request patterns, or browser metadata.
+-->
 
+- 他のリスクベースまたは適応できる Authentication テクニックを活用して, 一般的な基準の範囲内または範囲外となるユーザーの行動を識別する. これらには, 例えば, IP アドレス, 位置情報, リクエストのタイミングのパターン, またはブラウザのメタデータの使用が含まれることがある.
+
+<!--
 When the subscriber successfully authenticates, the verifier **SHOULD** disregard any previous failed attempts for that user from the same IP address.
+-->
+
+Subscriber が Authentication に成功すると, Verifierは, 同じ IP アドレスからのそのユーザーのそれ以前の失敗試行をすべて考慮しないようにする必要がある(**SHOULD**).
 
 ### Use of Biometrics {#biometric_use}
 
