@@ -83,7 +83,7 @@ Guidelines and considerations are described from the users' perspective.
 Accessibility differs from usability and is out of scope for this document. Section 508 [[Section508]](references.md#ref-Section508) was enacted to eliminate barriers in information technology and require federal government agencies to make their online public content accessible to people with disabilities. Refer to Section 508 law and standards for accessibility guidance.
 -->
 
- Usability とは異なり, アクセスビリティに関しては本ドキュメントのスコープ外とする.
+Usability とは異なり, アクセシビリティに関しては本ドキュメントのスコープ外とする.
  [[Section508]](references.md#ref-Section508) は情報技術の障壁を取り除くために制定され, 連邦政府機関に対して電子および情報技術の公開コンテンツを障害を持つ人にもアクセスできるように要求している.
  アクセスビリティガイドラインに関しては Section 508 の法律および標準を参照のこと.
 
