@@ -93,7 +93,7 @@ Session Binding に用いられるシークレットは以下の全要件を満�
 
 1. シークレットは Session Host によってインタラクション中に生成されること. 通常は Authentication 直後に.
 2. シークレットは Approved なランダムビット生成器 [[SP800-90Ar1]](references.md#ref-SP800-90Ar1) で生成し, 少なくとも64bitの Entropy を持つこと.
-3. シークレットは Subject がログアウトした際は Session Subject により消去ないし無効化されること.
+3. シークレットは Subscriber がログアウトした際は Session Subject により消去ないし無効化されること.
 4. シークレットは Authenticated Protected Channel を利用したデバイスによって送信, 受信されること.
 5. シークレットは, AAL に応じて, [Sections 4.1.3](sec4_aal.md#aal1reauth), [4.2.3](sec4_aal.md#aal2reauth), ないし [4.3.3](sec4_aal.md#aal3reauth) に指定された時間を超えたのちはタイムアウトし, 受け入れられないこと.
 6. シークレットは Host と Subscriber エンドポイント間のセキュアでないコミュニケーションにさらさないこと.
