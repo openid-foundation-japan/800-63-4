@@ -43,7 +43,7 @@ Complexity of user-chosen passwords has often been characterized using the infor
 Many attacks associated with the use of passwords are not affected by password complexity and length. Keystroke logging, phishing, and social engineering attacks are equally effective on lengthy, complex passwords as simple ones. These attacks are outside the scope of this Appendix.
 -->
 
-Password に使用に関連する Attack の多くは, Password の複雑性と長さには影響されない.
+Password の使用に関連する Attack の多くは, Password の複雑性と長さには影響されない.
 キーストロークロギング, Phishing および Social Engineering Attack は, シンプルな Password に対して有効であるのと同様に, 長く複雑な Password に対しても有効である.
 こういった Attack は本 Appendix のスコープ外とする.
 
