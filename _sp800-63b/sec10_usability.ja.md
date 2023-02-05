@@ -400,7 +400,7 @@ Usability considerations for typical usage include:
   * Limited availability of a direct computer interface such as a USB port could pose usability difficulties. For example, the number of USB ports on laptop computers is often very limited. This may force users to unplug other USB peripherals in order to use the single-factor OTP device.
 -->
 
-* 実装によっては, 実証者向けの以下のような追加の Usability 上の考慮事項が挙げられる.
+* 実装によっては, 実装者向けの以下のような追加の Usability 上の考慮事項が挙げられる.
   * Single-factor OTP Device が電子的インタフェース (e.g., USB) を介して出力を提供できると, ユーザーは Authenticator Output を手動で入力する必要がないため, そのような実装が望ましい. しかしながら, 操作に物理的な入力 (e.g., ボタンを押す) が必要な場合, USB ポートの位置によっては Usability 上の問題をひきおをす可能性がある. 例えば, 一部のコンピューターの USB ポートはコンピューターの背面にあり, ユーザーがアクセスしにくい場合がある.
   * USB ポートなどの直接的コンピューターインタフェースの可用性 (Availability) に関する制約が Usability 上の問題を引き起こす可能性もある. 例えば, ラップトップコンピューターの USB ポート数はしばしば非常に限られている. これによりユーザーは Single-factor OTP Device を使用するために他の USB 周辺機器を取り外す必要があるかもしれない.
 
