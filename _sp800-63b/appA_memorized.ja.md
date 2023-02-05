@@ -79,7 +79,7 @@ Users should be encouraged to make their passwords as lengthy as they want, with
 
 ユーザーには, 合理的な範囲内で Password を好きなだけ長くすることを推奨するべきである.
 ハッシュ化された Password のサイズは元の Password の長さとは無関係であるため, ユーザーが希望しているのに長い Password (ないし Passphrase) の利用を許可しない理由はない.
-非常に長いパスワード (おそらくメガバイト級) はハッシュ化に角の処理時間を要する可能性があるため, そういった制限を設けるのは合理的である.
+非常に長いパスワード (おそらくメガバイト級) はハッシュ化に過度の処理時間を要する可能性があるため, そういった制限を設けるのは合理的である.
 
 ## Complexity
 
