@@ -31,7 +31,7 @@ Authenticator に対する脅威は, Authenticator を構成する Authenticatio
 * *Something you have* may be lost, damaged, stolen from the owner, or cloned by an attacker. For example, an attacker who gains access to the owner's computer might copy a software authenticator. A hardware authenticator might be stolen, tampered with, or duplicated. Out-of-band secrets may be intercepted by an attacker and used to authenticate their own session.
 -->
 
-* *Something you have* には, 紛失, 損傷, 所有者からの盗難, Attacker による複製などのリスクがある. 例えば所有者のコンピューターへの Access を得た Attacker は, Software Authenticator を複製するかもしれない. Hardware Authenticator は盗難, 改ざん, 複製されるかもしれない. Out-of-band Secret は Attacker に傍受され, Attacker 自身の Session の Authenticate に使用される可能せがある.
+* *Something you have* には, 紛失, 損傷, 所有者からの盗難, Attacker による複製などのリスクがある. 例えば所有者のコンピューターへの Access を得た Attacker は, Software Authenticator を複製するかもしれない. Hardware Authenticator は盗難, 改ざん, 複製されるかもしれない. Out-of-band Secret は Attacker に傍受され, Attacker 自身の Session の Authenticate に使用される可能性がある.
 
 <!--
 * *Something you are* may be replicated. For example, an attacker may obtain a copy of the subscriber's fingerprint and construct a replica.

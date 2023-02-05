@@ -29,7 +29,7 @@ Usability とセキュリティ双方の観点で Password の使用に関する
 しかしながら, 人間は複雑で勝手に決められたシークレットを記憶する能力が限られており, しばしば簡単に推測可能な Password を選択することになる.
 この結果生じるセキュリティ上の懸念に対応するため, オンラインサービスは Memorized Secret の複雑度を上げるようなルールを導入してきた.
 最も顕著なルール形式はその構成ルールであり, 1つ以上の数字, 大文字および記号など, 複数の文字種を用いることをユーザーに要求するようなものである.
-しかしながら, 侵害されたパスワードデータベースの分析からは, そのようなルールがもたらす Usability への影響や記憶しづらさのわりに, それによる恩恵は当初考えられていたほど大したものではないことが明らかになっている [[Policies]](references.md#ref-policies).
+しかしながら, 侵害された Password データベースの分析からは, そのようなルールがもたらす Usability への影響や記憶しづらさのわりに, それによる恩恵は当初考えられていたほど大したものではないことが明らかになっている [[Policies]](references.md#ref-policies).
 
 <!--
 Complexity of user-chosen passwords has often been characterized using the information theory concept of entropy [[Shannon]](references.md#ref-shannon). While entropy can be readily calculated for data having deterministic distribution functions, estimating the entropy for user-chosen passwords is difficult and past efforts to do so have not been particularly accurate. For this reason, a different and somewhat simpler approach, based primarily on password length, is presented herein.
@@ -43,7 +43,7 @@ Complexity of user-chosen passwords has often been characterized using the infor
 Many attacks associated with the use of passwords are not affected by password complexity and length. Keystroke logging, phishing, and social engineering attacks are equally effective on lengthy, complex passwords as simple ones. These attacks are outside the scope of this Appendix.
 -->
 
-Password に使用に関連する Attack の多くは, Password の複雑性と長さには影響されない.
+Password の使用に関連する Attack の多くは, Password の複雑性と長さには影響されない.
 キーストロークロギング, Phishing および Social Engineering Attack は, シンプルな Password に対して有効であるのと同様に, 長く複雑な Password に対しても有効である.
 こういった Attack は本 Appendix のスコープ外とする.
 
@@ -79,7 +79,7 @@ Users should be encouraged to make their passwords as lengthy as they want, with
 
 ユーザーには, 合理的な範囲内で Password を好きなだけ長くすることを推奨するべきである.
 ハッシュ化された Password のサイズは元の Password の長さとは無関係であるため, ユーザーが希望しているのに長い Password (ないし Passphrase) の利用を許可しない理由はない.
-非常に長いパスワード (おそらくメガバイト級) はハッシュ化に角の処理時間を要する可能性があるため, そういった制限を設けるのは合理的である.
+非常に長いパスワード (おそらくメガバイト級) はハッシュ化に過度の処理時間を要する可能性があるため, そういった制限を設けるのは合理的である.
 
 ## Complexity
 
@@ -156,7 +156,7 @@ Authenticator が Activation Factor を保存する範囲で, その Activation 
 Online password-guessing attacks are a similar threat for centrally and locally verified passwords. Throttling, which is the primary defense against online attacks, can be particularly challenging for local verifiers because of the limited ability of some authenticators to securely store information about unsuccessful attempts. Throttling can be performed by either keeping a count of invalid attempts in the authenticator, or by generating an authenticator output that is rejected by the CSP verifier, which does the throttling. In this case it is important that the invalid outputs not be obvious to the attacker, who could otherwise make offline attempts until a valid-looking output appears.
 -->
 
-オンラインのパスワード推測 Attack は, 中央およびローカルで検証される Password ともに共通した脅威である.
+Online Password-guessing Attack は, 中央およびローカルで検証される Password ともに共通した脅威である.
 Online Attack に対する主要な防御策である Throttling は, ローカルの Verifier にとっては特に困難となる可能性がある.
 そういった Authenticator の中には, 失敗試行に関する情報をセキュアに保存する能力が限られているものもある.
 Throttling は, Authenticator 内に無効な試行の回数を保持するか, Throttling を行う CSP Verifier に拒否されるような Authenticator Output を生成することで実現できる.

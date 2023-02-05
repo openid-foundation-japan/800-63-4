@@ -69,7 +69,7 @@ This section provides general usability considerations and possible implementati
 本セクションでは一般的な Usability 上の考慮事項と取りうる実装について述べるが, 特定のソリューションを推奨するものではない.
 ここで言及する実装は, 特定の Usability ニーズに対応するための革新的技術アプローチを促すための例に過ぎない.
 さらに, Usability 上の考慮事項とこれらの実装は, 1つで全てを解決する万能なソリューションを妨げるような, 多くの要因を含みがちである.
-例えば, デスクトップコンピューター環境における適切なフォントサイズでも, 小さな OTP デバイスのスクリーンで見た際は文字がはみ出してしまうかもしれない.
+例えば, デスクトップコンピューター環境においては適切なフォントサイズでも, 小さな OTP デバイスのスクリーンで見た際は文字がはみ出してしまうかもしれない.
 選択された Authenticator に対する Usability 評価の実施は, 実装上の不可欠な要素である.
 評価を行う際は, 代表的なユーザー, 現実的な目標とタスク, 適切な利用コンテキストのもとで行うことが重要である.
 
@@ -83,9 +83,9 @@ Guidelines and considerations are described from the users' perspective.
 Accessibility differs from usability and is out of scope for this document. Section 508 [[Section508]](references.md#ref-Section508) was enacted to eliminate barriers in information technology and require federal government agencies to make their online public content accessible to people with disabilities. Refer to Section 508 law and standards for accessibility guidance.
 -->
 
- Usability とは異なり, アクセスビリティに関しては本ドキュメントのスコープ外とする.
- [[Section508]](references.md#ref-Section508) は情報技術の障壁を取り除くために制定され, 連邦政府機関に対して電子および情報技術の公開コンテンツを障害を持つ人にもアクセスできるように要求している.
- アクセスビリティガイドラインに関しては Section 508 の法律および標準を参照のこと.
+Usability とは異なり, アクセシビリティに関しては本ドキュメントのスコープ外とする.
+[[Section508]](references.md#ref-Section508) は情報技術の障壁を取り除くために制定され, 連邦政府機関に対して電子および情報技術の公開コンテンツを障害を持つ人にもアクセスできるように要求している.
+アクセシビリティガイドラインに関しては Section 508 の法律および標準を参照のこと.
 
 ## Usability Considerations Common to Authenticators {#usabilitycommon}
 
@@ -177,9 +177,9 @@ Usability considerations for typical usage of all authenticators include:
 
 * Authenticator 入力中のユーザーエクスペリエンス
   * マスクされたテキスト入力はエラーを引き起こしやすいため, 入力中にテキストを表示するオプションを提供すること. 入力文字をユーザーが視認するのに十分長い間表示した後は, 非表示にしてもよい. 従来のデスクトップコンピューターよりモバイルデバイス (e.g., タブレットやスマートフォン) のほうが Memorized Secret の入力に時間がかかるので, マスキング遅延時間を決定する際はデバイスを考慮すること. マスキング遅延時間がユーザーのニーズに合致していることを保証すること.
-  * テキスト入力に十分な時間が与えられている (i.e., 入力画面が途中でタイムアウトにならない) ことを保証すること. 許可されたテキスツ入力時間がユーザーのニーズに合致していることを保証すること.
+  * テキスト入力に十分な時間が与えられている (i.e., 入力画面が途中でタイムアウトにならない) ことを保証すること. 許可されたテキスト入力時間がユーザーのニーズに合致していることを保証すること.
   * ユーザーの混乱とフラストレーションを軽減するため, 入力エラーについての明確で意味のある対応可能なフィードバックを提供すること. ユーザーがテキスト誤入力に気づかないと, ユーザビリティに重大な影響を及ぼす.
-  * ユーザーに Authenticator Output を入力させるような Authenticator に関しては, 少なくとも10回の入力試行を許可すること. 入力テキストが長くふつ雑になればなるほど, ユーザーの入力エラー率も高くなる.
+  * ユーザーに Authenticator Output を入力させるような Authenticator に関しては, 少なくとも10回の入力試行を許可すること. 入力テキストが長く複雑になればなるほど, ユーザーの入力エラー率も高くなる.
   * 許可された残りの試行回数について, 明確で意味のあるフィードバックを提供すること. レート制限 (i.g., スロットリング) については, 混乱とフラストレーションを軽減するため, 次に試行までどれくらい待つ必要があるのかをユーザーに知らせること.
 
 <!--
@@ -257,7 +257,7 @@ Usability considerations for typical usage include:
 -->
 
 * Memorized Secret の記憶可能性
-  * ユーザーが覚える項目が多いほど, 思い出せずに失敗する可能性が高くなる. Memorized Secret が少ければ少ないほど, ユーザーは特定の RP のために必要な特定の Memorized Secret をより簡単に思い出すことができる.
+  * ユーザーが覚える項目が多いほど, 思い出せずに失敗する可能性が高くなる. Memorized Secret が少なければ少ないほど, ユーザーは特定の RP のために必要な特定の Memorized Secret をより簡単に思い出すことができる.
 
 <!--
 * User experience during entry of the memorized secret
@@ -365,7 +365,7 @@ Usability considerations for typical usage:
 * A better usability option is to offer features that do not require text entry on mobile devices (e.g., a single tap on the screen, or a copy feature so users can copy and paste out-of-band secrets). Providing users such features is particularly helpful when the primary and secondary channels are on the same device. For example, it is difficult for users to transfer the authentication secret on a smartphone because they must switch back and forth &mdash; potentially multiple times &mdash; between the out-of-band application and the primary channel.
 -->
 
-* さらに良い Usability のオプションは, モバイルデバイス上でテキスト入力を必要としない機能 (e.g., スクリーンを一回タップするだけだったり, Out-of-band シークレットをコピーアンドペーストできるようにコピーできるようにするなど) を提供することである. このような機能を提供すると, プライマリチャネルとセカンダリチャネルが同一デバイス上にある場合, 特に役に立つ. 例えば, スマートフォン上で - 場合によっては複数回 - Out-of-band アプリケーションとプライマリチャネルの間を行ったり来たりして Authentication Secret を移動させるのは困難である.
+* さらに良い Usability のオプションは, モバイルデバイス上でテキスト入力を必要としない機能 (e.g., スクリーンを一回タップするだけだったり, Out-of-band シークレットをコピーアンドペーストできるようにコピー可能にするなど) を提供することである. このような機能を提供すると, プライマリチャネルとセカンダリチャネルが同一デバイス上にある場合, 特に役に立つ. 例えば, スマートフォン上で - 場合によっては複数回 - Out-of-band アプリケーションとプライマリチャネルの間を行ったり来たりして Authentication Secret を移動させるのは困難である.
 
 ### Single-Factor OTP Device
 
@@ -400,8 +400,8 @@ Usability considerations for typical usage include:
   * Limited availability of a direct computer interface such as a USB port could pose usability difficulties. For example, the number of USB ports on laptop computers is often very limited. This may force users to unplug other USB peripherals in order to use the single-factor OTP device.
 -->
 
-* 実装によっては, 実証者向けの以下のような追加の Usability 上の考慮事項が挙げられる.
-  * Single-factor OTP Device が電子的インタフェース (e.g., USB) を介して出力を提供できると, ユーザーは Authenticator Output を手動で入力する必要がないため, そのような実装が望ましい. しかしながら, 操作に物理的な入力 (e.g., ボタンを押す) が必要な場合, USB ポートの位置によっては Usability 上の問題をひきおをす可能性がある. 例えば, 一部のコンピューターの USB ポートはコンピューターの背面にあり, ユーザーがアクセスしにくい場合がある.
+* 実装によっては, 実装者向けの以下のような追加の Usability 上の考慮事項が挙げられる.
+  * Single-factor OTP Device が電子的インタフェース (e.g., USB) を介して出力を提供できると, ユーザーは Authenticator Output を手動で入力する必要がないため, そのような実装が望ましい. しかしながら, 操作に物理的な入力 (e.g., ボタンを押す) が必要な場合, USB ポートの位置によっては Usability 上の問題をひきおこす可能性がある. 例えば, 一部のコンピューターの USB ポートはコンピューターの背面にあり, ユーザーがアクセスしにくい場合がある.
   * USB ポートなどの直接的コンピューターインタフェースの可用性 (Availability) に関する制約が Usability 上の問題を引き起こす可能性もある. 例えば, ラップトップコンピューターの USB ポート数はしばしば非常に限られている. これによりユーザーは Single-factor OTP Device を使用するために他の USB 周辺機器を取り外す必要があるかもしれない.
 
 ### Multi-Factor OTP Device
@@ -435,8 +435,8 @@ Usability considerations for typical usage include:
 -->
 
 * Authenticator Output の手入力中のユーザーエクスペリエンス
-  * Time-based OTP の場合, OTP が表示されている時間にプラスして猶予時間を設けること. ユーザーは Multi-factor OTP Device と入力画面の間を行き来することを含め, ユーザーは Authenticator Output の入力に十分な時間を要する.
-  * ユーザーが, 一体型入力パッドを介して Multi-factor OTP Device のロックを解除したり, Authenticator Output をモバイルデバイスに入力する必要がある場合, フォームファクターの制約を考慮すること. 小型デバイスでの入力は, 従来のキーボードでの入力よりも大幅にエラーが発生しやすく, 時間がかかるものである. 一体型入力パッドとオンスクリーンキーボードが小さければ小さいほど入力は難しくなる. より大きなタッチ領域を提供することで, Multi-factor OTP Device のロックを解除したり, モバイルデバイスに Authenticator Output を入力する際の Usalibity が向上する.
+  * Time-based OTP の場合, OTP が表示されている時間にプラスして猶予時間を設けること. Multi-factor OTP Device と入力画面の間を行き来することを含め, ユーザーは Authenticator Output の入力に十分な時間を要する.
+  * ユーザーが, 一体型入力パッドを介して Multi-factor OTP Device のロックを解除したり, Authenticator Output をモバイルデバイスに入力する必要がある場合, フォームファクターの制約を考慮すること. 小型デバイスでの入力は, 従来のキーボードでの入力よりも大幅にエラーが発生しやすく, 時間がかかるものである. 一体型入力パッドとオンスクリーンキーボードが小さければ小さいほど入力は難しくなる. より大きなタッチ領域を提供することで, Multi-factor OTP Device のロックを解除したり, モバイルデバイスに Authenticator Output を入力する際の Usability が向上する.
   * USB ポートなどの直接的コンピューターインタフェースの可用性 (Availability) に関する制約が Usability 上の問題を引き起こす可能性もある. 例えば, ラップトップコンピューターの USB ポート数はしばしば非常に限られている. これによりユーザーは Multi-factor OTP Device を使用するために他の USB 周辺機器を取り外す必要があるかもしれない.
 
 ### Single-Factor Cryptographic Software
@@ -537,7 +537,7 @@ Usability considerations for typical usage include:
 Users authenticate by proving possession of the multi-factor cryptographic device and control of the protected cryptographic key. The device is activated by a second authentication factor, either a memorized secret or a biometric. Usability considerations for the additional factor apply as well — see [Sec. 10.2.1](sec10_usability.md#memorizedsecrets) for memorized secrets and [Sec. 10.4](sec10_usability.md#biomusability) for biometrics used in multi-factor authenticators.
 -->
 
-ユーザーは Multi-Factor Cryptographic Device を保持していること, および保護さされている Cryptographic Key を管理していることを証明することにより Authenticate を行う.
+ユーザーは Multi-Factor Cryptographic Device を保持していること, および保護されている Cryptographic Key を管理していることを証明することにより Authenticate を行う.
 Activation は 2nd Authenticator Factor, Memorized Secret または Biometrics の特徴のいずれか, の入力により行われる.
 ここでは追加の Authentication Factor に対する Usability 上の考慮事項も適用される - Multi-factor Authenticator 内で用いられる Memorized Secret に対しては [Sec. 10.2.1](sec10_usability.md#memorizedsecrets), Biometrics に対しては [Sec. 10.4](sec10_usability.md#biomusability) を参照.
 
@@ -584,7 +584,7 @@ Usability considerations for typical usage include:
 Multi-factor authenticators (e.g., multi-factor OTP devices, multi-factor cryptographic software, and multi-factor cryptographic devices) also inherit their secondary factor's usability considerations. As biometrics are only allowed as an activation factor in multi-factor authentication solutions, usability considerations for biometrics are not included in [Figure 3](sec10_usability.md#fig-3) and are discussed in [Sec. 10.4](sec10_usability.md#biomusability).
 -->
 
-Multi-factor Authenticator (e.g., Multi-factor OTP Device, Multi-factor Cryptographic Software, Multi-factor Cryptographic Device) は, さらにのセカンダリーファクターに関する Usability 上の考慮事項も受け継いでいる.
+Multi-factor Authenticator (e.g., Multi-factor OTP Device, Multi-factor Cryptographic Software, Multi-factor Cryptographic Device) は, さらにセカンダリーファクターに関する Usability 上の考慮事項も受け継いでいる.
 Biometrics は Multi-factor Authentication ソリューションの Activation Factor としてのみ許容されているため, Biometirics に関する Usability 上の考慮事項は [Figure 3](sec10_usability.md#fig-3) には含まれず, [Sec. 10.4](sec10_usability.md#biomusability) で述べられている.
 
 [Figure 3 Usability Considerations Summary by Authenticator Type](sec10_usability.md#t3){:name="fig-3"}
@@ -652,7 +652,7 @@ Biometrics の様式は多様であるが, 以下で述べる3つの Biometrics 
 -->
 
 * 指紋認証に関する Usability 上の考慮事項
-  * ユーザーはどの指を登録したか覚えておく必要がある.
+  * ユーザーは Enrollment 時にどの指を登録したか覚えておく必要がある.
   * 指の湿気がセンサーの読取精度に影響する.
   * 指紋読取精度に影響を与えるその他の要因として, 年齢, 性別, 職業 (e.g., 化学薬品を扱ったり手を酷使する仕事についているユーザーは, 指紋が劣化している可能性がある) などが挙げられる.
 
@@ -702,7 +702,7 @@ Biometrics の利用に関する断続的イベントとしては, 認識精度�
 -->
 
 * ユーザーが登録した指を傷つけた場合, 指紋認識が不能になる可能性がある. 指紋認証 (Fingerprint Authentication) は指紋を損傷したユーザーにとっては困難であろう.
-* ユーザーの顔は時間の経過とともに自然に変化するため, 最初の登録時点から Authentication のための顔認識時点までに時間が経過していると, 認識精度に影響を与える可能性がある. ユーザーの体重変化もその要因となり得る.
+* ユーザーの顔は時間の経過とともに自然に変化するため, 最初の Enrollment 時点から Authentication のための顔認識時点までに時間が経過していると, 認識精度に影響を与える可能性がある. ユーザーの体重変化もその要因となり得る.
 * 目の手術を受けたユーザーは, 手術後に再度 Enrollment を行うまで虹彩認識が不能になるかもしれない.
 
 <!--
