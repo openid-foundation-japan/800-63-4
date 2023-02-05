@@ -52,7 +52,7 @@ These guidelines refer to the *binding* rather than the issuance of an authentic
 Throughout the digital identity lifecycle, CSPs **SHALL** maintain a record of all authenticators that are or have been associated with each subscriber account. The CSP or verifier **SHALL** maintain the information required for throttling authentication attempts when required, as described in [Sec. 5.2.2](sec5_authenticators.md#throttle). The CSP **SHALL** also verify the type of user-provided authenticator (e.g., single-factor cryptographic device vs. multi-factor cryptographic device) so verifiers can determine compliance with requirements at each AAL.
 -->
 
-Digital Identity のライフサイクルを通して, CSP は各 Subscriber Account に関連づけているないしは関連づけられていたすべての Authenticator レコードを管理することとする (**SHALL**).
+Digital Identity のライフサイクルを通して, CSP は各 Subscriber Account に関連づけられている, ないしは関連づけられていた, すべての Authenticator レコードを管理することとする (**SHALL**).
 CSP ないし Verifier は, [Sec. 5.2.2](sec5_authenticators.md#throttle) にあるように, 必要に応じて Authentication 試行の Throttling に必要な情報も管理すること (**SHALL**).
 さらに, CSP はユーザーが提供する Authenticator のタイプ (e.g., Single-factor Cryptographic Device vs. Multi-factor Cryptographic Device) を検証し, Verifier が各 AAL 要件に準拠しているか判断できるようにすること (**SHALL**).
 
