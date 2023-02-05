@@ -71,7 +71,7 @@ When any new authenticator is bound to a subscriber account, the CSP **SHALL** e
 新しい Authenticator を Subscriber Account に紐づける際, CSP は Binding Protocol と関連する鍵の提示プロトコルが当該 Authenticator が用いられる AAL に見合ったセキュリティレベルであることを保証すること (**SHALL**).
 例えば, 関連する鍵の提示プロトコルは Authenticated Protected Channel を使うか対面で行い, Adversary-in-the-Middle Attack から保護しなければならない (**SHALL**).
 Multi-factor Authenticator の Binding には, Multi-factor Authentication ないしそれ相当 (e.g., Identity Proofing が完了した直後の Session との関連付け) の利用を必要としなければならない (**SHALL**).
-同じ条件は, Authenticator により Key Pair が生成され Public Key が CSPS に送信される際にも適用される.
+同じ条件は, Authenticator により Key Pair が生成され Public Key が CSP に送信される際にも適用される.
 
 <!--
 As part of the binding process, the CSP **MAY** require additional information about the new authenticator or the endpoint it is associated with to determine that they are suitable for the AAL being requested and to attempt to determine that the endpoint and authenticator are free from malware.
@@ -112,7 +112,7 @@ Remote Transaction の場合:
 1. The applicant **SHALL** identify themselves in each new binding transaction by presenting a temporary secret which was either established during a prior transaction, or sent to the applicant's phone number, email address, or postal address of record.
 -->
 
-1. Applicant は, 各新規 Binding Transaction において, 事前の Transaction 内で確立された, ないしは Applicant の電話番号, メールアドレスないしは Address of Record に配送された Temporary Secret を提示して, 自らを同定しなければならない (**SHALL**).
+1. Applicant は, 各新規 Binding Transaction において, 事前の Transaction 内で確立された, ないしは Applicant の電話番号, メールアドレスまたは Address of Record に配送された Temporary Secret を提示して, 自らを同定しなければならない (**SHALL**).
 
 <!--
 2. Long-term authenticator secrets **SHALL** only be issued to the applicant within a protected session.
@@ -290,13 +290,13 @@ In addition to the requirements given in [Sec. 6.1.2.1](sec6_lifecycle.md#bindex
 * The subscriber **SHALL** transfer the binding code to the other endpoint. This transfer **SHALL** be either manual or via a local out-of-band method such as a QR code. The binding code **SHALL NOT** be communicated over any insecure channel such as email or PSTN (SMS or voice).
 -->
 
-* Subscriber は Binding code を他方のエンドポイントに送信しなければならない (**SHALL**). この送信は手動ないし QR コード等のローカルの Out-of-band な手法で行うべきである (**SHOULD**). Binding Code は Email や PSTN (SMS / 音声) のようなセキュアでない経路で送信してはならない (**SHALL NOT**).
+* Subscriber は Binding Code を他方のエンドポイントに送信しなければならない (**SHALL**). この送信は手動ないし QR コード等のローカルの Out-of-band な手法で行うべきである (**SHOULD**). Binding Code は Email や PSTN (SMS / 音声) のようなセキュアでない経路で送信してはならない (**SHALL NOT**).
 
 <!--
 * The binding code **SHALL** be usable only once and **SHALL** be valid for a maximum of 10 minutes.
 -->
 
-* Binding code はの利用は一度きりとし (**SHALL**), 有効期限は最大10分までとする (**SHALL**).
+* Binding Code の利用は一度きりとし (**SHALL**), 有効期限は最大10分までとする (**SHALL**).
 
 <!--
 * Following the binding of the new authenticator (or issuance of a certificate, in the case of PKI-based authenticators), the CSP **SHOULD** encourage the subscriber to authenticate with the new authenticator to confirm that the process has completed successfully.
