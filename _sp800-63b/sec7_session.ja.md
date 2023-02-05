@@ -168,30 +168,74 @@ OAuth Access Token および関連する Refresh Token は, Authentication Sessi
 
 ### Device Identification
 
+<!--
 Other methods of secure device identification &mdash; including but not limited to mutual TLS, token binding, or other mechanisms &mdash; **MAY** be used to enact a session between a subscriber and a service.
+-->
+
+Secure Device Identification のその他の手法 - mutual TLS, Token Binding, またはその他のメカニズム - も, Subscriber とサービスの間で Session を実現するために使用できる (**MAY**).
 
 ## Reauthentication {#sessionreauthn}
 
+<!--
 Periodic reauthentication of sessions **SHALL** be performed to confirm the continued presence of the subscriber at an authenticated session (i.e., that the subscriber has not walked away without logging out).
+-->
 
+Session の定期的な Reauthentication を実行し, 認証済 Session に Subscriber が引き続き存在することを確認すること (**SHALL**).
+(i.e., Subscriber がログアウトせずに立ち去っていないか)
+
+<!--
 A session **SHALL NOT** be extended past the guidelines in Sections [4.1.3](sec4_aal.md#aal1reauth), [4.2.3](sec4_aal.md#aal2reauth), and [4.3.3](sec4_aal.md#aal3reauth) (depending on AAL) based on presentation of the session secret alone. Prior to session expiration, the reauthentication time limit **SHALL** be extended by prompting the subscriber for the authentication factors specified in [Table 2](sec7_session.md#table-2).
+-->
 
+Session は, Session Secret の提示のみをもって, (AAL に応じて) セクション [4.1.3](sec4_aal.md#aal1reauth), [4.2.3](sec4_aal.md#aal2reauth), および [4.3.3](sec4_aal.md#aal3reauth) のガイドラインを超えて延長してはならない (**SHALL NOT**).
+Session の有効期限が切れる前に, [Table 2](sec7_session.md#table-2) で指定された Authentication Factor を Subscriber に求めることで, Reauthentication タイムリミットを延長すること (**SHALL**).
+
+<!--
 When a session has been terminated, due to a time-out or other action, the subscriber **SHALL** be required to establish a new session by authenticating again.
+-->
+
+タイムアウトか他のアクションにより Session が終了した場合は, Subscriber に再度 Authentication を行い新たな Session を確立するよう要求すること (**SHALL**).
 
 [Table 2 AAL Reauthentication Requirements](sec7_session.md#table-2){:name="table-2"}
 {:latex-ignore="true"}
 
+<!--
 |AAL|Requirement|
 |----|----|
 |1|Presentation of any one factor|
 |2|Presentation of a memorized secret or biometric|
 |3|Presentation of all factors|
 {:latex-table="2" latex-caption="AAL Reauthentication Requirements"}
+-->
 
+|AAL|Requirement|
+|----|----|
+|1| 任意の1ファクターの提示 |
+|2| Memorized Secret ないし Biometric の提示 |
+|3| 全ファクターの提示 |
+{:latex-table="2" latex-caption="AAL Reauthentication Requirements"}
+
+<!--
 >Note: At AAL2, a memorized secret or biometric, and not a physical authenticator, is required because the session secret is *something you have*, and an additional authentication factor is required to continue the session.
+-->
+
+>Note: AAL2 では, 物理 Authenticator ではなく Memorized Secret や Biometric が求められる. Session Secret は *something you have* であるため, Session の継続には追加の Authentication Factor が求められるのである.
 
 ### Reauthentication from a Federation or Assertion
 
+<!--
 When using a federation protocol and Identity Provider (IdP) to authenticate at the RP as described in [[SP800-63C]](../_sp800-63c/sec1_purpose.md#purpose){:latex-href="#ref-SP800-63C"}, special considerations apply to session management and reauthentication. The federation protocol communicates an authentication event at the IdP to the RP using an assertion, and the RP then begins an authenticated session based on the successful validation of this assertion. Since the IdP and RP manage sessions separately from each other and the federation protocol does not connect the session management between the IdP and RP, the termination of the subscriber's sessions at an IdP and at an RP are independent of each other. Likewise, the subscriber's sessions at multiple different RPs are established and terminated independently of each other.
+-->
 
+[[SP800-63C]](../_sp800-63c/sec1_purpose.md#purpose){:latex-href="#ref-SP800-63C"} で述べたように, RP に Authenticate するために Federation Protocol と Identity Provider (IdP) を使用する場合は, Session Management と Reauthentication に特別な考慮事項が適用される.
+Federation Protocol は Assertion を用いて IdP での Authentication イベントを RP に伝達し, RP はこの Assertion の検証の成功をもって認証済 Session を開始する.
+IdP と RP は Session を個別に管理し, Federation Protocol は　IdP と RP の Session Management を接続しないため, IdP と RP での Session の終了は互いに独立して行われる.
+同様に, Subscriber が複数の RP で持つ Session は, 互いに独立して確立および終了される.
+
+<!--
 Consequently, when an RP session expires and the RP requires reauthentication, it is entirely possible that the session at the IdP has not expired and that a new assertion could be generated from this session at the IdP without explicitly reauthenticating the subscriber. The IdP can communicate the time and details of the authentication event to the RP, but it is up to the RP to determine if reauthentication requirements have been met. Section 5.3 of [[SP800-63C]](../_sp800-63c/sec5_federation.md#federation-session){:latex-href="#ref-SP800-63C"} provides additional details and requirements for session management within a federation context.
+-->
+
+したがって, RP Session が期限切れになり RP が Reauthentication を要求する時, IdP の Session が期限切れになっておらず, Subscriber を明示的に Reauthenticate することなく, IdP のこの Session にもとづいて新たな Assertion が生成される可能性は十分にある.
+IdP が Authentication イベントの発生時間および詳細を RP に伝えることもできるが, Reauthentication 要件が満たされているかを判断する責任は RP にある.
+[[SP800-63C]](../_sp800-63c/sec5_federation.md#federation-session){:latex-href="#ref-SP800-63C"} Section 5.3 には Federation コンテキストにおける Session Management に関するさらなる詳細および要件が記載されている.
