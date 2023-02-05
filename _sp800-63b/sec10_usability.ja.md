@@ -257,7 +257,7 @@ Usability considerations for typical usage include:
 -->
 
 * Memorized Secret の記憶可能性
-  * ユーザーが覚える項目が多いほど, 思い出せずに失敗する可能性が高くなる. Memorized Secret が少ければ少ないほど, ユーザーは特定の RP のために必要な特定の Memorized Secret をより簡単に思い出すことができる.
+  * ユーザーが覚える項目が多いほど, 思い出せずに失敗する可能性が高くなる. Memorized Secret が少なければ少ないほど, ユーザーは特定の RP のために必要な特定の Memorized Secret をより簡単に思い出すことができる.
 
 <!--
 * User experience during entry of the memorized secret
