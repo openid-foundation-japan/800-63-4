@@ -537,7 +537,7 @@ Usability considerations for typical usage include:
 Users authenticate by proving possession of the multi-factor cryptographic device and control of the protected cryptographic key. The device is activated by a second authentication factor, either a memorized secret or a biometric. Usability considerations for the additional factor apply as well — see [Sec. 10.2.1](sec10_usability.md#memorizedsecrets) for memorized secrets and [Sec. 10.4](sec10_usability.md#biomusability) for biometrics used in multi-factor authenticators.
 -->
 
-ユーザーは Multi-Factor Cryptographic Device を保持していること, および保護さされている Cryptographic Key を管理していることを証明することにより Authenticate を行う.
+ユーザーは Multi-Factor Cryptographic Device を保持していること, および保護されている Cryptographic Key を管理していることを証明することにより Authenticate を行う.
 Activation は 2nd Authenticator Factor, Memorized Secret または Biometrics の特徴のいずれか, の入力により行われる.
 ここでは追加の Authentication Factor に対する Usability 上の考慮事項も適用される - Multi-factor Authenticator 内で用いられる Memorized Secret に対しては [Sec. 10.2.1](sec10_usability.md#memorizedsecrets), Biometrics に対しては [Sec. 10.4](sec10_usability.md#biomusability) を参照.
 
