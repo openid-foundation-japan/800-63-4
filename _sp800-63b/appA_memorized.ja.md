@@ -29,7 +29,7 @@ Usability とセキュリティ双方の観点で Password の使用に関する
 しかしながら, 人間は複雑で勝手に決められたシークレットを記憶する能力が限られており, しばしば簡単に推測可能な Password を選択することになる.
 この結果生じるセキュリティ上の懸念に対応するため, オンラインサービスは Memorized Secret の複雑度を上げるようなルールを導入してきた.
 最も顕著なルール形式はその構成ルールであり, 1つ以上の数字, 大文字および記号など, 複数の文字種を用いることをユーザーに要求するようなものである.
-しかしながら, 侵害されたパスワードデータベースの分析からは, そのようなルールがもたらす Usability への影響や記憶しづらさのわりに, それによる恩恵は当初考えられていたほど大したものではないことが明らかになっている [[Policies]](references.md#ref-policies).
+しかしながら, 侵害された Password データベースの分析からは, そのようなルールがもたらす Usability への影響や記憶しづらさのわりに, それによる恩恵は当初考えられていたほど大したものではないことが明らかになっている [[Policies]](references.md#ref-policies).
 
 <!--
 Complexity of user-chosen passwords has often been characterized using the information theory concept of entropy [[Shannon]](references.md#ref-shannon). While entropy can be readily calculated for data having deterministic distribution functions, estimating the entropy for user-chosen passwords is difficult and past efforts to do so have not been particularly accurate. For this reason, a different and somewhat simpler approach, based primarily on password length, is presented herein.
