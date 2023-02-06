@@ -57,7 +57,7 @@ This document also provides requirements for CSPs collecting additional informat
 
 _This section is informative._
 
-[図 1](sec4_proofing.md#fig-1) は、Identity Proofingとエンロールメントの基本的な流れを示めしている。
+[図 1](sec4_proofing.md#fig-1) は、Identity Proofingとエンロールメントの基本的な流れを示している。
 
 [図 1. Identity Proofing プロセス](sec4_proofing.md#fig-1){:name="fig-1"}
 {:latex-ignore="true"}
@@ -184,7 +184,7 @@ Acceptable physical evidence **SHALL** contain all of the following characterist
 3.	提示されたデジタルEvidenceに、デジタル情報の発行者の名称が含まれている。
 4.	デジタルEvidenceの発行者が、デジタルEvidenceの発行に先立って、ApplicantのIdentity Proofingを実施している。
 5.	デジタルEvidenceが、意図された人物に届けられた、あるいはアクセス可能とされたものであるという、合理的な保証がある。
-6.  許容可能であるならば、提示されたデジタルEvidenceが評価された際のIALに見合ったAALあるいはFALでのAuthenticationを通じてVerify可能である。
+6.  許容可能であるならば、評価中のIALに見合ったAALあるいはFALでのAuthenticationを通じて、提示されたデジタルEvidenceがVerify可能である。
 
 {% comment %}
 Acceptable digital evidence **SHALL** contain all of the following characteristics:
@@ -300,7 +300,7 @@ The CSP **SHALL** validate all identity evidence collected to meet evidence coll
 
 #### Evidence Validation {#validation}
 
-CSPは、次によって提示されたエビデンスの真正性、正確性、および最新性を検証するものとする(**SHALL**):
+CSPは、提示されたエビデンスの真正性、正確性、および最新性を次の手段によってValidateするものとする(**SHALL**):
 
 - Evidenceが正しい形式であり、Identity Evidenceのタイプに対する完全な情報を含んでいることを確認する。
 - Evidenceが偽造されていないこと、および改ざんされていないことを確認する。
