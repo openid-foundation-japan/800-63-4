@@ -18,7 +18,7 @@ _This section is informative._
 
 このセクションは、Enrollment および Identity Proofing に関連する Usability の考慮事項に対する実装者の意識を高めることを目的としている（典型的な Authenticator の使用および断続的なイベントに対する Usability の考慮事項については、[[SP800-63B]](./_sp800-63b/sec10_usability.ja.md#sec10){:latex-href="#ref-SP800-63B"}）の Sec. 10を参照。
 
-[ISO/IEC9241-11]] (sec11_references.md#ref-ISO9241) では、 Usability を「システム、製品、またはサービスが、特定のユーザーによって、特定の使用状況において、効果、効率、満足を伴って特定の目標を達成できる度合い」と定義している。この定義では、効果、効率、満足を達成するために必要な要素として、ユーザー、目標、使用状況に着目しています。 Usability の実現には、これらのキーとなる要素を考慮する全体的なアプローチが必要である。
+[ISO/IEC9241-11]] (sec11_references.md#ref-ISO9241) では、 Usability を「システム、製品、またはサービスが、特定のユーザーによって、特定の使用状況において、効果、効率、満足を伴って特定の目標を達成できる度合い」と定義している。この定義では、効果、効率、満足を達成するために必要な要素として、ユーザー、目標、使用状況に着目している。 Usability の実現には、これらのキーとなる要素を考慮する全体的なアプローチが必要である。
 {% comment %}
 > Note: In this section, the term "users" means "applicants" or "subscribers."
 
