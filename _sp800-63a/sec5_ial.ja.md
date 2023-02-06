@@ -430,7 +430,7 @@ Applicant references are individuals who participate in the identity proofing of
 
 CSPは、IAL 1および2で、Remote で実施するIdentity Proofingにおいて、Trusted Refereeを利用するオプションを提供するものとする(**SHALL**)。
 
-以下の要件は、Trusted Refereeが提案される場面において、その利用に適用される:  
+以下の要件は、Trusted Refereeが提供される場面において、その利用に適用される:  
 
 1. CSP は、[Sec. 5.1.1](sec5_ial.ja.md#DocRecReqs) で指定するように、Trusted Refereeの使用に関するポリシーと手続きを、Practice Statementの一部として文書で確立するものとする(**SHALL**)。
 2. CSP は、Applicant固有の状況に基づいてApplicantのIdentity Proofingが成功するよう、リスクベースの判断を行うためにTrusted Refereeを訓練するものとする(**SHALL**)。
