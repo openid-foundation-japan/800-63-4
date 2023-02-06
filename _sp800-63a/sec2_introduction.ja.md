@@ -110,7 +110,7 @@ Assurance in a subscriber's identity is described using one of the following Ide
 **IAL2**: IAL2 adds additional rigor to the identity proofing process by requiring the collection of stronger types of evidence and a more rigorous process for validating the evidence and verifying the identity. 
 {% endcomment %} 
 
-**IAL3**: IAL3 は、訓練を受けた CSP 担当者が、対面または監視されたリモートIdentity Proofingセッションを介して、 Identity Proofingセッション全体にわたってApplicantと直接やりとりするための要件を追加している。
+**IAL3**: IAL3 は、訓練を受けた CSP 担当者が、対面または監視下でのリモートIdentity Proofingセッションを介して、 Identity Proofingセッション全体にわたってApplicantと直接やりとりするための要件を追加している。
 
 {% comment %} 
 **IAL3**: IAL3 adds the requirement for a trained CSP representative to interact directly with the applicant during the entire identity proofing session, either in person or via a supervised remote identity proofing session.

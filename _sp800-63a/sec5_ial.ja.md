@@ -44,7 +44,7 @@ CSPは、定義されたIALを達成するために実装されているすべ�
 1. それぞれの提供されたIALにおいて CSP がApplicantのIdentity Proofingを行うために従う特定のステップを含む、完全なサービスの説明。 
 2. CSPが受け入れる、Evidence強度要件を満たすためのIdentity Evidenceの種類。 
 3. 該当する場合、必要なIdentity Evidenceを所有していないApplicant個人が、Identity Proofingプロセスを完了するための代替手法 [^alternatives]。 
-4. CSP がCore Attributeであると見なすAttribute。Core Attributeには、CSP が Identity Resolutionを行うために必要な最小限のAttributeのセットのほか、Identity Proofing、詐欺の軽減、法律または法的プロセスの遵守、あるいはAttribute Assertionを介したRelying Party(RP)への伝達を目的とし、CSPが収集、validateする追加のAttributeを含んでいる。
+4. CSP が中核のAttributeであると見なすAttribute。中核のAttributeには、CSP が Identity Resolutionを行うために必要な最小限のAttributeのセットのほか、Identity Proofing、詐欺の軽減、法律または法的プロセスの遵守、あるいはAttribute Assertionを介したRelying Party(RP)への伝達を目的とし、CSPが収集、validateする追加のAttributeを含んでいる。
 5. Identity Proofingのエラーに対処するための CSP のポリシーとプロセス。
 6. 疑わしい、あるいは確認済みの不正なアカウントを識別し、RPや影響をうける個人に対して伝達するための、CSP のポリシーとプロセス。
 7. サービス変更（例：データソース、統合ベンダー、またはバイオメトリックアルゴリズムの変更）を管理し、RP に伝達するための、 CSP のポリシー。
@@ -180,7 +180,7 @@ The following privacy requirements apply to all CSPs providing identity services
 Equityの向上というゴールをサポートし、全体的なリスクアセスメントプロセスの一環で、CSP はそのIdentityサービスの要素をアセスメントして、あるグループのメンバーが他のグループと比較して、不公平なアクセス、処遇、あるいは結果になる可能性があるプロセスまたは技術を特定するものとする(**SHALL**)。 不公平なアクセスあるいは結果となりえるIdentity Proofingプロセスおよび技術の非網羅的なリストについては、[Sec. 10](sec10_equity.ja.md#EquityConsiderations)を参照すること。
 
 
-大統領令 13985 [[EO13985]](sec11_references.ja.md#ref-EO13985) は、_Advancing Racial Equity and Support for Underserved Communities Through the Federal Government_ として、政府プログラムと政策が有色人種およびその他十分な利益を享受できていないグループのための機会および利益に対する組織的障壁を存続させてしまっていないかどうか、その程度がどれほどであるか、評価するよう各連邦機関に求めていることに注意すること。 
+大統領令 13985 [[EO13985]](sec11_references.ja.md#ref-EO13985) は、_Advancing Racial Equity and Support for Underserved Communities Through the Federal Government_ として、政府プログラムと政策が有色人種およびその他十分な便益を享受できていないグループのための機会および便益に対する組織的障壁を存続させてしまっていないかどうか、その程度がどれほどであるか、評価するよう各連邦機関に求めていることに注意すること。 
 
 {% comment %}
 In support of the goal of improved equity, and as part of its overall risk assessment process, the CSP **SHALL** assess the elements of its identity service to identify processes or technologies that can possibly result in inequitable access, treatment, or outcomes for members of one group as compared to others.  See [Sec. 10](sec10_equity.md#EquityConsiderations) for a non-exhaustive list of identity proofing processes and technologies that may be subject to inequitable access or outcomes. 
@@ -507,7 +507,7 @@ The following requirements apply to all CSPs providing identity proofing service
 * CSPオペレータ支援によるリモート・プロセス 
 * 自動化されたリモート・プロセスとオペレーター支援によるリモート・プロセスの組み合わせ。
 * Applicantとの対面による物理的な対話プロセス、および 
-* IAL3 監視下にあるリモート(Supervised Remote)Identity Proofingプロセス
+* IAL3 監視下でのリモート(Supervised Remote)Identity Proofingプロセス
 
 IAL1 および IAL2 でのIdentity Proofingは、これらのプロセスのいずれも使用することができるが、 IAL3 では、Applicantとの直接の物理的対話または IAL3 監視下にあるリモートIdentity Proofingを必要とする。
 
@@ -552,7 +552,7 @@ CSP は、Identity Proofing プロセスに対する自動化された攻撃を�
 The CSP **SHALL** implement a means to prevent automated attacks on the identity proofing process. Acceptable means include, but are not limited to: bot detection, mitigation, and management solutions; behavioral analytics; web application firewall settings; and traffic analysis.
 {% endcomment %}
 
-### Evidence および Core Attribute の収集要件
+### Evidence および 中核となる Attribute の収集要件
 
 #### Evidence 収集
 {% comment %}
@@ -579,13 +579,13 @@ For remote or in-person identity proofing, the CSP **SHALL** collect _one_ of th
 #### Collection of Additional Attributes
 {% endcomment %}
 
-ValidateされたEvidenceが Identity Attribute の Source として好ましい。提示された Identity Evidence に、CSP がCore Attributeと考えるすべてのAttributeが含まれていなければ、CSP はApplicantが自己申告するAttributeを収集してもよい（**MAY**）。
+ValidateされたEvidenceが Identity Attribute の Source として好ましい。提示された Identity Evidence に、CSP が中核のAttributeと考えるすべてのAttributeが含まれていなければ、CSP はApplicantが自己申告するAttributeを収集してもよい（**MAY**）。
 
 {% comment %}
 Validated evidence is the preferred source of identity attributes. If the presented identity evidence does not provide all the attributes the CSP considers core attributes, it **MAY** collect attributes that are self-asserted by the applicant. 
 {% endcomment %}
 
-### Evidence および Core Attribute の Validation 要件
+### Evidence および 中核となる Attribute の Validation 要件
 {% comment %}
 ### Evidence and Core Attributes Validation Requirements
 {% endcomment %}
@@ -598,12 +598,12 @@ CSPは、以下のいずれか _1つ_ の要件に従って SUPERIOR と STRONG 
 
 CSPは、訓練を受けた担当者による目視検査によって、FAIR Evidenceが真正であることをValidateするものとする(**SHALL**)。
 
-CSPは、以下の _両方_ の方法ですべてのCore AttributeをValidateするものとする(**SHALL**)。
+CSPは、以下の _両方_ の方法ですべての中核のAttributeをValidateするものとする(**SHALL**)。
 
 1. Evidenceの一部から取得したAttribute（口座番号または参照番号、名前、生年月日など）の正確性を、Authoritativeまたは信頼できるSourceと比較することでValidateする。
 2. 自己申告のAttributeの正確性を、Authoritativeまたは信頼できるSourceと比較することでValidateする。
 	
-さらに保証を強めるため、CSP は、さまざまなSourceによってValidateされたCore Attributeを、全体的な一貫性があるかという観点で評価するものとする(**SHALL**)。
+さらに保証を強めるため、CSP は、さまざまなSourceによってValidateされた中核のAttributeを、全体的な一貫性があるかという観点で評価するものとする(**SHALL**)。
 
 {% comment %}
 The CSP **SHALL** validate the genuineness of each piece of SUPERIOR and STRONG evidence by _one_ of the following:
@@ -674,7 +674,7 @@ The CSP **SHALL** implement a means to prevent automated attacks on the identity
 {% endcomment %}
 
 
-### Evidence および Core Attribute の収集要件
+### Evidence および 中核となる Attribute の収集要件
 
 #### Evidence 収集
 {% comment %}
@@ -700,13 +700,13 @@ For remote or in-person identity proofing, the CSP **SHALL** collect _one_ of th
 #### Collection of Attributes
 {% endcomment %}
 
-ValidateされたEvidenceが Identity Attribute の Source として好ましい。提示された Identity Evidence に、CSP がCore Attributeと考えるすべてのAttributeが含まれていなければ、CSP はApplicantが自己申告するAttributeを収集してもよい（**MAY**）。
+ValidateされたEvidenceが Identity Attribute の Source として好ましい。提示された Identity Evidence に、CSP が中核のAttributeと考えるすべてのAttributeが含まれていなければ、CSP はApplicantが自己申告するAttributeを収集してもよい（**MAY**）。
 
 {% comment %}
 Validated evidence is the preferred source of identity attributes. If the presented identity evidence does not provide all the attributes the CSP considers core attributes, it **MAY** collect attributes that are self-asserted by the applicant. 
 {% endcomment %}
 
-### Evidence および Core Attribute の Validation 要件
+### Evidence および 中核の Attribute の Validation 要件
 {% comment %}
 ### Evidence and Core Attributes Validation Requirements
 {% endcomment %}
@@ -717,12 +717,12 @@ CSPは、以下のいずれか _1つ_ の要件に従って SUPERIOR と STRONG 
 2. 物理的なセキュリティ機能の完全性を確認する技術の利用、またはEvidenceが詐称されているか不適切に変更されているかを検出することができる技術の利用
 3. 存在する場合、デジタルセキュリティ機能の完全性を確認する。
 
-CSPは、以下の方法ですべてのCore AttributeをValidateするものとする(**SHALL**)。
+CSPは、以下の方法ですべての中核のAttributeをValidateするものとする(**SHALL**)。
 
 1. Evidenceの一部から取得したAttribute（口座番号または参照番号、名前、生年月日など）の正確性を、Authoritativeまたは信頼できるSourceと比較することでValidateする。
 2. 自己申告のAttributeの正確性を、Authoritativeまたは信頼できるSourceと比較することでValidateする。
 
-さらに保証を強めるため、CSP は、さまざまなSourceによってValidateされたCore Attributeを、全体的な一貫性があるかという観点で評価するものとする(**SHALL**)。
+さらに保証を強めるため、CSP は、さまざまなSourceによってValidateされた中核のAttributeを、全体的な一貫性があるかという観点で評価するものとする(**SHALL**)。
 
 {% comment %}
 The CSP **SHALL** validate the genuineness of each piece of SUPERIOR and STRONG evidence by one of the following:
@@ -789,7 +789,7 @@ Upon the successful completion of identity proofing at IAL2, the CSP **SHALL** s
 
 ## Identity Assurance Level 3 {#IAL3}
 
-IAL3 は、IAL2 で要求される手順にさらなる厳密さを加えたもので、Identity と RP をなりすまし、詐欺、 または他の著しく有害な損害から一層保護するための追加的かつ特定のプロセス（バイオメトリクス情報の 比較、収集、保持の実施を含む）が対象となる。さらに、IAL3 における Identity Proofingは、対面で行われる（ただし [Sec. 5.5.8](sec4_proofing.ja.md#IAL3supervised)に定義される監視下のリモート Identity Proofingを含む）。
+IAL3 は、IAL2 で要求される手順にさらなる厳密さを加えたもので、Identity と RP をなりすまし、詐欺、 または他の著しく有害な損害から一層保護するための追加的かつ特定のプロセス（バイオメトリクス情報の 比較、収集、保持の実施を含む）が対象となる。さらに、IAL3 における Identity Proofingは、対面で行われる（ただし [Sec. 5.5.8](sec4_proofing.ja.md#IAL3supervised)に定義される監視下でのリモート Identity Proofingを含む）。
 
 {% comment %}
 IAL3 adds additional rigor to the steps required at IAL2 and is subject to additional and specific processes (including the use of biometric information comparison, collection, and retention) to further protect the identity and RP from impersonation, fraud, or other significantly harmful damages. In addition, identity proofing at IAL3 is performed in person (to include supervised remote identity proofing defined in [Sec. 5.5.8](sec4_proofing.md#IAL3supervised)).
@@ -807,7 +807,7 @@ The CSP **SHALL** implement a means to prevent automated attacks on the identity
 {% endcomment %}
 
 
-### Evidence および Core Attribute の収集要件
+### Evidence および 中核となる Attribute の収集要件
 
 #### Evidence 収集
 {% comment %}
@@ -835,7 +835,7 @@ The CSP **SHALL** collect evidence from the applicant according to _one_ of the 
 #### Collection of Attributes
 {% endcomment %}
 
-ValidateされたEvidenceが Identity Attribute の Source として好ましい。提示された Identity Evidence に、CSP がCore Attributeと考えるすべてのAttributeが含まれていなければ、CSP はApplicantが自己申告するAttributeを収集してもよい（**MAY**）。
+ValidateされたEvidenceが Identity Attribute の Source として好ましい。提示された Identity Evidence に、CSP が中核のAttributeと考えるすべてのAttributeが含まれていなければ、CSP はApplicantが自己申告するAttributeを収集してもよい（**MAY**）。
 
 {% comment %}
 Validated evidence is the preferred source of identity attributes. If the presented identity evidence does not provide all the attributes the CSP considers core attributes, it **MAY** collect attributes that are self-asserted by the applicant. 
@@ -869,17 +869,17 @@ The CSP **SHALL** validate the genuineness of each piece of STRONG evidence by _
 {% endcomment %}
 
 
-#### Core Attribute Validation 要件
+#### 中核の Attribute Validation 要件
 {% comment %}
 #### Core Attribute Validation Requirements
 {% endcomment %}
 
-CSPは、以下の _両方_ の方法ですべてのCore AttributeをValidateするものとする(**SHALL**)。
+CSPは、以下の _両方_ の方法ですべての中核のAttributeをValidateするものとする(**SHALL**)。
 
 1. Evidenceから、あるいは自己申告で取得したAttributeの正確性を、Authoritativeまたは信頼できるSourceと比較することでValidateする。
 2. 前述したような方法で、提示されたデジタルEvidenceの暗号機能をValidateする。
 
-さらに保証を強めるため、CSP は、さまざまなSourceによってValidateされたCore Attributeを、全体的な一貫性があるかという観点で評価するものとする(**SHALL**)。
+さらに保証を強めるため、CSP は、さまざまなSourceによってValidateされた中核のAttributeを、全体的な一貫性があるかという観点で評価するものとする(**SHALL**)。
 
 {% comment %}
 The CSP **SHALL** validate all core attributes by _both_:
@@ -973,7 +973,7 @@ IAL3 監視下でのリモートIdentity Proofing は、Applicantとの直接の
 2. CSP は、Identity Proofingセッションの全期間中、Applicantと一緒に生身のオペレータをリモートから参加させるものとする(**SHALL**)。
 3. CSP は、Identity Proofing中にApplicantが取ったすべての行動が、リモートのオペレータにはっきりと見えるようにすることを要求するものとする(**SHALL**)。
 4. CSP は、EvidenceのすべてのデジタルVerification（例：チップまたは無線技術を介したもの）が、統合されたスキャナおよびセンサ（例：組み込み指紋リーダ）によって実行されることを要求するものとする(**SHALL**)。
-5. CSP は、オペレーターが、潜在的な不正行為を検出し、監視下のリモートProofingセッションを適切に実行するためのトレーニング・プログラムの受講を必須とする(**SHALL**)。
+5. CSP は、オペレーターが、潜在的な不正行為を検出し、監視下でのリモートProofingセッションを適切に実行するためのトレーニング・プログラムの受講を必須とする(**SHALL**)。
 6. CSP は、配置される環境に適した物理的な改ざん検出および耐タンパ機能を採用するものとする(**SHALL**)。例えば、制限エリアまたは信頼できる個人によって監視されている場所にあるキオスクは、ショッピングモールのコンコースなどの半公共エリアにあるものよりも改ざん検出の必要性が低い。
 7. CSP は、すべての通信が、相互に認証された保護チャネルで行われることを保証するものとする(**SHALL**)。
 
@@ -1001,10 +1001,10 @@ The following requirements apply to all IAL3 Supervised Remote Identity Proofing
 
 要件 | IAL1 | IAL2 | IAL3
 ------------|-------|-------|-------
-Presense|リモート または 対面|リモート または 対面|対面 または 監視下のリモート Identity Proofing
+Presense|リモート または 対面|リモート または 対面|対面 または 監視下でのリモート Identity Proofing
 Resolution|Resolutionするのに必要な最低限のAttribute|IAL1と同様|IAL1と同様
 Evidence|1 つの SUPERIOR、または 1 つの STRONG と 1 つの FAIR|1 つの SUPERIOR、または 1 つの STRONG と 1 つの FAIR|2 つの SUPERIOR、または 1 つの SUPERIOR と 1 つの STRONG、または 2 つの STRONG と 1 つの FAIR 
-Validation|Evidenceは真正性、正確性, 最新性の観点でValidateされる。すべてのCore AttributeはAuthoritativeまたは信頼できるsourceによってValidateされる。|IAL1と同様|IAL1と同様
+Validation|Evidenceは真正性、正確性, 最新性の観点でValidateされる。すべての中核のAttributeはAuthoritativeまたは信頼できるsourceによってValidateされる。|IAL1と同様|IAL1と同様
 Verification|Enrollmentコードの提示、またはAAL1かFAL1でのまたはデジタルアカウントへのアクセスの実証|バイオメトリクス比較、またはAAL2かFAL2でのデジタルアカウントへのアクセスの実証|バイオメトリクス比較、またはAAL2かFAL2でのデジタルアカウントへのアクセスの実証
 Biometric Collection|オプション|オプション|必須
 {:latex-table="1" latex-caption="IAL Requirements Summary" latex-columns="p@0.15\textwidth,p@0.22\textwidth,p@0.22\textwidth,p@0.22\textwidth"}
