@@ -455,7 +455,7 @@ Where trusted referees are offered, the following requirements apply to their us
 
 CSPはApplicant Referenceの利用を許可すべきである(**SHOULD**)。
 
-以下の要件は、Applicant Referenceが利用に対して適用される:  
+以下の要件は、任意のIALにおいてApplicant Referenceの利用に対して適用される:
 
 1. CSP は、Applicant Referenceを使用するための方針と手続きを、[Sec. 5.1.1](sec5_ial.ja.md#DocRecReqs) で指定されているように、Practice Statementの一部として文書で確立するものとする(**SHALL**)。
 2. CSP は、Applicant Referenceを、Applicantに意図された同等以上の IAL でIdentity Proofingするものとする。
