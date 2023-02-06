@@ -485,7 +485,7 @@ The following requirements apply to the use of applicant references at any IAL:
 
 1.  CSP は、特定の IAL のEvidence要件を満たせない可能性のある未成年者のIdentity Proofingの方針および手順について、Practice Statementの一部として文書で確立するものとする(**SHALL**)。
 2.  13 歳未満の個人とやり取りする際に、CSP は 1998 年のChildren’s Online Privacy Protection Act [[COPPA]](sec11_references.ja.md#ref-COPPA) に確実に準拠するものとする(**SHALL**)。
-3.  CSP は、18 歳未満の個人とやり取りする際に、Applicant Referenceの使用することをサポートするものとする(**SHALL**)。
+3.  CSP は、18 歳未満の個人とやり取りする際に、Applicant Referenceの使用をサポートするものとする(**SHALL**)。
 
 {% comment %}
 The following requirements apply to all CSPs providing identity proofing services to minors at any IAL.
