@@ -262,11 +262,11 @@ The following requirements apply to federal agencies, regardless of whether they
 ###  Requirements for Enrollment Codes {#EnrollCodes}
 {% endcomment %}
 
-Enrollmentコードは、Applicantが有効なアドレスに Access できることを確認するために使用されます。Identity ProofingとEnrollmentが 1 回の Session で完了しない場合、Enrollmentコードは、Enrollmentプロセスを完了する目的で、ApplicantのEnrollmentレコードへの Binding を再確立するために使用することもできる。
+Enrollmentコードは、Applicantが Validate されたアドレスに Access できることを確認するために使用されます。Identity ProofingとEnrollmentが 1 回の Session で完了しない場合、Enrollmentコードは、Enrollmentプロセスを完了する目的で、ApplicantのEnrollmentレコードへの Binding を再確立するために使用することもできる。
 
 以下の要件は、任意の IAL でEnrollmentコードを使用するすべての CSP に適用される。
 
-1. Enrollmentコードは、有効なアドレス（郵便番号、電話番号、電子メールアドレスなど）に送信されるものとする(**SHALL**)。
+1. Enrollmentコードは、Validate されたアドレス（郵便番号、電話番号、電子メールアドレスなど）に送信されるものとする(**SHALL**)。
 2. Applicantは、Identity Proofing手続きを行うために有効なEnrollmentコードを提示するものとする(**SHALL**)。  
 3. 3. Enrollmentコードは、以下のいずれかから構成されるものとする(**SHALL**)。
     1. 少なくとも20ビットのエントロピーを持つ承認された乱数発生器によって生成された6桁のランダムな数字。
@@ -308,12 +308,12 @@ The following requirements apply to all CSPs that employ enrollment codes at any
 ###  Requirements for Notifications of Identity Proofing {#ProofingNotifs}
 {% endcomment %}
 
-Proofing通知は、Applicantの有効なアドレスに送付され、Identity Proofingに成功したことを通知する。 これら通知により、Identity Proofing対象の人物が、Claimed Identityの所有者であるという保証を強める。
+Proofing通知は、ApplicantのValidateされたアドレスに送付され、Identity Proofingに成功したことを通知する。 これら通知により、Identity Proofing対象の人物が、Claimed Identityの所有者であるという保証を強める。
 以下の要件は、任意の IAL での Identity Proofingプロセスの一部としてProofing通知を送信するすべての CSP に適用される。
 
 Proofingの通知は:
 
-1.  有効な記録上のアドレス（郵便番号、電話番号、電子メール・アドレスなど）に送信されるものとする(**SHALL**)。可能な限り、CSP は、ProofingおよびEnrollmentコードの通知を異なる有効なアドレスに送信するものとする(**SHALL**)。  
+1.  Validateされた記録上のアドレス（郵便番号、電話番号、電子メール・アドレスなど）に送信されるものとする(**SHALL**)。可能な限り、CSP は、ProofingおよびEnrollmentコードの通知を異なるValidateされたアドレスに送信するものとする(**SHALL**)。  
 2.  Identityサービスの名前およびIdentity Proofingが完了した日付など、Identity Proofingイベントに関する詳細を含むものとする(**SHALL**)。
 3.  受取人がIdenitty Proofingイベントを否認する場合に取るべき行動について、連絡先情報を含む 明確な指示を提供するものとする(**SHALL**)。
 4.  組織または CSP が収集する情報のセキュリティおよびプライバシーを保護する方法、およびIdentityサービスのSubscriberとして受信者が負う責任などの追加情報を提供するものとする(**SHALL**)。
@@ -781,7 +781,7 @@ The CSP **SHALL** verify the binding of the applicant to the claimed identity by
 ### Notification of Proofing Requirement
 {% endcomment %}
 
-IAL2 での Identity Proofing が正常に完了すると、CSP は [Sec. 5.1.7](sec5_ial.ja.md#ProofingNotifs) で指定されているように、Applicantの有効なアドレスにProofing通知を送信するものとする(**SHALL**)。
+IAL2 での Identity Proofing が正常に完了すると、CSP は [Sec. 5.1.7](sec5_ial.ja.md#ProofingNotifs) で指定されているように、ApplicantのValidateされたアドレスにProofing通知を送信するものとする(**SHALL**)。
 
 {% comment %}
 Upon the successful completion of identity proofing at IAL2, the CSP **SHALL** send a notification of proofing to a validated address for the applicant, as specified in [Sec. 5.1.7](sec5_ial.md#ProofingNotifs). 
@@ -913,7 +913,7 @@ The CSP **SHALL** verify the binding of the applicant to the claimed identity by
 ### Notification of Proofing Requirement
 {% endcomment %}
 
-IAL3 での Identity Proofing が正常に完了すると、CSP は [Sec. 5.1.7](sec5_ial.ja.md#ProofingNotifs) で指定されているように、Applicantの有効なアドレスにProofing通知を送信するものとする(**SHALL**)。
+IAL3 での Identity Proofing が正常に完了すると、CSP は [Sec. 5.1.7](sec5_ial.ja.md#ProofingNotifs) で指定されているように、ApplicantのValidateされたアドレスにProofing通知を送信するものとする(**SHALL**)。
 
 {% comment %}
 Upon the successful completion of identity proofing at IAL3, the CSP **SHALL** send a notification of proofing to a validated address for the applicant, as specified in [Sec. 5.1.7](sec5_ial.md#ProofingNotifs). 
