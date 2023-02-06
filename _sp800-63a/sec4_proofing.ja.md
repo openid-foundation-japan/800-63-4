@@ -24,7 +24,7 @@ Additionally, these guidelines provide for multiple methods by which resolution,
 
 ## Identity Proofing and Enrollment
 
-本書では、Identity Evidenceおよびattributesを収集するIdentity Proofingとエンロールメントプロセスを実施中のapplicantが、特定の集団またはコンテキストにおいて単一のアイデンティティに一意にresolove、validate、そしてverifiyされる一般的なパターンについて説明する。どのように最も適切な IAL を選択するかの詳細については、[[SP800-63]](../_sp800-63/sec1_purpose.ja.md#purpose){:latex-href="#ref-SP800-63"} を参照。CSP はこれらのattributesをauthenticatorにバインドすることができる（[[SP800-63B]](../_sp800-63b/sec1_purpose.ja.md#purpose){:latex-href="#ref-SP800-63B"}で記述されている）。
+本書では、Applicant が Identity Proofing と Enrollment プロセスを受ける一般的なパターンについて説明する。そのプロセスでは Applicant の Identity Evidence および Attribute が収集され、特定の集団またはコンテキストにおいて単一のアイデンティティに一意に Resolve され、Validate および Verify される。どのように最も適切な IAL を選択するかの詳細については、[[SP800-63]](../_sp800-63/sec1_purpose.ja.md#purpose){:latex-href="#ref-SP800-63"} を参照。CSP はこれらの Attribute を Authenticator にバインドすることができる（[[SP800-63B]](../_sp800-63b/sec1_purpose.ja.md#purpose){:latex-href="#ref-SP800-63B"}で記述されている）。
 
 {% comment %}
 This document describes the common pattern in which an applicant undergoes an identity proofing and enrollment process whereby their identity evidence and attributes are collected, uniquely resolved to a single identity within a given population or context, then validated and verified. See [[SP800-63]](../_sp800-63/sec1_purpose.md#purpose){:latex-href="#ref-SP800-63"} for details on how to choose the most appropriate IAL. A CSP can then bind these attributes to an authenticator (described in [[SP800-63B]](../_sp800-63b/sec1_purpose.md#purpose){:latex-href="#ref-SP800-63B"}).
