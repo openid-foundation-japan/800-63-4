@@ -308,7 +308,7 @@ The following requirements apply to all CSPs that employ enrollment codes at any
 ###  Requirements for Notifications of Identity Proofing {#ProofingNotifs}
 {% endcomment %}
 
-Proofing通知は、Applicantの有効なアドレスに送付され、Identity Proofingに成功したことを通知する。 これら通知により、Identity Proofing対象の人物が、Claimed Identityの所有者であることをさらに保証する。
+Proofing通知は、Applicantの有効なアドレスに送付され、Identity Proofingに成功したことを通知する。 これら通知により、Identity Proofing対象の人物が、Claimed Identityの所有者であるという保証を強める。
 以下の要件は、任意の IAL での Identity Proofingプロセスの一部としてProofing通知を送信するすべての CSP に適用される。
 
 Proofingの通知は:
