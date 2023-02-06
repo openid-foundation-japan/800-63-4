@@ -47,7 +47,7 @@ At a minimum the CSP **SHALL** include the following information in each subscri
 CSP は、各 Subscriber の Identity Proofing プロセス中に収集された、またはその後更新された、以下を含む情報を Subscriber Account に記録するものとする:
 
 * Validate された Identity Evidence 
-* Validate された Attribute
+* Validate された Attribute情報
 * CSP の Identity サービスへの Enrollment のために収集された Attribute 情報（Identity Proofing の目的では Validate されていない）
 
 CSP は、[Sec. 5.1.2](sec5_ial.ja.md#PrivacyReqs) に従って、Subscriber Account に保持されるあらゆる個人情報の処理、保持、または開示についてプライバシーリスク評価を実施するものとする（**SHALL**）。
