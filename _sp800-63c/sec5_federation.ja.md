@@ -59,7 +59,7 @@ IdP-RP 間の Federation の関係性は多段階のプロセスにより確立�
 -->
 
 4. 最後に, Subscriber は IdP に対して Authenticate し, その Authentication イベントの結果がネットワークを介して RP に Assertion として提示される.
-RP は IdP から提示されたこの Assertion を処理し, Subscriber との間に認証済 Session を確立する.
+RP は IdP から提示されたこの Assertion を処理し, Subscriber との間に Authenticated Session を確立する.
 
 <!--
 In this transaction, the IdP acts as the verifier of the subscriber's authenticators, as described in [[SP800-63B]](../_sp800-63b/sec1_purpose.md#purpose){:latex-href="#ref-SP800-63B"}. The authentication event information is carried from the IdP to the RP through the use of an assertion, described in [Sec. 6](sec6_assertions.md#assertions). The IdP can also make statements about identity attributes of the subscriber as part of this assertion or through a secondary identity protocol protected by an authorized credential.
@@ -621,7 +621,7 @@ The RP **MAY** employ mechanisms to remember the authorized party's decision to 
 -->
 
 RP は利用する IdP に関する Authorized Party の決定を記憶する仕組みを採用してもよい (**MAY**).
-このメカニズムは RP における Authentication の前に用いられるため, RP がこのメカニズムを提供する方法 (認証済 Session 外のブラウザクッキー等) は [Sec. 5.4](sec5_federation.ja.md#rp-account) に述べる RP Subscriber Account とは紐づかない.
+このメカニズムは RP における Authentication の前に用いられるため, RP がこのメカニズムを提供する方法 (Authenticated Session 外のブラウザクッキー等) は [Sec. 5.4](sec5_federation.ja.md#rp-account) に述べる RP Subscriber Account とは紐づかない.
 このようなメカニズムを提供する場合, RP は Authorized Party が将来記憶されたオプションを無効化できるようにすること (**SHALL**).
 
 ## RP Subscriber Accounts {#rp-account}
@@ -658,9 +658,9 @@ RP は, さまざまな理由により, IdP とは独立して RP Subscriber Acc
 An authenticated session **SHALL** be created by the RP only when the RP has processed and verified a valid assertion from the IdP that is the issuer of the federated identifier associated with the RP subscriber account. If the assertion also requires presentation of a bound authenticator at FAL3, the bound authenticator **SHALL** also be presented and processed before the RP subscriber account is associated with an authenticated session, as discussed in [Sec. 6.1.2](sec6_assertions.md#boundauth). Before the federated assertion is processed and after termination of the authenticated session, the RP subscriber account is unauthenticated though it could still be provisioned.
 -->
 
-認証済 Session は, RP が RP Subscriber Account に関連づけられた Federated Identifier の発行元である IdP からの有効な Assertion を処理・検証して初めて生成されるものとする (**SHALL**).
-Assertion が Bound Authenticator の提示を要求するものの場合, [Sec. 6.1.2](sec6_assertions.ja.md#boundauth) にあるように, RP Subscriber Account が認証済 Session に関連づけられる前に当該 Bound Authenticator が提示・処理されねばならない (**SHALL**).
-Federated Assertion が処理される前, かつ認証済 Session が終了した後は, RP Subscriber Account は Unauthenticated となる.
+Authenticated Session は, RP が RP Subscriber Account に関連づけられた Federated Identifier の発行元である IdP からの有効な Assertion を処理・検証して初めて生成されるものとする (**SHALL**).
+Assertion が Bound Authenticator の提示を要求するものの場合, [Sec. 6.1.2](sec6_assertions.ja.md#boundauth) にあるように, RP Subscriber Account が Authenticated Session に関連づけられる前に当該 Bound Authenticator が提示・処理されねばならない (**SHALL**).
+Federated Assertion が処理される前, かつ Authenticated Session が終了した後は, RP Subscriber Account は Unauthenticated となる.
 ただし RP Subscriber Account は以前として Provisioning されうる.
 
 ### Provisioning Models {#provisioning}
@@ -670,7 +670,7 @@ The lifecycle of the provisioning process for an RP subscriber account varies de
 -->
 
 RP Subscriber Account の Provisioning プロセスのライフサイクルは [Sec. 5.1](sec5_federation.ja.md#trust-agreement) の Trust Agreement や IdP & RP の実装パターンなどの要因により多様である.
-しかしながら, いかなるケースにおいても, RP Subscriber Account は認証済 Session の確立前に以下のいずれかの方法により RP に Provisioning されていなければならない (**SHALL**).
+しかしながら, いかなるケースにおいても, RP Subscriber Account は Authenticated Session の確立前に以下のいずれかの方法により RP に Provisioning されていなければならない (**SHALL**).
 
 <!--
 Just-In-Time Provisioning
@@ -727,7 +727,7 @@ This form of provisioning is useful for RPs that fully externalize access rights
 -->
 
 Ephemeral
-: RP Subscriber Account は Assertion を処理する際に生成されるが, 認証済 Session が終了する際に Terminate される.
+: RP Subscriber Account は Assertion を処理する際に生成されるが, Authenticated Session が終了する際に Terminate される.
 このプロセスは Just-in-time Provisioning と似ているが, RP は Session が終了したらそれ以上 Account のレコードを保持しない. ただし監査やセキュリティ目的で必要とされる場合は別である (アクセスログ等).
 この形態の Provisioning は IdP に Access 権限を完全に外部依存する RP にとっては使いやすい.
 RP は内部的なステート管理を低減させ, よりシンプルになる.
@@ -986,8 +986,8 @@ In a federated environment, the RP manages its sessions separately from any sess
 
 Federation 環境下では, RP は自身の Session を IdP の Session とは独立して管理する.
 Assertion は両者の Session に関係づけられるが, 根本的にその有効期間はこれらの Session とは独立している.
-IdP が Subscriber に関する Assertion を生成する際, Subscriber は IdP との間に認証済 Session を確立する必要がある.
-RP において認証済 Session を生成する際は, RP が IdP から有効な Assertion を受け取り処理する必要がある.
+IdP が Subscriber に関する Assertion を生成する際, Subscriber は IdP との間に Authenticated Session を確立する必要がある.
+RP において Authenticated Session を生成する際は, RP が IdP から有効な Assertion を受け取り処理する必要がある.
 
 <!--
 Due to the distributed nature of a federated system, the subscriber's sessions with the IdP and with the RP terminate independently of each other. The RP **SHALL NOT** assume that the subscriber has an active session at the IdP past the issuance time of the assertion. The IdP **SHALL NOT** assume that termination of the subscriber's session at the IdP will propagate to any sessions that subscriber would have at downstream RPs. The RP and IdP **MAY** communicate session termination requests to other parties in the federation network, if supported by the federation protocol.

@@ -185,4 +185,4 @@ UserInfo Endpoint から返される Attribute への Access は, Attribute 毎�
 `offline_access` という追加の Scope もあり, これは Refresh Token の発行を制御するために用いられる.
 RP は Subscriber が介在しない時でも Refresh Token を使って UserInfo Endpoint への Access を行うことができる.
 UserInfo Endpoint への API として実現されており, Subscriber が介在しない場合でも利用できる可能性がある.
-従って UserInfo Endpoint への Access を持つからといって, Subscriber の存在証明や RP における認証済 Session の確立には不十分である.
+従って UserInfo Endpoint への Access を持つからといって, Subscriber の存在証明や RP における Authenticated Session の確立には不十分である.

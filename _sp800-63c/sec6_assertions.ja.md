@@ -132,11 +132,11 @@ Although details vary based on the exact federation protocol in use, an assertio
 
 Federation Protocol によって詳細はさまざまであるが, Assertion は個々の RP へのログインイベントを表現する.
 Assertion の Validity Time Window は IdP ないし RP の Session 管理に関連はするが分離したものである.
-特に Assertion は IdP における認証済 Session 中に生成され, Assertion を処理することで RP における認証済 Session が生成される.
+特に Assertion は IdP における Authenticated Session 中に生成され, Assertion を処理することで RP における Authenticated Session が生成される.
 IdP が Assertion を生成した後は, IdP の Session の有効性と Assertion の有効性は独立したものとなる.
 IdP における Session が有効なうちに再度 IdP が Authentication 要求を受け取った場合, その結果として新たな独立した Assertion が独自の Validity Time Window のもと生成される.
 同様に, RP が Assertion を消費した後は, RP の Session と Assertion の有効性は独立したものとなる.
-Identity API に対して付与された Access もまた, Assertion の有効性や RP の認証済 Session の有効期間とは独立したものである.
+Identity API に対して付与された Access もまた, Assertion の有効性や RP の Authenticated Session の有効期間とは独立したものである.
 Session 管理についての詳細は [Sec. 5.3](sec5_federation.ja.md#federation-session) を参照のこと.
 
 <!--
@@ -284,12 +284,12 @@ For subscriber-provided authenticators, if no bound authenticators are associate
 -->
 
 Subscriber が提示する Authenticator に関しては, RP Subscriber にひとつも Bound Authenticator が紐づいていない場合, RP は [Fig. 11](sec6_assertions.ja.md#fig-11) のように Authenticator, Subscriber および RP Subscriber Account の間の紐付け確立のために Binding セレモニーを実施しなければならない (**SHALL**).
-RP はまず FAL3 の Bound Authenticator に関するもの以外の要件を満たす Assertion を用いた Federation により認証済 Session を確立する. 当該 Assertion には RP 管理の Bound Authenticator により FAL3 で利用されることが期待されることを示す値が含まれる.
+RP はまず FAL3 の Bound Authenticator に関するもの以外の要件を満たす Assertion を用いた Federation により Authenticated Session を確立する. 当該 Assertion には RP 管理の Bound Authenticator により FAL3 で利用されることが期待されることを示す値が含まれる.
 次に Subscriber はその直後に提案された Authenticator を提示し Authenticate する.
 Authenticator の提示が成功すると, RP は Authenticator の一意な識別子 (Public Key 等) を保存し, それを Federated Identifier が指し示す RP Subscriber Account に紐づける (**SHALL**).
 Subscriber が適切な Authenticator を提示することができない場合, Binding セレモニーは失敗する.
 Binding セレモニーの Session は5分以内にタイムアウトさせなければならない (**SHALL**).
-セレモニー中の Session はログイン目的の認証済 Session とはならない.
+セレモニー中の Session はログイン目的の Authenticated Session とはならない.
 Binding セレモニーが成功すると, RP は直後に IdP に対して FAL3 の新たな Assertion を要求すること (**SHALL**).
 その際 Subscriber には新たに登録した Bound Authenticator の提示が求められる.
 
@@ -567,8 +567,8 @@ Access to the identity API **SHALL** be time limited. The time limitation is sep
 -->
 
 Identity API への Access には有効期限がある.
-この有効期限は Assertion の Validity Time Window とは独立しており, RP の認証済 Session の有効期限からも独立している.
-RP が Identity API に Access できるからといって, 関連する有効な Assertion がない場合は, RP での認証済 Session の確立に必要な条件を満たしたものとしてはならない (**SHALL NOT**).
+この有効期限は Assertion の Validity Time Window とは独立しており, RP の Authenticated Session の有効期限からも独立している.
+RP が Identity API に Access できるからといって, 関連する有効な Assertion がない場合は, RP での Authenticated Session の確立に必要な条件を満たしたものとしてはならない (**SHALL NOT**).
 
 <!--
 A given identity API deployment is expected to be capable of providing attributes for all subscribers for whom the IdP can create assertions. However, when access to the identity API is granted within the context of a federation transaction, the attributes provided by an identity API **SHALL** be associated with only the single subscriber identified in the associated assertion. If the identity API is hosted by the IdP, the returned attributes **SHALL** include the subject identifier for the subscriber. This allows the RP to positively correlate the assertion's subject to the returned attributes. Note that when access to an attribute API is provided as part of pre-provisioning of RP subscriber accounts as discussed in [Sec. 5.4.1](sec5_federation.md#provisioning), the RP is usually granted blanket access to the identity API outside the context of the federated transaction and these requirements do not apply.
