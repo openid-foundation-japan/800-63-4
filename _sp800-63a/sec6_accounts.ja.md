@@ -44,7 +44,7 @@ At a minimum the CSP **SHALL** include the following information in each subscri
 * All attributes that were validated during the identity proofing process or in subsequent transactions to support RP access 
 {% endcomment %}
 
-CSP は、各 Subscriber の Identity Proofing プロセス中に収集された、またはその後更新された、以下を含む Subscriber Account に情報を記録するものとする。
+CSP は、各 Subscriber の Identity Proofing プロセス中に収集された、またはその後更新された、以下を含む情報を Subscriber Account に記録するものとする:
 
 * Validate された Identity Proofing 
 * Validate された Attribute
