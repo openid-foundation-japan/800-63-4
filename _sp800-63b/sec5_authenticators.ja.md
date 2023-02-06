@@ -910,16 +910,35 @@ Biometric Authentication 技術は, さまざまな人口統計的タイプ (人
 
 ### Attestation {#attestation}
 
+<!--
 An attestation is information conveyed to the verifier regarding a connected authenticator or the endpoint involved in an authentication operation. Information conveyed by attestation **MAY** include, but is not limited to:
+-->
 
+Attestation は, 接続された Authenticator, または Authentication 操作に関わるエンドポイントに関して Verifier に伝達される情報である. Attestation によって伝達される情報には以下を含んでもよい(**MAY**) が, これらに限定されない:
+
+<!--
 * The provenance (e.g., manufacturer or supplier certification), health, and integrity of the authenticator and endpoint
 * Security features of the authenticator
 * Security and performance characteristics of biometric sensors
 * Sensor modality
+-->
 
+* Authenticator とエンドポイントの起源 (例: メーカーまたはサプライヤーの認定), 健全性, および完全性
+* Authenticator のセキュリティ機能
+* Biometric センサーのセキュリティとパフォーマンスの特性
+* センサーモダリティ
+
+<!--
 If this attestation is signed, it **SHALL** be signed using a digital signature that provides at least the minimum security strength specified in the latest revision of [[SP800-131A]](references.md#ref-SP800-131A) (112 bits as of the date of this publication).
+-->
 
+この Attestation が署名されている場合は, 少なくとも [[SP800-131A]](references.md#ref-SP800-131A) の最新リビジョンで指定されている最小のセキュリティ強度(発行日現在で 112 ビット)を提供するデジタル署名を使用して署名されることとなる(**SHALL**).
+
+<!--
 Attestation information **MAY** be used as part of a verifier's risk-based authentication decision.
+-->
+
+Attestation 情報は, Verifier のリスクベース Authentication の決断の一部として使用されてもよい(**MAY**).
 
 ### Phishing (Verifier Impersonation) Resistance {#verifimpers}
 
