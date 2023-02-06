@@ -69,7 +69,7 @@ Identity Proofingに期待される成果は:
 
 * **Identity resolution**: によりClaimされたアイデンティティが、CSPサーバーのユーザー母集団の文脈で単一で一意な個人であると判断し、
 * **Evidence validation**: により提出された全てのエビデンスが全て本物で、真正性があり、有効期限が切れていないことを確認し、
-* **Attribute validation**: によりCore Attributeの正確性を確認し、
+* **Attribute validation**: により Core Attributeの正確性を確認し、
 * **Identity verification**: Claim されたアイデンティティと、Identity Evidence を提出した実存する人物とが結びついていることを検証し、
 * **Fraud Prevention**: 便益、サービス、データあるいはアセットに対する欺瞞的なアクセスの試みを緩和することである。
 
@@ -92,13 +92,13 @@ Assurance in a subscriber's identity is described using one of the following Ide
 {% endcomment %}
 
 
-**Identity Proofingなし (IAL0)**: Applicantと特定の実在するアイデンティティとをリンクする要件はない。subjectの活動に伴って提供されるすべてのAttributesは、自己申告または自己申告として扱われる。自己申告のattributesはIAL0ではvalidateもverifyもされない。
+**Identity Proofingなし (IAL0)**: Applicantと特定の実在するアイデンティティとをリンクする要件はない。Subjectの活動に伴って提供されるすべてのAttributeは、自己申告または自己申告として扱われる。自己申告のAttributeはIAL0ではValidateもVerifyもされない。
 
 {% comment %}
 **No identity proofing (IAL0)**: There is no requirement to link the applicant to a specific, real-life identity. Any attributes provided in conjunction with the Subject's activities are self-asserted and are treated as self-asserted. Self-asserted attributes at IAL0 are neither validated nor verified.
 {% endcomment %}
 
-**IAL1**: Claimされたアイデンティティが現実世界に存在することをサポートするIdentity Proofingプロセスである。Core attributeはアイデンティティエビデンスやapplicantから申告されたアイデンティティから得たものである。すべてのCore attributeはauthoritativeあるいは信用できるソースに対してvalidateされ、Identity Proofingプロセス実施下にある個人のattributeにリンクさせるためのステップを踏む。
+**IAL1**: Identity Proofing プロセスは、Claimされたアイデンティティが現実世界に存在することを裏付ける。Core Attributeは Identity Evidence から得たものや、Applicantから申告されたものである。すべての Core AttributeはAuthoritativeあるいは信用できるソースに対してValidateされ、Identity Proofingプロセス実施下にある個人と、Attributeとを結びつけるための方策を講じる。
 
 {% comment %}
 **IAL1**: The identity proofing process supports the real-world existence of the claimed identity. Core attributes are obtained from identity evidence or asserted by the applicant.  All core attributes are validated against authoritative or credible sources and steps are taken to link the attributes to the person undergoing the identity proofing process.   
@@ -110,7 +110,7 @@ Assurance in a subscriber's identity is described using one of the following Ide
 **IAL2**: IAL2 adds additional rigor to the identity proofing process by requiring the collection of stronger types of evidence and a more rigorous process for validating the evidence and verifying the identity. 
 {% endcomment %} 
 
-**IAL3**: IAL3 は、訓練を受けた CSP 担当者が、対面または監視されたリモートIdentity Proofingセッションを介して、 Identity Proofingセッション全体にわたってapplicantと直接やりとりするための要件を追加している。
+**IAL3**: IAL3 は、訓練を受けた CSP 担当者が、対面または監視されたリモートIdentity Proofingセッションを介して、 Identity Proofingセッション全体にわたってApplicantと直接やりとりするための要件を追加している。
 
 {% comment %} 
 **IAL3**: IAL3 adds the requirement for a trained CSP representative to interact directly with the applicant during the entire identity proofing session, either in person or via a supervised remote identity proofing session.
