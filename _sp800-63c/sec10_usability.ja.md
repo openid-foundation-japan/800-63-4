@@ -209,7 +209,7 @@ Identity の多くの特性は, ユーザーが1つの Federation 内および�
 * Provide users means for updating data, even if the associated entity no longer exists.
 -->
 
-* 関連する主体がもはや存在しない場合においても, ユーザーにデータを更新するすべを提供する. 
+* 関連する主体がもはや存在しない場合においても, ユーザーにデータを更新するすべを提供する.
 
 <!--
 * Provide users means to delete their identities completely, removing all information about themselves, including transaction history. Consider applicable audit, legal, or policy constraints that may preclude such action. In certain cases, full deactivation is more appropriate than deletion.
@@ -283,7 +283,7 @@ To encourage user adoption, IdPs and RPs need to establish and build trust with 
   * ユーザーが All-or-nothing ではなく Attribute リストの一部分にのみ同意できるようにすること. ユーザーが全ての情報共有に同意できない場合でも, ある程度のオンラインアクセスを可能にすること.
   * ユーザーが共有されている Attribute リストへの同意を更新できるようにすること.
   * ユーザーに提示される不必要な情報を最小化する. 例えば, たとえそれが RP に Authentication レスポンスの一環として共有されるとしても, システムによって生成された Attribute (Pairwise Pseudonymous Identifier など) は提示しないなど.
-  * ユーザのステップとナビゲーションを最小化する. 例えば, Attribute への同意をプロトコルに組み込み, Federated Transaction の外で実現される機能とはしないなど. そういった例は OAuth や OpenID Connect などの標準の中で見られる.
+  * ユーザーのステップとナビゲーションを最小化する. 例えば, Attribute への同意をプロトコルに組み込み, Federated Transaction の外で実現される機能とはしないなど. そういった例は OAuth や OpenID Connect などの標準の中で見られる.
   * 効果的かつ効率的な是正方法を提供し, IdP が提供したり RP が収集した誤った Attribute 情報を是正できるようにすること.
   * ユーザーが Attribute 共有の際に要求される同意回数を最小化する. 同意要求の頻度を制限することで, 同じ Attribute を共有するための複数の要求に対するユーザーのフラストレーションを避けることができる.
 
@@ -348,4 +348,4 @@ Federated Identity System がユーザー視点で設計されていなければ
 * Provide users with clear information, including visual cues, regarding implicit logins and explicit logouts. Depending on the implementation, logging into an RP with a federated account may authenticate users to both the IdP and RP. Users may not realize that ending their session with the RP will not necessarily end their session with the IdP; users will need to explicitly "log out" of the IdP. Users require clear information to remind them if explicit logouts are required to end their IdP sessions.
 -->
 
-* ユーザに, 暗黙的なログインと明示的なログアウトに関して, 視覚的なヒントを含む明確な情報を提供する. 実装によっては, Federated Account を用いて RP にログインすると, ユーザーは IdP と RP 双方に Authenticate される可能性がある. ユーザーは RP で Session を終了しても IdP の Session が終了するとは限らないことに気づいていない場合がある. この場合, ユーザーは IdP から明示的に "ログアウト" する必要がある. ユーザーは IdP Session を終了するために明示的なログアウトが必要かどうか確認するための明確な情報を必要とする.
+* ユーザーに, 暗黙的なログインと明示的なログアウトに関して, 視覚的なヒントを含む明確な情報を提供する. 実装によっては, Federated Account を用いて RP にログインすると, ユーザーは IdP と RP 双方に Authenticate される可能性がある. ユーザーは RP で Session を終了しても IdP の Session が終了するとは限らないことに気づいていない場合がある. この場合, ユーザーは IdP から明示的に "ログアウト" する必要がある. ユーザーは IdP Session を終了するために明示的なログアウトが必要かどうか確認するための明確な情報を必要とする.
