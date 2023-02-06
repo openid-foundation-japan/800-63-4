@@ -64,7 +64,7 @@ The CSP **SHALL** perform a privacy risk assessment for the processing, retentio
 
 ## Subscriber Account Access
 
-PII を含むアカウントを多要素認証（MFA）で保護するという要件を満たすために、CSP は、Subscriber Account に登録されたAuthenticatorを使用して、AAL2 または AAL3 認証プロセスにより Subscriber Accountの 情報に Access する方法を提供するものとする(**SHALL**)。
+PII を含むアカウントを Multi-Factor Authentication (MFA) で保護するという要件を満たすために、CSP は、Subscriber Account に登録されたAuthenticatorを使用して、AAL2 または AAL3 認証プロセスにより Subscriber Accountの 情報に Access する方法を提供するものとする(**SHALL**)。
 
 CSP は、Subscriber が Subscriber Account に含まれる個人情報を変更または更新するための機能を提供するものとする（**SHALL**）。
 
