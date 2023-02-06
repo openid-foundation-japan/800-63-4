@@ -291,7 +291,7 @@ In order to be considered SUPERIOR, identity evidence **SHALL** meet _all_ the f
 ### Identity Evidence and Attribute Validation 
 {% endcomment %}
 
-CSPは、Evidenceの収集要件を満たすために収集されたすべてのIdentity Evidenceと、CSP Identity Serviceによって要求されるすべての中核となるAttribute情報をValidateするものとする(*SHALL**)。
+CSPは、Evidenceの収集要件を満たすために収集されたすべてのIdentity Evidenceと、CSP Identity Serviceによって要求されるすべてのCore Attribute情報をValidateするものとする(**SHALL**)。
 
 {% comment %}
 The CSP **SHALL** validate all identity evidence collected to meet evidence collection requirements and all core attribute information required by the CSP identity service. 
@@ -325,7 +325,7 @@ The authenticity and accuracy of identity evidence or attribute information that
 
 #### Attribute Validation
 
-すべての中核となるAttributeは、Identity Evidenceから取得したか、Applicantによる自己申告かによらず、Validateされなければならない。本サブセクションでは、Evidenceと収集したAttributesをvalidateするための、許容可能な方法についてガイダンスを提供する。
+すべてのCore Attributeは、Identity Evidenceから取得したか、Applicantによる自己申告かによらず、Validateされなければならない。本サブセクションでは、Evidenceと収集したAttributesをvalidateするための、許容可能な方法についてガイダンスを提供する。
 
 {% comment %}
 All core attributes, whether obtained from identity evidence or applicant self-assertion, must be validated. This subsection provides guidance on acceptable methods for validating evidence and collected attributes.   
@@ -353,7 +353,7 @@ Acceptable methods for validating presented evidence include:
 
 #### Validation Sources
 
-[セクション 4.3.4.1](sec4_proofing.ja.md#validation) に従ってValidateされたIdentity Evidenceに含まれる中核のAttributeは、Validate済みと見なすことができ、この場合、さらなるValidationは必要ない。
+[セクション 4.3.4.1](sec4_proofing.ja.md#validation) に従ってValidateされたIdentity Evidenceに含まれるCore Attributeは、Validate済みと見なすことができ、この場合、さらなるValidationは必要ない。
 
 Authoritative Sourceとは、次の性質のうち1つ以上によって、Identity Attribute情報の正確性を提供あるいはValidateできるエンティティである。Authoritative sourceは:
 
@@ -376,7 +376,7 @@ An authoritative source is an entity that can provide or validate the accuracy o
 信頼できるソースとは、次の性質のうち 1 つ以上によって Identity EvidenceおよびAttribute情報の正確性を提供またはValidateできるエンティティである。信頼できるソースは:
 
 - Identity Proofingプロセスを通じてValidateされたAttribute情報へのアクセスを有する、または
-- Authoritative Sourceまで追跡できるAttribute情報へのアクセスを有する。
+- Authoritative Sourceまで追跡できるAttribute情報へのアクセスを有する、または
 - 正確性、一貫性、および最新性を目的としてデータ相関をチェックされる、複数のソースから取得されたIdentity Attribute情報を保持している。
 
 {% comment %}

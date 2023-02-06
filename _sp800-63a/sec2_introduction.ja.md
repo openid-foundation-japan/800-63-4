@@ -12,7 +12,7 @@ section: 2
 
 _This section is informative._
 
-オンラインサービスを提供する際の課題の1つは、一連の活動を特定の個人と関連付けることができるようにすることである。匿名またはpseudonymityが望ましい場合など、この必要がない場合もあるが、実存するsubjectとの関連付けを確実に確立することが重要な場合もある。例えば、行政サービスの利用や金融取引の実行などである。また、実存するsubjectとの関連付けが、規制（たとえば、金融業界の「Know Your Customer」要件）やハイリスクのアクション（たとえば、ダムからの放水量の変更）に対する説明責任を確立するために必要とされる状況も存在する。
+オンラインサービスを提供する際の課題の1つは、一連の活動を特定の個人と関連付けることができるようにすることである。匿名またはpseudonymityが望ましい場合など、この必要がない場合もあるが、実存する Subject との関連付けを確実に確立することが重要な場合もある。例えば、行政サービスの利用や金融取引の実行などである。また、実存する Subject との関連付けが、規制（たとえば、金融業界の「Know Your Customer」要件）やハイリスクのアクション（たとえば、ダムからの放水量の変更）に対する説明責任を確立するために必要とされる状況も存在する。
 
 {% comment %}
 One of the challenges of providing online services is being able to associate a set of activities with a single, specific individual. While there are situations where this is not necessary - such as when anonymity or pseudonymity is desirable - there are other situations where it is important to reliably establish an association with a real-life subject. Examples of this include accessing some government services or executing financial transactions. There are also situations where association with a real-life subject is required by regulations (e.g., the financial industry's 'Know Your Customer' requirements) or to establish accountability for high-risk actions (e.g., changing the release rate of water from a dam).
@@ -69,7 +69,7 @@ Identity Proofingに期待される成果は:
 
 * **Identity resolution**: によりClaimされたアイデンティティが、CSPサーバーのユーザー母集団の文脈で単一で一意な個人であると判断し、
 * **Evidence validation**: により提出された全てのエビデンスが全て本物で、真正性があり、有効期限が切れていないことを確認し、
-* **Attribute validation**: により中核のAttributesの正確性を確認し、
+* **Attribute validation**: によりCore Attributeの正確性を確認し、
 * **Identity verification**: アイデンティティエビデンスを提出した実存する人物と、Claimされたアイデンティティを関連づけて検証し、
 * **Fraud Prevention**: 便益、サービス、データあるいはアセットに対する欺瞞的なアクセスの試みを緩和することである。
 
@@ -98,7 +98,7 @@ Assurance in a subscriber's identity is described using one of the following Ide
 **No identity proofing (IAL0)**: There is no requirement to link the applicant to a specific, real-life identity. Any attributes provided in conjunction with the subject's activities are self-asserted and are treated as self-asserted. Self-asserted attributes at IAL0 are neither validated nor verified.
 {% endcomment %}
 
-**IAL1**: Claimされたアイデンティティが現実世界に存在することをサポートするIdentity Proofingプロセスである。中核のattributeはアイデンティティエビデンスやapplicantから申告されたアイデンティティから得たものである。すべての中核のattributeはauthoritativeあるいは信用できるソースに対してvalidateされ、Identity Proofingプロセス実施下にある個人のattributeにリンクさせるためのステップを踏む。
+**IAL1**: Claimされたアイデンティティが現実世界に存在することをサポートするIdentity Proofingプロセスである。Core attributeはアイデンティティエビデンスやapplicantから申告されたアイデンティティから得たものである。すべてのCore attributeはauthoritativeあるいは信用できるソースに対してvalidateされ、Identity Proofingプロセス実施下にある個人のattributeにリンクさせるためのステップを踏む。
 
 {% comment %}
 **IAL1**: The identity proofing process supports the real-world existence of the claimed identity. Core attributes are obtained from identity evidence or asserted by the applicant.  All core attributes are validated against authoritative or credible sources and steps are taken to link the attributes to the person undergoing the identity proofing process.   
