@@ -44,7 +44,7 @@ CSPは、定義されたIALを達成するために実装されているすべ�
 1. それぞれの提供されたIALにおいて CSP がApplicantのIdentity Proofingを行うために従う特定のステップを含む、完全なサービスの説明。 
 2. CSPが受け入れる、Evidence強度要件を満たすためのIdentity Evidenceの種類。 
 3. 該当する場合、必要なIdentity Evidenceを所有していないApplicant個人が、Identity Proofingプロセスを完了するための代替手法 [^alternatives]。 
-4. CSP が Core Attributesであると見なす Attribute。Core Attributesには、CSP が Identity Resolutionを行うために必要な最小限のAttributeのセットのほか、Identity Proofing、詐欺の軽減、法律または法的プロセスの遵守、あるいはAttribute Assertionを介したRelying Party(RP)への伝達を目的とし、CSPが収集、validateする追加のAttributeを含んでいる。
+4. CSP が Core Attributesであると見なす Attribute。Core Attributesには、CSP が Identity Resolutionを行うために必要な最小限のAttributeのセットのほか、Identity Proofing、詐欺の軽減、法律または法的プロセスの遵守、あるいはAttribute Assertionを介したRelying Party(RP)への伝達を目的とし、CSPが収集、Validateする追加のAttributeを含んでいる。
 5. Identity Proofingのエラーに対処するための CSP のポリシーとプロセス。
 6. 疑わしい、あるいは確認済みの不正なアカウントを識別し、RPや影響をうける個人に対して伝達するための、CSP のポリシーとプロセス。
 7. サービス変更（例：データソース、統合ベンダー、またはバイオメトリックアルゴリズムの変更）を管理し、RP に伝達するための、 CSP のポリシー。
@@ -151,7 +151,7 @@ The following privacy requirements apply to all CSPs providing identity services
 #### Additional Privacy Protective Measures
 {% endcomment %}
 
-1. PII のProcessingは、ClaimされたIdentityの実在性をvalidateし、ClaimされたIdentityをApplicantに関連付け、RPに対しては認可の判断に利用するAttributeを提供するために、必要最低限のものに限られるものとする(**SHALL**)。
+1. PII のProcessingは、ClaimされたIdentityの実在性をValidateし、ClaimされたIdentityをApplicantに関連付け、RPに対しては認可の判断に利用するAttributeを提供するために、必要最低限のものに限られるものとする(**SHALL**)。
 2. CSP は、[Sec. 5.1.2](sec5_ial.ja.md#PrivacyReqs) のプライバシー要件に従って、Identity Resolutionに必要な場合に社会保障番号 (SSN) をAttributeとして収集してもよい(**MAY**)。加えて、CSP は、SSN データの拡散と保持を制限するために、プライバシー保護技術（例：完全なAttribute値そのものではなく、派生したAttribute値を送受信）を実装するものとする(**SHALL**)。SSN を把握していることは、Identity Proofingと見なされないものとする(**SHALL NOT**)。
 3. 収集時に、CSP は、Identity Proofingに必要なAttributeを収集する目的をApplicantに対して明示的に通知するものとする(**SHALL**)。目的としては、そのようなAttributeがIdentity Proofingプロセスを完了するために任意であるか必須であるかどうか、CSP がApplicantから変化するSubscriberアカウントに保存するつもりの特定のAttributeおよび他の機微データ、Attributeを提供しない場合の結果、そして何らかのレコード保持要件がある場合はその詳細などが含まれる。
 4. CSP は、Applicantの苦情およびIdentity Proofingに起因する問題を救済するためのメカニズムを提供するものとする(**SHALL**)。これらのメカニズムは、Applicantが見つけやすく、利用しやすいものであるものとする(**SHALL**)。CSP は、苦情または問題の解決を達成するために、そのメカニズムが効果的であるかをアセスメントするものとする(**SHALL**)。
@@ -337,7 +337,7 @@ Notifications of proofing:
 ###  Requirements for Use of Biometrics {#ProofBios}
 {% endcomment %}
 
-バイオメトリクスとは、個人を認識するために使用できる生物学的及び行動的特徴、すなわち（これらに限定されるわけではないが）指紋、虹彩構造、顔の特徴などに基づく個人の自動認識のことである。このガイドラインで使用されるバイオメトリックデータは、生物学的および行動学的特徴の、capture、storage、またはprocessingのどの段階においても、アナログまたはデジタルで表現されたもののことである。これには、Applicantからの生きたバイオメトリックサンプル（例：顔画像、指紋）、およびEvidenceから得られたバイオメトリックリファレンス （例：運転免許証の顔画像、ID カード上の指紋特徴点テンプレート）が含まれる。Identity Proofingプロセスに適用されるように、CSP はバイオメトリクスを使用して、所定の集団またはコンテキスト内で個人のIdentityを一意に解決し、個人がIdentity Evidenceの正当な対象者であることをverifyし、その個人をIdentity Evidenceまたはクレデンシャルの新たな要素と結びつけることができる。
+バイオメトリクスとは、個人を認識するために使用できる生物学的及び行動的特徴、すなわち（これらに限定されるわけではないが）指紋、虹彩構造、顔の特徴などに基づく個人の自動認識のことである。このガイドラインで使用されるバイオメトリックデータは、生物学的および行動学的特徴の、capture、storage、またはprocessingのどの段階においても、アナログまたはデジタルで表現されたもののことである。これには、Applicantからの生きたバイオメトリックサンプル（例：顔画像、指紋）、およびEvidenceから得られたバイオメトリックリファレンス （例：運転免許証の顔画像、ID カード上の指紋特徴点テンプレート）が含まれる。Identity Proofingプロセスに適用されるように、CSP はバイオメトリクスを使用して、所定の集団またはコンテキスト内で個人のIdentityを一意に解決し、個人がIdentity Evidenceの正当な対象者であることをVerifyし、その個人をIdentity Evidenceまたはクレデンシャルの新たな要素と結びつけることができる。
 
 {% comment %}
 Biometrics is the automated recognition of individuals based on their biological and behavioral characteristics such as, but not limited to, fingerprints, iris structures, or facial features that can be used to recognize an individual. As used in these guidelines, biometric data refers to any analog or digital representation of biological and behavioral characteristics at any stage of their capture, storage, or processing. This includes live biometric samples from applicants (e.g., facial images, fingerprint), as well as biometric references obtained from evidence (e.g., facial image on a driver’s license, fingerprint minutiae template on identification cards). As applied to the identity proofing process, CSPs may use biometrics to uniquely resolve an individual identity within a given population or context, verify that an individual is the rightful subject of identity evidence, and/or bind that individual to a new piece of identity evidence or credential.

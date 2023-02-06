@@ -12,9 +12,9 @@ section: 4
 
 _This section is normative._
 
-このセクションでは、Identity Proofingおよびエンロールメントプロセスの概要、ならびにapplicantがclaimするアイデンティティのresolution、validation、verificationをサポートするための要件について説明する。また、Identity Proofingプロセスの追加的な側面に関するガイドラインも提供する。 これらの要件は、claimされたアイデンティティが実世界に存在し、applicantがそのアイデンティティに関連付けられた個人であることを確かなものにすることを意図している。あわせて、Identity Proofingプロセスの要素というのは、エンロールされた多数のsubscribersに影響を与える CSP のアイデンティティサービスに対する攻撃が、保護されるデータの価値よりも大きな時間とコストを必要とすることを確かなものにするよう設計されている。
+このセクションでは、Identity Proofingおよびエンロールメントプロセスの概要、ならびにApplicantがclaimするアイデンティティのResolution、Validation、Verificationをサポートするための要件について説明する。また、Identity Proofingプロセスの追加的な側面に関するガイドラインも提供する。 これらの要件は、claimされたアイデンティティが実世界に存在し、Applicantがそのアイデンティティに関連付けられた個人であることを確かなものにすることを意図している。あわせて、Identity Proofingプロセスの要素というのは、エンロールされた多数のsubscribersに影響を与える CSP のアイデンティティサービスに対する攻撃が、保護されるデータの価値よりも大きな時間とコストを必要とすることを確かなものにするよう設計されている。
 
-さらに、このガイドラインは、resolution、validation、およびverificationを完了できる複数の方法、ならびにIdentity Proofingプロセスをサポートする可能性のある複数のタイプのIdentity Evidenceを規定している。実用的な範囲で、CSP および組織は、手段、能力、および技術への Access の面で異なる人々に対して Access を促進するために、Identity Proofingサービスおよびプロセスを実装するときにオプションを有効にするべきである（**SHOULD**）。少なくとも、これには、複数種類のIdentity Evidenceおよび組み合わせを許容し、複数のデータ Validation  Source のサポート、アイデンティティvalidationの複数の方法の有効化（例：trusted refereesの活用）、エンゲージメント用の複数のチャネル（例：対面、リモート）、およびapplicantsのための支援メカニズムの提供（例：applicant references） を含めるべきである（**SHOULD**）。
+さらに、このガイドラインは、Resolution、Validation、およびVerificationを完了できる複数の方法、ならびにIdentity Proofingプロセスをサポートする可能性のある複数のタイプのIdentity Evidenceを規定している。実用的な範囲で、CSP および組織は、手段、能力、および技術への Access の面で異なる人々に対して Access を促進するために、Identity Proofingサービスおよびプロセスを実装するときにオプションを有効にするべきである（**SHOULD**）。少なくとも、これには、複数種類のIdentity Evidenceおよび組み合わせを許容し、複数のデータ Validation  Source のサポート、アイデンティティValidationの複数の方法の有効化（例：trusted refereesの活用）、エンゲージメント用の複数のチャネル（例：対面、リモート）、およびApplicantのための支援メカニズムの提供（例：Applicant References） を含めるべきである（**SHOULD**）。
 
 {% comment %}
 This section provides and overview of the identity proofing and enrollment process as well as requirements to support the resolution, validation, and verification of the identity claimed by an applicant. It also provides guidelines on additional aspects of the identity proofing process.  These requirements are intended to ensure that the claimed identity exists in the real world and that the applicant is the individual associated with that identity. Collectively, the elements of the identity proofing process are designed to ensure that attacks against a CSP's identity service that affect a large number of enrolled subscribers require greater time and cost than the value of the data being protected.
@@ -30,7 +30,7 @@ Additionally, these guidelines provide for multiple methods by which resolution,
 This document describes the common pattern in which an applicant undergoes an identity proofing and enrollment process whereby their identity evidence and attributes are collected, uniquely resolved to a single identity within a given population or context, then validated and verified. See [[SP800-63]](../_sp800-63/sec1_purpose.md#purpose){:latex-href="#ref-SP800-63"} for details on how to choose the most appropriate IAL. A CSP can then bind these attributes to an authenticator (described in [[SP800-63B]](../_sp800-63b/sec1_purpose.md#purpose){:latex-href="#ref-SP800-63B"}).
 {% endcomment %}
 
-Identity Proofingの目的は、Applicantが、自身でclaimした人と同じであることを特定のレベルの確実性で確かにしていくことである。Identity Proofingは、給付金への適合性または資格を決定するために行われるのではない。Identity Proofingプロセスには、Identity Proofingを達成するために必要最低限のattributesの提示およびvalidationが含まれる。 最低限で目的に足りるattributesのセットには様々異なるものがあるが、CSP はapplicantsのプライバシーとUsability、およびデジタルアイデンティティの将来の使用で必要になる可能性のあるattributesを考慮してこのセットを選択する。たとえば、そのようなattributesは、必要最低限である限りにおいて、以下を含むことができる。
+Identity Proofingの目的は、Applicantが、自身でclaimした人と同じであることを特定のレベルの確実性で確かにしていくことである。Identity Proofingは、給付金への適合性または資格を決定するために行われるのではない。Identity Proofingプロセスには、Identity Proofingを達成するために必要最低限のAttributeの提示およびValidationが含まれる。 最低限で目的に足りるAttributeのセットには様々異なるものがあるが、CSP はApplicantのプライバシーとUsability、およびデジタルアイデンティティの将来の使用で必要になる可能性のあるAttributeを考慮してこのセットを選択する。たとえば、そのようなAttributeは、必要最低限である限りにおいて、以下を含むことができる。
 
 1. フルネーム
 2. 生年月日
@@ -73,18 +73,18 @@ _This section is informative._
 ![Illustration of steps in identity proofing and enrollment]({{site.baseurl}}/{{page.collection}}/media/ProofingProcess.png 'Identity Proofing Process'){:style="width:1074px;height:496px;;min-width: 1074px;min-height: 496px;" latex-src="ProofingProcess.png" latex-fig="1" latex-place="h"}
 {% endcomment %}
 
-以下は、IAL2 のリモートIdentity Proofingプロセスにおいて CSP およびapplicantがどのようにやりとりするかについて例を示している。
+以下は、IAL2 のリモートIdentity Proofingプロセスにおいて CSP およびApplicantがどのようにやりとりするかについて例を示している。
 
 1. **Resolution** 
-    1. CSP はapplicantから、名前、住所、生年月日、電子メール、電話番号などのattributesを収集する。
+    1. CSP はApplicantから、名前、住所、生年月日、電子メール、電話番号などのAttributeを収集する。
     2. CSP、運転免許証やパスポートなど、1つまたは複数のIdentity Evidenceも収集する。
     {:.letter-list} 
 2. **Validation**
-    1. CSP は、ステップ 1a で取得した Attributeを、Authoritative  Source または信頼できる Source と照合することで、validateする。
+    1. CSP は、ステップ 1a で取得した Attributeを、Authoritative  Source または信頼できる Source と照合することで、Validateする。
     2. CSPは、提示されたエビデンスの真正性、正確性、および最新性を Validate する。
     {:.letter-list} 
 3. **Verification**
-    1. CSP は、applicantに自分自身の写真を撮影するよう依頼し、生存性のチェックを行う。
+    1. CSP は、Applicantに自分自身の写真を撮影するよう依頼し、生存性のチェックを行う。
     2. CSPは、免許証とパスポートの写真と、前のステップで撮影したApplicant当人の写真とを比較し、一致すると判断する。
     3. Validateされた電話番号にエンロールメントコードを送信し、ApplicantがエンロールメントコードをCSPに提供し、CSPは両者が一致することを確認し、ApplicantがValidateされた電話番号を所有し管理していることをVerifyする。
     4. ApplicantのIdentity Proofingが完了し、Subscriberアカウントにエンロールすることができる。
@@ -113,7 +113,7 @@ The following provides an example of how a CSP and an applicant might interact d
 ## Identity Resolution {#resolve}
 
 
-Identity Resolutionのゴールは、最小限のAttributesセットを使用し、特定の集団またはコンテキスト内で個人を一意に区別することである。Identity ResolutionはIdentity Proofingプロセス全体において出発点であり、潜在的な不正を初期に検出するためのものだが、決してIdentity Proofingのトランザクションが成功裏に完了したことを意味するものではない。
+Identity Resolutionのゴールは、最小限のAttributeセットを使用し、特定の集団またはコンテキスト内で個人を一意に区別することである。Identity ResolutionはIdentity Proofingプロセス全体において出発点であり、潜在的な不正を初期に検出するためのものだが、決してIdentity Proofingのトランザクションが成功裏に完了したことを意味するものではない。
 
 {% comment %}
 The goal of identity resolution is to use the smallest set of attributes to uniquely distinguish an individual within a given population or context. While identity resolution is the starting point in the overall identity proofing process, to include the initial detection of potential fraud, it in no way represents a complete and successful identity proofing transaction.
@@ -180,7 +180,7 @@ Acceptable physical evidence **SHALL** contain all of the following characterist
 許容可能なデジタルEvidenceは、以下のすべての性質を含むものとする(**SHALL**)。
 
 1.	提示されたデジタルEvidenceに、デジタル情報やアカウントのSubjectとしてのApplicantの氏名が含まれている。(ApplicantがClaimするIdentityと異なる名前がデジタルEvidence上に記載されているケースを取り扱う際の指針は、[セクション 10.1](sec10_equity.ja.md#EquityResolve)「Equity and Resolution」参照)。
-2.	提示されたデジタルEvidenceに、少なくとも1つの参照番号（例：アカウント番号）が含まれている、あるいはApplicantとデジタル情報とをバインドするのに十分なAttributesが含まれている。
+2.	提示されたデジタルEvidenceに、少なくとも1つの参照番号（例：アカウント番号）が含まれている、あるいはApplicantとデジタル情報とをバインドするのに十分なAttributeが含まれている。
 3.	提示されたデジタルEvidenceに、デジタル情報の発行者の名称が含まれている。
 4.	デジタルEvidenceの発行者が、デジタルEvidenceの発行に先立って、ApplicantのIdentity Proofingを実施している。
 5.	デジタルEvidenceが、意図された人物に届けられた、あるいは Access 可能とされたものであるという、合理的な保証がある。
@@ -325,7 +325,7 @@ The authenticity and accuracy of identity evidence or attribute information that
 
 #### Attribute Validation
 
-すべてのCore Attributesは、Identity Evidenceから取得したか、Applicantによる自己申告かによらず、Validateされなければならない。本サブセクションでは、Evidenceと収集したAttributesをvalidateするための、許容可能な方法についてガイダンスを提供する。
+すべてのCore Attributesは、Identity Evidenceから取得したか、Applicantによる自己申告かによらず、Validateされなければならない。本サブセクションでは、Evidenceと収集したAttributeをValidateするための、許容可能な方法についてガイダンスを提供する。
 
 {% comment %}
 All core attributes, whether obtained from identity evidence or applicant self-assertion, must be validated. This subsection provides guidance on acceptable methods for validating evidence and collected attributes.   

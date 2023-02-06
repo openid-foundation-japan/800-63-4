@@ -67,16 +67,16 @@ The following list states which sections of this document contain normative lang
 
 Identity Proofingに期待される成果は: 
 
-* **Identity resolution**: によりClaimされたアイデンティティが、CSPサーバーのユーザー母集団の文脈で単一で一意な個人であると判断し、
-* **Evidence validation**: により提出された全てのエビデンスが全て本物で、真正性があり、有効期限が切れていないことを確認し、
-* **Attribute validation**: により Core Attributesの正確性を確認し、
-* **Identity verification**: Claim されたアイデンティティと、Identity Evidence を提出した実存する人物とが結びついていることを検証し、
+* **Identity Resolution**: によりClaimされたアイデンティティが、CSPサーバーのユーザー母集団の文脈で単一で一意な個人であると判断し、
+* **Evidence Validation**: により提出された全てのエビデンスが全て本物で、真正性があり、有効期限が切れていないことを確認し、
+* **Attribute Validation**: により Core Attributesの正確性を確認し、
+* **Identity Verification**: Claim されたアイデンティティと、Identity Evidence を提出した実存する人物とが結びついていることを検証し、
 * **Fraud Prevention**: 便益、サービス、データあるいはアセットに対する欺瞞的な Access の試みを緩和することである。
 
 {% comment %}
 The expected outcomes of identity proofing include:
 
-* **Identity resolution**: determine that the claimed identity corresponds to a single, unique individual within the context of the population of users the CSP serves;
+* **Identity Resolution**: determine that the claimed identity corresponds to a single, unique individual within the context of the population of users the CSP serves;
 * **Evidence validation**: confirm that all supplied evidence is genuine, authentic, and unexpired;
 * **Attribute validation**: confirm the accuracy of core attributes;
 * **Identity verification**: verify that the claimed identity is associated with the real-life person supplying the identity evidence; and
