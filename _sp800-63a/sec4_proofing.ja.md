@@ -30,7 +30,7 @@ Additionally, these guidelines provide for multiple methods by which resolution,
 This document describes the common pattern in which an applicant undergoes an identity proofing and enrollment process whereby their identity evidence and attributes are collected, uniquely resolved to a single identity within a given population or context, then validated and verified. See [[SP800-63]](../_sp800-63/sec1_purpose.md#purpose){:latex-href="#ref-SP800-63"} for details on how to choose the most appropriate IAL. A CSP can then bind these attributes to an authenticator (described in [[SP800-63B]](../_sp800-63b/sec1_purpose.md#purpose){:latex-href="#ref-SP800-63B"}).
 {% endcomment %}
 
-Identity Proofingの目的は、Applicantが、自身でclaimした人と同じであることを特定のレベルの確実性で確かにしていくことである。Identity Proofingは、便益への適合性または資格を決定するために行われるのではない。Identity Proofingプロセスには、Identity Proofingを達成するために必要最低限のattributesの提示およびvalidationが含まれる。 最低限で目的に足りるattributesのセットには様々異なるものがあるが、CSP はapplicantsのプライバシーとユーザビリティ、およびデジタルアイデンティティの将来の使用で必要になる可能性のあるattributesを考慮してこのセットを選択する。たとえば、そのようなattributesは、必要最低限である限りにおいて、以下を含むことができる。
+Identity Proofingの目的は、Applicantが、自身でclaimした人と同じであることを特定のレベルの確実性で確かにしていくことである。Identity Proofingは、給付金への適合性または資格を決定するために行われるのではない。Identity Proofingプロセスには、Identity Proofingを達成するために必要最低限のattributesの提示およびvalidationが含まれる。 最低限で目的に足りるattributesのセットには様々異なるものがあるが、CSP はapplicantsのプライバシーとユーザビリティ、およびデジタルアイデンティティの将来の使用で必要になる可能性のあるattributesを考慮してこのセットを選択する。たとえば、そのようなattributesは、必要最低限である限りにおいて、以下を含むことができる。
 
 1. フルネーム
 2. 生年月日
@@ -291,7 +291,7 @@ In order to be considered SUPERIOR, identity evidence **SHALL** meet _all_ the f
 ### Identity Evidence and Attribute Validation 
 {% endcomment %}
 
-CSPは、Evidenceの収集要件を満たすために収集されたすべてのIdentity Evidenceと、CSP Identity Serviceによって要求されるすべてのCore Attribute情報をValidateするものとする(**SHALL**)。
+CSPは、Evidenceの収集要件を満たすために収集されたすべてのIdentity Evidenceと、CSP Identity Serviceによって要求されるすべての Core Attribute情報をValidateするものとする(**SHALL**)。
 
 {% comment %}
 The CSP **SHALL** validate all identity evidence collected to meet evidence collection requirements and all core attribute information required by the CSP identity service. 
@@ -353,7 +353,7 @@ Acceptable methods for validating presented evidence include:
 
 #### Validation Sources
 
-[セクション 4.3.4.1](sec4_proofing.ja.md#validation) に従ってValidateされたIdentity Evidenceに含まれるCore Attributeは、Validate済みと見なすことができ、この場合、さらなるValidationは必要ない。
+[セクション 4.3.4.1](sec4_proofing.ja.md#validation) に従ってValidateされたIdentity Evidenceに含まれる Core Attributeは、Validate済みと見なすことができ、この場合、さらなるValidationは必要ない。
 
 Authoritative Sourceとは、次の性質のうち1つ以上によって、Identity Attribute情報の正確性を提供あるいはValidateできるエンティティである。Authoritative sourceは:
 

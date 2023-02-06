@@ -49,7 +49,7 @@ This section focuses on impersonation and false or fraudulent representation thr
 |合成 Identity 詐称 | Attacker は 実際の人物に結び付けられていない Evidence を捏造する| クレジットファイルを作成するたえに偽名でクレジットカードを利用できるようにする|
 |Identity 不正利用(Identity 盗難)| Attacker は他の個人の Identity や、Identity Evidenceを利用する。| 盗難されたパスポートの利用 |
 |Social Engineering| Attacker は正当なApplicantに対し、Identity Evidenceの提供を求めたり、騙してIdentity Proofingプロセスの完了を促す。| Attacker が将来の雇用主を装って、個人の Identity Evidence を提出させる|
-|虚偽 Claim| Attacker は、正当な Identity に虚偽の Attribute や情報を関連付ける| 個人が居住していない州に対して給付金を Claim する|
+|虚偽 Claim| Attacker は、正当な Identity に虚偽の Attribute や情報を関連付ける| 個人が居住していない州に対して便益を Claim する|
 {:latex-table="2" latex-caption="Enrollment and Identity Proofing Threats" latex-columns="p@0.25\textwidth,p@0.35\textwidth,p@0.25\textwidth"}
 
 {% comment %}
@@ -86,11 +86,11 @@ Threats to the enrollment and identity proofing process are summarized in [Table
 | Threat/Attack | 緩和戦略 | Normative Reference(s) |
 |-------------------|-------------------------|------------------------|
 |自動化された Enrollment 試行 | CSP はウェブ・アプリケーション・ファイアウォール（WAF）制御やボット検出技術を実装する。Applicant が真に存在するかどうかを判断するために、バイオメトリクス Verifications および生存率検出メカニズムを実装する。トラフィックおよびネットワーク分析機能を実装し、兆候や悪意のあるトラフィックを特定する。 | 5.3.1, 5.4.1, 5.5.1 |
-|Evidence 改ざん | CSP はCore Attribute を Authoritative または信頼できる source で Validate する。CSP は、提出された Evidence の物理的セキュリティ機能あるいはデジタルセキュリティ機能を確認する。 | 4.3, 5.3.2, 5.3.3, 5.4.2, 5.4.3, 5.5.2, 5.5.3 |
-|合成 Identity 詐称 | CSP は、Proofing プロセスをサポートする、複数の Identity Evidence を収集する。CSP はCore Attribute を Authoritative または信頼できる source で Validate する。 CSP は、Authoritative または信頼できる source から提供され、Validate済みの Identity Evidenceまたはバイオメトリクスデータと、Applicant のバイオメトリクスを比較することで、その Identity をVerify する。 | 4.3, 4.3, 5.3.2, 5.3.3, 5.3.4, 5.4.2, 5.4.3, 5.4.4, 5.5.2, 5.5.3, 5.5.4 |
+|Evidence 改ざん | CSP は中核の Attribute を Authoritative または信頼できる source で Validate する。CSP は、提出された Evidence の物理的セキュリティ機能あるいはデジタルセキュリティ機能を確認する。 | 4.3, 5.3.2, 5.3.3, 5.4.2, 5.4.3, 5.5.2, 5.5.3 |
+|合成 Identity 詐称 | CSP は、Proofing プロセスをサポートする、複数の Identity Evidence を収集する。CSP は中核の Attribute を Authoritative または信頼できる source で Validate する。 CSP は、Authoritative または信頼できる source から提供され、Validate済みの Identity Evidenceまたはバイオメトリクスデータと、Applicant のバイオメトリクスを比較することで、その Identity をVerify する。 | 4.3, 4.3, 5.3.2, 5.3.3, 5.3.4, 5.4.2, 5.4.3, 5.4.4, 5.5.2, 5.5.3, 5.5.4 |
 |Identity 不正利用(Identity 盗難)| CSP は、Authoritative または信頼できる source から提供され、Validate済みの Identity Evidenceまたはバイオメトリクスデータと、Applicant のバイオメトリクスを比較することで、その Identity を Verifyする。CSP は、Identity Evidence が付帯する個人が本当に存在していることを確認するために、Presentation Attack Detection の手法を実装する。CSP は、Out-of-bandでのエンゲージメント（Enrollment コードなど）およびProofing通知を実装する。CSP は、重要統計情報リポジトリ(デスマスターファイルなど)の確認を実施する。CSPは、詐欺、トランザクション、および行動の分析機能を実装して、潜在的に悪意のある口座開設の指標を特定する。| 5.1.1, 5.3.4, 5.4.4, 5.5.4 |
 |Social Engineering| CSP は、強要や経済的困窮の兆候を識別するために、Trusted Refereeのトレーニングを実施する。CSP は、Validate済みのアドレスにOut-of-bandでのエンゲージメントとProofingに通知を提供する。CSP は、一般的な脅威と計画に関する情報およびコミュニケーションをエンド・ユーザに提供する。 | 5.1.6, 5.1.7, 5.1.9 |
-|虚偽 Claim| CSP はトラフィックに地理的な制限を実装する。CSP は、Core Attribute および RP が要求するビジネスAttributeを、Authoritative Source または信頼できる Source で Validate する。| 5.1.1, 5.3.2, 5.3.3, 5.4.2, 5.4.3, 5.5.2, 5.5.3 |
+|虚偽 Claim| CSP はトラフィックに地理的な制限を実装する。CSP は、中核の Attribute および RP が要求するビジネスAttributeを、Authoritative Source または信頼できる Source で Validate する。| 5.1.1, 5.3.2, 5.3.3, 5.4.2, 5.4.3, 5.5.2, 5.5.3 |
 {:latex-table="3" latex-caption="Enrollment and Issuance Threat Mitigation Strategies" latex-columns="p@0.20\textwidth,p@0.65\textwidth,p@0.15\textwidth"}
 
 {% comment %}
