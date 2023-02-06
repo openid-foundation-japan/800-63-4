@@ -16,7 +16,7 @@ _This appendix is informative._
 * 低リスクのアプリケーションのための新しい IAL1 の要件を追加している。
 * 関連要件に言及する前に Identity Proofing の概念を紹介しやすくするため、セクション 4 と 5 の内容を入れ替える。
 * 物理的文書および Digital Evidence を含む、許容可能な Identity Evidence の特性についての指針および要件を提供する。
-* Identity Attribute の収集と Identity Evidence の収集は切り離される。
+* Identity Attribute の収集と Identity Evidence の収集を切り離す。
 * Core Attributes の概念を導入する。
 * 許容される Evidence および Attribute Validation のソースを拡張し、信頼できる Source を含める。
 * CSP 固有のプライバシーリスク評価の要件と、その結果を省庁の PIA に統合するための考慮事項が追加する。
