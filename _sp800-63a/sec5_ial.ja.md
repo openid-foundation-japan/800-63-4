@@ -49,7 +49,7 @@ CSPは、定義されたIALを達成するために実装されているすべ�
 6. 疑わしい、あるいは確認済みの不正なアカウントを識別し、RPや影響をうける個人に対して伝達するための、CSP のポリシーとプロセス。
 7. サービス変更（例：データソース、統合ベンダー、またはバイオメトリックアルゴリズムの変更）を管理し、RP に伝達するための、 CSP のポリシー。
 8. 定期的な見直しのタイミングと、更新されたプライバシーリスク評価をトリガーする具体的な条件を含む、プライバシーリスク評価の実施に関するCSPのポリシー([セクション 5.1.2](sec5_ial.ja.md#PrivacyReqs) を参照）
-9. 潜在的なEquityへの影響を判断するためのアセスメントを実施する CSP のポリシー。これには、定期的なレビューのタイミングと、サイクル外レビューの契機となる特定条件を含む（[セクション 5.1.3](sec5_ial.ja.md#EquityReqs) 参照）；更に、
+9. 定期的な見直しのタイミングと、定期外の見直しをトリガーする具体的な条件を含む、潜在的なEquityへの影響を判断するための評価を実施に関するCSPのポリシー（[Sec. 5.1.3](sec5_ial.ja.md#EquityReqs) 参照）；更に、
 
 {% comment %}
 The CSP **SHALL** conduct its operations according to a practice statement that details all identity proofing processes as they are implemented to achieve the defined IAL. The practice statement **SHALL** include, at a minimum:  
