@@ -84,7 +84,7 @@ Assertion は以下に示すような追加の項目を含んでもよい (**MAY
 -->
 
 1. Attribute Value および Derived Attribute Value: Subscriber に関する情報.
-2. Attribute Metadata: Subscriber Attribute に関する1つ以上の追加情報. NIST Internal Report 8112 [[NISTIR8112]](references.ja.md#ref-nistir8112) 例示あり.
+2. Attribute Metadata: 1つ以上の Subscriber Attribute に関する追加情報. NIST Internal Report 8112 [[NISTIR8112]](references.ja.md#ref-nistir8112) 例示あり.
 
 <!--
 Assertions **SHOULD** specify the AAL when an authentication event is being asserted and IAL when identity proofed attributes (or values derived from those attributes) are being asserted.
@@ -174,7 +174,7 @@ Note that mere possession of a bearer assertion or reference is not always enoug
 
 Bearer Assertion ないしは Bearer Assertion Referende を保持するだけでは, 常に Subscriber になりすますのに十分であるとは限らないことに注意すること.
 例えば, Assertion が Back-channel Federation Model ([Sec. 7.1](sec7_presentation.ja.md#back-channel) に後述) によって提示される場合, Transaction に追加の統制が課されることもある (**MAY**).
-例としては RP の識別や Assertion インジェクションにたいする保護策などが考えられる.
+例としては RP の識別や Assertion インジェクションに対する保護策などが考えられる.
 これらは RP を不正なアクティビティから保護する追加の対策となる.
 
 ### Bound Authenticators {#boundauth}
@@ -350,7 +350,7 @@ RP は IdP から Subscriber に関する FAL3 の Assertion を受け取るた�
 When the RP receives an assertion associated with a bound authenticator, the subscriber proves possession of the bound authenticator directly to the RP. The primary authentication at the IdP and the federated authentication at the RP are processed separately. While the subscriber could use the same authenticator during the primary authentication at the IdP and as the bound authenticator at the RP, there is no assumption that these will be the same.
 -->
 
-RP が Boud Authenticator とともに Assertion を受け取る際, Subscriber は RP に直接 Bound Authenticator の保持証明を行う.
+RP が Bound Authenticator とともに Assertion を受け取る際, Subscriber は RP に直接 Bound Authenticator の保持証明を行う.
 IdP におけるプライマリ Authentication および RP における Federated Authentication は別々に処理される.
 Subscriber は IdP におけるプライマリ Authentication でも RP における Bound Authenticator と同じ Authenticator を使うことができるが, それぞれが同じものであるということはなんら想定されない.
 
