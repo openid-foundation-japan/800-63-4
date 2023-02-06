@@ -70,7 +70,7 @@ Possible mitigations include:
 {% endcomment %}
 
 ## Equity and Identity Validation {#EquityValidation}
-Identity Evidence および中核の Attribute の Validation には、提示された Identity Evidence および追加 Attribute の真正性、最新性および正確性を確認することが含まれる。これらの結果は、Authoritative または信頼できる Source が保持するデータに対して Evidence および Attribute を比較することによって達成される。Identity Resolution フェーズと合わせて考えると、成功した Validation フェーズの結果は、Claim された Identity が現実世界に存在することをある程度の確からしさで確認することである。
+Identity Evidence および Core Attributes の Validation には、提示された Identity Evidence および追加 Attribute の真正性、最新性および正確性を確認することが含まれる。これらの結果は、Authoritative または信頼できる Source が保持するデータに対して Evidence および Attribute を比較することによって達成される。Identity Resolution フェーズと合わせて考えると、成功した Validation フェーズの結果は、Claim された Identity が現実世界に存在することをある程度の確からしさで確認することである。
 
 このセクションでは、Evidence および Attribute の Validation プロセスに関連する不公平なアクセス、処遇、 または結果について、考えられる一連の問題および緩和策を提供する:
 
