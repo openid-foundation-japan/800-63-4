@@ -123,7 +123,7 @@ The following privacy requirements apply to all CSPs providing identity services
 	2. ここで指定されている必須要件を超えて、ApplicantのIdentityをVerifyするために CSP が取る追加のステップ。
 	3. 法律または法的手続きに遵守する場合を除き、Identity Proofingとエンロールメントのスコープ外で行われる、PII に対する任意の処理。
 	4. Identityレコードおよび PII の保持スケジュール。さらに、
-	5. CSP に代わってサードパーティサービスが処理する任意のPII。
+	5. CSP に代わってサードパーティサービスが処理するあらゆるPII。
 	{:.letter-list}
 2. プライバシーリスク評価の結果に基づいて、CSP は、自らが処理する PII の分離可能性、予測可能性、管理性、機密性、完全性、および可用性を維持するために講じる手段を文書化するものとする(**SHALL**)。このような措置を決定する際、CSP は *NIST Privacy Framework* [[NIST-Privacy]](sec11_references.ja.md#ref-NIST-Privacy) および NIST Special Publication [[SP800-53]](sec11_references.ja.md#ref-SP800-53) を参考にするものとする(**SHALL**)。
 3. CSP は、PII の処理に影響を与えるIdentityサービスの変更を行う場合は、いつでもプライバシーリスクを再評価し、プライバシーリスク評価を更新しなければならない。
