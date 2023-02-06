@@ -20,7 +20,7 @@ _This appendix is informative._
 * 中核の Attribute の概念を導入する。
 * 許容される Evidence および Attribute Validation のソースを拡張し、信頼できる Source を含める。
 * CSP 固有のプライバシーリスク評価の要件と、その結果を省庁の PIA に統合するための考慮事項が追加する。
-* Identity Proofing プロセスに関連する公正リスクの検討に関する新しいガイダンスと要件を追加する。
+* Identity Proofing プロセスに関連する Equity リスクの検討に関する新しいガイダンスと要件を追加する。
 * Trusted Referee および Applicant Reference を使用するためのガイダンスおよび要件を提供する。
 
 {% comment %}
