@@ -161,7 +161,7 @@ Enrollment Session に特有の Usability の考慮事項は以下のとおり�
 
 * Identity Proofing Session の開始時に、ユーザーに手続きをリマインドする。Enrollment 前準備の段階で説明した手順を覚えていることを期待してはいけない。Enrollment Session がEnrollment 前準備の直後に行われない場合は、Proofing と Enrollment のステップの完了に要する標準的な時間をユーザに明確に思い出させることが特に重要である。
 * 対面またはリモートチャネルでの予約変更のオプションを提供する。
-* Enrollment Session を進めるために必要な Identity Evidence (Enrollment コードを含む) をユーザーが所持していることを確認するために、利用可能であり必須の Identity Evidence を記載したチェックリストを提供する（該当する場合）。ユーザが完全な Identity Evidence 一式を持っていない場合、Identity Proofing Session を部分的に完了できるかどうかに関して通知する必要がある。
+* Enrollment Session を進めるために必要な Identity Evidence (Enrollment コードを含む) をユーザーが所持していることを確認するために、許容されており、かつ必須の Identity Evidence を記載したチェックリストを提供する（該当する場合）。ユーザが完全な Identity Evidence 一式を持っていない場合、Identity Proofing Session を部分的に完了できるかどうかに関して通知する必要がある。
 * どの情報が破棄されるか、どの情報が将来のフォローアップ Session のために保持されるか、将来の Session を完了するためにどのような Identity Evidence を持参する必要があるかについて、ユーザーに通知する。理想的には、ユーザ Identity Proofing Session を部分的に完了したいかどうかを選択できる。
 * 過去の Identity Verification の体験がユーザーの期待値を左右することがあるものとして、Enrollment Session の結果に関するユーザーの期待値を設定すること（例：対面で運転免許証を受け取る、パスポートを郵便で受け取る）。
 * Enrollment Session が無事に終了した際に、ユーザーがすぐに Authenticator を受領できるのか、対面で受領するために予約を取る必要があるのか、郵便で受け取れるのか、いつ受け取れるかを明確に示す。
