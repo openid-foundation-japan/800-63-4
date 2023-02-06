@@ -630,7 +630,7 @@ For added assurance, the CSP **SHALL** evaluate the core attributes, as validate
 
 CSPは、以下のいずれか _1つ_ の要件に従って Applicant が ClaimされたIdentityとバインドできるかどうかをVerifyするものとする(**SHALL**)。
 
-1.	Applicantの顔との物理的な比較、またはSUPERIORやSTRONG Evidenceに含まれる顔写真とApplicantの顔画像とバイオメトリクス比較、または
+1.	Applicantの顔との物理的な比較、またはSUPERIORやSTRONG Evidenceに含まれる顔写真とApplicantの顔画像とのバイオメトリクス比較、または
 2.	AAL1 認証または AAL1 および FAL1 フェデレーションプロトコルを介したデジタルアカウントとの関連性の実証、または
 3.	Applicantが有効なEnrollmentコードを提示してきたことのVerification [Sec.5.1.6](sec5_ial.ja.md#EnrollCodes)
 
