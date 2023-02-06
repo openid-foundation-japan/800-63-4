@@ -1010,17 +1010,42 @@ Verifier と CSP が別々のエンティティである状況では ([[SP800-63
 
 ### Verifier Compromise Resistance {#verifier-secrets}
 
+<!--
 Use of some types of authenticators requires that the verifier store a copy of the authenticator secret. For example, an OTP authenticator (described in [Sec. 5.1.4](sec5_authenticators.md#singlefactorOTP)) requires that the verifier independently generate the authenticator output for comparison against the value sent by the claimant. Because of the potential for the verifier to be compromised and stored secrets stolen, authentication protocols that do not require the verifier to persistently store secrets that could be used for authentication are considered stronger, and are described herein as being *verifier compromise resistant*. Note that such verifiers are not resistant to all attacks. A verifier could be compromised in a different way, such as being manipulated into always accepting a particular authenticator output.
+-->
 
+いくつかのタイプの Authenticator を使用するには, Verifier が Authenticator Secret のコピーを保管する必要がある. 例えば, OTP Authenticator ([Sec. 5.1.4](sec5_authenticators.md#singlefactorOTP) で説明) では, Claimant によって送信された値と比較するための Authenticator 出力を, Verifier が独立して生成することが求められる. Verifier が侵害され, 保管された Secret が盗まれる可能性のため, Verifier が Authentication に使用できる Secret を永続的に保管する必要のない Authentication Protocol はより強力であると見なされ, *Verifier Compromise Resistant(Verifierが侵害耐性を持つ状態)* である旨がここで説明されている. このような Verifier もすべての Attack に耐性があるわけではないことに注意が必要である. Verifier は, 特定の Authenticator 出力を常に受け入れるようにのっとられるなど, 別の方法で侵害されるかもしれない.
+
+<!--
 Verifier compromise resistance can be achieved in different ways, for example:
+-->
 
+Verifier Compromise Resistant は様々な方法で達成できる, 例えば:
+
+<!--
 - Use a cryptographic authenticator that requires the verifier store a public key corresponding to a private key held by the authenticator.
+-->
 
+- Verifier は, Authenticator 保持する Private Key に対応する Public key を保管することを要求する Cryptographic Authenticator を使用する.
+
+<!--
 - Store the expected authenticator output in hashed form. This method can be used with some look-up secret authenticators (described in [Sec. 5.1.2](sec5_authenticators.md#lookupsecrets)), for example.
+-->
 
+- 予想される Authenticator 出力を Hash 形式で保管する. このメソッドは, 例えば一部の Look-Up Secret 
+Authenticator ([Sec. 5.1.2](sec5_authenticators.md#lookupsecrets) で説明) で使用できる.
+
+<!--
 To be considered verifier compromise resistant, public keys stored by the verifier **SHALL** be associated with the use of approved cryptographic algorithms and **SHALL** provide at least the minimum security strength specified in the latest revision of [[SP800-131A]](references.md#ref-SP800-131A) (112 bits as of the date of this publication).
+-->
 
+Verifier Compromise Resistant であると見なされるために, Verifier によって保管される Public key は, Approved な暗号アルゴリズムの使用によるものとなり(**SHALL**), 少なくとも [[SP800-131A]](references.md#ref-SP800-131A) の最新リビジョンで指定されている最小のセキュリティ強度(発行日現在で 112 ビット)を提供することとなる(**SHALL**).
+
+<!--
 Other verifier compromise resistant secrets **SHALL** use approved hash algorithms and the underlying secrets **SHALL** have at least the minimum security strength specified in the latest revision of [[SP800-131A]](references.md#ref-SP800-131A) (112 bits as of the date of this publication). Secrets (e.g., memorized secrets) having lower complexity **SHALL NOT** be considered verifier compromise resistant when hashed because of the potential to defeat the hashing process through dictionary lookup or exhaustive search.
+-->
+
+その他の Verifier Compromise Resistant Secret は, Approved な Hash アルゴリズムを使用することとなり(**SHALL**), 基となる Secret は, 少なくとも [[SP800-131A]](references.md#ref-SP800-131A) の最新リビジョンで指定されている最小のセキュリティ強度(発行日現在で 112 ビット)を持つすることとなる(**SHALL**). 低い複雑度を持つ Secret (例: Memorized Secret) は, 辞書検索または網羅的探索によって Hash プロセスを破る可能性があるため, Hash された場合でも Verifier Compromise Resistant と見なされることはない(**SHALL NOT**).
 
 ### Replay Resistance {#replay}
 
