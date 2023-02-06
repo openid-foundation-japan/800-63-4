@@ -291,7 +291,7 @@ In order to be considered SUPERIOR, identity evidence **SHALL** meet _all_ the f
 ### Identity Evidence and Attribute Validation 
 {% endcomment %}
 
-CSPは、Evidenceの収集要件を満たすために収集されたすべてのIdentity Evidenceと、CSP Identity Serviceによって要求されるすべての Core Attribute情報をValidateするものとする(**SHALL**)。
+CSPは、Evidenceの収集要件を満たすために収集されたすべてのIdentity Evidenceと、CSP Identity Serviceによって要求されるすべての Core Attributes情報をValidateするものとする(**SHALL**)。
 
 {% comment %}
 The CSP **SHALL** validate all identity evidence collected to meet evidence collection requirements and all core attribute information required by the CSP identity service. 
@@ -325,7 +325,7 @@ The authenticity and accuracy of identity evidence or attribute information that
 
 #### Attribute Validation
 
-すべてのCore Attributeは、Identity Evidenceから取得したか、Applicantによる自己申告かによらず、Validateされなければならない。本サブセクションでは、Evidenceと収集したAttributesをvalidateするための、許容可能な方法についてガイダンスを提供する。
+すべてのCore Attributesは、Identity Evidenceから取得したか、Applicantによる自己申告かによらず、Validateされなければならない。本サブセクションでは、Evidenceと収集したAttributesをvalidateするための、許容可能な方法についてガイダンスを提供する。
 
 {% comment %}
 All core attributes, whether obtained from identity evidence or applicant self-assertion, must be validated. This subsection provides guidance on acceptable methods for validating evidence and collected attributes.   
@@ -353,7 +353,7 @@ Acceptable methods for validating presented evidence include:
 
 #### Validation Sources
 
-[セクション 4.3.4.1](sec4_proofing.ja.md#validation) に従ってValidateされたIdentity Evidenceに含まれる Core Attributeは、Validate済みと見なすことができ、この場合、さらなるValidationは必要ない。
+[セクション 4.3.4.1](sec4_proofing.ja.md#validation) に従ってValidateされたIdentity Evidenceに含まれる Core Attributesは、Validate済みと見なすことができ、この場合、さらなるValidationは必要ない。
 
 Authoritative Sourceとは、次の性質のうち1つ以上によって、Identity Attribute情報の正確性を提供あるいはValidateできるエンティティである。Authoritative sourceは:
 
