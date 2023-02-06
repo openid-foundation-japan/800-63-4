@@ -19,7 +19,7 @@ One of the challenges of providing online services is being able to associate a 
 {% endcomment %}
 
 
-このガイダンスは、Identity Proofing を、オンライン・サービスにアクセスする Subject と実存する人物との関係性を、ある程度の確実性または保証をもって確立するプロセスのことであると定義する。本書は、連邦機関、サードパーティのCredential Service Providers(CSP)、そしてIdentity Proofingサービスを提供する他の組織に対するガイダンスを提供する。
+このガイダンスは、Identity Proofing を、オンライン・サービスに Access する Subject と実存する人物との関係性を、ある程度の確実性または保証をもって確立するプロセスのことであると定義する。本書は、連邦機関、サードパーティのCredential Service Providers(CSP)、そしてIdentity Proofingサービスを提供する他の組織に対するガイダンスを提供する。
 
 {% comment %}
 This guidance defines identity proofing as the process of establishing, to some degree of certainty or assurance, a relationship between a subject accessing online services and a real-life person. This document provides guidance for Federal Agencies, third-party Credential Service Providers (CSP), and other organizations that provide identity proofing services.
@@ -71,7 +71,7 @@ Identity Proofingに期待される成果は:
 * **Evidence validation**: により提出された全てのエビデンスが全て本物で、真正性があり、有効期限が切れていないことを確認し、
 * **Attribute validation**: により Core Attributesの正確性を確認し、
 * **Identity verification**: Claim されたアイデンティティと、Identity Evidence を提出した実存する人物とが結びついていることを検証し、
-* **Fraud Prevention**: 便益、サービス、データあるいはアセットに対する欺瞞的なアクセスの試みを緩和することである。
+* **Fraud Prevention**: 便益、サービス、データあるいはアセットに対する欺瞞的な Access の試みを緩和することである。
 
 {% comment %}
 The expected outcomes of identity proofing include:

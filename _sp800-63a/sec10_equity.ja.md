@@ -13,13 +13,13 @@ section: 10
 
 _This section is informative._
 
-このセクションは、Identity Proofing プロセスにおいて不公平な Access、処遇、または結果に関連するリスクの影響を評価する目的（[Sec. 5.1.3](sec5_ial.ja.md#EquityReqs)で要求されている）での指針を提供することを意図している。これは、Identity Proofing プロセスにおいて、不公平の対象となり得る領域と、それに対して適用可能な緩和策を、非網羅的にリストアップしている。CSP はこのセクションを、自身の Identity サービスに存在する不公平なアクセス、処置、または結果のリスクの所在を考慮するためのスタート地点として活用できる。以下の指針が、Identity サービスに関連する決定的で包括的なリストである、とみなすことを意図したものではない。
+このセクションは、Identity Proofing プロセスにおいて不公平な Access、処遇、または結果に関連するリスクの影響を評価する目的（[Sec. 5.1.3](sec5_ial.ja.md#EquityReqs)で要求されている）での指針を提供することを意図している。これは、Identity Proofing プロセスにおいて、不公平の対象となり得る領域と、それに対して適用可能な緩和策を、非網羅的にリストアップしている。CSP はこのセクションを、自身の Identity サービスに存在する不公平な Access 、処置、または結果のリスクの所在を考慮するためのスタート地点として活用できる。以下の指針が、Identity サービスに関連する決定的で包括的なリストである、とみなすことを意図したものではない。
 
 {% comment %}
 This section is intended to provide guidance to CSPs for assessing the risks associated with inequitable access, treatment, or outcomes for individuals using its identity services, as required in [Sec. 5.1.3](sec5_ial.md#EquityReqs). It provides a non-exhaustive list of potential areas in the identity proofing process that may be subject to inequities, as well as possible mitigations that can be applied. CSPs can use this section as a starting point for considering where the risks for inequitable access, treatment, or outcomes exist within its identity service. It is not intended that the below guidance be considered a definitive, all-inclusive list of associated equity risks to identity services.
 {% endcomment %}
 
-Equity リスクの評価において、CSP は、Identity Proofing および Enrollment サービスが対象とする利用者母集団の検討から始める。さらに、CSP は、そのサービスを使用する際に不公平なアクセス、処遇、または結果の原因となり得る、共通の特性を持った集団内の利用者のグループをさらに特定する。CSP は、影響を受けるユーザー、グループへの影響を評価することによって、あらゆる緩和策の有効性を評価することが推奨される。Identity サービスを使用するすべての人にとっての全体的な Usability と Equity の改善に役立つ Equity リスク緩和を適用する際に、[Sec. 9](sec9_usability.ja.md#usability) で提供されている Usability の考慮事項も考慮べきである。
+Equity リスクの評価において、CSP は、Identity Proofing および Enrollment サービスが対象とする利用者母集団の検討から始める。さらに、CSP は、そのサービスを使用する際に不公平な Access 、処遇、または結果の原因となり得る、共通の特性を持った集団内の利用者のグループをさらに特定する。CSP は、影響を受けるユーザー、グループへの影響を評価することによって、あらゆる緩和策の有効性を評価することが推奨される。Identity サービスを使用するすべての人にとっての全体的な Usability と Equity の改善に役立つ Equity リスク緩和を適用する際に、[Sec. 9](sec9_usability.ja.md#usability) で提供されている Usability の考慮事項も考慮べきである。
 
 {% comment %}
 In assessing equity risks, a CSP starts by considering the overall user population served by its identity proofing and enrollment service. Additionally, the CSP further identifies groups of users within the population whose shared characteristic(s) can cause them to be subject to inequitable access, treatment, or outcomes when using that service. CSPs are encouraged to assess the effectiveness of any mitigations by evaluating their impacts on the affected user group(s). The usability considerations provided in [Sec. 9](sec9_usability.md#usability) should also be considered when applying equity risk mitigations to help improve the overall usability and equity for all persons using an identity service.
@@ -29,7 +29,7 @@ In assessing equity risks, a CSP starts by considering the overall user populati
 
 Identity Resolution には、Identity サービスが対象とする集団内で、Claim された Identity を単一の一意の個人として識別できるようにするための最小限の Attribute のセットを収集することが含まれる。Attribute は、提示された Identity Proofing、Applicant の自己申告、および／またはバックエンドの Attribute プロバイダから取得される。
 
-このセクションでは、Identity Resolution プロセスに関連する不公平なアクセス、処遇、または結果について、考えられる一連の問題および緩和策を提供する: 
+このセクションでは、Identity Resolution プロセスに関連する不公平な Access 、処遇、または結果について、考えられる一連の問題および緩和策を提供する: 
 
 {% comment %}
 Identity resolution involves collecting the minimum set of attributes to be able to distinguish the claimed identity as a single, unique individual within the population served by the identity service. Attributes are obtained from presented identity evidence, applicant self-assertion, and/or back-end attribute providers.
@@ -72,7 +72,7 @@ Possible mitigations include:
 ## Equity and Identity Validation {#EquityValidation}
 Identity Evidence および Core Attributes の Validation には、提示された Identity Evidence および追加 Attribute の真正性、最新性および正確性を確認することが含まれる。これらの結果は、Authoritative または信頼できる Source が保持するデータに対して Evidence および Attribute を比較することによって達成される。Identity Resolution フェーズと合わせて考えると、成功した Validation フェーズの結果は、Claim された Identity が現実世界に存在することをある程度の確からしさで確認することである。
 
-このセクションでは、Evidence および Attribute の Validation プロセスに関連する不公平なアクセス、処遇、 または結果について、考えられる一連の問題および緩和策を提供する:
+このセクションでは、Evidence および Attribute の Validation プロセスに関連する不公平な Access 、処遇、 または結果について、考えられる一連の問題および緩和策を提供する:
 
 {% comment %}
 Identity evidence and core attribute validation involves confirming the genuineness, currency, and accuracy of presented identity evidence and the accuracy of any additional attributes. These outcomes are accomplished by comparison of the evidence and attributes against data held by authoritative or credible sources. When considered together with the identity resolution phase, the result of successful validation phase is the confirmation, to some level of confidence, that the claimed identity exists in the real world.
@@ -215,7 +215,7 @@ Possible mitigations include:
 The Usability Considerations section of this document ([Sec. 9](sec9_usability.md#usability)) provides CSPs with guidance on how to provide applicants with a smooth, positive identity proofing experience. In addition to the specific considerations provided in Sec. 9, this section provides CSPs with additional considerations when considering the equity of their user experience.
 {% endcomment %}
 
-**問題の説明： 必要な技術（例： コネクテッドモバイルデバイスやコンピューター）へのアクセスができない、または利用の困難さによって、一部のユーザーグループに過度な負担がかかっている。**
+**問題の説明： 必要な技術（例： コネクテッドモバイルデバイスやコンピューター）への Access ができない、または利用の困難さによって、一部のユーザーグループに過度な負担がかかっている。**
 
 緩和策としては、以下が考えられる:
 

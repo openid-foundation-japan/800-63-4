@@ -177,7 +177,7 @@ The following privacy requirements apply to all CSPs providing identity services
 ### General Equity Requirements {#EquityReqs}
 {% endcomment %}
 
-Equityの向上というゴールをサポートし、全体的なリスクアセスメントプロセスの一環で、CSP はそのIdentityサービスの要素をアセスメントして、あるグループのメンバーが他のグループと比較して、不公平なアクセス、処遇、あるいは結果になる可能性があるプロセスまたは技術を特定するものとする(**SHALL**)。 不公平なアクセスあるいは結果となりえるIdentity Proofingプロセスおよび技術の非網羅的なリストについては、[Sec. 10](sec10_equity.ja.md#EquityConsiderations)を参照すること。
+Equityの向上というゴールをサポートし、全体的なリスクアセスメントプロセスの一環で、CSP はそのIdentityサービスの要素をアセスメントして、あるグループのメンバーが他のグループと比較して、不公平な Access 、処遇、あるいは結果になる可能性があるプロセスまたは技術を特定するものとする(**SHALL**)。 不公平な Access あるいは結果となりえるIdentity Proofingプロセスおよび技術の非網羅的なリストについては、[Sec. 10](sec10_equity.ja.md#EquityConsiderations)を参照すること。
 
 
 大統領令 13985 [[EO13985]](sec11_references.ja.md#ref-EO13985) は、_Advancing Racial Equity and Support for Underserved Communities Through the Federal Government_ として、政府プログラムと政策が有色人種およびその他十分な便益を享受できていないグループのための機会および便益に対する組織的障壁を存続させてしまっていないかどうか、その程度がどれほどであるか、評価するよう各連邦機関に求めていることに注意すること。 
@@ -189,13 +189,13 @@ In support of the goal of improved equity, and as part of its overall risk asses
 Note that executive order 13985 [[EO13985]](sec11_references.md#ref-EO13985), _Advancing Racial Equity and Support for Underserved Communities Through the Federal Government_, requires each federal agency to assess whether, and to what extent, its programs and policies perpetuate systemic barriers to opportunities and benefits for people of color and other underserved groups.  
 {% endcomment %}
 
-アクセス、処遇、結果の不公平のリスクを評価する場合、以下の要件が適用される。
+ Access 、処遇、結果の不公平のリスクを評価する場合、以下の要件が適用される。
 
-1.  リスク評価の結果に基づいて、CSP は、不公平なアクセス、処遇、または結果を生じる可能性を軽減するために講じる措置を文書化するものとする(**SHALL**)。 
-2.  CSP は、プロセスまたは技術に影響を与えるIdentityサービスの変更を行う場合は、公平なアクセス、処遇、または成果に対するリスクを再評価するものとする(**SHALL**)。
-3.  CSP は、そのサービスに関連する現在のリスクを正確に反映するように、公平なアクセス、処遇、または成果に対するリスクを定期的に再評価するものとする(**SHALL**)。
+1.  リスク評価の結果に基づいて、CSP は、不公平な Access 、処遇、または結果を生じる可能性を軽減するために講じる措置を文書化するものとする(**SHALL**)。 
+2.  CSP は、プロセスまたは技術に影響を与えるIdentityサービスの変更を行う場合は、公平な Access 、処遇、または成果に対するリスクを再評価するものとする(**SHALL**)。
+3.  CSP は、そのサービスに関連する現在のリスクを正確に反映するように、公平な Access 、処遇、または成果に対するリスクを定期的に再評価するものとする(**SHALL**)。
 4.  CSP は、これらのリスクアセスメントへのApplicantの参加を義務付けることはしないものとする(**SHALL NOT**)。
-5.  CSP は、不公平なアクセス、処遇、または結果に関連するリスクの評価結果、および関連する軽減策を、そのサービスを使用するすべての組織または個人が利用できるようにするものとする(**SHALL**)。
+5.  CSP は、不公平な Access 、処遇、または結果に関連するリスクの評価結果、および関連する軽減策を、そのサービスを使用するすべての組織または個人が利用できるようにするものとする(**SHALL**)。
 6.  CSP は、その評価結果も一般に公開するものとする(**SHALL**)。 
 
 {% comment %}
@@ -262,7 +262,7 @@ The following requirements apply to federal agencies, regardless of whether they
 ###  Requirements for Enrollment Codes {#EnrollCodes}
 {% endcomment %}
 
-Enrollmentコードは、Applicantが有効なアドレスにアクセスできることを確認するために使用されます。Identity ProofingとEnrollmentが 1 回の Session で完了しない場合、Enrollmentコードは、Enrollmentプロセスを完了する目的で、ApplicantのEnrollmentレコードへのバインドを再確立するために使用することもできる。
+Enrollmentコードは、Applicantが有効なアドレスに Access できることを確認するために使用されます。Identity ProofingとEnrollmentが 1 回の Session で完了しない場合、Enrollmentコードは、Enrollmentプロセスを完了する目的で、ApplicantのEnrollmentレコードへのバインドを再確立するために使用することもできる。
 
 以下の要件は、任意の IAL でEnrollmentコードを使用するすべての CSP に適用される。
 
@@ -399,7 +399,7 @@ The following requirements apply to CSPs who collect biometric characteristics f
 ###  Trusted Referees and Applicant References {#TRs-ARs}
 {% endcomment %}
 
-アクセス性を向上させ、オンライン政府サービスへの平等なアクセスを促進するために、CSP は _trusted referees_ を提供する。Trusted Referee は、特定の IAL へのIdentity Proofing要件を満たすことができない個人が、Identity ProofingおよびEnrollmentを円滑に進めるために利用される。そのような個人および人口統計学的グループは次のような個人が例として挙げられる: 必要なIdentity Evidenceを所有せず入手できない個人、障害者、高齢者、ホームレス経験者、オンライン・サービスまたはコンピューティング・ デバイスにほとんどまたは全くアクセスできない個人、銀行口座を持たないあるいはクレジット履歴が限定されている人、Identity盗難被害者、自然災害で避難したまたは影響を受けた個人、および 18 才未満の児童
+ Access 性を向上させ、オンライン政府サービスへの平等な Access を促進するために、CSP は _trusted referees_ を提供する。Trusted Referee は、特定の IAL へのIdentity Proofing要件を満たすことができない個人が、Identity ProofingおよびEnrollmentを円滑に進めるために利用される。そのような個人および人口統計学的グループは次のような個人が例として挙げられる: 必要なIdentity Evidenceを所有せず入手できない個人、障害者、高齢者、ホームレス経験者、オンライン・サービスまたはコンピューティング・ デバイスにほとんどまたは全く Access できない個人、銀行口座を持たないあるいはクレジット履歴が限定されている人、Identity盗難被害者、自然災害で避難したまたは影響を受けた個人、および 18 才未満の児童
 
 
 {% comment %}
@@ -1005,7 +1005,7 @@ Presense|リモート または 対面|リモート または 対面|対面 ま�
 Resolution|Resolutionするのに必要な最低限のAttribute|IAL1と同様|IAL1と同様
 Evidence|1 つの SUPERIOR、または 1 つの STRONG と 1 つの FAIR|1 つの SUPERIOR、または 1 つの STRONG と 1 つの FAIR|2 つの SUPERIOR、または 1 つの SUPERIOR と 1 つの STRONG、または 2 つの STRONG と 1 つの FAIR 
 Validation|Evidenceは真正性、正確性, 最新性の観点でValidateされる。すべての Core Attributes はAuthoritativeまたは信頼できるsourceによってValidateされる。|IAL1と同様|IAL1と同様
-Verification|Enrollmentコードの提示、またはAAL1かFAL1でのまたはデジタルアカウントへのアクセスの実証|バイオメトリクス比較、またはAAL2かFAL2でのデジタルアカウントへのアクセスの実証|バイオメトリクス比較、またはAAL2かFAL2でのデジタルアカウントへのアクセスの実証
+Verification|Enrollmentコードの提示、またはAAL1かFAL1でのまたはデジタルアカウントへの Access の実証|バイオメトリクス比較、またはAAL2かFAL2でのデジタルアカウントへの Access ess の実証|バイオメトリクス比較、またはAAL2かFAL2でのデジタルアカウントへの Access の実証
 Biometric Collection|オプション|オプション|必須
 {:latex-table="1" latex-caption="IAL Requirements Summary" latex-columns="p@0.15\textwidth,p@0.22\textwidth,p@0.22\textwidth,p@0.22\textwidth"}
 

@@ -26,7 +26,7 @@ These privacy considerations provide additional information in implementing the 
 ## Collection and Data Minimization
 {% endcomment %}
 
-ガイドラインは、適切な Identity Resolution、Validation および Verification のための利用可能な最善の方法に基づいて、Claim された Identity の存在を Validate し、Claim された Identity を Applicant と関連付けるために必要な PII のみを収集することを認めている。不必要な PII を収集すると、Identity Proofing サービスに使用されない情報がなぜ収集されるのかについて混乱が生じる恐れがある。これは侵襲性または行き過ぎた懸念につながり、Applicant からの信頼を失う可能性がある。さらに、PII の保持は許可されていないアクセスまたは使用に対して脆弱になる可能性がある。データの最小化により、許可されていないアクセスまたは使用の恐れがある PII の量を減らし、Identity Proofing プロセスに対する信頼を高めることができる。
+ガイドラインは、適切な Identity Resolution、Validation および Verification のための利用可能な最善の方法に基づいて、Claim された Identity の存在を Validate し、Claim された Identity を Applicant と関連付けるために必要な PII のみを収集することを認めている。不必要な PII を収集すると、Identity Proofing サービスに使用されない情報がなぜ収集されるのかについて混乱が生じる恐れがある。これは侵襲性または行き過ぎた懸念につながり、Applicant からの信頼を失う可能性がある。さらに、PII の保持は許可されていない Access または使用に対して脆弱になる可能性がある。データの最小化により、許可されていない Access または使用の恐れがある PII の量を減らし、Identity Proofing プロセスに対する信頼を高めることができる。
 
 {% comment %}
 The guidelines permit the collection of only the PII necessary to validate the existence of the claimed identity and associate the claimed identity to the applicant, based on best available practices for appropriate identity resolution, validation, and verification. Collecting unnecessary PII can create confusion regarding why information not being used for the identity proofing service is being collected. This leads to invasiveness or overreach concerns, which can lead to loss of applicant trust. Further, PII retention can become vulnerable to unauthorized access or use. Data minimization reduces the amount of PII vulnerable to unauthorized access or use, and encourages trust in the identity proofing process.
@@ -82,12 +82,12 @@ Consult your SAOP if there are questions about whether the proposed processing f
 ## Redress
 {% endcomment %}
 
-ガイドラインは、CSP が Identity Proofing から生じる Applicant の苦情または問題を救済するための効果的なメカニズムを提供し、加えてメカニズムは Applicant にとって見つけやすい、アクセスしやすいようにすることを要求してい る。
+ガイドラインは、CSP が Identity Proofing から生じる Applicant の苦情または問題を救済するための効果的なメカニズムを提供し、加えてメカニズムは Applicant にとって見つけやすい、 Access しやすいようにすることを要求してい る。
 {% comment %}
 The guidelines require the CSP to provide effective mechanisms for redressing applicant complaints or problems arising from the identity proofing, and make the mechanisms easy for applicants to find and access.
 {% endcomment %}
 
-Privacy Act は、記録システムを維持する連邦政府 CSP に対し、Applicant が記録にアクセスし、誤っている場合は修正できるようにする手順に従うことを求めている。Privacy Actのいずれのステートメントにも、該当する SORN(s) ([Sec. 5.1.2](sec5_ial.ja.md#PrivacyReqs)参照)への参照を含める必要があり、これにはアクセスまたは修正の要求を行う方法に関する指示が Applicant に提示される。連邦政府以外の CSP は、第三者が情報源である場合の連絡先情報を含め、同等の手順を用意すべきである。
+Privacy Act は、記録システムを維持する連邦政府 CSP に対し、Applicant が記録に Access し、誤っている場合は修正できるようにする手順に従うことを求めている。Privacy Actのいずれのステートメントにも、該当する SORN(s) ([Sec. 5.1.2](sec5_ial.ja.md#PrivacyReqs)参照)への参照を含める必要があり、これには Access または修正の要求を行う方法に関する指示が Applicant に提示される。連邦政府以外の CSP は、第三者が情報源である場合の連絡先情報を含め、同等の手順を用意すべきである。
 
 {% comment %}
 The Privacy Act requires federal CSPs that maintain a system of records to follow procedures to enable applicants to access and, if incorrect, amend their records. Any Privacy Act Statement should include a reference to the applicable SORN(s) (see [Sec. 5.1.2](sec5_ial.md#PrivacyReqs)), which provide the applicant with instructions on how to make a request for access or correction. Non-federal CSPs should have comparable procedures, including contact information for any third parties if they are the source of the information.
@@ -111,7 +111,7 @@ CSPs should make the availability of alternative methods for completing the proc
 {% endcomment %}
 本ガイドラインでは、CSP がプライバシーリスク評価を実施することを求めている。プライバシーリスク評価の実施において、CSP は以下を考慮する必要がある。
 
-1. CSP が取る行動（追加の Verification ステップや記録の保持など）が、情報への侵襲や許可されていないアクセスなど、Applicant にとっての問題を生じさせる可能性；および
+1. CSP が取る行動（追加の Verification ステップや記録の保持など）が、情報への侵襲や許可されていない Access など、Applicant にとっての問題を生じさせる可能性；および
 2. 問題が発生した場合の影響。CSP は、リスクの受容、リスクの軽減、およびリスクの共有を含め、特定されたプライバシーリスクに対して取るあらゆる対応を正当化できるようにすべきである。Applicant の同意の使用は、リスク共有の一つの形式と見なされるべきであり、したがって Applicant が共有リスクを評価・受容する能力を有すると合理的に予想される場合にのみ使用すべきである。
 {% comment %}
 The guidelines require the CSP to conduct a privacy risk assessment. In conducting a privacy risk assessment, CSPs should consider:
@@ -131,7 +131,7 @@ The guidelines require the CSP to conduct a privacy risk assessment. In conducti
 The guidelines cover specific compliance obligations for federal CSPs. It is critical to involve your agency's SAOP in the earliest stages of digital authentication system development to assess and mitigate privacy risks and advise the agency on compliance requirements, such as whether or not the PII collection to conduct identity proofing triggers the Privacy Act of 1974 [[PrivacyAct]](sec11_references.md#ref-PrivacyAct) or the E-Government Act of 2002 [[E-Gov]](sec11_references.md#ref-E-Gov) requirement to conduct a Privacy Impact Assessment. For example, with respect to identity proofing, it is likely that the Privacy Act requirements will be triggered and require coverage by either a new or existing Privacy Act system of records due to the collection and maintenance of PII or other attributes necessary to conduct identity proofing.
 {% endcomment %}
 
-SAOP は同様に、PIA が必要かどうかを判断する際に機関を支援することができる。 これらの考慮事項は、Identity Proofing だけのために Privacy Act SORN または PIA を行う要件として読よみとるべきではない。多くの場合、デジタル Identity ライフサイクル全体を包含する PIA および SORN を起草する、あるいは機関がオンラインアクセスを確立しているプログラムまたは便益について議論する、より大きなプログラム的 PIA の一部として Identity Proofing プロセスを含めることが最も理にかなっている。
+SAOP は同様に、PIA が必要かどうかを判断する際に機関を支援することができる。 これらの考慮事項は、Identity Proofing だけのために Privacy Act SORN または PIA を行う要件として読よみとるべきではない。多くの場合、デジタル Identity ライフサイクル全体を包含する PIA および SORN を起草する、あるいは機関がオンライン Access を確立しているプログラムまたは便益について議論する、より大きなプログラム的 PIA の一部として Identity Proofing プロセスを含めることが最も理にかなっている。
 
 {% comment %}
 The SAOP can similarly assist the agency in determining whether a PIA is required. These considerations should not be read as a requirement to develop a Privacy Act SORN or PIA for identity proofing alone; in many cases it will make the most sense to draft a PIA and SORN that encompasses the entire digital identity lifecycle or includes the identity proofing process as part of a larger, programmatic PIA that discusses the program or benefit to which the the agency is establishing online access.

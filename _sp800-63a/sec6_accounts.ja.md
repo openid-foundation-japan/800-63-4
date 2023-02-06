@@ -14,7 +14,7 @@ _This section is normative._
 
 ## Subscriber Accounts
 
-オンラインサービスへの 1 回限りのアクセスを提供する目的の Identity Proofing、または Applicant がアカウントへの Enrollment を拒否した場合を除き、CSP は Applicant をその Identity サービスの Subscriber として Enroll し、 Applicant の Identity Proofing の成功後にその Subscriber 用の固有の _subscriber account_ を確立するものとする（**SHALL**）。
+オンラインサービスへの 1 回限りの Access を提供する目的の Identity Proofing、または Applicant がアカウントへの Enrollment を拒否した場合を除き、CSP は Applicant をその Identity サービスの Subscriber として Enroll し、 Applicant の Identity Proofing の成功後にその Subscriber 用の固有の _subscriber account_ を確立するものとする（**SHALL**）。
 
 {% comment %}
 With the exception of identity proofing for the purposes of providing one-time access to an online service, or when an applicant declines enrollment into an account, the CSP **SHALL** enroll the applicant as a subscriber into its identity service and establish a unique _subscriber account_ for that subscriber following the successful identity proofing of an applicant. 
@@ -29,7 +29,7 @@ CSP は、各 Subscriber Account に一意の識別子を割り当てるもの�
 * Subscriber の Identity Proofing が無事に達成された際の最大 IAL
 * Subscriber Account に保持されている個人情報または機微情報の処理、保持、または開示に対して提供された Subscriber の同意。
 * Subscriber Account に現在バインドされているすべてのAuthenticator。それが Enrollment時に登録されたか、Enrollment後に登録されたかに関わらない。
-* RP アクセスをサポートするために、Identity Proofing プロセス中またはその後のトランザクションでValidateされたすべてのAttribute。
+* RP への Access をサポートするために、Identity Proofing プロセス中またはその後のトランザクションでValidateされたすべてのAttribute。
 
 {% comment %}
 The CSP **SHALL** assign a unique identifier to each subscriber account. 
@@ -64,7 +64,7 @@ The CSP **SHALL** perform a privacy risk assessment for the processing, retentio
 
 ## Subscriber Account Access
 
-PII を含むアカウントを多要素認証（MFA）で保護するという要件を満たすために、CSP は、Subscriber Account に登録されたAuthenticatorを使用して、AAL2 または AAL3 認証プロセスにより Subscriber Accountの 情報にアクセスする方法を提供するものとする(**SHALL**)。
+PII を含むアカウントを多要素認証（MFA）で保護するという要件を満たすために、CSP は、Subscriber Account に登録されたAuthenticatorを使用して、AAL2 または AAL3 認証プロセスにより Subscriber Accountの 情報に Access する方法を提供するものとする(**SHALL**)。
 
 CSP は、Subscriber が Subscriber Account に含まれる個人情報を変更または更新するための機能を提供するものとする（**SHALL**）。
 
