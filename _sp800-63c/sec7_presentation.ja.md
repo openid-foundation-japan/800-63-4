@@ -32,7 +32,7 @@ There are tradeoffs with each model, but each requires the proper validation of 
 -->
 
 それぞれのモデルにはトレードオフがあるが, どちらも適切な Assertion の検証を必要とする.
-Assertion は, [Sec. 5.1.3](sec5_federation.ja.mdmd#proxied) で述べたように, IdP-RP 間の Federation 促進のため, 上記とはまたの提示方法を用いて Proxy されることもある (**MAY**).
+Assertion は, [Sec. 5.1.3](sec5_federation.ja.mdmd#proxied) で述べたように, IdP-RP 間の Federation 促進のため, 上記とはまた別の提示方法を用いて Proxy されることもある (**MAY**).
 
 ## Back-Channel Presentation {#back-channel}
 
@@ -100,7 +100,7 @@ In this model, the RP directly requests the assertion from the IdP, minimizing c
 This method also facilitates the RP querying the IdP for additional attributes about the subscriber not included in the assertion itself, since back-channel communication can continue to occur after the initial authentication transaction has been completed without sending the user back to the IdP. This query occurs using an identity API, as described in [Sec. 6.3](sec6_assertions.md#s-identity-api).
 -->
 
-この手法では, RP が IdP に対して Assertion 自体には含まれていない Subscriber の追加の Attribute を照会すること促進する.
+この手法では, RP が IdP に対して Assertion 自体には含まれていない Subscriber の追加の Attribute を照会することを促進する.
 Back Channel 通信は, 最初の Authentication Transaction が完了した後も, ユーザーを IdP に送り返すことなく継続して実施可能であることがその要因である.
 この照会は [Sec. 6.3](sec6_assertions.ja.md#s-identity-api) で述べた Identity API を介して行われる.
 
@@ -130,7 +130,7 @@ When assertion references are presented, the IdP **SHALL** verify that the party
 -->
 
 Assertion Reference を提示する際, IdP は Assertion Reference を提示する相手が Authentication を要求している相手と同一であることを検証せねばならない (**SHALL**).
-IdP は, RP が IdP に Assertion Reference を提示際に Authentication を要求したり, その他の類似手段 (あるプロトコルにおける動的 RP 検証方法については [[RFC7636]](references.ja.md#ref-RFC7636) を参照) によりこれを実現できる.
+IdP は, RP が IdP に Assertion Reference を提示する際に Authentication を要求したり, その他の類似手段 (あるプロトコルにおける動的 RP 検証方法については [[RFC7636]](references.ja.md#ref-RFC7636) を参照) によりこれを実現できる.
 
 <!--
 Note that in a federation proxy described in [Sec. 5.1.3](sec5_federation.md#proxied), the IdP audience restricts the assertion reference and assertion to the proxy, and the proxy restricts any newly-created assertion references or assertions to the downstream RP.

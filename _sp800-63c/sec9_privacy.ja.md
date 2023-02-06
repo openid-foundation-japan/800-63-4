@@ -39,7 +39,7 @@ IdP は Attribute を処理する際に多様なビジネス上の目的を持�
 しかしながら, Attribute をその収集の本来の目的とは異なる目的で処理することは, 個人が追加処理に対して期待ないし満足していない場合にはプライバシーリスクにつながりうる.
 例えば, 適用される法律, 規制ないしポリシーが存在しなければ, Identity Service 以外のサービスを提供する際に Subscriber の同意は不要かもしれないが, Subscriber が確実な予測を行えるようにする (Predictability) には, その処理に関する通知が役に立つこともある.
 また別の Attribute の処理により異なるプライバシーリスクが生じる可能性もあり, Subscriber による同意や Subscriber による特定の Attribute の利用ないし開示に関するより詳細なコントロール (Manageability) が求めれることもある.
-Subscriber の同意は意味のあるのでなければならず, IdP が同意による手段をとる場合は, Subscriber による追加利用に関する同意を Identity Servicee の提供条件にしてはならない.
+Subscriber の同意は意味のあるものでなければならず, IdP が同意による手段をとる場合は, Subscriber による追加利用に関する同意を Identity Servicee の提供条件にしてはならない.
 
 <!--
 Consult the SAOP if there are questions about whether the proposed processing falls outside the scope of the permitted processing or the appropriate privacy risk mitigation measures.
@@ -51,8 +51,8 @@ Consult the SAOP if there are questions about whether the proposed processing fa
 [Sec. 5.5](sec5_federation.md#privacy-reqs) also encourages the use of technical measures to provide disassociability (enabling the processing of PII or events without association to individuals or devices beyond the operational requirements of the system) and prevent subscriber activity tracking and profiling [[NISTIR8062]](references.md#ref-NISTIR8062). Technical measures, such as those outlined in [Sec. 5.1.3](sec5_federation.md#proxied) for proxied federation and [Sec. 6.2.5](sec6_assertions.md#ppi) for pairwise pseudonymous identifiers, can increase the effectiveness of policies by making it more difficult to track or profile subscribers beyond operational requirements.
 -->
 
-[Sec. 5.5](sec5_federation.md#privacy-reqs) では, Disassociability (システム運用上の要件を超えて個人またはデバイスに関連付けることなく, PII またはイベントの処理を可能にすること) を提供する技術的手段の採用も推奨しており, Subscriber のアクティビティがトラキングされたりプロファイリングされることを防止している [[NISTIR8062]](references.md#ref-NISTIR8062).
-[Sec. 6.2.5](sec6_assertions.md#ppi) で述べた Proxied Federation や [Sec. 6.2.5](sec6_assertions.md#ppi) で述べた Pairwise Pseudonymous Identifier  [Sec. 5.1.3](sec5_federation.md#proxied) のような技術的手段は, Subscriber を運用上の要件を超えて Subscriber をトラッキングないしプロファイリングすることをより困難にし, ポリシー適用の効率化に寄与しうる.
+[Sec. 5.5](sec5_federation.md#privacy-reqs) では, Disassociability (システム運用上の要件を超えて個人またはデバイスに関連付けることなく, PII またはイベントの処理を可能にすること) を提供する技術的手段の採用も推奨しており, Subscriber のアクティビティがトラッキングされたりプロファイリングされることを防止している [[NISTIR8062]](references.md#ref-NISTIR8062).
+[Sec. 6.2.5](sec6_assertions.md#ppi) で述べた Proxied Federation や [Sec. 6.2.5](sec6_assertions.md#ppi) で述べた Pairwise Pseudonymous Identifier  [Sec. 5.1.3](sec5_federation.md#proxied) のような技術的手段は, Subscriber を運用上の要件を超えてトラッキングないしプロファイリングすることをより困難にし, ポリシー適用の効率化に寄与しうる.
 
 ## Notice and Consent {#notice}
 
