@@ -256,7 +256,7 @@ For remote or in-person identity proofing, the CSP **SHALL** collect _one_ of th
 2. One piece of STRONG evidence and one piece of FAIR evidence 
 
 
-#### Collection of Attributes
+#### Collection of Additional Attributes
 
 Validated evidence is the preferred source of identity attributes. If the presented identity evidence does not provide all the attributes the CSP considers core attributes, it **MAY** collect attributes that are self-asserted by the applicant. 
 
