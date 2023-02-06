@@ -12,11 +12,11 @@ section: 4
 
 _This section is normative._
 
-<!-- 
+<!--
 To satisfy the requirements of a given AAL and be recognized as a subscriber, a claimant **SHALL** be authenticated with a process whose strength is equal to or greater than the requirements at that level. The result of an authentication process is an identifier that **SHALL** be used each time that subscriber authenticates to that RP. The identifier **MAY** be pseudonymous. Subscriber identifiers **SHOULD NOT** be reused for a different subject but **SHOULD** be reused when a previously enrolled subject is re-enrolled by the CSP. Other attributes that identify the subscriber as a unique subject **MAY** also be provided.
 -->
 
-与えられた AAL の要件を満たし, Subscriber として認識されるためには, Claimant は, そのレベルの要件と同等, またはそれ以上の強度のプロセスで認証されることとする(**SHALL**). Authentication プロセスの結果は, Subscriber がその RP に対して Authentication する, それぞれの回で使用されることになる(**SHALL**) Identifier である. Identifier は Pseudonymous であってもよい(**MAY**). Subscriber Identifier は別の Subject に再利用されないほうがよい(**SHOULD NOT**)が, 以前に登録された Subject が CSP によって再登録された場合に再利用する必要がある(**SHOULD**). Subscriber を一意の Subject として識別するその他の属性も提供されることがある(**MAY**). 
+与えられた AAL の要件を満たし, Subscriber として認識されるためには, Claimant は, そのレベルの要件と同等, またはそれ以上の強度のプロセスで認証されることとする(**SHALL**). Authentication プロセスの結果は, Subscriber がその RP に対して Authentication する, それぞれの回で使用されることになる(**SHALL**) Identifier である. Identifier は Pseudonymous であってもよい(**MAY**). Subscriber Identifier は別の Subject に再利用されないほうがよい(**SHOULD NOT**)が, 以前に登録された Subject が CSP によって再登録された場合に再利用する必要がある(**SHOULD**). Subscriber を一意の Subject として識別するその他の属性も提供されることがある(**MAY**).
 
 <!--
 Detailed normative requirements for authenticators and verifiers at each AAL are provided in [Sec. 5](#AAL_SEC5).
@@ -52,7 +52,7 @@ AAL1 は, Claimant が Subscriber Account に Bind された Authenticator を�
 AAL1 authentication **SHALL** occur by the use of any of the following authenticator types, which are defined in [Sec. 5](sec5_authenticators.md#AAL_SEC5):
 -->
 
-AAL1 Authentication は, [Sec. 5](sec5_authenticators.md#AAL_SEC5)で定義されているいずれかの Authenticator タイプを使用することで発生することになる(**SHALL**). 
+AAL1 Authentication は, [Sec. 5](sec5_authenticators.md#AAL_SEC5)で定義されているいずれかの Authenticator タイプを使用することで発生することになる(**SHALL**).
 
 * Memorized secret ([Sec. 5.1.1](sec5_authenticators.md#memsecret))
 * Look-Up secret ([Sec. 5.1.2](sec5_authenticators.md#lookupsecrets))
@@ -70,7 +70,7 @@ AAL1 Authentication は, [Sec. 5](sec5_authenticators.md#AAL_SEC5)で定義さ�
 Cryptographic authenticators used at AAL1 **SHALL** use approved cryptography. Software-based authenticators that operate within the context of an operating system **MAY**, where applicable, attempt to detect compromise (e.g., by malware) of the user endpoint in which they are running and **SHOULD NOT** complete the operation when such a compromise is detected.
 -->
 
-AAL1 で使用される Cryptographic Authenticator は承認された暗号を使用することになる(**SHALL**). オペレーティングシステムのコンテキスト内で動作する Software-Based Authenticator は, 可能な場合, それらが実行中のユーザエンドポイントで(例: マルウェアによる)侵害の検出を試みてもよい(**MAY**). また, そのような侵害が検出された場合は操作を完了しないほうがよい(**SHOULD NOT**).
+AAL1 で使用される Cryptographic Authenticator は承認された暗号を使用することになる(**SHALL**). オペレーティングシステムのコンテキスト内で動作する Software-Based Authenticator は, 可能な場合, それらが実行中のユーザーエンドポイントで(例: マルウェアによる)侵害の検出を試みてもよい(**MAY**). また, そのような侵害が検出された場合は操作を完了しないほうがよい(**SHOULD NOT**).
 
 <!--
 Communication between the claimant and verifier **SHALL** be via an authenticated protected channel to provide confidentiality of the authenticator output and resistance to adversary-in-the-middle (AitM) attacks.
@@ -88,7 +88,7 @@ Claimant と Verifier の間の通信は, Authenticator の出力の機密性と
 Periodic reauthentication of subscriber sessions **SHALL** be performed as described in [Sec. 7.2](sec7_session.md#sessionreauthn). At AAL1, reauthentication of the subscriber **SHOULD** be repeated at least once per 30 days during an extended usage session, regardless of user activity. The session **SHOULD** be terminated (i.e., logged out) when this time limit is reached.
 -->
 
-Subscriber Session の定期的な Reauthentication は, [Sec. 7.2](sec7_session.md#sessionreauthn) で説明される通りに実行されることになる(**SHALL**). AAL1 では, Subscriber の Reauthentication は, ユーザのアクティビティに関係なく, 延長使用 Session の間は少なくとも30日に1回繰り返される必要がある(**SHOULD**).
+Subscriber Session の定期的な Reauthentication は, [Sec. 7.2](sec7_session.md#sessionreauthn) で説明される通りに実行されることになる(**SHALL**). AAL1 では, Subscriber の Reauthentication は, ユーザーのアクティビティに関係なく, 延長使用 Session の間は少なくとも30日に1回繰り返される必要がある(**SHOULD**).
 
 ### Security Controls
 
@@ -112,7 +112,7 @@ CSP は, 適用される可能性のある National Archives and Records Adminis
 AAL2 provides high confidence that the claimant controls authenticators bound to the subscriber account. Proof of possession and control of two distinct authentication factors is required through secure authentication protocols. Approved cryptographic techniques are required at AAL2 and above.
 -->
 
-AAL2 は, Claimant が Subscriber Account に Bind された Authenticator を制御するという高い確信を提供する. セキュアな Authentication プロトコルを介して, 2つの明確に異なる認証要素の所有と制御の証明が必要である. AAL2 以上では, 承認された暗号技術が必要である. 
+AAL2 は, Claimant が Subscriber Account に Bind された Authenticator を制御するという高い確信を提供する. セキュアな Authentication プロトコルを介して, 2つの明確に異なる認証要素の所有と制御の証明が必要である. AAL2 以上では, 承認された暗号技術が必要である.
 
 ### Permitted Authenticator Types {#aal2types}
 
@@ -189,9 +189,9 @@ Periodic reauthentication of subscriber sessions **SHALL** be performed as descr
 Reauthentication of a session that has not yet reached its time limit **MAY** require only a memorized secret or a biometric in conjunction with the still-valid session secret. The verifier **MAY** prompt the user to cause activity just before the inactivity timeout.
 -->
 
-Subscriber Session の定期的な Reauthentication は, [Sec. 7.2](sec7_session.md#sessionreauthn) で説明される通りに実行されることになる(**SHALL**). AAL2 では, Subscriber の Authentication は, ユーザのアクティビティに関係なく, 延長使用 Session の間は少なくとも12時間に1回繰り返されることになる(**SHALL**). Subscriber の Reauthentication は, 30分以上続く非アクティブ期間の後に繰り返されることになる(**SHALL**). これらのタイムリミットのいずれかに到達した場合, Session は終了(つまり, ログアウト)されることになる(**SHALL**).
+Subscriber Session の定期的な Reauthentication は, [Sec. 7.2](sec7_session.md#sessionreauthn) で説明される通りに実行されることになる(**SHALL**). AAL2 では, Subscriber の Authentication は, ユーザーのアクティビティに関係なく, 延長使用 Session の間は少なくとも12時間に1回繰り返されることになる(**SHALL**). Subscriber の Reauthentication は, 30分以上続く非アクティブ期間の後に繰り返されることになる(**SHALL**). これらのタイムリミットのいずれかに到達した場合, Session は終了(つまり, ログアウト)されることになる(**SHALL**).
 
-タイムリミットにまだ到達していない Session の Reauthentication には, Memorized Secret またはまだ有効な Session Secret と組み合わせた Biometric のみが必要とされるとしてもよい(**MAY**). Verifier は, 非アクティブタイムアウトの直前に, アクティビティを行うようにユーザを促してもよい(**MAY**).
+タイムリミットにまだ到達していない Session の Reauthentication には, Memorized Secret またはまだ有効な Session Secret と組み合わせた Biometric のみが必要とされるとしてもよい(**MAY**). Verifier は, 非アクティブタイムアウトの直前に, アクティビティを行うようにユーザーを促してもよい(**MAY**).
 
 ### Security Controls
 
@@ -269,7 +269,7 @@ AAL3 での Authentication に Biometric Factor が 使用される場合, Verif
 Periodic reauthentication of subscriber sessions **SHALL** be performed as described in [Sec. 7.2](sec7_session.md#sessionreauthn). At AAL3, authentication of the subscriber **SHALL** be repeated at least once per 12 hours during an extended usage session, regardless of user activity, as described in [Sec. 7.2](sec7_session.md#sessionreauthn). Reauthentication of the subscriber **SHALL** be repeated following any period of inactivity lasting 15 minutes or longer. Reauthentication **SHALL** use both authentication factors. The session **SHALL** be terminated (i.e., logged out) when either of these time limits is reached. The verifier **MAY** prompt the user to cause activity just before the inactivity timeout.
 -->
 
-Subscriber Session の定期的な Reauthentication は, [Sec. 7.2](sec7_session.md#sessionreauthn) で説明される通りに実行されることになる(**SHALL**). AAL3 では, [Sec. 7.2](sec7_session.md#sessionreauthn)で説明される通り, Subscriber の Authentication は, ユーザのアクティビティに関係なく, 延長使用 Session の間は少なくとも12時間に1回繰り返されることになる(**SHALL**). Subscriber の Reauthentication は, 15分以上続く非アクティブ期間の後に繰り返されることになる(**SHALL**). Reauthentication は両方の Authentication Factor を使用することになる(**SHALL**). これらのタイムリミットのいずれかに到達した場合, Session は終了(つまり, ログアウト)されることになる(**SHALL**). Verifier は, 非アクティブタイムアウトの直前に, アクティビティを行うようにユーザを促してもよい(**MAY**).
+Subscriber Session の定期的な Reauthentication は, [Sec. 7.2](sec7_session.md#sessionreauthn) で説明される通りに実行されることになる(**SHALL**). AAL3 では, [Sec. 7.2](sec7_session.md#sessionreauthn)で説明される通り, Subscriber の Authentication は, ユーザーのアクティビティに関係なく, 延長使用 Session の間は少なくとも12時間に1回繰り返されることになる(**SHALL**). Subscriber の Reauthentication は, 15分以上続く非アクティブ期間の後に繰り返されることになる(**SHALL**). Reauthentication は両方の Authentication Factor を使用することになる(**SHALL**). これらのタイムリミットのいずれかに到達した場合, Session は終了(つまり, ログアウト)されることになる(**SHALL**). Verifier は, 非アクティブタイムアウトの直前に, アクティビティを行うようにユーザーを促してもよい(**MAY**).
 
 ### Security Controls
 <!--
@@ -292,7 +292,7 @@ CSP は, 適用される可能性のある NARA の記録保持スケジュー�
 The CSP **SHALL** employ appropriately tailored privacy controls defined in [[SP800-53]](references.md#ref-SP800-53) or equivalent industry standard.
 -->
 
-CSP は, [[SP800-53]](references.md#ref-SP800-53) または同等の業界標準で定義された, 適切に誂えられたプライバシーコントロールを採用することになる(**SHALL**). 
+CSP は, [[SP800-53]](references.md#ref-SP800-53) または同等の業界標準で定義された, 適切に誂えられたプライバシーコントロールを採用することになる(**SHALL**).
 
 <!--
 If CSPs process attributes for purposes other than identity proofing, authentication, or attribute assertions (collectively "identity service"), related fraud mitigation, or to comply with law or legal process, CSPs **SHALL** implement measures to maintain predictability and manageability commensurate with the privacy risk arising from the additional processing. Measures **MAY** include providing clear notice, obtaining subscriber consent, or enabling selective use or disclosure of attributes. When CSPs use consent measures, CSPs **SHALL NOT** make consent for the additional processing a condition of the identity service.
