@@ -46,10 +46,10 @@ This section focuses on impersonation and false or fraudulent representation thr
 |---------------|------------------------|------------------|
 |自動化された Enrollment 試行| Attacker は、スクリプトや自動化プロセスを活用して大量のEnrollmentを急速に発生させる。| 盗難したデータを利用して、ボットが給付金の申請を行う。|
 |Evidence 改ざん | Attacker は Identity を Claim するために Evidence を作成・変更する。| 偽造運転免許証をEvidenceとして利用する。| 
-|合成 Identity 詐称 | Attacker は 実際の人物に結び付けられていない Evidence を捏造する| クレジットファイルを作成するたえに偽名でクレジットカードを利用できるようにする|
-|Identity 不正利用(Identity 盗難)| Attacker は他の個人の Identity や、Identity Evidenceを利用する。| 盗難されたパスポートの利用 |
-|Social Engineering| Attacker は正当なApplicantに対し、Identity Evidenceの提供を求めたり、騙してIdentity Proofingプロセスの完了を促す。| Attacker が将来の雇用主を装って、個人の Identity Evidence を提出させる|
-|虚偽 Claim| Attacker は、正当な Identity に虚偽の Attribute や情報を関連付ける| 個人が居住していない州に対して便益を Claim する|
+|合成 Identity 詐称 | Attacker は 実際の人物に結び付けられていない Evidence を捏造する。| クレジットファイルを作成するたえに偽名でクレジットカードを利用できるようにする。|
+|Identity 不正利用(Identity 盗難)| Attacker は他の個人の Identity や、Identity Evidenceを利用する。| 盗難されたパスポートを利用する。 |
+|Social Engineering| Attacker は正当なApplicantに対し、Identity Evidenceの提供を求めたり、騙してIdentity Proofingプロセスの完了を促す。| Attacker が将来の雇用主を装って、個人の Identity Evidence を提出させる。|
+|虚偽 Claim| Attacker は、正当な Identity に虚偽の Attribute や情報を関連付ける。| 個人が居住していない州に対して便益を Claim する。|
 {:latex-table="2" latex-caption="Enrollment and Identity Proofing Threats" latex-columns="p@0.25\textwidth,p@0.35\textwidth,p@0.25\textwidth"}
 
 {% comment %}
