@@ -942,31 +942,71 @@ Attestation 情報は, Verifier のリスクベース Authentication の決断�
 
 ### Phishing (Verifier Impersonation) Resistance {#verifimpers}
 
+<!--
 Phishing attacks, previously referred to in SP 800-63B as "verifier impersonation," are attempts by fraudulent verifiers and RPs to fool an unwary claimant into presenting an authenticator to an impostor. In some prior versions of SP 800-63, protocols resistant to phishing attacks were also referred to as "strongly MitM resistant."
+-->
 
+以前 SP 800-63B で "Verifier Impersonation" と呼ばれていた Phishing Attack は, 悪意のある偽物の Verifier と RP が, 不注意な Claimant をだまして Authenticator を Impostor に提示させようとする試みである. いくつかの SP 800-63 の以前のバージョンでは, Phishing Attack に耐性のあるプロトコルは, "Strongly MitM Resistant" とも呼ばれていた.
+
+<!--
 The term _phishing_ is widely used to describe a variety of similar attacks. For the purposes of this document, phishing resistance is the ability of the authentication protocol to detect and prevent disclosure of authentication secrets and valid authenticator outputs to an impostor relying party without reliance on the vigilance of the subscriber. The means by which the subscriber was directed to the impostor relying party are not relevant. For example, regardless of whether the subscriber was directed there via search engine optimization or prompted by email, it is considered to be a phishing attack.
+-->
 
+Phishing という用語は, さまざまな同様の Attack を説明するために広く使用されている. このドキュメントの目的上, Phishing 耐性とは, Subscriber の警戒に頼ることなく, Authentication Secret と有効な Authenticator 出力を Impostor が偽装する Relying Party へ開示することを検出し防止する Authentication Protocol の機能である. Subscriber が Impostor が偽装する Relying Party に向けられた手段は関係しない. 例えば, Subscriber が検索エンジンの最適化によってそこに案内されたのか, 電子メールで促されたのかに関係なく, Phishing Attack であると見なされる.
+
+<!--
 Approved cryptographic algorithms **SHALL** be used to establish phishing resistance where it is required. Keys used for this purpose **SHALL** provide at least the minimum security strength specified in the latest revision of [[SP800-131A]](references.md#ref-SP800-131A) (112 bits as of the date of this publication).
+-->
 
+Approved な暗号アルゴリズムは, 必要とされる場所で Phishing 耐性を確立するために使用されることとなる(**SHALL**). この目的のための Key は, 少なくとも [[SP800-131A]](references.md#ref-SP800-131A) の最新リビジョンで指定されている最小のセキュリティ強度(発行日現在で 112 ビット)を提供することとなる(**SHALL**).
+
+<!--
 Authenticators that involve the manual entry of an authenticator output, such as out-of-band and OTP authenticators, **SHALL NOT** be considered phishing resistant because the manual entry does not bind the authenticator output to the specific session being authenticated. In an AitM attack, an impostor verifier could replay the OTP authenticator output to the verifier and successfully authenticate.
+-->
 
+Out-of-band や OTP Authenticator のような, Authenticator 出力の手動入力を伴う Authenticator は, Phishing 耐性があると見なされることはない(**SHALL NOT**), なぜならば, 手動入力は Authenticator 出力を特定の Authenticated session に Bind しないためである. AitM Attack では, Impostor が偽装する Verifier が OTP Authenticator の出力を Verifier に Replay し, 認証に成功する可能性がある.
+
+<!--
 While an individual authenticator may be phishing resistant, phishing resistance for a given subscriber account is only achieved when all methods of authentication are phishing resistant.
+-->
 
+個々の Authenticator には Phishing 耐性があるとしても, 特定の Subscriber Account の Phishing 耐性はすべての Authentication の方法に Phishing 耐性がある場合にのみ達成される.
+
+<!--
 Two methods of phishing resistance are recognized: channel binding and verifier name binding. Channel binding is considered more secure than verifier name binding because it is not vulnerable to mis-issuance or misappropriation of relying party certificates, but either method satisfies the requirements for phishing resistance.
+-->
+
+Phishing 耐性の2つの方法が知られている: Channel Binding と Verifier Name Binding である. Channel Binding は Relying Party 証明書の誤発行や不正使用に対して脆弱ではないため, Verifier Name Binding よりも安全であるとみなされるが, どちらの方法も Phishing 耐性の要件を満たす.
 
 #### Channel Binding
 
+<!--
 An authentication protocol with channel binding **SHALL** establish an authenticated protected channel with the verifier. It **SHALL** then strongly and irreversibly bind a channel identifier that was negotiated in establishing the authenticated protected channel to the authenticator output (e.g., by signing the two values together using a private key controlled by the claimant for which the public key is known to the verifier). The verifier **SHALL** validate the signature or other information used to prove phishing resistance. This prevents an impostor verifier, even one that has obtained a certificate representing the actual verifier, from successfully relaying that authentication on a different authenticated protected channel.
+-->
 
+Channel Binding を伴う Authentication Protocol は, Authenticated Protected Channel を Verifier と確立することとなる(**SHALL**). 次に, Authenticated Protected Channel を確立する際にネゴシエートされた Channel identifier を, Authenticator 出力に強力かつ不可逆的に Bind することとなる(**SHALL**)(例: Public Key が Verifier に知られている Claimant によって制御される Private Key を使用して, 2つの値を一緒に署名することによって). Verifier は, Phishing 耐性を証明するために, 使用される署名またはその他の情報を検証することとなる(**SHALL**).  これにより, Impostor が偽装する Verifier が実際の Verifier を表す証明書を取得したとしても, 異なる Authenticated Protected Channel でその Authentication の中継に成功することを防ぐ.
+
+<!--
 An example of a phishing resistant authentication protocol that uses channel binding is client-authenticated TLS, because the client signs the authenticator output along with earlier messages from the protocol that are unique to the particular TLS connection being negotiated.
+-->
+
+Channel Binding を使用する Phishing 耐性のある Authentication Protocol の例は, クライアント認証 TLS である. なぜならば, ネゴシエートされた特定の TLS 接続に一意の, Protocol からの以前のメッセージと共に Authenticator の出力にクライアントが署名するためである.
 
 #### Verifier Name Binding
 
+<!--
 An authentication protocol with authenticator name binding **SHALL** establish an authenticated protected channel with the verifier. It **SHALL** then generate an authenticator output that is cryptographically bound to a verifier identifier that is authenticated as part of the protocol.  In the case of domain name system (DNS) identifiers, the verifier identifier **SHALL** be either the authenticated hostname of the verifier or a parent domain that is at least one level below the public suffix [[PSL]](references.md#ref-psl) associated with that hostname. The binding **MAY** be established by choosing an associated authenticator secret, by deriving an authenticator secret using the verifier identifier, by cryptographically signing the authenticator output with the verifier identifier, or similar cryptographically secure means.
+-->
+
+Authenticator Name Binding を伴う Authentication Protocol は, Authenticated Protected Channel をVerifier と確立することとなる(**SHALL**). 次に, Protocol の一部として Authenticate された Verifier Identifier に対して暗号的に Bind された Authenticator 出力を生成することとなる(**SHALL**). Domain Name System (DNS) Identifier の場合, Verifier Identifier は, Verifier の Authenticate されたホスト名, またはホスト名に関連付けられた Public Suffix [[PSL]](references.md#ref-psl) の少なくとも 1 レベル遡った親ドメインのいずれかとなる(**SHALL**). Binding は, 関連付けられた Authenticator Secret を選択するか, Verifier Identifier を使用して Authenticator Secret を導出するか, Verifier Identifier と供に Authenticator 出力に暗号的に署名するか, または同様の暗号的に安全な手段によって確立されてもよい(**MAY**).
 
 ### Verifier-CSP Communications {#csp-verifier}
 
+<!--
 In situations where the verifier and CSP are separate entities (as shown by the dotted line in [[SP800-63]](../_sp800-63/sec4_model.md#fig-1){:latex-href="#ref-SP800-63"} Figure 1), communications between the verifier and CSP **SHALL** occur through a mutually authenticated secure channel (such as a client-authenticated TLS connection) using approved cryptography.
+-->
+
+Verifier と CSP が別々のエンティティである状況では ([[SP800-63]](../_sp800-63/sec4_model.md#fig-1){:latex-href="#ref-SP800-63"} の点線で示されているように, Verifier と CSP 間の通信は, Approved Cryptography を使用して, (クライアント認証 TLS 接続のような) 相互に Authenticate された安全なチャネルを介して行われることとなる(**SHALL**). 
 
 ### Verifier Compromise Resistance {#verifier-secrets}
 
