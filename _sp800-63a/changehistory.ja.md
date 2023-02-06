@@ -14,7 +14,7 @@ _This appendix is informative._
 この付録は、SP 800-63A の最初のリリースからの変更点の概略を示すものである。
 
 * 低リスクのアプリケーションのための新しい IAL1 の要件を追加している。
-* 関連要件を提供する前に Identity Proofing の概念の導入を促進するため、セクション 4 と 5 の内容を入れ替える。
+* 関連要件に言及する前に Identity Proofing の概念を紹介しやすくするため、セクション 4 と 5 の内容を入れ替える。
 * 物理的文書および Digital Evidence を含む、許容可能な Identity Evidence の特性についての指針および要件を提供する。
 * Identity Attribute の収集と Identity Evidence の収集は切り離される。
 * Core Attributes の概念を導入する。
