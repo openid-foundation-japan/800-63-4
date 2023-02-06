@@ -128,10 +128,10 @@ To ensure users are equipped to make informed decisions about whether to proceed
 * Information on the monetary amount and acceptable forms of payment, and if there is an enrollment fee. Offering a larger variety of acceptable forms of payment allows users to choose their preferred payment operation.
 {% endcomment %}
 
-* ユーザーの Enrollment Session が対面式かリモートチャネルでの対面式か、またユーザーが選択できるかどうかについての情報。Session の許可されたオプションに関連する情報のみを提供する。
-  * 対面式またはリモートチャネルでの対面式の Session に必要な、場所に関する情報について、ユーザーが希望する場所を選択できるかどうか、必要なロジスティック情報を提供する。紛失や盗難の危険性が増すため、ユーザーは Identity Proofing を特定の公共の場所（銀行とスーパーマーケットの違い） に持参することを嫌がる場合があることに注意すること。
-  * リモート Session の技術要件（例：インターネット Access の要件）に関する情報。
-  * 待ち時間を最小限にするために、対面またはリモートチャネルでの対面 Identity Proofing Session の予約を設定するオプションがあること。立ち寄りが許可されている場合、予約なしでは待ち時間が長くなる可能性があることをユーザーに明確にする。
+* ユーザーの Enrollment Session が対面式か Remote チャネルでの対面式か、またユーザーが選択できるかどうかについての情報。Session の許可されたオプションに関連する情報のみを提供する。
+  * 対面式または Remote チャネルでの対面式の Session に必要な、場所に関する情報について、ユーザーが希望する場所を選択できるかどうか、必要なロジスティック情報を提供する。紛失や盗難の危険性が増すため、ユーザーは Identity Proofing を特定の公共の場所（銀行とスーパーマーケットの違い） に持参することを嫌がる場合があることに注意すること。
+  * Remote Session の技術要件（例：インターネット Access の要件）に関する情報。
+  * 待ち時間を最小限にするために、対面または Remote チャネルでの対面 Identity Proofing Session の予約を設定するオプションがあること。立ち寄りが許可されている場合、予約なしでは待ち時間が長くなる可能性があることをユーザーに明確にする。
     * Enrollment Session の予約、リマインダー、および既存の予約の再スケジュール方法について、明確な指示を提供する。
     * 予約のリマインダーを提供し、ユーザーが希望する予約のリマインダー形式（郵便、ボイスメール、電子メール、テキストメッセージなど）を指定できるようにする。ユーザーは、日付、時間、場所、および必要な Identity Evidence の説明などの情報を必要とする。
 * 許容される、要求される ID の証拠および属性、それぞれの部分が任意か必須か、および ID 証拠の完全なセットを提供しない場合の結果に関する情報。ユーザーは、ID 証拠の一部（出生証明書の隆起した印など）に固有の要件など、ID 証拠の具体的な組み 合わせを知る必要がある。これは、必要な ID 証拠の調達が困難になる可能性があるため、特に重要である。
@@ -160,7 +160,7 @@ To ensure users are equipped to make informed decisions about whether to proceed
 Enrollment Session に特有の Usability の考慮事項は以下を含む: 
 
 * Identity Proofing Session の開始時に、ユーザーに手続きをリマインドする。Enrollment 前準備の段階で説明した手順を覚えていることを期待してはいけない。Enrollment Session がEnrollment 前準備の直後に行われない場合は、Proofing と Enrollment のステップの完了に要する標準的な時間をユーザーに明確に思い出させることが特に重要である。
-* 対面、またはリモートチャネルを介した対面のための予約変更のオプションを提供する。
+* 対面、または Remote チャネルを介した対面のための予約変更のオプションを提供する。
 * Enrollment Session を進めるために必要な Identity Evidence (Enrollment コードを含む) をユーザーが所持していることを確認するために、許容されており、かつ必須の Identity Evidence を記載したチェックリストを提供する（該当する場合）。ユーザーが完全な Identity Evidence 一式を持っていない場合、Identity Proofing Session を部分的に完了できるかどうかに関して通知する必要がある。
 * どの情報が破棄されるか、どの情報が将来のフォローアップ Session のために保持されるか、将来の Session を完了するためにどのような Identity Evidence を持参する必要があるかについて、ユーザーに通知する。理想的には、ユーザーが Identity Proofing Session を部分的に完了したいかどうかを選択できる。
 * 過去の Identity Verification の体験がユーザーの期待値を左右することがあるものとして、Enrollment Session の結果に関するユーザーの期待値を設定すること（例：対面で運転免許証を受け取る、パスポートを郵便で受け取る）。
@@ -206,7 +206,7 @@ Usability considerations specific to the enrollment session include:
   	* 今後のフォローアップ Session のために保持される情報がある場合は、その内容。
   	* 情報が保持される期間。
   	* 将来の Session に持参する必要のある Identity Evidence について。
-  * Enrollment が失敗した場合、代替の Enrollment Session タイプについて明確な指示をユーザーに提供する。例えば、リモートでの Proofing を完了できないユーザーに対して対面での Proofing を提供するといったことである。
+  * Enrollment が失敗した場合、代替の Enrollment Session タイプについて明確な指示をユーザーに提供する。例えば、Remote での Proofing を完了できないユーザーに対して対面での Proofing を提供するといったことである。
 * Enrollment Session の中でユーザーが Authenticator を受け取る場合、Authenticator の使用および保守に関する情報を提供する。例えば、情報としては、使用方法（特に、初回使用または初期化について異なる要件がある場合）、Authenticator の有効期限に関する情報、Authenticator の保護方法、Authenticator の紛失または盗難時の対処方法などを含めることができる。
 
 {% comment %}
@@ -233,7 +233,7 @@ Usability considerations specific to the enrollment session include:
   * When biometrics are collected during the enrollment session, provide users clear instructions on how to complete the collection process. The instructions are best given just prior to the process. Verbal instructions with corrective feedback from a live operator are the most effective (e.g., instruct users where the biometric sensor is, when to start, how to interact with the sensor, and when the biometric collection is completed).
 {% endcomment %}
 
-* リモート Identity Proofing はオンラインで行われるため、一般的なWeb Usability の原則に従うこと。例えば: 
+* Remote Identity Proofing はオンラインで行われるため、一般的なWeb Usability の原則に従うこと。例えば: 
   * Enrollment プロセスを通じてユーザーを案内するユーザーインターフェイスを設計する。
   * ユーザーが記憶する負荷を軽減する。
   * インターフェイスに一貫性を持たせる。

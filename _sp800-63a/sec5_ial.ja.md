@@ -382,7 +382,7 @@ The following requirements apply to CSPs that employ biometric mechanisms as par
 以下の要件は、Applicantからバイオメトリックの特徴を収集する CSP に適用される:  
 
 1. CSP は、バイオメトリックはApplicantから収集されたものであり、別の対象から取得したものではないことを保証する方法で、バイオメトリクスを収集するものとする(**SHALL**）。
-2. バイオメトリクスをリモートで収集し比較する場合、CSP は、生存する人間が本当にそこに存在していることを確認し、スプーフィングとなりすましの試みを軽減するために、生存検出機能を実装するものとする(**SHALL**)。
+2. バイオメトリクスをRemote で収集し比較する場合、CSP は、生存する人間が本当にそこに存在していることを確認し、スプーフィングとなりすましの試みを軽減するために、生存検出機能を実装するものとする(**SHALL**)。
 3. 個人でバイオメトリクスを収集する場合、CSPはオペレータにバイオメトリクス・ソース（例：指、顔）にnon-naturalな物質が存在するかどうかを確認させ、Proofingプロセスの一環としてそのような検査を実行するものとする(**SHALL**)。
 
 {% comment %}
@@ -428,7 +428,7 @@ Applicant references are individuals who participate in the identity proofing of
 ####  Requirements for Trusted Referees {#TrustedRefs}
 {% endcomment %}
 
-CSPは、IAL 1および2で、リモートで実施するIdentity Proofingにおいて、Trusted Refereeを利用するオプションを提供するものとする(**SHALL**)。
+CSPは、IAL 1および2で、Remote で実施するIdentity Proofingにおいて、Trusted Refereeを利用するオプションを提供するものとする(**SHALL**)。
 
 以下の要件は、Trusted Refereeが提案される場面において、その利用に適用される:  
 
@@ -503,13 +503,13 @@ The following requirements apply to all CSPs providing identity proofing service
 
 本書はいくつかの異なるIdentity Proofing手法に適用する要件を定める。取りうる手法は次を含む:
 
-* 完全自動化されたリモートプロセス。
-* CSPオペレータ支援によるリモート・プロセス 
-* 自動化されたリモート・プロセスとオペレーター支援によるリモート・プロセスの組み合わせ。
+* 完全自動化されたRemote プロセス。
+* CSPオペレータ支援によるRemote プロセス 
+* 自動化されたRemote プロセスとオペレーター支援によるRemote プロセスの組み合わせ。
 * Applicantとの対面による物理的な対話プロセス、および 
 * IAL3 Supervised Remote Identity Proofingプロセス
 
-IAL1 および IAL2 でのIdentity Proofingは、これらのプロセスのいずれも使用することができるが、 IAL3 では、Applicantとの直接の物理的対話または IAL3 監視下にあるリモートIdentity Proofingを必要とする。
+IAL1 および IAL2 でのIdentity Proofingは、これらのプロセスのいずれも使用することができるが、 IAL3 では、Applicantとの直接の物理的対話または IAL3 監視下にあるRemote Identity Proofingを必要とする。
 
 以下のセクションでは、各 IAL でのIdentity Proofingに関する要件を示す。
 
@@ -529,7 +529,7 @@ The following sections provide requirements for identity proofing at each IAL.
 
 ## Identity Assurance Level 1 {#IAL1}
 
-IAL1 では、リモートおよび対面でのIdentity Proofingを認めている。IAL1 における Identity Proofing プロセスは、悪意のあるアクターによる不正な Identity の提示を検出するために、許容される様々な技術を認める一方で、ユーザー受け入れを促進し、偽陰性や申請からの離脱（Identity Proofingを正常に完了しない正当なApplicant）を最小化するものである。注目すべきは、IAL1 において、提供されたEvidenceと顔写真との自動比較などのバイオメトリクス照合の使用は任意であり、そのようなEvidenceの収集が実現不可能な場合や、プライバシーおよびEquityリスクがセキュリティの考慮事項を上回るような場合でも、ProofingおよびEnrollmentを進めることができるということである。 
+IAL1 では、Remote te および対面でのIdentity Proofingを認めている。IAL1 における Identity Proofing プロセスは、悪意のあるアクターによる不正な Identity の提示を検出するために、許容される様々な技術を認める一方で、ユーザー受け入れを促進し、偽陰性や申請からの離脱（Identity Proofingを正常に完了しない正当なApplicant）を最小化するものである。注目すべきは、IAL1 において、提供されたEvidenceと顔写真との自動比較などのバイオメトリクス照合の使用は任意であり、そのようなEvidenceの収集が実現不可能な場合や、プライバシーおよびEquityリスクがセキュリティの考慮事項を上回るような場合でも、ProofingおよびEnrollmentを進めることができるということである。 
 
 以下の要件は、IAL1においてIdentity ProofingおよびEnrollmentサービスを提供するすべての CSP に適用される。
 
@@ -561,7 +561,7 @@ The CSP **SHALL** implement a means to prevent automated attacks on the identity
 #### Evidence Collection
 {% endcomment %}
 
-リモートまたは対面での Identity Proofing の場合、CSP は Applicant から以下のいずれかを収集するものとする(**SHALL**)。
+Remote または対面での Identity Proofing の場合、CSP は Applicant から以下のいずれかを収集するものとする(**SHALL**)。
 
 1. SUPERIOR Evidence 1 つ、または
 2. STRONG Evidence 1 つ、およびFAIR Evidence 1 つ。
@@ -656,7 +656,7 @@ Upon the successful completion of identity proofing at IAL1, the CSP **SHOULD** 
 {% endcomment %}
 
 ## Identity Assurance Level 2 {#IAL2}
-IAL1 と同様に、IAL2の Identity Proofingでは、なりすまし攻撃やその他のIdentity Proofingのエラーを軽減しながら、アクセシビリティを最大化するために、リモートおよび対面でのIdentity Proofingプロセスの両方が認められる。CSPは、リモートでのIAL2 Identity Proofingを、完全に自動化されたプロセス、CSP オペレータが参加するプロセス、またはその 2 つの組み合わせにより、達成することができる。
+IAL1 と同様に、IAL2の Identity Proofingでは、なりすまし攻撃やその他のIdentity Proofingのエラーを軽減しながら、アクセシビリティを最大化するために、Remote および対面でのIdentity Proofingプロセスの両方が認められる。CSPは、Remote でのIAL2 Identity Proofingを、完全に自動化されたプロセス、CSP オペレータが参加するプロセス、またはその 2 つの組み合わせにより、達成することができる。
 
 {% comment %}
 Like IAL1, IAL2 identity proofing allows for both remote and in-person identity proofing processes in order to maximize accessibility while still mitigating against impersonation attacks and other identity proofing errors.  Remote IAL2 identity proofing can be accomplished by the CSP via a fully automated process, a CSP operator attended process, or a combination of the two. 
@@ -683,7 +683,7 @@ The CSP **SHALL** implement a means to prevent automated attacks on the identity
 #### Evidence Collection
 {% endcomment %}
 
-リモートまたは対面での Identity Proofing の場合、CSP は Applicant から以下のいずれかを収集するものとする(**SHALL**)。
+Remote または対面での Identity Proofing の場合、CSP は Applicant から以下のいずれかを収集するものとする(**SHALL**)。
 
 1. SUPERIOR Evidence 1 つ、または
 2. STRONG Evidence 1 つ、およびFAIR Evidence 1 つ。
@@ -747,7 +747,7 @@ For added assurance, the CSP **SHALL** evaluate the core attributes, as validate
 ### Identity Verification Requirements
 {% endcomment %}
 
-#### リモートでの Identity Proofing
+#### Remote Identity Proofing
 {% comment %}
 #### Remote Identity Proofing
 {% endcomment %}
@@ -938,7 +938,7 @@ The CSP **SHALL** collect and record a biometric sample at the time of proofing 
 IAL3 における対面でのProofingは、以下の 2 つの方法のうち _1つ_ の方法で実施されるものとする(**SHALL**)。
 
 - Applicantと CSP オペレーターとの対面での対話、または
-- [Sec. 5.5.8](sec5_ial.ja.md#IAL3supervised)  _IAL3 Supervised Remote Identity Proofing_ の要件に基づき、オペレータ監視下でのApplicantとのリモートでの対話
+- [Sec. 5.5.8](sec5_ial.ja.md#IAL3supervised)  _IAL3 Supervised Remote Identity Proofing_ の要件に基づき、オペレータ監視下でのApplicantとのRemote での対話
 
 {% comment %}
 In-person proofing at IAL3 **SHALL** be conducted in _one_ of two ways:
@@ -970,8 +970,8 @@ IAL3 Supervised Remote Identity Proofing は、Applicantとの直接の対話に
 以下の要件は、すべての IAL3 Supervised Remote Identity Proofing Session に適用されます。
 
 1. CSP は、Identity Proofing Session 全体を監視し、Applicantが Identity Proofing Session 全体にわたって継続的に存在していることを確認するものとする(**SHALL**)。たとえば、Applicantの高解像度ビデオ伝送を継続的に実施する方法が挙げられる。
-2. CSP は、Identity Proofing Session の全期間中、Applicantと一緒に生身のオペレータをリモートから参加させるものとする(**SHALL**)。
-3. CSP は、Identity Proofing中にApplicantが取ったすべての行動が、リモートのオペレータにはっきりと見えるようにすることを要求するものとする(**SHALL**)。
+2. CSP は、Identity Proofing Session の全期間中、Applicantと一緒に生身のオペレータをRemote から参加させるものとする(**SHALL**)。
+3. CSP は、Identity Proofing中にApplicantが取ったすべての行動が、Remote のオペレータにはっきりと見えるようにすることを要求するものとする(**SHALL**)。
 4. CSP は、EvidenceのすべてのデジタルVerification（例：チップまたは無線技術を介したもの）が、統合されたスキャナおよびセンサ（例：組み込み指紋リーダ）によって実行されることを要求するものとする(**SHALL**)。
 5. CSP は、オペレーターが、潜在的な不正行為を検出し、Supervised Remote Proofing Session を適切に実行するためのトレーニング・プログラムの受講を必須とする(**SHALL**)。
 6. CSP は、配置される環境に適した物理的な改ざん検出および耐タンパ機能を採用するものとする(**SHALL**)。例えば、制限エリアまたは信頼できる個人によって監視されている場所にあるキオスクは、ショッピングモールのコンコースなどの半公共エリアにあるものよりも改ざん検出の必要性が低い。
@@ -1001,7 +1001,7 @@ The following requirements apply to all IAL3 Supervised Remote Identity Proofing
 
 要件 | IAL1 | IAL2 | IAL3
 ------------|-------|-------|-------
-Presense|リモート または 対面|リモート または 対面|対面 または Supervised Remote Identity Proofing
+Presense|Remote または 対面|Remote または 対面|対面 または Supervised Remote Identity Proofing
 Resolution|Resolutionするのに必要な最低限のAttribute|IAL1と同様|IAL1と同様
 Evidence|1 つの SUPERIOR、または 1 つの STRONG と 1 つの FAIR|1 つの SUPERIOR、または 1 つの STRONG と 1 つの FAIR|2 つの SUPERIOR、または 1 つの SUPERIOR と 1 つの STRONG、または 2 つの STRONG と 1 つの FAIR 
 Validation|Evidenceは真正性、正確性, 最新性の観点でValidateされる。すべての Core Attributes はAuthoritativeまたは信頼できるsourceによってValidateされる。|IAL1と同様|IAL1と同様

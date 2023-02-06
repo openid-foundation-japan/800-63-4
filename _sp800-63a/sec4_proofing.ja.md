@@ -14,7 +14,7 @@ _This section is normative._
 
 このセクションでは、Identity Proofingおよびエンロールメントプロセスの概要、ならびにApplicantがclaimするアイデンティティのResolution、Validation、Verificationをサポートするための要件について説明する。また、Identity Proofingプロセスの追加的な側面に関するガイドラインも提供する。 これらの要件は、claimされたアイデンティティが実世界に存在し、Applicantがそのアイデンティティに関連付けられた個人であることを確かなものにすることを意図している。あわせて、Identity Proofingプロセスの要素というのは、エンロールされた多数のsubscribersに影響を与える CSP のアイデンティティサービスに対する攻撃が、保護されるデータの価値よりも大きな時間とコストを必要とすることを確かなものにするよう設計されている。
 
-さらに、このガイドラインは、Resolution、Validation、およびVerificationを完了できる複数の方法、ならびにIdentity Proofingプロセスをサポートする可能性のある複数のタイプのIdentity Evidenceを規定している。実用的な範囲で、CSP および組織は、手段、能力、および技術への Access の面で異なる人々に対して Access を促進するために、Identity Proofingサービスおよびプロセスを実装するときにオプションを有効にするべきである（**SHOULD**）。少なくとも、これには、複数種類のIdentity Evidenceおよび組み合わせを許容し、複数のデータ Validation  Source のサポート、アイデンティティValidationの複数の方法の有効化（例：trusted refereesの活用）、エンゲージメント用の複数のチャネル（例：対面、リモート）、およびApplicantのための支援メカニズムの提供（例：Applicant References） を含めるべきである（**SHOULD**）。
+さらに、このガイドラインは、Resolution、Validation、およびVerificationを完了できる複数の方法、ならびにIdentity Proofingプロセスをサポートする可能性のある複数のタイプのIdentity Evidenceを規定している。実用的な範囲で、CSP および組織は、手段、能力、および技術への Access の面で異なる人々に対して Access を促進するために、Identity Proofingサービスおよびプロセスを実装するときにオプションを有効にするべきである（**SHOULD**）。少なくとも、これには、複数種類のIdentity Evidenceおよび組み合わせを許容し、複数のデータ Validation  Source のサポート、アイデンティティValidationの複数の方法の有効化（例：trusted refereesの活用）、エンゲージメント用の複数のチャネル（例：対面、Remote）、およびApplicantのための支援メカニズムの提供（例：Applicant References） を含めるべきである（**SHOULD**）。
 
 {% comment %}
 This section provides and overview of the identity proofing and enrollment process as well as requirements to support the resolution, validation, and verification of the identity claimed by an applicant. It also provides guidelines on additional aspects of the identity proofing process.  These requirements are intended to ensure that the claimed identity exists in the real world and that the applicant is the individual associated with that identity. Collectively, the elements of the identity proofing process are designed to ensure that attacks against a CSP's identity service that affect a large number of enrolled subscribers require greater time and cost than the value of the data being protected.
@@ -73,7 +73,7 @@ _This section is informative._
 ![Illustration of steps in identity proofing and enrollment]({{site.baseurl}}/{{page.collection}}/media/ProofingProcess.png 'Identity Proofing Process'){:style="width:1074px;height:496px;;min-width: 1074px;min-height: 496px;" latex-src="ProofingProcess.png" latex-fig="1" latex-place="h"}
 {% endcomment %}
 
-以下は、IAL2 のリモートIdentity Proofingプロセスにおいて CSP およびApplicantがどのようにやりとりするかについて例を示している。
+以下は、IAL2 のRemote Identity Proofingプロセスにおいて CSP およびApplicantがどのようにやりとりするかについて例を示している。
 
 1. **Resolution** 
     1. CSP はApplicantから、名前、住所、生年月日、電子メール、電話番号などのAttributeを収集する。
@@ -336,7 +336,7 @@ All core attributes, whether obtained from identity evidence or applicant self-a
 提示されたEvidenceをValidateする許容可能な方法は、次を含む:
 
 - 対面でのIdentity Proofingでは、訓練を受けた担当者による目視および触覚検査
-- リモートでのIdentity Proofingでは、訓練を受けた担当者による目視検査。
+- Remote でのIdentity Proofingでは、訓練を受けた担当者による目視検査。
 - 適切な技術を使用した、自動化された文書のValidationプロセス。
 - Evidenceに含まれるAttributeの、Authoritativeまたは信頼できる Source によるValidation。
 - Evidenceの発行Authorityの公開鍵を使用した、デジタルエビデンスまたはAttributeデータオブジェクトを保護するデジタル署名のVerification。
@@ -359,7 +359,7 @@ Authoritative Sourceとは、次の性質のうち1つ以上によって、Ident
 
 - Identity Attributeのオリジナル Source である、または 
 - Identity Attribute情報を含む Identity Evidenceの発行者であり、発行者は、例えば[[PatriotAct]](sec11_references.ja.md#ref-PatriotAct)の下で確立されたCustomer Identification Program ガイドラインのような規制や公的な説明責任を有する機関による継続的な監視の対象となるような、文書化した Identity Proofingプロセスを通じて、Claimした Identityを確認した場合、または 
-- 個人との直接の対話（対面またはリモート）を通じてClaimされたIdentityを確認できるIdentity Proofingプロセスを通じて、Attribute情報を収集してValidateしたもの、または
+- 個人との直接の対話（対面またはRemote ）を通じてClaimされたIdentityを確認できるIdentity Proofingプロセスを通じて、Attribute情報を収集してValidateしたもの、または
 - Identity Evidenceのピースの発行元まで追跡できるようなエビデンスとAttribute情報への Access を有する。
 
 {% comment %}
@@ -402,9 +402,9 @@ CSP は、[セクション 5](sec5_ial.ja.md#ial-section) で提示される IAL
 
 - [セクション 5.1.6](sec5_ial.ja.md#EnrollCodes)で指定されている **Enrollment code verification**。
 - **対面での物理的比較**。CSP 運営者とApplicantは、Identity Proofingイベントのために直接対話する。CSP 運営者は、Identity Evidenceに提示された顔写真と、Identity ProofingイベントにエンゲージされたApplicantの顔との物理的な比較を実行する。
-- **リモート（有人および無人）物理的顔画像比較**。CSP 運営者は、Identity Evidence上に存在する顔写真と、Identity ProofingイベントにエンゲージしたApplicantの顔画像との物理的な比較を実行する。CSP 運営者は、Identity Proofingイベントの一部または全部においてApplicantと直接対話（有人）するか、キャプチャしたビデオまたは写真に加えEvidenceのアップロードされたコピーを使用して後で比較（無人）を行うことができる。比較をあとで実施する場合、キャプチャされたビデオまたは写真がIdentity ProofingイベントにエンゲージしているApplicant当人を撮影したものであることを確認するための手順が取られる。 
-- **自動化されたバイオメトリクス比較**。バイオメトリクス・システム比較は、対面またはリモートのIdentity Proofingイベントにおいて実施できる。Identity Evidenceに含まれる顔写真、または他のバイオメトリクス特性は、自動化されたバイオメトリクス比較システムによって、Identity Proofingイベント中にApplicantが提出したApplicant当人の顔画像写真、または他のバイオメトリクスの当人サンプルと比較される。自動化されたバイオメトリクス比較システムは、比較のために数学的アルゴリズムを使用する。
-- **デジタルアカウントのコントロール**。個人は、認証またはフェデレーション・プロトコルの使用を通じて、デジタルアカウント （例：オンライン銀行口座）または署名済みデジタルアサーション（例：Verifiable Credentials）のコントロールを実証することができる。これは、対面でクレデンシャルをデバイスまたはリーダーに提示することでも実施できるかもしれないが、リモートのIdentity Proofing Session 中に実施されることのほうが多いだろう。
+- **Remote （有人および無人）物理的顔画像比較**。CSP 運営者は、Identity Evidence上に存在する顔写真と、Identity ProofingイベントにエンゲージしたApplicantの顔画像との物理的な比較を実行する。CSP 運営者は、Identity Proofingイベントの一部または全部においてApplicantと直接対話（有人）するか、キャプチャしたビデオまたは写真に加えEvidenceのアップロードされたコピーを使用して後で比較（無人）を行うことができる。比較をあとで実施する場合、キャプチャされたビデオまたは写真がIdentity ProofingイベントにエンゲージしているApplicant当人を撮影したものであることを確認するための手順が取られる。 
+- **自動化されたバイオメトリクス比較**。バイオメトリクス・システム比較は、対面またはRemote のIdentity Proofingイベントにおいて実施できる。Identity Evidenceに含まれる顔写真、または他のバイオメトリクス特性は、自動化されたバイオメトリクス比較システムによって、Identity Proofingイベント中にApplicantが提出したApplicant当人の顔画像写真、または他のバイオメトリクスの当人サンプルと比較される。自動化されたバイオメトリクス比較システムは、比較のために数学的アルゴリズムを使用する。
+- **デジタルアカウントのコントロール**。個人は、認証またはフェデレーション・プロトコルの使用を通じて、デジタルアカウント （例：オンライン銀行口座）または署名済みデジタルアサーション（例：Verifiable Credentials）のコントロールを実証することができる。これは、対面でクレデンシャルをデバイスまたはリーダーに提示することでも実施できるかもしれないが、Remote のIdentity Proofing Session 中に実施されることのほうが多いだろう。
 
 
 {% comment %}

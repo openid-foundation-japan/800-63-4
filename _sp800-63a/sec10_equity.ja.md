@@ -232,9 +232,9 @@ Possible mitigations include:
 3. Providing in-person proofing options
 {% endcomment %}
 
-**問題の説明： リモートまたは対面での Identity Proofing プロセスは、障害のある人にとって課題がある。**
+**問題の説明： Remote または対面での Identity Proofing プロセスは、障害のある人にとって課題がある。**
 
-リモートでの Identity Proofing の緩和策としては、以下が考えられる:
+Remote での Identity Proofing の緩和策としては、以下が考えられる:
 
 1. Trusted Referee ([Sec. 5.1.9.1](sec5_ial.ja.md#TrustedRefs)) を提供する。
 2. Applicant Reference ([Sec. 5.1.9.2](sec5_ial.ja.md#ApplicantRefs)) を使用することができるようにする。
