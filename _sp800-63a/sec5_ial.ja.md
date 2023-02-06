@@ -262,7 +262,7 @@ The following requirements apply to federal agencies, regardless of whether they
 ###  Requirements for Enrollment Codes {#EnrollCodes}
 {% endcomment %}
 
-Enrollmentコードは、Applicantが有効なアドレスに Access できることを確認するために使用されます。Identity ProofingとEnrollmentが 1 回の Session で完了しない場合、Enrollmentコードは、Enrollmentプロセスを完了する目的で、ApplicantのEnrollmentレコードへのバインドを再確立するために使用することもできる。
+Enrollmentコードは、Applicantが有効なアドレスに Access できることを確認するために使用されます。Identity ProofingとEnrollmentが 1 回の Session で完了しない場合、Enrollmentコードは、Enrollmentプロセスを完了する目的で、ApplicantのEnrollmentレコードへの Binding を再確立するために使用することもできる。
 
 以下の要件は、任意の IAL でEnrollmentコードを使用するすべての CSP に適用される。
 
@@ -507,7 +507,7 @@ The following requirements apply to all CSPs providing identity proofing service
 * CSPオペレータ支援によるリモート・プロセス 
 * 自動化されたリモート・プロセスとオペレーター支援によるリモート・プロセスの組み合わせ。
 * Applicantとの対面による物理的な対話プロセス、および 
-* IAL3 監視下でのリモート(Supervised Remote)Identity Proofingプロセス
+* IAL3 Supervised Remote Identity Proofingプロセス
 
 IAL1 および IAL2 でのIdentity Proofingは、これらのプロセスのいずれも使用することができるが、 IAL3 では、Applicantとの直接の物理的対話または IAL3 監視下にあるリモートIdentity Proofingを必要とする。
 
@@ -789,7 +789,7 @@ Upon the successful completion of identity proofing at IAL2, the CSP **SHALL** s
 
 ## Identity Assurance Level 3 {#IAL3}
 
-IAL3 は、IAL2 で要求される手順にさらなる厳密さを加えたもので、Identity と RP をなりすまし、詐欺、 または他の著しく有害な損害から一層保護するための追加的かつ特定のプロセス（バイオメトリクス情報の 比較、収集、保持の実施を含む）が対象となる。さらに、IAL3 における Identity Proofingは、対面で行われる（ただし [Sec. 5.5.8](sec4_proofing.ja.md#IAL3supervised)に定義される監視下でのリモート Identity Proofingを含む）。
+IAL3 は、IAL2 で要求される手順にさらなる厳密さを加えたもので、Identity と RP をなりすまし、詐欺、 または他の著しく有害な損害から一層保護するための追加的かつ特定のプロセス（バイオメトリクス情報の 比較、収集、保持の実施を含む）が対象となる。さらに、IAL3 における Identity Proofingは、対面で行われる（ただし [Sec. 5.5.8](sec4_proofing.ja.md#IAL3supervised)に定義される Supervised Remote Identity Proofingを含む）。
 
 {% comment %}
 IAL3 adds additional rigor to the steps required at IAL2 and is subject to additional and specific processes (including the use of biometric information comparison, collection, and retention) to further protect the identity and RP from impersonation, fraud, or other significantly harmful damages. In addition, identity proofing at IAL3 is performed in person (to include supervised remote identity proofing defined in [Sec. 5.5.8](sec4_proofing.md#IAL3supervised)).
@@ -965,15 +965,15 @@ Regardless of which of the two methods the CSP employs, the following requiremen
 ### Requirements for IAL3 Supervised Remote Identity Proofing {#IAL3supervised}
 {% endcomment %}
 
-IAL3 監視下でのリモートIdentity Proofing は、Applicantとの直接の対話に匹敵するレベルの信頼性とセキュリティを達成することを意図している。
+IAL3 Supervised Remote Identity Proofing は、Applicantとの直接の対話に匹敵するレベルの信頼性とセキュリティを達成することを意図している。
 
-以下の要件は、すべての IAL3 監視下でのリモートIdentity Proofing Session に適用されます。
+以下の要件は、すべての IAL3 Supervised Remote Identity Proofing Session に適用されます。
 
 1. CSP は、Identity Proofing Session 全体を監視し、Applicantが Identity Proofing Session 全体にわたって継続的に存在していることを確認するものとする(**SHALL**)。たとえば、Applicantの高解像度ビデオ伝送を継続的に実施する方法が挙げられる。
 2. CSP は、Identity Proofing Session の全期間中、Applicantと一緒に生身のオペレータをリモートから参加させるものとする(**SHALL**)。
 3. CSP は、Identity Proofing中にApplicantが取ったすべての行動が、リモートのオペレータにはっきりと見えるようにすることを要求するものとする(**SHALL**)。
 4. CSP は、EvidenceのすべてのデジタルVerification（例：チップまたは無線技術を介したもの）が、統合されたスキャナおよびセンサ（例：組み込み指紋リーダ）によって実行されることを要求するものとする(**SHALL**)。
-5. CSP は、オペレーターが、潜在的な不正行為を検出し、監視下でのリモートProofing Session を適切に実行するためのトレーニング・プログラムの受講を必須とする(**SHALL**)。
+5. CSP は、オペレーターが、潜在的な不正行為を検出し、Supervised Remote Proofing Session を適切に実行するためのトレーニング・プログラムの受講を必須とする(**SHALL**)。
 6. CSP は、配置される環境に適した物理的な改ざん検出および耐タンパ機能を採用するものとする(**SHALL**)。例えば、制限エリアまたは信頼できる個人によって監視されている場所にあるキオスクは、ショッピングモールのコンコースなどの半公共エリアにあるものよりも改ざん検出の必要性が低い。
 7. CSP は、すべての通信が、相互に認証された保護チャネルで行われることを保証するものとする(**SHALL**)。
 
@@ -1001,7 +1001,7 @@ The following requirements apply to all IAL3 Supervised Remote Identity Proofing
 
 要件 | IAL1 | IAL2 | IAL3
 ------------|-------|-------|-------
-Presense|リモート または 対面|リモート または 対面|対面 または 監視下でのリモート Identity Proofing
+Presense|リモート または 対面|リモート または 対面|対面 または Supervised Remote Identity Proofing
 Resolution|Resolutionするのに必要な最低限のAttribute|IAL1と同様|IAL1と同様
 Evidence|1 つの SUPERIOR、または 1 つの STRONG と 1 つの FAIR|1 つの SUPERIOR、または 1 つの STRONG と 1 つの FAIR|2 つの SUPERIOR、または 1 つの SUPERIOR と 1 つの STRONG、または 2 つの STRONG と 1 つの FAIR 
 Validation|Evidenceは真正性、正確性, 最新性の観点でValidateされる。すべての Core Attributes はAuthoritativeまたは信頼できるsourceによってValidateされる。|IAL1と同様|IAL1と同様
