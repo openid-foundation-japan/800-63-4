@@ -177,7 +177,7 @@ The following privacy requirements apply to all CSPs providing identity services
 ### General Equity Requirements {#EquityReqs}
 {% endcomment %}
 
-Equityの向上というゴールをサポートし、全体的なリスクアセスメントプロセスの一環で、CSP はそのIdentityサービスの要素をアセスメントして、あるグループのメンバーが他のグループと比較して、不公平な Access 、処遇、あるいは結果になる可能性があるプロセスまたは技術を特定するものとする(**SHALL**)。 不公平な Access あるいは結果となりえるIdentity Proofingプロセスおよび技術の非網羅的なリストについては、[Sec. 10](sec10_equity.ja.md#EquityConsiderations)を参照すること。
+Equityの向上というゴールをサポートし、全体的なリスク評価プロセスの一環で、CSP はそのIdentityサービスの要素をアセスメントして、あるグループのメンバーが他のグループと比較して、不公平な Access 、処遇、あるいは結果になる可能性があるプロセスまたは技術を特定するものとする(**SHALL**)。 不公平な Access あるいは結果となりえるIdentity Proofingプロセスおよび技術の非網羅的なリストについては、[Sec. 10](sec10_equity.ja.md#EquityConsiderations)を参照すること。
 
 
 大統領令 13985 [[EO13985]](sec11_references.ja.md#ref-EO13985) は、_Advancing Racial Equity and Support for Underserved Communities Through the Federal Government_ として、政府プログラムと政策が有色人種およびその他十分な便益を享受できていないグループのための機会および便益に対する組織的障壁を存続させてしまっていないかどうか、その程度がどれほどであるか、評価するよう各連邦機関に求めていることに注意すること。 
@@ -194,7 +194,7 @@ Note that executive order 13985 [[EO13985]](sec11_references.md#ref-EO13985), _A
 1.  リスク評価の結果に基づいて、CSP は、不公平な Access 、処遇、または結果を生じる可能性を軽減するために講じる措置を文書化するものとする(**SHALL**)。 
 2.  CSP は、プロセスまたは技術に影響を与えるIdentityサービスの変更を行う場合は、公平な Access 、処遇、または成果に対するリスクを再評価するものとする(**SHALL**)。
 3.  CSP は、そのサービスに関連する現在のリスクを正確に反映するように、公平な Access 、処遇、または成果に対するリスクを定期的に再評価するものとする(**SHALL**)。
-4.  CSP は、これらのリスクアセスメントへのApplicantの参加を義務付けることはしないものとする(**SHALL NOT**)。
+4.  CSP は、これらのリスク評価へのApplicantの参加を義務付けることはしないものとする(**SHALL NOT**)。
 5.  CSP は、不公平な Access 、処遇、または結果に関連するリスクの評価結果、および関連する軽減策を、そのサービスを使用するすべての組織または個人が利用できるようにするものとする(**SHALL**)。
 6.  CSP は、その評価結果も一般に公開するものとする(**SHALL**)。 
 
