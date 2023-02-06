@@ -19,7 +19,7 @@ One of the challenges of providing online services is being able to associate a 
 {% endcomment %}
 
 
-このガイダンスは、Identity Proofing を、オンライン・サービスにアクセスするsubjectと実存する人物との関係性を、ある程度の確実性または保証をもって確立するプロセスのことであると定義する本書は、連邦機関、サードパーティのCredential Service Providers(CSP)、そしてIdentity Proofingサービスを提供する他の組織に対するガイダンスを提供する。
+このガイダンスは、Identity Proofing を、オンライン・サービスにアクセスする Subject と実存する人物との関係性を、ある程度の確実性または保証をもって確立するプロセスのことであると定義する。本書は、連邦機関、サードパーティのCredential Service Providers(CSP)、そしてIdentity Proofingサービスを提供する他の組織に対するガイダンスを提供する。
 
 {% comment %}
 This guidance defines identity proofing as the process of establishing, to some degree of certainty or assurance, a relationship between a subject accessing online services and a real-life person. This document provides guidance for Federal Agencies, third-party Credential Service Providers (CSP), and other organizations that provide identity proofing services.
@@ -70,7 +70,7 @@ Identity Proofingに期待される成果は:
 * **Identity resolution**: によりClaimされたアイデンティティが、CSPサーバーのユーザー母集団の文脈で単一で一意な個人であると判断し、
 * **Evidence validation**: により提出された全てのエビデンスが全て本物で、真正性があり、有効期限が切れていないことを確認し、
 * **Attribute validation**: によりCore Attributeの正確性を確認し、
-* **Identity verification**: アイデンティティエビデンスを提出した実存する人物と、Claimされたアイデンティティを関連づけて検証し、
+* **Identity verification**: Claim されたアイデンティティと、Identity Evidence を提出した実存する人物とが結びついていることを検証し、
 * **Fraud Prevention**: 便益、サービス、データあるいはアセットに対する欺瞞的なアクセスの試みを緩和することである。
 
 {% comment %}
@@ -95,7 +95,7 @@ Assurance in a subscriber's identity is described using one of the following Ide
 **Identity Proofingなし (IAL0)**: Applicantと特定の実在するアイデンティティとをリンクする要件はない。subjectの活動に伴って提供されるすべてのAttributesは、自己申告または自己申告として扱われる。自己申告のattributesはIAL0ではvalidateもverifyもされない。
 
 {% comment %}
-**No identity proofing (IAL0)**: There is no requirement to link the applicant to a specific, real-life identity. Any attributes provided in conjunction with the subject's activities are self-asserted and are treated as self-asserted. Self-asserted attributes at IAL0 are neither validated nor verified.
+**No identity proofing (IAL0)**: There is no requirement to link the applicant to a specific, real-life identity. Any attributes provided in conjunction with the Subject's activities are self-asserted and are treated as self-asserted. Self-asserted attributes at IAL0 are neither validated nor verified.
 {% endcomment %}
 
 **IAL1**: Claimされたアイデンティティが現実世界に存在することをサポートするIdentity Proofingプロセスである。Core attributeはアイデンティティエビデンスやapplicantから申告されたアイデンティティから得たものである。すべてのCore attributeはauthoritativeあるいは信用できるソースに対してvalidateされ、Identity Proofingプロセス実施下にある個人のattributeにリンクさせるためのステップを踏む。
