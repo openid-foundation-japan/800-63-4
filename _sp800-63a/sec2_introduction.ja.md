@@ -98,7 +98,7 @@ Assurance in a subscriber's identity is described using one of the following Ide
 **No identity proofing (IAL0)**: There is no requirement to link the applicant to a specific, real-life identity. Any attributes provided in conjunction with the Subject's activities are self-asserted and are treated as self-asserted. Self-asserted attributes at IAL0 are neither validated nor verified.
 {% endcomment %}
 
-**IAL1**: Identity Proofing プロセスは、Claimされたアイデンティティが現実世界に存在することを裏付ける。Core Attributesは Identity Evidence から得たものや、Applicantから申告されたものである。すべての Core AttributesはAuthoritativeあるいは信用できるソースに対してValidateされ、Identity Proofingプロセス実施下にある個人と、Attributeとを結びつけるための方策を講じる。
+**IAL1**: Identity Proofing プロセスは、Claimされたアイデンティティが現実世界に存在することを裏付ける。Core Attributesは Identity Evidence から得たものや、Applicantから申告されたものである。すべての Core AttributesはAuthoritativeあるいは信用できる Source に対してValidateされ、Identity Proofingプロセス実施下にある個人と、Attributeとを結びつけるための方策を講じる。
 
 {% comment %}
 **IAL1**: The identity proofing process supports the real-world existence of the claimed identity. Core attributes are obtained from identity evidence or asserted by the applicant.  All core attributes are validated against authoritative or credible sources and steps are taken to link the attributes to the person undergoing the identity proofing process.   

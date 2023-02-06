@@ -14,7 +14,7 @@ _This section is normative._
 
 このセクションでは、Identity Proofingおよびエンロールメントプロセスの概要、ならびにapplicantがclaimするアイデンティティのresolution、validation、verificationをサポートするための要件について説明する。また、Identity Proofingプロセスの追加的な側面に関するガイドラインも提供する。 これらの要件は、claimされたアイデンティティが実世界に存在し、applicantがそのアイデンティティに関連付けられた個人であることを確かなものにすることを意図している。あわせて、Identity Proofingプロセスの要素というのは、エンロールされた多数のsubscribersに影響を与える CSP のアイデンティティサービスに対する攻撃が、保護されるデータの価値よりも大きな時間とコストを必要とすることを確かなものにするよう設計されている。
 
-さらに、このガイドラインは、resolution、validation、およびverificationを完了できる複数の方法、ならびにIdentity Proofingプロセスをサポートする可能性のある複数のタイプのIdentity Evidenceを規定している。実用的な範囲で、CSP および組織は、手段、能力、および技術への Access の面で異なる人々に対して Access を促進するために、Identity Proofingサービスおよびプロセスを実装するときにオプションを有効にするべきである（**SHOULD**）。少なくとも、これには、複数種類のIdentity Evidenceおよび組み合わせを許容し、複数のデータvalidationソースのサポート、アイデンティティvalidationの複数の方法の有効化（例：trusted refereesの活用）、エンゲージメント用の複数のチャネル（例：対面、リモート）、およびapplicantsのための支援メカニズムの提供（例：applicant references） を含めるべきである（**SHOULD**）。
+さらに、このガイドラインは、resolution、validation、およびverificationを完了できる複数の方法、ならびにIdentity Proofingプロセスをサポートする可能性のある複数のタイプのIdentity Evidenceを規定している。実用的な範囲で、CSP および組織は、手段、能力、および技術への Access の面で異なる人々に対して Access を促進するために、Identity Proofingサービスおよびプロセスを実装するときにオプションを有効にするべきである（**SHOULD**）。少なくとも、これには、複数種類のIdentity Evidenceおよび組み合わせを許容し、複数のデータ Validation  Source のサポート、アイデンティティvalidationの複数の方法の有効化（例：trusted refereesの活用）、エンゲージメント用の複数のチャネル（例：対面、リモート）、およびapplicantsのための支援メカニズムの提供（例：applicant references） を含めるべきである（**SHOULD**）。
 
 {% comment %}
 This section provides and overview of the identity proofing and enrollment process as well as requirements to support the resolution, validation, and verification of the identity claimed by an applicant. It also provides guidelines on additional aspects of the identity proofing process.  These requirements are intended to ensure that the claimed identity exists in the real world and that the applicant is the individual associated with that identity. Collectively, the elements of the identity proofing process are designed to ensure that attacks against a CSP's identity service that affect a large number of enrolled subscribers require greater time and cost than the value of the data being protected.
@@ -80,7 +80,7 @@ _This section is informative._
     2. CSP、運転免許証やパスポートなど、1つまたは複数のIdentity Evidenceも収集する。
     {:.letter-list} 
 2. **Validation**
-    1. CSP は、ステップ 1a で取得したattributesを、authoritativeソースまたは信頼できるソースと照合することで、validateする。
+    1. CSP は、ステップ 1a で取得した Attributeを、Authoritative  Source または信頼できる Source と照合することで、validateする。
     2. CSPは、提示されたエビデンスの真正性、正確性、および最新性を Validate する。
     {:.letter-list} 
 3. **Verification**
@@ -338,7 +338,7 @@ All core attributes, whether obtained from identity evidence or applicant self-a
 - 対面でのIdentity Proofingでは、訓練を受けた担当者による目視および触覚検査
 - リモートでのIdentity Proofingでは、訓練を受けた担当者による目視検査。
 - 適切な技術を使用した、自動化された文書のValidationプロセス。
-- Evidenceに含まれるAttributeの、Authoritativeまたは信頼できるソースによるValidation。
+- Evidenceに含まれるAttributeの、Authoritativeまたは信頼できる Source によるValidation。
 - Evidenceの発行Authorityの公開鍵を使用した、デジタルエビデンスまたはAttributeデータオブジェクトを保護するデジタル署名のVerification。
 
 {% comment %}
@@ -357,7 +357,7 @@ Acceptable methods for validating presented evidence include:
 
 Authoritative Sourceとは、次の性質のうち1つ以上によって、Identity Attribute情報の正確性を提供あるいはValidateできるエンティティである。Authoritative sourceは:
 
-- Identity Attributeのオリジナル・ソースである、または 
+- Identity Attributeのオリジナル Source である、または 
 - Identity Attribute情報を含む Identity Evidenceの発行者であり、発行者は、例えば[[PatriotAct]](sec11_references.ja.md#ref-PatriotAct)の下で確立されたCustomer Identification Program ガイドラインのような規制や公的な説明責任を有する機関による継続的な監視の対象となるような、文書化した Identity Proofingプロセスを通じて、Claimした Identityを確認した場合、または 
 - 個人との直接の対話（対面またはリモート）を通じてClaimされたIdentityを確認できるIdentity Proofingプロセスを通じて、Attribute情報を収集してValidateしたもの、または
 - Identity Evidenceのピースの発行元まで追跡できるようなエビデンスとAttribute情報への Access を有する。
@@ -373,11 +373,11 @@ An authoritative source is an entity that can provide or validate the accuracy o
 - Has access to evidence and attribute information that can be traced to the issuing source of a piece of identity evidence.
 {% endcomment %}
 
-信頼できるソースとは、次の性質のうち 1 つ以上によって Identity EvidenceおよびAttribute情報の正確性を提供またはValidateできるエンティティである。信頼できるソースは:
+信頼できる Source とは、次の性質のうち 1 つ以上によって Identity EvidenceおよびAttribute情報の正確性を提供またはValidateできるエンティティである。信頼できる Source は:
 
 - Identity Proofingプロセスを通じてValidateされたAttribute情報への Access を有する、または
 - Authoritative Sourceまで追跡できるAttribute情報への Access を有する、または
-- 正確性、一貫性、および最新性を目的としてデータ相関をチェックされる、複数のソースから取得されたIdentity Attribute情報を保持している。
+- 正確性、一貫性、および最新性を目的としてデータ相関をチェックされる、複数の Source から取得されたIdentity Attribute情報を保持している。
 
 {% comment %}
 A credible source is an entity that can provide or validate the accuracy of identity evidence and attribute information through one or more of the following characteristics. A credible source:
