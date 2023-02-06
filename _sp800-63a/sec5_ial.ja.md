@@ -529,7 +529,7 @@ The following sections provide requirements for identity proofing at each IAL.
 
 ## Identity Assurance Level 1 {#IAL1}
 
-IAL1 では、リモートおよび対面でのIdentity Proofingを認めています。IAL1 における Identity Proofing プロセスは、悪意のあるアクターによる不正な Identity の提示を検出するために、許容される様々な技術を認める一方で、ユーザー受け入れを促進し、偽陰性や申請からの離脱（Identity Proofingを正常に完了しない正当なApplicant）を最小化するものである。注目すべきは、IAL1 において、提供されたEvidenceと顔写真との自動比較などのバイオメトリクス照合の使用は任意であり、そのようなEvidenceの収集が実現不可能な場合や、プライバシーおよびEquityリスクがセキュリティの考慮事項を上回るような場合でも、ProofingおよびEnrollmentを進めることができるということである。 
+IAL1 では、リモートおよび対面でのIdentity Proofingを認めている。IAL1 における Identity Proofing プロセスは、悪意のあるアクターによる不正な Identity の提示を検出するために、許容される様々な技術を認める一方で、ユーザー受け入れを促進し、偽陰性や申請からの離脱（Identity Proofingを正常に完了しない正当なApplicant）を最小化するものである。注目すべきは、IAL1 において、提供されたEvidenceと顔写真との自動比較などのバイオメトリクス照合の使用は任意であり、そのようなEvidenceの収集が実現不可能な場合や、プライバシーおよびEquityリスクがセキュリティの考慮事項を上回るような場合でも、ProofingおよびEnrollmentを進めることができるということである。 
 
 以下の要件は、IAL1においてIdentity ProofingおよびEnrollmentサービスを提供するすべての CSP に適用される。
 
