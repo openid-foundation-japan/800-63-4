@@ -114,7 +114,7 @@ _SP 800-63B contains both normative and informative material._
 <!-- [[SP800-63C]](../_sp800-63c/sec1_purpose.md#purpose){:latex-href="#ref-SP800-63C"}: Provides requirements on the use of federated identity architectures and assertions to convey the results of authentication processes and relevant identity information to an agency application. Further, this volume offers privacy-enhancing techniques to share information about a valid, authenticated subject, and describes methods that allow for strong multi-factor authentication (MFA) while the subject remains pseudonymous to the digital service.
 _SP 800-63C contains both normative and informative material._-->
 
-[[SP800-63C]](../_sp800-63c/sec1_purpose.md#purpose){:latex-href="#ref-SP800-63C"}: Authentication プロセスの結果および関連する Identity 情報を機関アプリケーションに伝達するための, Federated Identity Architecture および Assertion の使用に関する要件を規定している. さらに, この文書では, 有効な認証済 Subject に関する情報を共有するためのプライバシー強化技術を提供し, Subject がデジタルサービスに対して匿名のままで強力な　Multi-factor Authentication（MFA）を可能にする方法について説明している.
+[[SP800-63C]](../_sp800-63c/sec1_purpose.md#purpose){:latex-href="#ref-SP800-63C"}: Authentication プロセスの結果および関連する Identity 情報を機関アプリケーションに伝達するための, Federated Identity Architecture および Assertion の使用に関する要件を規定している. さらに, この文書では, 有効な Authenticated Subject に関する情報を共有するためのプライバシー強化技術を提供し, Subject がデジタルサービスに対して匿名のままで強力な　Multi-factor Authentication（MFA）を可能にする方法について説明している.
 
 _SP 800-63C contains both normative and informative material._
 
