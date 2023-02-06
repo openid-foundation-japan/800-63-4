@@ -86,7 +86,7 @@ The CSP **SHALL** establish and maintain a unique subscriber account for each ac
 
 ### Subscriber Account Termination
 
-CSP は、以下のいずれかが発生した場合、Subscriber Account を終了させ、その使用を中止するものとする。
+CSP は、以下のいずれかが発生した場合、Subscriber Account を終了させ、その使用を中止するものとする(**SHALL**)。
 
 * Subscriber が CSP の Subscriber Account の終了を選択した場合 
 * CSP は、CSP が定める任意の期限付き通知期間および要件に従って、Subscriber Account が侵害されたと判断した場合
