@@ -302,7 +302,7 @@ The CSP **SHALL** validate all identity evidence collected to meet evidence coll
 
 CSPは、提示されたエビデンスの真正性、正確性、および最新性を次の手段によってValidateするものとする(**SHALL**):
 
-- Evidenceが正しい形式であり、Identity Evidenceのタイプに対する完全な情報を含んでいることを確認する。
+- Evidenceが正しい形式であり、Identity Evidenceの種別に応じて求められる情報が全てそろっていることを確認する。
 - Evidenceが偽造されていないこと、および改ざんされていないことを確認する。
 - セキュリティ機能を確認する。
 
