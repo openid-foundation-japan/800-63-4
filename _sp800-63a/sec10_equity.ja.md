@@ -97,7 +97,7 @@ Possible mitigations include:
 2. Allowing for the use of Applicant References ([Sec. 5.1.9.2](sec5_ial.md#ApplicantRefs)) who can vouch for the applicant
 {% endcomment %}
 
-**問題の説明： 特定のユーザーグループに属する Applicant について、Authoritative または信頼できる Source （例：　モバイルネットワークオペレーターや電話番号検証機関など）が保持する記録が不十分であり、中核の Attribute の Validation や提示された Evidence をサポートできない。**
+**問題の説明： 特定のユーザーグループに属する Applicant について、Authoritative または信頼できる Source （例：　モバイルネットワークオペレーターや電話番号検証機関など）が保持する記録が不十分であり、Core Attributes の Validation や提示された Evidence をサポートできない。**
 
 緩和策としては、以下が考えられる:
 
