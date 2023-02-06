@@ -16,7 +16,7 @@ _This section is normative._
 This section provides the detailed requirements specific to each type of authenticator. With the exception of reauthentication requirements specified in [Sec. 4](sec4_aal.md#AAL_SEC4) and the requirement for phishing resistance at AAL3 described in [Sec. 5.2.5](sec5_authenticators.md#verifimpers), the technical requirements for each of the authenticator types are the same regardless of the AAL at which the authenticator is used.
 -->
 
-このセクションでは, 各タイプの Authenticator の固有の詳細な要件を提供する. [Sec. 4](sec4_aal.md#AAL_SEC4)で指定された Reauthentication の要件および [Sec. 5.2.5](sec5_authenticators.md#verifimpers) で説明された AAL3 での Phishing 耐性のための要件を除いて, Authenticator が使用される AAL に関係なく, 各 Authenticator タイプの技術要件は同じである.
+このセクションでは, 各 Authenticator タイプ固有の詳細な要件を提供する. [Sec. 4](sec4_aal.md#AAL_SEC4)で指定された Reauthentication の要件および [Sec. 5.2.5](sec5_authenticators.md#verifimpers) で説明された AAL3 での Phishing 耐性のための要件を除いて, Authenticator が使用される AAL に関係なく, 各 Authenticator タイプの技術要件は同じである.
 
 ## Requirements by Authenticator Type {#reqauthtype}
 
@@ -34,7 +34,7 @@ Memorized Secret Authenticator — 一般に _Password_ または数値の場合
 The requirements in this section apply to centrally verified memorized secrets that are used as an independent authentication factor, sent over an authenticated protected channel to the verifier of a CSP. Memorized secrets that are used locally by a multi-factor authenticator are referred to as _activation secrets_ and discussed in [Sec. 5.2.11](sec5_authenticators.md#s-5-2-11).
 -->
 
-このセクションの要件は, 認証された保護されたチャネルを介して CSP の Verifier に送信される, 独立した Authentication Factor として使用される中央で検証された Memorized Secret に適用される. Multi-Factor Authenticator によってローカルで使用される Memorized Secret は, _Activation Secret_ と呼ばれ, [Sec. 5.2.11](sec5_authenticators.md#s-5-2-11) で議論される.
+このセクションの要件は, Authenticated Protected Channel を介して CSP の Verifier に送信される, 独立した Authentication Factor として使用される中央で検証された Memorized Secret に適用される. Multi-Factor Authenticator によってローカルで使用される Memorized Secret は, _Activation Secret_ と呼ばれ, [Sec. 5.2.11](sec5_authenticators.md#s-5-2-11) で議論される.
 
 #### Memorized Secret Authenticators
 
@@ -60,7 +60,7 @@ Verifier は, 長さが少なくとも8文字の Memorized Secret を要求す�
 Verifiers **SHALL** verify the entire submitted memorized secret (i.e., not truncate the secret). For purposes of the above length requirements, each Unicode code point **SHALL** be counted as a single character.
 -->
 
-Verifier は, 提出された Memorized Secret 全体を検証することになる(**SHALL**)(つまり, Secret を切り捨てない). 前述の長さの要件のために, 各 Unicode コードポイントは1文字としてカウントされることになる(**SHALL**).
+Verifier は, 提出された Memorized Secret 全体を検証することになる(**SHALL**)(つまり, Secret を切り詰めない). 前述の長さの要件に関して, 各 Unicode コードポイントは1文字としてカウントされることになる(**SHALL**).
 
 <!--
 If Unicode characters are accepted in memorized secrets, the verifier **SHOULD** apply the normalization process for stabilized strings using either the NFKC or NFKD normalization defined in Sec. 12.1 of *Unicode Normalization Forms* [[UAX15]](references.md#ref-UAX15). This process is applied before hashing the byte string representing the memorized secret. Subscribers choosing memorized secrets containing Unicode characters **SHOULD** be advised that some characters may be represented differently by some endpoints, which can affect their ability to authenticate successfully.
@@ -72,13 +72,13 @@ If Unicode characters are accepted in memorized secrets, the verifier **SHOULD**
 Memorized secret verifiers **SHALL NOT** permit the subscriber to store a hint that is accessible to an unauthenticated claimant. Verifiers **SHALL NOT** prompt subscribers to use specific types of information (e.g., "What was the name of your first pet?", a technique known as knowledge-based authentication (KBA) or security questions) when choosing memorized secrets.
 -->
 
- Memorized Secret の Verifier は, Subscriber に認証されていない Claimant がアクセスできるヒントを保存することを許可することはない(**SHALL NOT**). Verifier は, Memorized Secret を選択する際に, Subscriber に特定の種類の情報 (例えば, 「あなたの最初のペットの名前は何ですか?」といった知識ベース認証 (KBA) または秘密の質問として知られる手法) を使用するように促すことはない(**SHALL NOT**).
+ Memorized Secret の Verifier は, Subscriber に対して, 認証されていない Claimant がアクセスできるヒントを保存することを許可することはない(**SHALL NOT**). Verifier は, Memorized Secret を選択する際に, Subscriber に特定の種類の情報 (例えば, 「あなたの最初のペットの名前は何ですか?」といった Knowledge-Based Authentication (KBA) または秘密の質問として知られる手法) を使用するように促すことはない(**SHALL NOT**).
 
 <!--
 When processing requests to establish and change memorized secrets, verifiers **SHALL** compare the prospective secrets against a blocklist that contains values known to be commonly used, expected, or compromised. For example, the list **MAY** include, but is not limited to:
 -->
 
- Memorized Secret を確立および変更するリクエストを処理するとき, Verifier は, 頻繁に使用される, 予期される, または侵害されていることが知られている値を含むブロックリストに対抗するために, 予想される Secret を比較することになる(**SHALL**). 例えば, リストには以下が含んでもよい(**MAY**), これらに限定されない:
+ Memorized Secret を確立および変更するリクエストを処理するとき, Verifier は, 頻繁に使用される, 予期される, または侵害されていることが知られている値を含む Blocklist と, リクエストされた Secret を比較することになる(**SHALL**). 例えば, リストには以下を含んでもよい(**MAY**) が, これらに限定されない:
 
 <!--
 * Passwords obtained from previous breach corpuses.
@@ -87,7 +87,7 @@ When processing requests to establish and change memorized secrets, verifiers **
 * Context-specific words, such as the name of the service, the username, and derivatives thereof.
 -->
 
-* 以前の侵害コーパスから取得したPassword.
+* 以前の侵害事例から得られた Password.
 * 辞書の単語.
 * 反復または連続した文字 (例: 'aaaaaa', '1234abcd').
 * サービスの名前, ユーザ名, およびその派生語など, コンテキスト特有の単語.
@@ -96,13 +96,13 @@ When processing requests to establish and change memorized secrets, verifiers **
 If the chosen secret is found in the blocklist, the CSP or verifier **SHALL** advise the subscriber that they need to select a different secret, **SHALL** provide the reason for rejection, and **SHALL** require the subscriber to choose a different value. Since the blocklist is used to defend against brute-force attacks and unsuccessful attempts are rate limited as described below, the blocklist **SHOULD** be of a size sufficient to prevent subscribers from choosing memorized secrets that attackers are likely to guess before reaching the attempt limit. Excessively large blocklists **SHOULD NOT** be used because they frustrate subscribers' attempts to establish an acceptable memorized secret and do not provide significantly improved security.
 -->
 
-選択された Secret がブロックリストの中にある場合, CSP または Verifier は Subscriber に別の Secret を選択する必要があることを通知することとなり(**SHALL**), 拒否の理由を提供することになり(**SHALL**), Subscriber に別の値を選択することを要求することになる(**SHALL**). ブロックリストはブルートフォース Attack を防御するために使用され, 試行の失敗は以下で説明するようにレート制限されるため, ブロックリストは Subscriber が Attacker が試行リミットに到達する前に推測する可能性のある Memorized Secret を選択することを防ぐのに十分なサイズにする必要がある(**SHOULD**). 過度に大きなブロックリストは使用しないほうがよい(**SHOULD NOT**). これは, Subscriber が許容される Memorized Secret を確立しようとする試みを妨げ, 大幅に改善されたセキュリティを提供しないためである.
+選択された Secret が Blocklist の中にある場合, CSP または Verifier は Subscriber に別の Secret を選択する必要があることを通知することとなり(**SHALL**), 拒否の理由を提供することになり(**SHALL**), Subscriber に別の値を選択することを要求することになる(**SHALL**). Blocklist はブルートフォース Attack を防御するために使用され, 試行の失敗は以下で説明するようにレート制限されるため, Blocklist は Subscriber が Attacker が試行リミットに到達する前に推測する可能性のある Memorized Secret を選択することを防ぐのに十分なサイズにする必要がある(**SHOULD**). 過度に大きな Blocklist は使用しないほうがよい(**SHOULD NOT**). これは, Subscriber が許容される Memorized Secret を確立しようとする試みを妨げ, 大幅に改善されたセキュリティを提供しないためである.
 
 <!--
 Verifiers **SHALL** offer guidance to the subscriber to assist the user in choosing a strong memorized secret. This is particularly important following the rejection of a memorized secret on the above list as it discourages trivial modification of listed (and likely very weak) memorized secrets [[Blocklists]](references.md#ref-blocklists).
 -->
 
-Verifierは, 強力な Memorized Secret を選択する際にユーザーを支援するために, Subscriber にガイダンスを提供することとなる(**SHALL**). これは, リストされた (そしておそらく非常に弱い) Memorized Secret の些細な変更を思いとどまらせるため, 上記のリストの記憶された Secret の拒否に続いて特に重要である. [[Blocklists]](references.md#ref-blocklists)
+Verifierは, 強力な Memorized Secret を選択する際にユーザーを支援するために, Subscriber にガイダンスを提供することとなる(**SHALL**). これは, リストされた (そしておそらく非常に弱い) Memorized Secret への浅はかな変更を思いとどまらせるため, 上記のリストにある Memorized Secret の拒否に続いて特に重要である. [[Blocklists]](references.md#ref-blocklists)
 
 <!--
 Verifiers **SHALL** implement a rate-limiting mechanism that effectively limits the number of failed authentication attempts that can be made on the subscriber account as described in [Sec. 5.2.2](sec5_authenticators.md#throttle).
@@ -133,7 +133,7 @@ Verifier に送信されるまで, 一連のドットやアスタリスクでは
 The verifier **SHALL** use approved encryption and an authenticated protected channel when requesting memorized secrets in order to provide resistance to eavesdropping and adversary-in-the-middle attacks.
 -->
 
-Verifier は, Memorized Secret を要求するときには, 盗聴や Adversary-in-the-Middle Attack に対する耐性を提供するために, 承認された暗号による暗号化と認証された保護されたチャネルを使用することになる(**SHALL**).
+Verifier は, Memorized Secret を要求するときには, 盗聴や Adversary-in-the-Middle Attack に対する耐性を提供するために, Approved な暗号による暗号化と Authenticated Protected Channel を使用することになる(**SHALL**).
 
 <!--
 Verifiers **SHALL** store memorized secrets in a form that is resistant to offline attacks. Memorized secrets **SHALL** be salted and hashed using a suitable password hashing scheme. Password hashing schemes take a password, a salt, and a cost factor as inputs and generate a password hash. Their purpose is to make each password guess more expensive for an attacker who has obtained a hashed password file and thereby make the cost of a guessing attack high or prohibitive. A function that is both memory-hard and compute-hard **SHOULD** be used because it increases the cost of an attack. While NIST has not published guidelines on specific password hashing schemes, examples of such functions include Argon2 [[Argon2]](references.md#ref-argon2) and scrypt [[Scrypt]](references.md#ref-scrypt). Examples of approved one-way functions include Keyed Hash Message Authentication Code (HMAC) [[FIPS198-1]](references.md#ref-FIPS198-1), any approved hash function in [[SP800-107]](references.md#ref-SP800-107), Secure Hash Algorithm 3 (SHA-3) [[FIPS202]](references.md#ref-FIPS202), CMAC [[SP800-38B]](references.md#ref-SP800-38B), Keccak Message Authentication Code (KMAC), Customizable SHAKE (cSHAKE), and ParallelHash [[SP800-185]](references.md#ref-SP800-185). The chosen output length of the password hashing scheme **SHOULD** be the same as the length of the underlying one-way function output.
@@ -157,7 +157,7 @@ Password-based Key Derivation Function 2 (PBKDF2) [[SP800-132]](references.md#re
 In addition, verifiers **SHOULD** perform an additional iteration of a keyed hashing or encryption operation using a secret key known only to the verifier. This key value, if used, **SHALL** be generated by an approved random bit generator [[SP800-90Ar1]](references.md#ref-SP800-90Ar1) and provide at least the minimum security strength specified in the latest revision of NIST SP 800-131A, *Transitioning the Use of Cryptographic Algorithms and Key Lengths* [[SP800-131A]](references.md#ref-SP800-131A) (112 bits as of the date of this publication). The secret key value **SHALL** be stored separately from the hashed memorized secrets (e.g., in a specialized device like a hardware security module). With this additional iteration, brute-force attacks on the hashed memorized secrets are impractical as long as the secret key value remains secret.
 -->
 
-さらに, Verifier は, Verifier のみが知っている Secret Key を使用して, 鍵付き Hash または暗号化オペレーションの追加の反復を実行する必要がある(**SHOULD**). この Key 値を使用する場合, 承認された Random Bit Generator [[SP800-90Ar1]](references.md#ref-SP800-90Ar1) によって生成され, 少なくとも NIST SP 800-131A *Transitioning the Use of Cryptographic Algorithms and Key Lengths* [[SP800-131A]](references.md#ref-SP800-131A) の最新リビジョンで指定されている最小のセキュリティ強度を提供することとなる(この発行日時点で112ビット)(**SHALL**).  Secret Key の値は, Hash された Memorized Secret とは別に保存されることとなる(例えば, Hardware Security Moduleのような特別なデバイスに)(**SHALL**). この追加の反復により, Secret Key の値が秘密のままである限り, Hash された Memorized Secret に対するブルートフォース Attack は非現実的である.
+さらに, Verifier は, Verifier のみが知っている Secret Key を使用して, 鍵付き Hash または暗号化オペレーションの追加の反復を実行する必要がある(**SHOULD**). この Key 値を使用する場合, Approved Random Bit Generator [[SP800-90Ar1]](references.md#ref-SP800-90Ar1) によって生成され, 少なくとも NIST SP 800-131A *Transitioning the Use of Cryptographic Algorithms and Key Lengths* [[SP800-131A]](references.md#ref-SP800-131A) の最新リビジョンで指定されている最小のセキュリティ強度を提供することとなる(この発行日時点で112ビット)(**SHALL**).  Secret Key の値は, Hash された Memorized Secret とは別に保存されることとなる(例えば, Hardware Security Moduleのような特別なデバイスに)(**SHALL**). この追加の反復により, Secret Key の値が秘密のままである限り, Hash された Memorized Secret に対するブルートフォース Attack は非現実的である.
 
 ### Look-Up Secrets {#lookupsecrets}
 
@@ -166,7 +166,7 @@ A look-up secret authenticator is a physical or electronic record that stores a 
 {:.authenticator-image}
 -->
 
-Look-up Secret Authenticator は, Claimant と CSP の間で共有される一連の Secret を格納する物理的または電子的な記録である. Claimant は, Verifier からのプロンプトに応答するために必要な, 適切な Secret を見つけるために Authenticator を使用する. 例えば, Verifier は, 表形式でカードに印刷された数値または文字列の特定のサブセットを提供するように Claimant に尋ねることができる. Look-up Secret の一般的な用途は, 別の Authenticator が紛失されたり故障した場合に使用するために, Subscriber によって保管された1回限りの"回復キー"としての使用である. Look-up Secret は _Something You Have_ である.
+Look-up Secret Authenticator は, Claimant と CSP の間で共有される一連の Secret を格納する物理的または電子的な記録である. Claimant は, Verifier からのプロンプトに応答するために必要な, 適切な Secret を見つけるために Authenticator を使用する. 例えば, Verifier は, 表形式でカードに印刷された数値または文字列の特定のサブセットを提供するように Claimant に尋ねることができる. Look-up Secret の一般的な用途は, 別の Authenticator が紛失されたり故障した場合に使用するために, Subscriber によって保管された1回限りの"回復キー"としての使用である. Look-up Secret は _something you have_ である.
 {:.authenticator-image}
 
 #### Look-Up Secret Authenticators {#lusa}
@@ -174,13 +174,13 @@ Look-up Secret Authenticator は, Claimant と CSP の間で共有される一�
 CSPs creating look-up secret authenticators **SHALL** use an approved random bit generator [[SP800-90Ar1]](references.md#ref-SP800-90Ar1) to generate the list of secrets and **SHALL** deliver the authenticator securely to the subscriber. Look-up secrets **SHALL** have at least 20 bits of entropy.
 -->
 
-Look-up Secret Authenticator を作成する CSP は, 承認された Random Bit Generator [[SP800-90Ar1]](references.md#ref-SP800-90Ar1) を使用して Secret のリストを生成することとなり(**SHALL**), Authenticator を Subscriber に安全に配布することとなる(**SHALL**). Look-up Secret は, 少なくとも20ビットの Entropy を持つこととなる(**SHALL**).
+Look-up Secret Authenticator を作成する CSP は, Approved Random Bit Generator [[SP800-90Ar1]](references.md#ref-SP800-90Ar1) を使用して Secret のリストを生成することとなり(**SHALL**), Authenticator を Subscriber に安全に配布することとなる(**SHALL**). Look-up Secret は, 少なくとも20ビットの Entropy を持つこととなる(**SHALL**).
 
 <!--
 Look-up secrets **MAY** be distributed by the CSP in person, by postal mail to the subscriber's address of record, or by online distribution. If distributed online, look-up secrets **SHALL** be distributed over a secure channel in accordance with the post-enrollment binding requirements in [Sec. 6.1.2](sec6_lifecycle.md#post-enroll-bind).
 -->
 
-Look-up Secret Authenticator は, CSP が対面で, Subscriber の記録上の住所へ郵便で, またはオンラインで配布してもよい(**MAY**). オンラインで配布される場合, Look-up Secret は [Sec. 6.1.2](sec6_lifecycle.md#post-enroll-bind) にある Post-Enrollment Binding の要件に従って, セキュアなチャネルを介して配布されることとなる(**SHALL**).
+Look-up Secret Authenticator は, CSP が対面で, Subscriber の Address of Record へ郵便で, またはオンラインで配布してもよい(**MAY**). オンラインで配布される場合, Look-up Secret は [Sec. 6.1.2](sec6_lifecycle.md#post-enroll-bind) にある Post-Enrollment Binding の要件に従って, セキュアなチャネルを介して配布されることとなる(**SHALL**).
 
 <!--
 If the authenticator uses look-up secrets sequentially from a list, the subscriber **MAY** dispose of used secrets, but only after a successful authentication.
@@ -200,7 +200,7 @@ Verifiers of look-up secrets **SHALL** prompt the claimant for the next secret f
 Verifiers **SHALL** store look-up secrets in a form that is resistant to offline attacks. Look-up secrets having at least 112 bits of entropy **SHALL** be hashed with an approved one-way function as described in [Sec. 5.1.1.2](sec5_authenticators.md#memsecretver). Look-up secrets with fewer than 112 bits of entropy **SHALL** be salted and hashed using a suitable password hashing scheme, also described in [Sec. 5.1.1.2](sec5_authenticators.md#memsecretver). The salt value **SHALL** be at least 32 bits in length and arbitrarily chosen so as to minimize salt value collisions among stored hashes. Both the salt value and the resulting hash **SHALL** be stored for each look-up secret.
 -->
 
-Verifier は, Offline Attack に耐性のある形式で Look-up Secret を保存することとなる(**SHALL**). 少なくとも 112 ビットの Entropy を持つ Look-up Secret は, [Sec. 5.1.1.2](sec5_authenticators.md#memsecretver) で述べられた通り, 承認された一方向関数で Hash されることとなる(**SHALL**). Entropy が 112 ビット未満の Look-up Secret は, 同様に[Sec. 5.1.1.2](sec5_authenticators.md#memsecretver)で述べられた通り, Salt 化され適切な Password Hash スキームを使用して Hash されることとなる(**SHALL**). 
+Verifier は, Offline Attack に耐性のある形式で Look-up Secret を保存することとなる(**SHALL**). 少なくとも 112 ビットの Entropy を持つ Look-up Secret は, [Sec. 5.1.1.2](sec5_authenticators.md#memsecretver) で述べられた通り, Approved な一方向関数で Hash されることとなる(**SHALL**). Entropy が 112 ビット未満の Look-up Secret は, 同様に[Sec. 5.1.1.2](sec5_authenticators.md#memsecretver)で述べられた通り, Salt 化され適切な Password Hash スキームを使用して Hash されることとなる(**SHALL**). 
 Salt 値は長さが少なくとも 32 ビット となり, 保存された Hash 間の Salt 値の衝突を最小限に抑えるためにばらついて選択されることとなる(**SHALL**).  Salt 値と結果の Hash の両方が,  Look-up Secret ごとに保存されることとなる(**SHALL**).
 
 <!--
@@ -213,7 +213,7 @@ Entropy が 64 ビット未満の Look-up Secret の場合, Verifier は, [Sec. 
 The verifier **SHALL** use approved encryption and an authenticated protected channel when requesting look-up secrets in order to provide resistance to eavesdropping and AitM attacks.
 -->
 
-Verifier は, Look-up Secret を要求するときには, 盗聴や AitM Attack に対する耐性を提供するために, 承認された暗号による暗号化と認証された保護されたチャネルを使用することになる(**SHALL**).
+Verifier は, Look-up Secret を要求するときには, 盗聴や AitM Attack に対する耐性を提供するために, Approved な暗号による暗号化と Authenticated Protected Channel を使用することになる(**SHALL**).
 
 ### Out-of-Band Devices {#out-of-band}
 
@@ -222,26 +222,26 @@ An out-of-band authenticator is a physical device that is uniquely addressable a
 {:.authenticator-image}
 -->
 
-帯域外 Authenticator は, 一意にアドレス指定が可能で, セカンダリチャネルと呼ばれる個別の通信チャネルを介して Verifier と安全に通信できる物理デバイスである. デバイスは Claimant によって所有および制御され, Authentication のためのプライマリチャネルとは別に, このセカンダリチャネルを介したプライベート通信をサポートする. 帯域外 Authenticator は _something you have_ である.
+Out-of-band Authenticator は, 一意にアドレス指定が可能で, セカンダリチャネルと呼ばれる個別の通信チャネルを介して Verifier と安全に通信できる物理デバイスである. デバイスは Claimant によって所有および制御され, Authentication のためのプライマリチャネルとは別に, このセカンダリチャネルを介したプライベート通信をサポートする. Out-of-band Authenticator は _something you have_ である.
 {:.authenticator-image}
 
 <!--
 Out-of-band authentiction uses a short-term secret generated by the verifier. The secret's purpose is to securely bind the authentication operation on the primary and secondary channel and establishes the claimant's control of the out-of-band device.
 -->
 
-帯域外 Athentiction は, Verifier によって生成された短期的な Secret を使用する. Secret の目的は, プライマリとセカンダリチャネルでの Athentiction 操作を安全にバインドし, Claimant による帯域外デバイスの制御を確立することである.
+Out-of-band Athentiction は, Verifier によって生成された短期的な Secret を使用する. Secret の目的は, プライマリとセカンダリチャネルでの Athentiction 操作を安全にバインドし, Claimant による Out-of-band デバイスの制御を確立することである.
 
 <!--
 The out-of-band authenticator can operate in one of the following ways:
 -->
 
-帯域外 Authenticator は以下のいずれかの方法で動作できる:
+Out-of-band Authenticator は以下のいずれかの方法で動作できる:
 
 <!--
 - The claimant transfers a secret received by the out-of-band device via the secondary channel to the verifier using the primary channel. For example, the claimant may receive the secret (typically a 6-digit code) on their mobile device and type it into their authentication session. This method is shown in [Figure 1](sec5_authenticators.md#fig-1).
 -->
 
-- Claimant は, 帯域外デバイスによってセカンダリチャネルを介して受信した Secret を, プライマリチャネルを使用して Verifier に転送する. 例えば, Claimant はモバイルデバイスで Secret (通常は6桁のコード) を受信し, それを Authentication Session に入力してもよい. この方法は [Figure 1](sec5_authenticators.md#fig-1) に示される.
+- Claimant は, Out-of-band デバイスによってセカンダリチャネルを介して受信した Secret を, プライマリチャネルを使用して Verifier に転送する. 例えば, Claimant はモバイルデバイスで Secret (通常は6桁のコード) を受信し, それを Authentication Session に入力してもよい. この方法は [Figure 1](sec5_authenticators.md#fig-1) に示される.
 
 [Figure 1. Transfer of Secret to Primary Device](sec5_authenticators.md#fig-1){:name="fig-1"}
 {:latex-ignore="true"}
@@ -252,7 +252,7 @@ The out-of-band authenticator can operate in one of the following ways:
 - The claimant transfers a secret received via the primary channel to the out-of-band device for transmission to the verifier via the secondary channel. For example, the claimant may view the secret on their authentication session and either type it into an app on their mobile device or use a technology such as a barcode or QR code to effect the transfer. This method is shown in [Figure 2](sec5_authenticators.md#fig-2).
 -->
 
-- Claimant は, セカンダリチャネルを介して Verifier に送信するために, プライマリチャネルを介して受信した Secret を帯域外デバイスに転送する. 例えば, Claimant は Authentication Session 上で Secret を表示し, モバイルデバイスのアプリにそれを入力するか, バーコードやQRコードなどのテクノロジーを使用して転送を行ってもよい. この方法は [Figure 2](sec5_authenticators.md#fig-2) に示される.
+- Claimant は, セカンダリチャネルを介して Verifier に送信するために, プライマリチャネルを介して受信した Secret を Out-of-band デバイスに転送する. 例えば, Claimant は Authentication Session 上で Secret を表示し, モバイルデバイスのアプリにそれを入力するか, バーコードやQRコードなどのテクノロジーを使用して転送を行ってもよい. この方法は [Figure 2](sec5_authenticators.md#fig-2) に示される.
 
 [Figure 2. Transfer of Secret to Out-of-band Device](sec5_authenticators.md#fig-2){:name="fig-2"}
 {:latex-ignore="true"}
@@ -263,56 +263,56 @@ The out-of-band authenticator can operate in one of the following ways:
 > Note: A third method of out-of-band authentication involving the comparison of secrets received from the primary and secondary channels and approving on the secondary channel is no longer considered acceptable because it was rarely implemented as described. It raised the likelihood that the claimant would just approve without actually comparing the secrets. For example, an authenticator that receives a push notification from the verifier and simply asks the claimant to approve the transaction (even if providing some additional information about the authentication) does not meet the requirements of this section.
 -->
 
-> 注: 三番目の方法であった, プライマリとセカンダリチャネルから受信した Secret の比較とセカンダリチャネルでの承認による帯域外 Authentication は, 説明された通りに実装されることは稀であったため, もはや受け入れられないと見なされる. これは Claimant が Secret を実際に比較せず単に承認する可能性を高くしていた. 例えば, Verifier からプッシュ通知を受け取り, 単に Claimant に Transaction の承認を求めるだけの Authenticator は (たとえ Authentication に関する追加情報を提供したとしても), このセクションの要件を満たさない.
+> 注: 三番目の方法であった, プライマリとセカンダリチャネルから受信した Secret の比較とセカンダリチャネルでの承認による Out-of-band Authentication は, 説明された通りに実装されることは稀であったため, もはや受け入れられないと見なされる. これは Claimant が Secret を実際に比較せず単に承認する可能性を高くしていた. 例えば, Verifier からプッシュ通知を受け取り, 単に Claimant に Transaction の承認を求めるだけの Authenticator は (たとえ Authentication に関する追加情報を提供したとしても), このセクションの要件を満たさない.
 
 #### Out-of-Band Authenticators {#ooba}
 <!--
 The out-of-band authenticator **SHALL** establish a separate channel with the verifier in order to retrieve the out-of-band secret or authentication request. This channel is considered to be out-of-band with respect to the primary communication channel (even if it terminates on the same device) provided the device does not leak information from one channel to the other without the authorization of the claimant.
 -->
 
-帯域外 Authenticator は, 帯域外 Secret または Authentication 要求を取得するために, Verifier と別のチャネルを確立することとなる(**SHALL**). このチャネルは, デバイスが Claimant の許可なしにひとつのチャネルから別のチャネルに情報を漏らさないという条件であれば, (たとえ同じデバイス上で完了する場合でも) プライマリ通信チャネルに関して帯域外であると見なされる.
+Out-of-band Authenticator は, Out-of-band Secret または Authentication 要求を取得するために, Verifier と別のチャネルを確立することとなる(**SHALL**). このチャネルは, デバイスが Claimant の許可なしにひとつのチャネルから別のチャネルに情報を漏らさないという条件であれば, (たとえ同じデバイス上で完了する場合でも) プライマリ通信チャネルに関して Out-of-band であると見なされる.
 
 <!--
 The out-of-band device **SHOULD** be uniquely addressable by the verifier. Communication over the secondary channel **SHALL** be encrypted unless sent via the public switched telephone network (PSTN). For additional authenticator requirements specific to use of the PSTN for out-of-band authentication, see [Sec. 5.1.3.3](sec5_authenticators.md#pstnOOB). Channels or addresses that do not prove possession of a specific device, such as voice-over-IP (VOIP) telephone numbers, **SHALL NOT** be used for out-of-band authentication.
 -->
 
-帯域外デバイスは, Verifier によって一意にアドレス指定が可能である必要がある(**SHOULD**). セカンダリチャネルを介した通信は, 公衆交換電話網 (Public Switched Telephone Network, PSTN) 経由で送信されない限り, 暗号化されることとなる(**SHALL**). 帯域外 Authentication のために PSTN を使用する場合の追加の Authenticator 要件については, [Sec. 5.1.3.3](sec5_authenticators.md#pstnOOB) を参照のこと. Voice-Over-IP (VOIP) 電話番号など, 特定のデバイスの所有を証明しないチャネルまたはアドレスは, 帯域外 Authentication に使用されることはない(**SHALL NOT**).
+Out-of-band デバイスは, Verifier によって一意にアドレス指定が可能である必要がある(**SHOULD**). セカンダリチャネルを介した通信は, 公衆交換電話網 (Public Switched Telephone Network, PSTN) 経由で送信されない限り, 暗号化されることとなる(**SHALL**). Out-of-band Authentication のために PSTN を使用する場合の追加の Authenticator 要件については, [Sec. 5.1.3.3](sec5_authenticators.md#pstnOOB) を参照のこと. Voice-Over-IP (VOIP) 電話番号など, 特定のデバイスの所有を証明しないチャネルまたはアドレスは, Out-of-band Authentication に使用されることはない(**SHALL NOT**).
 
 <!--
 Email **SHALL NOT** be used for out-of-band authentication because it also does not prove possession of a specific device and is typically accessed using only a memorized secret.
 -->
 
-電子メールは特定のデバイスの所有を証明するものではなく, 通常は Memorized Secret のみを使用してアクセスされるため, 帯域外 Authentication に使用されることはない(**SHALL NOT**).
+電子メールは特定のデバイスの所有を証明するものではなく, 通常は Memorized Secret のみを使用してアクセスされるため, Out-of-band Authentication に使用されることはない(**SHALL NOT**).
 
 <!--
 The out-of-band authenticator **SHALL** uniquely authenticate itself in one of the following ways when communicating with the verifier:
 -->
 
-帯域外 Authenticator は, Verifier と通信するときに, 以下のいずれかの方法で自身を一意に Authentication することとなる(**SHALL**). 
+Out-of-band Authenticator は, Verifier と通信するときに, 以下のいずれかの方法で自身を一意に Authentication することとなる(**SHALL**). 
 
 <!--
 - Establish an authenticated protected channel to the verifier using approved cryptography. The key used **SHALL** be stored in suitably secure storage available to the authenticator application (e.g., keychain storage, TPM, TEE, secure element).
 -->
 
-- 承認された暗号を使用して, Verifier への認証された保護されたチャネルを確立する. 使用されるキーは, Authenticator アプリケーションが利用可能な, 適切に安全なストレージ (例: キーチェーンストレージ, TPM, TEE, セキュアエレメントなど) に格納することとなる(**SHALL**). 
+- Approved Cryptography を使用して, Verifier への Authenticated Protected Channel を確立する. 使用されるキーは, Authenticator アプリケーションが利用可能な, 適切に安全なストレージ (例: キーチェーンストレージ, TPM, TEE, セキュアエレメントなど) に格納することとなる(**SHALL**). 
 
 <!--
 - Authenticate to a public mobile telephone network using a SIM card or equivalent that uniquely identifies the device. This method **SHALL** only be used if a secret is being sent from the verifier to the out-of-band device via the PSTN (SMS or voice).
 -->
 
-- デバイスを一意に識別する SIM カードまたは同等のものを使用して, 公衆携帯電話ネットワークに対して Authentication する. このメソッドは, Secret が Verifier から PSTN (SMS または音声) 経由で帯域外デバイスに送信される場合にのみ使用されることとなる(**SHALL**).
+- デバイスを一意に識別する SIM カードまたは同等のものを使用して, 公衆携帯電話ネットワークに対して Authentication する. このメソッドは, Secret が Verifier から PSTN (SMS または音声) 経由で Out-of-band デバイスに送信される場合にのみ使用されることとなる(**SHALL**).
 
 <!--
 If a secret is sent by the verifier to the out-of-band device, the device **SHOULD NOT** display the authentication secret while it is locked by the owner (i.e., **SHOULD** require the presentation and verification of a PIN, passcode, or biometric characteristic to view). However, authenticators **SHOULD** indicate the receipt of an authentication secret on a locked device.
 -->
 
-Verifier によって帯域外デバイスに Secret が送信される場合, デバイスは, 所有者によってロックされている間, Authentication Secret を表示しないほうがよい(**SHOULD NOT**)(つまり, 表示のために PIN, パスコード, または Biometric Characteristic の提示と Verification を要求する必要がある(**SHOULD**). ただし, Authenticator は, ロックされたデバイス上で Authentication Secret の受信を示す必要がある(**SHOULD**).
+Verifier によって Out-of-band デバイスに Secret が送信される場合, デバイスは, 所有者によってロックされている間, Authentication Secret を表示しないほうがよい(**SHOULD NOT**)(つまり, 表示のために PIN, パスコード, または Biometric Characteristic の提示と Verification を要求する必要がある(**SHOULD**). ただし, Authenticator は, ロックされたデバイス上で Authentication Secret の受信を示す必要がある(**SHOULD**).
 
 <!--
 If the out-of-band authenticator requests approval over the secondary communication channel — rather than by the presenting a secret that the claimant transfers to the primary communication channel — it **SHALL** accept transfer of the secret from the primary channel and send it to the verifier over the secondary channel to associate the approval with the authentication transaction. The claimant **MAY** perform the transfer manually or use a technology such as a barcode or QR code to effect the transfer.
 -->
 
-帯域外 Authenticator が, (Claimant がプライマリ通信チャネルに転送する Secret を提示するのではなく) セカンダリ通信チャネルで承認を要求する場合, プライマリチャネルからの Secret の転送を受け入れることとなり(**SHALL**), 承認を Authentication Transaction に関連付けるために, それをセカンダリチャネルを介して Verifier に送信することとなる. Claimant は, 転送を手動で行うか, バーコードやQRコードなどのテクノロジーを使用して転送を行ってもよい(**MAY**).
+Out-of-band Authenticator が, (Claimant がプライマリ通信チャネルに転送する Secret を提示するのではなく) セカンダリ通信チャネルで承認を要求する場合, プライマリチャネルからの Secret の転送を受け入れることとなり(**SHALL**), 承認を Authentication Transaction に関連付けるために, それをセカンダリチャネルを介して Verifier に送信することとなる. Claimant は, 転送を手動で行うか, バーコードやQRコードなどのテクノロジーを使用して転送を行ってもよい(**MAY**).
 
 #### Out-of-Band Verifiers
 
@@ -326,25 +326,25 @@ PSTN に固有の追加の Verification 要件については, [Sec. 5.1.3.3](se
 When the out-of-band authenticator is a secure application, such as on a smart phone, the verifier **MAY** send a push notification to that device. The verifier waits for the establishment of an authenticated protected channel with the out-of-band authenticator and verifies its identifying key. The verifier **SHALL NOT** store the identifying key itself, but **SHALL** use a verification method (e.g., an approved hash function or proof of possession of the identifying key) to uniquely identify the authenticator. Once authenticated, the verifier transmits the authentication secret to the authenticator.
 -->
 
-帯域外 Authenticator がスマートフォン上などの安全なアプリケーションである場合, Verifier はそのデバイスにプッシュ通知を送信してもよい(**MAY**).  Verifier は, 帯域外 Authenticator との Authenticated Protected Channel の確立を待ち, その識別キーを Verifiy する. Verifier は識別キー自体を保管することはない(**SHALL NOT**)が, Verification 方法 (例えば, 承認されたハッシュ関数または識別キーの所有の証明) を使用して, Authenticator を一意に識別することとなる(**SHALL**). ひとたび Authenticate されると, Verifier は Authentication Secret を Authenticator に送信する.
+Out-of-band Authenticator がスマートフォン上などの安全なアプリケーションである場合, Verifier はそのデバイスにプッシュ通知を送信してもよい(**MAY**).  Verifier は, Out-of-band Authenticator との Authenticated Protected Channel の確立を待ち, その識別キーを Verifiy する. Verifier は識別キー自体を保管することはない(**SHALL NOT**)が, Verification 方法 (例えば, Approved なハッシュ関数または識別キーの所有の証明) を使用して, Authenticator を一意に識別することとなる(**SHALL**). ひとたび Authenticate されると, Verifier は Authentication Secret を Authenticator に送信する.
 
 <!--
 Depending on the type of out-of-band authenticator, one of the following **SHALL** take place:
 -->
 
-帯域外 Authenticator のタイプに応じて, 以下のいずれかが行われることとなる(**SHALL**):
+Out-of-band Authenticator のタイプに応じて, 以下のいずれかが行われることとなる(**SHALL**):
 
 <!--
 * Transfer of secret from the secondary to the primary channel: The verifier **MAY** signal the device containing the subscriber's authenticator to indicate readiness to authenticate. It **SHALL** then transmit a random secret to the out-of-band authenticator. The verifier **SHALL** then wait for the secret to be returned on the primary communication channel.
 -->
 
-* セカンダリからプライマリチャネルへの Secret の転送: Verifier は, Authentication の準備ができていることを示すために, Subscriber の Authenticator を含むデバイスにシグナルを送ってもよい(**MAY**). そして, にRandom Secret を帯域外 Authenticator に送信することとなる(**SHALL**). 続いて, Verifier は, プライマリ通信チャネル上で Secret が返却されるのを待つこととなる(**SHALL**).
+* セカンダリからプライマリチャネルへの Secret の転送: Verifier は, Authentication の準備ができていることを示すために, Subscriber の Authenticator を含むデバイスにシグナルを送ってもよい(**MAY**). そして, Random Secret を Out-of-band Authenticator に送信することとなる(**SHALL**). 続いて, Verifier は, プライマリ通信チャネル上で Secret が返却されるのを待つこととなる(**SHALL**).
 
 <!--
 * Transfer of secret from the primary to the secondary channel: The verifier **SHALL** display a random authentication secret to the claimant via the primary channel. It **SHALL** then wait for the secret to be returned on the secondary channel from the claimant's out-of-band authenticator.
 -->
 
-* プライマリからセカンダリチャネルへの Secret の転送: Verifier は, プライマリチャネルを介して Claimant にRandom Authentication Secret を表示することとなる(**SHALL**). そして,  Claimant の帯域外 Authenticator からセカンダリチャネル上で Secret が返却されるのを待つこととなる(**SHALL**).
+* プライマリからセカンダリチャネルへの Secret の転送: Verifier は, プライマリチャネルを介して Claimant に Random Authentication Secret を表示することとなる(**SHALL**). そして,  Claimant の Out-of-band Authenticator からセカンダリチャネル上で Secret が返却されるのを待つこととなる(**SHALL**).
 
 <!--
 In all cases, the authentication **SHALL** be considered invalid if not completed within 10 minutes. In order to provide replay resistance as described in [Sec. 5.2.8](sec5_authenticators.md#replay), verifiers **SHALL** accept a given authentication secret only once during the validity period.
@@ -356,19 +356,19 @@ In all cases, the authentication **SHALL** be considered invalid if not complete
 The verifier **SHALL** generate random authentication secrets with at least 20 bits of entropy using an approved random bit generator [[SP800-90Ar1]](references.md#ref-SP800-90Ar1). If the authentication secret has less than 64 bits of entropy, the verifier **SHALL** implement a rate-limiting mechanism that effectively limits the number of failed authentication attempts that can be made on the subscriber account as described in [Sec. 5.2.2](sec5_authenticators.md#throttle).
 -->
 
-Verifier は, 承認された Random Bit Generator [[SP800-90Ar1]](references.md#ref-SP800-90Ar1) を使用して, 少なくとも 20 ビットの Entropy を持つ Random Authentication Secret を生成することとなる(**SHALL**). Authentication Secret の Entropy が 64 ビット未満の場合, Verifier は, [Sec. 5.2.2](sec5_authenticators.md#throttle) で説明されている通り, Subscriber Account で試行できる Authentication の失敗回数を効果的に制限するレート制限メカニズムを実装することとなる(**SHALL**).
+Verifier は, Approved Random Bit Generator [[SP800-90Ar1]](references.md#ref-SP800-90Ar1) を使用して, 少なくとも 20 ビットの Entropy を持つ Random Authentication Secret を生成することとなる(**SHALL**). Authentication Secret の Entropy が 64 ビット未満の場合, Verifier は, [Sec. 5.2.2](sec5_authenticators.md#throttle) で説明されている通り, Subscriber Account で試行できる Authentication の失敗回数を効果的に制限するレート制限メカニズムを実装することとなる(**SHALL**).
 
 <!--
 Out-of-band verifiers **SHALL** consider all authentication operations to be single-factor unless the CSP has confirmed that the out-of-band authentication meets the requirements of [Sec. 5.1.3.4](sec5_authenticators.md#mfooba). This requirement **MAY** be satisfied by issuance of the authenticator by the CSP or a trusted third party or by use of an authentication application known by the CSP to meet these requirements.
 -->
 
-CSP が, 帯域外 Authentication が [Sec. 5.1.3.4](sec5_authenticators.md#mfooba) の要件を満たしていることを確認しない限り, 帯域外 Verifier はすべての Authentication 操作を Single-Factor と見なすこととなる(**SHALL**). この要件は CSP または信頼されたサードパーティによる Authenticator の発行, またはこれらの要件を満たすことが CSP によって認識されている Authentication アプリケーションの使用によって満たされてもよい(**MAY**).
+CSP が, Out-of-band Authentication が [Sec. 5.1.3.4](sec5_authenticators.md#mfooba) の要件を満たしていることを確認しない限り, Out-of-band Verifier はすべての Authentication 操作を Single-Factor と見なすこととなる(**SHALL**). この要件は CSP または信頼されたサードパーティによる Authenticator の発行, またはこれらの要件を満たすことが CSP によって認識されている Authentication アプリケーションの使用によって満たされてもよい(**MAY**).
 
 <!--
 Out-of-band verifiers that send a push notification to a subscriber device **SHOULD** implement a reasonable limit on the rate or total number of push notifications that will be sent since the last successful authentication.
 -->
 
-Subscriber のデバイスにプッシュ通知を送信する帯域外 Verifier は, 成功した最後の Authentication 以降に送信されるプッシュ通知のレートまたは総数に合理的な制限を実装する必要がある(**SHOULD**).
+Subscriber のデバイスにプッシュ通知を送信する Out-of-band Verifier は, 成功した最後の Authentication 以降に送信されるプッシュ通知のレートまたは総数に合理的な制限を実装する必要がある(**SHOULD**).
 
 #### Authentication using the Public Switched Telephone Network {#pstnOOB}
 
@@ -376,19 +376,19 @@ Subscriber のデバイスにプッシュ通知を送信する帯域外 Verifier
 Use of the PSTN for out-of-band verification is restricted as described in this section and in [Sec. 5.2.10](sec5_authenticators.md#restricted). If out-of-band verification is to be made using the PSTN, the verifier **SHALL** verify that the pre-registered telephone number being used is associated with a specific physical device. Changing the pre-registered telephone number is considered to be the binding of a new authenticator and **SHALL** only occur as described in [Sec. 6.1.2](sec6_lifecycle.md#post-enroll-bind).
 -->
 
-帯域外 Verification のための PSTN の使用は, このセクションと [Sec. 5.2.10](sec5_authenticators.md#restricted) で説明されているように制限されている. PSTN を使用して帯域外 Verification を行う場合, Verifier は, 使用されている事前登録済みの電話番号が特定の物理デバイスに関連付けられていることを Verification することとなる(**SHALL**). 事前登録された電話番号の変更は, 新しい Authenticator のバインドであると見なされ, [Sec. 6.1.2](sec6_lifecycle.md#post-enroll-bind) で説明されている場合にのみ発生することとなる(**SHALL**).
+Out-of-band Verification のための PSTN の使用は, このセクションと [Sec. 5.2.10](sec5_authenticators.md#restricted) で説明されているように制限されている. PSTN を使用して Out-of-band Verification を行う場合, Verifier は, 使用されている事前登録済みの電話番号が特定の物理デバイスに関連付けられていることを Verification することとなる(**SHALL**). 事前登録された電話番号の変更は, 新しい Authenticator のバインドであると見なされ, [Sec. 6.1.2](sec6_lifecycle.md#post-enroll-bind) で説明されている場合にのみ発生することとなる(**SHALL**).
 
 <!--
 Use of the PSTN to deliver out-of-band authentication secrets is potentially not available to some subscribers in areas with limited telephone coverage (particularly in areas without mobile phone service). Accordingly, verifiers **SHALL** ensure that alternative authenticator types are available to all subscribers and **SHOULD** remind subscribers of this limitation of PSTN out-of-band authenticators prior to binding.
 -->
 
-PSTN を使用して帯域外 Authentication Secret を配信することは, 限定された電話のカバレッジを持つ地域 (特に携帯電話サービスがない地域) では, 一部の Subscriber が利用できない可能性がある. したがって, Verifier は, すべての Subscriber が代替の Authenticator タイプを利用できるようにすることとなり(**SHALL**), バインドする前に, PSTN を使用した帯域外 Authenticator のこの制限を Subscriber に通知する必要がある(**SHOULD**).
+PSTN を使用して Out-of-band Authentication Secret を配信することは, 限定された電話のカバレッジを持つ地域 (特に携帯電話サービスがない地域) では, 一部の Subscriber が利用できない可能性がある. したがって, Verifier は, すべての Subscriber が代替の Authenticator タイプを利用できるようにすることとなり(**SHALL**), バインドする前に, PSTN を使用した Out-of-band Authenticator のこの制限を Subscriber に通知する必要がある(**SHOULD**).
 
 <!--
 Verifiers **SHOULD** consider risk indicators such as device swap, SIM change, number porting, or other abnormal behavior before using the PSTN to deliver an out-of-band authentication secret.
 -->
 
-Verifier は, PSTN を使用して帯域外 Authentication Secret を配信する前に, デバイスの交換, SIM の変更, 番号の移植, またはその他の異常な動作などのリスク指標を考慮する必要がある(**SHOULD**).
+Verifier は, PSTN を使用して Out-of-band Authentication Secret を配信する前に, デバイスの交換, SIM の変更, 番号の移植, またはその他の異常な動作などのリスク指標を考慮する必要がある(**SHOULD**).
 
 <!--
 > NOTE: Consistent with the restriction of authenticators in [Sec. 5.2.10](sec5_authenticators.md#restricted), NIST may adjust the restricted status of the PSTN over time based on the evolution of the threat landscape and the technical operation of the PSTN.
@@ -402,7 +402,7 @@ Verifier は, PSTN を使用して帯域外 Authentication Secret を配信す�
 Multi-factor out-of-band authenticators operate in a similar manner to single-factor out-of-band authenticators (see [Sec. 5.1.3.1](sec5_authenticators.md#ooba)) except that they require the presentation and verification of an additional factor, either a memorized secret or a biometric characteristic, prior to allowing the claimant to complete the authentication transaction (i.e., prior to accessing the authentication secret, entering the authentication secret, or confirming the transaction as appropriate for the authentication flow being used). Each use of the authenticator **SHALL** require the presentation of the activation factor.
 -->
 
-Multi-Factor 帯域外 Authenticator は, Claimant が Authentication Transaction を完了できるようにする前(つまり, Authentication Secret にアクセスする前, Authentication Secret を入力する前, または使用されている Authentication フローに適した Transaction を確認する前)に Memorized Secret または Biometric Characteristic のいずれかの追加要素の提示と Verification を必要とすることを除いて, Single-Factor 帯域外 Authenticator ([Sec. 5.1.3.1](sec5_authenticators.md#ooba)を参照) と同様の方法で動作する. Authenticator の使用ごとに, Activation Factor の提示を要求することとなる(**SHALL**).
+Multi-Factor Out-of-band Authenticator は, Claimant が Authentication Transaction を完了できるようにする前(つまり, Authentication Secret にアクセスする前, Authentication Secret を入力する前, または使用されている Authentication フローに適した Transaction を確認する前)に Memorized Secret または Biometric Characteristic のいずれかの追加要素の提示と Verification を必要とすることを除いて, Single-Factor Out-of-band Authenticator ([Sec. 5.1.3.1](sec5_authenticators.md#ooba)を参照) と同様の方法で動作する. Authenticator の使用ごとに, Activation Factor の提示を要求することとなる(**SHALL**).
 
 <!--
 The use of an activation secret by the authenticator **SHALL** meet the requirements of [Sec. 5.2.11](sec5_authenticators.md#s-5-2-11). A biometric activation factor **SHALL** meet the requirements of [Sec. 5.2.3](sec5_authenticators.md#biometric_use), including limits on the number of consecutive authentication failures. Submission of the activation factor **SHALL** be a separate operation from unlocking of the host device (e.g., smartphone), although the same activation factor used to unlock the host device **MAY** be used in the authentication operation. The memorized secret or biometric sample used for activation — and any biometric data derived from the biometric sample such as a probe produced through signal processing — **SHALL** be zeroized immediately after the authentication operation.
@@ -417,14 +417,14 @@ A single-factor OTP device generates one-time passwords (OTPs). This category in
 {:.authenticator-image}
 -->
 
-Single-Factor OTP デバイスは, ワンタイムパスワード(OTP)を生成する. このカテゴリには, ハードウェアデバイスと携帯電話などのデバイス上にインストールされた Software-Based OTP Generator が含まれる. これらのデバイスは, OTP 生成のシードとして使用される組み込みの Secret を持ち, 二番目の要素による Activation を必要としない. OTP はデバイス上に表示され Verifier に送信するために手動で入力される, これによりデバイスの所有と制御が証明される. OTP デバイスは, 例えば, 一度に6文字を表示してもよい. Single-Factor OTP デバイスは _Something You Have_ である.
+Single-Factor OTP デバイスは, ワンタイムパスワード(OTP)を生成する. このカテゴリには, ハードウェアデバイスと携帯電話などのデバイス上にインストールされた Software-Based OTP Generator が含まれる. これらのデバイスは, OTP 生成のシードとして使用される組み込みの Secret を持ち, 二番目の要素による Activation を必要としない. OTP はデバイス上に表示され Verifier に送信するために手動で入力される, これによりデバイスの所有と制御が証明される. OTP デバイスは, 例えば, 一度に6文字を表示してもよい. Single-Factor OTP デバイスは _something you have_ である.
 {:.authenticator-image}
 
 <!--
 Single-factor OTP devices are similar to look-up secret authenticators with the exception that the secrets are cryptographically and independently generated by the authenticator and verifier and compared by the verifier. The secret is computed based on a nonce that may be time-based or from a counter on the authenticator and verifier.
 -->
 
-Single-Factor OTP デバイスは, Secret が Authenticator と Verifier によって暗号的にかつ独立して生成され, Verifier によって比較されることを除いて, Look-up Secret Authenticator と同様である. Secret は, 時間ベースの Nonce に基づいて, または Authenticator と Verifier の数値カウンターから計算されてもよい.
+Single-Factor OTP デバイスは, Secret が Authenticator と Verifier によって暗号論的にかつ独立して生成され, Verifier によって比較されることを除いて, Look-up Secret Authenticator と同様である. Secret は, 時間ベースの Nonce に基づいて, または Authenticator と Verifier の数値カウンターから計算されてもよい.
 
 #### Single-Factor OTP Authenticators {#sfotpa}
 
@@ -444,7 +444,7 @@ Secret Key とそのアルゴリズムは, 少なくとも [[SP800-131A]](refere
 The authenticator output is obtained by using an approved block cipher or hash function to combine the key and nonce in a secure manner. The authenticator output **MAY** be truncated to as few as 6 decimal digits (approximately 20 bits of entropy).
 -->
 
-Authenticator の出力は, Key と Nonce を安全な方法で結合するために承認されたブロック暗号または Hash 関数を使用すること取得される. Authenticator の出力は, わずか6桁の10進数 (約20ビットのEntropy) に切り捨てられられてもよい(**MAY**).
+Authenticator の出力は, Key と Nonce を安全な方法で結合するために Approved なブロック暗号または Hash 関数を使用すること取得される. Authenticator の出力は, わずか6桁の10進数 (約20ビットのEntropy) に切り詰められられてもよい(**MAY**).
 
 <!--
 If the nonce used to generate the authenticator output is based on a real-time clock, the nonce **SHALL** be changed at least once every 2 minutes.
@@ -470,13 +470,13 @@ Single-Factor OTP Authenticator が Subscriber Account に関連付けられて�
 The verifier **SHALL** use approved encryption and an authenticated protected channel when collecting the OTP in order to provide resistance to eavesdropping and AitM attacks. In order to provide replay resistance as described in [Sec. 5.2.8](sec5_authenticators.md#replay), verifiers **SHALL** accept a given OTP only once while it is valid. In the event a claimant's authentication is denied due to duplicate use of an OTP, verifiers **MAY** warn the claimant in case an attacker has been able to authenticate in advance. Verifiers **MAY** also warn a subscriber in an existing session of the attempted duplicate use of an OTP.
 -->
 
-Verifier は, OTP を収集するときに, 盗聴や AitM Attack への耐性を提供するために, Approved Encryption と Authenticated Protected Channel を使用することとなる(**SHALL**). [Sec. 5.2.8](sec5_authenticators.md#replay) で説明されている通りに Replay Resistance を提供するために, Verifier は, 有効な OTP の受け入れを一度のみとすることとなる(**SHALL**). OTP の重複使用が原因で Claimant の Authentication が拒否された場合, Verifier は, Attacker が事前に認証できた場合に備えて Claimant に警告してもよい(**MAY**). また, Verifier は, OTP の重複使用の試行について, 既存セッションの中にいる Subscriber に警告してもよい(**MAY**).
+Verifier は, OTP を収集するときに, 盗聴や AitM Attack への耐性を提供するために, Approved Encryption と Authenticated Protected Channel を使用することとなる(**SHALL**). [Sec. 5.2.8](sec5_authenticators.md#replay) で説明されている通りに Replay Resistance を提供するために, Verifier は, 有効な OTP の受け入れを一度のみとすることとなる(**SHALL**). OTP の重複使用が原因で Claimant の Authentication が拒否された場合, Verifier は, Attacker が事前に Authenticate できた場合に備えて Claimant に警告してもよい(**MAY**). また, Verifier は, OTP の重複使用の試行について, 既存セッションの中にいる Subscriber に警告してもよい(**MAY**).
 
 <!--
 Time-based OTPs [[TOTP]](references.md#ref-totp) **SHALL** have a defined lifetime that is determined by the expected clock drift — in either direction — of the authenticator over its lifetime, plus allowance for network delay and user entry of the OTP.
 -->
 
-時間ベースの OTP [[TOTP]](references.md#ref-totp) は, ネットワーク遅延と OTP のユーザ入力のための許容値, それに加え Authenticator が寿命の間に持つはずの両方向のクロックのずれによって決定される, 定義されたライフタイムを持つこととなる(**SHALL**).
+時間ベースの OTP [[TOTP]](references.md#ref-totp) は, ネットワーク遅延と OTP のユーザ入力のための許容値, それに加え Authenticator が寿命の間に持つはずの両方向のクロックのずれを考慮した上で決定される, 定義されたライフタイムを持つこととなる(**SHALL**).
 
 <!--
 If the authenticator output has less than 64 bits of entropy, the verifier **SHALL** implement a rate-limiting mechanism that effectively limits the number of failed authentication attempts that can be made on the subscriber account as described in [Sec. 5.2.2](sec5_authenticators.md#throttle).
@@ -491,7 +491,7 @@ A multi-factor OTP device generates OTPs for use in authentication after activat
 {:.authenticator-image}
 -->
 
-Multi-Factor OTP デバイスは, Activation Factor の入力による Activation 後に Authentication に使用する OTP を生成する. これには, ハードウェアデバイスと携帯電話などのデバイス上にインストールされた Software-Based OTP Generator が含まれる. 認証の二番目の要素は, 一体型入力パッドのようなもの, 一体型Biometric (例: 指紋) リーダー, または直接的なコンピュータインターフェース (例: USB ポート) によって実現されてもよい. OTP はデバイス上に表示され Verifier に送信するために手動で入力される. 例えば, OTP デバイスは一度に6文字を表示することができ, それによってデバイスの所有と制御を証明する. Multi-Factor OTP デバイスは _Something You Have_ であり, かつ, _Something You Know_ または _Something You Are_ のいずれかによって Activation されることとなる(**SHALL**).
+Multi-Factor OTP デバイスは, Activation Factor の入力による Activation 後に Authentication に使用する OTP を生成する. これには, ハードウェアデバイスと携帯電話などのデバイス上にインストールされた Software-Based OTP Generator が含まれる. Authentication の二番目の要素は, 一体型入力パッドのようなもの, 一体型Biometric (例: 指紋) リーダー, または直接的なコンピュータインターフェース (例: USB ポート) によって実現されてもよい. OTP はデバイス上に表示され Verifier に送信するために手動で入力される. 例えば, OTP デバイスは一度に6文字を表示することができ, それによってデバイスの所有と制御を証明する. Multi-Factor OTP デバイスは _something you have_ であり, かつ, _something you know_ または _something you are_ のいずれかによって Activation されることとなる(**SHALL**).
 {:.authenticator-image}
 
 
@@ -519,7 +519,7 @@ Secret Key とそのアルゴリズムは, 少なくとも [[SP800-131A]](refere
 The authenticator output is obtained by using an approved block cipher or hash function to combine the key and nonce in a secure manner. The authenticator output **MAY** be truncated to as few as 6 decimal digits (approximately 20 bits of entropy).
 -->
 
-Authenticator の出力は, Key と Nonce を安全な方法で結合するために承認されたブロック暗号または Hash 関数を使用すること取得される. Authenticator の出力は, わずか6桁の10進数 (約20ビットのEntropy) に切り捨てられられてもよい(**MAY**).
+Authenticator の出力は, Key と Nonce を安全な方法で結合するために Approved なブロック暗号または Hash 関数を使用すること取得される. Authenticator の出力は, わずか6桁の10進数 (約20ビットのEntropy) に切り詰められられてもよい(**MAY**).
 
 <!--
 If the nonce used to generate the authenticator output is based on a real-time clock, the nonce **SHALL** be changed at least once every 2 minutes.
@@ -551,13 +551,13 @@ Multi-Factor OTP Authenticator が Subscriber Account に関連付けられて�
 The verifier **SHALL** use approved encryption and an authenticated protected channel when collecting the OTP in order to provide resistance to eavesdropping and AitM attacks. In order to provide replay resistance as described in [Sec. 5.2.8](sec5_authenticators.md#replay), verifiers **SHALL** accept a given OTP only once while it is valid. In the event a claimant's authentication is denied due to duplicate use of an OTP, verifiers **MAY** warn the claimant in case an attacker has been able to authenticate in advance. Verifiers **MAY** also warn a subscriber in an existing session of the attempted duplicate use of an OTP.
 -->
 
-Verifier は, OTP を収集するときに, 盗聴や AitM Attack への耐性を提供するために, Approved Encryption と Authenticated Protected Channel を使用することとなる(**SHALL**). [Sec. 5.2.8](sec5_authenticators.md#replay) で説明されている通りに Replay Resistance を提供するために, Verifier は, 有効な OTP の受け入れを一度のみとすることとなる(**SHALL**). OTP の重複使用が原因で Claimant の Authentication が拒否された場合, Verifier は, Attacker が事前に認証できた場合に備えて Claimant に警告してもよい(**MAY**). また, Verifier は, OTP の重複使用の試行について, 既存セッションの中にいる Subscriber に警告してもよい(**MAY**).
+Verifier は, OTP を収集するときに, 盗聴や AitM Attack への耐性を提供するために, Approved Encryption と Authenticated Protected Channel を使用することとなる(**SHALL**). [Sec. 5.2.8](sec5_authenticators.md#replay) で説明されている通りに Replay Resistance を提供するために, Verifier は, 有効な OTP の受け入れを一度のみとすることとなる(**SHALL**). OTP の重複使用が原因で Claimant の Authentication が拒否された場合, Verifier は, Attacker が事前に Authenticate できた場合に備えて Claimant に警告してもよい(**MAY**). また, Verifier は, OTP の重複使用の試行について, 既存セッションの中にいる Subscriber に警告してもよい(**MAY**).
 
 <!--
 Time-based OTPs [[TOTP]](references.md#ref-totp) **SHALL** have a defined lifetime that is determined by the expected clock drift — in either direction — of the authenticator over its lifetime, plus allowance for network delay and user entry of the OTP.
 -->
 
-時間ベースの OTP [[TOTP]](references.md#ref-totp) は, ネットワーク遅延と OTP のユーザ入力のための許容値, それに加え Authenticator が寿命の間に持つはずの両方向のクロックのずれによって決定される, 定義されたライフタイムを持つこととなる(**SHALL**).
+時間ベースの OTP [[TOTP]](references.md#ref-totp) は, ネットワーク遅延と OTP のユーザ入力のための許容値, それに加え Authenticator が寿命の間に持つはずの両方向のクロックのずれを考慮した上で決定される, 定義されたライフタイムを持つこととなる(**SHALL**).
 
 <!--
 If the authenticator output or activation secret has less than 64 bits of entropy, the verifier **SHALL** implement a rate-limiting mechanism that effectively limits the number of failed authentication attempts that can be made on the subscriber account as described in [Sec. 5.2.2](sec5_authenticators.md#throttle).
@@ -572,7 +572,7 @@ A single-factor cryptographic software authenticator is a cryptographic key stor
 {:.authenticator-image}
 -->
 
-Single-Factor Cryptographic Software Authenticator は, ディスク上またはその他の "ソフト" メディアに格納された Cryptographic Key である. Authentication は, Key の所有と制御を証明することによって成し遂げられる. Authenticator の出力は, 特定の暗号プロトコルに大きく依存するが, 通常は何らかのタイプの署名付きメッセージである. Single-Factor Cryptographic Software Authenticator は _Something You Have_ である.
+Single-Factor Cryptographic Software Authenticator は, ディスク上またはその他の "ソフト" メディアに格納された Cryptographic Key である. Authentication は, Key の所有と制御を証明することによって成し遂げられる. Authenticator の出力は, 特定の暗号プロトコルに大きく依存するが, 通常は何らかのタイプの署名付きメッセージである. Single-Factor Cryptographic Software Authenticator は _something you have_ である.
 {:.authenticator-image}
 
 #### Single-Factor Cryptographic Software Authenticators {#sfcsa}
@@ -604,7 +604,7 @@ A single-factor cryptographic device is a hardware device that performs cryptogr
 {:.authenticator-image}
 -->
 
-Single-Factor Cryptographic デバイスは, 保護された Cryptographic Key を使用して暗号的操作を実行し, ユーザーエンドポイントへの直接接続を介して Authenticator の出力を提供するハードウェアデバイスである. デバイスは, 組み込みの Symmetric または Asymmetric Cryptographic Key を使用し, 二番目の要素による Activation を必要としない. Authentication は, Authentication Protocol を介してデバイスの所有を証明することによって成し遂げられる. Authenticator の出力は, ユーザーエンドポイントへの直接接続によって提供され, また特定の暗号デバイスとプロトコルに大きく依存するが, 通常は何らかのタイプの署名付きメッセージである. Single-Factor Cryptographic デバイスは _Something You Have_ である.
+Single-Factor Cryptographic デバイスは, 保護された Cryptographic Key を使用して暗号的操作を実行し, ユーザーエンドポイントへの直接接続を介して Authenticator の出力を提供するハードウェアデバイスである. デバイスは, 組み込みの Symmetric または Asymmetric Cryptographic Key を使用し, 二番目の要素による Activation を必要としない. Authentication は, Authentication Protocol を介してデバイスの所有を証明することによって成し遂げられる. Authenticator の出力は, ユーザーエンドポイントへの直接接続によって提供され, また特定の暗号デバイスとプロトコルに大きく依存するが, 通常は何らかのタイプの署名付きメッセージである. Single-Factor Cryptographic デバイスは _something you have_ である.
 
 #### Single-Factor Cryptographic Device Authenticators {#sfcda}
 
@@ -659,7 +659,7 @@ A multi-factor cryptographic software authenticator is a cryptographic key store
 {:.authenticator-image}
 -->
 
-Multi-Factor Cryptographic Software Authenticator は, Authentication の二番目の要素での Activation を必要とする, ディスク上またはその他の "ソフト" メディアに格納された Cryptographic Key である. Authentication は, Key の所有と制御を証明することによって成し遂げられる. Authenticator の出力は, 特定の暗号プロトコルに大きく依存するが, 通常は何らかのタイプの署名付きメッセージである. Multi-Factor Cryptographic Software Authenticator は _Something You Have_ であり, _Something You Know_ または _Something You Are_ のいずれかによって Activation されることとなる(**SHALL**).
+Multi-Factor Cryptographic Software Authenticator は, Authentication の二番目の要素での Activation を必要とする, ディスク上またはその他の "ソフト" メディアに格納された Cryptographic Key である. Authentication は, Key の所有と制御を証明することによって成し遂げられる. Authenticator の出力は, 特定の暗号プロトコルに大きく依存するが, 通常は何らかのタイプの署名付きメッセージである. Multi-Factor Cryptographic Software Authenticator は _something you have_ であり, _something you know_ または _something you are_ のいずれかによって Activation されることとなる(**SHALL**).
 {:.authenticator-image}
 
 #### Multi-Factor Cryptographic Software Authenticators {#mfcsa}
@@ -703,7 +703,7 @@ A multi-factor cryptographic device is a hardware device that performs cryptogra
 {:.authenticator-image}
 -->
 
-Multi-Factor Cryptographic デバイスは, 1つかそれ以上の保護された Cryptographic Key を使用して暗号的操作を実行し, 二番目の Authentication 要素による Activation を必要とするハードウェアデバイスである. Authentication は, デバイスの所有および Key の制御を証明することによって成し遂げられる. Authenticator の出力は, ユーザーエンドポイントへの直接接続によって提供され, また特定の暗号デバイスとプロトコルに大きく依存するが, 通常は何らかのタイプの署名付きメッセージである. Multi-Factor Cryptographic デバイスは, _Something You Have_ であり, かつ, _Something You Know_ または _Something You Are_ のいずれかによって Activation されることとなる(**SHALL**).
+Multi-Factor Cryptographic デバイスは, 1つかそれ以上の保護された Cryptographic Key を使用して暗号的操作を実行し, 二番目の Authentication Factor による Activation を必要とするハードウェアデバイスである. Authentication は, デバイスの所有および Key の制御を証明することによって成し遂げられる. Authenticator の出力は, ユーザーエンドポイントへの直接接続によって提供され, また特定の暗号デバイスとプロトコルに大きく依存するが, 通常は何らかのタイプの署名付きメッセージである. Multi-Factor Cryptographic デバイスは, _something you have_ であり, かつ, _something you know_ または _something you are_ のいずれかによって Activation されることとなる(**SHALL**).
 {:.authenticator-image}
 
 #### Multi-Factor Cryptographic Device Authenticators {#mfcda}
@@ -762,7 +762,7 @@ CSP は, Authenticator を盗難や紛失から適切に保護する方法につ
 When required by the authenticator type descriptions in [Sec. 5.1](sec5_authenticators.md#reqauthtype), the verifier **SHALL** implement controls to protect against online guessing attacks. Unless otherwise specified in the description of a given authenticator, the verifier **SHALL** limit consecutive failed authentication attempts on a single subscriber account to no more than 100.
 -->
 
-[Sec. 5.1](sec5_authenticators.md#reqauthtype) の Authenticator タイプの説明で必要とされる場合, Verifier は, Online Guessing Attack から保護するための制御を実装することとなる(**SHALL**). その Authenticator の説明で特に指定されていない限り, Verifier は, 単一の Subscriber Account での Authentication の連続失敗の試行を 100回 以下に制限することとなる(**SHALL**).
+[Sec. 5.1](sec5_authenticators.md#reqauthtype) の Authenticator Type の説明で必要とされる場合, Verifier は, Online Guessing Attack から保護するための制御を実装することとなる(**SHALL**). その Authenticator の説明で特に指定されていない限り, Verifier は, 単一の Subscriber Account での Authentication の連続失敗の試行を 100回 以下に制限することとなる(**SHALL**).
 
 <!--
 Additional techniques **MAY** be used to reduce the likelihood that an attacker will lock the legitimate claimant out as a result of rate limiting. These include:
