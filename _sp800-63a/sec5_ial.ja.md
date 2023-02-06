@@ -313,7 +313,7 @@ Proofing通知は、ApplicantのValidateされたアドレスに送付され、I
 
 Proofingの通知は:
 
-1.  Validateされた記録上のアドレス（郵便番号、電話番号、電子メール・アドレスなど）に送信されるものとする(**SHALL**)。可能な限り、CSP は、ProofingおよびEnrollmentコードの通知を異なるValidateされたアドレスに送信するものとする(**SHALL**)。  
+1.  Validateされた記録上のアドレス（郵便番号、電話番号、電子メール・アドレスなど）に送信されるものとする(**SHALL**)。可能な限り、CSP は、ProofingおよびEnrollmentコードの通知を異なるValidateされたアドレスに送信すべきである(**SHOULD**)。  
 2.  Identityサービスの名前およびIdentity Proofingが完了した日付など、Identity Proofingイベントに関する詳細を含むものとする(**SHALL**)。
 3.  受取人がIdenitty Proofingイベントを否認する場合に取るべき行動について、連絡先情報を含む 明確な指示を提供するものとする(**SHALL**)。
 4.  組織または CSP が収集する情報のセキュリティおよびプライバシーを保護する方法、およびIdentityサービスのSubscriberとして受信者が負う責任などの追加情報を提供するものとする(**SHALL**)。
