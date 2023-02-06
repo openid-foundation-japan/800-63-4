@@ -111,7 +111,7 @@ Enrollment プロセスを進めるかどうか、および Session に何が必
 
 * なぜ意味があることなのかを理解できるように、ユーザーに対して Identity Proofing の必要性および利点を説明する。
 
-* 金額、利用可能な支払い方法、および Enrollment 費用があるかどうかについての情報。利用可能な支払方法の種類を増やすことで、ユーザーは自分の好きな支払方法を選択することができる。
+* 金額、許容可能な支払い方法、および Enrollment 費用があるかどうかについての情報。許容可能な支払方法の種類を増やすことで、ユーザーは自分の好きな支払方法を選択することができる。
 
 {% comment %}
 This section describes an effective approach to facilitate sufficient pre-enrollment preparation so users can avoid challenging, frustrating enrollment sessions. Ensuring users are as prepared as possible for their enrollment sessions is critical to the overall success and usability of the enrollment and identity proofing process.
