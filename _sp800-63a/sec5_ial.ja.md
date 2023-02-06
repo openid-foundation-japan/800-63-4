@@ -546,7 +546,7 @@ The following requirements apply to all CSPs providing identity proofing and enr
 ###  Automated Attack Prevention
 {% endcomment %}
 
-CSP は、Identity Proofing プロセスに対する自動化された攻撃を防ぐための手段を実装するものとする(**SHALL**)。許容される手段には、ボットの検出、緩和、および管理ソリューション、行動分析、Web アプリケーションファイアウォール設定、およびトラフィック分析が含まれるが、これらに限定されない。
+CSP は、Identity Proofing プロセスに対する自動化された攻撃を防ぐための手段を実装するものとする(**SHALL**)。許容される手段には、ボットの検出・緩和・管理ソリューション、行動分析、Web アプリケーションファイアウォール設定、およびトラフィック分析が含まれるが、これらに限定されない。
 
 {% comment %}
 The CSP **SHALL** implement a means to prevent automated attacks on the identity proofing process. Acceptable means include, but are not limited to: bot detection, mitigation, and management solutions; behavioral analytics; web application firewall settings; and traffic analysis.
