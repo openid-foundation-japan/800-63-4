@@ -802,43 +802,111 @@ Subscriber が Authentication に成功すると, Verifierは, 同じ IP アド�
 
 ### Use of Biometrics {#biometric_use}
 
+<!--
 The use of biometrics (*something you are*) in authentication includes both measurement of physical characteristics (e.g., fingerprint, iris, facial characteristics) and behavioral characteristics (e.g., typing cadence). Both classes are considered biometric modalities, although different modalities may differ in the extent to which they establish authentication intent as described in [Sec. 5.2.9](sec5_authenticators.md#intent).
+-->
 
+Authentication における Biometrics (*something you are*) の使用は, 身体的特徴 (例: 指紋, 虹彩, 顔の特徴) と行動的特徴 (例: タイピングのリズム) の両方の測定を含む. どちらのクラスも Biometric Modalitiy と見なされるが, [Sec. 5.2.9](sec5_authenticators.md#intent) で説明されているように, それぞれの Modalitiy によってどの程度 Authentication の確立を意図しているかが異なる場合がある.
+
+<!--
 For a variety of reasons, this document supports only limited use of biometrics for authentication. These reasons include:
+-->
 
+さまざまな理由から, このドキュメントでは, Authentication のための Biometrics の限定的な使用のみをサポートしている. 理由は以下を含む:
+
+<!--
 - The biometric False Match Rate (FMR) does not provide confidence in the authentication of the subscriber by itself. In addition, FMR does not account for spoofing attacks.
 - Biometric comparison is probabilistic, whereas the other authentication factors are deterministic.
 - Biometric template protection schemes provide a method for revoking biometric credentials that is comparable to other authentication factors (e.g., PKI certificates and passwords). However, the availability of such solutions is limited, and standards for testing these methods are under development.
 - Biometric characteristics do not constitute secrets. They can often be obtained online or, in the case of a facial image, by taking a picture of someone with or without their knowledge. Latent fingerprints can be lifted from objects someone touches, and iris patterns can be captured with high resolution images. While presentation attack detection (PAD) technologies can mitigate the risk of these types of attacks, additional trust in the sensor or biometric processing is required to ensure that PAD is operating in accordance with the needs of the CSP and the subscriber.
+-->
 
+- Biometric False Match Rate (FMR) は, Subscriber の Authentication が Subscriber 自身 によってなされたものであるという信頼を提供しない. さらに, FMR はスプーフィング Attack を考慮して計算されない.
+- Biometric の比較は確率的だが, 他の Authentication Factor は決定的である.
+- Biometric Template Protection スキームは, 他の Authentication Factor (例: PKIの証明書およびパスワード) と同等の Biometric Credential を失効する方法を提供する. しかし, そのようなソリューションの有効性は限られており, これらの方法をテストするための標準は開発中である.
+- Biometric Characteristics は Secret の構成要素とはならない. それらはオンラインでたびたび入手でき, また人々の顔写真は相手の認識の有無を問わず写真を撮ることで入手できる. 隠れた指紋は人々が触れた物から取得することができ, 虹彩パターンは高解像度の画像で捉えられる. Presentation Attack Detection (PAD) テクノロジーはこれらのタイプの Attack のリスクを軽減できるが, PAD が CSP と Subscriber のニーズに従って動作していることを確実にするには, センサーまたは Biometric Processing への追加の信頼が必要とされる.
+
+<!--
 Therefore, the limited use of biometrics for authentication is supported with the following requirements and guidelines:
+-->
 
+このため, Authentication のための Biometrics の限定的な使用は, 次の要件とガイドラインでサポートされる:
+
+<!--
 Biometrics **SHALL** be used only as part of multi-factor authentication with a physical authenticator (*something you have*).
+-->
 
+Biometrics は, 物理的な Authenticator (*something you have*) を使用した Multi-Factor Authentication の一部としてのみ使用されることとなる(**SHALL**).
+
+<!--
 The biometric system **SHALL** operate with a false-match rate (FMR) [[ISO/IEC2382-37]](references.md#ref-ISOIEC2382-37) of 1 in 10000 or better. This FMR **SHALL** be achieved under conditions of a conformant attack (i.e., zero-effort impostor attempt) as defined in [[ISO/IEC30107-1]](references.md#ref-ISOIEC30107-1).
+-->
 
+Biometric システムは, 1/10000 またはそれよりも望ましい False-Match Rate (FMR) [[ISO/IEC2382-37]](references.md#ref-ISOIEC2382-37) で動作することとなる(**SHALL**). この FMR は, [[ISO/IEC30107-1]](references.md#ref-ISOIEC30107-1) で定義されている Conformant Attack  (つまり, Zero-Effort Impostor Attempt) の条件のもとで達成されることとなる(**SHALL**).
+
+<!--
 The biometric system **SHOULD** implement presentation attack detection (PAD). Testing of the biometric system to be deployed **SHOULD** demonstrate at least 90% resistance to presentation attacks for each relevant attack type (i.e., species), where resistance is defined as the number of thwarted presentation attacks divided by the number of trial presentation attacks. Testing of presentation attack resistance **SHALL** be in accordance with Clause 12 of [[ISO/IEC30107-3]](references.md#ref-ISOIEC30107-3). The PAD decision **MAY** be made either locally on the claimant's device or by a central verifier.
+-->
 
+Biometric システムは, Presentation Attack Detection (PAD) を実装する必要がある(**SHOULD**). 展開される Biometric システムのテストでは, 関連する Attack タイプ (つまり, Species) ごとに, Presentation Attack に対して少なくとも 90% の耐性があることを示す必要がある(**SHOULD**). 耐性は, 阻止された Presentation Attack の数を試行したPresentation Attack の数で割った値として定義される. Presentation Attack 耐性のテストは, [[ISO/IEC30107-3]](references.md#ref-ISOIEC30107-3) の第12条に従うこととなる(**SHALL**). PAD の決定は, Claimant のデバイス上でローカルに行われるか, 中央の Verifier によって行われてもよい(**MAY**).
+
+<!--
 The biometric system **SHALL** allow no more than 5 consecutive failed authentication attempts or 10 consecutive failed attempts if PAD, meeting the above requirements, is implemented. Once that limit has been reached, the biometric authenticator **SHALL** impose a delay of at least 30 seconds before each subsequent attempt, with an overall limit of no more than 50 consecutive failed authentication attempts (100 if PAD is implemented). Once the overall limit is reached, the biometric system **SHALL** disable biometric user authentication and offer another factor (e.g., a different biometric modality or an activation secret if it is not already a required factor) if such an alternative method is already available.
+-->
 
+Biometric システムは, 認証の試行の連続失敗を5回まで, または, 上記の要件を満たす PAD が実装されている場合においては試行の連続失敗を 10 回まで許容することとなる(**SHALL**). ひとたびその制限に達すると, Biometric Authenticator は, 全体的な制限として認証の試行の連続失敗が 50 回 (PAD が実装されている場合は 100 回) を超えないとともに, その後の各試行の前に少なくとも 30 秒の遅延を課すこととなる(**SHALL**). ひとたび全体的な制限に達すると, Biometric システムは, Biometric User Authentication を無効にすることとなり(**SHALL**), 利用可能な代替方法がすでにある場合は, 他の要素 (例: 別の Biometric Modality, または, まだ要求された要素でない場合は Activation Secret) を提案することとなる.
+
+<!--
 The verifier **SHALL** make a determination of sensor and endpoint performance, integrity, and authenticity. Acceptable methods for making this determination include, but are not limited to:
+-->
 
+Verifier は, センサーとエンドポイントのパフォーマンス, 完全性, および 真正性を判断することとなる(**SHALL**). この決定を行うための許容される方法は, 以下を含むがこれらに限定されない:
+
+<!--
 * Authentication of the sensor or endpoint
 * Certification by an approved accreditation authority
 * Runtime interrogation of signed metadata (e.g., attestation) as described in [Sec. 5.2.4](sec5_authenticators.md#attestation).
+-->
 
+* センサーまたはエンドポイントの Authentication
+* Approvedな 公認機関による Certification
+* [Sec. 5.2.4](sec5_authenticators.md#attestation) で説明されている通りの, 署名されたメタデータ (例: Attestation) の実行時の問い合わせ.
+
+<!--
 Biometric comparison can be performed locally on the claimant's device or at a central verifier. Since the potential for attacks on a larger scale is greater at central verifiers, comparison **SHOULD** be performed locally.
+-->
 
+Biometric の比較は, Claimant のデバイス上でローカルでも, 中央の Verifier でも実行可能である. しかし, 大規模な Attack の可能性は中央の Verifier の方が大きいため, 比較はローカルで実行される必要がある(**SHOULD**).
+
+<!--
 If comparison is performed centrally:
+-->
 
+比較が中央で実行される場合:
+
+<!--
 * Use of the biometric as an authentication factor **SHALL** be limited to one or more specific devices that are identified using approved cryptography. Since the biometric has not yet unlocked the main authentication key, a separate key **SHALL** be used for identifying the device.
 * Biometric revocation, referred to as biometric template protection in [[ISO/IEC24745]](references.md#ref-ISOIEC24745), **SHALL** be implemented.
 * An authenticated protected channel between sensor (or an endpoint containing a sensor that resists sensor replacement) and verifier **SHALL** be established and the sensor or endpoint **SHALL** be authenticated prior to capturing the biometric sample from the claimant.
 * All transmission of biometrics **SHALL** be over an authenticated protected channel.
+-->
 
+* Authentication Factor としての Biometric の使用は, Approved Cryptography を使用して識別される1つかそれ以上の特定のデバイスに限定されることとなる(**SHALL**). Biometric はメインの Authentication Key をまだアンロックしていないため, デバイスの識別には別の Key が使用されることとなる(**SHALL**).
+* [[ISO/IEC24745]](references.md#ref-ISOIEC24745) で Biometric Template Protection と呼ばれるBiometric Revocation が実装されることとなる(**SHALL**).
+* Authenticated Protected Channel は, センサー (またはセンサー交換耐性があるセンサーを含むエンドポイント) と Verifier の間に確立されることとなり(**SHALL**), また, センサーまたはエンドポイントは, Claimant から Biometric Sample を取得する前に Authenticate されることとなる(**SHALL**).
+* Biometrics のすべての送信は, Authenticated Protected Channel を介することとなる(**SHALL**).
+
+<!--
 Biometric samples collected in the authentication process **MAY** be used to train comparison algorithms or — with user consent — for other research purposes. Biometric samples and any biometric data derived from the biometric sample such as a probe produced through signal processing **SHALL** be zeroized immediately after any training or research data has been derived.
+-->
 
+Authentication プロセスの中で収集された Biometric Sampleは, 比較アルゴリズムのトレーニングに使用するか, または -ユーザーの同意のもとで- 他の研究目的に使用されてもよい(**MAY**). Biometric Sample, および信号処理によって生成された Probe などの Biometric Sample から得られたすべての Biometric データは, すべてのトレーニングまたは研究データが得られた直後に Zeroize されることとなる(**SHALL**). 
+
+<!--
 Biometric authentication technologies **SHALL** provide similar performance for subscribers of different demographic types (racial background, gender, ethnicity, etc.).
+-->
+
+Biometric Authentication 技術は, さまざまな人口統計的タイプ (人種的背景, 性別, 民族など) の Subscriber に対して同様のパフォーマンスを提供することとなる(**SHALL**). 
 
 ### Attestation {#attestation}
 
