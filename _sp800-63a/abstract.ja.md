@@ -21,3 +21,4 @@ anchor: abstract
 # 翻訳者
 
 * Tatsuya Katsuhara
+  * Amazon Web Services Japan G.K.
