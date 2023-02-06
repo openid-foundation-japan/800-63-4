@@ -18,7 +18,7 @@ _This section is informative._
 Effective protection of identity proofing processes requires the layering of security controls and processes throughout a transaction with a given applicant. To achieve this, it is necessary to understand where and how threats can arise and compromise enrollments. There are three general categories of threats to the identity proofing process: 
 {% endcomment %}
 
-* **なりすまし**: Attacker が他の正当な個人を語る試み(例：Identity 盗難)
+* **なりすまし**: Attacker が他の正当な個人を騙る試み(例：Identity 盗難)
 
 * **虚偽・詐称表現**: Attacker が虚偽のIdentityを作り出す、あるいはIdentityについての虚偽のClaimを行う可能性(例: 合成 Identity 詐称)
 
