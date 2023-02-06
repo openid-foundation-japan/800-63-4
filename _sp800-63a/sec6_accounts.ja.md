@@ -14,7 +14,7 @@ _This section is normative._
 
 ## Subscriber Accounts
 
-オンラインサービスへの 1 回限りの Access を提供する目的の Identity Proofing、または Applicant がアカウントへの Enrollment を拒否した場合を除き、CSP は Applicant をその Identity サービスの Subscriber として Enroll し、 Applicant の Identity Proofing の成功後にその Subscriber 用の固有の _subscriber account_ を確立するものとする（**SHALL**）。
+オンラインサービスへの 1 回限りの Access を提供する目的の Identity Proofing、または Applicant がアカウントへの Enrollment を拒否した場合を除き、CSP は Applicant を自身の Identity サービスの Subscriber として Enroll し、 Applicant の Identity Proofing の成功後にその Subscriber 用の固有の _Subscriber Account_ を確立するものとする（**SHALL**）。
 
 {% comment %}
 With the exception of identity proofing for the purposes of providing one-time access to an online service, or when an applicant declines enrollment into an account, the CSP **SHALL** enroll the applicant as a subscriber into its identity service and establish a unique _subscriber account_ for that subscriber following the successful identity proofing of an applicant. 
