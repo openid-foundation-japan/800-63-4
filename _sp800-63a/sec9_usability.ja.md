@@ -157,7 +157,7 @@ To ensure users are equipped to make informed decisions about whether to proceed
 {% endcomment %}
 
 ## Enrollment and Proofing Session
-Enrollment Session に特有の Usability の考慮事項は以下のとおりである: 
+Enrollment セッションに特有の Usability の考慮事項は以下を含む: 
 
 * Identity Proofing Session の開始時に、ユーザーに手続きをリマインドする。Enrollment 前準備の段階で説明した手順を覚えていることを期待してはいけない。Enrollment Session がEnrollment 前準備の直後に行われない場合は、Proofing と Enrollment のステップの完了に要する標準的な時間をユーザに明確に思い出させることが特に重要である。
 * 対面、またはリモートチャネルを介した対面のための予約変更のオプションを提供する。
