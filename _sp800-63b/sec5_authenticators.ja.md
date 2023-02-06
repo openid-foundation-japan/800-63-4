@@ -476,7 +476,7 @@ Verifier は, OTP を収集するときに, 盗聴や AitM Attack への耐性�
 Time-based OTPs [[TOTP]](references.md#ref-totp) **SHALL** have a defined lifetime that is determined by the expected clock drift — in either direction — of the authenticator over its lifetime, plus allowance for network delay and user entry of the OTP.
 -->
 
-時間ベースの OTP [[TOTP]](references.md#ref-totp) は, ネットワーク遅延と OTP のユーザ入力のための許容値, それに加え Authenticator が寿命の間に持つはずの両方向のクロックのずれを考慮した上で決定される, 定義されたライフタイムを持つこととなる(**SHALL**).
+時間ベースの OTP [[TOTP]](references.md#ref-totp) は, ネットワーク遅延と OTP のユーザー入力のための許容値, それに加え Authenticator が寿命の間に持つはずの両方向のクロックのずれを考慮した上で決定される, 定義されたライフタイムを持つこととなる(**SHALL**).
 
 <!--
 If the authenticator output has less than 64 bits of entropy, the verifier **SHALL** implement a rate-limiting mechanism that effectively limits the number of failed authentication attempts that can be made on the subscriber account as described in [Sec. 5.2.2](sec5_authenticators.md#throttle).
@@ -557,7 +557,7 @@ Verifier は, OTP を収集するときに, 盗聴や AitM Attack への耐性�
 Time-based OTPs [[TOTP]](references.md#ref-totp) **SHALL** have a defined lifetime that is determined by the expected clock drift — in either direction — of the authenticator over its lifetime, plus allowance for network delay and user entry of the OTP.
 -->
 
-時間ベースの OTP [[TOTP]](references.md#ref-totp) は, ネットワーク遅延と OTP のユーザ入力のための許容値, それに加え Authenticator が寿命の間に持つはずの両方向のクロックのずれを考慮した上で決定される, 定義されたライフタイムを持つこととなる(**SHALL**).
+時間ベースの OTP [[TOTP]](references.md#ref-totp) は, ネットワーク遅延と OTP のユーザー入力のための許容値, それに加え Authenticator が寿命の間に持つはずの両方向のクロックのずれを考慮した上で決定される, 定義されたライフタイムを持つこととなる(**SHALL**).
 
 <!--
 If the authenticator output or activation secret has less than 64 bits of entropy, the verifier **SHALL** implement a rate-limiting mechanism that effectively limits the number of failed authentication attempts that can be made on the subscriber account as described in [Sec. 5.2.2](sec5_authenticators.md#throttle).
