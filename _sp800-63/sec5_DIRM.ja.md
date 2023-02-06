@@ -64,7 +64,7 @@ Digital Identity の Risk Management には4つのステップが存在する.
 - 被害を評価する対象となる一連の影響カテゴリーの特定,
 - 影響カテゴリーのそれぞれについて, 潜在的な被害を特定,
 - 障害が発生した場合に, それらの潜在的な被害が与える影響のレベルの特定, ならびに
-- 各タイプの障害 ( Proofing, Authentication, Federation ) の影響の評価と, 影響を受けるすべての主体への影響レベルの評価.
+- 各タイプの障害 (Proofing, Authentication, Federation) の影響の評価と, 影響を受けるすべての主体への影響レベルの評価.
 
 <!-- The output of this assessment is a defined impact level &mdash; High, Moderate, or Low &mdash; for each possible type of failure. This serves as the primary input to the initial assurance level selection. -->
 
