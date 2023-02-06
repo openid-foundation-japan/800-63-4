@@ -399,7 +399,7 @@ The following requirements apply to CSPs who collect biometric characteristics f
 ###  Trusted Referees and Applicant References {#TRs-ARs}
 {% endcomment %}
 
- Access 性を向上させ、オンライン政府サービスへの平等な Access を促進するために、CSP は _trusted referees_ を提供する。Trusted Referee は、特定の IAL へのIdentity Proofing要件を満たすことができない個人が、Identity ProofingおよびEnrollmentを円滑に進めるために利用される。そのような個人および人口統計学的グループは次のような個人が例として挙げられる: 必要なIdentity Evidenceを所有せず入手できない個人、障害者、高齢者、ホームレス経験者、オンライン・サービスまたはコンピューティング・ デバイスにほとんどまたは全く Access できない個人、銀行口座を持たないあるいはクレジット履歴が限定されている人、Identity盗難被害者、自然災害で避難したまたは影響を受けた個人、および 18 才未満の児童
+ Access 性を向上させ、オンライン政府サービスへの平等な Access を促進するために、CSP は _trusted referees_ を提供する。Trusted Referee は、特定の IAL へのIdentity Proofing要件を満たすことができない個人が、Identity ProofingおよびEnrollmentを円滑に進めるために利用される。そのような個人および人口統計学的グループは次のような個人が例として挙げられる: 必要なIdentity Evidenceを所有せず入手できない個人、障害者、高齢者、ホームレス状態にある人、オンライン・サービスまたはコンピューティング・ デバイスにほとんどまたは全く Access できない個人、銀行口座を持たないあるいはクレジット履歴が限定されている人、Identity盗難被害者、自然災害で避難したまたは影響を受けた個人、および 18 才未満の児童
 
 
 {% comment %}
