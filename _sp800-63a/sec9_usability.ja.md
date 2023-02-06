@@ -102,7 +102,7 @@ This sub-section provides usability considerations that are applicable across al
 
 このセクションでは、ユーザーが、難しく苛立たしい Enrollment Session を回避できるように、Enrollment 前の十分な準備を促進する効果的なアプローチについて記載する。ユーザーが Enrollment Session に対して可能な限り準備できるようにすることは、Enrollment および Identity Proofing プロセスの全体的な成功と Usability にとって重要である。
 
-このような準備は、ユーザーが、必要な情報（例：必要な文書など）を適切な時間枠のなかで使用可能な形で受け取る場合にのみ可能である。これには、どのような Identity Evidence が必要とされるかをユーザーに正確に認識させることが含まれる。ユーザーは IAL について何も知る必要はなく、要求される Identity Evidence が「FIAR」、「STRONG」、 「SUPERIOR」のいずれと類されるかどうかを知る必要はないが、組織は特定のシステムへのアクセスにどの IAL が要求されるかを知る必要がある。
+このような準備のためには、ユーザーが必要な情報（例：必要な文書など）を使いやすい形式で適切なタイミングで受け取ることが不可欠である。これには、どのような Identity Evidence が必要とされるかをユーザに正確に認識させることが含まれる。ユーザは IAL について何も知る必要はなく、要求される Identity Evidence が「FIAR」、「STRONG」、 「SUPERIOR」のいずれと類されるかどうかも知る必要はないが、組織は特定のシステムへのアクセスにどの IAL が要求されるかを知る必要がある。
 
 Enrollment プロセスを進めるかどうか、および Session に何が必要かについて、ユーザーが十分な情報を得た上で判断できるようにするため、ユーザーに以下の情報を提供する:
 
