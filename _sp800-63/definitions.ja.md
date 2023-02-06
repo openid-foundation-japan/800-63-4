@@ -200,7 +200,7 @@ Authorize
 Authorized Party
 <!-- : In federation, the organization, person, or entity that is responsible for making decisions regarding the release of information within the federation transaction, most notably subscriber attributes. This is often the subscriber (when runtime decisions are used) or the party operating the IdP (when allowlists are used). -->
 
-: Federation において, Federation Transaction 内で情報（特に Subscriber Attribute ）の公開に関する決定を行う責任を負う組織, 人, または実体. これは, 多くの場合, Subscriber（実行時決定が使用される場合）または IdP を運営する当事者（ Allowlist が使用される場合）.
+: Federation において, Federation Transaction 内で情報 (特に Subscriber Attribute) の公開に関する決定を行う責任を負う組織, 人, または実体. これは, 多くの場合, Subscriber (実行時決定が使用される場合) または IdP を運営する当事者 (Allowlist が使用される場合).
 
 Back-Channel Communication
 <!-- : Communication between two systems that relies on a direct connection (allowing for standard protocol-level proxies), without using redirects through an intermediary such as a browser. This can be accomplished using HTTP requests and responses. -->
@@ -374,7 +374,7 @@ Entropy
 Equity
 <!-- : Per EO 13985, Equity refers to the consistent and systematic fair, just, and impartial treatment of all individuals, including individuals who belong to underserved communities that have been denied such treatment, such as Black, Latino, and Indigenous and Native American persons, Asian Americans and Pacific Islanders, and other persons of color; members of religious minorities; lesbian, gay, bisexual, transgender, and queer (LGBTQ+) persons; persons with disabilities; persons who live in rural areas; and persons otherwise adversely affected by persistent poverty or inequality. -->
 
-: EO 13985 によると, Equity とは, 黒人, ラテンアメリカ人, 先住民, アジア系アメリカ人, 太平洋諸島民, その他の有色人種など, これまで十分なサービスを受けてこなかったコミュニティに属する個人を含め, すべての個人を一貫して公平, 公正, かつ公平に扱うことを指す. 宗教的少数派の人々, レズビアン, ゲイ, バイセクシャル, トランスジェンダー, クィア（LGBTQ+）の人々, 障害者, 地方に住む人々, その他根強い貧困や不平等から悪影響を受ける人々など.
+: EO 13985 によると, Equity とは, 黒人, ラテンアメリカ人, 先住民, アジア系アメリカ人, 太平洋諸島民, その他の有色人種など, これまで十分なサービスを受けてこなかったコミュニティに属する個人を含め, すべての個人を一貫して公平, 公正, かつ公平に扱うことを指す. 宗教的少数派の人々, レズビアン, ゲイ, バイセクシャル, トランスジェンダー, クィア (LGBTQ+) の人々, 障害者, 地方に住む人々, その他根強い貧困や不平等から悪影響を受ける人々など.
 
 Federal Information Processing Standard (FIPS)
 <!-- : Under the Information Technology Management Reform Act (Public Law 104-106), the Secretary of Commerce approves the standards and guidelines that the National Institute of Standards and Technology (NIST) develops for federal computer systems. NIST issues these standards and guidelines as Federal Information Processing Standards (FIPS) for government-wide use. NIST develops FIPS when there are compelling federal government requirements, such as for security and interoperability, and there are no acceptable industry standards or solutions. See background information for more details.-->
