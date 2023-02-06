@@ -261,7 +261,7 @@ Usability considerations specific to the enrollment session include:
 
 Enrollment 後とは、Enrollment 直後から、Authenticator の典型的な利用の前のステップを指す(Authenticator の典型的な利用と、断続的なイベントに対する Usability の考慮については、[[SP800-63B]](../_sp800-63b/sec1_purpose.ja.md#purpose){:latex-href="#ref-SP800-63B"}, Sec. 10. を参照。前述の通り、ユーザーはEnrollment Session の完了時に、Authenticator を受け取るために期待される配送（またはピックアップ）メカニズムについて、既に通知されている。
 
-Enrollment 後の Usability に関する考慮事項は以下の通りである: 
+Enrollment 後の Usability に関する考慮事項は以下を含む: 
 
 * Authenticator が到着するまでの待ち時間を最小限にする。待ち時間を短くすることで、情報システムやサービスに素早くアクセスできるようになる。
 
