@@ -88,7 +88,7 @@ The CSP **SHALL** conduct its operations according to a practice statement that 
 {% endcomment %}
 
 1. CSP は、不正行為の緩和策（例：Applicantのデバイス特性の調査、行動特性の評価、デスマスターファイル （[[DMF]](sec11_references.ja.md#ref-dmf) などの重要統計情報リポジトリの確認）を使用してIdentity Proofingの信頼性を高めるものとする(**SHALL**)。
-2. CSP が不正行為の緩和策を使用する場合、CSP はこれらの緩和策についてプライバシー影響評価を実施するものとする(**SHALL**)。
+2. CSP が不正行為の緩和策を使用する場合、CSP はこれらの緩和策についてプライバシーリスク評価を実施するものとする(**SHALL**)。
 3. そのようなアセスメントでは、何らかのプライバシーリスクの緩和策（例：リスクの受容、転嫁、保持の制限、使用制限、通知）またはその他の技術的な緩和策（例：暗号化）が含まれ、これらのガイドラインに従って文書化されなければならない。
 
 [^alternatives]。Applicantの代表者がいるかどうかに関わらず、Trusted Refereeの使用は1つのオプションである。補足的なIdentity Evidenceのタイプについては、[セクション 5.1.9](../ial/#TRs-ARs) を参照すること。
