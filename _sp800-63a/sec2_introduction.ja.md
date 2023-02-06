@@ -85,7 +85,7 @@ The expected outcomes of identity proofing include:
 
 ## Identity Assurance Levels
 
-Subscriberのアイデンティティの保証は、次のIdentity Assurance Levels (IAL)のいずれかを用いて記述される。後続する各 IAL は、より高い保証を達成するために、より低い IAL の要件の上に構築される。  
+Subscriberのアイデンティティの確からしさは、次のIdentity Assurance Levels (IAL)のいずれかを用いて記述される。後続する各 IAL は、より高い確実性を達成するために、より低い IAL の要件の上に構築される。  
 
 {% comment %}
 Assurance in a subscriber's identity is described using one of the following Identity Assurance Levels (IAL). Each successive IAL builds on the requirements of lower IALs in order to achieve greater assurance.   
