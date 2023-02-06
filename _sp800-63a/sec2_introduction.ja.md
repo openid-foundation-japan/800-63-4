@@ -92,7 +92,7 @@ Assurance in a subscriber's identity is described using one of the following Ide
 {% endcomment %}
 
 
-**Identity Proofingなし (IAL0)**: Applicantと特定の実在するアイデンティティとをリンクする要件はない。Subjectの活動に伴って提供されるすべてのAttributeは、自己申告または自己申告として扱われる。自己申告のAttributeはIAL0ではValidateもVerifyもされない。
+**Identity Proofingなし (IAL0)**: Applicantと特定の実在するアイデンティティとをリンクする要件はない。Subjectの活動に伴って提供されるすべてのAttributeは、自己申告であるか、または自己申告として扱われる。自己申告のAttributeはIAL0ではValidateもVerifyもされない。
 
 {% comment %}
 **No identity proofing (IAL0)**: There is no requirement to link the applicant to a specific, real-life identity. Any attributes provided in conjunction with the Subject's activities are self-asserted and are treated as self-asserted. Self-asserted attributes at IAL0 are neither validated nor verified.
