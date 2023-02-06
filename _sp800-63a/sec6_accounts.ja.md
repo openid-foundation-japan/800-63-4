@@ -90,9 +90,9 @@ CSP は、以下のいずれかが発生した場合、Subscriber Account を終
 
 * Subscriber が CSP の Subscriber Account の終了を選択した場合 
 * CSP は、CSP が定める任意の期限付き通知期間および要件に従って、Subscriber Account が侵害されたと判断した場合
-* CSP は、CSP が定める任意の期限付き通知期間および要件に従って、Subscriber が CSP Identity サービスへの参加に関するポリシーまたは規則に違反したと判断する。
-* CSP は、CSP が定める任意の期限付き通知期間および要件に従って、Subscriber Account が非アクティブであることを、CSP が定めるポリシーまたは規則に従って判断する。
-* CSP は、Identity システムおよびサービスの運用を停止する。
+* CSP は、CSP が定める任意の期限付き通知期間および要件に従って、Subscriber が CSP Identity サービスへの参加に関するポリシーまたは規則に違反したと判断した場合
+* CSP は、CSP が定める任意の期限付き通知期間および要件に従って、Subscriber Account が非アクティブであることを、CSP が定めるポリシーまたは規則に従って判断した場合
+* CSP は、Identity システムおよびサービスの運用を停止する場合
 
 CSP は、アカウント終了後に、Subscriber Account の記録から個人情報または機微情報を、記録保持と廃棄の要件に従ってすべて削除するものとする(**SHALL**)
 
