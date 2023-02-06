@@ -130,7 +130,7 @@ Possible mitigations include:
 
 
 ## Equity and Identity Verification {#EquityVerification}
-Identity Verification には、Identity Evidence プロセスを進めている Applicant と、Identity Resolution および Validation のステップを通じて確立された有効な現実世界の Identity との間のバインディングを証明することが含まれる。多くの場合、Identity Evidence イベントで撮影されたApplicant の写真（顔画像キャプチャ）を収集し、提示さ れ Validate された Identity Evidence の一部に含まれる写真と比較することを伴う。
+Identity Verification には、Identity Evidence プロセスを進めている Applicant と、Identity Resolution および Validation のステップを通じて確立された有効な現実世界の Identity との間の Binding を証明することが含まれる。多くの場合、Identity Proofing イベントで撮影されたApplicant の写真（顔画像キャプチャ）を収集し、提示され Validate された Identity Evidence の一部に含まれる写真と比較することを伴う。
 
 このセクションでは、Identity Verification フェーズに関連する不公平な処遇や結果について、考えられる一連の問題と緩和策を提供する。
 {% comment %}
