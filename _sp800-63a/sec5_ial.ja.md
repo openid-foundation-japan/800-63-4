@@ -118,7 +118,7 @@ The following privacy requirements apply to all CSPs providing identity services
 #### Privacy Risk Assessment
 {% endcomment %}
 
-1. CSP は、Identity Proofingとエンロールメントに用いるプロセスについて、プライバシーリスク評価を実施し、 文書化しなければならない [^privacyframework]。
+1. CSP は、Identity Proofingとエンロールメントに用いるプロセスについて、プライバシーリスク評価を実施し、 文書化しなければならない [^privacyframework] (**SHALL**)。プライバシーリスク評価は少なくとも次に関連するリスクを評価するものとする(**SHALL**):
 	1. Identity Proofingとエンロールメントを目的とした、PII のあらゆる処理（Identity Attribute、バイオメトリクス、画像、ビデオ、スキャン、またはIdentity Evidenceのコピーなど）。
 	2. ここで指定されている必須要件を超えて、ApplicantのIdentityをVerifyするために CSP が取る追加のステップ。
 	3. 法律または法的手続きに遵守する場合を除き、Identity Proofingとエンロールメントのスコープ外で行われる、PII に対する任意の処理。
