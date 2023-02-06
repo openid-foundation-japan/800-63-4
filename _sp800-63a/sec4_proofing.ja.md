@@ -12,7 +12,7 @@ section: 4
 
 _This section is normative._
 
-このセクションでは、Identity Proofingおよびエンロールメントプロセスの概要、ならびにApplicantがclaimするアイデンティティのResolution、Validation、Verificationをサポートするための要件について説明する。また、Identity Proofingプロセスの追加的な側面に関するガイドラインも提供する。 これらの要件は、claimされたアイデンティティが実世界に存在し、Applicantがそのアイデンティティに関連付けられた個人であることを確かなものにすることを意図している。あわせて、Identity Proofingプロセスの要素というのは、エンロールされた多数のsubscribersに影響を与える CSP のアイデンティティサービスに対する攻撃が、保護されるデータの価値よりも大きな時間とコストを必要とすることを確かなものにするよう設計されている。
+このセクションでは、Identity Proofingおよびエンロールメントプロセスの概要、ならびにApplicantがclaimするアイデンティティのResolution、Validation、Verificationをサポートするための要件について説明する。また、Identity Proofingプロセスの追加的な側面に関するガイドラインも提供する。 これらの要件は、Claimed Identityが実世界に存在し、Applicantがそのアイデンティティに関連付けられた個人であることを確かなものにすることを意図している。あわせて、Identity Proofingプロセスの要素というのは、エンロールされた多数のsubscribersに影響を与える CSP のアイデンティティサービスに対する攻撃が、保護されるデータの価値よりも大きな時間とコストを必要とすることを確かなものにするよう設計されている。
 
 さらに、このガイドラインは、Resolution、Validation、およびVerificationを完了できる複数の方法、ならびにIdentity Proofingプロセスをサポートする可能性のある複数のタイプのIdentity Evidenceを規定している。実用的な範囲で、CSP および組織は、手段、能力、および技術への Access の面で異なる人々に対して Access を促進するために、Identity Proofingサービスおよびプロセスを実装するときにオプションを有効にするべきである（**SHOULD**）。少なくとも、これには、複数種類のIdentity Evidenceおよび組み合わせを許容し、複数のデータ Validation  Source のサポート、アイデンティティValidationの複数の方法の有効化（例：trusted refereesの活用）、エンゲージメント用の複数のチャネル（例：対面、Remote）、およびApplicantのための支援メカニズムの提供（例：Applicant References） を含めるべきである（**SHOULD**）。
 
@@ -30,7 +30,7 @@ Additionally, these guidelines provide for multiple methods by which resolution,
 This document describes the common pattern in which an applicant undergoes an identity proofing and enrollment process whereby their identity evidence and attributes are collected, uniquely resolved to a single identity within a given population or context, then validated and verified. See [[SP800-63]](../_sp800-63/sec1_purpose.md#purpose){:latex-href="#ref-SP800-63"} for details on how to choose the most appropriate IAL. A CSP can then bind these attributes to an authenticator (described in [[SP800-63B]](../_sp800-63b/sec1_purpose.md#purpose){:latex-href="#ref-SP800-63B"}).
 {% endcomment %}
 
-Identity Proofingの目的は、Applicantが、自身でclaimした人と同じであることを特定のレベルの確実性で確かにしていくことである。Identity Proofingは、給付金への適合性または資格を決定するために行われるのではない。Identity Proofingプロセスには、Identity Proofingを達成するために必要最低限のAttributeの提示およびValidationが含まれる。 最低限で目的に足りるAttributeのセットには様々異なるものがあるが、CSP はApplicantのプライバシーとUsability、およびデジタルアイデンティティの将来の使用で必要になる可能性のあるAttributeを考慮してこのセットを選択する。たとえば、そのようなAttributeは、必要最低限である限りにおいて、以下を含むことができる。
+Identity Proofingの目的は、Applicantが、自身でclaimした人と同じであることを特定のレベルの確実性で確かにしていくことである。Identity Proofingは、給付金への適合性または資格を決定するために行われるのではない。Identity Proofingプロセスには、Identity Proofingを達成するために必要最低限のAttributeの提示およびValidationが含まれる。 最低限で目的に足りるAttributeのセットには様々異なるものがあるが、CSP はApplicantのプライバシーとUsability、および Digital Identity の将来の使用で必要になる可能性のあるAttributeを考慮してこのセットを選択する。たとえば、そのようなAttributeは、必要最低限である限りにおいて、以下を含むことができる。
 
 1. フルネーム
 2. 生年月日
@@ -216,7 +216,7 @@ This section defines the requirements for identity evidence at each strength. St
 
 Identity EvidenceがFAIRであるには、以下の _すべて_ の要件を満たすものとする(**SHALL**):
 
-1.  Evidenceの発行元は、Identity Proofingプロセスを通じて、ClaimされたIdentityを確認した。
+1.  Evidenceの発行元は、Identity Proofingプロセスを通じて、Claimed Identityを確認した。
 2.  Evidenceの発行プロセスが、Evidenceを関係する人物に送り届ける結果となる、と合理的に仮定することができる。
 3.  Evidenceは、少なくとも 1 つの参照番号、顔写真、または関連する人物を一意に識別するのに十分なAttributeを含んでいる。
 4.  Evidenceの有効期限が切れていないか過去6ヶ月以内に期限が切れた、あるいは有効期限の記載がない場合は過去6ヶ月以内に発行されていること。
@@ -237,7 +237,7 @@ In order to be considered FAIR, identity evidence **SHALL** meet _all_ the follo
 
 Identity EvidenceがSTRONGであるには、以下の _すべて_ の要件を満たすものとする(**SHALL**):
 
-1.  Evidenceの発行元は、その人物の実在のIdentityを把握しているという合理的な確信を形成することができるよう設計された文書化された手続きによって、ClaimeされたIdentityを確認している。このような手続きは、規制や公的な説明責任を有する機関による継続的な監視の対象となる。たとえば、2001年に米国愛国者法に対応して制定されたCustomer Identification Programガイドラインや、 2003 年公正取引法（FACT法）第 114 条に基づく [[RedFlagsRule]](sec11_references.ja.md#ref-rfr) がそれにあたる。
+1.  Evidenceの発行元は、その人物の実在のIdentityを把握しているという合理的な確信を形成することができるよう設計された文書化された手続きによって、Claimed Identityを確認している。このような手続きは、規制や公的な説明責任を有する機関による継続的な監視の対象となる。たとえば、2001年に米国愛国者法に対応して制定されたCustomer Identification Programガイドラインや、 2003 年公正取引法（FACT法）第 114 条に基づく [[RedFlagsRule]](sec11_references.ja.md#ref-rfr) がそれにあたる。
 2.  Evidenceの発行プロセスで、Evidenceを関係する人物に送り届ける結果となる可能性が高い。
 3.  Evidenceは、参照番号または関連する人物を一意に識別するその他のAttributeを含む。
 4.  Evidenceが、関係する人物の顔写真または、他のバイオメトリックな特徴を含んでいる。
@@ -264,7 +264,7 @@ Identity EvidenceがSUPERIORであるには、以下の _すべて_ の要件を
 
 合理的な確信を形成することができるよう設計された文書化された手続きによって
 
-1.  Evidenceの発行元は、その人物の実在のIdentityを把握しているという高い信頼性を持つことができるように設計された文書化された手続きに従って、ClaimされたIdentityを確認している。このような手続きは、規制や公的な説明責任を有する機関による継続的な監視の対象となる。
+1.  Evidenceの発行元は、その人物の実在のIdentityを把握しているという高い信頼性を持つことができるように設計された文書化された手続きに従って、Claimed Identityを確認している。このような手続きは、規制や公的な説明責任を有する機関による継続的な監視の対象となる。
 2.  発行元は、Applicantを視覚的に識別し、その人物が存在することを確認するために更にチェックを行う。
 3.  Evidenceの発行プロセスは、Evidenceが関係する人物の手元に送り届けられたことを確実にする。
 4.  Evidenceは、関連する人物を一意に識別する 1 つの参照番号を含む。
@@ -359,7 +359,7 @@ Authoritative Sourceとは、次の性質のうち1つ以上によって、Ident
 
 - Identity Attributeのオリジナル Source である、または 
 - Identity Attribute情報を含む Identity Evidenceの発行者であり、発行者は、例えば[[PatriotAct]](sec11_references.ja.md#ref-PatriotAct)の下で確立されたCustomer Identification Program ガイドラインのような規制や公的な説明責任を有する機関による継続的な監視の対象となるような、文書化した Identity Proofingプロセスを通じて、Claimした Identityを確認した場合、または 
-- 個人との直接の対話（対面またはRemote ）を通じてClaimされたIdentityを確認できるIdentity Proofingプロセスを通じて、Attribute情報を収集してValidateしたもの、または
+- 個人との直接の対話（対面またはRemote ）を通じてClaimed Identityを確認できるIdentity Proofingプロセスを通じて、Attribute情報を収集してValidateしたもの、または
 - Identity Evidenceのピースの発行元まで追跡できるようなエビデンスとAttribute情報への Access を有する。
 
 {% comment %}
@@ -390,7 +390,7 @@ A credible source is an entity that can provide or validate the accuracy of iden
 
 ## Identity Verification
 
-Identity Verificationのゴールは、ClaimされたIdentityと、Identity Proofingプロセスにエンゲージされた実存するApplicantとの間の関連性を確立し、確認することである。
+Identity Verificationのゴールは、Claimed Identityと、Identity Proofingプロセスにエンゲージされた実存するApplicantとの間の関連性を確立し、確認することである。
 
 {% comment %}
 The goal of identity verification is to confirm and establish a linkage between the claimed identity and the real-life existence of the applicant engaged in the identity proofing process.   
@@ -398,7 +398,7 @@ The goal of identity verification is to confirm and establish a linkage between 
 
 ### Identity Verification Methods
 
-CSP は、[セクション 5](sec5_ial.ja.md#ial-section) で提示される IAL Identity Verification要件に応じて、次の方法のうち 1 つ以上によって、ClaimされたIdentityと、Identity ProofingプロセスにエンゲージされたApplicantとの関連性をVerifyしなければならない。
+CSP は、[セクション 5](sec5_ial.ja.md#ial-section) で提示される IAL Identity Verification要件に応じて、次の方法のうち 1 つ以上によって、Claimed Identityと、Identity ProofingプロセスにエンゲージされたApplicantとの関連性をVerifyしなければならない。
 
 - [セクション 5.1.6](sec5_ial.ja.md#EnrollCodes)で指定されている **Enrollment code verification**。
 - **対面での物理的比較**。CSP 運営者とApplicantは、Identity Proofingイベントのために直接対話する。CSP 運営者は、Identity Evidenceに提示された顔写真と、Identity ProofingイベントにエンゲージされたApplicantの顔との物理的な比較を実行する。

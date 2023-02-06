@@ -151,7 +151,7 @@ The following privacy requirements apply to all CSPs providing identity services
 #### Additional Privacy Protective Measures
 {% endcomment %}
 
-1. PII のProcessingは、ClaimされたIdentityの実在性をValidateし、ClaimされたIdentityをApplicantに関連付け、RPに対しては認可の判断に利用するAttributeを提供するために、必要最低限のものに限られるものとする(**SHALL**)。
+1. PII のProcessingは、Claimed Identityの実在性をValidateし、Claimed IdentityをApplicantに関連付け、RPに対しては認可の判断に利用するAttributeを提供するために、必要最低限のものに限られるものとする(**SHALL**)。
 2. CSP は、[Sec. 5.1.2](sec5_ial.ja.md#PrivacyReqs) のプライバシー要件に従って、Identity Resolutionに必要な場合に社会保障番号 (SSN) をAttributeとして収集してもよい(**MAY**)。加えて、CSP は、SSN データの拡散と保持を制限するために、プライバシー保護技術（例：完全なAttribute値そのものではなく、派生したAttribute値を送受信）を実装するものとする(**SHALL**)。SSN を把握していることは、Identity Proofingと見なされないものとする(**SHALL NOT**)。
 3. 収集時に、CSP は、Identity Proofingに必要なAttributeを収集する目的をApplicantに対して明示的に通知するものとする(**SHALL**)。目的としては、そのようなAttributeがIdentity Proofingプロセスを完了するために任意であるか必須であるかどうか、CSP がApplicantから変化するSubscriberアカウントに保存するつもりの特定のAttributeおよび他の機微データ、Attributeを提供しない場合の結果、そして何らかのレコード保持要件がある場合はその詳細などが含まれる。
 4. CSP は、Applicantの苦情およびIdentity Proofingに起因する問題を救済するためのメカニズムを提供するものとする(**SHALL**)。これらのメカニズムは、Applicantが見つけやすく、利用しやすいものであるものとする(**SHALL**)。CSP は、苦情または問題の解決を達成するために、そのメカニズムが効果的であるかをアセスメントするものとする(**SHALL**)。
@@ -308,7 +308,7 @@ The following requirements apply to all CSPs that employ enrollment codes at any
 ###  Requirements for Notifications of Identity Proofing {#ProofingNotifs}
 {% endcomment %}
 
-Proofing通知は、Applicantの有効なアドレスに送付され、Identity Proofingに成功したことを通知する。 これら通知により、Identity Proofing対象の人物が、ClaimされたIdentityの所有者であることをさらに保証する。
+Proofing通知は、Applicantの有効なアドレスに送付され、Identity Proofingに成功したことを通知する。 これら通知により、Identity Proofing対象の人物が、Claimed Identityの所有者であることをさらに保証する。
 以下の要件は、任意の IAL での Identity Proofingプロセスの一部としてProofing通知を送信するすべての CSP に適用される。
 
 Proofingの通知は:
@@ -628,7 +628,7 @@ For added assurance, the CSP **SHALL** evaluate the core attributes, as validate
 ### Identity Verification Requirements
 {% endcomment %}
 
-CSPは、以下のいずれか _1つ_ の要件に従って Applicant が ClaimされたIdentityとバインドできるかどうかをVerifyするものとする(**SHALL**)。
+CSPは、以下のいずれか _1つ_ の要件に従って Applicant が Claimed IdentityとバインドできるかどうかをVerifyするものとする(**SHALL**)。
 
 1.	Applicantの顔との物理的な比較、またはSUPERIORやSTRONG Evidenceに含まれる顔写真とApplicantの顔画像とのバイオメトリクス比較、または
 2.	AAL1 認証または AAL1 および FAL1 フェデレーションプロトコルを介したデジタルアカウントとの関連性の実証、または
@@ -752,7 +752,7 @@ For added assurance, the CSP **SHALL** evaluate the core attributes, as validate
 #### Remote Identity Proofing
 {% endcomment %}
 
-CSPは、以下のいずれか _1つ_ の要件に従って Applicant が ClaimされたIdentityとバインドできるかどうかをVerifyするものとする(**SHALL**)。
+CSPは、以下のいずれか _1つ_ の要件に従って Applicant が Claimed IdentityとバインドできるかどうかをVerifyするものとする(**SHALL**)。
 
 1.	顔画像など収集したバイオメトリクス特性と、SUPERIORやSTRONG Evidenceに含まれており、関連付けられているリファレンスのバイオメトリクスとの比較、または
 2.	AAL2 認証または AAL2 および FAL2 フェデレーションプロトコルを介したデジタルアカウントとの関連性の実証
@@ -769,7 +769,7 @@ The CSP **SHALL** verify the binding of the applicant to the claimed identity by
 #### In-person Identity Proofing
 {% endcomment %}
 
-CSPは、提示されたSUPERIOR または STRONG Evidenceに含まれる顔写真と、Applicantの顔画像の物理的またはバイオメトリクス比較によって、Applicant が ClaimされたIdentityとバインドできるかどうかをVerifyするものとする(**SHALL**)。
+CSPは、提示されたSUPERIOR または STRONG Evidenceに含まれる顔写真と、Applicantの顔画像の物理的またはバイオメトリクス比較によって、Applicant が Claimed IdentityとバインドできるかどうかをVerifyするものとする(**SHALL**)。
 
 {% comment %}
 The CSP **SHALL** verify the binding of the applicant to the claimed identity by physical or biometric comparison of the facial image of the applicant to the facial portrait contained on a piece of presented SUPERIOR or STRONG evidence.
@@ -896,7 +896,7 @@ For added assurance, the CSP **SHALL** evaluate the core attributes, as validate
 ### Identity Verification Requirements
 {% endcomment %}
 
-CSPは、以下のいずれか _1つ_ の要件に従って Applicant が ClaimされたIdentityとバインドできるかどうかをVerifyするものとする(**SHALL**)。
+CSPは、以下のいずれか _1つ_ の要件に従って Applicant が Claimed IdentityとバインドできるかどうかをVerifyするものとする(**SHALL**)。
 
 1.	顔画像など収集したバイオメトリクス特性と、提示されたSUPERIORやSTRONG Evidenceに含まれており、関連付けられているリファレンスのバイオメトリクスとの比較、または
 2.	少なくとも AAL2 認証または AAL2 および FAL2 フェデレーションプロトコルを介したデジタルアカウントとの関連性の実証
