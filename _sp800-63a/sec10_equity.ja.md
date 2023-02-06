@@ -157,7 +157,7 @@ Possible mitigations include:
 3. Providing risk-based alternative processes that compensate for residual bias and technological limitations
 {% endcomment %}
 
-**問題の説明： 宗教上の理由で着用されている顔のカバーは、Applicant の顔画像を撮影する能力を妨げる。**
+**問題の説明： 宗教上の理由で着用されている顔の覆いにより、Applicant の顔画像が撮影できなくなってしまう。**
 
 緩和策としては、以下が考えられる:
 
