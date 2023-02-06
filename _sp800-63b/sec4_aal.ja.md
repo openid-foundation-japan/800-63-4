@@ -16,7 +16,7 @@ _This section is normative._
 To satisfy the requirements of a given AAL and be recognized as a subscriber, a claimant **SHALL** be authenticated with a process whose strength is equal to or greater than the requirements at that level. The result of an authentication process is an identifier that **SHALL** be used each time that subscriber authenticates to that RP. The identifier **MAY** be pseudonymous. Subscriber identifiers **SHOULD NOT** be reused for a different subject but **SHOULD** be reused when a previously enrolled subject is re-enrolled by the CSP. Other attributes that identify the subscriber as a unique subject **MAY** also be provided.
 -->
 
-与えられた AAL の要件を満たし, Subscriber として認識されるためには, Claimant は, そのレベルの要件と同等, またはそれ以上の強度のプロセスで認証されることとする(**SHALL**). Authentication プロセスの結果は, Subscriber がその RP に対して Authentication する, それぞれの回で使用されることになる(**SHALL**) Identifier である. Identifier は Pseudonymous であってもよい(**MAY**). Subscriber Identifier は別の Subject に再利用されないほうがよい(**SHOULD NOT**)が, 以前に登録された Subject が CSP によって再登録された場合に再利用する必要がある(**SHOULD**). Subscriber を一意の Subject として識別するその他の属性も提供されることがある(**MAY**).
+与えられた AAL の要件を満たし, Subscriber として認識されるためには, Claimant は, そのレベルの要件と同等, またはそれ以上の強度のプロセスで Authenticate されることとする(**SHALL**). Authentication プロセスの結果は, Subscriber がその RP に対して Authentication する, それぞれの回で使用されることになる(**SHALL**) Identifier である. Identifier は Pseudonymous であってもよい(**MAY**). Subscriber Identifier は別の Subject に再利用されないほうがよい(**SHOULD NOT**)が, 以前に登録された Subject が CSP によって再登録された場合に再利用する必要がある(**SHOULD**). Subscriber を一意の Subject として識別するその他の属性も提供されることがある(**MAY**).
 
 <!--
 Detailed normative requirements for authenticators and verifiers at each AAL are provided in [Sec. 5](#AAL_SEC5).
@@ -44,7 +44,7 @@ Identity Proofing の最中およびその後に収集された Personal Informa
 AAL1 provides some assurance that the claimant controls an authenticator bound to the subscriber account. AAL1 requires either single-factor or multi-factor authentication using a wide range of available authentication technologies. Successful authentication requires that the claimant prove possession and control of the authenticator through a secure authentication protocol.
 -->
 
-AAL1 は, Claimant が Subscriber Account に Bind された Authenticator を制御するというある程度の保証を提供する. AAL1 は, 利用可能な幅広い認証技術を使用した Single-Factor または Multi-Factor の Authentication を必要とする. Authentication の成功には, Claimant がセキュアな Authentication プロトコルを介して Authenticator の所有と制御を証明する必要がある.
+AAL1 は, Claimant が Subscriber Account に Bind された Authenticator を制御するというある程度の保証を提供する. AAL1 は, 利用可能な幅広い Authentication 技術を使用した Single-Factor または Multi-Factor の Authentication を必要とする. Authentication の成功には, Claimant がセキュアな Authentication プロトコルを介して Authenticator の所有と制御を証明する必要がある.
 
 ### Permitted Authenticator Types
 
@@ -78,7 +78,7 @@ Communication between the claimant and verifier **SHALL** be via an authenticate
 Verifiers operated by or on behalf of federal government agencies at AAL1 **SHALL** be validated to meet the requirements of [[FIPS140]](references.md#ref-FIPS140-2) Level 1.
 -->
 
-Claimant と Verifier の間の通信は, Authenticator の出力の機密性と Adversary-in-the-Middle (AitM) Attack への耐性の提供のため, 認証された保護されたチャネルを介して行われることになる(**SHALL**).
+Claimant と Verifier の間の通信は, Authenticator の出力の機密性と Adversary-in-the-Middle (AitM) Attack への耐性の提供のため,  Authenticated Protected Channel を介して行われることになる(**SHALL**).
 
 連邦政府機関によって, または連邦政府機関に代わって AAL1 で運用されている Verifier は, [[FIPS140]](references.md#ref-FIPS140-2) Level 1 の要件に適合しているか検証されることになる(**SHALL**).
 
@@ -112,7 +112,7 @@ CSP は, 適用される可能性のある National Archives and Records Adminis
 AAL2 provides high confidence that the claimant controls authenticators bound to the subscriber account. Proof of possession and control of two distinct authentication factors is required through secure authentication protocols. Approved cryptographic techniques are required at AAL2 and above.
 -->
 
-AAL2 は, Claimant が Subscriber Account に Bind された Authenticator を制御するという高い確信を提供する. セキュアな Authentication プロトコルを介して, 2つの明確に異なる認証要素の所有と制御の証明が必要である. AAL2 以上では, 承認された暗号技術が必要である.
+AAL2 は, Claimant が Subscriber Account に Bind された Authenticator を制御するという高い確信を提供する. セキュアな Authentication プロトコルを介して, 2つの明確に異なる Authentication Factor の所有と制御の証明が必要である. AAL2 以上では, 承認された暗号技術が必要である.
 
 ### Permitted Authenticator Types {#aal2types}
 
@@ -149,7 +149,7 @@ When a combination of two single-factor authenticators is used, the combination 
 > Note: When biometric authentication meets the requirements in [Sec. 5.2.3](sec5_authenticators.md#biometric_use), the device has to be authenticated in addition to the biometric match. A biometric characteristic is recognized as a factor, but not recognized as an authenticator by itself. Therefore, when conducting authentication with a biometric characteristic, it is unnecessary to use two authenticators because the associated device serves as "something you have," while the biometric match serves as "something you are."
 -->
 
-> Note: Biometric Authentication が [Sec. 5.2.3](sec5_authenticators.md#biometric_use) の要件を満たすとき,  Biometric の一致に加えて, デバイスが認証されなければならない. Biometric の特徴は1つの要素として認識されるが, それ自体は Authenticator とは認識されない. したがって, Biometric の特徴による Authentication を行う場合, 関連付けられたデバイスは "something you have" として働き, 同時に Biometric の一致は "something you are" として働くため, 2つの Authenticator を使用することは不要である.
+> Note: Biometric Authentication が [Sec. 5.2.3](sec5_authenticators.md#biometric_use) の要件を満たすとき,  Biometric の一致に加えて, デバイスが Authenticate されなければならない. Biometric の特徴は1つの要素として認識されるが, それ自体は Authenticator とは認識されない. したがって, Biometric の特徴による Authentication を行う場合, 関連付けられたデバイスは "something you have" として働き, 同時に Biometric の一致は "something you are" として働くため, 2つの Authenticator を使用することは不要である.
 
 ### Authenticator and Verifier Requirements {#aal2req}
 
@@ -165,7 +165,7 @@ Communication between the claimant and verifier **SHALL** be via an authenticate
 Verifiers operated by or on behalf of federal government agencies at AAL2 **SHALL** be validated to meet the requirements of [[FIPS140]](references.md#ref-FIPS140-2) Level 1.
 -->
 
-Claimant と Verifier の間の通信は, Authenticator の出力の機密性と AitM Attack への耐性の提供のため, 認証された保護されたチャネルを介して行われることになる(**SHALL**).
+Claimant と Verifier の間の通信は, Authenticator の出力の機密性と AitM Attack への耐性の提供のため, Authenticated Protected Channel を介して行われることになる(**SHALL**).
 
 連邦政府機関によって, または連邦政府機関に代わって AAL2 で運用されている Verifier は, [[FIPS140]](references.md#ref-FIPS140-2) Level 1 の要件に適合しているか検証されることになる(**SHALL**).
 
@@ -215,7 +215,7 @@ CSP は, 適用される可能性のある NARA の記録保持スケジュー�
 AAL3 provides very high confidence that the claimant controls authenticators bound to the subscriber account. Authentication at AAL3 is based on proof of possession of a key through a cryptographic protocol. AAL3 authentication **SHALL** use a hardware-based authenticator and an authenticator that provides phishing resistance — the same device **MAY** fulfill both these requirements. In order to authenticate at AAL3, claimants **SHALL** prove possession and control of two distinct authentication factors through secure authentication protocols. Approved cryptographic techniques are required.
 -->
 
-AAL3 は, Claimant が Subscriber Account に Bind された Authenticator を制御するという非常に高い確信を提供する. AAL3 での Authentication は, 暗号プロトコルを介した Key の所有の証明に基づく. ハードウェアベースの Authenticator  とPhishing 耐性のある Authenticator を使用することになり(**SHALL**), 同じデバイスがこれらの両方の要件を満たしてもよい(**MAY**).　AAL3 で Authentication を行うには, Claimant は, セキュアな Authentication プロトコルを介して, 2つのはっきりと異なる認証要素の所有と制御を証明することになる(**SHALL**). 承認された暗号技術が必要である.
+AAL3 は, Claimant が Subscriber Account に Bind された Authenticator を制御するという非常に高い確信を提供する. AAL3 での Authentication は, 暗号プロトコルを介した Key の所有の証明に基づく. ハードウェアベースの Authenticator  とPhishing 耐性のある Authenticator を使用することになり(**SHALL**), 同じデバイスがこれらの両方の要件を満たしてもよい(**MAY**).　AAL3 で Authentication を行うには, Claimant は, セキュアな Authentication プロトコルを介して, 2つのはっきりと異なる Authentication Factor の所有と制御を証明することになる(**SHALL**). 承認された暗号技術が必要である.
 
 ### Permitted Authenticator Types {#aal3types}
 
@@ -237,7 +237,7 @@ AAL3 Authentication は, [Sec. 4.3](#aal3) の要件を満たす Authenticator �
 Communication between the claimant and verifier **SHALL** be via an authenticated protected channel to provide confidentiality of the authenticator output and resistance to AitM attacks. At least one cryptographic authenticator used at AAL3 **SHALL** be phishing resistant as described in [Sec. 5.2.5](sec5_authenticators.md#verifimpers) and **SHALL** be replay resistant as described in [Sec. 5.2.8](sec5_authenticators.md#replay). All authentication and reauthentication processes at AAL3 **SHALL** demonstrate authentication intent from at least one authenticator as described in [Sec. 5.2.9](sec5_authenticators.md#intent).
 -->
 
-Claimant と Verifier の間の通信は, Authenticator の出力の機密性と AitM Attack への耐性の提供のため, 認証された保護されたチャネルを介して行われることになる(**SHALL**). AAL3で使用される少なくとも1つの Authenticator は, [Sec. 5.2.5](sec5_authenticators.md#verifimpers) で説明されているよ うにPhishing 耐性があり(**SHALL**), [Sec. 5.2.8](sec5_authenticators.md#replay) で説明されているようにリプレイ耐性があることになる(**SHALL**). AAL3 でのすべての Authentication と Reauthentication は, [Sec. 5.2.9](sec5_authenticators.md#intent) で説明されているように, 少なくとも1つの Authenticator から Authentication の意思を実演で示す必要がある(**SHOULD**).
+Claimant と Verifier の間の通信は, Authenticator の出力の機密性と AitM Attack への耐性の提供のため, Authenticated Protected Channel を介して行われることになる(**SHALL**). AAL3で使用される少なくとも1つの Authenticator は, [Sec. 5.2.5](sec5_authenticators.md#verifimpers) で説明されているよ うにPhishing 耐性があり(**SHALL**), [Sec. 5.2.8](sec5_authenticators.md#replay) で説明されているようにリプレイ耐性があることになる(**SHALL**). AAL3 でのすべての Authentication と Reauthentication は, [Sec. 5.2.9](sec5_authenticators.md#intent) で説明されているように, 少なくとも1つの Authenticator から Authentication の意思を実演で示す必要がある(**SHOULD**).
 
 <!--
 Multi-factor authenticators used at AAL3 **SHALL** be hardware cryptographic modules validated at [[FIPS140]](references.md#ref-FIPS140-2) Level 2 or higher overall with at least [[FIPS140]](references.md#ref-FIPS140-2) Level 3 physical security. Single-factor cryptographic devices used at AAL3 **SHALL** be validated at [[FIPS140]](references.md#ref-FIPS140-2) Level 1 or higher overall with at least [[FIPS140]](references.md#ref-FIPS140-2) Level 3 physical security.

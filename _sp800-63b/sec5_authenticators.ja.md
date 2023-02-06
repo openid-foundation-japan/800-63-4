@@ -72,7 +72,7 @@ If Unicode characters are accepted in memorized secrets, the verifier **SHOULD**
 Memorized secret verifiers **SHALL NOT** permit the subscriber to store a hint that is accessible to an unauthenticated claimant. Verifiers **SHALL NOT** prompt subscribers to use specific types of information (e.g., "What was the name of your first pet?", a technique known as knowledge-based authentication (KBA) or security questions) when choosing memorized secrets.
 -->
 
- Memorized Secret の Verifier は, Subscriber に対して, 認証されていない Claimant がアクセスできるヒントを保存することを許可することはない(**SHALL NOT**). Verifier は, Memorized Secret を選択する際に, Subscriber に特定の種類の情報 (例えば, 「あなたの最初のペットの名前は何ですか?」といった Knowledge-Based Authentication (KBA) または秘密の質問として知られる手法) を使用するように促すことはない(**SHALL NOT**).
+ Memorized Secret の Verifier は, Subscriber に対して, Authenticate されていない Claimant がアクセスできるヒントを保存することを許可することはない(**SHALL NOT**). Verifier は, Memorized Secret を選択する際に, Subscriber に特定の種類の情報 (例えば, 「あなたの最初のペットの名前は何ですか?」といった Knowledge-Based Authentication (KBA) または秘密の質問として知られる手法) を使用するように促すことはない(**SHALL NOT**).
 
 <!--
 When processing requests to establish and change memorized secrets, verifiers **SHALL** compare the prospective secrets against a blocklist that contains values known to be commonly used, expected, or compromised. For example, the list **MAY** include, but is not limited to:
@@ -854,7 +854,7 @@ Biometric システムは, Presentation Attack Detection (PAD) を実装する�
 The biometric system **SHALL** allow no more than 5 consecutive failed authentication attempts or 10 consecutive failed attempts if PAD, meeting the above requirements, is implemented. Once that limit has been reached, the biometric authenticator **SHALL** impose a delay of at least 30 seconds before each subsequent attempt, with an overall limit of no more than 50 consecutive failed authentication attempts (100 if PAD is implemented). Once the overall limit is reached, the biometric system **SHALL** disable biometric user authentication and offer another factor (e.g., a different biometric modality or an activation secret if it is not already a required factor) if such an alternative method is already available.
 -->
 
-Biometric システムは, 認証の試行の連続失敗を5回まで, または, 上記の要件を満たす PAD が実装されている場合においては試行の連続失敗を 10 回まで許容することとなる(**SHALL**). ひとたびその制限に達すると, Biometric Authenticator は, 全体的な制限として認証の試行の連続失敗が 50 回 (PAD が実装されている場合は 100 回) を超えないとともに, その後の各試行の前に少なくとも 30 秒の遅延を課すこととなる(**SHALL**). ひとたび全体的な制限に達すると, Biometric システムは, Biometric User Authentication を無効にすることとなり(**SHALL**), 利用可能な代替方法がすでにある場合は, 他の要素 (例: 別の Biometric Modality, または, まだ要求された要素でない場合は Activation Secret) を提案することとなる.
+Biometric システムは, Authentication の試行の連続失敗を5回まで, または, 上記の要件を満たす PAD が実装されている場合においては試行の連続失敗を 10 回まで許容することとなる(**SHALL**). ひとたびその制限に達すると, Biometric Authenticator は, 全体的な制限として Authentication の試行の連続失敗が 50 回 (PAD が実装されている場合は 100 回) を超えないとともに, その後の各試行の前に少なくとも 30 秒の遅延を課すこととなる(**SHALL**). ひとたび全体的な制限に達すると, Biometric システムは, Biometric User Authentication を無効にすることとなり(**SHALL**), 利用可能な代替方法がすでにある場合は, 他の要素 (例: 別の Biometric Modality, または, まだ要求された要素でない場合は Activation Secret) を提案することとなる.
 
 <!--
 The verifier **SHALL** make a determination of sensor and endpoint performance, integrity, and authenticity. Acceptable methods for making this determination include, but are not limited to:
@@ -964,7 +964,7 @@ Approved な暗号アルゴリズムは, 必要とされる場所で Phishing �
 Authenticators that involve the manual entry of an authenticator output, such as out-of-band and OTP authenticators, **SHALL NOT** be considered phishing resistant because the manual entry does not bind the authenticator output to the specific session being authenticated. In an AitM attack, an impostor verifier could replay the OTP authenticator output to the verifier and successfully authenticate.
 -->
 
-Out-of-band や OTP Authenticator のような, Authenticator 出力の手動入力を伴う Authenticator は, Phishing 耐性があると見なされることはない(**SHALL NOT**), なぜならば, 手動入力は Authenticator 出力を特定の Authenticated session に Bind しないためである. AitM Attack では, Impostor が偽装する Verifier が OTP Authenticator の出力を Verifier に Replay し, 認証に成功する可能性がある.
+Out-of-band や OTP Authenticator のような, Authenticator 出力の手動入力を伴う Authenticator は, Phishing 耐性があると見なされることはない(**SHALL NOT**), なぜならば, 手動入力は Authenticator 出力を特定の Authenticated session に Bind しないためである. AitM Attack では, Impostor が偽装する Verifier が OTP Authenticator の出力を Verifier に Replay し, Authentication に成功する可能性がある.
 
 <!--
 While an individual authenticator may be phishing resistant, phishing resistance for a given subscriber account is only achieved when all methods of authentication are phishing resistant.
@@ -990,7 +990,7 @@ Channel Binding を伴う Authentication Protocol は, Authenticated Protected C
 An example of a phishing resistant authentication protocol that uses channel binding is client-authenticated TLS, because the client signs the authenticator output along with earlier messages from the protocol that are unique to the particular TLS connection being negotiated.
 -->
 
-Channel Binding を使用する Phishing 耐性のある Authentication Protocol の例は, クライアント認証 TLS である. なぜならば, ネゴシエートされた特定の TLS 接続に一意の, Protocol からの以前のメッセージと共に Authenticator の出力にクライアントが署名するためである.
+Channel Binding を使用する Phishing 耐性のある Authentication Protocol の例は, Client-authenticated TLS である. なぜならば, ネゴシエートされた特定の TLS 接続に一意の, Protocol からの以前のメッセージと共に Authenticator の出力にクライアントが署名するためである.
 
 #### Verifier Name Binding
 
@@ -1006,7 +1006,7 @@ Authenticator Name Binding を伴う Authentication Protocol は, Authenticated 
 In situations where the verifier and CSP are separate entities (as shown by the dotted line in [[SP800-63]](../_sp800-63/sec4_model.md#fig-1){:latex-href="#ref-SP800-63"} Figure 1), communications between the verifier and CSP **SHALL** occur through a mutually authenticated secure channel (such as a client-authenticated TLS connection) using approved cryptography.
 -->
 
-Verifier と CSP が別々のエンティティである状況では ([[SP800-63]](../_sp800-63/sec4_model.md#fig-1){:latex-href="#ref-SP800-63"} の点線で示されているように, Verifier と CSP 間の通信は, Approved Cryptography を使用して, (クライアント認証 TLS 接続のような) 相互に Authenticate された安全なチャネルを介して行われることとなる(**SHALL**).
+Verifier と CSP が別々のエンティティである状況では ([[SP800-63]](../_sp800-63/sec4_model.md#fig-1){:latex-href="#ref-SP800-63"} の点線で示されているように, Verifier と CSP 間の通信は, Approved Cryptography を使用して, (Client-authenticated TLS 接続のような) 相互に Authenticate された安全なチャネルを介して行われることとなる(**SHALL**).
 
 ### Verifier Compromise Resistance {#verifier-secrets}
 

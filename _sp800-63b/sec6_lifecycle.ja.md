@@ -251,8 +251,8 @@ Subscriber Account に Biometric が紐づけられていない場合におけ�
 *External authenticator binding* refers to the process of binding an authenticator to a subscriber account when it is not connected to (or embedded in) the authenticated endpoint. This process is typically used when adding authenticators that are embedded in a new endpoint, or when connectivity limitations prevent the newly bound authenticator from being connected to an authenticated endpoint.
 -->
 
-*External Authenticator Binding* とは, 認証済エンドポイントに接続されていない (または埋め込まれていない) Authenticator を Subscriber Account に Binding するプロセスである.
-通常このプロセスは, 新たなエンドポイントに埋め込まれた Authenticator を追加する, ないしは接続の制限により新しく紐づけられた Authenticator が認証済エンドポイントに接続できない際に用いられる.
+*External Authenticator Binding* とは, Authenticated エンドポイントに接続されていない (または埋め込まれていない) Authenticator を Subscriber Account に Binding するプロセスである.
+通常このプロセスは, 新たなエンドポイントに埋め込まれた Authenticator を追加する, ないしは接続の制限により新しく紐づけられた Authenticator が Authenticated エンドポイントに接続できない際に用いられる.
 
 <!--
 The binding process **MAY** begin with a request from an endpoint that has authenticated to the CSP obtaining a binding code from the CSP that is input into the endpoint associated with the new authenticator and sent to that CSP. Alternatively, the endpoint associated with the new authenticator **MAY** obtain a binding code from the CSP, which is input to an authenticated endpoint and sent to the CSP.
@@ -260,7 +260,7 @@ The binding process **MAY** begin with a request from an endpoint that has authe
 
 Binding プロセスは, CSP に Authenticate されたエンドポイントからの要求により開始できる (**MAY**).
 CSP への Authenticate は, CSP から受け取った Binding Code を, 新たな Authenticator に関連づけられたエンドポイントに入力して CSP に送信することで行う.
-さらに, 新たな Authenticator に関連づけられたエンドポイントが, CSP から Binding Code を取得して, それを認証済エンドポイントに入力して CSP に送信することもできる (**MAY**).
+さらに, 新たな Authenticator に関連づけられたエンドポイントが, CSP から Binding Code を取得して, それを Authenticated エンドポイントに入力して CSP に送信することもできる (**MAY**).
 
 <!--
 In addition to the requirements given in [Sec. 6.1.2.1](sec6_lifecycle.md#bindexisting), [Sec. 6.1.2.2](sec6_lifecycle.md#s-6-1-2-2), and [Sec. 6.1.2.3](sec6_lifecycle.md#replacement) above as applicable, the following requirements **SHALL** apply when binding an external authenticator:
@@ -284,7 +284,7 @@ In addition to the requirements given in [Sec. 6.1.2.1](sec6_lifecycle.md#bindex
 * The CSP **SHALL** generate a *binding code* using an approved random number generator and send it to either the new authenticator endpoint or the authenticated endpoint approving the binding. The binding code **SHALL** have at least 40 bits of entropy if used in conjunction with an identifier entered on the previous step; otherwise a binding code with at least 112 bits of entropy **SHALL** be required.
 -->
 
-* CSP は Approved な乱数生成器を用いて *Binding Code* を生成し, それを新たな Authenticator エンドポイントないし Binding を許可しようとしている認証済エンドポイントに送らなければならない (**SHALL**). 前ステップで入力された識別子と組み合わせて使用する場合, Binding Code は最低限40bitのEntropyを持つものとする (**SHALL**). それ以外の場合は少なくとも112bitの Entropy が必要となる (**SHALL**).
+* CSP は Approved な乱数生成器を用いて *Binding Code* を生成し, それを新たな Authenticator エンドポイントないし Binding を許可しようとしている Authenticated エンドポイントに送らなければならない (**SHALL**). 前ステップで入力された識別子と組み合わせて使用する場合, Binding Code は最低限40bitのEntropyを持つものとする (**SHALL**). それ以外の場合は少なくとも112bitの Entropy が必要となる (**SHALL**).
 
 <!--
 * The subscriber **SHALL** transfer the binding code to the other endpoint. This transfer **SHALL** be either manual or via a local out-of-band method such as a QR code. The binding code **SHALL NOT** be communicated over any insecure channel such as email or PSTN (SMS or voice).
