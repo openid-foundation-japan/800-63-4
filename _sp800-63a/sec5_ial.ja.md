@@ -239,7 +239,7 @@ When assessing the risk of inequitable access, treatment, or outcomes, the follo
 3. 機関は、該当する場合、そのような収集を対象とするSystem of Records Notice（SORN）を公開するものとする(**SHALL**)。
 4. 機関は、該当する場合、当該収集を対象とするプライバシー影響評価(PIA)を公開するものとする(**SHALL**)。
 5. 機関は、ダイバーシティー、Equity、インクルージョン、およびアクセシビリティ（DEIA）を担当する上級職員、事業所、または統治機関と協議し、サービスを受けるすべての集団のニーズを満たすためにIdentity Proofingサービスをどのように設計、調達、および管理すべきかを判断するものとする(**SHALL**)。
-6. 機関は、組織内の広報およびコミュニケーションの専門家と協議し、Identity Proofingに関連する要件を含む新しいプロセスの展開または既存のプロセスの更新に伴って、コミュニケーションまたは一般認識戦略を立てるべきかどうかを決定するものとする(**SHALL**)。これにはサービスに関連する技術の使用方法に関する詳細情報を示す資料、よくある質問（FAQ）ページ、Identity Proofingプロセスに参加するための前提条件（必要なEvidenceなど）、ウェビナー またはその他のライブもしくは録画済み情報セッション、あるいはユーザー受け入れのサポートや、Applicantに質問、問題、フィードバックを伝える仕組みを提供するその他の媒体を含めることができる。
+6. 機関は、組織内の広報およびコミュニケーションの専門家と協議し、Identity Proofingに関連する要件を含む新しいプロセスの展開または既存のプロセスの更新に伴って、コミュニケーションまたは一般認識戦略を立てるべきかどうかを決定するものとする(**SHALL**)。これにはサービスに関連する技術の使用方法に関する詳細情報を示す資料、よくある質問（FAQ）ページ、Identity Proofingプロセスに参加するための前提条件（必要なEvidenceなど）、ウェビナー またはその他のライブもしくは録画済み情報 Session 、あるいはユーザー受け入れのサポートや、Applicantに質問、問題、フィードバックを伝える仕組みを提供するその他の媒体を含めることができる。
 5. 第三者の CSP を使用する場合、機関は、PIA プロセスの一環として CSP のプライバシーリスク評価に依拠する前に、独自のプライバシーリスク評価を実施するか、デューデリジェンスを行う責任を負うものとする(**SHALL**)。
 6. 第三者の CSP を使用する場合、機関は、CSP のEquityリスク評価を、自らのEquityリスク評価に組み込むものとする(**SHALL**)。
 
@@ -262,7 +262,7 @@ The following requirements apply to federal agencies, regardless of whether they
 ###  Requirements for Enrollment Codes {#EnrollCodes}
 {% endcomment %}
 
-Enrollmentコードは、Applicantが有効なアドレスにアクセスできることを確認するために使用されます。Identity ProofingとEnrollmentが 1 回のセッションで完了しない場合、Enrollmentコードは、Enrollmentプロセスを完了する目的で、ApplicantのEnrollmentレコードへのバインドを再確立するために使用することもできる。
+Enrollmentコードは、Applicantが有効なアドレスにアクセスできることを確認するために使用されます。Identity ProofingとEnrollmentが 1 回の Session で完了しない場合、Enrollmentコードは、Enrollmentプロセスを完了する目的で、ApplicantのEnrollmentレコードへのバインドを再確立するために使用することもできる。
 
 以下の要件は、任意の IAL でEnrollmentコードを使用するすべての CSP に適用される。
 
@@ -270,7 +270,7 @@ Enrollmentコードは、Applicantが有効なアドレスにアクセスでき�
 2. Applicantは、Identity Proofing手続きを行うために有効なEnrollmentコードを提示するものとする(**SHALL**)。  
 3. 3. Enrollmentコードは、以下のいずれかから構成されるものとする(**SHALL**)。
     1. 少なくとも20ビットのエントロピーを持つ承認された乱数発生器によって生成された6桁のランダムな数字。
-    2. 適切に構築されたセッションID（少なくとも64ビットのエントロピー）を含む、一意に識別されるアドレスに配信される安全なリンク、または、
+    2. 適切に構築された Session ID（少なくとも64ビットのエントロピー）を含む、一意に識別されるアドレスに配信される安全なリンク、または、
     3. 少なくとも20ビットのエントロピーを持つランダムなシークレットを含む機械可読な光学的なラベル（QRコードなど）。
     {:.letter-list} 
 4. Enrollmentコードの有効期限は以下の通りとするものとする(**SHALL**)。
@@ -967,13 +967,13 @@ Regardless of which of the two methods the CSP employs, the following requiremen
 
 IAL3 監視下でのリモートIdentity Proofing は、Applicantとの直接の対話に匹敵するレベルの信頼性とセキュリティを達成することを意図している。
 
-以下の要件は、すべての IAL3 監視下でのリモートIdentity Proofing セッションに適用されます。
+以下の要件は、すべての IAL3 監視下でのリモートIdentity Proofing Session に適用されます。
 
-1. CSP は、Identity Proofingセッション全体を監視し、Applicantが Identity Proofingセッション全体にわたって継続的に存在していることを確認するものとする(**SHALL**)。たとえば、Applicantの高解像度ビデオ伝送を継続的に実施する方法が挙げられる。
-2. CSP は、Identity Proofingセッションの全期間中、Applicantと一緒に生身のオペレータをリモートから参加させるものとする(**SHALL**)。
+1. CSP は、Identity Proofing Session 全体を監視し、Applicantが Identity Proofing Session 全体にわたって継続的に存在していることを確認するものとする(**SHALL**)。たとえば、Applicantの高解像度ビデオ伝送を継続的に実施する方法が挙げられる。
+2. CSP は、Identity Proofing Session の全期間中、Applicantと一緒に生身のオペレータをリモートから参加させるものとする(**SHALL**)。
 3. CSP は、Identity Proofing中にApplicantが取ったすべての行動が、リモートのオペレータにはっきりと見えるようにすることを要求するものとする(**SHALL**)。
 4. CSP は、EvidenceのすべてのデジタルVerification（例：チップまたは無線技術を介したもの）が、統合されたスキャナおよびセンサ（例：組み込み指紋リーダ）によって実行されることを要求するものとする(**SHALL**)。
-5. CSP は、オペレーターが、潜在的な不正行為を検出し、監視下でのリモートProofingセッションを適切に実行するためのトレーニング・プログラムの受講を必須とする(**SHALL**)。
+5. CSP は、オペレーターが、潜在的な不正行為を検出し、監視下でのリモートProofing Session を適切に実行するためのトレーニング・プログラムの受講を必須とする(**SHALL**)。
 6. CSP は、配置される環境に適した物理的な改ざん検出および耐タンパ機能を採用するものとする(**SHALL**)。例えば、制限エリアまたは信頼できる個人によって監視されている場所にあるキオスクは、ショッピングモールのコンコースなどの半公共エリアにあるものよりも改ざん検出の必要性が低い。
 7. CSP は、すべての通信が、相互に認証された保護チャネルで行われることを保証するものとする(**SHALL**)。
 

@@ -40,7 +40,7 @@ The enrollment and identity proofing process sets the stage for a user's interac
 Usability cannot be achieved in a piecemeal manner. Performing a usability evaluation on the enrollment and identity proofing process is critical. It is important to conduct usability evaluation with representative users, realistic goals and tasks, and appropriate contexts of use. The enrollment and identity proofing process should be designed and implemented so it is easy for users to do the right thing, hard to do the wrong thing, and easy to recover when the wrong thing happens.
 {% endcomment %}
 
-ユーザーの視点から見ると、Enrollment および Identity Proofing の 3 つの主要なステップは、Enrollment 前の準備、 Enrollment および Proofing のセッション、および Enrollment 後のアクションである。これらのステップは 1 回のセッションで行われることもあれば、各セッションの間にかなりの時間（例えば、数日または数週間）が経過することもありうる。
+ユーザーの視点から見ると、Enrollment および Identity Proofing の 3 つの主要なステップは、Enrollment 前の準備、 Enrollment および Proofing の Session 、および Enrollment 後のアクションである。これらのステップは 1 回の Session で行われることもあれば、各 Session の間にかなりの時間（例えば、数日または数週間）が経過することもありうる。
 
 一般的な Usability と各ステップ固有の Usability の考慮事項については、以下のサブセクションで説明する。
 
@@ -66,7 +66,7 @@ Accessibility differs from usability and is out of scope for this document. [[Se
 
 * Enrollment に必要なプロセスをできるだけ明確かつ容易にし、ユーザーの不満を解消する。
 
-* 技術的な支援を受ける方法と場所を明確に伝える。例えば、オンライン・セルフサービス機能へのリンク、チャットセッション、ヘルプデスクサポートの電話番号など、役に立つ情報を提供する。理想的には、外部からの干渉なしに、ユーザーが自分で Enrollment の準備の質問に答えられる十分な情報が提供されてるべきである。
+* 技術的な支援を受ける方法と場所を明確に伝える。例えば、オンライン・セルフサービス機能へのリンク、チャット Session 、ヘルプデスクサポートの電話番号など、役に立つ情報を提供する。理想的には、外部からの干渉なしに、ユーザーが自分で Enrollment の準備の質問に答えられる十分な情報が提供されてるべきである。
 
 * 誰がなぜデータを収集するのかを明確に説明すること。また、データがどのような経路をたどるのか、特にデータがどこに保存されるのかを示すこと。
 
@@ -100,11 +100,11 @@ This sub-section provides usability considerations that are applicable across al
 ## Pre-Enrollment Preparation {#sec9_2_2}
 {% endcomment %}
 
-このセクションでは、ユーザーが、難しく苛立たしい Enrollment 録セッションを回避できるように、Enrollment 前の十分な準備を促進する効果的なアプローチについて記載する。ユーザが Enrollment セッションに対して可能な限り準備できるようにすることは、Enrollment および Identity Proofing プロセスの全体的な成功と Usability にとって重要である。
+このセクションでは、ユーザーが、難しく苛立たしい Enrollment Session を回避できるように、Enrollment 前の十分な準備を促進する効果的なアプローチについて記載する。ユーザが Enrollment Session に対して可能な限り準備できるようにすることは、Enrollment および Identity Proofing プロセスの全体的な成功と Usability にとって重要である。
 
 このような準備は、ユーザーが、必要な情報（例：必要な文書など）を適切な時間枠のなかで使用可能な形で受け取る場合にのみ可能である。これには、どのような Identity Evidence が必要とされるかをユーザに正確に認識させることが含まれる。ユーザは IAL について何も知る必要はなく、要求される Identity Evidence が「FIAR」、「STRONG」、 「SUPERIOR」のいずれと類されるかどうかを知る必要はないが、組織は特定のシステムへのアクセスにどの IAL が要求されるかを知る必要がある。
 
-Enrollment プロセスを進めるかどうか、およびセッションに何が必要かについて、ユーザが十分な情報を得た上で判断できるようにするため、ユーザに以下の情報を提供する:
+Enrollment プロセスを進めるかどうか、および Session に何が必要かについて、ユーザが十分な情報を得た上で判断できるようにするため、ユーザに以下の情報を提供する:
 
 * 各ステップで何を期待するかなど、プロセス全体に関する情報。
   * ユーザーの計画の参考となるように、予想される時間枠を明確に説明する。
@@ -128,17 +128,17 @@ To ensure users are equipped to make informed decisions about whether to proceed
 * Information on the monetary amount and acceptable forms of payment, and if there is an enrollment fee. Offering a larger variety of acceptable forms of payment allows users to choose their preferred payment operation.
 {% endcomment %}
 
-* ユーザーの Enrollment セッションが対面式かリモートチャネルでの対面式か、またユーザーが選択できるかどうかについての情報。セッションの許可されたオプションに関連する情報のみを提供する。
-  * 対面式またはリモートチャネルでの対面式のセッションに必要な、場所に関する情報について、ユーザーが希望する場所を選択できるかどうか、必要なロジスティック情報を提供する。紛失や盗難の危険性が増すため、ユーザは Identity Proofing を特定の公共の場所（銀行とスーパーマーケットの違い） に持参することを嫌がる場合があることに注意すること。
-  * リモート・セッションの技術要件（例：インターネットアクセスの要件）に関する情報。
-  * 待ち時間を最小限にするために、対面またはリモートチャネルでの対面 Identity Proofing セッションの予約を設定するオプションがあること。立ち寄りが許可されている場合、予約なしでは待ち時間が長くなる可能性があることをユーザーに明確にする。
-    * Enrollment セッションの予約、リマインダー、および既存の予約の再スケジュール方法について、明確な指示を提供する。
+* ユーザーの Enrollment Session が対面式かリモートチャネルでの対面式か、またユーザーが選択できるかどうかについての情報。Session の許可されたオプションに関連する情報のみを提供する。
+  * 対面式またはリモートチャネルでの対面式の Session に必要な、場所に関する情報について、ユーザーが希望する場所を選択できるかどうか、必要なロジスティック情報を提供する。紛失や盗難の危険性が増すため、ユーザは Identity Proofing を特定の公共の場所（銀行とスーパーマーケットの違い） に持参することを嫌がる場合があることに注意すること。
+  * リモート Session の技術要件（例：インターネットアクセスの要件）に関する情報。
+  * 待ち時間を最小限にするために、対面またはリモートチャネルでの対面 Identity Proofing Session の予約を設定するオプションがあること。立ち寄りが許可されている場合、予約なしでは待ち時間が長くなる可能性があることをユーザーに明確にする。
+    * Enrollment Session の予約、リマインダー、および既存の予約の再スケジュール方法について、明確な指示を提供する。
     * 予約のリマインダーを提供し、ユーザーが希望する予約のリマインダー形式（郵便、ボイスメール、電子メール、テキストメッセージなど）を指定できるようにする。ユーザーは、日付、時間、場所、および必要な Identity Evidence の説明などの情報を必要とする。
 * 許容される、要求される ID の証拠および属性、それぞれの部分が任意か必須か、および ID 証拠の完全なセットを提供しない場合の結果に関する情報。ユーザーは、ID 証拠の一部（出生証明書の隆起した印など）に固有の要件など、ID 証拠の具体的な組み 合わせを知る必要がある。これは、必要な ID 証拠の調達が困難になる可能性があるため、特に重要である。
   * 可能な場合は、必要な Identity Evidence の入手を容易にするためのツールを実装する。
   * 未成年者や特殊なニーズを持つ人々に対する特別な要件について、ユーザーに通知する。たとえば、Applicant Reference および／または Trusted Referee のプロセスが利用可能かどうか、 およびそれらのプロセスを使用するために必要な情報をユーザに提供する（[Sec. 5.1.9](sec5_ial.ja.md#TRs-ARs) を参照）。
   * フォームが必要な場合は:
-     * Enrollment セッションの事前、またはその際に記入可能なフォームを提供する。プリンターへのアクセスをユーザーに要求しない。
+     * Enrollment Session の事前、またはその際に記入可能なフォームを提供する。プリンターへのアクセスをユーザーに要求しない。
      * フォームが長いと、ユーザーは苛だちやすく、ミスを起こしやすいため、ユーザーがフォームに入力しなければならない情報量を最小限に抑える。可能であれば、フォームにあらかじめ情報を入力する。
 
 {% comment %}
@@ -157,14 +157,14 @@ To ensure users are equipped to make informed decisions about whether to proceed
 {% endcomment %}
 
 ## Enrollment and Proofing Session
-Enrollment セッションに特有の Usability の考慮事項は以下のとおりである: 
+Enrollment Session に特有の Usability の考慮事項は以下のとおりである: 
 
-* Identity Proofing セッションの開始時に、ユーザーに手続きをリマインドする。Enrollment 前準備の段階で説明した手順を覚えていることを期待してはいけない。Enrollment セッションがEnrollment 前準備の直後に行われない場合は、Proofing と Enrollment のステップの完了に要する標準的な時間をユーザに明確に思い出させることが特に重要である。
+* Identity Proofing Session の開始時に、ユーザーに手続きをリマインドする。Enrollment 前準備の段階で説明した手順を覚えていることを期待してはいけない。Enrollment Session がEnrollment 前準備の直後に行われない場合は、Proofing と Enrollment のステップの完了に要する標準的な時間をユーザに明確に思い出させることが特に重要である。
 * 対面またはリモートチャネルでの予約変更のオプションを提供する。
-* Enrollment セッションを進めるために必要な Identity Evidence (Enrollment コードを含む) をユーザーが所持していることを確認するために、利用可能であり必須の Identity Evidence を記載したチェックリストを提供する（該当する場合）。ユーザが完全な Identity Evidence 一式を持っていない場合、Identity Proofing セッションを部分的に完了できるかどうかに関して通知する必要がある。
-* どの情報が破棄されるか、どの情報が将来のフォローアップ・セッションのために保持されるか、将来のセッションを完了するためにどのような Identity Evidence を持参する必要があるかについて、ユーザーに通知する。理想的には、ユーザ Identity Proofing セッションを部分的に完了したいかどうかを選択できる。
-* 過去の Identity Verification の体験がユーザーの期待値を左右することがあるものとして、Enrollment セッションの結果に関するユーザーの期待値を設定すること（例：対面で運転免許証を受け取る、パスポートを郵便で受け取る）。
-* Enrollment セッションが無事に終了した際に、ユーザーがすぐに Authenticator を受領できるのか、対面で受領するために予約を取る必要があるのか、郵便で受け取れるのか、いつ受け取れるかを明確に示す。
+* Enrollment Session を進めるために必要な Identity Evidence (Enrollment コードを含む) をユーザーが所持していることを確認するために、利用可能であり必須の Identity Evidence を記載したチェックリストを提供する（該当する場合）。ユーザが完全な Identity Evidence 一式を持っていない場合、Identity Proofing Session を部分的に完了できるかどうかに関して通知する必要がある。
+* どの情報が破棄されるか、どの情報が将来のフォローアップ Session のために保持されるか、将来の Session を完了するためにどのような Identity Evidence を持参する必要があるかについて、ユーザーに通知する。理想的には、ユーザ Identity Proofing Session を部分的に完了したいかどうかを選択できる。
+* 過去の Identity Verification の体験がユーザーの期待値を左右することがあるものとして、Enrollment Session の結果に関するユーザーの期待値を設定すること（例：対面で運転免許証を受け取る、パスポートを郵便で受け取る）。
+* Enrollment Session が無事に終了した際に、ユーザーがすぐに Authenticator を受領できるのか、対面で受領するために予約を取る必要があるのか、郵便で受け取れるのか、いつ受け取れるかを明確に示す。
 
 {% comment %}
 Usability considerations specific to the enrollment session include:
@@ -177,7 +177,7 @@ Usability considerations specific to the enrollment session include:
 * Clearly indicate whether users will receive an authenticator immediately at the end of a successful enrollment session, if users have to schedule an appointment to pick it up in person, or if users will receive it in the mail and when they can expect to receive it.
 {% endcomment %}
 
-* Enrollment セッションを通じて、どのようなデータが CSP によって保持されるかなど、Identity Proofing の際にユーザーに明示的な通知を行う必要がある（通知に関する詳細な要件については、[Sec. 5.1](sec5_ial.ja.md#genProofReqs) と [Sec. 8](sec8_privacy.ja.md#privacy-section-header) を参照）。4.2 要件 (5) に従って、CSP が Identity Proofing、Authentication、Authorization、または Attribute Assertion 以外の目的で、追加の Attribute またはその Attribute の使用についてユーザから同意を求める場合、追加の Attribute またはその使用を要求することをユーザーは希望しない、あるいはそれがユーザを不快に感じさせる可能性があることを CSP は認識すること。ユーザが追加の収集または使用に利点を感じず、余計なリスクであると受け止める場合、同意の提供やプロセスの継続を嫌がったりためらったりするかもしれない。利用者に対して、追加要件について明示的に通知すること。
+* Enrollment Session を通じて、どのようなデータが CSP によって保持されるかなど、Identity Proofing の際にユーザーに明示的な通知を行う必要がある（通知に関する詳細な要件については、[Sec. 5.1](sec5_ial.ja.md#genProofReqs) と [Sec. 8](sec8_privacy.ja.md#privacy-section-header) を参照）。4.2 要件 (5) に従って、CSP が Identity Proofing、Authentication、Authorization、または Attribute Assertion 以外の目的で、追加の Attribute またはその Attribute の使用についてユーザから同意を求める場合、追加の Attribute またはその使用を要求することをユーザーは希望しない、あるいはそれがユーザを不快に感じさせる可能性があることを CSP は認識すること。ユーザが追加の収集または使用に利点を感じず、余計なリスクであると受け止める場合、同意の提供やプロセスの継続を嫌がったりためらったりするかもしれない。利用者に対して、追加要件について明示的に通知すること。
 
 {% comment %}
 * During the enrollment session, there are several requirements to provide users with explicit notice at the time of identity proofing, such as what data will be retained on record by the CSP (see [Sec. 5.1](sec5_ial.md#genProofReqs) and [Sec. 8](sec8_privacy.md#privacy-section-header) for detailed requirements on notices). If CSPs seek consent from a user for additional attributes or uses of their attributes for any purpose other than identity proofing, authentication, authorization or attribute assertions, per 4.2 requirement (5), make CSPs aware that requesting additional attributes or uses may be unexpected or may make users uncomfortable. If users do not perceive benefit(s) to the additional collection or uses, but perceive extra risk, they may be unwilling or hesitant to provide consent or continue the process. Provide users with explicit notice of the additional requirements.
@@ -199,15 +199,15 @@ Usability considerations specific to the enrollment session include:
     * Provide users with alternative options as not all users are able to access and use technology equitably. For example, users may not have the technology needed for this approach to be feasible.
 {% endcomment %}
 
-* Enrollment セッションの終了時に: 
+* Enrollment Session の終了時に: 
   * Enrollment が成功した場合、ユーザーに対して、Enrollment の成功に関する確認と次のステップに関する情報（例：いつどこで Authenticator を受け取るか、いつ郵送されるか）を伝える。
-  * ユーザーが完全な Identity Evidence 一式を持っていない、ユーザーが手続きの停止を選択した、またはセッションのタイムアウトが発生したことにより、Enrollment が部分的に完了した場合、ユーザーに次のことを連絡する: 
+  * ユーザーが完全な Identity Evidence 一式を持っていない、ユーザーが手続きの停止を選択した、または Session のタイムアウトが発生したことにより、Enrollment が部分的に完了した場合、ユーザーに次のことを連絡する: 
   	* どのような情報が破棄されるのか。
-  	* 今後のフォローアップ・セッションのために保持される情報がある場合は、その内容。
+  	* 今後のフォローアップ Session のために保持される情報がある場合は、その内容。
   	* 情報が保持される期間。
-  	* 将来のセッションに持参する必要のある Identity Evidence について。
-  * Enrollment が失敗した場合、代替の Enrollment セッション・タイプについて明確な指示をユーザーに提供する。例えば、リモートでの Proofing を完了できないユーザーに対して対面での Proofing を提供するといったことである。
-* Enrollment セッションの中でユーザーが Authenticator を受け取る場合、Authenticator の使用および保守に関する情報を提供する。例えば、情報としては、使用方法（特に、初回使用または初期化について異なる要件がある場合）、Authenticator の有効期限に関する情報、Authenticator の保護方法、Authenticator の紛失または盗難時の対処方法などを含めることができる。
+  	* 将来の Session に持参する必要のある Identity Evidence について。
+  * Enrollment が失敗した場合、代替の Enrollment Session タイプについて明確な指示をユーザーに提供する。例えば、リモートでの Proofing を完了できないユーザーに対して対面での Proofing を提供するといったことである。
+* Enrollment Session の中でユーザーが Authenticator を受け取る場合、Authenticator の使用および保守に関する情報を提供する。例えば、情報としては、使用方法（特に、初回使用または初期化について異なる要件がある場合）、Authenticator の有効期限に関する情報、Authenticator の保護方法、Authenticator の紛失または盗難時の対処方法などを含めることができる。
 
 {% comment %}
 * At the end of the enrollment session,
@@ -222,9 +222,9 @@ Usability considerations specific to the enrollment session include:
 {% endcomment %}
 
 * 対面および遠隔での Identity Proofing 双方について、追加の Usability の考慮事項が適用される: 
-  * Enrollment セッションの開始時に、オペレータまたは係員はその役割をユーザーに説明する必要がある （例：オペレータまたは係員が Enrollment セッションを通じてユーザーを案内するか、静かに見守り必要な場合のみ対話するか）。
-  * Enrollment セッションの開始時に、ユーザーに対して、Enrollment 中に離席してはならないこと、Enrollment 中の行動が見えるようにすることを、伝える。
-  * Enrollment セッションを通じてバイオメトリクスを収集する場合は、収集プロセスを完了するための明確な指示をユーザーに提供する。この指示は、プロセスの直前に与えるのが最適である。生身のオペレーターからの口頭で指示、修正フィードバックを行うのが最も効果的です（例：バイオメトリックセンサーがどこにあるか、いつ開始するか、センサーとどのように対話するか、バイオメトリクスの収集がいつ完了するかをユーザーに指示する）。
+  * Enrollment Session の開始時に、オペレータまたは係員はその役割をユーザーに説明する必要がある （例：オペレータまたは係員が Enrollment Session を通じてユーザーを案内するか、静かに見守り必要な場合のみ対話するか）。
+  * Enrollment Session の開始時に、ユーザーに対して、Enrollment 中に離席してはならないこと、Enrollment 中の行動が見えるようにすることを、伝える。
+  * Enrollment Session を通じてバイオメトリクスを収集する場合は、収集プロセスを完了するための明確な指示をユーザーに提供する。この指示は、プロセスの直前に与えるのが最適である。生身のオペレーターからの口頭で指示、修正フィードバックを行うのが最も効果的です（例：バイオメトリックセンサーがどこにあるか、いつ開始するか、センサーとどのように対話するか、バイオメトリクスの収集がいつ完了するかをユーザーに指示する）。
 
 {% comment %}
 * For both in-person and remote identity proofing, additional usability considerations apply:
@@ -259,7 +259,7 @@ Usability considerations specific to the enrollment session include:
 ## Post-Enrollment {#sec9_2_4}
 {% endcomment %}
 
-Enrollment 後とは、Enrollment 直後から、Authenticator の典型的な利用の前のステップを指す(Authenticator の典型的な利用と、断続的なイベントに対する Usability の考慮については、[[SP800-63B]](../_sp800-63b/sec1_purpose.ja.md#purpose){:latex-href="#ref-SP800-63B"}, Sec. 10. を参照。前述の通り、ユーザーはEnrollment セッションの完了時に、Authenticator を受け取るために期待される配送（またはピックアップ）メカニズムについて、既に通知されている。
+Enrollment 後とは、Enrollment 直後から、Authenticator の典型的な利用の前のステップを指す(Authenticator の典型的な利用と、断続的なイベントに対する Usability の考慮については、[[SP800-63B]](../_sp800-63b/sec1_purpose.ja.md#purpose){:latex-href="#ref-SP800-63B"}, Sec. 10. を参照。前述の通り、ユーザーはEnrollment Session の完了時に、Authenticator を受け取るために期待される配送（またはピックアップ）メカニズムについて、既に通知されている。
 
 Enrollment 後の Usability に関する考慮事項は以下の通りである: 
 
