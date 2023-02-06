@@ -383,7 +383,7 @@ The following requirements apply to CSPs that employ biometric mechanisms as par
 
 1. CSP は、バイオメトリックはApplicantから収集されたものであり、別の対象から取得したものではないことを保証する方法で、バイオメトリクスを収集するものとする(**SHALL**）。
 2. バイオメトリクスをRemote で収集し比較する場合、CSP は、生存する人間が本当にそこに存在していることを確認し、スプーフィングとなりすましの試みを軽減するために、生存検出機能を実装するものとする(**SHALL**)。
-3. 個人でバイオメトリクスを収集する場合、CSPはオペレータにバイオメトリクス・ソース（例：指、顔）にnon-naturalな物質が存在するかどうかを確認させ、Proofingプロセスの一環としてそのような検査を実行するものとする(**SHALL**)。
+3. 対面でバイオメトリクスを収集する場合、CSPはオペレータにバイオメトリクス・ソース（例：指、顔）にnon-naturalな物質が存在するかどうかを確認させ、Proofingプロセスの一環としてそのような検査を実行するものとする(**SHALL**)。
 
 {% comment %}
 The following requirements apply to CSPs who collect biometric characteristics from applicants:  
