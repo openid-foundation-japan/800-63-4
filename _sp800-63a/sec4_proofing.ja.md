@@ -81,7 +81,7 @@ _This section is informative._
     {:.letter-list} 
 2. **Validation**
     1. CSP は、ステップ 1a で取得したattributesを、authoritativeソースまたは信頼できるソースと照合することで、validateする。
-    2. CSPは、提示されたエビデンスの真正性、正確性、および最新性を検証する。
+    2. CSPは、提示されたエビデンスの真正性、正確性、および最新性を Validate する。
     {:.letter-list} 
 3. **Verification**
     1. CSP は、applicantに自分自身の写真を撮影するよう依頼し、生存性のチェックを行う。
