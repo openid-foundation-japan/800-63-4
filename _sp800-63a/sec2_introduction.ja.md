@@ -104,7 +104,7 @@ Assurance in a subscriber's identity is described using one of the following Ide
 **IAL1**: The identity proofing process supports the real-world existence of the claimed identity. Core attributes are obtained from identity evidence or asserted by the applicant.  All core attributes are validated against authoritative or credible sources and steps are taken to link the attributes to the person undergoing the identity proofing process.   
 {% endcomment %} 
 
-**IAL2**: IAL2 は、より強力なタイプのエビデンスの収集と、エビデンスをvalidateしアイデンティティをverifyするためのより厳密なプロセスを要求することにより、Identity Proofingプロセスにさらなる厳密さを追加する。
+**IAL2**: IAL2 は、より強力なタイプのエビデンスの収集と、エビデンスを Validate しアイデンティティを Verify するためのより厳密なプロセスを要求することにより、Identity Proofing プロセスにさらなる厳密さを追加する。
 
 {% comment %} 
 **IAL2**: IAL2 adds additional rigor to the identity proofing process by requiring the collection of stronger types of evidence and a more rigorous process for validating the evidence and verifying the identity. 
