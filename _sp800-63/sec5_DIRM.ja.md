@@ -22,7 +22,7 @@ Digital Identity の Risk Management には4つのステップが存在する.
 
 <!-- 1.	**Conduct Initial Impact Assessment**: In this step, organizations evaluate their user population and assess the impact of a failure of each function in the identity system (i.e., proofing, authentication, and federation) for their protected application or service against a defined set of impact categories. The outcome of this step is a documented set of impact categories and associated impact levels. -->
 
-1.	**初期 Impact Assessment の実施**. このステップでは, 組織はユーザー母集団を評価し, 定義された影響カテゴリーのセットに対して, 保護対象のアプリケーションまたはサービスに対する Identity システムの各機能（例えば Proofing, Authentication, Federation）の障害がもたらす影響を評価する. このステップの成果は, 文書化された一連の影響カテゴリーと関連する影響レベルである.
+1.	**初期 Impact Assessment の実施**. このステップでは, 組織はユーザー母集団を評価し, 定義された影響カテゴリーのセットに対して, 保護対象のアプリケーションまたはサービスに対する Identity システムの各機能 (例えば Proofing, Authentication, Federation) の障害がもたらす影響を評価する. このステップの成果は, 文書化された一連の影響カテゴリーと関連する影響レベルである.
 
 <!-- 2.	**Select Initial Assurance Levels**: In this step, the impact categories and impact levels are evaluated to determine the appropriate assurance levels to protect the application. The outcome of this step is an identified initial level for each applicable xAL. -->
 
@@ -42,7 +42,7 @@ Digital Identity の Risk Management には4つのステップが存在する.
 
 <!-- Organizations **SHOULD** adapt and modify this overall approach to meet organizational processes, governance, and integration with enterprise risk management practices. At a minimum, organizations **SHALL** ensure that each step is executed and the normative mandates and outcomes of each step are completed and documented regardless of operational approach and enabling tools. -->
 
-組織は, 組織のプロセス, ガバナンス, 及び企業 Risk Management のプラクティスとの統合に合わせて, この全体的なアプローチを適応及び修正すべき(**SHOULD**)である. 最低限, 組織は, 運用方法や実現手段にかかわらず, 各ステップを確実に実行し, 各ステップの規範的な義務及び成果を完了し, 文書化しなければならない（**SHALL**）.
+組織は, 組織のプロセス, ガバナンス, 及び企業 Risk Management のプラクティスとの統合に合わせて, この全体的なアプローチを適応及び修正すべき(**SHOULD**)である. 最低限, 組織は, 運用方法や実現手段にかかわらず, 各ステップを確実に実行し, 各ステップの規範的な義務及び成果を完了し, 文書化しなければならない (**SHALL**).
 
 ## Conduct Initial Impact Assessment {#intlAssess}
 
@@ -64,11 +64,11 @@ Digital Identity の Risk Management には4つのステップが存在する.
 - 被害を評価する対象となる一連の影響カテゴリーの特定,
 - 影響カテゴリーのそれぞれについて, 潜在的な被害を特定,
 - 障害が発生した場合に, それらの潜在的な被害が与える影響のレベルの特定, ならびに
-- 各タイプの障害（ Proofing, Authentication, Federation ）の影響の評価と, 影響を受けるすべての主体への影響レベルの評価.
+- 各タイプの障害 (Proofing, Authentication, Federation) の影響の評価と, 影響を受けるすべての主体への影響レベルの評価.
 
 <!-- The output of this assessment is a defined impact level &mdash; High, Moderate, or Low &mdash; for each possible type of failure. This serves as the primary input to the initial assurance level selection. -->
 
-この Assessment のアウトプットは, 起こりうる障害の種類ごとに定義された影響度（高, 中, 低）である. これは, 最初の Assurance Level を選択するための主要なインプットとなる.
+この Assessment のアウトプットは, 起こりうる障害の種類ごとに定義された影響度 (高, 中, 低) である. これは, 最初の Assurance Level を選択するための主要なインプットとなる.
 
 ### Identify Impacted Entities {#impctEnt}
 
@@ -140,7 +140,7 @@ Damage to trust or reputation / 信用や評判に対する損害
 -->
 
   - 個人に対する被害には, なりすましやイメージ・評判の悪化などが挙げられる.
-  - 組織に対する被害には, 信頼関係, イメージ, または評判（将来的, 潜在的な信頼関係を含む）の低下が挙げられる.
+  - 組織に対する被害には, 信頼関係, イメージ, または評判 (将来的, 潜在的な信頼関係を含む) の低下が挙げられる.
 
 <!-- Loss of sensitive information: -->
 
@@ -152,7 +152,7 @@ Loss of sensitive information / 機密情報の損失
 -->
 
   - 個人に対する被害には, PII やその他の機密情報の損失が含まれ, その結果, 経済的安定の損失, 生命の損失, 身体的または心理的傷害, なりすまし, Identityの盗難, または持続的な不都合などの二次的被害が挙げられる.
-  - 組織に対する被害には, 知的財産や, 機密資料や管理された非機密情報（Controlled Unclassified Information / CUI）などの情報資産の損失や劣化が挙げられる.
+  - 組織に対する被害には, 知的財産や, 機密資料や管理された非機密情報 (Controlled Unclassified Information / CUI) などの情報資産の損失や劣化が挙げられる.
 
 <!-- Damage to or loss of economic stability: -->
 
@@ -214,7 +214,7 @@ Digital Transaction の Assurance Level は, [Sec. 5.1.2](sec5_DIRM.md#impactCat
 
 <!-- Each assurance level, IAL, AAL, and FAL (if accepting or asserting a federated identity) **SHALL** be evaluated separately. Ideally, any evaluation will include different viewpoints such as harm to individuals, the organization, other organizations, and the nation as applicable to successful delivery of the organization's mission. Examples of potential impacts in each of the categories include: -->
 
-各 Assurance Level, IAL, AAL, および FAL（Federated Identityを受け入れる, または Asserting する場合）は個別に評価しなくてはいけない(**SHALL**). 理想的には, どのような評価にも, 個人, 組織, 他の組織, および国に対する被害など, 組織のミッションを成功裏に遂行するために適用可能なさまざまな視点が含まれるようにする. 各カテゴリーにおける潜在的な影響の例としては, 以下が挙げられる.
+各 Assurance Level, IAL, AAL, および FAL (Federated Identityを受け入れる, または Asserting する場合) は個別に評価しなくてはいけない(**SHALL**). 理想的には, どのような評価にも, 個人, 組織, 他の組織, および国に対する被害など, 組織のミッションを成功裏に遂行するために適用可能なさまざまな視点が含まれるようにする. 各カテゴリーにおける潜在的な影響の例としては, 以下が挙げられる.
 
 **Damage to mission delivery:**
 
@@ -296,7 +296,7 @@ Digital Transaction の Assurance Level は, [Sec. 5.1.2](sec5_DIRM.md#impactCat
 
 <!-- To determine the appropriate level of assurance of the user's asserted identity, organizations **SHALL** assess the potential risks and identify measures to minimize their impact. Organizations **SHALL** assess the risk of identity proofing, authentication, and federation failures separately to determine the required assurance level for each transaction. This process **SHALL** include consideration of potentially varying impacts of harms to different entities impacted by the digital identity system, as described in [Sec. 5.1.1](sec5_DIRM.md#impctEnt). Business processes, policies, and technologies may help reduce risk. Entities **SHOULD** consider the impact of specific modes of failures related to identity proofing, authentication, and federation this includes, but may not be limited to: -->
 
-ユーザーの Asserted Identity の適切な Assurance Level を決定するため, 各組織は潜在リスクを評価し, その影響を最小限に抑える手段を特定する必要がある (**SHALL**). 組織は, 各 Transaction に必要な Assurance Level を決定するために, Identity Proofing, Authentication, および Federation の障害のリスクを個別に評価する. このプロセスには, [Sec. 5.1.1](sec5_DIRM.md#impctEnt) に記載されているように, Digital Identity システムの影響を受ける異なる主体に対する潜在的に異なる被害の影響を考慮することが含まなくてはいけない(**SHALL**). ビジネス・プロセス, ポリシー, および技術は, リスクの軽減に役立つ場合がある. 主体は, Identity Proofing, Authentication, および Federation に関連する特定の障害モードの影響を考慮するべきである(**SHOULD**)（ただし, これらに限定されない）.
+ユーザーの Asserted Identity の適切な Assurance Level を決定するため, 各組織は潜在リスクを評価し, その影響を最小限に抑える手段を特定する必要がある (**SHALL**). 組織は, 各 Transaction に必要な Assurance Level を決定するために, Identity Proofing, Authentication, および Federation の障害のリスクを個別に評価する. このプロセスには, [Sec. 5.1.1](sec5_DIRM.md#impctEnt) に記載されているように, Digital Identity システムの影響を受ける異なる主体に対する潜在的に異なる被害の影響を考慮することが含まなくてはいけない(**SHALL**). ビジネス・プロセス, ポリシー, および技術は, リスクの軽減に役立つ場合がある. 主体は, Identity Proofing, Authentication, および Federation に関連する特定の障害モードの影響を考慮するべきである(**SHOULD**) (ただし, これらに限定されない).
 
 **Identity Proofing:**
 
@@ -313,7 +313,7 @@ Digital Transaction の Assurance Level は, [Sec. 5.1.2](sec5_DIRM.md#impactCat
 <!-- - The impact of authenticating the wrong subject (e.g., an attacker who compromises or steals an authenticator).
 - The impact of failing to authenticate the correct subject due to barriers, including biases, faced by the subject in presenting their authenticator. -->
 
-- 誤った Subject を Authenticating した場合の影響（例: Attacker が Authenticator を不正に利用する, または盗むなど）.
+- 誤った Subject を Authenticating した場合の影響 (例: Attacker が Authenticator を不正に利用する, または盗むなど).
 - Subject が Authenticator を提示する際に直面する偏見などの障壁により, 正しい Subject の Authenticate に失敗した場合の影響.
 
 **Federation:**
@@ -321,7 +321,7 @@ Digital Transaction の Assurance Level は, [Sec. 5.1.2](sec5_DIRM.md#impactCat
 <!-- - The impact of the wrong subject successfully accessing an application, system, or data (e.g., compromising or replaying an assertion).
 - The impact of releasing subscriber attributes to the wrong application or system. -->
 
-- 誤った Subject がアプリケーション, システム, またはデータへのアクセスに成功した場合の影響（例: Assertionの侵害や Replay など）.
+- 誤った Subject がアプリケーション, システム, またはデータへのアクセスに成功した場合の影響 (例: Assertionの侵害や Replay など).
 - Subscriber Attribute を誤ったアプリケーションやシステムに開示した場合の影響.
 
 <!-- Using a worksheet similar to [Table 1](sec5_DIRM.md#table-1) can assist organizations with compiling the information gathered in order to complete the analysis. This kind of analysis would be done for each type of potential failure for identity proofing, authentication, and federation to determine the overall risks to entities interacting with the digital identity system. -->
@@ -372,7 +372,7 @@ Digital Transaction の Assurance Level は, [Sec. 5.1.2](sec5_DIRM.md#impactCat
 
 * **IAL**: 個人の Identity を確信を持って決定するための Identity Proofing プロセスの頑強性. IAL は潜在的 Identity Proofing の失敗を軽減することを目的に選択される.
 * **AAL**: Authentication プロセス自体, および Authenticator と特定個人の識別子の紐付けの頑強性. AAL は Authentication 失敗を軽減することを目的に選択される.
-* **FAL**: IdP から RP に Authentication および Attribute 情報（該当する場合）を伝達するために使用される Federation プロセスの頑強性. すべての Digital システムが Federated Identity アーキテクチャーを採用する訳ではないため, FAL はオプションである. FAL は Federation の失敗を軽減することを目的に選択される.
+* **FAL**: IdP から RP に Authentication および Attribute 情報 (該当する場合) を伝達するために使用される Federation プロセスの頑強性. すべての Digital システムが Federated Identity アーキテクチャーを採用する訳ではないため, FAL はオプションである. FAL は Federation の失敗を軽減することを目的に選択される.
 
 ### xAL Descriptions
 
@@ -596,8 +596,8 @@ RP アプリケーションの全体的な影響度を評価する場合, 組織
 5. **SHOULD** be a continuous process that incorporates real world operational data to evaluate the impacts of selected xAL controls. -->
 
 1. **SHALL** 意思決定と対立の解消を可能にするために, 構造化されたガバナンスのアプローチを含める
-2. **SHALL** 評価された xAL, 修正された xAL, および Digital Identity Acceptance Statement ([Sec. 5.3.4](sec5_DIRM.md#IDacceptStmt) 参照）の補償管理を含む, 調整プロセスのすべての決定を文書化する
-3. **SHALL** Digital Identity Acceptance Statement（[Sec. 5.3.4](sec5_DIRM.md#IDacceptStmt) 参照）において, 当初評価した xAL に対するすべてのリスクベースの決定または修正の正当性を証明し文書化する.
+2. **SHALL** 評価された xAL, 修正された xAL, および Digital Identity Acceptance Statement ([Sec. 5.3.4](sec5_DIRM.md#IDacceptStmt) 参照) の補償管理を含む, 調整プロセスのすべての決定を文書化する
+3. **SHALL** Digital Identity Acceptance Statement ([Sec. 5.3.4](sec5_DIRM.md#IDacceptStmt) 参照) において, 当初評価した xAL に対するすべてのリスクベースの決定または修正の正当性を証明し文書化する.
 4. **SHOULD** 調整プロセスにおける xAL 選択の影響に関する主題分析をサポートするために, 部門横断的な能力を確立する
 5. **SHOULD** 選択された xAL コントロールの影響を評価するために, 実際の運用データを取り入れた継続的なプロセスであること
 
@@ -619,7 +619,7 @@ RP アプリケーションの全体的な影響度を評価する場合, 組織
 - **Privacy** – 評価された xAL での管理の対象となる個人, および Digital Identity の確立, 管理, または Federation に関連する組織または第三者の慣行の影響を受ける個人の Privacy に対する意図しない結果生じるかどうかを判断すること
 - **Equity** – 統制の実施により, 人々の属性やユーザーグループ間で不公平が生じたり, その状態が継続したりする可能性がないかどうかを判断すること
 - **Usability** – 選択したコントロールの実施により, エンドユーザー・エクスペリエンスに課題が生じるかどうかを判断すること
-- **Threat** – 環境, 脅威要因, 既知の戦術, 技術, 手順（TTPs）に基づき, 定義された Assurance Level  が特定の脅威に対応できるかどうかを判断すること
+- **Threat** – 環境, 脅威要因, 既知の戦術, 技術, 手順 (TTPs) に基づき, 定義された Assurance Level  が特定の脅威に対応できるかどうかを判断すること
 
 <!-- Additionally, organizations **SHOULD** conduct additional business specific assessments as appropriate to fully represent mission and domain specific considerations not captured here. These assessments **SHALL** be extended to any compensating or supplemental controls as defined in [Sec. 5.3.2](sec5_DIRM.md#IDCompCntls) and [Sec. 5.3.3](sec5_DIRM.md#IDSupCntrls). -->
 
