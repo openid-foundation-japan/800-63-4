@@ -458,7 +458,7 @@ CSPはApplicant Referenceの利用を許可すべきである(**SHOULD**)。
 以下の要件は、任意のIALにおいてApplicant Referenceの利用に対して適用される:
 
 1. CSP は、Applicant Referenceを使用するための方針と手続きを、[Sec. 5.1.1](sec5_ial.ja.md#DocRecReqs) で指定されているように、Practice Statementの一部として文書で確立するものとする(**SHALL**)。
-2. CSP は、Applicant Referenceを、Applicantに意図された同等以上の IAL でIdentity Proofingするものとする。
+2. CSPは、Applicantに実施する予定のものと同じまたはより高いIALにおいてApplicant ReferenceをIdentity Proofingするものとする(**SHALL**)。
 3. CSP がApplicant Referenceの使用を許可する場合、CSP はApplicant Referenceの許容範囲およびReferenceとApplicantの関係要件について、公に通知するものとする(**SHALL**)。
 
 
