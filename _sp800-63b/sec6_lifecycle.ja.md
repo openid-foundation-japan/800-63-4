@@ -308,14 +308,14 @@ In addition to the requirements given in [Sec. 6.1.2.1](sec6_lifecycle.md#bindex
 * The CSP **SHALL** provide clear instruction on what the subscriber should do in the event of an authenticator binding mishap, such as a button or contact address to allow a mis-bound authenticator to be quickly invalidated as appropriate. This **MAY** be provided in the authenticated session or in the binding notification described in [Sec. 6.1.2.1](sec6_lifecycle.md#bindexisting), [Sec. 6.1.2.2](sec6_lifecycle.md#s-6-1-2-2), and [Sec. 6.1.2.3](sec6_lifecycle.md#replacement) above.
 -->
 
-* CSP は, Authenticator Binding の事故が発生した場合に何をすべきか,  Subscriber に明確な手順書を提供すること (**SHALL**). これには誤って紐づけられた Authenticator を即座に適切に無効化できるようなボタンや連絡先などが挙げられる. これは認証済 Session や Binding 通知ないで提供することもできる (**MAY**). Binding 通知に関しては [Sec. 6.1.2.1](sec6_lifecycle.md#bindexisting), [Sec. 6.1.2.2](sec6_lifecycle.md#s-6-1-2-2), [Sec. 6.1.2.3](sec6_lifecycle.md#replacement) を参照のこと.
+* CSP は, Authenticator Binding の事故が発生した場合に何をすべきか,  Subscriber に明確な手順書を提供すること (**SHALL**). これには誤って紐づけられた Authenticator を即座に適切に無効化できるようなボタンや連絡先などが挙げられる. これは Authenticated Session や Binding 通知ないで提供することもできる (**MAY**). Binding 通知に関しては [Sec. 6.1.2.1](sec6_lifecycle.md#bindexisting), [Sec. 6.1.2.2](sec6_lifecycle.md#s-6-1-2-2), [Sec. 6.1.2.3](sec6_lifecycle.md#replacement) を参照のこと.
 
 <!--
 Binding an external authenticator is a potentially risky operation because of the potential for the subscriber to be tricked into using a binding code by an attacker or supplying a binding code to an attacker. In some cases, QR codes obtained from a trusted source (such as from an authenticated session, especially when that authentication is phishing resistant) are considered to be more robust against such attacks, because they typically contain the URL of the CSP as well as the binding code. There is less potential for the subscriber to be fooled into entering a binding code at a phishing site as a result.
 -->
 
 Subscriber が騙されて Attacker に Binding Code を使用させられたり, Attacker に Binding Code を提供してしまったりする可能性があるため, External Authenticator の Binding は潜在的にリスクのある操作である.
-場合によっては, 信頼できる情報源 (認証済 Session から取得したものなど, 特に認証済 Session が Phisihng 耐性を持つものであればことさら) から取得した QR コードはそのような攻撃に対してより堅牢であると考えられる. これは通常そのような QR コードが Binding Code とともに CSP の URL を含むからである.
+場合によっては, 信頼できる情報源 (Authenticated Session から取得したものなど, 特に Authenticated Session が Phisihng 耐性を持つものであればことさら) から取得した QR コードはそのような攻撃に対してより堅牢であると考えられる. これは通常そのような QR コードが Binding Code とともに CSP の URL を含むからである.
 そのような条件下では, Subscriber が騙されて Phishing サイトで Binding Code を入力する可能性が低くなる.
 
 ### Binding to a Subscriber-provided Authenticator
