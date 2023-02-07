@@ -1139,13 +1139,29 @@ Further, the risk of an authentication error is typically borne by multiple part
 
 ### Activation Secrets {#s-5-2-11}
 
+<!--
 Memorized secrets that are used as an activation factor for a multi-factor authenticator are referred to as _activation secrets_. An activation secret is used to decrypt a stored secret key used for authentication or is compared against a locally held stored verifier to provide access to the authentication key. In either of these cases, the activation secret **SHALL** remain within the authenticator and its associated user endpoint.
+-->
 
+Multi-Factor Authenticator の Activation Factor として使用される Memorized Secret は, _Activation Secret_ と呼ばれる. Activation Secret は, Authentication に使用される Stored Secret Key を復号するために使用されるか, Authentication Key へのアクセスを提供するためにローカルに保持されている Stored Verifier と比較される. これらのいずれの場合でも, Activation Secret は Authenticator とそれに関連付けられたユーザーエンドポイント内にとどまることとなる(**SHALL**).
+
+<!--
 Authenticators making use of activation secrets **SHALL** require the secrets to be at least 6 characters in length. Activation secrets **MAY** be entirely numeric (i.e., a PIN). If alphanumeric (rather than only numeric) values are permitted, all printing ASCII [[RFC20]](references.md#ref-RFC20) characters as well as the space character **SHOULD** be accepted. Unicode [[ISO/ISC 10646]](references.md#ref-ISOIEC10646) characters **SHOULD** be accepted as well in alphanumeric secrets. The authenticator **SHALL** contain a blocklist (either specified by specific values or by an algorithm) of at least 10 commonly used activation values and **SHALL** prevent their use as activation secrets.
+-->
 
+Activation Secret を利用する Authenticator は, Secret の長さに少なくとも 6 文字を要求することとなる(**SHALL**). Activation Secret は, すべて数字 (つまり PIN) であってもよい(**MAY**). (数字だけではなく)英数字の値が許可されている場合は, すべての Printing ASCII [[RFC20]](references.md#ref-RFC20) 文字と空白文字が受け入れられる必要がある(**SHOULD**). Unicode [[ISO/ISC 10646]](references.md#ref-ISOIEC10646) 文字もまた, 英数字の Secret に受け入れられる必要がある(**SHOULD**). Authenticator は, (特定の値またはアルゴリズムによって指定された) 少なくとも 10 個のよく使用される Activation 値の Blocklist を含むこととなり(**SHALL**), それらの Activation Secret としての使用を防ぐこととなる(**SHALL**).
+
+<!--
 The authenticator or verifier **SHALL** implement a retry-limiting mechanism that effectively limits the number of consecutive failed activation attempts using the authenticator to ten (10). If the entry of an incorrect activation secret causes the authenticator to generate an invalid output that is sent to the central verifier, rate limiting **MAY** be implemented by the verifier. In all other cases, rate limiting **SHALL** be implemented in the authenticator. Once the limit of 10 attempts is reached, the authenticator **SHALL** be disabled and a different authenticator **SHALL** be required for authentication.
+-->
 
+Authenticator または Verifier は, Authenticator を使用した Activation の連続失敗の試行を効果的に 10回 に制限する再試行制限メカニズムを実装することとなる(**SHALL**). 正しくない Activation Secret の入力によって Authenticator が中央の Verifier に送信される無効な出力を生成する場合, Verifier によってレート制限が実装されてもよい(**MAY**). すべての他のケースでは, レート制限は Authenticator に実装されることとなる(**SHALL**). ひとたび 10回 の試行の制限に達すると, Authenticator を無効化されることとなり(**SHALL**), Authentication には別の Authenticator が要求されることとなる(**SHALL**).
+
+<!--
 If the authenticator verifies the activation secret locally (rather than using it for decryption of a key), verification **SHALL** be performed within a hardware-based authenticator or in a secure element (e.g., TEE, TPM) that releases the authentication secret only upon presentation of the correct activation secret. In other circumstances (i.e., software-based multi-factor authenticators), the authenticator **SHALL** use the memorized secret as a key to decrypt its stored authentication secret. Approved cryptography **SHALL** be used.
+-->
+
+Authenticator が Activation Secret を (Key の復号に使用するのではなく) ローカルで Verifiy する場合, Verification は, ハードウェアベースの Authenticator 内, または正しい Activation Secret の提示時にのみ Authentication Secret を解放するセキュアエレメント内 (例: TEE, TPM) で実行されることとなる(**SHALL**). 他の状況 (つまり, Software-Based Multi-Factor Authenticators) では, Authenticator は, 保管された Authentication Secret の復号のために Memorized Secret を Key として使用することとなる(**SHALL**). Approved Cryptography が使用されることとなる(**SHALL**). 
 
 ### Connected Authenticators {#s-5-2-12}
 
