@@ -126,7 +126,7 @@ _SP 800-63C contains both normative and informative material._
 
 <!-- During the process of analyzing factors relevant to digital identity, organizations may determine that measures outside of those specified in this publication are appropriate in certain contexts, for instance where privacy or other legal requirements exist or where the output of a risk assessment leads the organization to determine that additional measures or other process safeguards are appropriate. Organizations, including federal agencies, may employ compensating or supplemental controls not specified in this publication. They may also consider partitioning the functionality of a digital service to allow less sensitive functions to be available at a lower level of assurance. -->
 
-Digital Identity に関連する要素を分析する過程で, 組織は, たとえば Privacy または他の法的要件が存在する場合, または Risk Management の結果から組織が追加の対策または他のプロセスの安全策が適切であると判断する場合など, 特定の状況において本書に規定されていない対策が適切であると判断する場合があり得る. 連邦政府機関を含む組織は, 本書で規定されていない補正的または補足的な管理を採用することができる. また, より機密性の低い機能をより低い Assurance Level で利用できるように, Digital Service の機能の分割を検討することもできる.
+Digital Identity に関連する要素を分析する過程で, 組織は, たとえば Privacy または他の法的要件が存在する場合, または Risk Management の結果から組織が追加の対策または他のプロセスの安全策が適切であると判断する場合など, 特定の状況において本書に規定されていない対策が適切であると判断する場合があり得る. 連邦政府機関を含む組織は, 本書で規定されていない補正的または補足的な管理を採用することができる. また, より機密性の低い機能をより低い Level of Assurance で利用できるように, Digital Service の機能の分割を検討することもできる.
 
 <!-- The considerations detailed below support enterprise risk management efforts and encourage informed, inclusive, and human-centric service delivery. While this list of considerations is not exhaustive, it highlights a set of cross-cutting factors likely to impact decision-making associated with digital identity management. -->
 
