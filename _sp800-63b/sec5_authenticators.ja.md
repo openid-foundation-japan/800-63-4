@@ -444,13 +444,13 @@ Secret Key とそのアルゴリズムは, 少なくとも [[SP800-131A]](refere
 The authenticator output is obtained by using an approved block cipher or hash function to combine the key and nonce in a secure manner. The authenticator output **MAY** be truncated to as few as 6 decimal digits (approximately 20 bits of entropy).
 -->
 
-Authenticator の出力は, Key と Nonce を安全な方法で結合するために Approved なブロック暗号または Hash 関数を使用すること取得される. Authenticator の出力は, わずか6桁の10進数 (約20ビットのEntropy) に切り詰められられてもよい(**MAY**).
+Authenticator Output は, Key と Nonce を安全な方法で結合するために Approved なブロック暗号または Hash 関数を使用すること取得される. Authenticator Output は, わずか6桁の10進数 (約20ビットのEntropy) に切り詰められられてもよい(**MAY**).
 
 <!--
 If the nonce used to generate the authenticator output is based on a real-time clock, the nonce **SHALL** be changed at least once every 2 minutes.
 -->
 
-Authenticator の出力を生成するために使用される Nonce がリアルタイムクロックに基づいている場合, Nonce は少なくとも2分ごとに変更されることとなる(**SHALL**).
+Authenticator Output を生成するために使用される Nonce がリアルタイムクロックに基づいている場合, Nonce は少なくとも2分ごとに変更されることとなる(**SHALL**).
 
 #### Single-Factor OTP Verifiers
 
@@ -464,7 +464,7 @@ Single-Factor OTP Verifier は, Authenticator に使用される OTP 生成プ�
 When a single-factor OTP authenticator is being associated with a subscriber account, the verifier or associated CSP **SHALL** use approved cryptography to either generate and exchange or to obtain the secrets required to duplicate the authenticator output.
 -->
 
-Single-Factor OTP Authenticator が Subscriber Account に関連付けられている場合, Verifier または関連付けられた CSP は, Authenticator の出力を複製するために必要な Secret を生成および交換, または取得するために, Approved Cryptography を使用することとなる(**SHALL**).
+Single-Factor OTP Authenticator が Subscriber Account に関連付けられている場合, Verifier または関連付けられた CSP は, Authenticator Output を複製するために必要な Secret を生成および交換, または取得するために, Approved Cryptography を使用することとなる(**SHALL**).
 
 <!--
 The verifier **SHALL** use approved encryption and an authenticated protected channel when collecting the OTP in order to provide resistance to eavesdropping and AitM attacks. In order to provide replay resistance as described in [Sec. 5.2.8](sec5_authenticators.md#replay), verifiers **SHALL** accept a given OTP only once while it is valid. In the event a claimant's authentication is denied due to duplicate use of an OTP, verifiers **MAY** warn the claimant in case an attacker has been able to authenticate in advance. Verifiers **MAY** also warn a subscriber in an existing session of the attempted duplicate use of an OTP.
@@ -482,7 +482,7 @@ Time-based OTPs [[TOTP]](references.md#ref-totp) **SHALL** have a defined lifeti
 If the authenticator output has less than 64 bits of entropy, the verifier **SHALL** implement a rate-limiting mechanism that effectively limits the number of failed authentication attempts that can be made on the subscriber account as described in [Sec. 5.2.2](sec5_authenticators.md#throttle).
 -->
 
-Authenticator の出力の Entropy が 64 ビット未満の場合, Verifier は, [Sec. 5.2.2](sec5_authenticators.md#throttle) で説明されている通り, Subscriber Account で試行できる Authentication の失敗回数を効果的に制限するレート制限メカニズムを実装することとなる(**SHALL**).
+Authenticator Output の Entropy が 64 ビット未満の場合, Verifier は, [Sec. 5.2.2](sec5_authenticators.md#throttle) で説明されている通り, Subscriber Account で試行できる Authentication の失敗回数を効果的に制限するレート制限メカニズムを実装することとなる(**SHALL**).
 
 ### Multi-Factor OTP Devices {#multifactorOTP}
 
@@ -519,13 +519,13 @@ Secret Key とそのアルゴリズムは, 少なくとも [[SP800-131A]](refere
 The authenticator output is obtained by using an approved block cipher or hash function to combine the key and nonce in a secure manner. The authenticator output **MAY** be truncated to as few as 6 decimal digits (approximately 20 bits of entropy).
 -->
 
-Authenticator の出力は, Key と Nonce を安全な方法で結合するために Approved なブロック暗号または Hash 関数を使用すること取得される. Authenticator の出力は, わずか6桁の10進数 (約20ビットのEntropy) に切り詰められられてもよい(**MAY**).
+Authenticator Output は, Key と Nonce を安全な方法で結合するために Approved なブロック暗号または Hash 関数を使用すること取得される. Authenticator Output は, わずか6桁の10進数 (約20ビットのEntropy) に切り詰められられてもよい(**MAY**).
 
 <!--
 If the nonce used to generate the authenticator output is based on a real-time clock, the nonce **SHALL** be changed at least once every 2 minutes.
 -->
 
-Authenticator の出力を生成するために使用される Nonce がリアルタイムクロックに基づいている場合, Nonce は少なくとも2分ごとに変更されることとなる(**SHALL**).
+Authenticator Output を生成するために使用される Nonce がリアルタイムクロックに基づいている場合, Nonce は少なくとも2分ごとに変更されることとなる(**SHALL**).
 
 <!--
 The use of an activation secret by the authenticator **SHALL** meet the requirements of [Sec. 5.2.11](sec5_authenticators.md#s-5-2-11). A biometric activation factor **SHALL** meet the requirements of [Sec. 5.2.3](sec5_authenticators.md#biometric_use), including limits on the number of consecutive authentication failures. Submission of the activation factor **SHALL** be a separate operation from unlocking of the host device (e.g., smartphone), although the same activation factor used to unlock the host device **MAY** be used in the authentication operation. The unencrypted key and activation secret or biometric sample — and any biometric data derived from the biometric sample such as a probe produced through signal processing — **SHALL** be zeroized immediately after an OTP has been generated.
@@ -545,7 +545,7 @@ Multi-Factor OTP Verifier は, 二番目の要素を提供を受ける要件な�
 When a multi-factor OTP authenticator is being associated with a subscriber account, the verifier or associated CSP **SHALL** use approved cryptography to either generate and exchange or to obtain the secrets required to duplicate the authenticator output. The verifier or CSP **SHALL** also establish, by issuance of the authentictor, that the authenticator is a multi-factor device. Otherwise, the verifier **SHALL** treat the authenticator as single-factor, in accordance with [Sec. 5.1.4](sec5_authenticators.md#singlefactorOTP).
 -->
 
-Multi-Factor OTP Authenticator が Subscriber Account に関連付けられている場合, Verifier または関連付けられた CSP は, Authenticator の出力を複製するために必要な Secret を生成および交換, または取得するために, Approved Cryptography を使用することとなる(**SHALL**). Verifier または CSP は, Authenticator の発行によって, Authenticator が Multi-Factor デバイスであることを確立することとなる(**SHALL**). それ以外の場合, Verifier は, [Sec. 5.1.4](sec5_authenticators.md#singlefactorOTP) に従って, Authenticator を Single-Factor として扱うこととなる(**SHALL**).
+Multi-Factor OTP Authenticator が Subscriber Account に関連付けられている場合, Verifier または関連付けられた CSP は, Authenticator Output を複製するために必要な Secret を生成および交換, または取得するために, Approved Cryptography を使用することとなる(**SHALL**). Verifier または CSP は, Authenticator の発行によって, Authenticator が Multi-Factor デバイスであることを確立することとなる(**SHALL**). それ以外の場合, Verifier は, [Sec. 5.1.4](sec5_authenticators.md#singlefactorOTP) に従って, Authenticator を Single-Factor として扱うこととなる(**SHALL**).
 
 <!--
 The verifier **SHALL** use approved encryption and an authenticated protected channel when collecting the OTP in order to provide resistance to eavesdropping and AitM attacks. In order to provide replay resistance as described in [Sec. 5.2.8](sec5_authenticators.md#replay), verifiers **SHALL** accept a given OTP only once while it is valid. In the event a claimant's authentication is denied due to duplicate use of an OTP, verifiers **MAY** warn the claimant in case an attacker has been able to authenticate in advance. Verifiers **MAY** also warn a subscriber in an existing session of the attempted duplicate use of an OTP.
@@ -563,7 +563,7 @@ Time-based OTPs [[TOTP]](references.md#ref-totp) **SHALL** have a defined lifeti
 If the authenticator output or activation secret has less than 64 bits of entropy, the verifier **SHALL** implement a rate-limiting mechanism that effectively limits the number of failed authentication attempts that can be made on the subscriber account as described in [Sec. 5.2.2](sec5_authenticators.md#throttle).
 -->
 
-Authenticator の出力または Activation Secret の Entropy が 64 ビット未満の場合, Verifier は, [Sec. 5.2.2](sec5_authenticators.md#throttle) で説明されている通り, Subscriber Account で試行できる Authentication の失敗回数を効果的に制限するレート制限メカニズムを実装することとなる(**SHALL**).
+Authenticator Output または Activation Secret の Entropy が 64 ビット未満の場合, Verifier は, [Sec. 5.2.2](sec5_authenticators.md#throttle) で説明されている通り, Subscriber Account で試行できる Authentication の失敗回数を効果的に制限するレート制限メカニズムを実装することとなる(**SHALL**).
 
 ### Single-Factor Cryptographic Software {#sfcs}
 
@@ -572,7 +572,7 @@ A single-factor cryptographic software authenticator is a cryptographic key stor
 {:.authenticator-image}
 -->
 
-Single-Factor Cryptographic Software Authenticator は, ディスク上またはその他の "ソフト" メディアに格納された Cryptographic Key である. Authentication は, Key の所有と制御を証明することによって成し遂げられる. Authenticator の出力は, 特定の暗号プロトコルに大きく依存するが, 通常は何らかのタイプの署名付きメッセージである. Single-Factor Cryptographic Software Authenticator は _something you have_ である.
+Single-Factor Cryptographic Software Authenticator は, ディスク上またはその他の "ソフト" メディアに格納された Cryptographic Key である. Authentication は, Key の所有と制御を証明することによって成し遂げられる. Authenticator Output は, 特定の暗号プロトコルに大きく依存するが, 通常は何らかのタイプの署名付きメッセージである. Single-Factor Cryptographic Software Authenticator は _something you have_ である.
 {:.authenticator-image}
 
 #### Single-Factor Cryptographic Software Authenticators {#sfcsa}
@@ -604,7 +604,7 @@ A single-factor cryptographic device is a hardware device that performs cryptogr
 {:.authenticator-image}
 -->
 
-Single-Factor Cryptographic デバイスは, 保護された Cryptographic Key を使用して暗号的操作を実行し, ユーザーエンドポイントへの直接接続を介して Authenticator の出力を提供するハードウェアデバイスである. デバイスは, 組み込みの Symmetric または Asymmetric Cryptographic Key を使用し, 二番目の要素による Activation を必要としない. Authentication は, Authentication Protocol を介してデバイスの所有を証明することによって成し遂げられる. Authenticator の出力は, ユーザーエンドポイントへの直接接続によって提供され, また特定の暗号デバイスとプロトコルに大きく依存するが, 通常は何らかのタイプの署名付きメッセージである. Single-Factor Cryptographic デバイスは _something you have_ である.
+Single-Factor Cryptographic デバイスは, 保護された Cryptographic Key を使用して暗号的操作を実行し, ユーザーエンドポイントへの直接接続を介して Authenticator Output を提供するハードウェアデバイスである. デバイスは, 組み込みの Symmetric または Asymmetric Cryptographic Key を使用し, 二番目の要素による Activation を必要としない. Authentication は, Authentication Protocol を介してデバイスの所有を証明することによって成し遂げられる. Authenticator Output は, ユーザーエンドポイントへの直接接続によって提供され, また特定の暗号デバイスとプロトコルに大きく依存するが, 通常は何らかのタイプの署名付きメッセージである. Single-Factor Cryptographic デバイスは _something you have_ である.
 
 #### Single-Factor Cryptographic Device Authenticators {#sfcda}
 
@@ -659,7 +659,7 @@ A multi-factor cryptographic software authenticator is a cryptographic key store
 {:.authenticator-image}
 -->
 
-Multi-Factor Cryptographic Software Authenticator は, Authentication の二番目の要素での Activation を必要とする, ディスク上またはその他の "ソフト" メディアに格納された Cryptographic Key である. Authentication は, Key の所有と制御を証明することによって成し遂げられる. Authenticator の出力は, 特定の暗号プロトコルに大きく依存するが, 通常は何らかのタイプの署名付きメッセージである. Multi-Factor Cryptographic Software Authenticator は _something you have_ であり, _something you know_ または _something you are_ のいずれかによって Activation されることとなる(**SHALL**).
+Multi-Factor Cryptographic Software Authenticator は, Authentication の二番目の要素での Activation を必要とする, ディスク上またはその他の "ソフト" メディアに格納された Cryptographic Key である. Authentication は, Key の所有と制御を証明することによって成し遂げられる. Authenticator Output は, 特定の暗号プロトコルに大きく依存するが, 通常は何らかのタイプの署名付きメッセージである. Multi-Factor Cryptographic Software Authenticator は _something you have_ であり, _something you know_ または _something you are_ のいずれかによって Activation されることとなる(**SHALL**).
 {:.authenticator-image}
 
 #### Multi-Factor Cryptographic Software Authenticators {#mfcsa}
@@ -694,7 +694,7 @@ Authenticator による Activation Secret の使用は, [Sec. 5.2.11](sec5_authe
 The requirements for a multi-factor cryptographic software verifier are identical to those for a single-factor cryptographic device verifier, described in [Sec. 5.1.7.2](sec5_authenticators.md#sfcdv). Verification of the output from a multi-factor cryptographic software authenticator proves use of the activation factor.
 -->
 
-Multi-Factor Cryptographic Software Verifier の要件は, [Sec. 5.1.7.2](sec5_authenticators.md#sfcdv) で述べられる Single-Factor Cryptographic Device Verifier と同様である. Multi-Factor Cryptographic Software Authenticator からの出力の Verification は,  Activation Factor の使用を証明する.
+Multi-Factor Cryptographic Software Verifier の要件は, [Sec. 5.1.7.2](sec5_authenticators.md#sfcdv) で述べられる Single-Factor Cryptographic Device Verifier と同様である. Multi-Factor Cryptographic Software Authenticator Output の Verification は,  Activation Factor の使用を証明する.
 
 ### Multi-Factor Cryptographic Devices {#mfcd}
 
@@ -703,7 +703,7 @@ A multi-factor cryptographic device is a hardware device that performs cryptogra
 {:.authenticator-image}
 -->
 
-Multi-Factor Cryptographic デバイスは, 1つかそれ以上の保護された Cryptographic Key を使用して暗号的操作を実行し, 二番目の Authentication Factor による Activation を必要とするハードウェアデバイスである. Authentication は, デバイスの所有および Key の制御を証明することによって成し遂げられる. Authenticator の出力は, ユーザーエンドポイントへの直接接続によって提供され, また特定の暗号デバイスとプロトコルに大きく依存するが, 通常は何らかのタイプの署名付きメッセージである. Multi-Factor Cryptographic デバイスは, _something you have_ であり, かつ, _something you know_ または _something you are_ のいずれかによって Activation されることとなる(**SHALL**).
+Multi-Factor Cryptographic デバイスは, 1つかそれ以上の保護された Cryptographic Key を使用して暗号的操作を実行し, 二番目の Authentication Factor による Activation を必要とするハードウェアデバイスである. Authentication は, デバイスの所有および Key の制御を証明することによって成し遂げられる. Authenticator Output は, ユーザーエンドポイントへの直接接続によって提供され, また特定の暗号デバイスとプロトコルに大きく依存するが, 通常は何らかのタイプの署名付きメッセージである. Multi-Factor Cryptographic デバイスは, _something you have_ であり, かつ, _something you know_ または _something you are_ のいずれかによって Activation されることとなる(**SHALL**).
 {:.authenticator-image}
 
 #### Multi-Factor Cryptographic Device Authenticators {#mfcda}
@@ -744,7 +744,7 @@ Authenticator による Activation Secret の使用は, [Sec. 5.2.11](sec5_authe
 The requirements for a multi-factor cryptographic device verifier are identical to those for a single-factor cryptographic device verifier, described in [Sec. 5.1.7.2](sec5_authenticators.md#sfcdv). Verification of the authenticator output from a multi-factor cryptographic device proves use of the activation factor.
 -->
 
-Multi-Factor Cryptographic Device Verifier の要件は, [Sec. 5.1.7.2](sec5_authenticators.md#sfcdv) で述べられる Single-Factor Cryptographic Device Verifier と同様である. Multi-Factor Cryptographic Device からの Authenticator 出力の Verification は, Activation Factor の使用を証明する.
+Multi-Factor Cryptographic Device Verifier の要件は, [Sec. 5.1.7.2](sec5_authenticators.md#sfcdv) で述べられる Single-Factor Cryptographic Device Verifier と同様である. Multi-Factor Cryptographic Device からの Authenticator Output の Verification は, Activation Factor の使用を証明する.
 
 ## General Authenticator Requirements
 
@@ -952,7 +952,7 @@ Phishing attacks, previously referred to in SP 800-63B as "verifier impersonatio
 The term _phishing_ is widely used to describe a variety of similar attacks. For the purposes of this document, phishing resistance is the ability of the authentication protocol to detect and prevent disclosure of authentication secrets and valid authenticator outputs to an impostor relying party without reliance on the vigilance of the subscriber. The means by which the subscriber was directed to the impostor relying party are not relevant. For example, regardless of whether the subscriber was directed there via search engine optimization or prompted by email, it is considered to be a phishing attack.
 -->
 
-Phishing という用語は, さまざまな同様の Attack を説明するために広く使用されている. このドキュメントの目的上, Phishing 耐性とは, Subscriber の警戒に頼ることなく, Authentication Secret と有効な Authenticator 出力を Impostor が偽装する Relying Party へ開示することを検出し防止する Authentication Protocol の機能である. Subscriber が Impostor が偽装する Relying Party に向けられた手段は関係しない. 例えば, Subscriber が検索エンジンの最適化によってそこに案内されたのか, 電子メールで促されたのかに関係なく, Phishing Attack であると見なされる.
+Phishing という用語は, さまざまな同様の Attack を説明するために広く使用されている. このドキュメントの目的上, Phishing 耐性とは, Subscriber の警戒に頼ることなく, Authentication Secret と有効な Authenticator Output を Impostor が偽装する Relying Party へ開示することを検出し防止する Authentication Protocol の機能である. Subscriber が Impostor が偽装する Relying Party に向けられた手段は関係しない. 例えば, Subscriber が検索エンジンの最適化によってそこに案内されたのか, 電子メールで促されたのかに関係なく, Phishing Attack であると見なされる.
 
 <!--
 Approved cryptographic algorithms **SHALL** be used to establish phishing resistance where it is required. Keys used for this purpose **SHALL** provide at least the minimum security strength specified in the latest revision of [[SP800-131A]](references.md#ref-SP800-131A) (112 bits as of the date of this publication).
@@ -984,7 +984,7 @@ Phishing 耐性の2つの方法が知られている: Channel Binding と Verifi
 An authentication protocol with channel binding **SHALL** establish an authenticated protected channel with the verifier. It **SHALL** then strongly and irreversibly bind a channel identifier that was negotiated in establishing the authenticated protected channel to the authenticator output (e.g., by signing the two values together using a private key controlled by the claimant for which the public key is known to the verifier). The verifier **SHALL** validate the signature or other information used to prove phishing resistance. This prevents an impostor verifier, even one that has obtained a certificate representing the actual verifier, from successfully relaying that authentication on a different authenticated protected channel.
 -->
 
-Channel Binding を伴う Authentication Protocol は, Authenticated Protected Channel を Verifier と確立することとなる(**SHALL**). 次に, Authenticated Protected Channel を確立する際にネゴシエートされた Channel identifier を, Authenticator 出力に強力かつ不可逆的に Bind することとなる(**SHALL**)(例: Public Key が Verifier に知られている Claimant によって制御される Private Key を使用して, 2つの値を一緒に署名することによって). Verifier は, Phishing 耐性を証明するために, 使用される署名またはその他の情報を検証することとなる(**SHALL**).  これにより, Impostor が偽装する Verifier が実際の Verifier を表す証明書を取得したとしても, 異なる Authenticated Protected Channel でその Authentication の中継に成功することを防ぐ.
+Channel Binding を伴う Authentication Protocol は, Authenticated Protected Channel を Verifier と確立することとなる(**SHALL**). 次に, Authenticated Protected Channel を確立する際にネゴシエートされた Channel Identifier を, Authenticator Output に強力かつ不可逆的に Bind することとなる(**SHALL**)(例: Public Key が Verifier に知られている Claimant によって制御される Private Key を使用して, 2つの値を一緒に署名することによって). Verifier は, Phishing 耐性を証明するために, 使用される署名またはその他の情報を検証することとなる(**SHALL**).  これにより, Impostor が偽装する Verifier が実際の Verifier を表す証明書を取得したとしても, 異なる Authenticated Protected Channel でその Authentication の中継に成功することを防ぐ.
 
 <!--
 An example of a phishing resistant authentication protocol that uses channel binding is client-authenticated TLS, because the client signs the authenticator output along with earlier messages from the protocol that are unique to the particular TLS connection being negotiated.
@@ -998,7 +998,7 @@ Channel Binding を使用する Phishing 耐性のある Authentication Protocol
 An authentication protocol with authenticator name binding **SHALL** establish an authenticated protected channel with the verifier. It **SHALL** then generate an authenticator output that is cryptographically bound to a verifier identifier that is authenticated as part of the protocol.  In the case of domain name system (DNS) identifiers, the verifier identifier **SHALL** be either the authenticated hostname of the verifier or a parent domain that is at least one level below the public suffix [[PSL]](references.md#ref-psl) associated with that hostname. The binding **MAY** be established by choosing an associated authenticator secret, by deriving an authenticator secret using the verifier identifier, by cryptographically signing the authenticator output with the verifier identifier, or similar cryptographically secure means.
 -->
 
-Authenticator Name Binding を伴う Authentication Protocol は, Authenticated Protected Channel をVerifier と確立することとなる(**SHALL**). 次に, Protocol の一部として Authenticate された Verifier Identifier に対して暗号的に Bind された Authenticator 出力を生成することとなる(**SHALL**). Domain Name System (DNS) Identifier の場合, Verifier Identifier は, Verifier の Authenticate されたホスト名, またはホスト名に関連付けられた Public Suffix [[PSL]](references.md#ref-psl) の少なくとも 1 レベル遡った親ドメインのいずれかとなる(**SHALL**). Binding は, 関連付けられた Authenticator Secret を選択するか, Verifier Identifier を使用して Authenticator Secret を導出するか, Verifier Identifier と供に Authenticator 出力に暗号的に署名するか, または同様の暗号的に安全な手段によって確立されてもよい(**MAY**).
+Authenticator Name Binding を伴う Authentication Protocol は, Authenticated Protected Channel をVerifier と確立することとなる(**SHALL**). 次に, Protocol の一部として Authenticate された Verifier Identifier に対して暗号的に Bind された Authenticator Output を生成することとなる(**SHALL**). Domain Name System (DNS) Identifier の場合, Verifier Identifier は, Verifier の Authenticate されたホスト名, またはホスト名に関連付けられた Public Suffix [[PSL]](references.md#ref-psl) の少なくとも 1 レベル遡った親ドメインのいずれかとなる(**SHALL**). Binding は, 関連付けられた Authenticator Secret を選択するか, Verifier Identifier を使用して Authenticator Secret を導出するか, Verifier Identifier と供に Authenticator Output に暗号的に署名するか, または同様の暗号的に安全な手段によって確立されてもよい(**MAY**).
 
 ### Verifier-CSP Communications {#csp-verifier}
 
@@ -1014,7 +1014,7 @@ Verifier と CSP が別々のエンティティである状況では ([[SP800-63
 Use of some types of authenticators requires that the verifier store a copy of the authenticator secret. For example, an OTP authenticator (described in [Sec. 5.1.4](sec5_authenticators.md#singlefactorOTP)) requires that the verifier independently generate the authenticator output for comparison against the value sent by the claimant. Because of the potential for the verifier to be compromised and stored secrets stolen, authentication protocols that do not require the verifier to persistently store secrets that could be used for authentication are considered stronger, and are described herein as being *verifier compromise resistant*. Note that such verifiers are not resistant to all attacks. A verifier could be compromised in a different way, such as being manipulated into always accepting a particular authenticator output.
 -->
 
-いくつかのタイプの Authenticator を使用するには, Verifier が Authenticator Secret のコピーを保管する必要がある. 例えば, OTP Authenticator ([Sec. 5.1.4](sec5_authenticators.md#singlefactorOTP) で説明) では, Claimant によって送信された値と比較するための Authenticator 出力を, Verifier が独立して生成することが求められる. Verifier が侵害され, 保管された Secret が盗まれる可能性のため, Verifier が Authentication に使用できる Secret を永続的に保管する必要のない Authentication Protocol はより強力であると見なされ, *Verifier Compromise Resistant(Verifierが侵害耐性を持つ状態)* である旨がここで説明されている. このような Verifier もすべての Attack に耐性があるわけではないことに注意が必要である. Verifier は, 特定の Authenticator 出力を常に受け入れるようにのっとられるなど, 別の方法で侵害されるかもしれない.
+いくつかのタイプの Authenticator を使用するには, Verifier が Authenticator Secret のコピーを保管する必要がある. 例えば, OTP Authenticator ([Sec. 5.1.4](sec5_authenticators.md#singlefactorOTP) で説明) では, Claimant によって送信された値と比較するための Authenticator Output を, Verifier が独立して生成することが求められる. Verifier が侵害され, 保管された Secret が盗まれる可能性のため, Verifier が Authentication に使用できる Secret を永続的に保管する必要のない Authentication Protocol はより強力であると見なされ, *Verifier Compromise Resistant(Verifierが侵害耐性を持つ状態)* である旨がここで説明されている. このような Verifier もすべての Attack に耐性があるわけではないことに注意が必要である. Verifier は, 特定の Authenticator Output を常に受け入れるようにのっとられるなど, 別の方法で侵害されるかもしれない.
 
 <!--
 Verifier compromise resistance can be achieved in different ways, for example:
@@ -1053,7 +1053,7 @@ Other verifier compromise resistant secrets **SHALL** use approved hash algorith
 An authentication process resists replay attacks if it is impractical to achieve a successful authentication by recording and replaying a previous authentication message. Replay resistance is in addition to the replay-resistant nature of authenticated protected channel protocols, since the output could be stolen prior to entry into the protected channel. Protocols that use nonces or challenges to prove the "freshness" of the transaction are resistant to replay attacks since the verifier will easily detect when old protocol messages are replayed since they will not contain the appropriate nonces or timeliness data.
 -->
 
-Authentication Process は, 過去の Authentication のメッセージを記録して Replay することによって Authentication を成功させることが現実的でない場合, Replay Attack に耐性がある. Protected Channel に入る前に出力が盗まれる可能性があるため, Replay Resistance は Authenticated Protected Channel Protocol の Replay-Resistant 特性には含まれていない. Nonce または Challenge を使用して Transaction の "真新しさ" を証明するプロトコルは, Replay Attack に耐性がある. Verifier は, 古いプロトコルメッセージが適切な Nonce または適時性のあるデータを含んでいないため, 古いプロトコルメッセージが Replay されることを簡単に検出できるからである.
+Authentication Process は, 過去の Authentication のメッセージを記録して Replay することによって Authentication を成功させることが現実的でない場合, Replay Attack に耐性がある. Protected Channel に入る前に Output が盗まれる可能性があるため, Replay Resistance は Authenticated Protected Channel Protocol の Replay-Resistant 特性には含まれていない. Nonce または Challenge を使用して Transaction の "真新しさ" を証明するプロトコルは, Replay Attack に耐性がある. Verifier は, 古いプロトコルメッセージが適切な Nonce または適時性のあるデータを含んでいないため, 古いプロトコルメッセージが Replay されることを簡単に検出できるからである.
 
 <!--
 Examples of replay-resistant authenticators are OTP devices, cryptographic authenticators, and look-up secrets.
@@ -1065,7 +1065,7 @@ Replay 耐性のある Authenticator の例は, OTP デバイス, Cryptographic 
 In contrast, memorized secrets are not considered replay resistant because the authenticator output — the secret itself — is provided for each authentication.
 -->
 
-反対に, Memorized Secret は Replay 耐性があるとは見なされない. Authenticator の出力 —つまり, Secret そのもの— が Authentication ごとに提供されるためである.
+反対に, Memorized Secret は Replay 耐性があるとは見なされない. Authenticator Output —つまり, Secret そのもの— が Authentication ごとに提供されるためである.
 
 ### Authentication Intent {#intent}
 
@@ -1079,7 +1079,7 @@ Subject がそれぞれの Authentication または Reauthentication の要求�
 Authentication intent **MAY** be established in a number of ways. Authentication processes that require the subject's intervention establish intent (e.g., a claimant entering an authenticator output from an OTP device). Cryptographic devices that require user action for each authentication or reauthentication operation also establish intent (e.g., pushing a button or reinsertion).
 -->
 
-Authentication Intent は, いろいろな方法で確立されてもよい(**MAY**). Subject の介入を必要とする Authentication Process は, Intent を確立する (例: OTP デバイスからの Authenticator 出力を入力するClaimant). それぞれの Authentication または Reauthentication 操作ごとにユーザーアクションを必要とする暗号デバイスも, Intent を確立する (例: ボタンを押す, 再挿入する).
+Authentication Intent は, いろいろな方法で確立されてもよい(**MAY**). Subject の介入を必要とする Authentication Process は, Intent を確立する (例: OTP デバイスからの Authenticator Output を入力するClaimant). それぞれの Authentication または Reauthentication 操作ごとにユーザーアクションを必要とする暗号デバイスも, Intent を確立する (例: ボタンを押す, 再挿入する).
 
 <!--
 Depending on the modality, presentation of a biometric characteristic may or may not establish authentication intent. Behavioral biometrics similarly may or may not establish authentication intent because they do not always require a specific action on the claimant's part.
@@ -1155,7 +1155,7 @@ Activation Secret を利用する Authenticator は, Secret の長さに少な�
 The authenticator or verifier **SHALL** implement a retry-limiting mechanism that effectively limits the number of consecutive failed activation attempts using the authenticator to ten (10). If the entry of an incorrect activation secret causes the authenticator to generate an invalid output that is sent to the central verifier, rate limiting **MAY** be implemented by the verifier. In all other cases, rate limiting **SHALL** be implemented in the authenticator. Once the limit of 10 attempts is reached, the authenticator **SHALL** be disabled and a different authenticator **SHALL** be required for authentication.
 -->
 
-Authenticator または Verifier は, Authenticator を使用した Activation の連続失敗の試行を効果的に 10回 に制限する再試行制限メカニズムを実装することとなる(**SHALL**). 正しくない Activation Secret の入力によって Authenticator が中央の Verifier に送信される無効な出力を生成する場合, Verifier によってレート制限が実装されてもよい(**MAY**). すべての他のケースでは, レート制限は Authenticator に実装されることとなる(**SHALL**). ひとたび 10回 の試行の制限に達すると, Authenticator を無効化されることとなり(**SHALL**), Authentication には別の Authenticator が要求されることとなる(**SHALL**).
+Authenticator または Verifier は, Authenticator を使用した Activation の連続失敗の試行を効果的に 10回 に制限する再試行制限メカニズムを実装することとなる(**SHALL**). 正しくない Activation Secret の入力によって Authenticator が中央の Verifier に送信される無効な Output を生成する場合, Verifier によってレート制限が実装されてもよい(**MAY**). すべての他のケースでは, レート制限は Authenticator に実装されることとなる(**SHALL**). ひとたび 10回 の試行の制限に達すると, Authenticator を無効化されることとなり(**SHALL**), Authentication には別の Authenticator が要求されることとなる(**SHALL**).
 
 <!--
 If the authenticator verifies the activation secret locally (rather than using it for decryption of a key), verification **SHALL** be performed within a hardware-based authenticator or in a secure element (e.g., TEE, TPM) that releases the authentication secret only upon presentation of the correct activation secret. In other circumstances (i.e., software-based multi-factor authenticators), the authenticator **SHALL** use the memorized secret as a key to decrypt its stored authentication secret. Approved cryptography **SHALL** be used.
