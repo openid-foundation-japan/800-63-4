@@ -1049,11 +1049,23 @@ Other verifier compromise resistant secrets **SHALL** use approved hash algorith
 
 ### Replay Resistance {#replay}
 
+<!--
 An authentication process resists replay attacks if it is impractical to achieve a successful authentication by recording and replaying a previous authentication message. Replay resistance is in addition to the replay-resistant nature of authenticated protected channel protocols, since the output could be stolen prior to entry into the protected channel. Protocols that use nonces or challenges to prove the "freshness" of the transaction are resistant to replay attacks since the verifier will easily detect when old protocol messages are replayed since they will not contain the appropriate nonces or timeliness data.
+-->
 
+Authentication Process は, 過去の Authentication のメッセージを記録して Replay することによって Authentication を成功させることが現実的でない場合, Replay Attack に耐性がある. Protected Channel に入る前に出力が盗まれる可能性があるため, Replay Resistance は Authenticated Protected Channel Protocol の Replay-Resistant 特性には含まれていない. Nonce または Challenge を使用して Transaction の "真新しさ" を証明するプロトコルは, Replay Attack に耐性がある. Verifier は, 古いプロトコルメッセージが適切な Nonce または適時性のあるデータを含んでいないため, 古いプロトコルメッセージが Replay されることを簡単に検出できるからである.
+
+<!--
 Examples of replay-resistant authenticators are OTP devices, cryptographic authenticators, and look-up secrets.
+-->
 
+Replay 耐性のある Authenticator の例は, OTP デバイス, Cryptographic Authenticator, および Look-Up Secret である.
+
+<!--
 In contrast, memorized secrets are not considered replay resistant because the authenticator output — the secret itself — is provided for each authentication.
+-->
+
+反対に, Memorized Secret は Replay 耐性があるとは見なされない. Authenticator の出力 —つまり, Secret そのもの— が Authentication ごとに提供されるためである.
 
 ### Authentication Intent {#intent}
 
