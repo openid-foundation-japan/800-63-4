@@ -26,7 +26,7 @@ This section is intended to raise implementers' awareness of the usability consi
 
 [[ISO/IEC9241-11]](sec11_references.md#ref-ISO9241) defines usability as the "extent to which a system, product, or service can be used by specified users to achieve specified goals with effectiveness, efficiency and satisfaction in a specified context of use." This definition focuses on users, goals, and context of use as the necessary elements for achieving effectiveness, efficiency, and satisfaction. A holistic approach considering these key elements is necessary to achieve usability.
 {% endcomment %}
-登録および Identity Proofing における Usability の包括的な目標は、ユーザーの負担（例：時間、フラストレーション） および Enrollment の摩擦（例：完了すべきステップの数、追跡すべき情報の量）を最小限に抑えることにより、ユーザーにとって円滑かつポジティブな登録プロセスを促進することである。この目標を達成するために、組織はまずユーザーのことをよく知らなければならない。
+Enrollment および Identity Proofing における Usability の包括的な目標は、ユーザーの負担（例：時間、フラストレーション） および Enrollment の摩擦（例：完了すべきステップの数、追跡すべき情報の量）を最小限に抑えることにより、ユーザーにとって円滑かつポジティブなEnrollmentプロセスを促進することである。この目標を達成するために、組織はまずユーザーのことをよく知らなければならない。
 
 Enrollment および Identity Proofing のプロセスは、ユーザーと特定の CSP およびユーザーが Access するオンラインサービスとやりとりする前準備である。ネガティブな第一印象は、その後のやりとりに対するユーザーの認識に影響するため、組織はプロセスを通じてポジティブなユーザーエクスペリエンスを促進する必要がある。
 
@@ -185,7 +185,7 @@ Usability considerations specific to the enrollment session include:
 
 * Enrollment コードが発行された場合:
     * 先立って、Enrollment コードを受け取ること、それを期待する時期、コードの有効期間、およびそれらの配達方法（例：物理的な所在地への郵便、SMS、固定電話、電子メール、または郵便の送り先住所）を事前にユーザーに通知すること。
-    * Enrollment コードをユーザーに配布する際には、コードの使用方法、コードの有効期限を記載してください。[Sec. 5.1.6](sec5_ial.ja.md#EnrollCodes) で規定されているように、有効期間が短いため、特に重要である。
+    * Enrollment コードをユーザーに配布する際には、コードの使用方法、コードの有効期限を記載すること。[Sec. 5.1.6](sec5_ial.ja.md#EnrollCodes) で規定されているように、有効期間が短いため、特に重要である。
     * QR コードのような機械読み取り可能な光学ラベルを発行する場合 ([Sec. 5.1.6](sec5_ial.ja.md#EnrollCodes) 参照)、QR コード読み取り機能を得るための情報をユーザーに提供すること (例: 使用可能な QR コードアプリケーション)。
     * Enrollment コードの有効期限が切れたり、利用前に紛失した場合は、再度 Enrollment 手続きが必要であることを利用者に伝えること。
     * すべてのユーザーが公平に技術に Access し利用できるわけではないことを踏まえ、ユーザーに代替手段を提供すること。例えば、このアプローチの実現に求められる技術をユーザーが有していない可能性がある、ということを想定するということである。
@@ -224,7 +224,7 @@ Usability considerations specific to the enrollment session include:
 * 対面および遠隔での Identity Proofing 双方について、追加の Usability の考慮事項が適用される: 
   * Enrollment Session の開始時に、オペレータまたは係員はその役割をユーザーに説明する必要がある （例：オペレータまたは係員が Enrollment Session を通じてユーザーを案内するか、静かに見守り必要な場合のみ対話するか）。
   * Enrollment Session の開始時に、ユーザーに対して、Enrollment 中に離席してはならないこと、Enrollment 中の行動が見えるようにすることを、伝える。
-  * Enrollment Session を通じてバイオメトリクスを収集する場合は、収集プロセスを完了するための明確な指示をユーザーに提供する。この指示は、プロセスの直前に与えるのが最適である。生身のオペレーターからの口頭で指示、修正フィードバックを行うのが最も効果的です（例：バイオメトリックセンサーがどこにあるか、いつ開始するか、センサーとどのように対話するか、バイオメトリクスの収集がいつ完了するかをユーザーに指示する）。
+  * Enrollment Session を通じてBiometricsを収集する場合は、収集プロセスを完了するための明確な指示をユーザーに提供する。この指示は、プロセスの直前に与えるのが最適である。生身のオペレーターからの口頭で指示、修正フィードバックを行うのが最も効果的です（例：Biometricセンサーがどこにあるか、いつ開始するか、センサーとどのように対話するか、Biometricsの収集がいつ完了するかをユーザーに指示する）。
 
 {% comment %}
 * For both in-person and remote identity proofing, additional usability considerations apply:
