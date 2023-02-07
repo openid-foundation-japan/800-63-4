@@ -806,7 +806,7 @@ Subscriber が Authentication に成功すると, Verifierは, 同じ IP アド�
 The use of biometrics (*something you are*) in authentication includes both measurement of physical characteristics (e.g., fingerprint, iris, facial characteristics) and behavioral characteristics (e.g., typing cadence). Both classes are considered biometric modalities, although different modalities may differ in the extent to which they establish authentication intent as described in [Sec. 5.2.9](sec5_authenticators.md#intent).
 -->
 
-Authentication における Biometrics (*something you are*) の使用は, 身体的特徴 (例: 指紋, 虹彩, 顔の特徴) と行動的特徴 (例: タイピングのリズム) の両方の測定を含む. どちらのクラスも Biometric Modalitiy と見なされるが, [Sec. 5.2.9](sec5_authenticators.md#intent) で説明されているように, それぞれの Modalitiy によってどの程度 Authentication の確立を意図しているかが異なる場合がある.
+Authentication における Biometrics (*something you are*) の使用には, 身体的特徴 (例: 指紋, 虹彩, 顔の特徴) と行動的特徴 (例: タイピングのリズム) の両方の測定が含まれる. どちらのクラスも Biometric Modalitiy と見なされるが, [Sec. 5.2.9](sec5_authenticators.md#intent) で説明されているように, Modalitiy が異なると Authentication Intent の確立度合いが異なる場合がある.
 
 <!--
 For a variety of reasons, this document supports only limited use of biometrics for authentication. These reasons include:
