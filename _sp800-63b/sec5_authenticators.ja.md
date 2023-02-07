@@ -638,7 +638,7 @@ Single-Factor Cryptographic Device Authenticator は, 動作するために物�
 Single-factor cryptographic device verifiers generate a challenge nonce, send it to the corresponding authenticator, and use the authenticator output to verify possession of the device. The authenticator output is highly dependent on the specific cryptographic device and protocol, but it is generally some type of signed message.
 -->
 
-Single-Factor Cryptographic Device Verifier は, Challenge Nonce を生成し, それを対象の Authenticator に送信し, デバイスの所有を検証するために Authenticator の出力を使用する. Authenticator の出力は, 特定の暗号デバイスとプロトコルに大きく依存するが, 通常は何らかのタイプの署名付きメッセージである.
+Single-Factor Cryptographic Device Verifier は, Challenge Nonce を生成し, それを対象の Authenticator に送信し, デバイスの所有を検証するために Authenticator Output を使用する. Authenticator Output は, 特定の暗号デバイスとプロトコルに大きく依存するが, 通常は何らかのタイプの署名付きメッセージである.
 
 <!--
 The verifier has either symmetric or asymmetric cryptographic keys corresponding to each authenticator. While both types of keys **SHALL** be protected against modification, symmetric keys **SHALL** additionally be protected against unauthorized disclosure by the use of access controls that limit access to the key to only those software components on the device requiring access.
@@ -964,7 +964,7 @@ Approved な暗号アルゴリズムは, 必要とされる場所で Phishing �
 Authenticators that involve the manual entry of an authenticator output, such as out-of-band and OTP authenticators, **SHALL NOT** be considered phishing resistant because the manual entry does not bind the authenticator output to the specific session being authenticated. In an AitM attack, an impostor verifier could replay the OTP authenticator output to the verifier and successfully authenticate.
 -->
 
-Out-of-band や OTP Authenticator のような, Authenticator 出力の手動入力を伴う Authenticator は, Phishing 耐性があると見なされることはない(**SHALL NOT**), なぜならば, 手動入力は Authenticator 出力を特定の Authenticated session に Bind しないためである. AitM Attack では, Impostor が偽装する Verifier が OTP Authenticator の出力を Verifier に Replay し, Authentication に成功する可能性がある.
+Out-of-band や OTP Authenticator のような, Authenticator Output の手動入力を伴う Authenticator は, Phishing 耐性があると見なされることはない(**SHALL NOT**), なぜならば, 手動入力は Authenticator Output を特定の Authenticated session に Bind しないためである. AitM Attack では, Impostor が偽装する Verifier が OTP Authenticator の Output を Verifier に Replay し, Authentication に成功する可能性がある.
 
 <!--
 While an individual authenticator may be phishing resistant, phishing resistance for a given subscriber account is only achieved when all methods of authentication are phishing resistant.
@@ -990,7 +990,7 @@ Channel Binding を伴う Authentication Protocol は, Authenticated Protected C
 An example of a phishing resistant authentication protocol that uses channel binding is client-authenticated TLS, because the client signs the authenticator output along with earlier messages from the protocol that are unique to the particular TLS connection being negotiated.
 -->
 
-Channel Binding を使用する Phishing 耐性のある Authentication Protocol の例は, Client-authenticated TLS である. なぜならば, ネゴシエートされた特定の TLS 接続に一意の, Protocol からの以前のメッセージと共に Authenticator の出力にクライアントが署名するためである.
+Channel Binding を使用する Phishing 耐性のある Authentication Protocol の例は, Client-authenticated TLS である. なぜならば, ネゴシエートされた特定の TLS 接続に一意の, Protocol からの以前のメッセージと共に Authenticator Output にクライアントが署名するためである.
 
 #### Verifier Name Binding
 
@@ -1032,7 +1032,7 @@ Verifier Compromise Resistant は様々な方法で達成できる, 例えば:
 - Store the expected authenticator output in hashed form. This method can be used with some look-up secret authenticators (described in [Sec. 5.1.2](sec5_authenticators.md#lookupsecrets)), for example.
 -->
 
-- 予想される Authenticator 出力を Hash 形式で保管する. このメソッドは, 例えば一部の Look-Up Secret
+- 予想される Authenticator Output を Hash 形式で保管する. このメソッドは, 例えば一部の Look-Up Secret
 Authenticator ([Sec. 5.1.2](sec5_authenticators.md#lookupsecrets) で説明) で使用できる.
 
 <!--
@@ -1161,7 +1161,7 @@ Authenticator または Verifier は, Authenticator を使用した Activation �
 If the authenticator verifies the activation secret locally (rather than using it for decryption of a key), verification **SHALL** be performed within a hardware-based authenticator or in a secure element (e.g., TEE, TPM) that releases the authentication secret only upon presentation of the correct activation secret. In other circumstances (i.e., software-based multi-factor authenticators), the authenticator **SHALL** use the memorized secret as a key to decrypt its stored authentication secret. Approved cryptography **SHALL** be used.
 -->
 
-Authenticator が Activation Secret を (Key の復号に使用するのではなく) ローカルで Verifiy する場合, Verification は, ハードウェアベースの Authenticator 内, または正しい Activation Secret の提示時にのみ Authentication Secret を解放するセキュアエレメント内 (例: TEE, TPM) で実行されることとなる(**SHALL**). 他の状況 (つまり, Software-Based Multi-Factor Authenticators) では, Authenticator は, 保管された Authentication Secret の復号のために Memorized Secret を Key として使用することとなる(**SHALL**). Approved Cryptography が使用されることとなる(**SHALL**). 
+Authenticator が Activation Secret を (Key の復号に使用するのではなく) ローカルで Verifiy する場合, Verification は, ハードウェアベースの Authenticator 内, または正しい Activation Secret の提示時にのみ Authentication Secret を解放するセキュアエレメント内 (例: TEE, TPM) で実行されることとなる(**SHALL**). 他の状況 (つまり, Software-Based Multi-Factor Authenticators) では, Authenticator は, 保管された Authentication Secret の復号のために Memorized Secret を Key として使用することとなる(**SHALL**). Approved Cryptography が使用されることとなる(**SHALL**).
 
 ### Connected Authenticators {#s-5-2-12}
 

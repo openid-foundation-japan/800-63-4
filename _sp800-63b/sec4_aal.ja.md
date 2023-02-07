@@ -78,7 +78,7 @@ Communication between the claimant and verifier **SHALL** be via an authenticate
 Verifiers operated by or on behalf of federal government agencies at AAL1 **SHALL** be validated to meet the requirements of [[FIPS140]](references.md#ref-FIPS140-2) Level 1.
 -->
 
-Claimant と Verifier の間の通信は, Authenticator の出力の機密性と Adversary-in-the-Middle (AitM) Attack への耐性の提供のため,  Authenticated Protected Channel を介して行われることになる(**SHALL**).
+Claimant と Verifier の間の通信は, Authenticator Output の機密性と Adversary-in-the-Middle (AitM) Attack への耐性の提供のため,  Authenticated Protected Channel を介して行われることになる(**SHALL**).
 
 連邦政府機関によって, または連邦政府機関に代わって AAL1 で運用されている Verifier は, [[FIPS140]](references.md#ref-FIPS140-2) Level 1 の要件に適合しているか検証されることになる(**SHALL**).
 
@@ -165,7 +165,7 @@ Communication between the claimant and verifier **SHALL** be via an authenticate
 Verifiers operated by or on behalf of federal government agencies at AAL2 **SHALL** be validated to meet the requirements of [[FIPS140]](references.md#ref-FIPS140-2) Level 1.
 -->
 
-Claimant と Verifier の間の通信は, Authenticator の出力の機密性と AitM Attack への耐性の提供のため, Authenticated Protected Channel を介して行われることになる(**SHALL**).
+Claimant と Verifier の間の通信は, Authenticator Output の機密性と AitM Attack への耐性の提供のため, Authenticated Protected Channel を介して行われることになる(**SHALL**).
 
 連邦政府機関によって, または連邦政府機関に代わって AAL2 で運用されている Verifier は, [[FIPS140]](references.md#ref-FIPS140-2) Level 1 の要件に適合しているか検証されることになる(**SHALL**).
 
@@ -237,7 +237,7 @@ AAL3 Authentication は, [Sec. 4.3](#aal3) の要件を満たす Authenticator �
 Communication between the claimant and verifier **SHALL** be via an authenticated protected channel to provide confidentiality of the authenticator output and resistance to AitM attacks. At least one cryptographic authenticator used at AAL3 **SHALL** be phishing resistant as described in [Sec. 5.2.5](sec5_authenticators.md#verifimpers) and **SHALL** be replay resistant as described in [Sec. 5.2.8](sec5_authenticators.md#replay). All authentication and reauthentication processes at AAL3 **SHALL** demonstrate authentication intent from at least one authenticator as described in [Sec. 5.2.9](sec5_authenticators.md#intent).
 -->
 
-Claimant と Verifier の間の通信は, Authenticator の出力の機密性と AitM Attack への耐性の提供のため, Authenticated Protected Channel を介して行われることになる(**SHALL**). AAL3で使用される少なくとも1つの Authenticator は, [Sec. 5.2.5](sec5_authenticators.md#verifimpers) で説明されているよ うにPhishing 耐性があり(**SHALL**), [Sec. 5.2.8](sec5_authenticators.md#replay) で説明されているようにリプレイ耐性があることになる(**SHALL**). AAL3 でのすべての Authentication と Reauthentication は, [Sec. 5.2.9](sec5_authenticators.md#intent) で説明されているように, 少なくとも1つの Authenticator から Authentication の意思を実演で示す必要がある(**SHOULD**).
+Claimant と Verifier の間の通信は, Authenticator Output の機密性と AitM Attack への耐性の提供のため, Authenticated Protected Channel を介して行われることになる(**SHALL**). AAL3で使用される少なくとも1つの Authenticator は, [Sec. 5.2.5](sec5_authenticators.md#verifimpers) で説明されているよ うにPhishing 耐性があり(**SHALL**), [Sec. 5.2.8](sec5_authenticators.md#replay) で説明されているようにリプレイ耐性があることになる(**SHALL**). AAL3 でのすべての Authentication と Reauthentication は, [Sec. 5.2.9](sec5_authenticators.md#intent) で説明されているように, 少なくとも1つの Authenticator から Authentication の意思を実演で示す必要がある(**SHOULD**).
 
 <!--
 Multi-factor authenticators used at AAL3 **SHALL** be hardware cryptographic modules validated at [[FIPS140]](references.md#ref-FIPS140-2) Level 2 or higher overall with at least [[FIPS140]](references.md#ref-FIPS140-2) Level 3 physical security. Single-factor cryptographic devices used at AAL3 **SHALL** be validated at [[FIPS140]](references.md#ref-FIPS140-2) Level 1 or higher overall with at least [[FIPS140]](references.md#ref-FIPS140-2) Level 3 physical security.
