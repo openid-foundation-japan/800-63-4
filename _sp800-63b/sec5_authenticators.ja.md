@@ -1089,21 +1089,53 @@ Modality に応じて, Biometric Characteristic の提示は Authentication Inte
 
 ### Restricted Authenticators {#restricted}
 
+<!--
 As threats evolve, authenticators' capability to resist attacks typically degrades. Conversely, some authenticators' performance may improve, for example, when changes to their underlying standards increases their ability to resist particular attacks.
+-->
 
+脅威の進化により, Authenticator の Attack 耐性の性能は通常は低下する. 反対に, 一部の Authenticator のパフォーマンスは, 例えば基となる標準の変更によって特定の Attack 耐性の能力が向上した場合に改善することがある.
+
+<!--
 To account for these changes in authenticator performance, NIST places additional restrictions on authenticator types or specific classes or instantiations of an authenticator type.
+-->
 
+Authenticator のパフォーマンスのこれらの変化に責任を持つために, NIST は, Authenticator Type, または Authenticator Type の特定のクラスやインスタンス化に追加の制約を課す:
+
+<!--
 The use of a *restricted authenticator* requires that the implementing organization assess, understand, and accept the risks associated with that authenticator and acknowledge that risk will likely increase over time. It is the responsibility of the organization to determine the level of acceptable risk for their systems and associated data and to define any methods for mitigating excessive risks. If at any time the organization determines that the risk to any party is unacceptable, then that authenticator **SHALL NOT** be used.
+-->
 
+*Restricted Authenticator* の使用は, 実装組織がその Authenticator に関連するリスクを評価, 理解, および受け入れ, リスクが時間の経過とともに増加する可能性があることを認識することを求める. システムと関連データについて許容可能なリスクのレベルを決定し, それを超えるリスクを軽減する方法を定義することは組織の責任である. いずれかの関係者へのリスクが許容できないと組織が判断した場合はいつでも, それ以降その Authenticator が使用されることはない(**SHALL NOT**).
+
+<!--
 Further, the risk of an authentication error is typically borne by multiple parties, including the implementing organization, organizations that rely on the authentication decision, and the subscriber. Because the subscriber may be exposed to additional risk when an organization accepts a restricted authenticator and that the subscriber may have a limited understanding of and ability to control that risk, the CSP **SHALL**:
+-->
 
+さらに, Authentication エラーのリスクは通常, 実装組織, Authentication の決定に依存する組織, および Subscriber を含む複数の関係者によって負担される. 組織が Restricted Authenticator を受け入れると, Subscriber は追加のリスクにさらされる可能性があり, また Subscriber が持つ理解と制御能力が限られている可能性があるため, CSP は以下を行うこととなる(**SHALL**):
+
+<!--
 1. Offer subscribers at least one alternate authenticator that is not restricted and can be used to authenticate at the required AAL.
+-->
 
+1. 必要とされる AAL で使用できる少なくとも1つの Restricted でない 代替の Authenticator を Subscriber に提供する.
+
+<!--
 2. Provide meaningful notice to subscribers regarding the security risks of the restricted authenticator and availability of alternatives that are not restricted.
+-->
 
+2. Restricted Authenticator のセキュリティリスクと Restricted でない代替について, Subscriber に意味のある通知を提供する.
+
+<!--
 3. Address any additional risk to subscribers in its risk assessment.
+-->
 
+3. Risk Assessment で Subscriber への追加のリスクに取り組む.
+
+<!--
 4. Develop a migration plan for the possibility that the restricted authenticator is no longer acceptable at some point in the future and include this migration plan in its [digital identity acceptance statement](../_sp800-63/sec5_DIRM.md#daps){:latex-href="#ref-SP800-63"}.
+-->
+
+4. Restricted Authenticator が未来のある時点で受け入れられなくなる可能性について移行計画を作成し, この移行計画をその [digital identity acceptance statement](../_sp800-63/sec5_DIRM.md#daps){:latex-href="#ref-SP800-63"} に含む.
 
 ### Activation Secrets {#s-5-2-11}
 
