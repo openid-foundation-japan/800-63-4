@@ -308,7 +308,7 @@ The following requirements apply to all CSPs that employ enrollment codes at any
 ###  Requirements for Notifications of Identity Proofing {#ProofingNotifs}
 {% endcomment %}
 
-Proofing通知は、ApplicantのValidateされたアドレスに送付され、Identity Proofingに成功したことを通知する。 これら通知により、Identity Proofing対象の人物が、Claimed Identityの所有者であるという保証を強める。
+Proofing通知は、ApplicantのValidateされたアドレスに送付され、Identity Proofingに成功したことを通知する。 これら通知により、Identity Proofing対象の人物が、Claimed Identityの所有者であるという Assurance を強める。
 以下の要件は、任意の IAL での Identity Proofingプロセスの一部としてProofing通知を送信するすべての CSP に適用される。
 
 Proofingの通知は:
@@ -603,7 +603,7 @@ CSPは、以下の _両方_ の方法ですべての Core Attributes を Validat
 1. Evidenceの一部から取得したAttribute（口座番号または参照番号、名前、生年月日など）の正確性を、Authoritativeまたは信頼できるSourceと比較することでValidateする。
 2. 自己申告のAttributeの正確性を、Authoritativeまたは信頼できるSourceと比較することでValidateする。
 	
-さらに保証を強めるため、CSP は、さまざまなSourceによってValidateされた Core Attributes を、全体的な一貫性があるかという観点で評価するものとする(**SHALL**)。
+さらに Assurance を強めるため、CSP は、さまざまなSourceによってValidateされた Core Attributes を、全体的な一貫性があるかという観点で評価するものとする(**SHALL**)。
 
 {% comment %}
 The CSP **SHALL** validate the genuineness of each piece of SUPERIOR and STRONG evidence by _one_ of the following:
@@ -722,7 +722,7 @@ CSPは、以下の方法ですべての Core Attributes を Validate するも�
 1. Evidenceの一部から取得したAttribute（口座番号または参照番号、名前、生年月日など）の正確性を、Authoritativeまたは信頼できるSourceと比較することでValidateする。
 2. 自己申告のAttributeの正確性を、Authoritativeまたは信頼できるSourceと比較することでValidateする。
 
-さらに保証を強めるため、CSP は、さまざまなSourceによってValidateされた Core Attributes を、全体的な一貫性があるかという観点で評価するものとする(**SHALL**)。
+さらに Assurance を強めるため、CSP は、さまざまなSourceによってValidateされた Core Attributes を、全体的な一貫性があるかという観点で評価するものとする(**SHALL**)。
 
 {% comment %}
 The CSP **SHALL** validate the genuineness of each piece of SUPERIOR and STRONG evidence by one of the following:
@@ -879,7 +879,7 @@ CSPは、以下の _両方_ の方法ですべての Core Attributes を Validat
 1. Evidenceから、あるいは自己申告で取得したAttributeの正確性を、Authoritativeまたは信頼できるSourceと比較することでValidateする。
 2. 前述したような方法で、提示されたデジタルEvidenceの暗号機能をValidateする。
 
-さらに保証を強めるため、CSP は、さまざまなSourceによってValidateされた Core Attributes を、全体的な一貫性があるかという観点で評価するものとする(**SHALL**)。
+さらに Assurance を強めるため、CSP は、さまざまなSourceによってValidateされた Core Attributes を、全体的な一貫性があるかという観点で評価するものとする(**SHALL**)。
 
 {% comment %}
 The CSP **SHALL** validate all core attributes by _both_:

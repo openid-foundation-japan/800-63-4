@@ -19,7 +19,7 @@ One of the challenges of providing online services is being able to associate a 
 {% endcomment %}
 
 
-このガイダンスは、Identity Proofing を、オンライン・サービスに Access する Subject と実存する人物との関係性を、ある程度の確実性または保証をもって確立するプロセスのことであると定義する。本書は、連邦機関、サードパーティのCredential Service Providers(CSP)、そしてIdentity Proofingサービスを提供する他の組織に対するガイダンスを提供する。
+このガイダンスは、Identity Proofing を、オンライン・サービスに Access する Subject と実存する人物との関係性を、ある程度の確実性または Assurance をもって確立するプロセスのことであると定義する。本書は、連邦機関、サードパーティのCredential Service Providers(CSP)、そしてIdentity Proofingサービスを提供する他の組織に対するガイダンスを提供する。
 
 {% comment %}
 This guidance defines identity proofing as the process of establishing, to some degree of certainty or assurance, a relationship between a subject accessing online services and a real-life person. This document provides guidance for Federal Agencies, third-party Credential Service Providers (CSP), and other organizations that provide identity proofing services.
@@ -85,7 +85,7 @@ The expected outcomes of identity proofing include:
 
 ## Identity Assurance Levels
 
-Subscriberのアイデンティティの保証は、次のIdentity Assurance Levels (IAL)のいずれかを用いて記述される。後続する各 IAL は、より高い保証を達成するために、より低い IAL の要件の上に構築される。  
+Subscriberのアイデンティティの Assurance は、次のIdentity Assurance Levels (IAL)のいずれかを用いて記述される。後続する各 IAL は、より高い Assurance を達成するために、より低い IAL の要件の上に構築される。  
 
 {% comment %}
 Assurance in a subscriber's identity is described using one of the following Identity Assurance Levels (IAL). Each successive IAL builds on the requirements of lower IALs in order to achieve greater assurance.   
