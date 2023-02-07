@@ -22,7 +22,7 @@ Accurate and equitable authentication service is an essential element of a digit
 A primary aspect of equity is that the CSP needs to anticipate the needs of its subscriber population and offer authenticator options that are suitable for that population. Some examples of authenticator suitability problems are as follows:
 -->
 
-公平性の主要な aspect は, CSP がその Subscriber Population のニーズの予測と, その Population に適した Authenticator の選択肢の提供を必要とすることである. Authenticator の適合性の問題の例を以下に示す:
+Equity の主要な aspect は, CSP がその Subscriber Population のニーズの予測と, その Population に適した Authenticator の選択肢の提供を必要とすることである. Authenticator の適合性の問題の例を以下に示す:
 
 <!--
 * SMS-based out-of-band authentication may not be usable for subscribers in rural areas where mobile phone service is not available.
@@ -38,7 +38,7 @@ A primary aspect of equity is that the CSP needs to anticipate the needs of its 
 * OTP デバイスは, 視覚に難しさがある Subscriber にとって読みにくい場合がある.
 * 音声電話で送信される Out-of-band Authentication Secret は, 聞き取りに難しさがある Subscriber にとってはわかりにくい場合がある.
 * Facial matching algorithm は, 一部の ethnicity の Subscriber の顔の特徴と効果的に一致しない場合がある.
-* ハードウェアベースの Authenticator のコストは, 一部の Subscriber にとってはその意味を超えている場合がある.
+* ハードウェアベースの Authenticator のコストは, 一部の Subscriber にとっては自身の許容範囲を超えている場合がある.
 * Memorized Secret を正確に手動で入力することは, 動作や器用さに disabilitiy がある Subscriber にとっては難しい場合がある.
 * 特定の Authenticator Type の使用は, 知能, 発達, 学習, 神経認知などに disabilitiy がある Subscriber にとっては難しい場合がある.
 
