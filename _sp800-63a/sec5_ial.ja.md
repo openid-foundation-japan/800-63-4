@@ -47,7 +47,7 @@ CSPは、定義されたIALを達成するために実装されているすべ�
 4. CSP が Core Attributesであると見なす Attribute。Core Attributesには、CSP が Identity Resolutionを行うために必要な最小限のAttributeのセットのほか、Identity Proofing、詐欺の軽減、法律または法的プロセスの遵守、あるいはAttribute Assertionを介したRelying Party(RP)への伝達を目的とし、CSPが収集、Validateする追加のAttributeを含んでいる。
 5. Identity Proofingのエラーに対処するための CSP のポリシーとプロセス。
 6. 疑わしい、あるいは確認済みの不正なアカウントを識別し、RPや影響をうける個人に対して伝達するための、CSP のポリシーとプロセス。
-7. サービス変更（例：データソース、統合ベンダー、またはバイオメトリックアルゴリズムの変更）を管理し、RP に伝達するための、 CSP のポリシー。
+7. サービス変更（例：データソース、統合ベンダー、またはBiometricアルゴリズムの変更）を管理し、RP に伝達するための、 CSP のポリシー。
 8. 定期的な見直しのタイミングと、更新されたプライバシーリスク評価をトリガーする具体的な条件を含む、プライバシーリスク評価の実施に関するCSPのポリシー([セクション 5.1.2](sec5_ial.ja.md#PrivacyReqs) を参照）
 9. 定期的な見直しのタイミングと、定期外の見直しをトリガーする具体的な条件を含む、潜在的なEquityへの影響を判断するための評価を実施に関するCSPのポリシー（[Sec. 5.1.3](sec5_ial.ja.md#EquityReqs) 参照）；更に、
 
@@ -91,7 +91,7 @@ The CSP **SHALL** conduct its operations according to a practice statement that 
 2. CSP が不正行為の緩和策を使用する場合、CSP はこれらの緩和策についてプライバシーリスク評価を実施するものとする(**SHALL**)。
 3. そのようなアセスメントでは、何らかのプライバシーリスクの緩和策（例：リスクの受容、転嫁、保持の制限、使用制限、通知）またはその他の技術的な緩和策（例：暗号化）が含まれ、これらのガイドラインに従って文書化されなければならない。
 
-[^alternatives]。Applicantの代表者がいるかどうかに関わらず、Trusted Refereeの使用は1つのオプションである。補足的なIdentity Evidenceのタイプについては、[セクション 5.1.9](../ial/#TRs-ARs) を参照すること。
+[^alternatives]。Applicant Representativeがいるかどうかに関わらず、Trusted Refereeの使用は1つのオプションである。補足的なIdentity Evidenceのタイプについては、[セクション 5.1.9](../ial/#TRs-ARs) を参照すること。
 
 {% comment %}
 1. The CSP **SHOULD** obtain additional confidence in identity proofing using fraud mitigation measures (e.g., examining the device characteristics of the applicant, evaluating behavioral characteristics, and checking vital statistic repositories such as the Death Master File ([[DMF]](sec11_references.md#ref-dmf)). 
@@ -118,14 +118,14 @@ The following privacy requirements apply to all CSPs providing identity services
 #### Privacy Risk Assessment
 {% endcomment %}
 
-1. CSP は、Identity Proofingとエンロールメントに用いるプロセスについて、プライバシーリスク評価を実施し、 文書化しなければならない [^privacyframework] (**SHALL**)。プライバシーリスク評価は少なくとも次に関連するリスクを評価するものとする(**SHALL**):
-	1. Identity Proofingとエンロールメントを目的とした、PII のあらゆる処理（Identity Attribute、バイオメトリクス、画像、ビデオ、スキャン、またはIdentity Evidenceのコピーなど）。
+1. CSP は、Identity ProofingとEnrollmentに用いるプロセスについて、プライバシーリスク評価を実施し、 文書化しなければならない [^privacyframework] (**SHALL**)。プライバシーリスク評価は少なくとも次に関連するリスクを評価するものとする(**SHALL**):
+	1. Identity ProofingとEnrollmentを目的とした、PII のあらゆる処理（Identity Attribute、Biometrics、画像、ビデオ、スキャン、またはIdentity Evidenceのコピーなど）。
 	2. ここで指定されている必須要件を超えて、ApplicantのIdentityをVerifyするために CSP が取る追加のステップ。
-	3. 法律または法的手続きに遵守する場合を除き、Identity Proofingとエンロールメントのスコープ外で行われる、PII に対する任意の処理。
+	3. 法律または法的手続きに遵守する場合を除き、Identity ProofingとEnrollmentのスコープ外で行われる、PII に対する任意の処理。
 	4. Identityレコードおよび PII の保持スケジュール。さらに、
 	5. CSP に代わってサードパーティサービスが処理するあらゆるPII。
 	{:.letter-list}
-2. プライバシーリスク評価の結果に基づいて、CSP は、自らが処理する PII の分離可能性、予測可能性、管理性、機密性、完全性、および可用性を維持するために講じる手段を文書化するものとする(**SHALL**)。このような措置を決定する際、CSP は *NIST Privacy Framework* [[NIST-Privacy]](sec11_references.ja.md#ref-NIST-Privacy) および NIST Special Publication [[SP800-53]](sec11_references.ja.md#ref-SP800-53) を参考にするものとする(**SHALL**)。
+2. プライバシーリスク評価の結果に基づいて、CSP は、自らが処理する PII の Disassociability、Predictability、Manageability、Confidentiality (機密性)、Integrity (完全性)、および Availability (可用性) を維持するために講じる手段を文書化するものとする(**SHALL**)。このような措置を決定する際、CSP は *NIST Privacy Framework* [[NIST-Privacy]](sec11_references.ja.md#ref-NIST-Privacy) および NIST Special Publication [[SP800-53]](sec11_references.ja.md#ref-SP800-53) を参考にするものとする(**SHALL**)。
 3. CSP は、PII の処理に影響を与えるIdentityサービスの変更を行う場合は、いつでもプライバシーリスクを再評価し、プライバシーリスク評価を更新しなければならない。
 4. CSP は、Practice Statementに記載されているとおり、定期的にプライバシーリスク評価をレビューし、 PII の処理に関連する最新のリスクを正確に反映するようにしなければならない。(**SHALL**) 
 5. CSP は、そのサービスを使用するすべての組織に対して、プライバシーリスク評価のサマリーを提供できる状態にするものとする(**SHALL**)。そのサマリーは、当該組織がデューディリジェンスを行えるように、十分な詳細であるものとする(**SHALL**)。
@@ -216,7 +216,7 @@ When assessing the risk of inequitable access, treatment, or outcomes, the follo
 ### General Security Requirements {#SecurityReqs}
 {% endcomment %}
 
-1. 第三者が関与する取引を含め、Identity Proofingプロセス内の各オンライン取引は、認証された保護チャネルを介して行うものとする(**SHALL**）。
+1. 第三者が関与する Transaction を含め、Identity Proofingプロセス内の各オンライン Transaction は、Authenticated Protected Channel を介して行うものとする(**SHALL**）。
 2. Identity Proofingプロセスの一環として収集されたIdentity Attributeのフォームのすべての PII は、情報の機密性と完全性を確保するために保護されるものとする(**SHALL**）。
 3. CSP は、NIST リスク管理フレームワーク [[NIST-RMF]](sec11_references.ja.md#ref-NIST-RMF) に従ってそのIdentityサービスの運用に関連するリスクを評価し、適切なベースラインセキュリティコントロールを適用するものとする(**SHALL**)。
 
@@ -234,8 +234,8 @@ When assessing the risk of inequitable access, treatment, or outcomes, the follo
 
 以下の要件は、連邦機関が独自のIdentityサービスを運用するか、Identityサービスの一部として外部 CSP を使用するかどうかに関係なく、連邦機関に適用される。
 
-1. 機関は、Senior Agency Official for Privacy（SAOP）と協議し、Identity Proofingを行うためのバイオメトリクスを含む PII の収集が、Privacy Actの要件を発動するかどうかを決定する分析を行うものとする(**SHALL**)。
-2. 機関は SAOP と協議して、Identity Proofingを行うためのバイオメトリクスを含む PII の収集が 2002 年のE-Government Act [[E-Gov]](sec11_references.ja.md#ref-E-Gov) の要件を発動するかどうかを決定する分析を実施するものとする(**SHALL**)。
+1. 機関は、Senior Agency Official for Privacy（SAOP）と協議し、Identity Proofingを行うためのBiometricsを含む PII の収集が、Privacy Actの要件を発動するかどうかを決定する分析を行うものとする(**SHALL**)。
+2. 機関は SAOP と協議して、Identity Proofingを行うためのBiometricsを含む PII の収集が 2002 年のE-Government Act [[E-Gov]](sec11_references.ja.md#ref-E-Gov) の要件を発動するかどうかを決定する分析を実施するものとする(**SHALL**)。
 3. 機関は、該当する場合、そのような収集を対象とするSystem of Records Notice（SORN）を公開するものとする(**SHALL**)。
 4. 機関は、該当する場合、当該収集を対象とするプライバシー影響評価(PIA)を公開するものとする(**SHALL**)。
 5. 機関は、ダイバーシティー、Equity、インクルージョン、およびアクセシビリティ（DEIA）を担当する上級職員、事業所、または統治機関と協議し、サービスを受けるすべての集団のニーズを満たすためにIdentity Proofingサービスをどのように設計、調達、および管理すべきかを判断するものとする(**SHALL**)。
@@ -268,10 +268,10 @@ Enrollmentコードは、Applicantが Validate されたアドレスに Access �
 
 1. Enrollmentコードは、Validate されたアドレス（郵便番号、電話番号、電子メールアドレスなど）に送信されるものとする(**SHALL**)。
 2. Applicantは、Identity Proofing手続きを行うために有効なEnrollmentコードを提示するものとする(**SHALL**)。  
-3. 3. Enrollmentコードは、以下のいずれかから構成されるものとする(**SHALL**)。
-    1. 少なくとも20ビットのエントロピーを持つ承認された乱数発生器によって生成された6桁のランダムな数字。
-    2. 適切に構築された Session ID（少なくとも64ビットのエントロピー）を含む、一意に識別されるアドレスに配信される安全なリンク、または、
-    3. 少なくとも20ビットのエントロピーを持つランダムなシークレットを含む機械可読な光学的なラベル（QRコードなど）。
+3. Enrollmentコードは、以下のいずれかから構成されるものとする(**SHALL**)。
+    1. 少なくとも20ビットのEntropyを持つApprovedな乱数発生器によって生成された6桁のランダムな数字。
+    2. 適切に構築された Session ID（少なくとも64ビットのEntropy）を含む、一意に識別されるアドレスに配信される安全なリンク、または、
+    3. 少なくとも20ビットのEntropyを持つランダムなシークレットを含む機械可読な光学的なラベル（QRコードなど）。
     {:.letter-list} 
 4. Enrollmentコードの有効期限は以下の通りとするものとする(**SHALL**)。
     1. 米国本土内のValidateされた郵便物の宛先に送付された場合、最大 21 日間有効である。
@@ -279,7 +279,7 @@ Enrollmentコードは、Applicantが Validate されたアドレスに Access �
     3. Validateされたな電話番号（SMSまたは音声）に送信された場合、10分間。
     4. Validateされたな電子メールアドレスに送信された場合、24時間。
     {:.letter-list}
-5. Enrollmentコードは、認証要素として使用してはならない(**SHALL NOT**)。
+5. Enrollmentコードは、Authentication Factorとして使用してはならない(**SHALL NOT**)。
 
 {% comment %}
 Enrollment codes are used to confirm an applicant has access to a validated address. If identity proofing and enrollment are not completed in a single session, an enrollment code can also be used to re-establish an applicant’s binding to their enrollment record for the purposes of completing the enrollment process.
@@ -332,32 +332,32 @@ Notifications of proofing:
 
 {% endcomment %}
 
-###  バイオメトリクスの利用要件 {#ProofBios}
+###  Biometricsの利用要件 {#ProofBios}
 {% comment %}
 ###  Requirements for Use of Biometrics {#ProofBios}
 {% endcomment %}
 
-バイオメトリクスとは、個人を認識するために使用できる生物学的及び行動的特徴、すなわち（これらに限定されるわけではないが）指紋、虹彩構造、顔の特徴などに基づく個人の自動認識のことである。このガイドラインで使用されるバイオメトリックデータは、生物学的および行動学的特徴の、capture、storage、またはprocessingのどの段階においても、アナログまたはデジタルで表現されたもののことである。これには、Applicantからの生きたバイオメトリックサンプル（例：顔画像、指紋）、およびEvidenceから得られたバイオメトリックリファレンス （例：運転免許証の顔画像、ID カード上の指紋特徴点テンプレート）が含まれる。Identity Proofingプロセスに適用されるように、CSP はバイオメトリクスを使用して、所定の集団またはコンテキスト内で個人のIdentityを一意に解決し、個人がIdentity Evidenceの正当な対象者であることをVerifyし、その個人をIdentity Evidenceまたはクレデンシャルの新たな要素と結びつけることができる。
+Biometricsとは、個人を認識するために使用できる生物学的及び行動的特徴、すなわち（これらに限定されるわけではないが）指紋、虹彩構造、顔の特徴などに基づく個人の自動認識のことである。このガイドラインで使用されるBiometricデータは、生物学的および行動学的特徴の、capture、storage、またはprocessingのどの段階においても、アナログまたはデジタルで表現されたもののことである。これには、Applicantからの生きたBiometricサンプル（例：顔画像、指紋）、およびEvidenceから得られたBiometricリファレンス （例：運転免許証の顔画像、ID カード上の指紋特徴点テンプレート）が含まれる。Identity Proofingプロセスに適用されるように、CSP はBiometricsを使用して、所定の集団またはコンテキスト内で個人のIdentityを一意に解決し、個人がIdentity Evidenceの正当なSubjectであることをVerifyし、その個人をIdentity EvidenceまたはCredentialの新たな要素と結びつけることができる。
 
 {% comment %}
 Biometrics is the automated recognition of individuals based on their biological and behavioral characteristics such as, but not limited to, fingerprints, iris structures, or facial features that can be used to recognize an individual. As used in these guidelines, biometric data refers to any analog or digital representation of biological and behavioral characteristics at any stage of their capture, storage, or processing. This includes live biometric samples from applicants (e.g., facial images, fingerprint), as well as biometric references obtained from evidence (e.g., facial image on a driver’s license, fingerprint minutiae template on identification cards). As applied to the identity proofing process, CSPs may use biometrics to uniquely resolve an individual identity within a given population or context, verify that an individual is the rightful subject of identity evidence, and/or bind that individual to a new piece of identity evidence or credential.
 {% endcomment %}
 
-以下の要件は、Identity Proofingプロセスの一部としてバイオメトリックメカニズムを採用する CSP に適用される: 
+以下の要件は、Identity Proofingプロセスの一部としてBiometricメカニズムを採用する CSP に適用される: 
 
-1. CSP は、バイオメトリクスのすべての利用について、収集されるバイオメトリックデータが何であるか、その保存方法、加えて適用法と規制に照らしたバイオメトリック情報の削除の方法について明確で公開された情報を提供するものとする(**SHALL**)。
-2. CSPは、バイオメトリック情報を収集する前に、すべてのApplicantから明示的にバイオメトリックについての同意を得るものとする(**SHALL**)。
-3. CSPは、バイオメトリックについての同意を、Subscriberのアカウントに保管するものとする(**SHALL**)。
-4. CSPは、すべてのバイオメトリック情報の削除プロセスとデフォルトの保存期間を文書化し、公開するものとする(**SHALL**)。
-5. CSPは、規制、法律、または制定法によって別途制限される場合を除き、個人がいつでも自分のバイオメトリック情報の削除を要求するのを認めるものとする(**SHALL**)。
-6. CSPは、すべてのバイオメトリック・アルゴリズムについて、独立したエンティティ（例：認定ラボラトリや研究機関）による性能テスト（人口統計グループ間の性能を含む）を実施するものとする(**SHALL**)。
+1. CSP は、Biometricsのすべての利用について、収集されるBiometricデータが何であるか、その保存方法、加えて適用法と規制に照らしたBiometric情報の削除の方法について明確で公開された情報を提供するものとする(**SHALL**)。
+2. CSPは、Biometric情報を収集する前に、すべてのApplicantから明示的にBiometricについての同意を得るものとする(**SHALL**)。
+3. CSPは、Biometricについての同意を、Subscriberのアカウントに保管するものとする(**SHALL**)。
+4. CSPは、すべてのBiometric情報の削除プロセスとデフォルトの保存期間を文書化し、公開するものとする(**SHALL**)。
+5. CSPは、規制、法律、または制定法によって別途制限される場合を除き、個人がいつでも自分のBiometric情報の削除を要求するのを認めるものとする(**SHALL**)。
+6. CSPは、すべてのBiometricアルゴリズムについて、独立したエンティティ（例：認定ラボラトリや研究機関）による性能テスト（人口統計グループ間の性能を含む）を実施するものとする(**SHALL**)。
 7. すべてのアルゴリズムのテストは、所定の評価様式が、公開されている ISO/IEC 標準との一貫性を有するものとする(**SHALL**)。
-9. CSPは、バイオメトリックの使用に際して最低性能基準値を満たすものとする(**SHALL**):
+9. CSPは、Biometricの使用に際して最低性能基準値を満たすものとする(**SHALL**):
 	- 他人受入率(False match rate): 1:10,000 または、さらに優れている。
 	- 本人拒否率(False non-match rate): 1:10,000 または、さらに優れている。
-10. CSP は、異なる人口統計学的グループ（人種的背景、性別、民族性など）のApplicantに対して同様の性能特性を提供するバイオメトリック・テクノロジーを採用するものとする(**SHALL**)。人口統計学的グループ間で性能に差があることが判明した場合、CSP は、影響を受ける個人に救済オプションを提供し、性能の差を解消するために迅速に行動するものとする(**SHALL**)。
+10. CSP は、異なる人口統計学的グループ（人種的背景、性別、民族性など）のApplicantに対して同様の性能特性を提供するBiometricテクノロジーを採用するものとする(**SHALL**)。人口統計学的グループ間で性能に差があることが判明した場合、CSP は、影響を受ける個人に救済オプションを提供し、性能の差を解消するために迅速に行動するものとする(**SHALL**)。
 11. CSPは、すべての性能テストおよび運用テストの結果を公開するものとする(**SHALL**)。
-11. CSPは、システムの運用環境およびユーザー母集団と高い類似性のある条件下で、採用したバイオメトリック技術の性能と人口統計学的な影響を評価するものとする(**SHALL**)。このような評価に実在するユーザーが含まれる場合、ユーザーの参加は任意であるものとする(**SHALL**)。
+11. CSPは、システムの運用環境およびユーザー母集団と高い類似性のある条件下で、採用したBiometric技術の性能と人口統計学的な影響を評価するものとする(**SHALL**)。このような評価に実在するユーザーが含まれる場合、ユーザーの参加は任意であるものとする(**SHALL**)。
 12. CSPは、すべての性能および運用テストの結果を公開するものとする(**SHALL**)。
 
 {% comment %}
@@ -379,11 +379,11 @@ The following requirements apply to CSPs that employ biometric mechanisms as par
 12. CSPs **SHALL** make all performance and operational test results publicly available.
 {% endcomment %}
 
-以下の要件は、Applicantからバイオメトリックの特徴を収集する CSP に適用される:  
+以下の要件は、ApplicantからBiometricの特徴を収集する CSP に適用される:  
 
-1. CSP は、バイオメトリックはApplicantから収集されたものであり、別の対象から取得したものではないことを保証する方法で、バイオメトリクスを収集するものとする(**SHALL**）。
-2. バイオメトリクスをRemote で収集し比較する場合、CSP は、生存する人間が本当にそこに存在していることを確認し、スプーフィングとなりすましの試みを軽減するために、生存検出機能を実装するものとする(**SHALL**)。
-3. 対面でバイオメトリクスを収集する場合、CSPはオペレータにバイオメトリクス・ソース（例：指、顔）にnon-naturalな物質が存在するかどうかを確認させ、Proofingプロセスの一環としてそのような検査を実行するものとする(**SHALL**)。
+1. CSP は、BiometricはApplicantから収集されたものであり、別の対象から取得したものではないことを保証する方法で、Biometricsを収集するものとする(**SHALL**）。
+2. BiometricsをRemote で収集し比較する場合、CSP は、生存する人間が本当にそこに存在していることを確認し、スプーフィングとなりすましの試みを軽減するために、生存検出機能を実装するものとする(**SHALL**)。
+3. 対面でBiometricsを収集する場合、CSPはオペレータにBiometricsソース（例：指、顔）にnon-naturalな物質が存在するかどうかを確認させ、Proofingプロセスの一環としてそのような検査を実行するものとする(**SHALL**)。
 
 {% comment %}
 The following requirements apply to CSPs who collect biometric characteristics from applicants:  
@@ -399,7 +399,7 @@ The following requirements apply to CSPs who collect biometric characteristics f
 ###  Trusted Referees and Applicant References {#TRs-ARs}
 {% endcomment %}
 
- Access 性を向上させ、オンライン政府サービスへの平等な Access を促進するために、CSP は _trusted referees_ を提供する。Trusted Referee は、特定の IAL へのIdentity Proofing要件を満たすことができない個人が、Identity ProofingおよびEnrollmentを円滑に進めるために利用される。そのような個人および人口統計学的グループは次のような個人が例として挙げられる: 必要なIdentity Evidenceを所有せず入手できない個人、障害者、高齢者、ホームレス状態にある人、オンライン・サービスまたはコンピューティング・ デバイスにほとんどまたは全く Access できない個人、銀行口座を持たないあるいはクレジット履歴が限定されている人、Identity盗難被害者、自然災害で避難したまたは影響を受けた個人、および 18 才未満の児童
+ Access 性を向上させ、オンライン政府サービスへの平等な Access を促進するために、CSP は _Trusted Referees_ を提供する。Trusted Referee は、特定の IAL へのIdentity Proofing要件を満たすことができない個人が、Identity ProofingおよびEnrollmentを円滑に進めるために利用される。そのような個人および人口統計学的グループは次のような個人が例として挙げられる: 必要なIdentity Evidenceを所有せず入手できない個人、障害者、高齢者、ホームレス状態にある人、オンライン・サービスまたはコンピューティング・ デバイスにほとんどまたは全く Access できない個人、銀行口座を持たないあるいはクレジット履歴が限定されている人、Identity盗難被害者、自然災害で避難したまたは影響を受けた個人、および 18 才未満の児童
 
 
 {% comment %}
@@ -416,7 +416,7 @@ Trusted referees are agents of the CSP or its partners who are trained and autho
 Additionally, there may be circumstances that encumber or preclude the active participation of an applicant in the identity proofing process. Such circumstances may be due to physical or mental limitations, disabilities, hospitalization, or other temporary or permanent conditions that make active participation in the identity proofing difficult. An _applicant reference_ may vouch for an applicant's particular circumstances and may also actively assist the applicant in the identity proofing process.
 {% endcomment %}
 
-Applicant Referenceとは、ApplicantがIdentity Proofing要件を満たすことを支援するために、ApplicantのIdentity Proofingに参加する個人をいう。このような支援には、Applicantの状況を裏付けることや、Identity Proofingプロセス完了のためにApplicantを積極的に支援することが含まれる。Applicant Referenceは CSP の代理人ではないが、ApplicantのIdentity ProofingおよびEnrollmentを円滑に進めるために、通常はTrusted Refreeと連動する。Applicant Referenceから提供された情報は、ApplicantのIdentity Proofingで使用され、依拠されることがあるため、Applicant Referenceは、Applicantと同等以上の IAL でIdentity Proofingされる。Applicant Referenceの役割は、Identity Proofingプロセスを円滑に進めることに限定されており、Applicant Referenceは、RP との取引においてSubscriberを代理する権限を持たない。指定された IAL での Identity Proofing要件を満たすことができるApplicantにとって、単に物理的、技術的、言語翻訳または他の類似の支援を提供する個人は、Applicant Referenceとはみなされず、Identity Proofingを必要としない。
+Applicant Referenceとは、ApplicantがIdentity Proofing要件を満たすことを支援するために、ApplicantのIdentity Proofingに参加する個人をいう。このような支援には、Applicantの状況を裏付けることや、Identity Proofingプロセス完了のためにApplicantを積極的に支援することが含まれる。Applicant Referenceは CSP の代理人ではないが、ApplicantのIdentity ProofingおよびEnrollmentを円滑に進めるために、通常はTrusted Refreeと連動する。Applicant Referenceから提供された情報は、ApplicantのIdentity Proofingで使用され、依拠されることがあるため、Applicant Referenceは、Applicantと同等以上の IAL でIdentity Proofingされる。Applicant Referenceの役割は、Identity Proofingプロセスを円滑に進めることに限定されており、Applicant Referenceは、RP とのTransactionにおいてSubscriberを代理する権限を持たない。指定された IAL での Identity Proofing要件を満たすことができるApplicantにとって、単に物理的、技術的、言語翻訳または他の類似の支援を提供する個人は、Applicant Referenceとはみなされず、Identity Proofingを必要としない。
 
 {% comment %}
 Applicant references are individuals who participate in the identity proofing of an applicant in order to assist the applicant in meeting the identity proofing requirements. Such assistance may include vouching for the applicant’s circumstances and actively assisting the applicant in completing the identity proofing process. Applicant references are not agents of the CSP but they would typically work in conjunction with a trusted referee to facilitate the identity proofing and enrollment of an applicant. Since information provided by the applicant reference may be used and relied upon in the identity proofing of the applicant, the applicant reference is identity proofed to the same or higher IAL as the applicant. The role of applicant reference is limited to facilitating the identity proofing process and applicant references are not authorized to represent subscribers in transactions with RPs. Persons who simply provide physical, technical, language translation or other similar assistance to an applicant who is otherwise able to meet the requirements for identity proofing to the specified IAL are not considered to be applicant references and do not require identity proofing.
@@ -529,7 +529,7 @@ The following sections provide requirements for identity proofing at each IAL.
 
 ## Identity Assurance Level 1 {#IAL1}
 
-IAL1 では、Remote te および対面でのIdentity Proofingを認めている。IAL1 における Identity Proofing プロセスは、悪意のあるアクターによる不正な Identity の提示を検出するために、許容される様々な技術を認める一方で、ユーザー受け入れを促進し、偽陰性や申請からの離脱（Identity Proofingを正常に完了しない正当なApplicant）を最小化するものである。注目すべきは、IAL1 において、提供されたEvidenceと顔写真との自動比較などのバイオメトリクス照合の使用は任意であり、そのようなEvidenceの収集が実現不可能な場合や、プライバシーおよびEquityリスクがセキュリティの考慮事項を上回るような場合でも、ProofingおよびEnrollmentを進めることができるということである。 
+IAL1 では、Remote および対面でのIdentity Proofingを認めている。IAL1 における Identity Proofing プロセスは、悪意のあるアクターによる不正な Identity の提示を検出するために、許容される様々な技術を認める一方で、ユーザー受け入れを促進し、偽陰性や申請からの離脱（Identity Proofingを正常に完了しない正当なApplicant）を最小化するものである。注目すべきは、IAL1 において、提供されたEvidenceと顔写真との自動比較などのBiometrics照合の使用は任意であり、そのようなEvidenceの収集が実現不可能な場合や、プライバシーおよびEquityリスクがセキュリティの考慮事項を上回るような場合でも、ProofingおよびEnrollmentを進めることができるということである。 
 
 以下の要件は、IAL1においてIdentity ProofingおよびEnrollmentサービスを提供するすべての CSP に適用される。
 
@@ -630,8 +630,8 @@ For added assurance, the CSP **SHALL** evaluate the core attributes, as validate
 
 CSPは、以下のいずれか _1つ_ の要件に従って Applicant が Claimed IdentityとバインドできるかどうかをVerifyするものとする(**SHALL**)。
 
-1.	Applicantの顔との物理的な比較、またはSUPERIORやSTRONG Evidenceに含まれる顔写真とApplicantの顔画像とのバイオメトリクス比較、または
-2.	AAL1 認証または AAL1 および FAL1 フェデレーションプロトコルを介したデジタルアカウントとの関連性の実証、または
+1.	Applicantの顔との物理的な比較、またはSUPERIORやSTRONG Evidenceに含まれる顔写真とApplicantの顔画像とのBiometrics比較、または
+2.	AAL1 Authenticationまたは AAL1 および FAL1 Federation Protocolを介したデジタルアカウントとの関連性の実証、または
 3.	Applicantが有効なEnrollmentコードを提示してきたことのVerification [Sec.5.1.6](sec5_ial.ja.md#EnrollCodes)
 
 {% comment %}
@@ -754,8 +754,8 @@ For added assurance, the CSP **SHALL** evaluate the core attributes, as validate
 
 CSPは、以下のいずれか _1つ_ の要件に従って Applicant が Claimed IdentityとバインドできるかどうかをVerifyするものとする(**SHALL**)。
 
-1.	顔画像など収集したバイオメトリクス特性と、SUPERIORやSTRONG Evidenceに含まれており、関連付けられているリファレンスのバイオメトリクスとの比較、または
-2.	AAL2 認証または AAL2 および FAL2 フェデレーションプロトコルを介したデジタルアカウントとの関連性の実証
+1.	顔画像など収集したBiometrics特性と、SUPERIORやSTRONG Evidenceに含まれており、関連付けられているリファレンスのBiometricsとの比較、または
+2.	AAL2 Authenticationまたは AAL2 および FAL2 Federation Protocolを介したデジタルアカウントとの関連性の実証
 
 {% comment %}
 The CSP **SHALL** verify the binding of the applicant to the claimed identity by _one_ of the following: 
@@ -789,7 +789,7 @@ Upon the successful completion of identity proofing at IAL2, the CSP **SHALL** s
 
 ## Identity Assurance Level 3 {#IAL3}
 
-IAL3 は、IAL2 で要求される手順にさらなる厳密さを加えたもので、Identity と RP をなりすまし、詐欺、 または他の著しく有害な損害から一層保護するための追加的かつ特定のプロセス（バイオメトリクス情報の 比較、収集、保持の実施を含む）が対象となる。さらに、IAL3 における Identity Proofingは、対面で行われる（ただし [Sec. 5.5.8](sec4_proofing.ja.md#IAL3supervised)に定義される Supervised Remote Identity Proofingを含む）。
+IAL3 は、IAL2 で要求される手順にさらなる厳密さを加えたもので、Identity と RP をなりすまし、詐欺、 または他の著しく有害な損害から一層保護するための追加的かつ特定のプロセス（Biometrics情報の 比較、収集、保持の実施を含む）が対象となる。さらに、IAL3 における Identity Proofingは、対面で行われる（ただし [Sec. 5.5.8](sec4_proofing.ja.md#IAL3supervised)に定義される Supervised Remote Identity Proofingを含む）。
 
 {% comment %}
 IAL3 adds additional rigor to the steps required at IAL2 and is subject to additional and specific processes (including the use of biometric information comparison, collection, and retention) to further protect the identity and RP from impersonation, fraud, or other significantly harmful damages. In addition, identity proofing at IAL3 is performed in person (to include supervised remote identity proofing defined in [Sec. 5.5.8](sec4_proofing.md#IAL3supervised)).
@@ -851,13 +851,13 @@ Validated evidence is the preferred source of identity attributes. If the presen
 #### Evidence Validation Requirements
 {% endcomment %}
 
-CSPは、暗号セキュリティ機能の完全性を確認し、何らかのデジタル署名をValidateすることによって、SUPERIOR Evidence の真正性を検証するものとする(**SHALL**)。
+CSPは、暗号セキュリティ機能の完全性を確認し、何らかのDigital SignatureをValidateすることによって、SUPERIOR Evidence の真正性を検証するものとする(**SHALL**)。
 
 CSPは、以下のいずれか _1つ_ の要件に従って STRONG の Evidence の真正性を検証するものとする(**SHALL**)。
 
 1. 訓練を受けた担当者による目視検査
 2. 物理的なセキュリティ機能の完全性を確認する技術の利用、またはEvidenceが詐称されているか不適切に変更されているかを検出することができる技術の利用
-3. 存在する場合、デジタルセキュリティ機能の完全性を確認する。これには、発行者のデジタル署名のValidationが含まれる。
+3. 存在する場合、デジタルセキュリティ機能の完全性を確認する。これには、発行者のDigital SignatureのValidationが含まれる。
 {% comment %}
 The CSP **SHALL** validate the genuineness of each piece of SUPERIOR evidence by confirming the integrity of its cryptographic security features and validating any digital signatures. 
 
@@ -898,8 +898,8 @@ For added assurance, the CSP **SHALL** evaluate the core attributes, as validate
 
 CSPは、以下のいずれか _1つ_ の要件に従って Applicant が Claimed IdentityとバインドできるかどうかをVerifyするものとする(**SHALL**)。
 
-1.	顔画像など収集したバイオメトリクス特性と、提示されたSUPERIORやSTRONG Evidenceに含まれており、関連付けられているリファレンスのバイオメトリクスとの比較、または
-2.	少なくとも AAL2 認証または AAL2 および FAL2 フェデレーションプロトコルを介したデジタルアカウントとの関連性の実証
+1.	顔画像など収集したBiometrics特性と、提示されたSUPERIORやSTRONG Evidenceに含まれており、関連付けられているリファレンスのBiometricsとの比較、または
+2.	少なくとも AAL2 Authenticationまたは AAL2 および FAL2 Federation Protocolを介したデジタルアカウントとの関連性の実証
 
 {% comment %}
 The CSP **SHALL** verify the binding of the applicant to the claimed identity by _one_ of the following: 
@@ -919,12 +919,12 @@ IAL3 での Identity Proofing が正常に完了すると、CSP は [Sec. 5.1.7]
 Upon the successful completion of identity proofing at IAL3, the CSP **SHALL** send a notification of proofing to a validated address for the applicant, as specified in [Sec. 5.1.7](sec5_ial.md#ProofingNotifs). 
 {% endcomment %}
 
-### バイオメトリックの収集
+### Biometricの収集
 {% comment %}
 ### Biometric Collection
 {% endcomment %}
 
-CSPは、非否認と再Proofingを目的として、Proofing時にバイオメトリックサンプル（例：顔画像、指紋）を収集、記録するものとする(**SHALL**)
+CSPは、非否認と再Proofingを目的として、Proofing時にBiometricサンプル（例：顔画像、指紋）を収集、記録するものとする(**SHALL**)
 
 {% comment %}
 The CSP **SHALL** collect and record a biometric sample at the time of proofing (e.g., facial image, fingerprints) for the purposes of non-repudiation and re-proofing.
@@ -949,8 +949,8 @@ In-person proofing at IAL3 **SHALL** be conducted in _one_ of two ways:
 
 CSP がどちらの方法を採用するかにかかわらず、IAL3 での Identity Proofing には以下の要件が適用される。
 
-1. CSP は、バイオメトリクス・ソース（例：指、顔）にnon-naturalな物質が存在するかどうかをオペレーターに確認させるものとする(**SHALL**)。
-2. CSP は、バイオメトリックはApplicantから収集されたものであり、別の対象から取得したものではないことを保証する方法で、バイオメトリクスを収集するものとする(**SHALL**）。
+1. CSP は、Biometricsソース（例：指、顔）にnon-naturalな物質が存在するかどうかをオペレーターに確認させるものとする(**SHALL**)。
+2. CSP は、BiometricがApplicantから収集されたものであり、別の対象から取得したものではないことを保証する方法で、Biometricsを収集するものとする(**SHALL**）。
 
 
 {% comment %}
@@ -967,7 +967,7 @@ Regardless of which of the two methods the CSP employs, the following requiremen
 
 IAL3 Supervised Remote Identity Proofing は、Applicantとの直接の対話に匹敵するレベルの信頼性とセキュリティを達成することを意図している。
 
-以下の要件は、すべての IAL3 Supervised Remote Identity Proofing Session に適用されます。
+以下の要件は、すべての IAL3 Supervised Remote Identity Proofing Session に適用される。
 
 1. CSP は、Identity Proofing Session 全体を監視し、Applicantが Identity Proofing Session 全体にわたって継続的に存在していることを確認するものとする(**SHALL**)。たとえば、Applicantの高解像度ビデオ伝送を継続的に実施する方法が挙げられる。
 2. CSP は、Identity Proofing Session の全期間中、Applicantと一緒に生身のオペレータをRemote から参加させるものとする(**SHALL**)。
@@ -975,7 +975,7 @@ IAL3 Supervised Remote Identity Proofing は、Applicantとの直接の対話に
 4. CSP は、EvidenceのすべてのデジタルVerification（例：チップまたは無線技術を介したもの）が、統合されたスキャナおよびセンサ（例：組み込み指紋リーダ）によって実行されることを要求するものとする(**SHALL**)。
 5. CSP は、オペレーターが、潜在的な不正行為を検出し、Supervised Remote Proofing Session を適切に実行するためのトレーニング・プログラムの受講を必須とする(**SHALL**)。
 6. CSP は、配置される環境に適した物理的な改ざん検出および耐タンパ機能を採用するものとする(**SHALL**)。例えば、制限エリアまたは信頼できる個人によって監視されている場所にあるキオスクは、ショッピングモールのコンコースなどの半公共エリアにあるものよりも改ざん検出の必要性が低い。
-7. CSP は、すべての通信が、相互に認証された保護チャネルで行われることを保証するものとする(**SHALL**)。
+7. CSP は、すべての通信が、Mutually Authenticated Protected Channelで行われることを保証するものとする(**SHALL**)。
 
 {% comment %}
 IAL3 Supervised Remote Identity Proofing is intended to achieve comparable levels of confidence and security to an in-person interaction with the applicant.
@@ -1005,7 +1005,7 @@ Presense|Remote または 対面|Remote または 対面|対面 または Superv
 Resolution|Resolutionするのに必要な最低限のAttribute|IAL1と同様|IAL1と同様
 Evidence|1 つの SUPERIOR、または 1 つの STRONG と 1 つの FAIR|1 つの SUPERIOR、または 1 つの STRONG と 1 つの FAIR|2 つの SUPERIOR、または 1 つの SUPERIOR と 1 つの STRONG、または 2 つの STRONG と 1 つの FAIR 
 Validation|Evidenceは真正性、正確性, 最新性の観点でValidateされる。すべての Core Attributes はAuthoritativeまたは信頼できるsourceによってValidateされる。|IAL1と同様|IAL1と同様
-Verification|Enrollmentコードの提示、またはAAL1かFAL1でのまたはデジタルアカウントへの Access の実証|バイオメトリクス比較、またはAAL2かFAL2でのデジタルアカウントへの Access ess の実証|バイオメトリクス比較、またはAAL2かFAL2でのデジタルアカウントへの Access の実証
+Verification|Enrollmentコードの提示、またはAAL1かFAL1でのまたはデジタルアカウントへの Access の実証| Biometrics比較、またはAAL2かFAL2でのデジタルアカウントへの Access ess の実証|Biometrics比較、またはAAL2かFAL2でのデジタルアカウントへの Access の実証
 Biometric Collection|オプション|オプション|必須
 {:latex-table="1" latex-caption="IAL Requirements Summary" latex-columns="p@0.15\textwidth,p@0.22\textwidth,p@0.22\textwidth,p@0.22\textwidth"}
 
