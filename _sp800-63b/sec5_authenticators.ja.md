@@ -823,7 +823,7 @@ For a variety of reasons, this document supports only limited use of biometrics 
 
 - Biometric False Match Rate (FMR) は, Subscriber の Authentication が Subscriber 自身 によってなされたものであるという信頼を提供しない. さらに, FMR はスプーフィング Attack を考慮して計算されない.
 - Biometric の比較は確率的だが, 他の Authentication Factor は決定的である.
-- Biometric Template Protection スキームは, 他の Authentication Factor (例: PKIの証明書およびパスワード) と同等の Biometric Credential を失効する方法を提供する. しかし, そのようなソリューションの有効性は限られており, これらの方法をテストするための標準は開発中である.
+- Biometric Template Protection スキームは, 他の Authentication Factor (例: PKIの証明書および Password) と同等の Biometric Credential を失効する方法を提供する. しかし, そのようなソリューションの有効性は限られており, これらの方法をテストするための標準は開発中である.
 - Biometric Characteristics は Secret の構成要素とはならない. それらはオンラインでたびたび入手でき, また人々の顔写真は相手の認識の有無を問わず写真を撮ることで入手できる. 隠れた指紋は人々が触れた物から取得することができ, 虹彩パターンは高解像度の画像で捉えられる. Presentation Attack Detection (PAD) テクノロジーはこれらのタイプの Attack のリスクを軽減できるが, PAD が CSP と Subscriber のニーズに従って動作していることを確実にするには, センサーまたは Biometric Processing への追加の信頼が必要とされる.
 
 <!--
