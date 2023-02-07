@@ -1165,18 +1165,50 @@ Authenticator が Activation Secret を (Key の復号に使用するのでは�
 
 ### Connected Authenticators {#s-5-2-12}
 
+<!--
 Cryptographic authenticators require a direct connection between the authenticator and the endpoint being authenticated. This connection **MAY** be wired (e.g., USB or direct connection with a smartcard) or wireless (e.g., NFC, Bluetooth). While in most cases wired connections can be presumed to be secure from eavesdropping and adversary-in-the-middle attacks, additional precautions are required for authenticators that are connected via wireless technologies.
+-->
 
+Cryptographic Authenticator は, Authenticator と Authenticate されるエンドポイントとの間の直接接続を必要とする. この接続は, 有線 (例: USB またはスマートカードとの直接接続) またはワイヤレス (例: NFC, Bluetooth) でもよい(**MAY**). ほとんどの場合, 有線接続は盗聴や Adversary-in-the-Middle Attack から安全であると推定できるが, ワイヤレス技術を介して接続されている Authenticator には追加の予防措置が必要とされる.
+
+<!--
 Wired authenticator connections include both authenticators that are embedded in endpoints (e.g., in a TPM) and those that are connected via an external interface, such as USB. Claimants **SHOULD** be advised to use trusted hardware (cables, etc.) for external connections for additional assurance that they have not been compromised.
+-->
 
+有線の Authenticator 接続は, エンドポイントに組み込まれている Authenticator (例: TPMの中) と, USB などの外部インターフェースを介して接続される Authenticator の両方を含む. Claimant は, 彼らが侵害されていないことのさらなる保証のため, 外部接続に信頼されたハードウェア (ケーブルなど) を使用することについてアドバイスを受ける必要がある(**SHOULD**).
+
+<!--
 Wireless authenticator connections are potentially vulnerable to threats including eavesdropping, injection, and relay attacks. The potential for such attacks depends on the effective range of the wireless technology being used.
+-->
 
+ワイヤレスの Authenticator 接続は, 盗聴, インジェクション, リレー Attack などの脅威に対して潜在的に脆弱である. このような Attack の可能性は, 使用されているワイヤレス技術の有効範囲に依存する.
+
+<!--
 Wireless technologies having an effective range of 1 meter or more (e.g., Bluetooth LE) **SHALL** use an authenticated encrypted connection between the authenticator and endpoint. A pairing process **SHALL** be used to establish a key for encrypted communication between the authenticator and endpoint. A temporary wired connection between the devices **MAY** also be used to establish the key in lieu of the pairing process. The pairing process **SHALL** be authenticated through the use of a pairing code. The pairing code **SHALL** be associated with either the authenticator or endpoint and **SHALL** have at least 20 bits or 6 decimal digits of entropy. The pairing code **MAY** be printed on the associated device and **SHALL** be conveyed between the devices by manual entry or by using a QR code or similar representation that is optically communicated. An example of this is the pairing code used with the virtual contact interface specified in [[SP800-73]](references.md#ref-SP800-73). The entire authentication transaction **SHALL** be encrypted using a key established by the pairing process.
+-->
 
+ 1 メートル以上の有効範囲を持つワイヤレス技術 (例: Bluetooth LE) は, Authenticator とエンドポイントの間で Authenticate された暗号化接続を使用することとなる(**SHALL**). ペアリングプロセスは,  Authenticator とエンドポイント間の暗号化通信用の Key を確立するために使用される. ペアリングプロセスの代わりに, デバイス間の一時的な有線接続が Key を確立するために使用されてもよい(**MAY**). ペアリングプロセスは, ペアリングコードを使用することで Authenticate されることとなる(**SHALL**). ペアリングコードは, Authenticator またはエンドポイントのいずれかに関連付けられることとなり(**SHALL**), 少なくとも 20 ビットまたは 10 進数 6 桁の Entropy を持つこととなる(**SHALL**). ペアリングコードは, 関連付けられたデバイスに印刷してもよく(**MAY**), 手動入力, または光学的に伝達される QR コードか同様の提示方法を使用して, デバイス間で伝達することとなる(**SHALL**). この例は, [[SP800-73]](references.md#ref-SP800-73) で指定された仮想コンタクトインターフェースで使用されるペアリングコードである. Authentication Transaction 全体は, ペアリングプロセスによって確立された Key を使用して暗号化されることとなる(**SHALL**).
+
+<!--
 When a wireless technology with an effective range of less than 1 meter is in use (e.g., NFC), the activation secret, if any, transmitted from the endpoint to authenticator **SHALL** be encrypted using a key established through a pairing process between the devices or through a temporary wired connection. An authenticated connection using a pairing code meeting the above requirements **SHOULD** be used. If the authenticator is configured to require authenticated pairing, pairing code **SHALL** be used.
+-->
 
+1 メートル未満の有効範囲を持つワイヤレス技術 (例: NFC) が使用されている場合, エンドポイントから Authenticator に送信される Activation Secret がもしあれば, デバイス間のペアリングプロセスまたは一時的な有線接続を介して確立された Key を使用して暗号化されることとなる(**SHALL**). 上記の要件を満たすペアリング コードを使用した Authenticate された接続を使用する必要がある(**SHOULD**). Authenticator が Authenticate されたペアリングを要求するように構成されている場合, ペアリングコードが使用されることとなる(**SHALL**).
+
+<!--
 > Note: Encryption of only the activation secret, and not the entire authentication transaction, may expose sensitive information such as the identity of the relying party, although this would require the attacker to be very close to the subscriber. Special care should be taken with authenticators containing personally identifiable information that do not require authenticated pairing to protect that information against "skimming" and eavesdropping attacks.
+-->
 
+> 注: Authentication Transaction 全体ではなく Activation Secret のみの暗号化は, Relying Party の Identity などのセンシティブ情報を晒してしまう可能性があるが, これには Attacker が Subscriber の非常に近くにいる必要がある. "スキミング" や Eavesdropping Attack から情報を保護するために, Authenticate されたペアリングを必要としない, 個人を特定できる情報を含む Authenticator には, 特別な注意を払う必要がある.
+
+<!--
 The key established as a result of the pairing process **MAY** be either temporary (valid for a limited number of transactions or time) or persistent. A mechanism for endpoints to remove persistent keys **SHALL** be provided.
+-->
 
+ペアリングプロセスの結果として確立された Key は, 一時的 (限られた数のトランザクションまたは時間に対して有効) または永続的のどちらであってもよい(**MAY**). 永続 Key を削除するエンドポイントのメカニズムが提供されることとなる(**SHALL**).
+
+<!--
 Where cryptographic operations are required, approved cryptography **SHALL** be used. All communication of authentication data between authenticators and endpoints **SHALL** occur directly between those devices or through an authenticated protected channel between the authenticator and endpoint.
+-->
+
+暗号操作が必要なところでは, Approved Cryptography を使用することとなる(**SHALL**). Authenticator とエンドポイント間の Authentication データのすべての通信は, これらのデバイス間で直接行われるか, Authenticator とエンドポイント間の Authenticated Protected Channel を介して行われることとなる(**SHALL**).
