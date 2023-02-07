@@ -27,7 +27,7 @@ A Memorized Secret authenticator — commonly referred to as a _password_ or, if
 {:.authenticator-image}
 -->
 
-Memorized Secret Authenticator — 一般に _Password_ または数値の場合は _PIN_ と言われる — は, ユーザによって選択され記憶されることを意図した秘密の値である. Memorized Secret は, Attacker が正しい Secret Value を推測または発見することが現実的でないように, 十分に複雑で秘匿されている必要がある. Memorized Secret は _something you know_ である.
+Memorized Secret Authenticator — 一般に _Password_ または数値の場合は _PIN_ と言われる — は, ユーザーによって選択され記憶されることを意図した秘密の値である. Memorized Secret は, Attacker が正しい Secret Value を推測または発見することが現実的でないように, 十分に複雑で秘匿されている必要がある. Memorized Secret は _something you know_ である.
 {:.authenticator-image}
 
 <!--
@@ -44,9 +44,9 @@ Memorized secrets **SHALL** be at least 8 characters in length. Memorized secret
 If the CSP disallows a chosen memorized secret because it is on a blocklist of commonly used, expected, or compromised values (see [Sec. 5.1.1.2](sec5_authenticators.md#memsecretver)), the subscriber **SHALL** be required to choose a different memorized secret. No other complexity requirements for memorized secrets **SHALL** be imposed. A rationale for this is presented in [Appendix A](appA_memorized.md#appA) _Strength of Memorized Secrets_.
 -->
 
-Memorized Secret は, 長さが少なくとも8文字となる(**SHALL**). Memorized Secret は, Subscriber によって選択されるか, CSP によってランダムに割り当てられることとなる(**SHALL**). 
+Memorized Secret は, 長さが少なくとも8文字となる(**SHALL**). Memorized Secret は, Subscriber によって選択されるか, CSP によってランダムに割り当てられることとなる(**SHALL**).
 
-CSP が, 頻繁に使用される, 予期される, または侵害されている値のブロックリストにあるために, 選択された Memorized Secret を許可しない場合 ([Sec. 5.1.1.2](sec5_authenticators.md#memsecretver) を参照), Subscriber は別の Memorized Secret を選択することになる(**SHALL**). Memorized Secret に他の複雑さの要件が課されることはない(**SHALL**). この根拠は, [Appendix A](appA_memorized.md#appA) _Strength of Memorized Secrets_ に示される. 
+CSP が, 頻繁に使用される, 予期される, または侵害されている値のブロックリストにあるために, 選択された Memorized Secret を許可しない場合 ([Sec. 5.1.1.2](sec5_authenticators.md#memsecretver) を参照), Subscriber は別の Memorized Secret を選択することになる(**SHALL**). Memorized Secret に他の複雑さの要件が課されることはない(**SHALL**). この根拠は, [Appendix A](appA_memorized.md#appA) _Strength of Memorized Secrets_ に示される.
 
 #### Memorized Secret Verifiers {#memsecretver}
 
@@ -72,7 +72,7 @@ If Unicode characters are accepted in memorized secrets, the verifier **SHOULD**
 Memorized secret verifiers **SHALL NOT** permit the subscriber to store a hint that is accessible to an unauthenticated claimant. Verifiers **SHALL NOT** prompt subscribers to use specific types of information (e.g., "What was the name of your first pet?", a technique known as knowledge-based authentication (KBA) or security questions) when choosing memorized secrets.
 -->
 
- Memorized Secret の Verifier は, Subscriber に対して, 認証されていない Claimant がアクセスできるヒントを保存することを許可することはない(**SHALL NOT**). Verifier は, Memorized Secret を選択する際に, Subscriber に特定の種類の情報 (例えば, 「あなたの最初のペットの名前は何ですか?」といった Knowledge-Based Authentication (KBA) または秘密の質問として知られる手法) を使用するように促すことはない(**SHALL NOT**).
+ Memorized Secret の Verifier は, Subscriber に対して, Authenticate されていない Claimant がアクセスできるヒントを保存することを許可することはない(**SHALL NOT**). Verifier は, Memorized Secret を選択する際に, Subscriber に特定の種類の情報 (例えば, 「あなたの最初のペットの名前は何ですか?」といった Knowledge-Based Authentication (KBA) または秘密の質問として知られる手法) を使用するように促すことはない(**SHALL NOT**).
 
 <!--
 When processing requests to establish and change memorized secrets, verifiers **SHALL** compare the prospective secrets against a blocklist that contains values known to be commonly used, expected, or compromised. For example, the list **MAY** include, but is not limited to:
@@ -90,7 +90,7 @@ When processing requests to establish and change memorized secrets, verifiers **
 * 以前の侵害事例から得られた Password.
 * 辞書の単語.
 * 反復または連続した文字 (例: 'aaaaaa', '1234abcd').
-* サービスの名前, ユーザ名, およびその派生語など, コンテキスト特有の単語.
+* サービスの名前, ユーザー名, およびその派生語など, コンテキスト特有の単語.
 
 <!--
 If the chosen secret is found in the blocklist, the CSP or verifier **SHALL** advise the subscriber that they need to select a different secret, **SHALL** provide the reason for rejection, and **SHALL** require the subscriber to choose a different value. Since the blocklist is used to defend against brute-force attacks and unsuccessful attempts are rate limited as described below, the blocklist **SHOULD** be of a size sufficient to prevent subscribers from choosing memorized secrets that attackers are likely to guess before reaching the attempt limit. Excessively large blocklists **SHOULD NOT** be used because they frustrate subscribers' attempts to establish an acceptable memorized secret and do not provide significantly improved security.
@@ -108,7 +108,7 @@ Verifierは, 強力な Memorized Secret を選択する際にユーザーを支�
 Verifiers **SHALL** implement a rate-limiting mechanism that effectively limits the number of failed authentication attempts that can be made on the subscriber account as described in [Sec. 5.2.2](sec5_authenticators.md#throttle).
 -->
 
-Verifier は, [Sec. 5.2.2](sec5_authenticators.md#throttle) で説明されている通り, Subscriber Account で試行できる Authentication の失敗回数を効果的に制限するレート制限メカニズムを実装することとなる(**SHALL**). 
+Verifier は, [Sec. 5.2.2](sec5_authenticators.md#throttle) で説明されている通り, Subscriber Account で試行できる Authentication の失敗回数を効果的に制限するレート制限メカニズムを実装することとなる(**SHALL**).
 
 <!--
 Verifiers **SHALL NOT** impose other composition rules (e.g., requiring mixtures of different character types or prohibiting consecutively repeated characters) for memorized secrets. Verifiers **SHALL NOT** require users to periodically change memorized secrets. However, verifiers **SHALL** force a change if there is evidence of compromise of the authenticator.
@@ -126,7 +126,7 @@ Verifier は, Passwordマネージャーの使用を許可することになる(
 In order to assist the claimant in successfully entering a memorized secret, the verifier **SHOULD** offer an option to display the secret — rather than a series of dots or asterisks — while it is entered and until it is submitted to the verifier. This allows the claimant to confirm their entry if they are in a location where their screen is unlikely to be observed. The verifier **MAY** also permit the claimant's device to display individual entered characters for a short time after each character is typed to verify correct entry. This is common on mobile devices.
 -->
 
-Claimant が Memorized Secret を正常に入力することを支援するために, Verifier は, 入力されている間および 
+Claimant が Memorized Secret を正常に入力することを支援するために, Verifier は, 入力されている間および
 Verifier に送信されるまで, 一連のドットやアスタリスクではなく, Secret を表示するオプションを提供する必要がある(**SHOULD**). これにより Claimant は, 自分の画面が観察される可能性が低い場所にいる場合, 自分の入力を確認できる. Verifier は, 各文字が入力された後, 正しく入力したかを確認するために入力された個々の文字を短時間表示することを Claimant のデバイスに許可してもよい(**MAY**). これは, モバイルデバイスでは一般的である.
 
 <!--
@@ -151,7 +151,7 @@ Salt は長さが少なくとも 32 ビットとなり, 保存された Hash 間
 For the Password-based Key Derivation Function 2 (PBKDF2) [[SP800-132]](references.md#ref-SP800-132), the cost factor is an iteration count: the more times the PBKDF2 function is iterated, the longer it takes to compute the password hash. Therefore, the iteration count **SHOULD** be as large as verification server performance will allow, typically at least 10,000 iterations.
 -->
 
-Password-based Key Derivation Function 2 (PBKDF2) [[SP800-132]](references.md#ref-SP800-132) の場合, コストファクターは反復回数である. PBKDF2 関数が反復される回数が多いほど, Password Hash の計算に時間がかかる. したがって, 反復回数は, Verification サーバのパフォーマンスが許す限り大きくする必要がある(通常, 少なくとも10,000回の反復)(**SHOULD**). 
+Password-based Key Derivation Function 2 (PBKDF2) [[SP800-132]](references.md#ref-SP800-132) の場合, コストファクターは反復回数である. PBKDF2 関数が反復される回数が多いほど, Password Hash の計算に時間がかかる. したがって, 反復回数は, Verification サーバのパフォーマンスが許す限り大きくする必要がある(通常, 少なくとも10,000回の反復)(**SHOULD**).
 
 <!--
 In addition, verifiers **SHOULD** perform an additional iteration of a keyed hashing or encryption operation using a secret key known only to the verifier. This key value, if used, **SHALL** be generated by an approved random bit generator [[SP800-90Ar1]](references.md#ref-SP800-90Ar1) and provide at least the minimum security strength specified in the latest revision of NIST SP 800-131A, *Transitioning the Use of Cryptographic Algorithms and Key Lengths* [[SP800-131A]](references.md#ref-SP800-131A) (112 bits as of the date of this publication). The secret key value **SHALL** be stored separately from the hashed memorized secrets (e.g., in a specialized device like a hardware security module). With this additional iteration, brute-force attacks on the hashed memorized secrets are impractical as long as the secret key value remains secret.
@@ -186,7 +186,7 @@ Look-up Secret Authenticator は, CSP が対面で, Subscriber の Address of Re
 If the authenticator uses look-up secrets sequentially from a list, the subscriber **MAY** dispose of used secrets, but only after a successful authentication.
 -->
 
-Authenticator がリストからシーケンシャルに Look-up Secret を使用する場合, Authentication が成功した後に限り, Subscriber は使用済みの Secret を破棄してもよい(**MAY**). 
+Authenticator がリストからシーケンシャルに Look-up Secret を使用する場合, Authentication が成功した後に限り, Subscriber は使用済みの Secret を破棄してもよい(**MAY**).
 
 #### Look-Up Secret Verifiers
 
@@ -200,7 +200,7 @@ Verifiers of look-up secrets **SHALL** prompt the claimant for the next secret f
 Verifiers **SHALL** store look-up secrets in a form that is resistant to offline attacks. Look-up secrets having at least 112 bits of entropy **SHALL** be hashed with an approved one-way function as described in [Sec. 5.1.1.2](sec5_authenticators.md#memsecretver). Look-up secrets with fewer than 112 bits of entropy **SHALL** be salted and hashed using a suitable password hashing scheme, also described in [Sec. 5.1.1.2](sec5_authenticators.md#memsecretver). The salt value **SHALL** be at least 32 bits in length and arbitrarily chosen so as to minimize salt value collisions among stored hashes. Both the salt value and the resulting hash **SHALL** be stored for each look-up secret.
 -->
 
-Verifier は, Offline Attack に耐性のある形式で Look-up Secret を保存することとなる(**SHALL**). 少なくとも 112 ビットの Entropy を持つ Look-up Secret は, [Sec. 5.1.1.2](sec5_authenticators.md#memsecretver) で述べられた通り, Approved な一方向関数で Hash されることとなる(**SHALL**). Entropy が 112 ビット未満の Look-up Secret は, 同様に[Sec. 5.1.1.2](sec5_authenticators.md#memsecretver)で述べられた通り, Salt 化され適切な Password Hash スキームを使用して Hash されることとなる(**SHALL**). 
+Verifier は, Offline Attack に耐性のある形式で Look-up Secret を保存することとなる(**SHALL**). 少なくとも 112 ビットの Entropy を持つ Look-up Secret は, [Sec. 5.1.1.2](sec5_authenticators.md#memsecretver) で述べられた通り, Approved な一方向関数で Hash されることとなる(**SHALL**). Entropy が 112 ビット未満の Look-up Secret は, 同様に[Sec. 5.1.1.2](sec5_authenticators.md#memsecretver)で述べられた通り, Salt 化され適切な Password Hash スキームを使用して Hash されることとなる(**SHALL**).
 Salt 値は長さが少なくとも 32 ビット となり, 保存された Hash 間の Salt 値の衝突を最小限に抑えるためにばらついて選択されることとなる(**SHALL**).  Salt 値と結果の Hash の両方が,  Look-up Secret ごとに保存されることとなる(**SHALL**).
 
 <!--
@@ -288,13 +288,13 @@ Email **SHALL NOT** be used for out-of-band authentication because it also does 
 The out-of-band authenticator **SHALL** uniquely authenticate itself in one of the following ways when communicating with the verifier:
 -->
 
-Out-of-band Authenticator は, Verifier と通信するときに, 以下のいずれかの方法で自身を一意に Authentication することとなる(**SHALL**). 
+Out-of-band Authenticator は, Verifier と通信するときに, 以下のいずれかの方法で自身を一意に Authentication することとなる(**SHALL**).
 
 <!--
 - Establish an authenticated protected channel to the verifier using approved cryptography. The key used **SHALL** be stored in suitably secure storage available to the authenticator application (e.g., keychain storage, TPM, TEE, secure element).
 -->
 
-- Approved Cryptography を使用して, Verifier への Authenticated Protected Channel を確立する. 使用されるキーは, Authenticator アプリケーションが利用可能な, 適切に安全なストレージ (例: キーチェーンストレージ, TPM, TEE, セキュアエレメントなど) に格納することとなる(**SHALL**). 
+- Approved Cryptography を使用して, Verifier への Authenticated Protected Channel を確立する. 使用されるキーは, Authenticator アプリケーションが利用可能な, 適切に安全なストレージ (例: キーチェーンストレージ, TPM, TEE, セキュアエレメントなど) に格納することとなる(**SHALL**).
 
 <!--
 - Authenticate to a public mobile telephone network using a SIM card or equivalent that uniquely identifies the device. This method **SHALL** only be used if a secret is being sent from the verifier to the out-of-band device via the PSTN (SMS or voice).
@@ -350,7 +350,7 @@ Out-of-band Authenticator のタイプに応じて, 以下のいずれかが行�
 In all cases, the authentication **SHALL** be considered invalid if not completed within 10 minutes. In order to provide replay resistance as described in [Sec. 5.2.8](sec5_authenticators.md#replay), verifiers **SHALL** accept a given authentication secret only once during the validity period.
 -->
 
-すべてのケースで, 10分以内に完了しない場合, Authentication は無効と見なされることとなる(**SHALL**). [Sec. 5.2.8](sec5_authenticators.md#replay)で述べられた通りに Replay Resistance を提供するため, Verifier は, 与えられた Authentication Secret の受け入れを有効期間中に一度のみとすることとなる(**SHALL**). 
+すべてのケースで, 10分以内に完了しない場合, Authentication は無効と見なされることとなる(**SHALL**). [Sec. 5.2.8](sec5_authenticators.md#replay)で述べられた通りに Replay Resistance を提供するため, Verifier は, 与えられた Authentication Secret の受け入れを有効期間中に一度のみとすることとなる(**SHALL**).
 
 <!--
 The verifier **SHALL** generate random authentication secrets with at least 20 bits of entropy using an approved random bit generator [[SP800-90Ar1]](references.md#ref-SP800-90Ar1). If the authentication secret has less than 64 bits of entropy, the verifier **SHALL** implement a rate-limiting mechanism that effectively limits the number of failed authentication attempts that can be made on the subscriber account as described in [Sec. 5.2.2](sec5_authenticators.md#throttle).
@@ -408,7 +408,7 @@ Multi-Factor Out-of-band Authenticator は, Claimant が Authentication Transact
 The use of an activation secret by the authenticator **SHALL** meet the requirements of [Sec. 5.2.11](sec5_authenticators.md#s-5-2-11). A biometric activation factor **SHALL** meet the requirements of [Sec. 5.2.3](sec5_authenticators.md#biometric_use), including limits on the number of consecutive authentication failures. Submission of the activation factor **SHALL** be a separate operation from unlocking of the host device (e.g., smartphone), although the same activation factor used to unlock the host device **MAY** be used in the authentication operation. The memorized secret or biometric sample used for activation — and any biometric data derived from the biometric sample such as a probe produced through signal processing — **SHALL** be zeroized immediately after the authentication operation.
 -->
 
-Authenticator による Activation Secret の使用は, [Sec. 5.2.11](sec5_authenticators.md#s-5-2-11) の要件を満たすこととなる(**SHALL**). Biometric Activation Factor は, Authentication の連続失敗回数の制限を含め, [Sec. 5.2.3](sec5_authenticators.md#biometric_use) の要件を満たすこととなる(**SHALL**). Activation Factor の提出は, ホストデバイス (スマートフォンなど) のロック解除とは別の操作となる(**SHALL**)が, ホストデバイスのロック解除に使用されたものと同じ Activation Factor が Authentication 操作で使用されてもよい(**MAY**). Activation に使用される Memorized Secret または Biometric Sample -および信号処理によって生成された Probe などの Biometric Sample から得られたすべての Biometric データ- は, Authentication 操作の直後に Zeroize されることとなる(**SHALL**). 
+Authenticator による Activation Secret の使用は, [Sec. 5.2.11](sec5_authenticators.md#s-5-2-11) の要件を満たすこととなる(**SHALL**). Biometric Activation Factor は, Authentication の連続失敗回数の制限を含め, [Sec. 5.2.3](sec5_authenticators.md#biometric_use) の要件を満たすこととなる(**SHALL**). Activation Factor の提出は, ホストデバイス (スマートフォンなど) のロック解除とは別の操作となる(**SHALL**)が, ホストデバイスのロック解除に使用されたものと同じ Activation Factor が Authentication 操作で使用されてもよい(**MAY**). Activation に使用される Memorized Secret または Biometric Sample -および信号処理によって生成された Probe などの Biometric Sample から得られたすべての Biometric データ- は, Authentication 操作の直後に Zeroize されることとなる(**SHALL**).
 
 ### Single-Factor OTP Device {#singlefactorOTP}
 
@@ -476,7 +476,7 @@ Verifier は, OTP を収集するときに, 盗聴や AitM Attack への耐性�
 Time-based OTPs [[TOTP]](references.md#ref-totp) **SHALL** have a defined lifetime that is determined by the expected clock drift — in either direction — of the authenticator over its lifetime, plus allowance for network delay and user entry of the OTP.
 -->
 
-時間ベースの OTP [[TOTP]](references.md#ref-totp) は, ネットワーク遅延と OTP のユーザ入力のための許容値, それに加え Authenticator が寿命の間に持つはずの両方向のクロックのずれを考慮した上で決定される, 定義されたライフタイムを持つこととなる(**SHALL**).
+時間ベースの OTP [[TOTP]](references.md#ref-totp) は, ネットワーク遅延と OTP のユーザー入力のための許容値, それに加え Authenticator が寿命の間に持つはずの両方向のクロックのずれを考慮した上で決定される, 定義されたライフタイムを持つこととなる(**SHALL**).
 
 <!--
 If the authenticator output has less than 64 bits of entropy, the verifier **SHALL** implement a rate-limiting mechanism that effectively limits the number of failed authentication attempts that can be made on the subscriber account as described in [Sec. 5.2.2](sec5_authenticators.md#throttle).
@@ -531,7 +531,7 @@ Authenticator の出力を生成するために使用される Nonce がリア�
 The use of an activation secret by the authenticator **SHALL** meet the requirements of [Sec. 5.2.11](sec5_authenticators.md#s-5-2-11). A biometric activation factor **SHALL** meet the requirements of [Sec. 5.2.3](sec5_authenticators.md#biometric_use), including limits on the number of consecutive authentication failures. Submission of the activation factor **SHALL** be a separate operation from unlocking of the host device (e.g., smartphone), although the same activation factor used to unlock the host device **MAY** be used in the authentication operation. The unencrypted key and activation secret or biometric sample — and any biometric data derived from the biometric sample such as a probe produced through signal processing — **SHALL** be zeroized immediately after an OTP has been generated.
 -->
 
-Authenticator による Activation Secret の使用は, [Sec. 5.2.11](sec5_authenticators.md#s-5-2-11) の要件を満たすこととなる(**SHALL**). Biometric Activation Factor は, Authentication の連続失敗回数の制限を含め, [Sec. 5.2.3](sec5_authenticators.md#biometric_use) の要件を満たすこととなる(**SHALL**). Activation Factor の提出は, ホストデバイス (スマートフォンなど) のロック解除とは別の操作となる(**SHALL**)が, ホストデバイスのロック解除に使用されたものと同じ Activation Factor が Authentication 操作で使用されてもよい(**MAY**). Unencrypted Key と Activation Secret, または Biometric Sample -および信号処理によって生成された Probe などの Biometric Sample から得られたすべての Biometric データ- は, Authentication 操作の直後に Zeroize されることとなる(**SHALL**). 
+Authenticator による Activation Secret の使用は, [Sec. 5.2.11](sec5_authenticators.md#s-5-2-11) の要件を満たすこととなる(**SHALL**). Biometric Activation Factor は, Authentication の連続失敗回数の制限を含め, [Sec. 5.2.3](sec5_authenticators.md#biometric_use) の要件を満たすこととなる(**SHALL**). Activation Factor の提出は, ホストデバイス (スマートフォンなど) のロック解除とは別の操作となる(**SHALL**)が, ホストデバイスのロック解除に使用されたものと同じ Activation Factor が Authentication 操作で使用されてもよい(**MAY**). Unencrypted Key と Activation Secret, または Biometric Sample -および信号処理によって生成された Probe などの Biometric Sample から得られたすべての Biometric データ- は, Authentication 操作の直後に Zeroize されることとなる(**SHALL**).
 
 #### Multi-Factor OTP Verifiers
 
@@ -557,7 +557,7 @@ Verifier は, OTP を収集するときに, 盗聴や AitM Attack への耐性�
 Time-based OTPs [[TOTP]](references.md#ref-totp) **SHALL** have a defined lifetime that is determined by the expected clock drift — in either direction — of the authenticator over its lifetime, plus allowance for network delay and user entry of the OTP.
 -->
 
-時間ベースの OTP [[TOTP]](references.md#ref-totp) は, ネットワーク遅延と OTP のユーザ入力のための許容値, それに加え Authenticator が寿命の間に持つはずの両方向のクロックのずれを考慮した上で決定される, 定義されたライフタイムを持つこととなる(**SHALL**).
+時間ベースの OTP [[TOTP]](references.md#ref-totp) は, ネットワーク遅延と OTP のユーザー入力のための許容値, それに加え Authenticator が寿命の間に持つはずの両方向のクロックのずれを考慮した上で決定される, 定義されたライフタイムを持つこととなる(**SHALL**).
 
 <!--
 If the authenticator output or activation secret has less than 64 bits of entropy, the verifier **SHALL** implement a rate-limiting mechanism that effectively limits the number of failed authentication attempts that can be made on the subscriber account as described in [Sec. 5.2.2](sec5_authenticators.md#throttle).
@@ -612,7 +612,7 @@ Single-Factor Cryptographic デバイスは, 保護された Cryptographic Key �
 Single-factor cryptographic device authenticators use tamper-resistant hardware to encapsulate one or more secret keys unique to the authenticator that **SHALL NOT** be exportable (i.e., cannot be removed from the device). The authenticator operates using a secret key to sign a challenge nonce presented through a direct interface between the authenticator and endpoint (e.g., a USB port or secured wireless connection) as specified in [Sec. 5.2.12](sec5_authenticators.md#s-5-2-12). Alternatively, the authenticator could be a suitably secure processor integrated with the user endpoint itself.
 -->
 
-Single-Factor Cryptographic Device Authenticator は, 1つかそれ以上の一意の Secret Key を, エクスポート機能を持つことはない(**SHALL NOT**)(つまり,デバイスから削除できない) Authenticator にカプセル化するために耐タンパー性ハードウェアを使用する. この Authenticator は, [Sec. 5.2.12](sec5_authenticators.md#s-5-2-12) に指定された通り, Authenticator とエンドポイントの間の直接的なインターフェース(例: USB ポートや保護されたワイヤレス接続)を通じて提示された Challenge Nonce に署名するために Secret Key を使用することで動作する. あるいは, Authenticator は, ユーザエンドポイントそれ自体に統合された適切に安全なプロセッサであってもよい.
+Single-Factor Cryptographic Device Authenticator は, 1つかそれ以上の一意の Secret Key を, エクスポート機能を持つことはない(**SHALL NOT**)(つまり,デバイスから削除できない) Authenticator にカプセル化するために耐タンパー性ハードウェアを使用する. この Authenticator は, [Sec. 5.2.12](sec5_authenticators.md#s-5-2-12) に指定された通り, Authenticator とエンドポイントの間の直接的なインターフェース(例: USB ポートや保護されたワイヤレス接続)を通じて提示された Challenge Nonce に署名するために Secret Key を使用することで動作する. あるいは, Authenticator は, ユーザーエンドポイントそれ自体に統合された適切に安全なプロセッサであってもよい.
 
 <!--
 The secret key and its algorithm **SHALL** provide at least the minimum security length specified in the latest revision of [[SP800-131A]](references.md#ref-SP800-131A) (112 bits as of the date of this publication). The challenge nonce **SHALL** be at least 64 bits in length. Approved cryptography **SHALL** be used.
@@ -638,7 +638,7 @@ Single-Factor Cryptographic Device Authenticator は, 動作するために物�
 Single-factor cryptographic device verifiers generate a challenge nonce, send it to the corresponding authenticator, and use the authenticator output to verify possession of the device. The authenticator output is highly dependent on the specific cryptographic device and protocol, but it is generally some type of signed message.
 -->
 
-Single-Factor Cryptographic Device Verifier は, Challenge Nonce を生成し, それを対象の Authenticator に送信し, デバイスの所有を検証するために Authenticator の出力を使用する. Authenticator の出力は, 特定の暗号デバイスとプロトコルに大きく依存するが, 通常は何らかのタイプの署名付きメッセージである. 
+Single-Factor Cryptographic Device Verifier は, Challenge Nonce を生成し, それを対象の Authenticator に送信し, デバイスの所有を検証するために Authenticator の出力を使用する. Authenticator の出力は, 特定の暗号デバイスとプロトコルに大きく依存するが, 通常は何らかのタイプの署名付きメッセージである.
 
 <!--
 The verifier has either symmetric or asymmetric cryptographic keys corresponding to each authenticator. While both types of keys **SHALL** be protected against modification, symmetric keys **SHALL** additionally be protected against unauthorized disclosure by the use of access controls that limit access to the key to only those software components on the device requiring access.
@@ -686,7 +686,7 @@ Authenticator を使用する各 Authentication 操作は, Activation Factor の
 The use of an activation secret by the authenticator **SHALL** meet the requirements of [Sec. 5.2.11](sec5_authenticators.md#s-5-2-11). A biometric activation factor **SHALL** meet the requirements of [Sec. 5.2.3](sec5_authenticators.md#biometric_use), including limits on the number of consecutive authentication failures. Submission of the activation factor **SHALL** be a separate operation from unlocking of the host device (e.g., smartphone), although the same activation factor used to unlock the host device **MAY** be used in the authentication operation. The activation secret or biometric sample — and any biometric data derived from the biometric sample such as a probe produced through signal processing — **SHALL** be zeroized immediately after an authentication transaction has taken place.
 -->
 
-Authenticator による Activation Secret の使用は, [Sec. 5.2.11](sec5_authenticators.md#s-5-2-11) の要件を満たすこととなる(**SHALL**). Biometric Activation Factor は, Authentication の連続失敗回数の制限を含め, [Sec. 5.2.3](sec5_authenticators.md#biometric_use) の要件を満たすこととなる(**SHALL**). Activation Factor の提出は, ホストデバイス (スマートフォンなど) のロック解除とは別の操作となる(**SHALL**)が, ホストデバイスのロック解除に使用されたものと同じ Activation Factor が Authentication 操作で使用されてもよい(**MAY**). Activation Secret または Biometric Sample -および信号処理によって生成された Probe などの Biometric Sample から得られたすべての Biometric データ- は, Authentication 操作の直後に Zeroize されることとなる(**SHALL**). 
+Authenticator による Activation Secret の使用は, [Sec. 5.2.11](sec5_authenticators.md#s-5-2-11) の要件を満たすこととなる(**SHALL**). Biometric Activation Factor は, Authentication の連続失敗回数の制限を含め, [Sec. 5.2.3](sec5_authenticators.md#biometric_use) の要件を満たすこととなる(**SHALL**). Activation Factor の提出は, ホストデバイス (スマートフォンなど) のロック解除とは別の操作となる(**SHALL**)が, ホストデバイスのロック解除に使用されたものと同じ Activation Factor が Authentication 操作で使用されてもよい(**MAY**). Activation Secret または Biometric Sample -および信号処理によって生成された Probe などの Biometric Sample から得られたすべての Biometric データ- は, Authentication 操作の直後に Zeroize されることとなる(**SHALL**).
 
 #### Multi-Factor Cryptographic Software Verifiers
 
@@ -712,7 +712,7 @@ Multi-Factor Cryptographic デバイスは, 1つかそれ以上の保護され�
 Multi-factor cryptographic device authenticators use tamper-resistant hardware to encapsulate one or more secret keys unique to the authenticator that **SHALL NOT** be exportable (i.e., cannot be removed from the device). The secret key **SHALL** be accessible only through the presentation and verification of an activation factor, either a biometric characteristic or an activation secret as described in [Sec. 5.2.11](sec5_authenticators.md#s-5-2-11). The authenticator operates by using a secret key that was unlocked by the activation factor to sign a challenge nonce presented through a direct interface between the authenticator and endpoint (e.g., a USB port or secured wireless connection) as specified in [Sec. 5.2.12](sec5_authenticators.md#s-5-2-12). Alternatively, the authenticator could be a suitably secure processor integrated with the user endpoint itself (e.g., a hardware TPM).
 -->
 
-Multi-Factor Cryptographic Device Authenticator は, 1つかそれ以上の一意の Secret Key を, エクスポート機能を持つことはない(**SHALL NOT**)(つまり,デバイスから削除できない) Authenticator にカプセル化するために耐タンパー性ハードウェアを使用する. Secret Key は, [Sec. 5.2.11](sec5_authenticators.md#s-5-2-11) で述べられている通り, Biometric Characteristic または Activation Secret のいずれかの Activation Factor の提示と Verification によってのみアクセス可能となる(**SHALL**). この Authenticator は, [Sec. 5.2.12](sec5_authenticators.md#s-5-2-12) に指定された通り, Authenticator とエンドポイントの間の直接的なインターフェース(例: USB ポートや保護されたワイヤレス接続)を通じて提示された Challenge Nonce に署名するために Activation Factor によってアンロックされた Secret Key を使用することで動作する. あるいは, Authenticator は, ユーザエンドポイントそれ自体に統合された適切に安全なプロセッサであってもよい(例: ハードウェア TPM).
+Multi-Factor Cryptographic Device Authenticator は, 1つかそれ以上の一意の Secret Key を, エクスポート機能を持つことはない(**SHALL NOT**)(つまり,デバイスから削除できない) Authenticator にカプセル化するために耐タンパー性ハードウェアを使用する. Secret Key は, [Sec. 5.2.11](sec5_authenticators.md#s-5-2-11) で述べられている通り, Biometric Characteristic または Activation Secret のいずれかの Activation Factor の提示と Verification によってのみアクセス可能となる(**SHALL**). この Authenticator は, [Sec. 5.2.12](sec5_authenticators.md#s-5-2-12) に指定された通り, Authenticator とエンドポイントの間の直接的なインターフェース(例: USB ポートや保護されたワイヤレス接続)を通じて提示された Challenge Nonce に署名するために Activation Factor によってアンロックされた Secret Key を使用することで動作する. あるいは, Authenticator は, ユーザーエンドポイントそれ自体に統合された適切に安全なプロセッサであってもよい(例: ハードウェア TPM).
 
 <!--
 The secret key and its algorithm **SHALL** provide at least the minimum security length specified in the latest revision of [[SP800-131A]](references.md#ref-SP800-131A) (112 bits as of the date of this publication). The challenge nonce **SHALL** be at least 64 bits in length. Approved cryptography **SHALL** be used.
@@ -736,7 +736,7 @@ Authenticator を使用する各 Authentication 操作は, Activation Factor の
 The use of an activation secret by the authenticator **SHALL** meet the requirements of [Sec. 5.2.11](sec5_authenticators.md#s-5-2-11). A biometric activation factor **SHALL** meet the requirements of [Sec. 5.2.3](sec5_authenticators.md#biometric_use), including limits on the number of consecutive authentication failures. Submission of the activation factor **SHALL** be a separate operation from unlocking of the host device (e.g., smartphone), although the same activation factor used to unlock the host device **MAY** be used in the authentication operation. The activation secret or biometric sample — and any biometric data derived from the biometric sample such as a probe produced through signal processing — **SHALL** be zeroized immediately after an authentication transaction has taken place.
 -->
 
-Authenticator による Activation Secret の使用は, [Sec. 5.2.11](sec5_authenticators.md#s-5-2-11) の要件を満たすこととなる(**SHALL**). Biometric Activation Factor は, Authentication の連続失敗回数の制限を含め, [Sec. 5.2.3](sec5_authenticators.md#biometric_use) の要件を満たすこととなる(**SHALL**). Activation Factor の提出は, ホストデバイス (スマートフォンなど) のロック解除とは別の操作となる(**SHALL**)が, ホストデバイスのロック解除に使用されたものと同じ Activation Factor が Authentication 操作で使用されてもよい(**MAY**). Activation Secret または Biometric Sample -および信号処理によって生成された Probe などの Biometric Sample から得られたすべての Biometric データ- は, Authentication 操作の直後に Zeroize されることとなる(**SHALL**). 
+Authenticator による Activation Secret の使用は, [Sec. 5.2.11](sec5_authenticators.md#s-5-2-11) の要件を満たすこととなる(**SHALL**). Biometric Activation Factor は, Authentication の連続失敗回数の制限を含め, [Sec. 5.2.3](sec5_authenticators.md#biometric_use) の要件を満たすこととなる(**SHALL**). Activation Factor の提出は, ホストデバイス (スマートフォンなど) のロック解除とは別の操作となる(**SHALL**)が, ホストデバイスのロック解除に使用されたものと同じ Activation Factor が Authentication 操作で使用されてもよい(**MAY**). Activation Secret または Biometric Sample -および信号処理によって生成された Probe などの Biometric Sample から得られたすべての Biometric データ- は, Authentication 操作の直後に Zeroize されることとなる(**SHALL**).
 
 #### Multi-Factor Cryptographic Device Verifiers {#mfcdv}
 
@@ -854,7 +854,7 @@ Biometric システムは, Presentation Attack Detection (PAD) を実装する�
 The biometric system **SHALL** allow no more than 5 consecutive failed authentication attempts or 10 consecutive failed attempts if PAD, meeting the above requirements, is implemented. Once that limit has been reached, the biometric authenticator **SHALL** impose a delay of at least 30 seconds before each subsequent attempt, with an overall limit of no more than 50 consecutive failed authentication attempts (100 if PAD is implemented). Once the overall limit is reached, the biometric system **SHALL** disable biometric user authentication and offer another factor (e.g., a different biometric modality or an activation secret if it is not already a required factor) if such an alternative method is already available.
 -->
 
-Biometric システムは, 認証の試行の連続失敗を5回まで, または, 上記の要件を満たす PAD が実装されている場合においては試行の連続失敗を 10 回まで許容することとなる(**SHALL**). ひとたびその制限に達すると, Biometric Authenticator は, 全体的な制限として認証の試行の連続失敗が 50 回 (PAD が実装されている場合は 100 回) を超えないとともに, その後の各試行の前に少なくとも 30 秒の遅延を課すこととなる(**SHALL**). ひとたび全体的な制限に達すると, Biometric システムは, Biometric User Authentication を無効にすることとなり(**SHALL**), 利用可能な代替方法がすでにある場合は, 他の要素 (例: 別の Biometric Modality, または, まだ要求された要素でない場合は Activation Secret) を提案することとなる.
+Biometric システムは, Authentication の試行の連続失敗を5回まで, または, 上記の要件を満たす PAD が実装されている場合においては試行の連続失敗を 10 回まで許容することとなる(**SHALL**). ひとたびその制限に達すると, Biometric Authenticator は, 全体的な制限として Authentication の試行の連続失敗が 50 回 (PAD が実装されている場合は 100 回) を超えないとともに, その後の各試行の前に少なくとも 30 秒の遅延を課すこととなる(**SHALL**). ひとたび全体的な制限に達すると, Biometric システムは, Biometric User Authentication を無効にすることとなり(**SHALL**), 利用可能な代替方法がすでにある場合は, 他の要素 (例: 別の Biometric Modality, または, まだ要求された要素でない場合は Activation Secret) を提案することとなる.
 
 <!--
 The verifier **SHALL** make a determination of sensor and endpoint performance, integrity, and authenticity. Acceptable methods for making this determination include, but are not limited to:
@@ -900,13 +900,13 @@ If comparison is performed centrally:
 Biometric samples collected in the authentication process **MAY** be used to train comparison algorithms or — with user consent — for other research purposes. Biometric samples and any biometric data derived from the biometric sample such as a probe produced through signal processing **SHALL** be zeroized immediately after any training or research data has been derived.
 -->
 
-Authentication プロセスの中で収集された Biometric Sampleは, 比較アルゴリズムのトレーニングに使用するか, または -ユーザーの同意のもとで- 他の研究目的に使用されてもよい(**MAY**). Biometric Sample, および信号処理によって生成された Probe などの Biometric Sample から得られたすべての Biometric データは, すべてのトレーニングまたは研究データが得られた直後に Zeroize されることとなる(**SHALL**). 
+Authentication プロセスの中で収集された Biometric Sampleは, 比較アルゴリズムのトレーニングに使用するか, または -ユーザーの同意のもとで- 他の研究目的に使用されてもよい(**MAY**). Biometric Sample, および信号処理によって生成された Probe などの Biometric Sample から得られたすべての Biometric データは, すべてのトレーニングまたは研究データが得られた直後に Zeroize されることとなる(**SHALL**).
 
 <!--
 Biometric authentication technologies **SHALL** provide similar performance for subscribers of different demographic types (racial background, gender, ethnicity, etc.).
 -->
 
-Biometric Authentication 技術は, さまざまな人口統計的タイプ (人種的背景, 性別, 民族など) の Subscriber に対して同様のパフォーマンスを提供することとなる(**SHALL**). 
+Biometric Authentication 技術は, さまざまな人口統計的タイプ (人種的背景, 性別, 民族など) の Subscriber に対して同様のパフォーマンスを提供することとなる(**SHALL**).
 
 ### Attestation {#attestation}
 
@@ -964,7 +964,7 @@ Approved な暗号アルゴリズムは, 必要とされる場所で Phishing �
 Authenticators that involve the manual entry of an authenticator output, such as out-of-band and OTP authenticators, **SHALL NOT** be considered phishing resistant because the manual entry does not bind the authenticator output to the specific session being authenticated. In an AitM attack, an impostor verifier could replay the OTP authenticator output to the verifier and successfully authenticate.
 -->
 
-Out-of-band や OTP Authenticator のような, Authenticator 出力の手動入力を伴う Authenticator は, Phishing 耐性があると見なされることはない(**SHALL NOT**), なぜならば, 手動入力は Authenticator 出力を特定の Authenticated session に Bind しないためである. AitM Attack では, Impostor が偽装する Verifier が OTP Authenticator の出力を Verifier に Replay し, 認証に成功する可能性がある.
+Out-of-band や OTP Authenticator のような, Authenticator 出力の手動入力を伴う Authenticator は, Phishing 耐性があると見なされることはない(**SHALL NOT**), なぜならば, 手動入力は Authenticator 出力を特定の Authenticated session に Bind しないためである. AitM Attack では, Impostor が偽装する Verifier が OTP Authenticator の出力を Verifier に Replay し, Authentication に成功する可能性がある.
 
 <!--
 While an individual authenticator may be phishing resistant, phishing resistance for a given subscriber account is only achieved when all methods of authentication are phishing resistant.
@@ -990,7 +990,7 @@ Channel Binding を伴う Authentication Protocol は, Authenticated Protected C
 An example of a phishing resistant authentication protocol that uses channel binding is client-authenticated TLS, because the client signs the authenticator output along with earlier messages from the protocol that are unique to the particular TLS connection being negotiated.
 -->
 
-Channel Binding を使用する Phishing 耐性のある Authentication Protocol の例は, クライアント認証 TLS である. なぜならば, ネゴシエートされた特定の TLS 接続に一意の, Protocol からの以前のメッセージと共に Authenticator の出力にクライアントが署名するためである.
+Channel Binding を使用する Phishing 耐性のある Authentication Protocol の例は, Client-authenticated TLS である. なぜならば, ネゴシエートされた特定の TLS 接続に一意の, Protocol からの以前のメッセージと共に Authenticator の出力にクライアントが署名するためである.
 
 #### Verifier Name Binding
 
@@ -1006,7 +1006,7 @@ Authenticator Name Binding を伴う Authentication Protocol は, Authenticated 
 In situations where the verifier and CSP are separate entities (as shown by the dotted line in [[SP800-63]](../_sp800-63/sec4_model.md#fig-1){:latex-href="#ref-SP800-63"} Figure 1), communications between the verifier and CSP **SHALL** occur through a mutually authenticated secure channel (such as a client-authenticated TLS connection) using approved cryptography.
 -->
 
-Verifier と CSP が別々のエンティティである状況では ([[SP800-63]](../_sp800-63/sec4_model.md#fig-1){:latex-href="#ref-SP800-63"} の点線で示されているように, Verifier と CSP 間の通信は, Approved Cryptography を使用して, (クライアント認証 TLS 接続のような) 相互に Authenticate された安全なチャネルを介して行われることとなる(**SHALL**). 
+Verifier と CSP が別々のエンティティである状況では ([[SP800-63]](../_sp800-63/sec4_model.md#fig-1){:latex-href="#ref-SP800-63"} の点線で示されているように, Verifier と CSP 間の通信は, Approved Cryptography を使用して, (Client-authenticated TLS 接続のような) 相互に Authenticate された安全なチャネルを介して行われることとなる(**SHALL**).
 
 ### Verifier Compromise Resistance {#verifier-secrets}
 
@@ -1032,7 +1032,7 @@ Verifier Compromise Resistant は様々な方法で達成できる, 例えば:
 - Store the expected authenticator output in hashed form. This method can be used with some look-up secret authenticators (described in [Sec. 5.1.2](sec5_authenticators.md#lookupsecrets)), for example.
 -->
 
-- 予想される Authenticator 出力を Hash 形式で保管する. このメソッドは, 例えば一部の Look-Up Secret 
+- 予想される Authenticator 出力を Hash 形式で保管する. このメソッドは, 例えば一部の Look-Up Secret
 Authenticator ([Sec. 5.1.2](sec5_authenticators.md#lookupsecrets) で説明) で使用できる.
 
 <!--

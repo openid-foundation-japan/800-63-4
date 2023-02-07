@@ -51,7 +51,7 @@ Session Secret は Subscriber のソフトウェアと Access されるサービ
 Continuity of authenticated sessions **SHALL** be based upon the possession of a session secret issued by the verifier at the time of authentication and optionally refreshed during the session. The nature of a session depends on the application, such as:
 -->
 
-認証済 Session の継続性は, Authentication 時に Verifier に発行され, オプションで Session 中に更新される Session Secret を保持しているかどうかに基づいている必要がある (**SHALL**).
+Authenticated Session の継続性は, Authentication 時に Verifier に発行され, オプションで Session 中に更新される Session Secret を保持しているかどうかに基づいている必要がある (**SHALL**).
 Session の性質は次のようなアプリケーションによって異なる.
 
 <!--
@@ -110,7 +110,7 @@ In addition, secrets used for session binding **SHOULD** be erased on the subscr
 Authenticated sessions **SHALL NOT** fall back to an insecure transport, such as from https to http, following authentication.
 -->
 
-認証済 Session は Authentication 後に, HTTPS から HTTP など, セキュアでない通信路にフォールバックしてはならない (**SHALL NOT**).
+Authenticated Session は Authentication 後に, HTTPS から HTTP など, セキュアでない通信路にフォールバックしてはならない (**SHALL NOT**).
 
 <!--
 URLs or POST content **SHALL** contain a session identifier that **SHALL** be verified by the RP to protect against cross-site request forgery.
@@ -182,7 +182,7 @@ Secure Device Identification のその他の手法 - mutual TLS, Token Binding, 
 Periodic reauthentication of sessions **SHALL** be performed to confirm the continued presence of the subscriber at an authenticated session (i.e., that the subscriber has not walked away without logging out).
 -->
 
-Session の定期的な Reauthentication を実行し, 認証済 Session に Subscriber が引き続き存在することを確認すること (**SHALL**).
+Session の定期的な Reauthentication を実行し, Authenticated Session に Subscriber が引き続き存在することを確認すること (**SHALL**).
 (i.e., Subscriber がログアウトせずに立ち去っていないか)
 
 <!--
@@ -230,7 +230,7 @@ When using a federation protocol and Identity Provider (IdP) to authenticate at 
 -->
 
 [[SP800-63C]](../_sp800-63c/sec1_purpose.md#purpose){:latex-href="#ref-SP800-63C"} で述べたように, RP に Authenticate するために Federation Protocol と Identity Provider (IdP) を使用する場合は, Session Management と Reauthentication に特別な考慮事項が適用される.
-Federation Protocol は Assertion を用いて IdP での Authentication イベントを RP に伝達し, RP はこの Assertion の検証の成功をもって認証済 Session を開始する.
+Federation Protocol は Assertion を用いて IdP での Authentication イベントを RP に伝達し, RP はこの Assertion の検証の成功をもって Authenticated Session を開始する.
 IdP と RP は Session を個別に管理し, Federation Protocol は　IdP と RP の Session Management を接続しないため, IdP と RP での Session の終了は互いに独立して行われる.
 同様に, Subscriber が複数の RP で持つ Session は, 互いに独立して確立および終了される.
 
