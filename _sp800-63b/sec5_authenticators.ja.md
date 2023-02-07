@@ -1069,11 +1069,23 @@ In contrast, memorized secrets are not considered replay resistant because the a
 
 ### Authentication Intent {#intent}
 
+<!--
 An authentication process demonstrates intent if it requires the subject to explicitly respond to each authentication or reauthentication request. The goal of authentication intent is to make it more difficult for authenticators (e.g., multi-factor cryptographic devices) to be used without the subject's knowledge, such as by malware on the endpoint. Authentication intent **SHALL** be established by the authenticator itself, although multi-factor cryptographic devices **MAY** establish intent by reentry of the activation factor for the authenticator.
+-->
 
+Subject がそれぞれの Authentication または Reauthentication の要求に明示的に応答する必要がある場合, Authentication Process は Intent (意図)を実証する. Authentication Intent のゴールは, エンドポイント上のマルウェアなどによって, Subject の知らないうちに Authenticator (例: Multi-Factor Cryptographic Device) が使用されるのをより困難にすることである. Authentication Intent は, Authenticator 自体によって確立されることとなる(**SHALL**)が, Multi-Factor Cryptographic Device は, Authenticator の Activation Factor の再入力によって Intent を確立してもよい(**MAY**).
+
+<!--
 Authentication intent **MAY** be established in a number of ways. Authentication processes that require the subject's intervention establish intent (e.g., a claimant entering an authenticator output from an OTP device). Cryptographic devices that require user action for each authentication or reauthentication operation also establish intent (e.g., pushing a button or reinsertion).
+-->
 
+Authentication Intent は, いろいろな方法で確立されてもよい(**MAY**). Subject の介入を必要とする Authentication Process は, Intent を確立する (例: OTP デバイスからの Authenticator 出力を入力するClaimant). それぞれの Authentication または Reauthentication 操作ごとにユーザーアクションを必要とする暗号デバイスも, Intent を確立する (例: ボタンを押す, 再挿入する).
+
+<!--
 Depending on the modality, presentation of a biometric characteristic may or may not establish authentication intent. Behavioral biometrics similarly may or may not establish authentication intent because they do not always require a specific action on the claimant's part.
+-->
+
+Modality に応じて, Biometric Characteristic の提示は Authentication Intent を確立する場合と確立しない場合がある. Behavioral Biometrics も, Claimant 側での特定のアクションを必ずしも必要としないため, 同様に Authentication Intent を確立する場合と確立しない場合がある,
 
 ### Restricted Authenticators {#restricted}
 
