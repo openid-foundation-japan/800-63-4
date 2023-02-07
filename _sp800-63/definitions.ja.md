@@ -147,14 +147,12 @@ Authentication Protocol
 : Claimant が正規の Authenticator の所有および管理権限を示すことで自身の Identity を確立するプロセスにおいて, Claimant と Verifier の間でやりとりされる一連のメッセージの定義. Claimant が意図した Verifier とコミュニケーションしていることを立証するためのプロセスを含むこともある.
 
 Authentication Secret
-<!-- : A generic term for any secret value that an attacker could use to impersonate the subscriber in an authentication protocol. -->
-
-: あらゆる鍵を示す一般的な呼び名. Authentication Protocol において Attacker が Subscriber になりすますために利用することもできる.
-
 <!--
+: A generic term for any secret value that an attacker could use to impersonate the subscriber in an authentication protocol.
     These are further divided into *short-term authentication secrets*, which are only useful to an attacker for a limited period of time, and *long-term authentication secrets*, which allow an attacker to impersonate the subscriber until they are manually reset. The authenticator secret is the canonical example of a long-term authentication secret, while the authenticator output, if it is different from the authenticator secret, is usually a short-term authentication secret.
 -->
 
+: あらゆる鍵を示す一般的な呼び名. Authentication Protocol において Attacker が Subscriber になりすますために利用することもできる.
     Authentication Secret は *short-term authentication secrets* と *long-term authentication secrets* に分類することができ, 前者は限定的な期間のみ利用可能なもの, 後者は手動でリセットされるまで使い続けられるものを示す. Authenticator Secret は long-term authentication secret の代表的な例であり, Authenticator Output する鍵が Authenticator Secret と異なる場合, その出力された鍵は一般的に short-term authentication secret である.
 
 Authenticator [](#authenticator){:name="authenticator"}
