@@ -63,9 +63,9 @@ An effective notice will take into account user experience design standards and 
 ## Use Limitation
 {% endcomment %}
 
-このガイドラインは、CSP に対して、Identity Proofing、Authentiation、Authorization、または Attribute Assertion、関連する詐欺の軽減、あるいは法律または法的プロセスを遵守する以外の目的で Attribute を処理 (Processing) することから生じ得るプライバシーリスクに見合った、予測可能性（PII および情報システムによるその処理 (Processing) について、個人、所有者、および運用者による信頼性の高い推測を可能にすること）および管理可能性（PII の変更、削除、選択的開示など、粒度の細かい管理のための機能を提供すること）の目標を維持する手段を用いることを求めている [[NISTIR8062]](sec11_references.ja.md#ref-NISTIR8062).。
+このガイドラインは、CSP に対して、Identity Proofing、Authentiation、Authorization、または Attribute Assertion、関連する詐欺の軽減、あるいは法律または法的プロセスを遵守する以外の目的で Attribute を処理 (Processing) することから生じ得るプライバシーリスクに見合った、Predictability（PII および情報システムによるその処理 (Processing) について、個人、所有者、および運用者による信頼性の高い推測を可能にすること）およびManageability（PII の変更、削除、選択的開示など、粒度の細かい管理のための機能を提供すること）の目標を維持する手段を用いることを求めている [[NISTIR8062]](sec11_references.ja.md#ref-NISTIR8062).。
 
-CSP は、Subscriber に 非 Identity サービスを提供することを含め、Attribute を処理 (Processing) することのために様々なビジネス目的を持っているかもしれない。しかし、Subject に開示される目的以外のために Attribute を処理 (Processing) することは、さらなるプライバシーリスクを生じさせる可能性がある。CSP は、追加的な処理 (Processing) から生じるプライバシーリスクに見合った適切な手段を決定することができる。たとえば、適用される法律、規制、またはポリシーがない場合、Subscriber が要求する非 Identity サービスを提供するために Attribute を処理 (Processing) する際に同意を得る必要はない場合があるが、通知によって Subscriber が処理 (Processing) について信頼性の高い仮定（予測可能性）を維持することは可能であろう。その他の Attribute の処理 (Processing) には、同意を得ること、または特定の Attribute の使用または開示について Subscriber がよりコントロールできるようにすること（管理可能性）を必要とする、異なるプライバシーリスクが伴う場合がある。Subscriber の同意は意味がある必要がある。したがって、CSP が同意手段を使用する場合、追加的な使用に対する Subscriber の承諾を Identity サービス提供の条件とすることはできない。
+CSP は、Subscriber に 非 Identity サービスを提供することを含め、Attribute を処理 (Processing) することのために様々なビジネス目的を持っているかもしれない。しかし、Subject に開示される目的以外のために Attribute を処理 (Processing) することは、さらなるプライバシーリスクを生じさせる可能性がある。CSP は、追加的な処理 (Processing) から生じるプライバシーリスクに見合った適切な手段を決定することができる。たとえば、適用される法律、規制、またはポリシーがない場合、Subscriber が要求する非 Identity サービスを提供するために Attribute を処理 (Processing) する際に同意を得る必要はない場合があるが、通知によって Subscriber が処理 (Processing) について信頼性の高い仮定（Predictability）を維持することは可能であろう。その他の Attribute の処理 (Processing) には、同意を得ること、または特定の Attribute の使用または開示について Subscriber がよりコントロールできるようにすること（Manageability）を必要とする、異なるプライバシーリスクが伴う場合がある。Subscriber の同意は意味がある必要がある。したがって、CSP が同意手段を使用する場合、追加的な使用に対する Subscriber の承諾を Identity サービス提供の条件とすることはできない。
 
 提案された処理 (Processing) が認められている処理 (Processing) の範囲外であるかどうか、または適切なプライバシーリスク緩和策について疑問がある場合は、SAOP に相談する。
 
@@ -93,7 +93,7 @@ Privacy Act は、記録システムを維持する連邦政府 CSP に対し、
 The Privacy Act requires federal CSPs that maintain a system of records to follow procedures to enable applicants to access and, if incorrect, amend their records. Any Privacy Act Statement should include a reference to the applicable SORN(s) (see [Sec. 5.1.2](sec5_ial.md#PrivacyReqs)), which provide the applicant with instructions on how to make a request for access or correction. Non-federal CSPs should have comparable procedures, including contact information for any third parties if they are the source of the information.
 {% endcomment %}
 
-CSP は、Applicant がオンラインで Identity Proofing および Enrollment プロセスを完了できない場合、プロセスを完了するための代体手法（例：顧客サービスセンターでの対面）の利用可能性を Applicant に明示する必要がある。
+CSP は、Applicant がオンラインで Identity Proofing および Enrollment プロセスを完了できない場合、プロセスを完了するための代替手法（例：顧客サービスセンターでの対面）の利用可能性を Applicant に明示する必要がある。
 
 {% comment %}
 CSPs should make the availability of alternative methods for completing the process clear to applicants (e.g., in person at a customer service center) in the event an applicant is unable to establish their identity and complete the registration process online.
