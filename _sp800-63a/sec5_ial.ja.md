@@ -769,7 +769,7 @@ The CSP **SHALL** verify the binding of the applicant to the claimed identity by
 #### In-person Identity Proofing
 {% endcomment %}
 
-CSPは、提示されたSUPERIOR または STRONG Evidenceに含まれる顔写真と、Applicantの顔画像の物理的またはバイオメトリクス比較によって、Applicant が Claimed IdentityとバインドできるかどうかをVerifyするものとする(**SHALL**)。
+CSPは、提示されたSUPERIOR または STRONG Evidenceに含まれる顔写真と、Applicantの顔画像の物理的またはBiometrics比較によって、Applicant が Claimed IdentityとバインドできるかどうかをVerifyするものとする(**SHALL**)。
 
 {% comment %}
 The CSP **SHALL** verify the binding of the applicant to the claimed identity by physical or biometric comparison of the facial image of the applicant to the facial portrait contained on a piece of presented SUPERIOR or STRONG evidence.
