@@ -147,10 +147,9 @@ Authentication Protocol
 : Claimant が正規の Authenticator の所有および管理権限を示すことで自身の Identity を確立するプロセスにおいて, Claimant と Verifier の間でやりとりされる一連のメッセージの定義. Claimant が意図した Verifier とコミュニケーションしていることを立証するためのプロセスを含むこともある.
 
 Authentication Secret
-<!--
-: A generic term for any secret value that an attacker could use to impersonate the subscriber in an authentication protocol.
-    These are further divided into *short-term authentication secrets*, which are only useful to an attacker for a limited period of time, and *long-term authentication secrets*, which allow an attacker to impersonate the subscriber until they are manually reset. The authenticator secret is the canonical example of a long-term authentication secret, while the authenticator output, if it is different from the authenticator secret, is usually a short-term authentication secret.
--->
+<!-- : A generic term for any secret value that an attacker could use to impersonate the subscriber in an authentication protocol.
+    These are further divided into *short-term authentication secrets*, which are only useful to an attacker for a limited period of time, and *long-term authentication secrets*, which allow an attacker to impersonate the subscriber until they are manually reset. The authenticator secret is the canonical example of a long-term authentication secret, while the authenticator output, if it is different from the authenticator secret, is usually a short-term authentication secret. -->
+
 
 : あらゆる鍵を示す一般的な呼び名. Authentication Protocol において Attacker が Subscriber になりすますために利用することもできる.
     Authentication Secret は *short-term authentication secrets* と *long-term authentication secrets* に分類することができ, 前者は限定的な期間のみ利用可能なもの, 後者は手動でリセットされるまで使い続けられるものを示す. Authenticator Secret は long-term authentication secret の代表的な例であり, Authenticator Output する鍵が Authenticator Secret と異なる場合, その出力された鍵は一般的に short-term authentication secret である.
@@ -247,8 +246,7 @@ Claimant
 
 Claimed Address
 
-<!--
-: The physical location asserted by a subject where they can be reached. It includes the individual's residential street address and may also include their mailing address.
+<!-- : The physical location asserted by a subject where they can be reached. It includes the individual's residential street address and may also include their mailing address.
     For example, a person with a foreign passport living in the U.S. will need to give an address when going through the identity proofing process. This address would not be an "address of record" but a "claimed address."
 -->
 
@@ -271,8 +269,7 @@ Core Attributes
 : CSP が Identity Proofing に必要であると判断し, 文書化した Identity Attribute のセット.
 
 Credential
-<!--
-: An object or data structure that authoritatively binds an identity - via an identifier or identifiers - and (optionally) additional attributes, to at least one authenticator possessed and controlled by a subscriber.
+<!-- : An object or data structure that authoritatively binds an identity - via an identifier or identifiers - and (optionally) additional attributes, to at least one authenticator possessed and controlled by a subscriber.
     A credential is issued, stored, and maintained by the CSP. Copies of information from the credential can be possessed by the subscriber, typically in the form of a one or more digital certificates that are often contained, along with their associated private keys, in an authenticator.
 -->
 
@@ -285,8 +282,7 @@ Credential Service Provider (CSP)
 : 信頼されたエンティティで, Identity サービスへの Applicant の Identity Proofing や, Subscriber Account への Authenticator の登録などの機能を持つ. CSP は独立した第三者となることがある.
 
 Cross-site Request Forgery (CSRF)
-<!--
-: An attack in which a subscriber currently authenticated to an RP and connected through a secure session browses to an attacker's website, causing the subscriber to unknowingly invoke unwanted actions at the RP.
+<!-- : An attack in which a subscriber currently authenticated to an RP and connected through a secure session browses to an attacker's website, causing the subscriber to unknowingly invoke unwanted actions at the RP.
     For example, if a bank website is vulnerable to a CSRF attack, it may be possible for a subscriber to unintentionally authorize a large money transfer, merely by viewing a malicious link in a webmail message while a connection to the bank is open in another browser window.
 -->
 
@@ -304,8 +300,7 @@ Cryptographic Authenticator
 : エンドポイントを介した Verifier との直接通信により, Authentication Secret の所有を証明する Authenticator .
 
 Cryptographic Key
-<!--
-: A value used to control cryptographic operations, such as decryption, encryption, signature generation, or signature verification. For the purposes of these guidelines, key requirements shall meet the minimum requirements stated in Table 2 of NIST [[SP800-57Part1]](sec8_references.md#ref-SP800-57P1).
+<!-- : A value used to control cryptographic operations, such as decryption, encryption, signature generation, or signature verification. For the purposes of these guidelines, key requirements shall meet the minimum requirements stated in Table 2 of NIST [[SP800-57Part1]](sec8_references.md#ref-SP800-57P1).
     See also Asymmetric Keys, Symmetric Key.
  -->
 
@@ -368,8 +363,7 @@ Equity
 : EO 13985 によると, Equity とは, 黒人, ラテンアメリカ人, 先住民, アジア系アメリカ人, 太平洋諸島民, その他の有色人種など, これまで十分なサービスを受けてこなかったコミュニティに属する個人を含め, すべての個人を一貫して公平, 公正, かつ公平に扱うことを指す. 宗教的少数派の人々, レズビアン, ゲイ, バイセクシャル, トランスジェンダー, クィア (LGBTQ+) の人々, 障害者, 地方に住む人々, その他根強い貧困や不平等から悪影響を受ける人々など.
 
 Federal Information Processing Standard (FIPS)
-<!--
-: Under the Information Technology Management Reform Act (Public Law 104-106), the Secretary of Commerce approves the standards and guidelines that the National Institute of Standards and Technology (NIST) develops for federal computer systems. NIST issues these standards and guidelines as Federal Information Processing Standards (FIPS) for government-wide use. NIST develops FIPS when there are compelling federal government requirements, such as for security and interoperability, and there are no acceptable industry standards or solutions. See background information for more details.
+<!-- : Under the Information Technology Management Reform Act (Public Law 104-106), the Secretary of Commerce approves the standards and guidelines that the National Institute of Standards and Technology (NIST) develops for federal computer systems. NIST issues these standards and guidelines as Federal Information Processing Standards (FIPS) for government-wide use. NIST develops FIPS when there are compelling federal government requirements, such as for security and interoperability, and there are no acceptable industry standards or solutions. See background information for more details.
     FIPS documents are available online on the FIPS home page: <https://www.nist.gov/itl/fips.cfm>
 -->
 
@@ -407,8 +401,7 @@ Front-Channel Communication
 : ブラウザ等を媒介とし, 2つのシステム間でリダイレクトを用いて行われるコミュニケーション. これは通常メッセージ受信者がホストする URL に HTTP Query Parameter を付与することで実現される.
 
 Hash Function
-<!--
-: A function that maps a bit string of arbitrary length to a fixed-length bit string. Approved hash functions satisfy the following properties:
+<!-- : A function that maps a bit string of arbitrary length to a fixed-length bit string. Approved hash functions satisfy the following properties:
     1. One-way - It is computationally infeasible to find any input that maps to any pre-specified output; and
     2. Collision resistant - It is computationally infeasible to find any two distinct inputs that map to the same output.
 -->
@@ -460,8 +453,7 @@ Issuing Source
 : Identity Evidence として利用可能なデータや Assertion などのデジタルなエビデンス, 物理的ドキュメント等を責任を持って生成するオーソリティー.
 
 Kerberos
-<!--
-: A widely used authentication protocol developed at MIT. In "classic" Kerberos, users share a secret password with a Key Distribution Center (KDC). The user (Alice) who wishes to communicate with another user (Bob) authenticates to the KDC and the KDC furnishes a "ticket" to use to authenticate with Bob.
+<!-- : A widely used authentication protocol developed at MIT. In "classic" Kerberos, users share a secret password with a Key Distribution Center (KDC). The user (Alice) who wishes to communicate with another user (Bob) authenticates to the KDC and the KDC furnishes a "ticket" to use to authenticate with Bob.
     See [[SP800-63C]](../_sp800-63c/sec1_purpose.md#purpose){:latex-href="#ref-SP800-63C"} Sec. 11.2 for more information.
 -->
 
@@ -494,8 +486,7 @@ Mobile Code
 : 実行コードであり, 通常は提供元から別のコンピューターシステムに転送されたのち実行されるもの. 転送は Network を介す (e.g., Web ページに埋め込まれた JavaScript) が, 物理的なメディアを介して転送されることもある.
 
 Multi-Factor
-<!--
-: A characteristic of an authentication system or an authenticator that requires more than one distinct [authentication factor](definitions.md#af) for successful authentication. MFA can be performed using a single authenticator that provides more than one factor or by a combination of authenticators that provide different factors.
+<!-- : A characteristic of an authentication system or an authenticator that requires more than one distinct [authentication factor](definitions.md#af) for successful authentication. MFA can be performed using a single authenticator that provides more than one factor or by a combination of authenticators that provide different factors.
     The three authentication factors are something you know, something you have, and something you are.
 -->
 
@@ -503,8 +494,7 @@ Multi-Factor
     Authentication Factor としては, something you know, something you have, something you are の3種類がある.
 
 Multi-Factor Authentication (MFA) [](#mfa-definition){:name="mfa-definition"}
-<!--
-: An authentication system that requires more than one distinct [authentication factor](definitions.md#af) for successful authentication. Multi-factor authentication can be performed using a multi-factor authenticator or by a combination of authenticators that provide different factors.
+<!-- : An authentication system that requires more than one distinct [authentication factor](definitions.md#af) for successful authentication. Multi-factor authentication can be performed using a multi-factor authenticator or by a combination of authenticators that provide different factors.
     The three authentication factors are *something you know*, *something you have*, and *something you are*.
 -->
 
@@ -637,8 +627,7 @@ Presentation Attack Detection (PAD)
 : Presentation Attack の自動検知. Presentation Attack Detection 手法のサブセットである *liveness detection* では, 解剖学的特徴または非自発的または自発的反応の測定および分析を行い, Biometric サンプルが生体の Subject から直接読み取られたものかどうかを判定する.
 
 Protected Session
-<!--
-: A session wherein messages between two participants are encrypted and integrity is protected using a set of shared secrets called session keys.
+<!-- : A session wherein messages between two participants are encrypted and integrity is protected using a set of shared secrets called session keys.
     A protected session is said to be *authenticated* if, during the session, one participant proves possession of one or more authenticators in addition to the session keys, and if the other party can verify the identity associated with the authenticator(s). If both participants are authenticated, the protected session is said to be *mutually authenticated*.
 -->
 
