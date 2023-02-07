@@ -36,7 +36,7 @@ See [[SP800-63]](../_sp800-63/sec1_purpose.md#purpose){:latex-href="#ref-SP800-6
 Personal information collected during and subsequent to identity proofing **MAY** be made available to the subscriber by the digital identity service. The release or online availability of any PII or other personal information, whether self-asserted or validated, by federal government agencies requires multi-factor authentication in accordance with [[EO13681]](references.md#ref-EO13681). Therefore, federal government agencies **SHALL** select a minimum of AAL2 when PII or other personal information is made available online.
 -->
 
-Identity Proofing の最中およびその後に収集された Personal Information は, Digital Identity サービスによって Subscriber が利用できるようになってもよい(**MAY**). 連邦政府機関による任意の PII またはその他の Personal Information のリリース, またはオンラインで利用可能になる場合, self-asserted か validated かにかかわらず, [[EO13681]](references.md#ref-EO13681) に従って Multi-Factor Authentication を必要とする. したがって連邦政府機関は, PII またはその他の Personal Information がオンラインで利用可能になる場合には, 最低限 AAL2 を選択することになる(**SHALL**).
+Identity Proofing の最中およびその後に収集された Personal Information は, Digital Identity サービスを介して Subscriber が利用できるようにしてもよい(**MAY**). 連邦政府機関によって任意の PII またはその他の Personal Information が開示されたりオンラインで利用可能になる場合, その情報が Self-asserted か Validated かにかかわらず, [[EO13681]](references.md#ref-EO13681) に従って Multi-Factor Authentication が要求される. したがって連邦政府機関は, PII またはその他の Personal Information をオンラインで利用可能にする場合には, 最低限 AAL2 を選択することになる(**SHALL**).
 
 ## Authentication Assurance Level 1
 
@@ -96,7 +96,7 @@ Subscriber Session の定期的な Reauthentication は, [Sec. 7.2](sec7_session
 The CSP **SHALL** employ appropriately tailored security controls from the baseline security controls defined in [[SP800-53]](references.md#ref-SP800-53) or equivalent federal (e.g., [[FEDRAMP]](references.md#ref-FEDRAMP)) or industry standard that the organization has determined for the information systems, applications, and online services that these guidelines are used to protect. The CSP **SHALL** ensure that the minimum assurance-related controls for the appropriate systems, or equivalent, are satisfied.
 -->
 
-CSP は, [[SP800-53]](references.md#ref-SP800-53) または同等の Federal (例: [[FEDRAMP]](references.md#ref-FEDRAMP)) で定義されたベースラインセキュリティコントロール, またはこれらのガイドラインを使用して保護する対象となる情報システム, アプリケーション, オンラインサービスのために組織が決定した業界標準から, 適切に誂えられたセキュリティコントロールを採用することになる(**SHALL**). CSP は, 適切なシステムまたは同等のシステムに対する最低限の assurance-related controls が満たされていることを保証することになる(**SHALL**).
+CSP は, [[SP800-53]](references.md#ref-SP800-53) または同等の連邦 (例: [[FEDRAMP]](references.md#ref-FEDRAMP)) ないし業界標準で定義されたベースラインセキュリティコントロールから適切に調整されたセキュリティコントロールを採用することになる(**SHALL**). 参考とするガイドラインは, 保護する対象となる情報システム, アプリケーション, オンラインサービスのために組織が決定すること. CSP は, 適切なシステムまたは同等のシステムに対する最低限の assurance-related controls が満たされていることを保証することになる(**SHALL**).
 
 ###  Records Retention Policy {#aal1records}
 
@@ -120,7 +120,7 @@ AAL2 は, Claimant が Subscriber Account に Bind された Authenticator を�
 At AAL2, authentication **SHALL** occur by the use of either a multi-factor authenticator or a combination of two single-factor authenticators. A multi-factor authenticator requires two factors to execute a single authentication event, such as a cryptographically secure device with an integrated biometric sensor that is required to activate the device. Authenticator requirements are specified in [Sec. 5](sec5_authenticators.md#AAL_SEC5).
 -->
 
-AAL2 Authentication は, Multi-Factor Authenticator か, 2つの Single-Factor Authenticator の組み合わせのいずれかを使用することで発生することになる(**SHALL**). Multi-Factor Authenticator は単一の Authentication イベントを実行するために, デバイスをアクティブにするために必要となる Biometric センサーが統合された暗号的にセキュアなデバイスのような, 2つの要素を必要とする. Authenticator の要件は [Sec. 5](sec5_authenticators.md#AAL_SEC5) に指定されている.
+AAL2 Authentication は, Multi-Factor Authenticator か, 2つの Single-Factor Authenticator の組み合わせのいずれかを使用することで発生することになる (**SHALL**). Multi-Factor Authenticator は, 単一の Authentication イベントを実行するために2つの要素を必要とする. 例として, デバイスを Activate するために必要となる Biometric センサーが統合された暗号的にセキュアなデバイスなどが挙げられる. Authenticator の要件は [Sec. 5](sec5_authenticators.md#AAL_SEC5) に指定されている.
 
 <!--
 When a multi-factor authenticator is used, any of the following **MAY** be used:
@@ -137,7 +137,7 @@ Multi-Factor Authenticator が使用されるとき, 以下のいずれかが使
 When a combination of two single-factor authenticators is used, the combination **SHALL** include a Memorized Secret authenticator ([Sec. 5.1.1](sec5_authenticators.md#memsecret)) and one physical authenticator (i.e., "something you have") from the following list:
 -->
 
-2つの Single-Factor Authenticator の組み合わせが使用されるとき, その組み合わせは, 以下のリストから Memorized Secret Authenticator ([Sec. 5.1.1](sec5_authenticators.md#memsecret)) と 1つの物理 Authenticator (すなわち, "something you have") を含むことになる(**SHALL**).
+2つの Single-Factor Authenticator の組み合わせが使用されるとき, その組み合わせは, 以下のリストから1つの Memorized Secret Authenticator ([Sec. 5.1.1](sec5_authenticators.md#memsecret)) と 1つの物理 Authenticator (すなわち, "something you have") を含むことになる(**SHALL**).
 
 * Look-Up Secret ([Sec. 5.1.2](sec5_authenticators.md#lookupsecrets))
 * Out-of-Band Device ([Sec. 5.1.3](sec5_authenticators.md#out-of-band))
@@ -157,7 +157,7 @@ When a combination of two single-factor authenticators is used, the combination 
 Cryptographic authenticators used at AAL2 **SHALL** use approved cryptography. Authenticators procured by federal government agencies **SHALL** be validated to meet the requirements of [[FIPS140]](references.md#ref-FIPS140-2) Level 1. Software-based authenticators that operate within the context of an operating system **MAY**, where applicable, attempt to detect compromise (e.g., by malware) of the platform in which they are running. They **SHOULD NOT** complete the operation when such a compromise is detected. At least one authenticator used at AAL2 **SHALL** be replay resistant as described in [Sec. 5.2.8](sec5_authenticators.md#replay). Authentication at AAL2 **SHOULD** demonstrate authentication intent from at least one authenticator as discussed in [Sec. 5.2.9](sec5_authenticators.md#intent).
 -->
 
-AAL2 で使用される Cryptographic Authenticator は承認された暗号を使用することになる(**SHALL**). 連邦政府機関によって調達された Authenticator は [[FIPS140]](references.md#ref-FIPS140-2) Level 1 の要件に適合していることを検証されることになる(**SHALL**). オペレーティングシステムのコンテキスト内で動作する Software-Based Authenticator は, 可能な場合, それらが実行中のプラットフォームで(例: マルウェアによる)侵害の検出を試みてもよい(**MAY**). また, そのような侵害が検出された場合は操作を完了しないほうがよい(**SHOULD NOT**). AAL2 で使用される少なくとも1つの Authenticator は, [Sec. 5.2.8](sec5_authenticators.md#replay) で説明されているように, リプレイ耐性を持つことになる(**SHALL**). AAL2 での Authentication は, [Sec. 5.2.9](sec5_authenticators.md#intent) で説明されているように, 少なくとも1つの Authenticator から Authentication の意思を実演で示す必要がある(**SHOULD**).
+AAL2 で使用される Cryptographic Authenticator は Approved Cryptography を使用することになる(**SHALL**). 連邦政府機関によって調達された Authenticator は [[FIPS140]](references.md#ref-FIPS140-2) Level 1 の要件に適合していることを検証されることになる(**SHALL**). オペレーティングシステムのコンテキスト内で動作する Software-Based Authenticator は, 可能な場合, それらが実行中のプラットフォームで(例: マルウェアによる)侵害の検出を試みてもよい(**MAY**). また, そのような侵害が検出された場合は操作を完了しないべきである (**SHOULD NOT**). AAL2 で使用される少なくとも1つの Authenticator は, [Sec. 5.2.8](sec5_authenticators.md#replay) で説明されているように, リプレイ耐性を持つことになる(**SHALL**). AAL2 での Authentication は, [Sec. 5.2.9](sec5_authenticators.md#intent) で説明されているように, 少なくとも1つの Authenticator から Authentication Intent を実施する必要がある(**SHOULD**).
 
 <!--
 Communication between the claimant and verifier **SHALL** be via an authenticated protected channel to provide confidentiality of the authenticator output and resistance to AitM attacks.
@@ -173,13 +173,13 @@ Claimant と Verifier の間の通信は, Authenticator の出力の機密性と
 When a biometric factor is used in authentication at AAL2, the performance requirements stated in [Sec. 5.2.3](sec5_authenticators.md#biometric_use) **SHALL** be met, and the verifier **SHOULD** make a determination that the biometric sensor and subsequent processing meet these requirements.
 -->
 
-AAL2 での Authentication に Bometric Factorが使用される場合, [Sec. 5.2.3](sec5_authenticators.md#biometric_use) で述べられるパフォーマンス要件を満たすことになり(**SHALL**), Verifier は Bometric センサーとその後の Processing がこれらの要件を満たしていることを判断する必要がある(**SHOULD**).
+AAL2 での Authentication に Bimetric Factorが使用される場合, [Sec. 5.2.3](sec5_authenticators.md#biometric_use) で述べられるパフォーマンス要件を満たすことになり(**SHALL**), Verifier は Bometric センサーとその後の Processing がこれらの要件を満たしていることを判断するべきである(**SHOULD**).
 
 <!--
 OMB Memorandum [[M-22-09]](references.md#ref-M-22-09) requires federal government agencies to offer at least one phishing-resistant authenticator option to public users at AAL2. While phishing resistance as described in [Sec. 5.2.5](sec5_authenticators.md#verifimpers) is not generally required for authentication at AAL2, verifiers **SHOULD** encourage the use of phishing-resistant authenticators at AAL2 whenever practical since phishing is a significant threat vector.
 -->
 
-OMB Memorandum [[M-22-09]](references.md#ref-M-22-09) は, 連邦政府機関に対して AAL2 のパブリック ユーザーに少なくとも 1 つの Phishing 耐性のある Authenticator のオプションを提供することを要求している. [Sec. 5.2.5](sec5_authenticators.md#verifimpers) で説明されている Phishing 耐性は通常 AAL2 での Authentication には必要とされないが,  Phishing は重大な脅威ベ クトルであるため, Verifier は可能な限り AAL2 でのPhishing 耐性のある Authenticator の使用を奨励する必要がある(**SHOULD**).
+OMB Memorandum [[M-22-09]](references.md#ref-M-22-09) は, 連邦政府機関に対して AAL2 のパブリックユーザーに少なくとも1つの Phishing 耐性のある Authenticator のオプションを提供することを要求している. [Sec. 5.2.5](sec5_authenticators.md#verifimpers) で説明されている Phishing 耐性は通常 AAL2 での Authentication には必要とされないが,  Phishing は重大な脅威ベクトルであるため, Verifier は可能な限り AAL2 での Phishing 耐性のある Authenticator の使用を奨励するべきである(**SHOULD**).
 
 ### Reauthentication {#aal2reauth}
 
@@ -199,7 +199,7 @@ Subscriber Session の定期的な Reauthentication は, [Sec. 7.2](sec7_session
 The CSP **SHALL** employ appropriately tailored security controls from the baseline security controls defined in [[SP800-53]](references.md#ref-SP800-53) or equivalent federal (e.g., [[FEDRAMP]](references.md#ref-FEDRAMP)) or industry standard that the organization has determined for the information systems, applications, and online services that these guidelines are used to protect. The CSP **SHALL** ensure that the minimum assurance-related controls for the appropriate systems, or equivalent, are satisfied.
 -->
 
-CSP は, [[SP800-53]](references.md#ref-SP800-53) または同等の Federal (例: [[FEDRAMP]](references.md#ref-FEDRAMP)) で定義されたベースラインセキュリティコントロール, またはこれらのガイドラインを使用して保護する対象となる情報システム, アプリケーション, オンラインサービスのために組織が決定した業界標準から, 適切に誂えられたセキュリティコントロールを採用することになる(**SHALL**). CSP は, 適切なシステムまたは同等のシステムに対する最低限の assurance-related controls が満たされていることを保証することになる(**SHALL**).
+CSP は, [[SP800-53]](references.md#ref-SP800-53) または同等の連邦 (例: [[FEDRAMP]](references.md#ref-FEDRAMP)) ないし業界標準で定義されたベースラインセキュリティコントロールから適切に調整されたセキュリティコントロールを採用することになる(**SHALL**). 参考とするガイドラインは, 保護する対象となる情報システム, アプリケーション, オンラインサービスのために組織が決定すること. CSP は, 適切なシステムまたは同等のシステムに対する最低限の assurance-related controls が満たされていることを保証することになる(**SHALL**).
 
 ### Records Retention Policy {#aal2records}
 
@@ -276,7 +276,7 @@ Subscriber Session の定期的な Reauthentication は, [Sec. 7.2](sec7_session
 The CSP **SHALL** employ appropriately tailored security controls from the baseline security controls defined in [[SP800-53]](references.md#ref-SP800-53) or equivalent federal (e.g., [[FEDRAMP]](references.md#ref-FEDRAMP)) or industry standard that the organization has determined for the information systems, applications, and online services that these guidelines are used to protect. The CSP **SHALL** ensure that the minimum assurance-related controls for the appropriate systems, or equivalent, are satisfied.
 -->
 
-CSP は, [[SP800-53]](references.md#ref-SP800-53) または同等の Federal (例: [[FEDRAMP]](references.md#ref-FEDRAMP)) で定義されたベースラインセキュリティコントロール, またはこれらのガイドラインを使用して保護する対象となる情報システム, アプリケーション, オンラインサービスのために組織が決定した業界標準から, 適切に誂えられたセキュリティコントロールを採用することになる(**SHALL**). CSP は, 適切なシステムまたは同等のシステムに対する最低限の assurance-related controls が満たされていることを保証することになる(**SHALL**).
+CSP は, [[SP800-53]](references.md#ref-SP800-53) または同等の連邦 (例: [[FEDRAMP]](references.md#ref-FEDRAMP)) ないし業界標準で定義されたベースラインセキュリティコントロールから適切に調整されたセキュリティコントロールを採用することになる(**SHALL**). 参考とするガイドラインは, 保護する対象となる情報システム, アプリケーション, オンラインサービスのために組織が決定すること. CSP は, 適切なシステムまたは同等のシステムに対する最低限の assurance-related controls が満たされていることを保証することになる(**SHALL**).
 
 ### Records Retention Policy {#aal3records}
 
@@ -298,7 +298,7 @@ CSP は, [[SP800-53]](references.md#ref-SP800-53) または同等の業界標準
 If CSPs process attributes for purposes other than identity proofing, authentication, or attribute assertions (collectively "identity service"), related fraud mitigation, or to comply with law or legal process, CSPs **SHALL** implement measures to maintain predictability and manageability commensurate with the privacy risk arising from the additional processing. Measures **MAY** include providing clear notice, obtaining subscriber consent, or enabling selective use or disclosure of attributes. When CSPs use consent measures, CSPs **SHALL NOT** make consent for the additional processing a condition of the identity service.
 -->
 
-CSP が Identity Proofing, Authentication, Attribute Assertion (総称して "Identity Service"), 関連する不正行為の軽減, または法律や法的手続きの遵守以外の目的で Attribute を処理する場合, CSP は 追加の処理から生じるプライバシーのリスクに見合った Predictability と Manageability を維持するための手段を実装することになる(**SHALL**). 手段には, 明確な通知の提供, Subscriber の同意の取得, Attribute の選択的な使用・開示の有効化を含んでもよい(**MAY**). CSP が同意を手段として使用する場合, CSP は追加の処理の同意を Identity Service の条件にすることはない(**SHALL NOT**).
+CSP が Identity Proofing, Authentication, Attribute Assertion (総称して "Identity Service"), 関連する不正行為の軽減, または法律や法的手続きの遵守以外の目的で Attribute を処理する場合, CSP は 追加の処理から生じるプライバシーのリスクに見合った Predictability と Manageability を維持するための手段を実装することになる(**SHALL**). 手段には, 明確な通知の提供, Subscriber の同意の取得, Attribute の選択的な使用・開示の有効化を含んでもよい(**MAY**). CSP が同意を手段として使用する場合, CSP は追加の処理の同意を Identity Service の条件にしてはならない(**SHALL NOT**).
 
 <!--
 Regardless of whether the CSP is an agency or private sector provider, the following requirements apply to a federal agency offering or using the authentication service:
