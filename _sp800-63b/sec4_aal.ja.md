@@ -70,7 +70,7 @@ AAL1 Authentication は, [Sec. 5](sec5_authenticators.md#AAL_SEC5)で定義さ�
 Cryptographic authenticators used at AAL1 **SHALL** use approved cryptography. Software-based authenticators that operate within the context of an operating system **MAY**, where applicable, attempt to detect compromise (e.g., by malware) of the user endpoint in which they are running and **SHOULD NOT** complete the operation when such a compromise is detected.
 -->
 
-AAL1 で使用される Cryptographic Authenticator は承認された暗号を使用することになる(**SHALL**). オペレーティングシステムのコンテキスト内で動作する Software-Based Authenticator は, 可能な場合, それらが実行中のユーザーエンドポイントで(例: マルウェアによる)侵害の検出を試みてもよい(**MAY**). また, そのような侵害が検出された場合は操作を完了しないほうがよい(**SHOULD NOT**).
+AAL1 で使用される Cryptographic Authenticator は Approved な暗号を使用することになる(**SHALL**). オペレーティングシステムのコンテキスト内で動作する Software-Based Authenticator は, 可能な場合, それらが実行中のユーザーエンドポイントで(例: マルウェアによる)侵害の検出を試みてもよい(**MAY**). また, そのような侵害が検出された場合は操作を完了しないほうがよい(**SHOULD NOT**).
 
 <!--
 Communication between the claimant and verifier **SHALL** be via an authenticated protected channel to provide confidentiality of the authenticator output and resistance to adversary-in-the-middle (AitM) attacks.
@@ -112,7 +112,7 @@ CSP は, 適用される可能性のある National Archives and Records Adminis
 AAL2 provides high confidence that the claimant controls authenticators bound to the subscriber account. Proof of possession and control of two distinct authentication factors is required through secure authentication protocols. Approved cryptographic techniques are required at AAL2 and above.
 -->
 
-AAL2 は, Claimant が Subscriber Account に Bind された Authenticator を制御するという高い確信を提供する. セキュアな Authentication プロトコルを介して, 2つの明確に異なる Authentication Factor の所有と制御の証明が必要である. AAL2 以上では, 承認された暗号技術が必要である.
+AAL2 は, Claimant が Subscriber Account に Bind された Authenticator を制御するという高い確信を提供する. セキュアな Authentication プロトコルを介して, 2つの明確に異なる Authentication Factor の所有と制御の証明が必要である. AAL2 以上では, Approved な暗号技術が必要である.
 
 ### Permitted Authenticator Types {#aal2types}
 
@@ -215,7 +215,7 @@ CSP は, 適用される可能性のある NARA の記録保持スケジュー�
 AAL3 provides very high confidence that the claimant controls authenticators bound to the subscriber account. Authentication at AAL3 is based on proof of possession of a key through a cryptographic protocol. AAL3 authentication **SHALL** use a hardware-based authenticator and an authenticator that provides phishing resistance — the same device **MAY** fulfill both these requirements. In order to authenticate at AAL3, claimants **SHALL** prove possession and control of two distinct authentication factors through secure authentication protocols. Approved cryptographic techniques are required.
 -->
 
-AAL3 は, Claimant が Subscriber Account に Bind された Authenticator を制御するという非常に高い確信を提供する. AAL3 での Authentication は, 暗号プロトコルを介した Key の所有の証明に基づく. ハードウェアベースの Authenticator  とPhishing 耐性のある Authenticator を使用することになり(**SHALL**), 同じデバイスがこれらの両方の要件を満たしてもよい(**MAY**).　AAL3 で Authentication を行うには, Claimant は, セキュアな Authentication プロトコルを介して, 2つのはっきりと異なる Authentication Factor の所有と制御を証明することになる(**SHALL**). 承認された暗号技術が必要である.
+AAL3 は, Claimant が Subscriber Account に Bind された Authenticator を制御するという非常に高い確信を提供する. AAL3 での Authentication は, 暗号プロトコルを介した Key の所有の証明に基づく. ハードウェアベースの Authenticator  とPhishing 耐性のある Authenticator を使用することになり(**SHALL**), 同じデバイスがこれらの両方の要件を満たしてもよい(**MAY**).　AAL3 で Authentication を行うには, Claimant は, セキュアな Authentication プロトコルを介して, 2つのはっきりと異なる Authentication Factor の所有と制御を証明することになる(**SHALL**). Approved な暗号技術が必要である.
 
 ### Permitted Authenticator Types {#aal3types}
 

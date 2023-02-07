@@ -324,7 +324,7 @@ Cryptographic Key
 Cryptographic Module
 <!-- : A set of hardware, software, and/or firmware that implements approved security functions (including cryptographic algorithms and key generation). -->
 
-: 一式のハードウェア, ソフトウェア, およびファームウェアで, (暗号アルゴリズムや鍵生成を含む) 承認されたセキュリティ機能を実装するもの.
+: 一式のハードウェア, ソフトウェア, およびファームウェアで, (暗号アルゴリズムや鍵生成を含む) Approved なセキュリティ機能を実装するもの.
 
 Data Integrity
 <!-- : The property that data has not been altered by an unauthorized entity. -->
@@ -517,7 +517,7 @@ Multi-Factor
     The three authentication factors are something you know, something you have, and something you are.
 -->
 
-    Authentication Factor としては, Something You Know, Something You Have, Something You Are の3種類がある.
+    Authentication Factor としては, something you know, something you have, something you are の3種類がある.
 
 Multi-Factor Authentication (MFA) [](#mfa-definition){:name="mfa-definition"}
 <!-- : An authentication system that requires more than one distinct [authentication factor](definitions.md#af) for successful authentication. Multi-factor authentication can be performed using a multi-factor authenticator or by a combination of authenticators that provide different factors.-->
@@ -528,7 +528,7 @@ Multi-Factor Authentication (MFA) [](#mfa-definition){:name="mfa-definition"}
     The three authentication factors are *something you know*, *something you have*, and *something you are*.
 -->
 
-    Authentication Factor としては, Something You Know, Something You Have, Something You Are の3種類がある.
+    Authentication Factor としては, something you know, something you have, something you are の3種類がある.
 
 Multi-Factor Authenticator
 <!-- : An authenticator that provides more than one distinct authentication factor, such as a cryptographic authentication device with an integrated biometric sensor that is required to activate the device. -->

@@ -52,13 +52,13 @@ AAL は, Authentication Transaction の強度を, 順序のあるカテゴリと
 **Authentication Assurance Level 2**: AAL2 provides high confidence that the claimant controls one or more authenticators bound to the subscriber account. Proof of possession and control of two different authentication factors is required through secure authentication protocols. Approved cryptographic techniques are required at AAL2 and above.
 -->
 
-**Authentication Assurance Level 2**: AAL2 は, Claimant が Subscriber Account に Bind された1つかそれ以上の Authenticator を制御するという高い確信を提供する. セキュアな Authentication プロトコルを介して, 2つの異なる Authentication Factor の所有と制御の証明が必要である. AAL2 以上では, 承認された暗号技術が必要である.
+**Authentication Assurance Level 2**: AAL2 は, Claimant が Subscriber Account に Bind された1つかそれ以上の Authenticator を制御するという高い確信を提供する. セキュアな Authentication プロトコルを介して, 2つの異なる Authentication Factor の所有と制御の証明が必要である. AAL2 以上では, Approved な暗号技術が必要である.
 
 <!--
 **Authentication Assurance Level 3**: AAL3 provides very high confidence that the claimant controls one or more authenticators bound to the subscriber account. Authentication at AAL3 is based on proof of possession of a key through a cryptographic protocol. AAL3 authentication requires a hardware-based authenticator and a phishing-resistant authenticator (see [Sec. 5.2.5](sec5_authenticators.md#verifimpers)); the same device may fulfill both these requirements. In order to authenticate at AAL3, claimants are required to prove possession and control of two distinct authentication factors through secure authentication protocols. Approved cryptographic techniques are required.
 -->
 
-**Authentication Assurance Level 3**: AAL3 は, Claimant が Subscriber Account に Bind された1つかそれ以上の Authenticator を制御するという非常に高い確信を提供する. AAL3 での Authentication は, 暗号プロトコルを介した Key の所有の証明に基づく. AAL3 Authentication は, ハードウェアベースの Authenticator と Phishing 耐性のある Authenticator を必要とし([Sec. 5.2.5](sec5_authenticators.md#verifimpers) を参照), 同じデバイスがこれらの両方の要件を満たす場合がある. AAL3 で Authentication を行うには, Claimant は, セキュアな Authentication プロトコルを介して, 2つのはっきりと異なる Authentication Factor の所有と制御を証明する必要がある. 承認された暗号技術が必要である.
+**Authentication Assurance Level 3**: AAL3 は, Claimant が Subscriber Account に Bind された1つかそれ以上の Authenticator を制御するという非常に高い確信を提供する. AAL3 での Authentication は, 暗号プロトコルを介した Key の所有の証明に基づく. AAL3 Authentication は, ハードウェアベースの Authenticator と Phishing 耐性のある Authenticator を必要とし([Sec. 5.2.5](sec5_authenticators.md#verifimpers) を参照), 同じデバイスがこれらの両方の要件を満たす場合がある. AAL3 で Authentication を行うには, Claimant は, セキュアな Authentication プロトコルを介して, 2つのはっきりと異なる Authentication Factor の所有と制御を証明する必要がある. Approved な暗号技術が必要である.
 
 <!--
 The following list states which sections of the document are normative and which are informative:

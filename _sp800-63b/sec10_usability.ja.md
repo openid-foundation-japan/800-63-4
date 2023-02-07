@@ -105,7 +105,7 @@ A single authenticator type usually does not suffice for the entire user populat
 タスクの緊急度, 認識される費用対効果のトレードオフ, 特定の Authenticator への習熟度などが, しばしば選択に影響を及ぼすことになる.
 ユーザーは, その時点で最も負担やコストの低い選択肢を選ぶ傾向がある.
 例えば, タスクが情報システムへの即時 Access を必要とする場合, ユーザーはより多くのステップを必要とする Authenticator を選択するよりも, 新しい Subscriber Account と Password を作成することを選好する可能性もある.
-代わりに, Identity Provider に Subscriber Account を持っている場合, ユーザーは - 適切な AAL で承認された - Federated Identity という選択肢を選ぶ可能性もある.
+代わりに, Identity Provider に Subscriber Account を持っている場合, ユーザーは - 適切な AAL で Approve された - Federated Identity という選択肢を選ぶ可能性もある.
 ユーザーはある Authenticator を他の Authenticator よりもよく理解しており, 理解と経験に基づいて異なるレベルの信頼感を持っている可能性もある.
 
 <!--
