@@ -932,7 +932,7 @@ Attestation は, 接続された Authenticator, または Authentication 操作�
 If this attestation is signed, it **SHALL** be signed using a digital signature that provides at least the minimum security strength specified in the latest revision of [[SP800-131A]](references.md#ref-SP800-131A) (112 bits as of the date of this publication).
 -->
 
-この Attestation が署名されている場合は, 少なくとも [[SP800-131A]](references.md#ref-SP800-131A) の最新リビジョンで指定されている最小のセキュリティ強度(発行日現在で 112 ビット)を提供するデジタル署名を使用して署名されることとなる(**SHALL**).
+この Attestation が署名されている場合は, 少なくとも [[SP800-131A]](references.md#ref-SP800-131A) の最新リビジョンで指定されている最小のセキュリティ強度(発行日現在で 112 ビット)を提供する Digital Signature を使用して署名されることとなる(**SHALL**).
 
 <!--
 Attestation information **MAY** be used as part of a verifier's risk-based authentication decision.
