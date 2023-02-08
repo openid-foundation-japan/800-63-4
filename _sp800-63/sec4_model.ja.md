@@ -30,7 +30,7 @@ SP 800-63 ガイドラインでは, 現在市場で入手可能な技術およ�
 
 <!-- **Credential Service Provider (CSP)**: A trusted entity whose functions include identity proofing applicants to the identity service and the registration of authenticators to subscriber accounts. A _subscriber account_ is the CSP's established record of the subscriber, the subscriber's attributes, and associated authenticators. A CSP may be an independent third party. -->
 
-**Credential Service Provider (CSP)**: Identity サービスへの Applicant の Identity Proofing ,および Subscriber Account への Authenticator の登録を含む機能を持つ, 信頼された主体. _Subscriber Account_ は, Subscriber, Subscriber の Attribute , および関連する Authenticator に関する CSP の確立された記録である. CSP は, 独立したサード・パーティである場合もある.
+**Credential Service Provider (CSP)**: Identity サービスへの Applicant の Identity Proofing ,および Subscriber Account への Authenticator の登録を含む機能を持つ, 信頼された主体. _Subscriber Account_ は, Subscriber, Subscriber の Attribute , および関連する Authenticator に関する CSP が確立した記録である. CSP は, 独立したサード・パーティである場合もある.
 
 <!-- **Relying Party (RP)**: An entity that relies upon the information in the subscriber account, or an identity provider (IdP) assertion when using federation, typically to process a transaction or grant access to information or a system. -->
 
