@@ -173,7 +173,7 @@ Subscriber は, CSP との良好な関係を維持するために Authenticator 
 
 <!-- In order to request issuance of a new authenticator, typically the subscriber authenticates to the CSP using their existing, unexpired authenticators. If the subscriber fails to request authenticator re-issuance prior to their expiration or revocation, they may be required to repeat the identity proofing (either complete or abbreviated) and enrollment processes in order to obtain a new authenticator. -->
 
-新しい Authenticator の発行を要求するために, 通常 Subscriber は, 既存の有効期限内の Authenticator を使用して CSP に対して Authentication を行う. Subscriber が有効期限切れまたは失効前に Authenticator の再発行を要求しなかった場合, 新しい Authenticator を取得するために, Identity Proofing (完全または省略) および Enrollment プロセスを再度行うことが要求される場合がある.
+新しい Authenticator の発行を要求するために, 通常 Subscriber は, 既存の有効期限内の Authenticator を使用して CSP に対して Authentication を行う. Subscriber が有効期限切れまたは失効前に Authenticator の再発行を要求しなかった場合, 新しい Authenticator を取得するために, (完全または省略された形の) Identity Proofing および Enrollment プロセスを再度行うことが要求される場合がある.
 
 <!-- [Figure 3](sec4_model.md#fig-3) shows a sample of interactions for identity proofing and enrollment. -->
 
