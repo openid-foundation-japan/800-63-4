@@ -65,7 +65,7 @@ Non-federated Digital Identity モデルを構成する主体および相互作�
 
 - Step 1: Applicantは, Enrollment プロセスを通じて CSP に申請する. CSP は, そのApplicantの身元を証明 (Identity Proof) する.
 - Step 2: Proofing に成功すると, Applicant は Identity サービスに Subscriber として Enrollment される.
-     * Subscriber Account および対応する Authenticator は, CSP と Subscriber の間で確立される. CSP は Subscriber Account, そのステータス, および Enrollment データを維持する. Subscriber は自分の Authenticator を保持する.
+     * Subscriber Account および対応する Authenticator が, CSP と Subscriber の間で確立される. CSP は Subscriber Account, そのステータス, および Enrollment データを維持する. Subscriber は自分の Authenticator を保持する.
 
  <!-- The usual sequence of interactions involved in using one or more authenticators to perform digital authentication in the non-federated model is as follows: -->
 
@@ -81,7 +81,7 @@ Non-federated モデルにおいて, 1つまたは複数の Authenticator を使
 
 - Step 3: RP が Claimant に Authentication を要求する.
 - Step 4: Claimantは, Authentication プロセスを通じて, Authenticator の所有と管理を Verifier に証明する.
-    - Verifier は CSP とやり取りして, Claimant の身元と Subscriber Account の Authenticator の結びつきを検証し, オプションで追加の Subscriber Attribute を取得する.
+    - Verifier は CSP とやり取りして, Claimant の Identity と Subscriber Account の Authenticator の結びつきを検証し, オプションで追加の Subscriber Attribute を取得する.
     - サービスプロバイダの CSP または Verifier の機能は, Subscriberに関する情報を提供する. RP は, 必要とする Attribute を CSP に要求する. RPは, オプションとして, この情報を使用して Authorization の決定を行う.
 - Step 5: Subscriber と RP の間に Authenticated Session が確立される.
 
