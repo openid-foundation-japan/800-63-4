@@ -593,8 +593,8 @@ Validated evidence is the preferred source of identity attributes. If the presen
 CSPは、以下のいずれか _1つ_ の要件に従って SUPERIOR と STRONG の Evidence の真正性を検証するものとする(**SHALL**)。
 
 1. 訓練を受けた担当者による目視検査
-2. 物理的なセキュリティ機能の完全性を確認する技術の利用、またはEvidenceが詐称されているか不適切に変更されているかを検出することができる技術の利用
-3. 存在する場合、デジタルセキュリティ機能の完全性を確認する。
+2. 物理的なセキュリティ機能の Integrity (完全性) を確認する技術の利用、またはEvidenceが詐称されているか不適切に変更されているかを検出することができる技術の利用
+3. 存在する場合、デジタルセキュリティ機能の Integrity (完全性) を確認する。
 
 CSPは、訓練を受けた担当者による目視検査によって、FAIR Evidenceが真正であることをValidateするものとする(**SHALL**)。
 
@@ -714,8 +714,8 @@ Validated evidence is the preferred source of identity attributes. If the presen
 CSPは、以下のいずれか _1つ_ の要件に従って SUPERIOR と STRONG の Evidence の真正性を検証するものとする(**SHALL**)。
 
 1. 訓練を受けた担当者による目視検査
-2. 物理的なセキュリティ機能の完全性を確認する技術の利用、またはEvidenceが詐称されているか不適切に変更されているかを検出することができる技術の利用
-3. 存在する場合、デジタルセキュリティ機能の完全性を確認する。
+2. 物理的なセキュリティ機能の Integrity (完全性) を確認する技術の利用、またはEvidenceが詐称されているか不適切に変更されているかを検出することができる技術の利用
+3. 存在する場合、デジタルセキュリティ機能の Integrity (完全性) を確認する。
 
 CSPは、以下の方法ですべての Core Attributes を Validate するものとする(**SHALL**)。
 
@@ -851,13 +851,13 @@ Validated evidence is the preferred source of identity attributes. If the presen
 #### Evidence Validation Requirements
 {% endcomment %}
 
-CSPは、暗号セキュリティ機能の完全性を確認し、何らかのDigital SignatureをValidateすることによって、SUPERIOR Evidence の真正性を検証するものとする(**SHALL**)。
+CSPは、暗号セキュリティ機能の Integrity (完全性) を確認し、何らかのDigital SignatureをValidateすることによって、SUPERIOR Evidence の真正性を検証するものとする(**SHALL**)。
 
 CSPは、以下のいずれか _1つ_ の要件に従って STRONG の Evidence の真正性を検証するものとする(**SHALL**)。
 
 1. 訓練を受けた担当者による目視検査
-2. 物理的なセキュリティ機能の完全性を確認する技術の利用、またはEvidenceが詐称されているか不適切に変更されているかを検出することができる技術の利用
-3. 存在する場合、デジタルセキュリティ機能の完全性を確認する。これには、発行者のDigital SignatureのValidationが含まれる。
+2. 物理的なセキュリティ機能の Integrity (完全性) を確認する技術の利用、またはEvidenceが詐称されているか不適切に変更されているかを検出することができる技術の利用
+3. 存在する場合、デジタルセキュリティ機能の Integrity (完全性) を確認する。これには、発行者のDigital SignatureのValidationが含まれる。
 {% comment %}
 The CSP **SHALL** validate the genuineness of each piece of SUPERIOR evidence by confirming the integrity of its cryptographic security features and validating any digital signatures.
 

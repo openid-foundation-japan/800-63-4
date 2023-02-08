@@ -860,7 +860,7 @@ Biometric システムは, Authentication の試行の連続失敗を5回まで,
 The verifier **SHALL** make a determination of sensor and endpoint performance, integrity, and authenticity. Acceptable methods for making this determination include, but are not limited to:
 -->
 
-Verifier は, センサーとエンドポイントのパフォーマンス, 完全性, および 真正性を判断することとなる(**SHALL**). この決定を行うための許容される方法は, 以下を含むがこれらに限定されない:
+Verifier は, センサーとエンドポイントのパフォーマンス, Integrity (完全性), および 真正性を判断することとなる(**SHALL**). この決定を行うための許容される方法は, 以下を含むがこれらに限定されない:
 
 <!--
 * Authentication of the sensor or endpoint
@@ -923,7 +923,7 @@ Attestation は, 接続された Authenticator, または Authentication 操作�
 * Sensor modality
 -->
 
-* Authenticator とエンドポイントの起源 (例: メーカーまたはサプライヤーの認定), 健全性, および完全性
+* Authenticator とエンドポイントの起源 (例: メーカーまたはサプライヤーの認定), 健全性, および Integrity (完全性)
 * Authenticator のセキュリティ機能
 * Biometric センサーのセキュリティとパフォーマンスの特性
 * センサーモダリティ

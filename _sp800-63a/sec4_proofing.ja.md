@@ -203,7 +203,7 @@ Acceptable digital evidence **SHALL** contain all of the following characteristi
 ###  Evidence Strength Requirements {#evidence-strength}
 {% endcomment %}
 
-このセクションでは、各強度におけるIdentity Evidenceの要件を定義する。Identity Evidence強度は、3つの側面によって決まる。すなわち、1) 発行の厳密さ、2) Attributeの正確性と完全性を含む、Validationにおける信頼性を提供する能力、 3) Evidenceを提示するApplicantのVerificationにおける信頼性を提供する能力、である。すべてのレベルの強度のエビデンスは、最新かつ期限が切れていないものでなければならない。
+このセクションでは、各強度におけるIdentity Evidenceの要件を定義する。Identity Evidence強度は、3つの側面によって決まる。すなわち、1) 発行の厳密さ、2) Attributeの正確性と Integrity (完全性) を含む、Validationにおける信頼性を提供する能力、 3) Evidenceを提示するApplicantのVerificationにおける信頼性を提供する能力、である。すべてのレベルの強度のエビデンスは、最新かつ期限が切れていないものでなければならない。
 
 {% comment %}
 This section defines the requirements for identity evidence at each strength. Strength of identity evidence is determined by three aspects: 1) the issuing rigor; 2) the ability to provide confidence in validation, including accuracy and integrity of attributes; and 3) the ability to provide confidence in the verification of the applicant presenting the evidence. Evidence at all levels of strength must be current and unexpired.
