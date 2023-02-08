@@ -55,7 +55,7 @@ Non-federated Digital Identity モデルを構成する主体および相互作�
 
 <!-- [Figure 1](sec4_model.md#fig-1) shows an example of a common sequence of interactions in the non-federated model. Other sequences could also achieve the same functional requirements. The usual sequence of interactions for identity proofing and enrollment activities is as follows: -->
 
-[Figure 1](sec4_model.md#fig-1) はNon-federated モデルでよく見られる相互作用のシーケンスの一例である. 他のシーケンスでも, 同じ機能要件を達成することができる. Identity Proofing よび Enrollment のための通常の相互作用のシーケンスは次のとおりである.
+[Figure 1](sec4_model.md#fig-1) はNon-federated モデルでよく見られる相互作用のシーケンスの一例である. 他のシーケンスでも, 同じ機能要件を達成することができる. Identity Proofing および Enrollment のための通常の相互作用のシーケンスは次のとおりである.
 
 <!--
 - Step 1: An applicant applies to a CSP through an enrollment process. The CSP identity proofs that applicant.
