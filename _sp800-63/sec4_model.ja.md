@@ -102,7 +102,7 @@ Non-federated モデルにおいて, 1つまたは複数の Authenticator を使
 
 - Step 1: Applicantは, Enrollment プロセスを通じてIdPに申請する. IdPは, CSP機能を用いて, Applicant の Identity Proofing を行う.
 - Step 2: Proofing に成功すると, Applicant は Identity サービスに Subscriber として Enrollment される.
-    - Subscriber Account と対応する Authenticator は, IdP と Subscriber の間で確立される. IdP は, Subscriber Account とその状態, および収集した Enrollment データを Subscriber Account の存続期間中 (最低限) 保持する. Subscriber は Authenticator を保持する.
+    - Subscriber Account と対応する Authenticator が, IdP と Subscriber の間で確立される. IdP は, Subscriber Account とその状態, および収集した Enrollment データを Subscriber Account の存続期間中 (最低限) 保持する. Subscriber は Authenticator を保持する.
 
 <!-- The usual sequence of interactions involved in using one or more authenticators in the federated model to perform digital authentication is as follows: -->
 
