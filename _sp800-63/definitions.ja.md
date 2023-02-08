@@ -454,7 +454,7 @@ Identity Provider (IdP)
 Identity Resolution
 <!-- : The process of collecting information about an applicant in order to uniquely distinguish an individual within the context of the population the CSP serves. -->
 
-: CSP がサービスを提供する集団の中で個人を一意に識別するために, 申請者に関する情報を収集するプロセス.
+: CSP がサービスを提供する集団の中で個人を一意に識別するために, Applicant に関する情報を収集するプロセス.
 
 Issuing Source
 <!-- : An authority responsible for the generation of data, digital evidence (such as assertions), or physical documents that can be used as identity evidence. -->
