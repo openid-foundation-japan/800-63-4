@@ -248,15 +248,15 @@ Digital Transaction の Assurance Level は, [Sec. 5.1.2](sec5_DIRM.md#impactCat
 
 <!-- - **Low**: at worst, a limited release of personal, U.S. government sensitive, or commercially sensitive information to unauthorized parties resulting in a loss of confidentiality with a low impact as defined in [[FIPS199]](sec8_references.md#ref-FIPS199). -->
 
-- **Low**: 最悪の場合で, [[FIPS199]](sec8_references.md#ref-FIPS199) で定義されているように, Personal Information, 米国政府の機密情報, 商業上の機密情報が権限のない者に限定的に開示され, 影響が少なく機密性が損なわれる場合.
+- **Low**: 最悪の場合で, [[FIPS199]](sec8_references.md#ref-FIPS199) で定義されているように, Personal Information, 米国政府の機密情報, 商業上の機密情報が権限のない者に限定的に開示され, 影響が少なく Confidentiality (機密性) が損なわれる場合.
 
 <!-- - **Moderate**: at worst, a release of personal, U.S. government sensitive, or commercially sensitive information to unauthorized parties resulting in loss of confidentiality with a moderate impact as defined in [[FIPS199]](sec8_references.md#ref-FIPS199). -->
 
-- **Moderate**: 最悪の場合で, [[FIPS199]](sec8_references.md#ref-FIPS199) で定義されているように, Personal Information, 米国政府の機密情報, 商業上の機密情報が不正な者に漏洩し, 機密性が失われ中程度の影響を与える場合.
+- **Moderate**: 最悪の場合で, [[FIPS199]](sec8_references.md#ref-FIPS199) で定義されているように, Personal Information, 米国政府の機密情報, 商業上の機密情報が不正な者に漏洩し, Confidentiality (機密性) が失われ中程度の影響を与える場合.
 
 <!-- - **High**: a release of personal, U.S. government sensitive, or commercially sensitive information to unauthorized parties resulting in loss of confidentiality with a high impact as defined in [[FIPS199]](sec8_references.md#ref-FIPS199). -->
 
-- **High**: Personal Information, 米国政府の機密情報, 商業上の機密情報が不正に流出し, [[FIPS199]](sec8_references.md#ref-FIPS199) に定義されているように, 高い影響を与える機密性の喪失をもたらす場合.
+- **High**: Personal Information, 米国政府の機密情報, 商業上の機密情報が不正に流出し, [[FIPS199]](sec8_references.md#ref-FIPS199) に定義されているように, 高い影響を与える Confidentiality (機密性) の喪失をもたらす場合.
 
 **Damage to or loss of economic stability:**
 

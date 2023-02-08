@@ -217,7 +217,7 @@ When assessing the risk of inequitable access, treatment, or outcomes, the follo
 {% endcomment %}
 
 1. 第三者が関与する Transaction を含め、Identity Proofingプロセス内の各オンライン Transaction は、Authenticated Protected Channel を介して行うものとする(**SHALL**）。
-2. Identity Proofingプロセスの一環として収集されたIdentity Attributeのフォームのすべての PII は、情報の機密性と完全性を確保するために保護されるものとする(**SHALL**）。
+2. Identity Proofingプロセスの一環として収集されたIdentity Attributeのフォームのすべての PII は、情報の Confidentiality (機密性) と Integrity (完全性) を確保するために保護されるものとする(**SHALL**）。
 3. CSP は、NIST リスク管理フレームワーク [[NIST-RMF]](sec11_references.ja.md#ref-NIST-RMF) に従ってそのIdentityサービスの運用に関連するリスクを評価し、適切なベースラインセキュリティコントロールを適用するものとする(**SHALL**)。
 
 {% comment %}
