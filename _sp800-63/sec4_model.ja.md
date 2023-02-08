@@ -310,7 +310,7 @@ Normative な要件は [[SP800-63C]](../_sp800-63c/sec1_purpose.md#purpose){:lat
 
 <!-- The SP 800-63 guidelines are agnostic to the identity proofing, authentication, and federation architectures an organization selects and they allow organizations to deploy a digital identity scheme according to their own requirements. However, there are scenarios that an organization may encounter that make federation potentially more efficient and effective than establishing identity services local to the organization or individual applications. The following lists detail scenarios where the organization may consider federation a viable option. These lists are provided for consideration and are not intended to be comprehensive. -->
 
-SP 800-63 ガイドラインは, 組織が選択する Identity Proofing, Authentication, および Federation アーキテクチャには不可欠であり, 組織が独自の要件に従って Digital Identityスキームを展開することを可能にする. しかし, 組織が遭遇するシナリオには, 組織または個々のアプリケーションにローカルな Identity サービスを確立するよりも, Federation のほうが効率的かつ効果的である可能性があるものがある. 以下のリストは, 組織が Federation を有効なオプションと見なす可能性のあるシナリオの詳細を示している. これらのリストは検討のために提供されるものであり, 包括的であることは意図していない.
+SP 800-63 ガイドラインは, 組織が選択する Identity Proofing, Authentication, および Federation アーキテクチャに関して全てを把握しているわけではなく, 組織が独自の要件に従って Digital Identityスキームを展開することも許容している. しかし, 組織が遭遇するシナリオには, 組織または個々のアプリケーションにローカルな Identity サービスを確立するよりも, Federation のほうが効率的かつ効果的である可能性があるものがある. 以下のリストは, 組織が Federation を有効なオプションと見なす可能性のあるシナリオの詳細を示している. これらのリストは検討のために提供されるものであり, 包括的であることは意図していない.
 
 <!-- An organization should consider accepting federated identity assertions if any of the following apply: -->
 
