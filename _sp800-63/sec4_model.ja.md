@@ -143,7 +143,7 @@ Federated モデルで1つ以上の Authenticator を使用してデジタル Au
 
 <!-- [[SP800-63A]](../_sp800-63a/sec1_purpose.md#purpose){:latex-href="#ref-SP800-63A"}, *Enrollment and Identity Proofing* provides general information and normative requirements for the identity proofing and enrollment processes as well as requirements specific to identity assurance levels (IALs). In addition to a "no identity proofing" level, IAL0, this document defines three IALs that indicate the relative strength of an identity proofing process. -->
 
-[[SP800-63A]](../_sp800-63a/sec1_purpose.md#purpose){:latex-href="#ref-SP800-63A"}, *Enrollment and Identity Proofing* は, Identity Proofing および Enrollment プロセスに関する一般情報および標準的な要件と, Identity Assurance Level (IAL) に固有の要件を提供する. "No Identity Proofing" レベルである IAL0 に加えて, この文書では Identity Proofing プロセスの相対的な強さを示す 3 つの IAL を定義している.
+[[SP800-63A]](../_sp800-63a/sec1_purpose.md#purpose){:latex-href="#ref-SP800-63A"}, *Enrollment and Identity Proofing* は, Identity Proofing および Enrollment プロセスに関する一般情報および Normative な要件と, 各 Identity Assurance Level (IAL) に固有の要件を提供する. "No Identity Proofing" レベルである IAL0 に加えて, この文書では Identity Proofing プロセスの相対的な強さを示す 3 つの IAL を定義している.
 
 <!-- An individual, referred to as an *applicant* at this stage, opts to enroll with a CSP. If the applicant is successfully proofed, the individual is then enrolled in the identity service as a *subscriber* of that CSP. -->
 
@@ -193,7 +193,7 @@ Subscriber は, CSP との良好な関係を維持するために Authenticator 
 
 <!-- Normative requirements can be found in [[SP800-63B]](../_sp800-63b/sec1_purpose.md#purpose){:latex-href="#ref-SP800-63B"}, *Authentication and Lifecycle Management*. -->
 
-標準的な要件は, [[SP800-63B]](../_sp800-63b/sec1_purpose.md#purpose){:latex-href="#ref-SP800-63B"}, *Authentication and Lifecycle Management* を参照のこと.
+Normative な要件は, [[SP800-63B]](../_sp800-63b/sec1_purpose.md#purpose){:latex-href="#ref-SP800-63B"}, *Authentication and Lifecycle Management* を参照のこと.
 
 ### Authenticators
 
@@ -290,7 +290,7 @@ Authentication プロセスの成功は, Claimant が Subscriber の Identity �
 
 <!-- Normative requirements can be found in [[SP800-63C]](../_sp800-63c/sec1_purpose.md#purpose){:latex-href="#ref-SP800-63C"}, *Federation and Assertions*. -->
 
-標準的な要件は [[SP800-63C]](../_sp800-63c/sec1_purpose.md#purpose){:latex-href="#ref-SP800-63C"}, *Federation and Assertions* を参照のこと.
+Normative な要件は [[SP800-63C]](../_sp800-63c/sec1_purpose.md#purpose){:latex-href="#ref-SP800-63C"}, *Federation and Assertions* を参照のこと.
 
 <!-- In general usage, the term _federation_ can be applied to a number of different approaches involving the sharing of information between different trust domains. These approaches differ based on the kind of information that is being shared between the domains. Some common examples include: -->
 
