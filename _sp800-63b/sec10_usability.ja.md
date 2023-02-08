@@ -402,7 +402,7 @@ Usability considerations for typical usage include:
 
 * 実装によっては, 実装者向けの以下のような追加の Usability 上の考慮事項が挙げられる.
   * Single-factor OTP Device が電子的インタフェース (e.g., USB) を介して出力を提供できると, ユーザーは Authenticator Output を手動で入力する必要がないため, そのような実装が望ましい. しかしながら, 操作に物理的な入力 (e.g., ボタンを押す) が必要な場合, USB ポートの位置によっては Usability 上の問題をひきおこす可能性がある. 例えば, 一部のコンピューターの USB ポートはコンピューターの背面にあり, ユーザーがアクセスしにくい場合がある.
-  * USB ポートなどの直接的コンピューターインタフェースの可用性 (Availability) に関する制約が Usability 上の問題を引き起こす可能性もある. 例えば, ラップトップコンピューターの USB ポート数はしばしば非常に限られている. これによりユーザーは Single-factor OTP Device を使用するために他の USB 周辺機器を取り外す必要があるかもしれない.
+  * USB ポートなどの直接的コンピューターインタフェースの Availability (可用性) に関する制約が Usability 上の問題を引き起こす可能性もある. 例えば, ラップトップコンピューターの USB ポート数はしばしば非常に限られている. これによりユーザーは Single-factor OTP Device を使用するために他の USB 周辺機器を取り外す必要があるかもしれない.
 
 ### Multi-Factor OTP Device
 
@@ -437,7 +437,7 @@ Usability considerations for typical usage include:
 * Authenticator Output の手入力中のユーザーエクスペリエンス
   * Time-based OTP の場合, OTP が表示されている時間にプラスして猶予時間を設けること. Multi-factor OTP Device と入力画面の間を行き来することを含め, ユーザーは Authenticator Output の入力に十分な時間を要する.
   * ユーザーが, 一体型入力パッドを介して Multi-factor OTP Device のロックを解除したり, Authenticator Output をモバイルデバイスに入力する必要がある場合, フォームファクターの制約を考慮すること. 小型デバイスでの入力は, 従来のキーボードでの入力よりも大幅にエラーが発生しやすく, 時間がかかるものである. 一体型入力パッドとオンスクリーンキーボードが小さければ小さいほど入力は難しくなる. より大きなタッチ領域を提供することで, Multi-factor OTP Device のロックを解除したり, モバイルデバイスに Authenticator Output を入力する際の Usability が向上する.
-  * USB ポートなどの直接的コンピューターインタフェースの可用性 (Availability) に関する制約が Usability 上の問題を引き起こす可能性もある. 例えば, ラップトップコンピューターの USB ポート数はしばしば非常に限られている. これによりユーザーは Multi-factor OTP Device を使用するために他の USB 周辺機器を取り外す必要があるかもしれない.
+  * USB ポートなどの直接的コンピューターインタフェースの Availability (可用性) に関する制約が Usability 上の問題を引き起こす可能性もある. 例えば, ラップトップコンピューターの USB ポート数はしばしば非常に限られている. これによりユーザーは Multi-factor OTP Device を使用するために他の USB 周辺機器を取り外す必要があるかもしれない.
 
 ### Single-Factor Cryptographic Software
 
@@ -495,7 +495,7 @@ Usability considerations for typical usage include:
 * Limited availability of a direct computer interface like a USB port could pose usability difficulties. For example, laptop computers often have a limited number of USB ports, which may force users to unplug other USB peripherals to use the single-factor cryptographic device.
 -->
 
-* USB ポートなどの直接的コンピューターインタフェースの可用性 (Availability) に関する制約が Usability 上の問題を引き起こす可能性もある. 例えば, ラップトップコンピューターの USB ポート数はしばしば非常に限られている. これによりユーザーは Single-Factor Cryptographic Device を使用するために他の USB 周辺機器を取り外す必要があるかもしれない.
+* USB ポートなどの直接的コンピューターインタフェースの Availability (可用性) に関する制約が Usability 上の問題を引き起こす可能性もある. 例えば, ラップトップコンピューターの USB ポート数はしばしば非常に限られている. これによりユーザーは Single-Factor Cryptographic Device を使用するために他の USB 周辺機器を取り外す必要があるかもしれない.
 
 ### Multi-Factor Cryptographic Software
 
@@ -565,7 +565,7 @@ Usability considerations for typical usage include:
 * Limited availability of a direct computer interface like a USB port could pose usability difficulties. For example, laptop computers often have a limited number of USB ports, which may force users to unplug other USB peripherals to use the multi-factor cryptographic device.
 -->
 
-* USB ポートなどの直接的コンピューターインタフェースの可用性 (Availability) に関する制約が Usability 上の問題を引き起こす可能性もある. 例えば, ラップトップコンピューターの USB ポート数はしばしば非常に限られている. これによりユーザーは Multi-Factor Cryptographic Device を使用するために他の USB 周辺機器を取り外す必要があるかもしれない.
+* USB ポートなどの直接的コンピューターインタフェースの Availability (可用性) に関する制約が Usability 上の問題を引き起こす可能性もある. 例えば, ラップトップコンピューターの USB ポート数はしばしば非常に限られている. これによりユーザーは Multi-Factor Cryptographic Device を使用するために他の USB 周辺機器を取り外す必要があるかもしれない.
 
 ## Summary of Usability Considerations
 
