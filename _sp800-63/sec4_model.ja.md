@@ -284,7 +284,7 @@ Authentication プロセスの成功は, Claimant が Subscriber の Identity �
 
 <!-- Additionally, mechanisms located at the verifier can mitigate online guessing attacks against lower entropy secrets &mdash; like passwords and PINs &mdash; by limiting the rate at which an attacker can make authentication attempts, or otherwise delaying incorrect attempts. Generally, this is done by keeping track of and limiting the number of unsuccessful attempts, since the premise of an online guessing attack is that most attempts will fail. -->
 
-また, Verifier 側で Attacker による Authentication 試行レートを制限したり不正な試行を遅延させたりすることで, Password や PIN といったエントロピーの低いシークレットに対する Online Guessing Attack の影響を軽減できる. 一般的に Online Guessing Attack ではほとんどの試行が失敗するので, その対策は失敗試行数を制限するというような方式となる.
+また, Verifier 側で Attacker による Authentication 試行レートを制限したり不正な試行を遅延させたりすることで, Password や PIN といった Entropy の低いシークレットに対する Online Guessing Attack の影響を軽減できる. 一般的に Online Guessing Attack ではほとんどの試行が失敗するので, その対策は失敗試行数を制限するというような方式となる.
 
 ## Federation and Assertions {#Federation}
 
