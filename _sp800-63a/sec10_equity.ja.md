@@ -29,7 +29,7 @@ In assessing equity risks, a CSP starts by considering the overall user populati
 
 Identity Resolution には、Identity サービスが対象とする集団内で、Claim された Identity を単一の一意の個人として識別できるようにするための最小限の Attribute のセットを収集することが含まれる。Attribute は、提示された Identity Proofing、Applicant の自己申告、および／またはバックエンドの Attribute プロバイダから取得される。
 
-このセクションでは、Identity Resolution プロセスに関連する不公平な Access 、処遇、または結果について、考えられる一連の問題および緩和策を提供する: 
+このセクションでは、Identity Resolution プロセスに関連する不公平な Access 、処遇、または結果について、考えられる一連の問題および緩和策を提供する:
 
 {% comment %}
 Identity resolution involves collecting the minimum set of attributes to be able to distinguish the claimed identity as a single, unique individual within the population served by the identity service. Attributes are obtained from presented identity evidence, applicant self-assertion, and/or back-end attribute providers.
@@ -96,7 +96,7 @@ Possible mitigations include:
 2. Allowing for the use of Applicant References ([Sec. 5.1.9.2](sec5_ial.md#ApplicantRefs)) who can vouch for the applicant
 {% endcomment %}
 
-**問題の説明： 特定のユーザーグループに属する Applicant について、Authoritative または信頼できる Source （例：　モバイルネットワークオペレーターや電話番号検証機関など）が保持する記録が不十分であり、Core Attributes の Validation や提示された Evidence をサポートできない。**
+**問題の説明： 特定のユーザーグループに属する Applicant について、Authoritative または信頼できる Source （例： モバイルネットワークオペレーターや電話番号検証機関など）が保持する記録が不十分であり、Core Attributes の Validation や提示された Evidence をサポートできない。**
 
 緩和策としては、以下が考えられる:
 
@@ -195,7 +195,7 @@ Possible mitigations include:
 
 緩和策としては、以下が考えられる:
 
-1. CSP　オペレーター／エージェントによる Applicant の不公平な処遇を低減／排除することを目的としたポリシーと手続きを定める。
+1. CSP オペレーター／エージェントによる Applicant の不公平な処遇を低減／排除することを目的としたポリシーと手続きを定める。
 2. オペレーターの教育・認定の厳格化
 3. 継続的な品質監視を行い、バイアスや不公平な処遇、結果が把握された場合には、是正措置を講じる。
 

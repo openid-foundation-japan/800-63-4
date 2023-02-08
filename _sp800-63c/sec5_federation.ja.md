@@ -248,7 +248,7 @@ IdP と RP の審査結果は最低限以下のようなものとなる (**SHALL
 * RP and IdP systems use approved profiles of federation protocols.
 -->
 
-* IdP が生成する Assertion は　[Sec. 6](sec6_assertions.ja.md#assertions) の要件に従っている.
+* IdP が生成する Assertion は [Sec. 6](sec6_assertions.ja.md#assertions) の要件に従っている.
 * RP は Subscriber Attribute の保持, 集約および第三者への開示といった取り扱いに関する要件に従っている.
 * RP と IdP のシステムは許可された Federation Protocol のプロファイルを利用している.
 

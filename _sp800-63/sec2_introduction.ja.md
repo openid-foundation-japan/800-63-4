@@ -48,7 +48,7 @@ Identity サービスの構成, モデル, および可用性は, SP 800-63 の�
 
 <!-- Not all digital services require identity proofing or authentication; however, this guidance applies to all online transactions for which some level of digital identity is required, regardless of the constituency (e.g., citizens, business partners, and government entities). -->
 
-すべてのデジタルサービスに Identity Proofing　または Authentication が必要なわけではないが, このガイダンスは利用者層 (市民, ビジネス・パートナー, 政府機関など) に関係なく, 何らかのレベルの Digital Identity が必要なすべてのオンライン Transaction に適用される.
+すべてのデジタルサービスに Identity Proofing または Authentication が必要なわけではないが, このガイダンスは利用者層 (市民, ビジネス・パートナー, 政府機関など) に関係なく, 何らかのレベルの Digital Identity が必要なすべてのオンライン Transaction に適用される.
 
 <!-- These guidelines primarily focus on organizational services that interact with external users, such as citizens accessing public benefits or private sector partners accessing collaboration spaces. However, it also applies to federal systems accessed by employees and contractors. The *Personal Identity Verification (PIV) of Federal Employees and Contractors* standard [[FIPS201]](sec8_references.md#ref-FIPS201) and its corresponding set of special publications and organization-specific instructions, extend these guidelines for the federal enterprise, providing additional technical controls and processes for issuing and managing Personal Identity Verification (PIV) cards, binding additional authenticators as derived PIV credentials, and using federation architectures and protocols with PIV systems. -->
 
@@ -95,7 +95,7 @@ SP 800-63 は以下のような一連の Vol. から構成される:
 
 <!-- SP 800-63 *Digital Identity Guidelines*: Provides the risk assessment methodology and an overview of general identity frameworks, using authenticators, credentials, and assertions together in a digital system, and a risk-based process of selecting assurance levels. _SP 800-63 contains both normative and informative material._ -->
 
-SP 800-63 *Digital Identity Guidelines* :　SP 800-63 では, Risk Assesment の方法論, デジタルシステムにおける Authenticator, Credential, Assertion を利用した一般的な Identity Framework の概観, およびリスクベースプロセスに基づく各 Assurance Level の選択方法について述べる. _SP 800-63 には規範的な資料と情報的な資料の両方が含まれている._
+SP 800-63 *Digital Identity Guidelines* : SP 800-63 では, Risk Assesment の方法論, デジタルシステムにおける Authenticator, Credential, Assertion を利用した一般的な Identity Framework の概観, およびリスクベースプロセスに基づく各 Assurance Level の選択方法について述べる. _SP 800-63 には規範的な資料と情報的な資料の両方が含まれている._
 
 <!-- [[SP800-63A]](../_sp800-63a/sec1_purpose.md#purpose){:latex-href="#ref-SP800-63A"}: Provides requirements for enrollment and identity proofing of applicants, either remotely or in person, that wish to gain access to resources at each of the three identity assurance levels (IALs). It details the responsibilities of Credential Service Providers (CSPs) with respect to establishing and maintaining subscriber accounts and binding authenticators (either CSP-issued or subscriber-provided) to the subscriber account.
 _SP 800-63A contains both normative and informative material._ -->
@@ -114,7 +114,7 @@ _SP 800-63B contains both normative and informative material._
 <!-- [[SP800-63C]](../_sp800-63c/sec1_purpose.md#purpose){:latex-href="#ref-SP800-63C"}: Provides requirements on the use of federated identity architectures and assertions to convey the results of authentication processes and relevant identity information to an agency application. Further, this volume offers privacy-enhancing techniques to share information about a valid, authenticated subject, and describes methods that allow for strong multi-factor authentication (MFA) while the subject remains pseudonymous to the digital service.
 _SP 800-63C contains both normative and informative material._-->
 
-[[SP800-63C]](../_sp800-63c/sec1_purpose.md#purpose){:latex-href="#ref-SP800-63C"}: Authentication プロセスの結果および関連する Identity 情報を機関アプリケーションに伝達するための, Federated Identity Architecture および Assertion の使用に関する要件を規定している. さらに, この文書では, 有効な Authenticated Subject に関する情報を共有するためのプライバシー強化技術を提供し, Subject がデジタルサービスに対して匿名のままで強力な　Multi-factor Authentication (MFA) を可能にする方法について説明している.
+[[SP800-63C]](../_sp800-63c/sec1_purpose.md#purpose){:latex-href="#ref-SP800-63C"}: Authentication プロセスの結果および関連する Identity 情報を機関アプリケーションに伝達するための, Federated Identity Architecture および Assertion の使用に関する要件を規定している. さらに, この文書では, 有効な Authenticated Subject に関する情報を共有するためのプライバシー強化技術を提供し, Subject がデジタルサービスに対して匿名のままで強力な Multi-factor Authentication (MFA) を可能にする方法について説明している.
 
 _SP 800-63C contains both normative and informative material._
 
@@ -194,4 +194,4 @@ Equity と同様に, Usability には Digital Identity システムまたはプ�
 
 <!-- Digital identity management processes should be designed and implemented so it is easy for users to do the right thing, hard to do the wrong thing, and easy to recover when the wrong thing happens. -->
 
-Digital Identity　管理プロセスは, ユーザーが正しいことを行うのは簡単で, 間違ったことを行うのは困難であり, 間違ったことが起こったときに回復するのが簡単であるように設計および実装されるべきである.
+Digital Identity 管理プロセスは, ユーザーが正しいことを行うのは簡単で, 間違ったことを行うのは困難であり, 間違ったことが起こったときに回復するのが簡単であるように設計および実装されるべきである.

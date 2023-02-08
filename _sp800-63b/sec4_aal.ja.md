@@ -215,7 +215,7 @@ CSP は, 適用される可能性のある NARA の記録保持スケジュー�
 AAL3 provides very high confidence that the claimant controls authenticators bound to the subscriber account. Authentication at AAL3 is based on proof of possession of a key through a cryptographic protocol. AAL3 authentication **SHALL** use a hardware-based authenticator and an authenticator that provides phishing resistance — the same device **MAY** fulfill both these requirements. In order to authenticate at AAL3, claimants **SHALL** prove possession and control of two distinct authentication factors through secure authentication protocols. Approved cryptographic techniques are required.
 -->
 
-AAL3 は, Claimant が Subscriber Account に Bind された Authenticator を制御するという非常に高い確信を提供する. AAL3 での Authentication は, 暗号プロトコルを介した Key の所有の証明に基づく. ハードウェアベースの Authenticator  とPhishing 耐性のある Authenticator を使用することになり(**SHALL**), 同じデバイスがこれらの両方の要件を満たしてもよい(**MAY**).　AAL3 で Authentication を行うには, Claimant は, セキュアな Authentication プロトコルを介して, 2つのはっきりと異なる Authentication Factor の所有と制御を証明することになる(**SHALL**). Approved な暗号技術が必要である.
+AAL3 は, Claimant が Subscriber Account に Bind された Authenticator を制御するという非常に高い確信を提供する. AAL3 での Authentication は, 暗号プロトコルを介した Key の所有の証明に基づく. ハードウェアベースの Authenticator  とPhishing 耐性のある Authenticator を使用することになり(**SHALL**), 同じデバイスがこれらの両方の要件を満たしてもよい(**MAY**). AAL3 で Authentication を行うには, Claimant は, セキュアな Authentication プロトコルを介して, 2つのはっきりと異なる Authentication Factor の所有と制御を証明することになる(**SHALL**). Approved な暗号技術が必要である.
 
 ### Permitted Authenticator Types {#aal3types}
 

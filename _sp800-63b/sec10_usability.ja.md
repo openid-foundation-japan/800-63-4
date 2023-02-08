@@ -60,7 +60,7 @@ The impact of usability across digital systems needs to be considered as part of
 Leveraging federation for authentication can alleviate many of the usability issues, though such an approach has its own tradeoffs, as discussed in [[SP800-63C]](../_sp800-63c/sec1_purpose.md#purpose){:latex-href="#ref-SP800-63C"}.
 -->
 
-[[SP800-63C]](../_sp800-63c/sec1_purpose.md#purpose){:latex-href="#ref-SP800-63C"}　で述べるように, そのアプローチ自体にもトレードオプが存在するものの, Authentication のために Federation を活用すると多くの Usability の問題を軽減できる可能性もある.
+[[SP800-63C]](../_sp800-63c/sec1_purpose.md#purpose){:latex-href="#ref-SP800-63C"} で述べるように, そのアプローチ自体にもトレードオプが存在するものの, Authentication のために Federation を活用すると多くの Usability の問題を軽減できる可能性もある.
 
 <!--
 This section provides general usability considerations and possible implementations, but does not recommend specific solutions. The implementations mentioned are examples to encourage innovative technological approaches to address specific usability needs. Further, usability considerations and their implementations are sensitive to many factors that prevent a one-size-fits-all solution. For example, a font size that works in the desktop computing environment may force text to scroll off of a small OTP device screen. Performing a usability evaluation on the selected authenticator is a critical component of implementation. It is important to conduct evaluations with representative users, realistic goals and tasks, and appropriate contexts of use.

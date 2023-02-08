@@ -231,7 +231,7 @@ When using a federation protocol and Identity Provider (IdP) to authenticate at 
 
 [[SP800-63C]](../_sp800-63c/sec1_purpose.md#purpose){:latex-href="#ref-SP800-63C"} で述べたように, RP に Authenticate するために Federation Protocol と Identity Provider (IdP) を使用する場合は, Session Management と Reauthentication に特別な考慮事項が適用される.
 Federation Protocol は Assertion を用いて IdP での Authentication イベントを RP に伝達し, RP はこの Assertion の検証の成功をもって Authenticated Session を開始する.
-IdP と RP は Session を個別に管理し, Federation Protocol は　IdP と RP の Session Management を接続しないため, IdP と RP での Session の終了は互いに独立して行われる.
+IdP と RP は Session を個別に管理し, Federation Protocol は IdP と RP の Session Management を接続しないため, IdP と RP での Session の終了は互いに独立して行われる.
 同様に, Subscriber が複数の RP で持つ Session は, 互いに独立して確立および終了される.
 
 <!--
