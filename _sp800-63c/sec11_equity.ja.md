@@ -53,8 +53,8 @@ Federation プロセスは複数のアクティブな当事者間で Network プ
 Normative requirements have been established requiring IdPs and RPs to mitigate the problems in this area that are expected to be most common. However, normative requirements are unlikely to have anticipated all potential equity problems. Potential equity problems also will vary for different applications. Accordingly, IdPs and RPs need to provide mechanisms for subscribers to report inequitable authentication requirements and to advise them on potential alternative authentication strategies.
 -->
 
-最も一般的であると予想されるこの分野の問題を軽減するため, IdP と RP には規範的要件が確立されている.
-しかし規範的要件が全ての潜在的な Equity の問題を想定済であるとは言いづらい.
+最も一般的であると予想されるこの分野の問題を軽減するため, IdP と RP には normative な要件が確立されている.
+しかし normative な要件が全ての潜在的な Equity の問題を想定済であるとは言いづらい.
 潜在的な Equity の問題は, アプリケーション毎にも異なる.
 従って, IdP と RP は Subscriber が不公平な Authentication 要件を報告し, 潜在的な代替の Authentication 戦略についてアドバイスを行えるようなメカニズムを提供する必要がある.
 

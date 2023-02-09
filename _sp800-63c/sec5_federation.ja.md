@@ -290,7 +290,7 @@ Where proxies are used, they function as an IdP on one side and an RP on the oth
 -->
 
 Proxy を利用する場合, 当該 Proxy はある一方には IdP, またある一方には RP として動作する.
-従って IdP と RP に適用される全規範的要件が対応する役割を担う各 Proxy に適用されねばならない (**SHALL**).
+従って IdP と RP に適用される全 normative 要件が対応する役割を担う各 Proxy に適用されねばならない (**SHALL**).
 
 [Figure 3. Federation Proxy](sec5_federation.ja.md#fig-3){:name="fig-3"}
 {:latex-ignore="true"}

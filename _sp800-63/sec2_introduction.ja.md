@@ -95,7 +95,7 @@ SP 800-63 は以下のような一連の Vol. から構成される:
 
 <!-- SP 800-63 *Digital Identity Guidelines*: Provides the risk assessment methodology and an overview of general identity frameworks, using authenticators, credentials, and assertions together in a digital system, and a risk-based process of selecting assurance levels. _SP 800-63 contains both normative and informative material._ -->
 
-SP 800-63 *Digital Identity Guidelines* : SP 800-63 では, Risk Assesment の方法論, デジタルシステムにおける Authenticator, Credential, Assertion を利用した一般的な Identity Framework の概観, およびリスクベースプロセスに基づく各 Assurance Level の選択方法について述べる. _SP 800-63 には規範的な資料と情報的な資料の両方が含まれている._
+SP 800-63 *Digital Identity Guidelines* : SP 800-63 では, Risk Assesment の方法論, デジタルシステムにおける Authenticator, Credential, Assertion を利用した一般的な Identity Framework の概観, およびリスクベースプロセスに基づく各 Assurance Level の選択方法について述べる. _SP 800-63 には normative な資料と informative な資料の両方が含まれている._
 
 <!-- [[SP800-63A]](../_sp800-63a/sec1_purpose.md#purpose){:latex-href="#ref-SP800-63A"}: Provides requirements for enrollment and identity proofing of applicants, either remotely or in person, that wish to gain access to resources at each of the three identity assurance levels (IALs). It details the responsibilities of Credential Service Providers (CSPs) with respect to establishing and maintaining subscriber accounts and binding authenticators (either CSP-issued or subscriber-provided) to the subscriber account.
 _SP 800-63A contains both normative and informative material._ -->

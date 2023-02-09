@@ -42,7 +42,7 @@ Digital Identity の Risk Management には4つのステップが存在する.
 
 <!-- Organizations **SHOULD** adapt and modify this overall approach to meet organizational processes, governance, and integration with enterprise risk management practices. At a minimum, organizations **SHALL** ensure that each step is executed and the normative mandates and outcomes of each step are completed and documented regardless of operational approach and enabling tools. -->
 
-組織は, 組織のプロセス, ガバナンス, 及び企業 Risk Management のプラクティスとの統合に合わせて, この全体的なアプローチを適応及び修正すべき(**SHOULD**)である. 最低限, 組織は, 運用方法や実現手段にかかわらず, 各ステップを確実に実行し, 各ステップの規範的な義務及び成果を完了し, 文書化しなければならない (**SHALL**).
+組織は, 組織のプロセス, ガバナンス, 及び企業 Risk Management のプラクティスとの統合に合わせて, この全体的なアプローチを適応及び修正すべき(**SHOULD**)である. 最低限, 組織は, 運用方法や実現手段にかかわらず, 各ステップを確実に実行し, 各ステップの normative な義務及び成果を完了し, 文書化しなければならない (**SHALL**).
 
 ## Conduct Initial Impact Assessment {#intlAssess}
 
