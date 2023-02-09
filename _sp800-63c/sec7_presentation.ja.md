@@ -83,7 +83,7 @@ Assertion Reference の要件を以下に示す.
 2. 利用できる回数を1度きりに制限する (**SHALL**).
 3. 有効期限を定め (**SHALL**), そのライフタイムは数分以内にすべきである (**SHOULD**).
 4. 提示の際には IdP に対する RP の Authentication を必要とする (**SHALL**).
-5. 128 bit 以上のエントロピーを持つ (**SHALL**).
+5. 128 bit 以上の Entropy を持つ (**SHALL**).
 
 ~~~
 \clearpage

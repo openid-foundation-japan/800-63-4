@@ -46,7 +46,7 @@ Address of Record
 Allowlist
 <!-- : A documented list of specific elements that are allowed, per policy decision. In federation contexts, this is most commonly used to refer to the list of RPs allowed to connect to an IdP without subscriber intervention. This concept has historically been known as a _whitelist_. -->
 
-: ポリシーごとに許可される特定の要素の文書化されたリスト. Federation のコンテキストでは, Subscriber の介入なしにIdPへの接続を許可されるRPのリストを指すのが最も一般的である. この概念は, 歴史的に _Whitelist_ として知られてきた. 
+: ポリシーごとに許可される特定の要素の文書化されたリスト. Federation のコンテキストでは, Subscriber の介入なしにIdPへの接続を許可されるRPのリストを指すのが最も一般的である. この概念は, 歴史的に _Whitelist_ として知られてきた.
 
 Applicant
 <!-- : A subject undergoing the processes of enrollment and identity proofing. -->
@@ -86,7 +86,7 @@ Attacker
 Attacker-in-the-Middle Attack (AitM)
 <!-- : An attack in which an attacker is positioned between two communicating parties in order to intercept and/or alter data traveling between them. In the context of authentication, the attacker would be positioned between claimant and verifier, between registrant and CSP during enrollment, or between subscriber and CSP during authenticator binding. -->
 
-:  Attacker が, 通信を行う2つの当事者の間に位置し, その当事者間を移動するデータを傍受 および/または 変更するための Attack . Authentication のコンテキストでは, Attacker は, Claimant と Verifier の間, Enrollment のコンテキストでは Registrant と CSP の間, Authenticator 紐付けのコンテキストでは Subscriber と CSP の間に介在することとなる. 
+:  Attacker が, 通信を行う2つの当事者の間に位置し, その当事者間を移動するデータを傍受 および/または 変更するための Attack . Authentication のコンテキストでは, Attacker は, Claimant と Verifier の間, Enrollment のコンテキストでは Registrant と CSP の間, Authenticator 紐付けのコンテキストでは Subscriber と CSP の間に介在することとなる.
 
 Attribute
 <!-- : A quality or characteristic ascribed to someone or something. -->
@@ -96,7 +96,7 @@ Attribute
 Attribute API
 <!-- : An API that provides _attribute values_, _derived attribute values_, and related information about one or more subscribers. Access to these APIs are often granted to RPs in the context of an _identity API_ (for a single subscriber) or a _provisioning API_ (for multiple subscribers). This is distinct from an _attribute verification API_ which is used to verify attribute values for a CSP during the identity proofing process. -->
 
-: 1つ以上の Subscriber に関する _Attribute Value_ , _Derived Attribute Value_ および関連する情報を提供する API. これらの API への Access は, (単一 Subscriber のための)_Identity API_ または (複数の Subscriber のための) _Provisioning API_ のコンテキストで RP に付与されることが多い. これは, Identity Proofing プロセス中に CSP の Attribute Value を検証するために使用される _Attribute Verification API_ とは異なる. 
+: 1つ以上の Subscriber に関する _Attribute Value_ , _Derived Attribute Value_ および関連する情報を提供する API. これらの API への Access は, (単一 Subscriber のための)_Identity API_ または (複数の Subscriber のための) _Provisioning API_ のコンテキストで RP に付与されることが多い. これは, Identity Proofing プロセス中に CSP の Attribute Value を検証するために使用される _Attribute Verification API_ とは異なる.
 
 Attribute Bundle
 <!-- : A packaged set of attributes, usually contained within an assertion. Attribute bundles offer RPs a simple way to retrieve the most relevant attributes they need from IdPs. OpenID Connect scopes [[OIDC]](sec8_references.md#ref-OIDC) are an implementation of attribute bundles. -->
@@ -115,7 +115,7 @@ Attribute Value
 
 Attribute Verification API
 <!-- : An API that provides verification of _attribute values_ for use during an _identity proofing_ process. This API accepts attribute values as input queries and returns whether or not the attribute values can be verified. This is distinct from an _attribute API_ which is used to convey attributes to an RP. -->
-: _Identity Proofing_ プロセスにおいて, _Attribute Value_ の検証を行うための API . この API は Attribute Value を入力クエリとして受け付け, その Attribute Value が検証可能かどうかを返す. RP に Attribute を伝達するための _Attribute API_ とは区別される. 
+: _Identity Proofing_ プロセスにおいて, _Attribute Value_ の検証を行うための API . この API は Attribute Value を入力クエリとして受け付け, その Attribute Value が検証可能かどうかを返す. RP に Attribute を伝達するための _Attribute API_ とは区別される.
 
 Authenticate
 <!-- : See [Authentication](definitions.md#authentication). -->
@@ -124,12 +124,12 @@ Authenticate
 Authenticated Protected Channel
 <!-- : An encrypted communication channel that uses approved cryptography where the connection initiator (client) has authenticated the recipient (server). Authenticated protected channels provide confidentiality and MitM protection and are frequently used in the user authentication process. Transport Layer Security (TLS) [[BCP195]](sec8_references.md#ref-bcp195) is an example of an authenticated protected channel where the certificate presented by the recipient is verified by the initiator. Unless otherwise specified, authenticated protected channels do not require the server to authenticate the client. Authentication of the server is often accomplished through a certificate chain leading to a trusted root rather than individually with each server. -->
 
-: 接続元 (Client) が 接続先 (Server) を Authenticate しており, Approved Cryptography を用いて暗号化されたコミュニケーションチャネル. Authenticated Protocol Channel は Confidentiality (機密性) および MitM 保護を提供するものであり, ユーザーの Authentication プロセスの中でよく使われるものである. Transport Layer Security (TLS) [[BCP195]](sec8_references.md#ref-bcp195) がその例としてあげられ, TLS では接続先が提示した Certificate を接続元が検証することになる. 特に指定がない限り, Authenticated Protected Channel では Server が Client を Authenticate する必要はない. Server の Authentication は, 各 Server 個別の対応ではなく, しばしば Trusted Root から始まる Certificate Chain を用いて行われる.
+: 接続元 (Client) が 接続先 (Server) を Authenticate しており, Approved Cryptography を用いて暗号化されたコミュニケーションチャネル. Authenticated Protected Channel は Confidentiality (機密性) および MitM 保護を提供するものであり, ユーザーの Authentication プロセスの中でよく使われるものである. Transport Layer Security (TLS) [[BCP195]](sec8_references.md#ref-bcp195) がその例としてあげられ, TLS では接続先が提示した Certificate を接続元が検証することになる. 特に指定がない限り, Authenticated Protected Channel では Server が Client を Authenticate する必要はない. Server の Authentication は, 各 Server 個別の対応ではなく, しばしば Trusted Root から始まる Certificate Chain を用いて行われる.
 
 Authentication [](#authentication){:name="authentication"}
 <!-- : The process of determining the validity of one or more authenticators used to claim a digital identity. Authentication establishes that a subject attempting to access a digital service is in control of the technologies used to authenticate. -->
 
-: Digital Identity を表明するために使用される 1 つまたは複数の Authenticator の妥当性を判断するプロセス. Authentication は, デジタル・サービスにアクセスしようとする Subject が, Authenticate に使用される技術の管理下にあることを証明する. 
+: Digital Identity を表明するために使用される 1 つまたは複数の Authenticator の妥当性を判断するプロセス. Authentication は, デジタル・サービスにアクセスしようとする Subject が, Authenticate に使用される技術の管理下にあることを証明する.
 
 Authentication Factor [](#af){:name="af"}
 <!-- : The three types of authentication factors are *something you know*, *something you have*, and *something you are*. Every authenticator has one or more authentication factors. -->
@@ -147,15 +147,14 @@ Authentication Protocol
 : Claimant が正規の Authenticator の所有および管理権限を示すことで自身の Identity を確立するプロセスにおいて, Claimant と Verifier の間でやりとりされる一連のメッセージの定義. Claimant が意図した Verifier とコミュニケーションしていることを立証するためのプロセスを含むこともある.
 
 Authentication Secret
-<!-- : A generic term for any secret value that an attacker could use to impersonate the subscriber in an authentication protocol. -->
-
 : あらゆる鍵を示す一般的な呼び名. Authentication Protocol において Attacker が Subscriber になりすますために利用することもできる.
+    Authentication Secret は *short-term authentication secrets* と *long-term authentication secrets* に分類することができ, 前者は限定的な期間のみ利用可能なもの, 後者は手動でリセットされるまで使い続けられるものを示す. Authenticator Secret は long-term authentication secret の代表的な例であり, Authenticator Output する鍵が Authenticator Secret と異なる場合, その出力された鍵は一般的に short-term authentication secret である.
 
 <!--
-    These are further divided into *short-term authentication secrets*, which are only useful to an attacker for a limited period of time, and *long-term authentication secrets*, which allow an attacker to impersonate the subscriber until they are manually reset. The authenticator secret is the canonical example of a long-term authentication secret, while the authenticator output, if it is different from the authenticator secret, is usually a short-term authentication secret. 
+: A generic term for any secret value that an attacker could use to impersonate the subscriber in an authentication protocol.
+    These are further divided into *short-term authentication secrets*, which are only useful to an attacker for a limited period of time, and *long-term authentication secrets*, which allow an attacker to impersonate the subscriber until they are manually reset. The authenticator secret is the canonical example of a long-term authentication secret, while the authenticator output, if it is different from the authenticator secret, is usually a short-term authentication secret.
 -->
 
-    Authentication Secret は *short-term authentication secrets* と *long-term authentication secrets* に分類することができ, 前者は限定的な期間のみ利用可能なもの, 後者は手動でリセットされるまで使い続けられるものを示す. Authenticator Secret は long-term authentication secret の代表的な例であり, Authenticator の出力する鍵が Authenticator Secret と異なる場合, その出力された鍵は一般的に short-term authentication secret である.
 
 Authenticator [](#authenticator){:name="authenticator"}
 <!-- : Something the claimant possesses and controls (typically a cryptographic module or password) that is used to authenticate the claimant's identity. In some previous editions of SP 800-63, this was referred to as a *token*. -->
@@ -200,7 +199,7 @@ Authorize
 Authorized Party
 <!-- : In federation, the organization, person, or entity that is responsible for making decisions regarding the release of information within the federation transaction, most notably subscriber attributes. This is often the subscriber (when runtime decisions are used) or the party operating the IdP (when allowlists are used). -->
 
-: Federation において, Federation Transaction 内で情報（特に Subscriber Attribute ）の公開に関する決定を行う責任を負う組織, 人, または実体. これは, 多くの場合, Subscriber（実行時決定が使用される場合）または IdP を運営する当事者（ Allowlist が使用される場合）.
+: Federation において, Federation Transaction 内で情報 (特に Subscriber Attribute) の公開に関する決定を行う責任を負う組織, 人, または実体. これは, 多くの場合, Subscriber (実行時決定が使用される場合) または IdP を運営する当事者 (Allowlist が使用される場合).
 
 Back-Channel Communication
 <!-- : Communication between two systems that relies on a direct connection (allowing for standard protocol-level proxies), without using redirects through an intermediary such as a browser. This can be accomplished using HTTP requests and responses. -->
@@ -220,12 +219,12 @@ Binding
 Biometric Reference
 <!-- : one or more stored biometric samples, templates, or models attributed to an individual and used as the object of biometric comparison. For example, a facial image stored digitally on a passport, fingerprint minutiae template on a National ID card or Gaussian Mixture Model for speaker recognition, in a database. -->
 
-: 個人を特定し, 生体情報比較の対象として使用される, 1つ以上の保存された Biometric Sample , テンプレート, またはモデル. 例えば, パスポートにデジタル保存された顔画像, 国のIDカードに保存された詳細な指紋テンプレート, データベース内の話者認識用の混合ガウスモデルなどである. 
+: 個人を特定し, 生体情報比較の対象として使用される, 1つ以上の保存された Biometric Sample , テンプレート, またはモデル. 例えば, パスポートにデジタル保存された顔画像, 国のIDカードに保存された詳細な指紋テンプレート, データベース内の話者認識用の混合ガウスモデルなどである.
 
 Biometric Sample
 <!-- : An analog or digital representation of biometric characteristics prior to biometric feature extraction. An example is a record containing a fingerprint image. -->
 
-: Biometrics の特徴抽出の前に, Biometrics の特徴をアナログまたはデジタルで表現したもの. 例として, 指紋画像を含むレコード. 
+: Biometrics の特徴抽出の前に, Biometrics の特徴をアナログまたはデジタルで表現したもの. 例として, 指紋画像を含むレコード.
 
 Biometrics
 <!-- : Automated recognition of individuals based on their biological and behavioral characteristics. -->
@@ -235,7 +234,7 @@ Biometrics
 Blocklist
 <!-- : A documented list of specific elements that are blocked, per policy decision. This concept has historically been known as a _blacklist_. -->
 
-: ポリシーごとにブロックされる特定の要素の文書化されたリスト. この概念は, 歴史的に _blacklist_ として知られている. 
+: ポリシーごとにブロックされる特定の要素の文書化されたリスト. この概念は, 歴史的に _blacklist_ として知られている.
 
 Challenge-Response Protocol
 <!-- : An authentication protocol where the verifier sends the claimant a challenge (usually a random value or nonce) that the claimant combines with a secret (such as by hashing the challenge and a shared secret together, or by applying a private key operation to the challenge) to generate a response that is sent to the verifier. The verifier can independently verify the response generated by the claimant (such as by re-computing the hash of the challenge and the shared secret and comparing to the response, or performing a public key operation on the response) and establish that the claimant possesses and controls the secret. -->
@@ -248,15 +247,13 @@ Claimant
 : 1つ以上の Authentication Protocol により Identity を検証される Subject.
 
 Claimed Address
-<!-- : The physical location asserted by a subject where they can be reached. It includes the individual's residential street address and may also include their mailing address. -->
-
 : Subject により, 自分に到達可能だと Assert された物理的位置. 居住地の住所や郵便の届く住所などを含む.
+    例えば, 外国籍のパスポートを所持している状態で U.S. に在住する人物であれば, Identity Proofing プロセスにおいて住所を要求されることになる. そう言った場合の住所は, "address of record" ではなく "claimed address" となろう.
 
 <!--
-    For example, a person with a foreign passport living in the U.S. will need to give an address when going through the identity proofing process. This address would not be an "address of record" but a "claimed address." 
+: The physical location asserted by a subject where they can be reached. It includes the individual's residential street address and may also include their mailing address.
+    For example, a person with a foreign passport living in the U.S. will need to give an address when going through the identity proofing process. This address would not be an "address of record" but a "claimed address."
 -->
-
-    例えば, 外国籍のパスポートを所持している状態で U.S. に在住する人物であれば, Identity Proofing プロセスにおいて住所を要求されることになる. そう言った場合の住所は, "address of record" ではなく "claimed address" となろう.
 
 Claimed Identity
 <!-- : An applicant's declaration of unvalidated and unverified personal attributes. -->
@@ -271,18 +268,16 @@ Completely Automated Public Turing test to tell Computers and Humans Apart (CAPT
 Core Attributes
 <!-- : The set of identity attributes the CSP has determined and documented to be required for identity proofing. -->
 
-: CSP が Identity Proofing に必要であると判断し, 文書化した Identity Attribute のセット. 
+: CSP が Identity Proofing に必要であると判断し, 文書化した Identity Attribute のセット.
 
 Credential
-<!-- : An object or data structure that authoritatively binds an identity - via an identifier or identifiers - and (optionally) additional attributes, to at least one authenticator possessed and controlled by a subscriber. -->
-
 : ある Identity および (任意で) 追加の Attribute を, 識別子を通じて, Subscriber が所有ないしは管理する Authenticator に紐付ける, 信頼のおけるオブジェクトもしくはデータ構造.
+    Credentialは, CSP によって発行, 保存, および維持される. Credential からの情報のコピーは, 通常, 1つ以上のデジタル証明書の形で Subscriber が所有することができ, それらはしばしば関連する Private Key とともに Authenticator に含まれている.
 
-<!-- 
+<!--
+: An object or data structure that authoritatively binds an identity - via an identifier or identifiers - and (optionally) additional attributes, to at least one authenticator possessed and controlled by a subscriber.
     A credential is issued, stored, and maintained by the CSP. Copies of information from the credential can be possessed by the subscriber, typically in the form of a one or more digital certificates that are often contained, along with their associated private keys, in an authenticator.
 -->
-
-    Credentialは, CSP によって発行, 保存, および維持される. Credential からの情報のコピーは, 通常, 1つ以上のデジタル証明書の形で Subscriber が所有することができ, それらはしばしば関連する Private Key とともに Authenticator に含まれている. 
 
 Credential Service Provider (CSP)
 <!-- : A trusted entity whose functions include identity proofing applicants to the identity service and the registration of authenticators to subscriber accounts. A CSP may be an independent third party. -->
@@ -290,41 +285,39 @@ Credential Service Provider (CSP)
 : 信頼されたエンティティで, Identity サービスへの Applicant の Identity Proofing や, Subscriber Account への Authenticator の登録などの機能を持つ. CSP は独立した第三者となることがある.
 
 Cross-site Request Forgery (CSRF)
-<!-- : An attack in which a subscriber currently authenticated to an RP and connected through a secure session browses to an attacker's website, causing the subscriber to unknowingly invoke unwanted actions at the RP. -->
-
 : RP に対して Authenticate されている Subscriber が, セキュアな Session を通じて Attacker のウェブサイトに接続する場合に発生する Attack であり, 加入者が無意識のうちに望まないアクションを RP 上で実行してしまうことになる.
+    例えば, もし銀行のサイトが CSRF に対して脆弱である場合, 単にユーザーが Web メールの本文中の悪意のあるリンクを参照するだけで, 別のブラウザウィンドウで銀行への接続が開かれ, 加入者が意図せず大きな金額の資金移動を Authorize してしまう可能性がある.
 
 <!--
-    For example, if a bank website is vulnerable to a CSRF attack, it may be possible for a subscriber to unintentionally authorize a large money transfer, merely by viewing a malicious link in a webmail message while a connection to the bank is open in another browser window. 
+: An attack in which a subscriber currently authenticated to an RP and connected through a secure session browses to an attacker's website, causing the subscriber to unknowingly invoke unwanted actions at the RP.
+    For example, if a bank website is vulnerable to a CSRF attack, it may be possible for a subscriber to unintentionally authorize a large money transfer, merely by viewing a malicious link in a webmail message while a connection to the bank is open in another browser window.
 -->
-
-    例えば, もし銀行のサイトが CSRF に対して脆弱である場合, 単にユーザが Web メールの本文中の悪意のあるリンクを参照するだけで, 別のブラウザウィンドウで銀行への接続が開かれ, 加入者が意図せず大きな金額の資金移動を Authorize してしまう可能性がある.
 
 Cross-site Scripting (XSS)
 <!-- : A vulnerability that allows attackers to inject malicious code into an otherwise benign website. These scripts acquire the permissions of scripts generated by the target website and can therefore compromise the confidentiality and integrity of data transfers between the website and client. Websites are vulnerable if they display user-supplied data from requests or forms without sanitizing the data so that it is not executable. -->
 
-: Attacker が, 不正なコードを他の無害なページに対して注入することを許してしまう脆弱性. これらのスクリプトはターゲットのウェブサイトで生成されるスクリプトの権限で動作し, ウェブサイトとクライアント間でのデータ転送の Confidentiality (機密性) や Integrity (完全性) を侵害する. ウェブサイトは, ユーザが入力するデータをリクエストやフォームから受け取り, サニタイズを施して実行不可能にすることなく表示してしまう場合に脆弱である.
+: Attacker が, 不正なコードを他の無害なページに対して注入することを許してしまう脆弱性. これらのスクリプトはターゲットのウェブサイトで生成されるスクリプトの権限で動作し, ウェブサイトとクライアント間でのデータ転送の Confidentiality (機密性) や Integrity (完全性) を侵害する. ウェブサイトは, ユーザーが入力するデータをリクエストやフォームから受け取り, サニタイズを施して実行不可能にすることなく表示してしまう場合に脆弱である.
 
 Cryptographic Authenticator
 <!-- : An authenticator that proves possession of an authentication secret through direct communication, via the endpoint, with a verifier. -->
 
-: エンドポイントを介した Verifier との直接通信により, Authentication Secret の所有を証明する Authenticator . 
+: エンドポイントを介した Verifier との直接通信により, Authentication Secret の所有を証明する Authenticator .
 
 Cryptographic Key
-<!-- : A value used to control cryptographic operations, such as decryption, encryption, signature generation, or signature verification. For the purposes of these guidelines, key requirements shall meet the minimum requirements stated in Table 2 of NIST [[SP800-57Part1]](sec8_references.md#ref-SP800-57P1). -->
-
 : 復号, 暗号化, 署名生成, 署名検証等の暗号論的オペレーションを管理するために用いられる値. 本ガイドライン群では, [[SP800-57Part1]](sec8_references.md#ref-SP800-57P1) の Table 2 で述べられた最低限の要件を満たすものとする.
+    Asymmetric Keys および Symmetric Key も参照のこと.
 
 <!--
-    See also Asymmetric Keys, Symmetric Key. 
--->
+: A value used to control cryptographic operations, such as decryption, encryption, signature generation, or signature verification. For the purposes of these guidelines, key requirements shall meet the minimum requirements stated in Table 2 of NIST [[SP800-57Part1]](sec8_references.md#ref-SP800-57P1).
+    See also Asymmetric Keys, Symmetric Key.
+ -->
 
-    Asymmetric Keys および Symmetric Key も参照のこと.
+
 
 Cryptographic Module
 <!-- : A set of hardware, software, and/or firmware that implements approved security functions (including cryptographic algorithms and key generation). -->
 
-: 一式のハードウェア, ソフトウェア, およびファームウェアで, (暗号アルゴリズムや鍵生成を含む) 承認されたセキュリティ機能を実装するもの.
+: 一式のハードウェア, ソフトウェア, およびファームウェアで, (暗号アルゴリズムや鍵生成を含む) Approved なセキュリティ機能を実装するもの.
 
 Data Integrity
 <!-- : The property that data has not been altered by an unauthorized entity. -->
@@ -349,7 +342,7 @@ Digital Signature
 Disassociability
 <!-- : Per [[NISTIR8062]](sec8_references.md#ref-NISTIR8062): The processing of PII or events without association to individuals or devices beyond the operational requirements of the system. -->
 
-: [[NISTIR8062]](sec8_references.md#ref-NISTIR8062)より: システムの運用上の必要性を超えて, 個人またはデバイスに関連付けることなく, PII またはイベントを処理すること. 
+: [[NISTIR8062]](sec8_references.md#ref-NISTIR8062)より: システムの運用上の必要性を超えて, 個人またはデバイスに関連付けることなく, PII またはイベントを処理すること.
 
 Eavesdropping Attack
 <!-- : An attack in which an attacker listens passively to the authentication protocol to capture information that can be used in a subsequent active attack to masquerade as the claimant. -->
@@ -374,23 +367,21 @@ Entropy
 Equity
 <!-- : Per EO 13985, Equity refers to the consistent and systematic fair, just, and impartial treatment of all individuals, including individuals who belong to underserved communities that have been denied such treatment, such as Black, Latino, and Indigenous and Native American persons, Asian Americans and Pacific Islanders, and other persons of color; members of religious minorities; lesbian, gay, bisexual, transgender, and queer (LGBTQ+) persons; persons with disabilities; persons who live in rural areas; and persons otherwise adversely affected by persistent poverty or inequality. -->
 
-: EO 13985 によると, Equity とは, 黒人, ラテンアメリカ人, 先住民, アジア系アメリカ人, 太平洋諸島民, その他の有色人種など, これまで十分なサービスを受けてこなかったコミュニティに属する個人を含め, すべての個人を一貫して公平, 公正, かつ公平に扱うことを指す. 宗教的少数派の人々, レズビアン, ゲイ, バイセクシャル, トランスジェンダー, クィア（LGBTQ+）の人々, 障害者, 地方に住む人々, その他根強い貧困や不平等から悪影響を受ける人々など.
+: EO 13985 によると, Equity とは, 黒人, ラテンアメリカ人, 先住民, アジア系アメリカ人, 太平洋諸島民, その他の有色人種など, これまで十分なサービスを受けてこなかったコミュニティに属する個人を含め, すべての個人を一貫して公平, 公正, かつ公平に扱うことを指す. 宗教的少数派の人々, レズビアン, ゲイ, バイセクシャル, トランスジェンダー, クィア (LGBTQ+) の人々, 障害者, 地方に住む人々, その他根強い貧困や不平等から悪影響を受ける人々など.
 
 Federal Information Processing Standard (FIPS)
-<!-- : Under the Information Technology Management Reform Act (Public Law 104-106), the Secretary of Commerce approves the standards and guidelines that the National Institute of Standards and Technology (NIST) develops for federal computer systems. NIST issues these standards and guidelines as Federal Information Processing Standards (FIPS) for government-wide use. NIST develops FIPS when there are compelling federal government requirements, such as for security and interoperability, and there are no acceptable industry standards or solutions. See background information for more details.-->
-
 : Secretary of Commerce は, Information Technology Management Reform Act (Public Law 104-106) に基づいて, National Institute of Standards and Technology (NIST) により連邦政府機関のコンピュータシステムに適用するために開発された標準及びガイドラインを承認する. これらの標準及びガイドラインは NIST によって FIPS として発行されたものであり, 政府機関で横断的に使われるものである. NIST はセキュリティや相互運用性といった強制力のある連邦政府の要求事項がある場合や, 許容可能な業界標準やソリューションが存在しない場合に, FIPS を開発する. 詳細については背景を参照すること.
+    FIPS ドキュメントは FIPS ホームページ <http://www.nist.gov/itl/fips.cfm> からオンラインアクセス可能である.
 
 <!--
+: Under the Information Technology Management Reform Act (Public Law 104-106), the Secretary of Commerce approves the standards and guidelines that the National Institute of Standards and Technology (NIST) develops for federal computer systems. NIST issues these standards and guidelines as Federal Information Processing Standards (FIPS) for government-wide use. NIST develops FIPS when there are compelling federal government requirements, such as for security and interoperability, and there are no acceptable industry standards or solutions. See background information for more details.
     FIPS documents are available online on the FIPS home page: <https://www.nist.gov/itl/fips.cfm>
 -->
-
-    FIPS ドキュメントは FIPS ホームページ <http://www.nist.gov/itl/fips.cfm> からオンラインアクセス可能である.
 
 Federated Identifier
 <!-- : The combination of a _subject identifier_ within an assertion and an identifier for the _IdP_ that issued that assertion. When combined, these pieces of information uniquely identify the _subscriber_ in the context of a _federation transaction_. -->
 
-: Assertion内の _Subject Identifier_ と, その Assertion を発行した _IdP_ の識別子の組合せ. これらの情報を組み合わせると,  _Federation Transaction_ のコンテキストで _Subscriber_ を一意に識別できる. 
+: Assertion内の _Subject Identifier_ と, その Assertion を発行した _IdP_ の識別子の組合せ. これらの情報を組み合わせると,  _Federation Transaction_ のコンテキストで _Subscriber_ を一意に識別できる.
 
 Federation
 <!-- : A process that allows the conveyance of identity and authentication information across a set of networked systems. -->
@@ -410,7 +401,7 @@ Federation Proxy
 Federation Transaction
 <!-- : A specific instance of processing an authentication using a _federation_ process for a specific _subscriber_ by conveying an _assertion_ from an _IdP_ to an _RP_. -->
 
-: 特定の _Subscriber_ のために,  _IdP_ から _RP_ に _Assertion_ を伝え,  _Federation_ プロセスを使用して Authentication を処理する特定のインスタンス. 
+: 特定の _Subscriber_ のために,  _IdP_ から _RP_ に _Assertion_ を伝え,  _Federation_ プロセスを使用して Authentication を処理する特定のインスタンス.
 
 Front-Channel Communication
 <!-- : Communication between two systems that relies on redirects through an intermediary such as a browser. This is normally accomplished by appending HTTP query parameters to URLs hosted by the receiver of the message. -->
@@ -418,19 +409,17 @@ Front-Channel Communication
 : ブラウザ等を媒介とし, 2つのシステム間でリダイレクトを用いて行われるコミュニケーション. これは通常メッセージ受信者がホストする URL に HTTP Query Parameter を付与することで実現される.
 
 Hash Function
-<!-- : A function that maps a bit string of arbitrary length to a fixed-length bit string. Approved hash functions satisfy the following properties: -->
-
 : 任意長の短い文字列を固定長の文字列に変換する関数. 承認されている Hash Function は以下のプロパティーを満たす.
-
-<!--
-    1. One-way - It is computationally infeasible to find any input that maps to any pre-specified output; and
-
-    2. Collision resistant - It is computationally infeasible to find any two distinct inputs that map to the same output.
--->
 
     1. 一方向性 - 指定された出力結果から対応する入力を特定することが計算上困難であり
 
     2. 衝突困難性 - 同じ出力となる任意の2つの異なる入力を特定することが計算上困難である.
+
+<!--
+: A function that maps a bit string of arbitrary length to a fixed-length bit string. Approved hash functions satisfy the following properties:
+    1. One-way - It is computationally infeasible to find any input that maps to any pre-specified output; and
+    2. Collision resistant - It is computationally infeasible to find any two distinct inputs that map to the same output.
+-->
 
 Identity
 <!-- : An attribute or set of attributes that uniquely describe a subject within a given context. -->
@@ -440,7 +429,7 @@ Identity
 Identity API
 <!-- : An _attribute API_ accessed by an RP for accessing attributes of a specific subscriber. Access to the identity API is generally granted as part of a federation authentication process and limited to the information for a single, specific subscriber. -->
 
-: 特定のSubscriberのAttributeにアクセスするために RP がアクセスする _Attribute API_ . Identity API へのアクセスは, 通常, Federation Authenticationプロセスの一部として付与され, 単一の特定のSubscriberの情報に限定される. 
+: 特定のSubscriberのAttributeにアクセスするために RP がアクセスする _Attribute API_ . Identity API へのアクセスは, 通常, Federation Authenticationプロセスの一部として付与され, 単一の特定のSubscriberの情報に限定される.
 
 Identity Assurance Level (IAL)
 <!-- : A category that conveys the degree of confidence that the applicant's claimed identity is their real identity. -->
@@ -465,7 +454,7 @@ Identity Provider (IdP)
 Identity Resolution
 <!-- : The process of collecting information about an applicant in order to uniquely distinguish an individual within the context of the population the CSP serves. -->
 
-: CSP がサービスを提供する集団の中で個人を一意に識別するために, 申請者に関する情報を収集するプロセス. 
+: CSP がサービスを提供する集団の中で個人を一意に識別するために, Applicant に関する情報を収集するプロセス.
 
 Issuing Source
 <!-- : An authority responsible for the generation of data, digital evidence (such as assertions), or physical documents that can be used as identity evidence. -->
@@ -473,15 +462,13 @@ Issuing Source
 : Identity Evidence として利用可能なデータや Assertion などのデジタルなエビデンス, 物理的ドキュメント等を責任を持って生成するオーソリティー.
 
 Kerberos
-<!-- : A widely used authentication protocol developed at MIT. In "classic" Kerberos, users share a secret password with a Key Distribution Center (KDC). The user (Alice) who wishes to communicate with another user (Bob) authenticates to the KDC and the KDC furnishes a "ticket" to use to authenticate with Bob.-->
-
-: MIT で開発された, 幅広く利用されている Authentication Protocol. "classic" な Kerberos では, ユーザは秘密の Password を Key Distribution Center (KDC) に共有する. ユーザ Alice は他のユーザ Bob と通信するため KDC に対して Authenticate し, KDC は "ticket" を発行する. 当該チケットは Alice が Bob に対して Authenticate する為に利用する.
+: MIT で開発された, 幅広く利用されている Authentication Protocol. "classic" な Kerberos では, ユーザーは秘密の Password を Key Distribution Center (KDC) に共有する. ユーザー Alice は他のユーザー Bob と通信するため KDC に対して Authenticate し, KDC は "ticket" を発行する. 当該チケットは Alice が Bob に対して Authenticate する為に利用する.
+    詳細は [[SP800-63C]](../_sp800-63c/sec1_purpose.md#purpose){:latex-href="#ref-SP800-63C"} Section 11.2 を参照.
 
 <!--
+: A widely used authentication protocol developed at MIT. In "classic" Kerberos, users share a secret password with a Key Distribution Center (KDC). The user (Alice) who wishes to communicate with another user (Bob) authenticates to the KDC and the KDC furnishes a "ticket" to use to authenticate with Bob.
     See [[SP800-63C]](../_sp800-63c/sec1_purpose.md#purpose){:latex-href="#ref-SP800-63C"} Sec. 11.2 for more information.
 -->
-
-    詳細は [[SP800-63C]](../_sp800-63c/sec1_purpose.md#purpose){:latex-href="#ref-SP800-63C"} Section 11.2 を参照.
 
 Knowledge-Based Verification (KBV)
 <!-- : Identity verification method based on knowledge of private information associated with the claimed identity. This is often referred to as knowledge-based authentication (KBA) or knowledge-based proofing (KBP). -->
@@ -491,7 +478,7 @@ Knowledge-Based Verification (KBV)
 Manageability
 <!-- : Per NISTIR 8062: Providing the capability for granular administration of personally identifiable information, including alteration, deletion, and selective disclosure. -->
 
-: NISTIR 8062より: 個人を特定できる情報の変更, 削除, 選択的な開示を含む, きめ細かい管理機能を提供すること. 
+: NISTIR 8062より: 個人を特定できる情報の変更, 削除, 選択的な開示を含む, きめ細かい管理機能を提供すること.
 
 Memorized Secret
 <!-- : A type of authenticator comprised of a character string intended to be memorized or memorable by the subscriber, permitting the subscriber to demonstrate *something they know* as part of an authentication process. -->
@@ -509,26 +496,22 @@ Mobile Code
 : 実行コードであり, 通常は提供元から別のコンピューターシステムに転送されたのち実行されるもの. 転送は Network を介す (e.g., Web ページに埋め込まれた JavaScript) が, 物理的なメディアを介して転送されることもある.
 
 Multi-Factor
-<!-- : A characteristic of an authentication system or an authenticator that requires more than one distinct [authentication factor](definitions.md#af) for successful authentication. MFA can be performed using a single authenticator that provides more than one factor or by a combination of authenticators that provide different factors.-->
-
 : 2つ以上の [Authentication Factor](definitions.md#af) を要求する Authentication システムや Authenticator の特徴. MFA には, 2つ以上の要素を提供する単一の Authenticator を用いてもよいし, 互いに異なる要素を提供する複数の Authenticator を組み合わせて用いてもよい.
+    Authentication Factor としては, something you know, something you have, something you are の3種類がある.
 
 <!--
+: A characteristic of an authentication system or an authenticator that requires more than one distinct [authentication factor](definitions.md#af) for successful authentication. MFA can be performed using a single authenticator that provides more than one factor or by a combination of authenticators that provide different factors.
     The three authentication factors are something you know, something you have, and something you are.
 -->
 
-    Authentication Factor としては, Something You Know, Something You Have, Something You Are の3種類がある.
-
 Multi-Factor Authentication (MFA) [](#mfa-definition){:name="mfa-definition"}
-<!-- : An authentication system that requires more than one distinct [authentication factor](definitions.md#af) for successful authentication. Multi-factor authentication can be performed using a multi-factor authenticator or by a combination of authenticators that provide different factors.-->
-
 : 2つ以上の [Authentication Factor](definitions.md#af) を要求する Authentication システム. Multi-Factor Authentication は単一の Multi-Factor Authenticator を用いて実現してもよいし, 互いに異なる要素を提供する複数の Authenticator を組み合わせて用いてもよい.
+    Authentication Factor としては, something you know, something you have, something you are の3種類がある.
 
 <!--
+: An authentication system that requires more than one distinct [authentication factor](definitions.md#af) for successful authentication. Multi-factor authentication can be performed using a multi-factor authenticator or by a combination of authenticators that provide different factors.
     The three authentication factors are *something you know*, *something you have*, and *something you are*.
 -->
-
-    Authentication Factor としては, Something You Know, Something You Have, Something You Are の3種類がある.
 
 Multi-Factor Authenticator
 <!-- : An authenticator that provides more than one distinct authentication factor, such as a cryptographic authentication device with an integrated biometric sensor that is required to activate the device. -->
@@ -553,7 +536,7 @@ Offline Attack
 One-to-one (1:1) Comparison
 <!-- : The process in which a biometric sample from an individual is compared to a biometric reference to produce a comparison score. -->
 
-: 個人から採取した Biometric サンプルを Biometric Reference と比較し, 比較スコアを生成するプロセス. 
+: 個人から採取した Biometric サンプルを Biometric Reference と比較し, 比較スコアを生成するプロセス.
 
 Online Attack
 <!-- : An attack against an authentication protocol where the attacker either assumes the role of a claimant with a genuine verifier or actively alters the authentication channel. -->
@@ -608,7 +591,7 @@ Personally Identifiable Information (PII)
 Personally Identifiable Information Processing
 <!-- : An operation or set of operations performed upon personally identifiable information that can include, but is not limited to, the collection, retention, logging, generation, transformation, use, disclosure, transfer, and disposal of personally identifiable information. -->
 
-: Personally Identifiable Information に対して行われる操作または一連の操作で, Personally Identifiable Information の収集, 保持, 記録, 生成, 変換, 使用, 開示, 移転, および廃棄を含むが, これらに限定されない. 
+: Personally Identifiable Information に対して行われる操作または一連の操作で, Personally Identifiable Information の収集, 保持, 記録, 生成, 変換, 使用, 開示, 移転, および廃棄を含むが, これらに限定されない.
 
 Pharming
 <!-- : An attack in which an attacker corrupts an infrastructure service such as DNS (Domain Name System) causing the subscriber to be misdirected to a forged verifier/RP, which could cause the subscriber to reveal sensitive information, download harmful software, or contribute to a fraudulent act. -->
@@ -643,7 +626,7 @@ Private Key
 Processing
 <!-- : Per [[NISTIR8062]](sec8_references.md#ref-NISTIR8062): Operation or set of operations performed upon PII that can include, but is not limited to, the collection, retention, logging, generation, transformation, use, disclosure, transfer, and disposal of PII. -->
 
-: [[NISTIR8062]](sec8_references.md#ref-NISTIR8062)より: PII の収集, 保持, 記録, 生成, 変換, 使用, 開示, 移転, 及び廃棄を含むが, これらに限定されない, PII に対して行われる操作又は操作の集合. 
+: [[NISTIR8062]](sec8_references.md#ref-NISTIR8062)より: PII の収集, 保持, 記録, 生成, 変換, 使用, 開示, 移転, 及び廃棄を含むが, これらに限定されない, PII に対して行われる操作又は操作の集合.
 
 Presentation Attack
 <!-- : Presentation to the biometric data capture subsystem with the goal of interfering with the operation of the biometric system. -->
@@ -656,20 +639,18 @@ Presentation Attack Detection (PAD)
 : Presentation Attack の自動検知. Presentation Attack Detection 手法のサブセットである *liveness detection* では, 解剖学的特徴または非自発的または自発的反応の測定および分析を行い, Biometric サンプルが生体の Subject から直接読み取られたものかどうかを判定する.
 
 Protected Session
-<!-- : A session wherein messages between two participants are encrypted and integrity is protected using a set of shared secrets called session keys.-->
-
 : 2者間でやりとりされるメッセージを, Session Key と呼ばれる Shared Secret を用いて暗号化し, Integrity を保護する Session.
+    当該 Session 内で, ある主体が Session Key に加えて1つ以上の Authenticator を所有していることを証明し, もう一方の主体が当該 Authenticator に紐づく Identity を検証できる場合, 当該主体は *Authenticated* であると言う. もし両主体が共に Authenticated となる場合, この Protected Session は *Mutually Authenticated* であると言える.
 
 <!--
+: A session wherein messages between two participants are encrypted and integrity is protected using a set of shared secrets called session keys.
     A protected session is said to be *authenticated* if, during the session, one participant proves possession of one or more authenticators in addition to the session keys, and if the other party can verify the identity associated with the authenticator(s). If both participants are authenticated, the protected session is said to be *mutually authenticated*.
 -->
-
-    当該 Session 内で, ある主体が Session Key に加えて1つ以上の Authenticator を所有していることを証明し, もう一方の主体が当該 Authenticator に紐づく Identity を検証できる場合, 当該主体は *Authenticated* であると言う. もし両主体が共に Authenticated となる場合, この Protected Session は *Mutually Authenticated* であると言える.
 
 Provisioning API
 <!-- : An _attribute API_ that allows an RP to access to attributes for multiple subscribers for the purposes of provisioning RP subscriber accounts. Access to a provisioning API is generally granted to the RP outside of a specific federated authentication transaction. -->
 
-: RP Subscriber Account のプロビジョニングを目的として, RP が複数の SubscriberのAttribute にアクセスすることを可能にする _Attribute API_ . Provisioning API へのアクセスは, 通常, 特定の Federated Authentication Transaction の外部で RP に付与される. 
+: RP Subscriber Account のプロビジョニングを目的として, RP が複数の SubscriberのAttribute にアクセスすることを可能にする _Attribute API_ . Provisioning API へのアクセスは, 通常, 特定の Federated Authentication Transaction の外部で RP に付与される.
 
 Pseudonym
 <!-- : A name other than a legal name. -->
@@ -814,12 +795,12 @@ Subscriber
 Subscriber Account
 <!-- : An account established by the CSP containing information and authenticators registered for each subscriber enrolled in the CSP identity service. -->
 
-: CSP Identity サービスに登録された各利用者の情報および Authenticator を含む, CSP が設定するアカウント. 
+: CSP Identity サービスに登録された各利用者の情報および Authenticator を含む, CSP が設定するアカウント.
 
 Supervised Remote Identity Proofing
 <!-- : A remote identity proofing process that employs physical, technical and procedural measures that provide sufficient confidence that the remote session can be considered equivalent to a physical, in-person identity proofing process. -->
 
-: リモートセッションが物理的な対面式 Identity Proofing プロセスと同等と見なすことができる十分な信頼を提供する, 物理的, 技術的および手続き上の措置を採用したリモート Identity Proofing プロセス. 
+: リモートセッションが物理的な対面式 Identity Proofing プロセスと同等と見なすことができる十分な信頼を提供する, 物理的, 技術的および手続き上の措置を採用したリモート Identity Proofing プロセス.
 
 Symmetric Key
 <!-- : A cryptographic key used to perform both the cryptographic operation and its inverse. For example, to encrypt and decrypt or create a message authentication code and to verify the code. -->
@@ -854,7 +835,7 @@ Trust Anchor
 Usability
 <!-- : The extent to which a product can be used by specified users to achieve specified goals with effectiveness, efficiency, and satisfaction in a specified context of use. [[ISO/IEC9241-11]](sec8_references.md#ref-ISO9241) -->
 
-: 特定のユーザが特定の利用コンテキストにおいて, 効果的, 効率的かつ十分に特定の目的を果たすためにプロダクトを利用しうる度合い. [[ISO/IEC9241-11]](sec8_references.md#ref-ISO9241) 
+: 特定のユーザーが特定の利用コンテキストにおいて, 効果的, 効率的かつ十分に特定の目的を果たすためにプロダクトを利用しうる度合い. [[ISO/IEC9241-11]](sec8_references.md#ref-ISO9241)
 
 Validation
 <!-- : The process or act of checking and confirming that the evidence and attributes supplied by an applicant are authentic, accurate and associated with a real-life identity. Specifically, evidence validation is the process or act of checking that presented evidence is authentic, current, and issued from an acceptable source; attribute validation is the process or act of confirming the a set of attributes are accurate and associated with a real-life identity. -->
@@ -864,7 +845,7 @@ Validation
 Verification
 <!-- : The process or act of confirming that the applicant holds the claimed identity represented by the validated identity attributes and associated evidence. In NIST SP 800-63, the term "verification" is synonymous with "identity verification." -->
 
-: Applicant が, 検証された Identity Attribute および関連する証拠によって表される Claimed Identity を保持していることを確認するプロセスまたは行為. NIST SP 800-63 では, "Verification" という用語は "Identity Verification" と同義である. 
+: Applicant が, 検証された Identity Attribute および関連する証拠によって表される Claimed Identity を保持していることを確認するプロセスまたは行為. NIST SP 800-63 では, "Verification" という用語は "Identity Verification" と同義である.
 
 Verifier
 <!-- : An entity that verifies the claimant's identity by verifying the claimant's possession and control of one or more authenticators using an authentication protocol. To do this, the verifier needs to confirm the binding of the authenticators with the subscriber account and check that the subscriber account is active. -->

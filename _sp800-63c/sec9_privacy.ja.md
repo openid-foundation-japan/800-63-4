@@ -163,7 +163,7 @@ Even with the use of blinding technologies, a blinded party may still infer prot
 -->
 
 Blinding 技術を採用しても, Blind された当事者は依然として保護された Subscriber 情報を開示された Attribute データやメタデータから推測しうる.
-例としては, タイムスタンプや Attribute Bundle　のサイズ, Attribute 署名者情報などの解析により, そのようなことが起こりうる.
+例としては, タイムスタンプや Attribute Bundle のサイズ, Attribute 署名者情報などの解析により, そのようなことが起こりうる.
 IdP は Federation に参加している主体の識別情報が暴露されるリスクを軽減するため, 追加のプライバシー強化アプローチを検討してもよい.
 
 <!--

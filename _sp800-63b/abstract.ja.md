@@ -23,6 +23,6 @@ anchor: abstract
 * Hitomi Kimura
   * Trend Micro Inc. (United States)
 * Nov Matake
-  * OpenID Foubdation Japan エバンジェリスト 兼 翻訳WGリーダー
+  * OpenID Foundation Japan エバンジェリスト 兼 翻訳WGリーダー
   * MoneyForward inc.
   * YAuth.jp LLC

@@ -248,7 +248,7 @@ IdP と RP の審査結果は最低限以下のようなものとなる (**SHALL
 * RP and IdP systems use approved profiles of federation protocols.
 -->
 
-* IdP が生成する Assertion は　[Sec. 6](sec6_assertions.ja.md#assertions) の要件に従っている.
+* IdP が生成する Assertion は [Sec. 6](sec6_assertions.ja.md#assertions) の要件に従っている.
 * RP は Subscriber Attribute の保持, 集約および第三者への開示といった取り扱いに関する要件に従っている.
 * RP と IdP のシステムは許可された Federation Protocol のプロファイルを利用している.
 
@@ -687,7 +687,7 @@ Just-In-Time Provisioning
 [Figure 6. Just-In-Time Provisioning](sec5_federation.md#fig-6){:name="fig-6"}
 {:latex-ignore="true"}
 
-![Diagram of the stages of a just-in-time provisioning of an RP subscriber account based on a subscriber account.]({{site.baseurl}}/{{page.collection}}/media/JIT-provisioning.png 'Just-In-Time Provisioning'){:latex-src="JIT-provisioning.pdf" latex-fig="6" latex-place="h"}
+![Diagram of the stages of a just-in-time provisioning of an RP subscriber account based on a subscriber account.]({{site.baseurl}}/{{page.collection}}/media/JIT-Provisioning.png 'Just-In-Time Provisioning'){:latex-src="JIT-provisioning.pdf" latex-fig="6" latex-place="h"}
 
 ~~~
 \clearpage
@@ -713,7 +713,7 @@ RP は RP システムとインタラクションを行ったことのないユ�
 [Figure 7. Pre-Provisioning](sec5_federation.md#fig-7){:name="fig-7"}
 {:latex-ignore="true"}
 
-![Diagram of the stages of a pre-provisioned RP subscriber account based on a subscriber account.]({{site.baseurl}}/{{page.collection}}/media/Pre-provisioning.png 'Pre-Provisioning'){:latex-src="Pre-provisioning.pdf" latex-fig="7" latex-place="h"}
+![Diagram of the stages of a pre-provisioned RP subscriber account based on a subscriber account.]({{site.baseurl}}/{{page.collection}}/media/Pre-Provisioning.png 'Pre-Provisioning'){:latex-src="Pre-provisioning.pdf" latex-fig="7" latex-place="h"}
 
 ~~~
 \clearpage
@@ -737,7 +737,7 @@ RP は内部的なステート管理を低減させ, よりシンプルになる
 [Figure 8. Ephemeral Provisioning](sec5_federation.md#fig-8){:name="fig-8"}
 {:latex-ignore="true"}
 
-![Diagram of the stages of an ephemeral RP subscriber account based on a subscriber account.]({{site.baseurl}}/{{page.collection}}/media/Ephemeral-provisioning.png 'Ephemeral Provisioning'){:latex-src="Ephemeral-provisioning.pdf" latex-fig="8" latex-place="h"}
+![Diagram of the stages of an ephemeral RP subscriber account based on a subscriber account.]({{site.baseurl}}/{{page.collection}}/media/Ephemeral-Provisioning.png 'Ephemeral Provisioning'){:latex-src="Ephemeral-provisioning.pdf" latex-fig="8" latex-place="h"}
 
 <!--
 Other

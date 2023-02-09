@@ -94,7 +94,7 @@ The requirements in this document build on the requirements in the other volumes
 -->
 
 本ドキュメントに記載された要件は, 本ガイドラインの他のドキュメントに述べられた要件に基づいたものである.
-Subscriber と IdP の間の Authentication は　[[SP800-63B]](../_sp800-63b/sec1_purpose.ja.md#purpose){:latex-href="#ref-SP800-63B"} に記載された Authentication メカニズムに基づいて実施され, Federation Protocol によって RP に伝達される Attribute そのものは (その他の Attribute と共に) [[SP800-63A]](../_sp800-63a/sec1_purpose.ja.md#purpose){:latex-href="#ref-SP800-63A"} に記載された手続きを用いて IdP によって確立される.
+Subscriber と IdP の間の Authentication は [[SP800-63B]](../_sp800-63b/sec1_purpose.ja.md#purpose){:latex-href="#ref-SP800-63B"} に記載された Authentication メカニズムに基づいて実施され, Federation Protocol によって RP に伝達される Attribute そのものは (その他の Attribute と共に) [[SP800-63A]](../_sp800-63a/sec1_purpose.ja.md#purpose){:latex-href="#ref-SP800-63A"} に記載された手続きを用いて IdP によって確立される.
 
 <!--
 The following table states which sections of the document are normative and which are informative:

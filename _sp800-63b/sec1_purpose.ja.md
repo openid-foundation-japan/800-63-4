@@ -12,6 +12,12 @@ section: 1
 
 _This section is informative._
 
+<!--
 This publication and its companion volumes, [[SP800-63]](../_sp800-63/sec1_purpose.md#purpose){:latex-href="#ref-SP800-63"}, [[SP800-63A]](../_sp800-63a/sec1_purpose.md#purpose){:latex-href="#ref-SP800-63A"}, and [[SP800-63C]](../_sp800-63c/sec1_purpose.md#purpose){:latex-href="#ref-SP800-63C"}, provide technical guidelines to organizations for the implementation of digital identity services.
 
 This document, SP 800-63B, provides requirements to credential service providers (CSPs) for remote user authentication at each of three authentication assurance levels (AALs).
+-->
+
+本ドキュメントとそれと対をなす各ドキュメント [[SP800-63]](../_sp800-63/sec1_purpose.md#purpose){:latex-href="#ref-SP800-63"}, [[SP800-63A]](../_sp800-63a/sec1_purpose.md#purpose){:latex-href="#ref-SP800-63A"}, そして [[SP800-63C]](../_sp800-63c/sec1_purpose.md#purpose){:latex-href="#ref-SP800-63C"} は, Digital Identity Service を実装する組織に向けた技術的ガイドラインを提供するものである.
+
+このドキュメント, SP 800-63Bは, 3つの Authentication Assurance Levels (AALs) のそれぞれでのRemote User Authenticationのための Credential Service Providers (CSPs) に対する要件を提供するものである.

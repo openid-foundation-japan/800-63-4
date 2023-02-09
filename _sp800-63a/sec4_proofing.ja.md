@@ -19,7 +19,7 @@ _This section is normative._
 {% comment %}
 This section provides and overview of the identity proofing and enrollment process as well as requirements to support the resolution, validation, and verification of the identity claimed by an applicant. It also provides guidelines on additional aspects of the identity proofing process.  These requirements are intended to ensure that the claimed identity exists in the real world and that the applicant is the individual associated with that identity. Collectively, the elements of the identity proofing process are designed to ensure that attacks against a CSP's identity service that affect a large number of enrolled subscribers require greater time and cost than the value of the data being protected.
 
-Additionally, these guidelines provide for multiple methods by which resolution, validation, and verification can be completed as well as multiple types of identity evidence that may support the identity proofing process. To the extent practical, CSPs and organizations **SHOULD** enable optionality when implementing their identity proofing services and processes to promote access for those with different means, capabilities, and technology access. At a minimum, this **SHOULD** include accepting multiple types and combinations of identity evidence, supporting multiple data validation sources, enabling multiple methods for verifying identity (e.g., use of trusted referees), multiple channels for engagement (e.g., in-person, remote), and offering assistance mechanisms for applicants (e.g., applicant references). 
+Additionally, these guidelines provide for multiple methods by which resolution, validation, and verification can be completed as well as multiple types of identity evidence that may support the identity proofing process. To the extent practical, CSPs and organizations **SHOULD** enable optionality when implementing their identity proofing services and processes to promote access for those with different means, capabilities, and technology access. At a minimum, this **SHOULD** include accepting multiple types and combinations of identity evidence, supporting multiple data validation sources, enabling multiple methods for verifying identity (e.g., use of trusted referees), multiple channels for engagement (e.g., in-person, remote), and offering assistance mechanisms for applicants (e.g., applicant references).
 {% endcomment %}
 
 ## Identity Proofing and Enrollment
@@ -75,14 +75,14 @@ _This section is informative._
 
 以下は、IAL2 のRemote Identity Proofingプロセスにおいて CSP およびApplicantがどのようにやりとりするかについて例を示している。
 
-1. **Resolution** 
+1. **Resolution**
     1. CSP はApplicantから、名前、住所、生年月日、電子メール、電話番号などのAttributeを収集する。
     2. CSP、運転免許証やパスポートなど、1つまたは複数のIdentity Evidenceも収集する。
-    {:.letter-list} 
+    {:.letter-list}
 2. **Validation**
     1. CSP は、ステップ 1a で取得した Attributeを、Authoritative Source または信頼できる Source と照合することで、Validateする。
     2. CSPは、提示されたエビデンスの真正性、正確性、および最新性を Validate する。
-    {:.letter-list} 
+    {:.letter-list}
 3. **Verification**
     1. CSP は、Applicantに自分自身の写真を撮影するよう依頼し、生存性のチェックを行う。
     2. CSPは、免許証とパスポートの写真と、前のステップで撮影したApplicant当人の写真とを比較し、一致すると判断する。
@@ -143,7 +143,7 @@ The CSP **SHALL** determine the acceptability of presented identity evidence for
 本セクションで示す性質は、CSP がIdentity ProofingプロセスのためのIdentity Evidenceとして許容可能なものを決定する際の指針となることを意図しており、Evidence強度を示すものではない。CSP が特定の種類のEvidenceを許容できると判断すると、[セクション 4.3.3](sec4_proofing.ja.md#evidence-strength)で示されているように、その強度について判断していく必要がある。
 
 {% comment %}
-The characteristics presented in this section are intended to guide CSPs in determining what is acceptable as identity evidence for the identity proofing process and are not an indication of strength of evidence. Once a CSP determines a particular type of evidence is acceptable, a determination must be made as to its strength, as provided in [Sec. 4.3.3](sec4_proofing.ja.md#evidence-strength). 
+The characteristics presented in this section are intended to guide CSPs in determining what is acceptable as identity evidence for the identity proofing process and are not an indication of strength of evidence. Once a CSP determines a particular type of evidence is acceptable, a determination must be made as to its strength, as provided in [Sec. 4.3.3](sec4_proofing.ja.md#evidence-strength).
 {% endcomment %}
 
 
@@ -194,7 +194,7 @@ Acceptable digital evidence **SHALL** contain all of the following characteristi
 3.  The presented digital evidence contains the name of the issuer of the digital information.
 4.  The issuer of the digital evidence performed identity proofing of the applicant prior to issuing the digital evidence.
 5.  There is reasonable assurance that the digital evidence was delivered or made accessible to intended person.
-6.  If applicable, the presented digital evidence can be verified through authentication at an AAL or FAL commensurate with the assessed IAL. 
+6.  If applicable, the presented digital evidence can be verified through authentication at an AAL or FAL commensurate with the assessed IAL.
 {% endcomment %}
 
 ###  Evidence の強度要件 {#evidence-strength}
@@ -203,10 +203,10 @@ Acceptable digital evidence **SHALL** contain all of the following characteristi
 ###  Evidence Strength Requirements {#evidence-strength}
 {% endcomment %}
 
-このセクションでは、各強度におけるIdentity Evidenceの要件を定義する。Identity Evidence強度は、3つの側面によって決まる。すなわち、1) 発行の厳密さ、2) Attributeの正確性と完全性を含む、Validationにおける信頼性を提供する能力、 3) Evidenceを提示するApplicantのVerificationにおける信頼性を提供する能力、である。すべてのレベルの強度のエビデンスは、最新かつ期限が切れていないものでなければならない。
+このセクションでは、各強度におけるIdentity Evidenceの要件を定義する。Identity Evidence強度は、3つの側面によって決まる。すなわち、1) 発行の厳密さ、2) Attributeの正確性と Integrity (完全性) を含む、Validationにおける信頼性を提供する能力、 3) Evidenceを提示するApplicantのVerificationにおける信頼性を提供する能力、である。すべてのレベルの強度のエビデンスは、最新かつ期限が切れていないものでなければならない。
 
 {% comment %}
-This section defines the requirements for identity evidence at each strength. Strength of identity evidence is determined by three aspects: 1) the issuing rigor; 2) the ability to provide confidence in validation, including accuracy and integrity of attributes; and 3) the ability to provide confidence in the verification of the applicant presenting the evidence. Evidence at all levels of strength must be current and unexpired. 
+This section defines the requirements for identity evidence at each strength. Strength of identity evidence is determined by three aspects: 1) the issuing rigor; 2) the ability to provide confidence in validation, including accuracy and integrity of attributes; and 3) the ability to provide confidence in the verification of the applicant presenting the evidence. Evidence at all levels of strength must be current and unexpired.
 {% endcomment %}
 
 #### Fair Evidence 要件
@@ -227,7 +227,7 @@ In order to be considered FAIR, identity evidence **SHALL** meet _all_ the follo
 1.  The issuing source of the evidence confirmed the claimed identity through an identity proofing process.
 2.  It can be reasonably assumed that the evidence issuing process would result in the delivery of the evidence to the person to whom it relates.
 3.  The evidence contains at least one reference number, a facial portrait, or sufficient attributes to uniquely identify the person to whom it relates.
-4.  The evidence has not expired or it expired within the previous six (6) months, or it was issued within the previous six (6) months if it does not contain an expiration date. 
+4.  The evidence has not expired or it expired within the previous six (6) months, or it was issued within the previous six (6) months if it does not contain an expiration date.
 {% endcomment %}
 
 #### Strong Evidence 要件
@@ -240,7 +240,7 @@ Identity EvidenceがSTRONGであるには、以下の _すべて_ の要件を�
 1.  Evidenceの発行元は、その人物の実在のIdentityを把握しているという合理的な確信を形成することができるよう設計された文書化された手続きによって、ClaimされたIdentityを確認している。このような手続きは、規制や公的な説明責任を有する機関による継続的な監視の対象となる。たとえば、2001年に米国愛国者法に対応して制定されたCustomer Identification Programガイドラインや、 2003 年公正取引法（FACT法）第 114 条に基づく [[RedFlagsRule]](sec11_references.ja.md#ref-rfr) がそれにあたる。
 2.  Evidenceの発行プロセスで、Evidenceを関係する人物に送り届ける結果となる可能性が高い。
 3.  Evidenceは、参照番号または関連する人物を一意に識別するその他のAttributeを含む。
-4.  Evidenceが、関係する人物の顔写真または、他のバイオメトリックな特徴を含んでいる。
+4.  Evidenceが、関係する人物の顔写真または、他のBiometricな特徴を含んでいる。
 5.  Evidenceが、コピー又は再作成を困難にする物理的なセキュリティ機能を含んでいる。
 6.  Evidenceに有効期限があり、有効期限内である。
 
@@ -252,7 +252,7 @@ In order to be considered STRONG, identity evidence **SHALL** meet _all_ the fol
 3.  The evidence contains a reference number or other attributes that uniquely identify the person to whom it relates.
 4.  The evidence contains a facial portrait or other biometric characteristic of the person to whom it relates.
 5.  The evidence includes physical security features that make it difficult to copy or reproduce.
-6.  The evidence includes an expiration date and is unexpired. 
+6.  The evidence includes an expiration date and is unexpired.
 {% endcomment %}
 
 #### Superior Evidence 要件
@@ -286,15 +286,15 @@ In order to be considered SUPERIOR, identity evidence **SHALL** meet _all_ the f
 8.  The evidence includes an expiration date and is unexpired.
 {% endcomment %}
 
-### Identity Evidence と Attribute Validation 
+### Identity Evidence と Attribute Validation
 {% comment %}
-### Identity Evidence and Attribute Validation 
+### Identity Evidence and Attribute Validation
 {% endcomment %}
 
 CSPは、Evidenceの収集要件を満たすために収集されたすべてのIdentity Evidenceと、CSP Identity Serviceによって要求されるすべての Core Attributes情報をValidateするものとする(**SHALL**)。
 
 {% comment %}
-The CSP **SHALL** validate all identity evidence collected to meet evidence collection requirements and all core attribute information required by the CSP identity service. 
+The CSP **SHALL** validate all identity evidence collected to meet evidence collection requirements and all core attribute information required by the CSP identity service.
 {% endcomment %}
 
 
@@ -328,7 +328,7 @@ The authenticity and accuracy of identity evidence or attribute information that
 すべてのCore Attributesは、Identity Evidenceから取得したか、Applicantによる自己申告かによらず、Validateされなければならない。本サブセクションでは、Evidenceと収集したAttributeをValidateするための、許容可能な方法についてガイダンスを提供する。
 
 {% comment %}
-All core attributes, whether obtained from identity evidence or applicant self-assertion, must be validated. This subsection provides guidance on acceptable methods for validating evidence and collected attributes.   
+All core attributes, whether obtained from identity evidence or applicant self-assertion, must be validated. This subsection provides guidance on acceptable methods for validating evidence and collected attributes.
 {% endcomment %}
 
 #### Evidence and Attribute Validation Methods
@@ -348,7 +348,7 @@ Acceptable methods for validating presented evidence include:
 - Visual inspection by trained personnel for remote identity proofing,
 - Automated document validation processes using appropriate technologies,
 - Validation of attributes contained on the evidence with an authoritative or credible source.
-- Verification of the digital signature protecting digital evidence or attribute data objects using the public key of the issuing authority of the evidence. 
+- Verification of the digital signature protecting digital evidence or attribute data objects using the public key of the issuing authority of the evidence.
 {% endcomment %}
 
 #### Validation Sources
@@ -357,8 +357,8 @@ Acceptable methods for validating presented evidence include:
 
 Authoritative Sourceとは、次の性質のうち1つ以上によって、Identity Attribute情報の正確性を提供あるいはValidateできるエンティティである。Authoritative sourceは:
 
-- Identity Attributeのオリジナル Source である、または 
-- Identity Attribute情報を含む Identity Evidenceの発行者であり、発行者は、例えば[[PatriotAct]](sec11_references.ja.md#ref-PatriotAct)の下で確立されたCustomer Identification Program ガイドラインのような規制や公的な説明責任を有する機関による継続的な監視の対象となるような、文書化した Identity Proofingプロセスを通じて、Claimした Identityを確認した場合、または 
+- Identity Attributeのオリジナル Source である、または
+- Identity Attribute情報を含む Identity Evidenceの発行者であり、発行者は、例えば[[PatriotAct]](sec11_references.ja.md#ref-PatriotAct)の下で確立されたCustomer Identification Program ガイドラインのような規制や公的な説明責任を有する機関による継続的な監視の対象となるような、文書化した Identity Proofingプロセスを通じて、Claimした Identityを確認した場合、または
 - 個人との直接の対話（対面またはRemote ）を通じてClaimされたIdentityを確認できるIdentity Proofingプロセスを通じて、Attribute情報を収集してValidateしたもの、または
 - Identity Evidenceのピースの発行元まで追跡できるようなエビデンスとAttribute情報への Access を有する。
 
@@ -393,7 +393,7 @@ A credible source is an entity that can provide or validate the accuracy of iden
 Identity Verificationのゴールは、ClaimされたIdentityと、Identity Proofingプロセスにエンゲージされた実存するApplicantとの間の関連性を確立し、確認することである。
 
 {% comment %}
-The goal of identity verification is to confirm and establish a linkage between the claimed identity and the real-life existence of the applicant engaged in the identity proofing process.   
+The goal of identity verification is to confirm and establish a linkage between the claimed identity and the real-life existence of the applicant engaged in the identity proofing process.
 {% endcomment %}
 
 ### Identity Verification Methods
@@ -402,9 +402,9 @@ CSP は、[セクション 5](sec5_ial.ja.md#ial-section) で提示される IAL
 
 - [セクション 5.1.6](sec5_ial.ja.md#EnrollCodes)で指定されている **Enrollment code verification**。
 - **対面での物理的比較**。CSP 運営者とApplicantは、Identity Proofingイベントのために直接対話する。CSP 運営者は、Identity Evidenceに提示された顔写真と、Identity ProofingイベントにエンゲージされたApplicantの顔との物理的な比較を実行する。
-- **Remote （有人および無人）物理的顔画像比較**。CSP 運営者は、Identity Evidence上に存在する顔写真と、Identity ProofingイベントにエンゲージしたApplicantの顔画像との物理的な比較を実行する。CSP 運営者は、Identity Proofingイベントの一部または全部においてApplicantと直接対話（有人）するか、キャプチャしたビデオまたは写真に加えEvidenceのアップロードされたコピーを使用して後で比較（無人）を行うことができる。比較をあとで実施する場合、キャプチャされたビデオまたは写真がIdentity ProofingイベントにエンゲージしているApplicant当人を撮影したものであることを確認するための手順が取られる。 
+- **Remote （有人および無人）物理的顔画像比較**。CSP 運営者は、Identity Evidence上に存在する顔写真と、Identity ProofingイベントにエンゲージしたApplicantの顔画像との物理的な比較を実行する。CSP 運営者は、Identity Proofingイベントの一部または全部においてApplicantと直接対話（有人）するか、キャプチャしたビデオまたは写真に加えEvidenceのアップロードされたコピーを使用して後で比較（無人）を行うことができる。比較をあとで実施する場合、キャプチャされたビデオまたは写真がIdentity ProofingイベントにエンゲージしているApplicant当人を撮影したものであることを確認するための手順が取られる。
 - **自動化されたBiometric比較**。Biometricシステム比較は、対面またはRemote のIdentity Proofingイベントにおいて実施できる。Identity Evidenceに含まれる顔写真、または他のBiometric特性は、自動化されたBiometric比較システムによって、Identity Proofingイベント中にApplicantが提出したApplicant当人の顔画像写真、または他のBiometricの当人サンプルと比較される。自動化されたBiometric比較システムは、比較のために数学的アルゴリズムを使用する。
-- **デジタルアカウントのコントロール**。個人は、認証またはFederation Protocolの使用を通じて、デジタルアカウント （例：オンライン銀行口座）または署名済みデジタルアサーション（例：Verifiable Credentials）のコントロールを実証することができる。これは、対面でCredentialをデバイスまたはリーダーに提示することでも実施できるかもしれないが、Remote のIdentity Proofing Session 中に実施されることのほうが多いだろう。
+- **デジタルアカウントのコントロール**。個人は、AuthenticationまたはFederation Protocolの使用を通じて、デジタルアカウント （例：オンライン銀行口座）または署名済みデジタル Assertion（例：Verifiable Credentials）のコントロールを実証することができる。これは、対面でCredentialをデバイスまたはリーダーに提示することでも実施できるかもしれないが、Remote のIdentity Proofing Session 中に実施されることのほうが多いだろう。
 
 
 {% comment %}
@@ -414,7 +414,7 @@ The CSP **SHALL** verify the linkage of the claimed identity  to the applicant e
 - **In-person physical comparison**. The CSP operator and applicant interact in person for the identity proofing event. The CSP operator performs a physical comparison of the facial portrait presented on identity evidence to the face of the applicant engaged in the identity proofing event.
 - **Remote (attended and unattended) physical facial image comparison**. The CSP operator performs a physical comparison of the facial portrait presented on identity evidence to the facial image of the applicant engaged in the identity proofing event. The CSP operator may interact directly with the applicant during some or all of the identity proofing event (attended) or may conduct the comparison at a later time (unattended) using a captured video or photograph and the uploaded copy of the evidence. If the comparison is performed at a later time, steps are taken to ensure the captured video or photograph was taken from the live applicant present during the identity proofing event.
 - **Automated biometric comparison**. Biometric system comparison may be performed for in-person or remote identity proofing events. The facial portrait, or other biometric characteristic, contained on identity evidence is compared by an automated biometric comparison system to the facial image photograph of the live applicant or other biometric live sample submitted by the applicant during the identity proofing event. The automated biometric comparison system uses a mathematical algorithm for the comparison.
-- **Control of a digital account**. An individual is able to demonstrate control of a digital account (e.g., online bank account) or signed digital assertion (e.g., verifiable credentials) through the use of authentication or federation protocols. This may be done in person through presentation of the credential to a device or reader, but is more likely to be done during remote identity proofing sessions. 
+- **Control of a digital account**. An individual is able to demonstrate control of a digital account (e.g., online bank account) or signed digital assertion (e.g., verifiable credentials) through the use of authentication or federation protocols. This may be done in person through presentation of the credential to a device or reader, but is more likely to be done during remote identity proofing sessions.
 {% endcomment %}
 
 
