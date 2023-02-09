@@ -129,7 +129,7 @@ Authenticated Protected Channel
 Authentication [](#authentication){:name="authentication"}
 <!-- : The process of determining the validity of one or more authenticators used to claim a digital identity. Authentication establishes that a subject attempting to access a digital service is in control of the technologies used to authenticate. -->
 
-: Digital Identity を主張するために使用される 1 つまたは複数の Authenticator の妥当性を判断するプロセス. Authentication は, デジタル・サービスにアクセスしようとする Subject が, Authenticate に使用される技術を制御していることを証明する.
+: Digital Identity を主張するために使用される 1 つまたは複数の Authenticator の妥当性を判断するプロセス. Authentication は, デジタル・サービスにアクセスしようとする Subject が, Authenticate に使用される技術を管理下に置いていることを証明する.
 
 Authentication Factor [](#af){:name="af"}
 <!-- : The three types of authentication factors are *something you know*, *something you have*, and *something you are*. Every authenticator has one or more authentication factors. -->
@@ -148,7 +148,7 @@ Authentication Protocol
 
 Authentication Secret
 : あらゆる鍵を示す一般的な呼び名. Authentication Protocol において Attacker が Subscriber になりすますために利用することもできる.
-    Authentication Secret は *short-term authentication secrets* と *long-term authentication secrets* に分類することができ, 前者は限定的な期間のみ利用可能なもの, 後者は手動でリセットされるまで使い続けられるものを示す. Authenticator Secret は long-term authentication secret の代表的な例であり, Authenticator Output する鍵が Authenticator Secret と異なる場合, その出力された鍵は一般的に short-term authentication secret である.
+    Authentication Secret は *short-term authentication secrets* と *long-term authentication secrets* に分類することができ, 前者は限定的な期間のみ利用可能なもの, 後者は手動でリセットされるまで使い続けられるものを示す. Authenticator Secret は long-term authentication secret の代表的な例であり, Authenticator Output が Authenticator Secret と異なる場合, その Authenticator Output は一般的に short-term authentication secret である.
 
 <!--
 : A generic term for any secret value that an attacker could use to impersonate the subscriber in an authentication protocol.
