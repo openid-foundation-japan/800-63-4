@@ -590,13 +590,13 @@ Validated evidence is the preferred source of identity attributes. If the presen
 ### Evidence and Core Attributes Validation Requirements
 {% endcomment %}
 
-CSPは、以下のいずれか _1つ_ の要件に従って SUPERIOR と STRONG の Evidence の真正性を検証するものとする(**SHALL**)。
+CSPは、以下のいずれか _1つ_ の要件に従って SUPERIOR と STRONG の Evidence の真贋を検証するものとする(**SHALL**)。
 
 1. 訓練を受けた担当者による目視検査
 2. 物理的なセキュリティ機能の Integrity (完全性) を確認する技術の利用、またはEvidenceが詐称されているか不適切に変更されているかを検出することができる技術の利用
 3. 存在する場合、デジタルセキュリティ機能の Integrity (完全性) を確認する。
 
-CSPは、訓練を受けた担当者による目視検査によって、FAIR Evidenceが真正であることをValidateするものとする(**SHALL**)。
+CSPは、訓練を受けた担当者による目視検査によって、FAIR Evidenceが本物であることをValidateするものとする(**SHALL**)。
 
 CSPは、以下の _両方_ の方法ですべての Core Attributes を Validate するものとする(**SHALL**)。
 
@@ -711,7 +711,7 @@ Validated evidence is the preferred source of identity attributes. If the presen
 ### Evidence and Core Attributes Validation Requirements
 {% endcomment %}
 
-CSPは、以下のいずれか _1つ_ の要件に従って SUPERIOR と STRONG の Evidence の真正性を検証するものとする(**SHALL**)。
+CSPは、以下のいずれか _1つ_ の要件に従って SUPERIOR と STRONG の Evidence の真贋を検証するものとする(**SHALL**)。
 
 1. 訓練を受けた担当者による目視検査
 2. 物理的なセキュリティ機能の Integrity (完全性) を確認する技術の利用、またはEvidenceが詐称されているか不適切に変更されているかを検出することができる技術の利用
@@ -851,9 +851,9 @@ Validated evidence is the preferred source of identity attributes. If the presen
 #### Evidence Validation Requirements
 {% endcomment %}
 
-CSPは、暗号セキュリティ機能の Integrity (完全性) を確認し、何らかのDigital SignatureをValidateすることによって、SUPERIOR Evidence の真正性を検証するものとする(**SHALL**)。
+CSPは、暗号セキュリティ機能の Integrity (完全性) を確認し、何らかのDigital SignatureをValidateすることによって、SUPERIOR Evidence の真贋を検証するものとする(**SHALL**)。
 
-CSPは、以下のいずれか _1つ_ の要件に従って STRONG の Evidence の真正性を検証するものとする(**SHALL**)。
+CSPは、以下のいずれか _1つ_ の要件に従って STRONG の Evidence の真贋を検証するものとする(**SHALL**)。
 
 1. 訓練を受けた担当者による目視検査
 2. 物理的なセキュリティ機能の Integrity (完全性) を確認する技術の利用、またはEvidenceが詐称されているか不適切に変更されているかを検出することができる技術の利用
@@ -1004,7 +1004,7 @@ The following requirements apply to all IAL3 Supervised Remote Identity Proofing
 Presense|Remote または 対面|Remote または 対面|対面 または Supervised Remote Identity Proofing
 Resolution|Resolutionするのに必要な最低限のAttribute|IAL1と同様|IAL1と同様
 Evidence|1 つの SUPERIOR、または 1 つの STRONG と 1 つの FAIR|1 つの SUPERIOR、または 1 つの STRONG と 1 つの FAIR|2 つの SUPERIOR、または 1 つの SUPERIOR と 1 つの STRONG、または 2 つの STRONG と 1 つの FAIR
-Validation|Evidenceは真正性、正確性, 最新性の観点でValidateされる。すべての Core Attributes はAuthoritativeまたは信頼できるsourceによってValidateされる。|IAL1と同様|IAL1と同様
+Validation|Evidenceは真贋性、正確性, 最新性の観点でValidateされる。すべての Core Attributes はAuthoritativeまたは信頼できるsourceによってValidateされる。|IAL1と同様|IAL1と同様
 Verification|Enrollmentコードの提示、またはAAL1かFAL1でのまたはデジタルアカウントへの Access の実証| Biometrics比較、またはAAL2かFAL2でのデジタルアカウントへの Access ess の実証|Biometrics比較、またはAAL2かFAL2でのデジタルアカウントへの Access の実証
 Biometric Collection|オプション|オプション|必須
 {:latex-table="1" latex-caption="IAL Requirements Summary" latex-columns="p@0.15\textwidth,p@0.22\textwidth,p@0.22\textwidth,p@0.22\textwidth"}

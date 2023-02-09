@@ -81,7 +81,7 @@ _This section is informative._
     {:.letter-list}
 2. **Validation**
     1. CSP は、ステップ 1a で取得した Attributeを、Authoritative Source または信頼できる Source と照合することで、Validateする。
-    2. CSPは、提示されたエビデンスの真正性、正確性、および最新性を Validate する。
+    2. CSPは、提示されたエビデンスの Authenticity (真正性)、正確性、および最新性を Validate する。
     {:.letter-list}
 3. **Verification**
     1. CSP は、Applicantに自分自身の写真を撮影するよう依頼し、生存性のチェックを行う。
@@ -300,7 +300,7 @@ The CSP **SHALL** validate all identity evidence collected to meet evidence coll
 
 #### Evidence Validation {#validation}
 
-CSPは、提示されたエビデンスの真正性、正確性、および最新性を次の手段によってValidateするものとする(**SHALL**):
+CSPは、提示されたエビデンスの Authenticity (真正性)、正確性、および最新性を次の手段によってValidateするものとする(**SHALL**):
 
 - Evidenceが正しい形式であり、Identity Evidenceの種別に応じて求められる情報が全てそろっていることを確認する。
 - Evidenceが偽造されていないこと、および改ざんされていないことを確認する。
@@ -308,7 +308,7 @@ CSPは、提示されたエビデンスの真正性、正確性、および最�
 
 CSP は、Evidenceの有効期限を過ぎていない、あるいは有効期限の記載がない場合は過去6ヶ月以内に発行されていることを確認することで、Evidenceが最新であることを検証するものとする(**SHALL**)。
 
-暗号的に保護されているIdentity EvidenceまたはAttribute情報の真正性と正確性は、EvidenceやAttributeデータオブジェクトに対するDigital SignatureのVerificationによりValidateすることができる。CSPはデジタル署名されたEvidenceやAttributeデータオブジェクトをVerifyするために、Evidenceの発行 Authority のPublic Keyを用いるものとする(**SHALL**)。
+暗号的に保護されているIdentity EvidenceまたはAttribute情報の Authenticity (真正性) と正確性は、EvidenceやAttributeデータオブジェクトに対するDigital SignatureのVerificationによりValidateすることができる。CSPはデジタル署名されたEvidenceやAttributeデータオブジェクトをVerifyするために、Evidenceの発行 Authority のPublic Keyを用いるものとする(**SHALL**)。
 
 {% comment %}
 The CSP **SHALL** validate the authenticity, accuracy, and currency of presented evidence by:
