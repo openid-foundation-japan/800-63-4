@@ -342,7 +342,7 @@ Digital Signature
 Disassociability
 <!-- : Per [[NISTIR8062]](sec8_references.md#ref-NISTIR8062): The processing of PII or events without association to individuals or devices beyond the operational requirements of the system. -->
 
-: [[NISTIR8062]](sec8_references.md#ref-NISTIR8062)より: システムの運用上の必要性を超えて, 個人またはデバイスに関連付けることなく, PII またはイベントを処理すること.
+: [[NISTIR8062]](sec8_references.md#ref-NISTIR8062)より: システムの運用上の必要性を超えて個人またはデバイスに関連付けることなく行われる, PII またはイベントの Processing.
 
 Eavesdropping Attack
 <!-- : An attack in which an attacker listens passively to the authentication protocol to capture information that can be used in a subsequent active attack to masquerade as the claimant. -->
