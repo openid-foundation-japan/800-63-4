@@ -401,7 +401,7 @@ Federation Proxy
 Federation Transaction
 <!-- : A specific instance of processing an authentication using a _federation_ process for a specific _subscriber_ by conveying an _assertion_ from an _IdP_ to an _RP_. -->
 
-: 特定の _Subscriber_ のために,  _IdP_ から _RP_ に _Assertion_ を伝え,  _Federation_ プロセスを使用して Authentication を処理する特定のインスタンス.
+: 特定の _Subscriber_ のために, _IdP_ から _RP_ に _Assertion_ を伝え, _Federation_ プロセスを使用して Authentication を行う特定の処理インスタンス.
 
 Front-Channel Communication
 <!-- : Communication between two systems that relies on redirects through an intermediary such as a browser. This is normally accomplished by appending HTTP query parameters to URLs hosted by the receiver of the message. -->
