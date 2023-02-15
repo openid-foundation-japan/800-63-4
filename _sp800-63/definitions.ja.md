@@ -370,7 +370,7 @@ Equity
 : EO 13985 によると, Equity とは, 黒人, ラテンアメリカ人, 先住民, アジア系アメリカ人, 太平洋諸島民, その他の有色人種など, これまで十分なサービスを受けてこなかったコミュニティに属する個人を含め, すべての個人を一貫して公平, 公正, かつ公平に扱うことを指す. 宗教的少数派の人々, レズビアン, ゲイ, バイセクシャル, トランスジェンダー, クィア (LGBTQ+) の人々, 障害者, 地方に住む人々, その他根強い貧困や不平等から悪影響を受ける人々など.
 
 Federal Information Processing Standard (FIPS)
-: Secretary of Commerce は, Information Technology Management Reform Act (Public Law 104-106) に基づいて, National Institute of Standards and Technology (NIST) により連邦政府機関のコンピュータシステムに適用するために開発された標準及びガイドラインを承認する. これらの標準及びガイドラインは NIST によって FIPS として発行されたものであり, 政府機関で横断的に使われるものである. NIST はセキュリティや相互運用性といった強制力のある連邦政府の要求事項がある場合や, 許容可能な業界標準やソリューションが存在しない場合に, FIPS を開発する. 詳細については背景を参照すること.
+: Secretary of Commerce は, Information Technology Management Reform Act (Public Law 104-106) に基づいて, National Institute of Standards and Technology (NIST) により連邦政府機関のコンピュータシステムに適用するために開発された標準及びガイドラインを承認する. これらの標準及びガイドラインは NIST によって Federal Information Processing Standards (FIPS) として発行されたものであり, 政府機関で横断的に使われるものである. NIST はセキュリティや相互運用性といった強制力のある連邦政府の要求事項がある場合や, 許容可能な業界標準やソリューションが存在しない場合に, FIPS を開発する. 詳細については背景を参照すること.
     FIPS ドキュメントは FIPS ホームページ <http://www.nist.gov/itl/fips.cfm> からオンラインアクセス可能である.
 
 <!--
@@ -616,7 +616,7 @@ Practice Statement
 Predictability
 <!-- : Per [[NISTIR8062]](sec8_references.md#ref-NISTIR8062): Enabling reliable assumptions by individuals, owners, and operators about PII and its processing by an information system. -->
 
-: [[NISTIR8062]](sec8_references.md#ref-NISTIR8062)より: 個人, 所有者, 事業者に対して, PII および PII に対して情報システムが行う処理に関する信頼性の高い仮定を可能とすること.
+: [[NISTIR8062]](sec8_references.md#ref-NISTIR8062)より: 個人, 所有者, 事業者に対して, PII および PII に対して情報システムが行う Processing に関する信頼性の高い仮定を可能とすること.
 
 Private Key
 <!-- : The secret part of an asymmetric key pair that is used to digitally sign or decrypt data. -->
