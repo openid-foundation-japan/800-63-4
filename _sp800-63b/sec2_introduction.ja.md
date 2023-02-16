@@ -34,7 +34,7 @@ This document provides recommendations on types of authentication processes, inc
 This technical guideline applies to digital authentication of subjects to systems over a network. It does not address the authentication of a person for physical access (e.g., to a building), though some credentials used for digital access may also be used for physical access authentication. This technical guideline also requires that federal systems and service providers participating in authentication protocols be authenticated to subscribers.
 -->
 
-この技術ガイドラインは, Subject のネットワーク越しのシステムに対する Digital Authentication に適用される. デジタルアクセスに使用されるいくつかの Credential は物理アクセスの Authentication にも使用される場合があるが, (例: 建物などへの)物理アクセスに対する個人の Authentication には対応しない. この技術ガイドラインでは, Authentication プロトコルに参加する Federal システムとサービス プロバイダーが Subscriber に対して Authenticate されることも要求する.
+この技術ガイドラインは, Subject のネットワーク越しのシステムに対する Digital Authentication に適用される. デジタルアクセスに使用されるいくつかの Credential は物理アクセスの Authentication にも使用される場合があるが, 本ガイドラインは (例: 建物などへの) 物理アクセスに対する個人の Authentication には対応しない. この技術ガイドラインでは, Authentication プロトコルに参加する Federal システムとサービス プロバイダーが Subscriber に対して Authenticate されることも要求する.
 
 <!--
 The AAL characterizes the strength of an authentication transaction as an ordinal category. Stronger authentication (a higher AAL) requires malicious actors to have better capabilities and to expend greater resources in order to successfully subvert the authentication process. Authentication at higher AALs can effectively reduce the risk of attacks. A high-level summary of the technical requirements for each of the AALs is provided below; see [Sec. 4](sec4_aal.md#AAL_SEC4) and [Sec. 5](sec5_authenticators.md#AAL_SEC5) of this document for specific normative requirements.
