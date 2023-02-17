@@ -46,7 +46,7 @@ If the CSP disallows a chosen memorized secret because it is on a blocklist of c
 
 Memorized Secret は, 長さが少なくとも8文字となる(**SHALL**). Memorized Secret は, Subscriber によって選択されるか, CSP によってランダムに割り当てられることとなる(**SHALL**).
 
-CSP が, 頻繁に使用される, 予期される, または侵害されている値のブロックリストにあるために, 選択された Memorized Secret を許可しない場合 ([Sec. 5.1.1.2](sec5_authenticators.md#memsecretver) を参照), Subscriber は別の Memorized Secret を選択することになる(**SHALL**). Memorized Secret に他の複雑さの要件が課されることはない(**SHALL**). この根拠は, [Appendix A](appA_memorized.md#appA) _Strength of Memorized Secrets_ に示される.
+CSP が, 頻繁に使用される, 予期される, または侵害されている値の Blocklist にあるために, 選択された Memorized Secret を許可しない場合 ([Sec. 5.1.1.2](sec5_authenticators.md#memsecretver) を参照), Subscriber は別の Memorized Secret を選択することになる(**SHALL**). Memorized Secret に他の複雑さの要件が課されることはない(**SHALL**). この根拠は, [Appendix A](appA_memorized.md#appA) _Strength of Memorized Secrets_ に示される.
 
 #### Memorized Secret Verifiers {#memsecretver}
 
