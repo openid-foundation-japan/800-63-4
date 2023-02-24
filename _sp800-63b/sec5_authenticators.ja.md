@@ -1115,26 +1115,14 @@ Further, the risk of an authentication error is typically borne by multiple part
 
 <!--
 1. Offer subscribers at least one alternate authenticator that is not restricted and can be used to authenticate at the required AAL.
--->
-
-1. 必要とされる AAL で使用できる少なくとも1つの Restricted でない 代替の Authenticator を Subscriber に提供する.
-
-<!--
 2. Provide meaningful notice to subscribers regarding the security risks of the restricted authenticator and availability of alternatives that are not restricted.
--->
-
-2. Restricted Authenticator のセキュリティリスクと Restricted でない代替について, Subscriber に意味のある通知を提供する.
-
-<!--
 3. Address any additional risk to subscribers in its risk assessment.
--->
-
-3. Risk Assessment で Subscriber への追加のリスクに取り組む.
-
-<!--
 4. Develop a migration plan for the possibility that the restricted authenticator is no longer acceptable at some point in the future and include this migration plan in its [digital identity acceptance statement](../_sp800-63/sec5_DIRM.md#daps){:latex-href="#ref-SP800-63"}.
 -->
 
+1. 必要とされる AAL で使用できる少なくとも1つの Restricted でない 代替の Authenticator を Subscriber に提供する.
+2. Restricted Authenticator のセキュリティリスクと Restricted でない代替について, Subscriber に意味のある通知を提供する.
+3. Risk Assessment で Subscriber への追加のリスクに取り組む.\
 4. Restricted Authenticator が未来のある時点で受け入れられなくなる可能性について移行計画を作成し, この移行計画をその [digital identity acceptance statement](../_sp800-63/sec5_DIRM.md#daps){:latex-href="#ref-SP800-63"} に含む.
 
 ### Activation Secrets {#s-5-2-11}
