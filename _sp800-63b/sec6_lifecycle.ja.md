@@ -315,7 +315,7 @@ Binding an external authenticator is a potentially risky operation because of th
 -->
 
 Subscriber が騙されて Attacker に Binding Code を使用させられたり, Attacker に Binding Code を提供してしまったりする可能性があるため, External Authenticator の Binding は潜在的にリスクのある操作である.
-場合によっては, 信頼できる情報源 (Authenticated Session から取得したものなど, 特に Authenticated Session が Phisihng 耐性を持つものであればことさら) から取得した QR コードはそのような攻撃に対してより堅牢であると考えられる. これは通常そのような QR コードが Binding Code とともに CSP の URL を含むからである.
+場合によっては, 信頼できる情報源 (Authenticated Session から取得したものなど, 特に Authenticated Session が Phishing 耐性を持つものであればことさら) から取得した QR コードはそのような攻撃に対してより堅牢であると考えられる. これは通常そのような QR コードが Binding Code とともに CSP の URL を含むからである.
 そのような条件下では, Subscriber が騙されて Phishing サイトで Binding Code を入力する可能性が低くなる.
 
 ### Binding to a Subscriber-provided Authenticator
