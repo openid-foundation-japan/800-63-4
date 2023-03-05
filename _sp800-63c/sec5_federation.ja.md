@@ -1067,7 +1067,7 @@ IdP は Subscriber Account に以下のような変更が生じた際, シグナ
 The RP **MAY** send a signal regarding the following changes to the RP subscriber account:
 -->
 
-RP は RP Subscriber Account に以下のような変更が生じたい際, シグナルを送ることができる (**MAY**).
+RP は RP Subscriber Account に以下のような変更が生じた際, シグナルを送ることができる (**MAY**).
 
 <!--
 - The account has been terminated.
