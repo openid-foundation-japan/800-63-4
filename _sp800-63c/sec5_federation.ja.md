@@ -31,6 +31,12 @@ IdP-RP 間の Federation の関係性は多段階のプロセスにより確立�
 
 <!--
 1. First, the IdP and RP agree to enter into a trust agreement. This agreement can be bilateral between the parties, multilateral at the behest of an authority, or proxied through a trusted party. This step represents initial permission for the two systems in question to connect. Parameters of what can be requested and released are established in this step, though the details of which attributes are released to a given RP for a given subscriber can be deferred until a later stage.
+
+2. Next, the IdP and RP perform registration to establish their trust at a protocol level, allowing for information to be securely exchanged between the parties. While the first step entails a policy decision representing a permission to connect, this step entails establishment of credentials and identifiers representing the IdP and RP to allow communication through the federation protocol. This stage can occur before any subscriber tries to log in to the RP or as a response to a subscriber's attempt to use an IdP at an RP.
+
+3. Next, the IdP and RP determine that they want to engage in a a to authenticate the subscriber. As part of this, they determine which attributes about the subscriber are to be passed from the IdP to the RP during this transaction. The decision made in this step builds on the trust agreement established in the first step and the identities of the RP and IdP established in the second step.
+
+4. Finally, the subscriber authenticates to the IdP and the result of that authentication event is asserted to the RP across the network. The RP processes this assertion from the IdP and establishes an authenticated session with the subscriber.
 -->
 
 1. まず, IdP と RP が Trust Agreement の締結に合意する. これは二者間合意でも良いし, オーソリティの要請による多者間合意や信頼できる当事者を通じた委任によるものでもよい.
@@ -38,25 +44,13 @@ IdP-RP 間の Federation の関係性は多段階のプロセスにより確立�
 リクエストおよび開示できるパラメータはこのステップで確立される.
 どの Attribute が所与の RP および Subscriber について開示されるかの詳細についての決定は, 以降のステージに遅延されることもある.
 
-<!--
-2. Next, the IdP and RP perform registration to establish their trust at a protocol level, allowing for information to be securely exchanged between the parties. While the first step entails a policy decision representing a permission to connect, this step entails establishment of credentials and identifiers representing the IdP and RP to allow communication through the federation protocol. This stage can occur before any subscriber tries to log in to the RP or as a response to a subscriber's attempt to use an IdP at an RP.
--->
-
 2. 次に, IdP と RP はプロトコルレベルで信頼関係を確立するため Registration を行う. これにより当事者間で情報がセキュアに交換可能となる.
 最初のステップでは接続許可を示すポリシー決定が行われるが, このステップでは IdP と RP を示す Credential および識別子の確立が行われる. これにより Federation Protocol を通じてコミュニケーションが可能となる.
 このステージは Subscriber が RP にログインしようとする前に実施することもあるし, Subscriber が RP に対して IdP を利用するよう試行した結果として実施されることもある.
 
-<!--
-3. Next, the IdP and RP determine that they want to engage in a a to authenticate the subscriber. As part of this, they determine which attributes about the subscriber are to be passed from the IdP to the RP during this transaction. The decision made in this step builds on the trust agreement established in the first step and the identities of the RP and IdP established in the second step.
--->
-
 3. 次に, IdP と RP は Subscriber を Authenticate するため Federation Transaction を実施することを決定する.
 この一環として, IdP と RP は当該 Transaction において Subscriber に関するどの Attribute が IdP から RP に渡されるかを決定する.
 このステップにおける決定は, 最初のステップで確立された Trust Agreement と, 2つめのステップで確立された RP および IdP の Identity に基づいて行われる.
-
-<!--
-4. Finally, the subscriber authenticates to the IdP and the result of that authentication event is asserted to the RP across the network. The RP processes this assertion from the IdP and establishes an authenticated session with the subscriber.
--->
 
 4. 最後に, Subscriber は IdP に対して Authenticate し, その Authentication イベントの結果がネットワークを介して RP に Assertion として提示される.
 RP は IdP から提示されたこの Assertion を処理し, Subscriber との間に Authenticated Session を確立する.
