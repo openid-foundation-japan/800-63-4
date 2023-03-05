@@ -885,7 +885,7 @@ Over time, an RP could accumulate RP subscriber accounts that are no longer acce
 When processing such an inactive account, the RP **SHALL** provide sufficient notice to the subscriber, if possible, about the pending termination of the account and provide the subscriber with an option to re-activate the account prior to its scheduled termination. Upon termination, the RP **SHALL** remove all personal information associated with the RP subscriber account, except what is required for audit and security purposes.
 -->
 
-このようなインアクティブな Account を処理する際, RP は可能であれば保留中の Account の Terminate について Subscriber に十分な通知を行うこととし, スケジュールされた Terminate の前に Subscriber に Account を再アクティベイトするオプションを提供することとする (**SHALL**).
+このようなインアクティブな Account を処理する際, RP は可能であれば保留中の Account の Terminate について Subscriber に十分な通知を行うこととし, スケジュールされた Terminate の前に Subscriber に Account を再アクティベートするオプションを提供することとする (**SHALL**).
 Terminate を行う際は, RP は RP Subscriber Account に関連する全ての Personal Information を削除することとする (**SHALL**).
 ただし監査やセキュリティ目的で必要とされる場合を除く.
 
