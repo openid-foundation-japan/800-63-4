@@ -85,7 +85,7 @@ Non-federated モデルにおいて, 1つまたは複数の Authenticator を使
     - サービスプロバイダの CSP または Verifier の機能は, Subscriberに関する情報を提供する. RP は, 必要とする Attribute を CSP に要求する. RPは, オプションとして, この情報を使用して Authorization の決定を行う.
 - Step 5: Subscriber と RP の間に Authenticated Session が確立される.
 
-[Figure 2. Federated Digital Identity Model Example](sec4_model.md#fig-63Sec4-Figure2){:name="fig-2"}
+[Figure 2. Federated Digital Identity Model Example](sec4_model.md#fig-2){:name="fig-2"}
 {:latex-ignore="true"}
 
 ![High-level diagram of a federated digital identity model showing the entities and interactions between entities of the entire digital identity process, in which the CSP and verifier functions are done by the IdP.]({{site.baseurl}}/{{page.collection}}/media/Federated.png 'Federated Digital Identity Model Example'){:latex-src="Federated.png" latex-fig="2" latex-place="h"}
