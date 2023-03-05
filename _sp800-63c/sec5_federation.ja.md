@@ -98,7 +98,7 @@ Trust Agreement では, 以下のパラメータを確立することとする (
 - RP がリクエストする Attribute のリスト (IdP が RP に対して開示できるリストのサブセット)
 - RP がリクエストする各 Attribute についてその利用目的
 - Subscriber Attribute の開示にかかる意思決定の責務を負う Authorized Party
-- Subscriber が RP に開示される Attriburte について知る手段
+- Subscriber が RP に開示される Attribute について知る手段
 - IdP が提供しうる xAL
 - RP が必要とする xAL
 
